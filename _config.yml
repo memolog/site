@@ -81,7 +81,7 @@ theme: little-code-bricks
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:memolog/site.git
+  repo: git@github.com:memolog/blog.git
 
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess

@@ -1,11 +1,11 @@
 <script src="<%= url_for(theme.js.lazysizes) %>" async></script>
 <script type="text/javascript">
   // http://css-tricks.com/favicons-next-to-external-links/
-  for (const article of document.getElementsByTagName('article')){
+  for (const article of document.getElementsByClassName('content')){
     for (const link of article.getElementsByTagName('a')){
       const hostname = link.hostname;
-      if (hostname === location.hostname) { continue; }
-      link.style.background = `url(http://www.google.com/s2/favicons?domain=${hostname}) 4px center no-repeat`;
+      if (!hostname || hostname === location.hostname) { continue; }
+      link.style.background = `url(https://www.google.com/s2/favicons?domain=${hostname}) 4px center no-repeat`;
       link.style.paddingLeft = '24px';
     }
   }

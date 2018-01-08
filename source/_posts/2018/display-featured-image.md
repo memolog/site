@@ -73,17 +73,17 @@ date: 2018-01-08 11:07:38
 featured:
   image: benjamin-voros-365387
   author: Benjamin Voros
-  curetor: https://unsplash.com/photos/StFUwkNsvcY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  authorLink: https://unsplash.com/photos/StFUwkNsvcY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ```
 
 ```html
 <div class="header__feature">
   <div>
     <picture>
-      <source data-srcset="https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_450.jpg, https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_450@2x.jpg 2x, https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_450@3x.jpg 3x" type="image/jpeg" media="(max-width: 450px)" />
-      <source data-srcset="https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_750.webp, https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_750@2x.webp 2x" type="image/webp" />
-      <source data-srcset="https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_750.jpeg, https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_750@2x.jpeg 2x" type="image/jpeg" />
-      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://df4ggxtayph0v.cloudfront.net/images/<%= featured.image %>/<%= featured.image %>_750.jpg" class="lazyload" />
+      <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_450.jpg, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_450@2x.jpg 2x, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_450@3x.jpg 3x" type="image/jpeg" media="(max-width: 450px)" />
+      <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.webp, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_750@2x.webp 2x" type="image/webp" />
+      <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpeg, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_750@2x.jpeg 2x" type="image/jpeg" />
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpg" class="lazyload" />
     </picture>              
   </div>
   <div class="feature__credit">Photo by <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
@@ -102,3 +102,6 @@ featured:
 * imageOptimみたいな最適化処理をしたい
 
 など、いろいろ。時間があって、まだ興味が持続していれば、、対応していきたい。
+
+----
+それでこのブログの画像もS3とCloudfrontを使ってみていたが、お金も少しだけどかかるし[What is GitHub Pages? - User Documentation](https://help.github.com/articles/what-is-github-pages/)には1GBまでは利用可能なので、ブログの画像は普通にGithubに画像をおくことにした。
