@@ -4,9 +4,7 @@
   for (const article of document.getElementsByClassName('content')){
     for (const link of article.getElementsByTagName('a')){
       const hostname = link.hostname;
-      if (!hostname || hostname === location.hostname) { continue; }
       link.style.background = `url(https://www.google.com/s2/favicons?domain=${hostname}) 4px center no-repeat`;
-      link.style.paddingLeft = '24px';
     }
   }
 </script>
