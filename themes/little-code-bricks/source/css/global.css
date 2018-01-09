@@ -71,7 +71,6 @@ a:visited {
 .content {
   font-size: 1.1em;
   line-height: 2em;
-  text-align: justify;
   color: #444;
   -webkit-font-smoothing: antialiased;
 }
@@ -190,12 +189,28 @@ a:visited {
   overflow: hidden;
 }
 
-.feature__credit {
+.featured__image {
+  background: #f5f2f0;
+  line-height: 0;
+}
+
+.featured__credit {
   color: #666;
   font-size: .825em;
   text-align: right;
+  margin-top: .5em;
 }
 
-.content a {
+.content p a {
   padding-left: 24px;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(0, .5, 0, 1);
 }

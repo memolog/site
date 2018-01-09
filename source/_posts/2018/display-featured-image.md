@@ -33,7 +33,7 @@ function resizeImage(buffer, size, name, ext, scale) {
 }
 ```
 
-フロント側も簡単で、基本的にはFetch APIを使ってリクエストを送っているだけである。レンダリングには[preact](https://github.com/developit/preact)を使ってみた。preact/TypeScript/SCSSなどをWebpackでバンドルするのが一番面倒くさいは面倒くさい（最初だけだけど）。
+フロント側も簡単で、基本的にはFetch APIを使ってリクエストを送っているだけである。レンダリングには[preact](https://preactjs.com/)を使ってみた。preact/TypeScript/SCSSなどをWebpackでバンドルするのが一番面倒くさいは面倒くさい（最初だけだけど）。
 
 ```javascript
 submitHandler(event){
@@ -78,16 +78,28 @@ featured:
 
 ```html
 <div class="header__feature">
-  <div>
+  <div class="featured__image">
     <picture>
       <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_450.jpg, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_450@2x.jpg 2x, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_450@3x.jpg 3x" type="image/jpeg" media="(max-width: 450px)" />
       <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.webp, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_750@2x.webp 2x" type="image/webp" />
       <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpeg, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_750@2x.jpeg 2x" type="image/jpeg" />
-      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpg" class="lazyload" />
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANS...VORK5CYII=" data-src="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpg" class="lazyload blur-up" />
     </picture>              
   </div>
-  <div class="feature__credit">Photo by <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  <div class="featured__credit">Photo by <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
 </div>
+```
+
+```css
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(0, .5, 0, 1);
+}
 ```
 
 最初のロードで画像は表示したくないので[lazysizes](https://github.com/aFarkas/lazysizes)で画像を遅延読み込みしている。
