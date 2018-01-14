@@ -137,14 +137,18 @@ a:visited {
   margin-bottom: 3.5em;
 }
 
-.header time {
+.header time, .article__author {
   display: inline-block;
   font-size: .9125em;
   color: #666;
   border-bottom: 1px dashed #bababa;
 }
 
-.calendar-icon {
+.article__author {
+  margin-left: .5em;
+}
+
+.calendar-icon, .author-icon {
   margin-right: .5em;
 }
 
@@ -163,7 +167,7 @@ a:visited {
 }
 
 .content code[class*="language-"] {
-  color: #444;  
+  color: #444;
 }
 
 @media screen and (max-width: 500px) {
@@ -178,7 +182,7 @@ a:visited {
   .content h2 {
     font-size: 1.2em;
   }
-} 
+}
 
 .header__feature {
   margin: .5em 0 -.5em;
@@ -213,4 +217,8 @@ a:visited {
 .lazyloaded {
 	opacity: 1;
 	transition: opacity 2s .3s cubic-bezier(0, .5, 0, 1);
+}
+
+.content img {
+  max-width: 100%;
 }

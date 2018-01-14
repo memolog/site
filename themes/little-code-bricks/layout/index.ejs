@@ -10,8 +10,10 @@
       <% page.posts.each( (post, i) => { %>
         <article class="article-summary" itemprop="blogPost" itemscope itemType="http://schema.org/BlogPosting">
           <header class="header">
-            <h1 class="header__title" itemprop="name"><a href="<%- url_for(post.path) %>"><%- post.title %></a></h1>
-            <div><time datetime="<%- post.date.toISOString() %>" itemprop="datePublished"><span class="calendar-icon">📅</span><span><%- post.date.locale(config.language).format('LL') %></span></time></div>
+            <h1 class="header__title article__title" itemprop="name"><a href="<%- url_for(post.path) %>"><%- post.title %></a></h1>
+            <div><time datetime="<%- post.date.toISOString() %>" itemprop="datePublished"><span class="calendar-icon">📅</span><span><%- post.date.locale(config.language).format('LL') %></span></time>
+            <span class="article__author"><span class="author-icon">👨‍🎨</span><span itemprop="author">Yutaka Yamaguchi</span></span>
+            </div>
             <% if (post.featured) { %>
               <%- partial('_partial/feature-image', {featured: post.featured}) %>
             <% } %>            
