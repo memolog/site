@@ -12,13 +12,15 @@ tags:
 
 そのほかにも、好きな女の子の誕生日をなんとか調べれば、性格のある程度の方向性を知ることができます。誕生日事典（誕生日辞典）をゲットすれば、きっと彼女もゲットだぜ。
 
-そんなわたしの瞑想のことばは「トラブルとの遭遇はチャンスとの出会い。」です。レッツトラブル！  
+そんなわたしの瞑想のことばは「トラブルとの遭遇はチャンスとの出会い。」です。レッツトラブル！
 ※正確な本のタイトルは「誕生日事典」ですが、「誕生日辞典」でのヒット率も高いので併記しています。
 
 [誕生日事典（￥2,940）](http://www.amazon.co.jp/exec/obidos/ASIN/4047913510/yutakayamaguc-22)
 
-*   [![](http://images-jp.amazon.com/images/P/4047913707.09.TZZZZZZZ.jpg)相性事典](http://www.amazon.co.jp/exec/obidos/ASIN/4047913707/ref=nosim/yutakayamaguc-22)
+{% amazonBookList 5 %}
+* [![相性事典](http://images-jp.amazon.com/images/P/4047913707.09.TZZZZZZZ.jpg)相性事典](http://www.amazon.co.jp/exec/obidos/ASIN/4047913707/ref=nosim/yutakayamaguc-22)
 *   [![](http://images-jp.amazon.com/images/P/4877312021.09.TZZZZZZZ.jpg)誕生数秘学の智慧〜誕生日が示す、人生の指針・隠された才能](http://www.amazon.co.jp/exec/obidos/ASIN/4877312021/ref=nosim/yutakayamaguc-22)
 *   [![](http://images-jp.amazon.com/images/P/456962569X.09.TZZZZZZZ.jpg)「誕生日別」性格事典--365の性格・運命・つきあい方がわかる](http://www.amazon.co.jp/exec/obidos/ASIN/456962569X/ref=nosim/yutakayamaguc-22)
 *   [![](http://images-jp.amazon.com/images/P/4789719936.09.TZZZZZZZ.jpg)月と太陽でわかる性格事典](http://www.amazon.co.jp/exec/obidos/ASIN/4789719936/ref=nosim/yutakayamaguc-22)
-*    [![](http://images-jp.amazon.com/images/P/4890360980.09.TZZZZZZZ.jpg) 山本令菜の0学占い 決定版](http://www.amazon.co.jp/exec/obidos/ASIN/4890360980/ref=nosim/yutakayamaguc-22)
+*    [![](http://images-jp.amazon.com/images/P/4890360980.09.TZZZZZZZ.jpg)山本令菜の0学占い 決定版](http://www.amazon.co.jp/exec/obidos/ASIN/4890360980/ref=nosim/yutakayamaguc-22)
+{% endamazonBookList %}

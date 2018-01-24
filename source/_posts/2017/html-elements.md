@@ -1,6 +1,12 @@
 ---
 title: HTMLの構造を再確認する
 date: 2017-12-31
+featured:
+  image: ilya-pavlov-87438
+  author: Ilya Pavlov
+  authorLink: https://unsplash.com/photos/OqtafYT5kTw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  transformed: true
+  format: svg
 ---
 
 久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）

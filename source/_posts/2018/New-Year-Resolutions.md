@@ -1,7 +1,7 @@
 ---
-title: New Year Resolutions
+title: 新年の抱負を考える
 date: 2018-01-03 07:34:59
-featured: 
+featured:
   author: NordWood Themes
   image: nordwood-themes-467442
   authorLink: https://unsplash.com/photos/zNS6oFkwlG4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText

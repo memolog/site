@@ -6,14 +6,17 @@
     "version": "3.4.4"
   },
   "dependencies": {
-    "hexo": "^3.2.0",
+    "hexo": "^3.4.4",
     "hexo-deployer-git": "^0.3.1",
+    "hexo-generator-feed": "^1.2.2",
     "hexo-generator-index": "^0.2.0",
     "hexo-prism-plugin": "^2.2.0",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
+    "image-size": "^0.6.2",
+    "jsdom": "^11.5.1",
     "lazysizes": "^4.0.1"
   },
   "devDependencies": {}

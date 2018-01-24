@@ -1,10 +1,10 @@
 ---
-title: 古い記事のインポート
+title: 古い記事をインポートする
 date: 2018-01-04 03:36:06
-featured: 
-  author: chuttersnap
-  image: chuttersnap-255215
-  authorLink: https://unsplash.com/photos/fN603qcEA7g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+featured:
+  author: Jordan Sanchez
+  image: jordan-sanchez-111052
+  authorLink: https://unsplash.com/photos/71hQxE-Sfvg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 ブログの古い記事なんてほとんど顧みることはない。ほとんどの記事が「以前は役に立ったかもしれないけど、すでに役には立たない」コードの端切れのようなもので古い記事なんてそのまま放置していつの日かインターネットから姿を消すくらいでもいいかなあとか思っていた。
 

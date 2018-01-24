@@ -2,9 +2,9 @@
 title: Featured Image を設置する
 date: 2018-01-08 11:07:38
 featured:
-  image: benjamin-voros-365387
-  author: Benjamin Voros
-  authorLink: https://unsplash.com/photos/StFUwkNsvcY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  image: priscilla-du-preez-364385
+  author: Priscilla Du Preez
+  authorLink: https://unsplash.com/photos/qensZDlj_MA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、[Unsplash](https://unsplash.com)から良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。
 <!-- more -->
@@ -19,7 +19,7 @@ function resizeImage(buffer, size, name, ext, scale) {
     const scaleStr = scale === 1 ? '' : `@${scale}x`;
     const relativePath = `images/${name}/${name}_${size}${scaleStr}.${ext}`
     const filePath = path.resolve(__dirname, `../static/public/${relativePath}`);
-  
+
     sharp(buffer)
       .resize(size * scale)
       .toFile(filePath, (err) => {
@@ -39,12 +39,12 @@ function resizeImage(buffer, size, name, ext, scale) {
 submitHandler(event){
 		event.preventDefault();
 		event.stopPropagation();
-    
+
     const fileElement = document.getElementById('upload-image');
     if (!(fileElement instanceof HTMLInputElement)) {
       return;
     }
-    
+
     const uploadFile = fileElement.files[0];
     const formData = new FormData();
     formData.append('image', uploadFile);
@@ -84,7 +84,7 @@ featured:
       <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.webp, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_750@2x.webp 2x" type="image/webp" />
       <source data-srcset="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpeg, /blog/assets/images/<%= featured.image %>/<%= featured.image %>_750@2x.jpeg 2x" type="image/jpeg" />
       <img src="data:image/png;base64,iVBORw0KGgoAAAANS...VORK5CYII=" data-src="/blog/assets/images/<%= featured.image %>/<%= featured.image %>_750.jpg" class="lazyload blur-up" />
-    </picture>              
+    </picture>
   </div>
   <div class="featured__credit">Photo by <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
 </div>
