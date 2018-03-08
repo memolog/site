@@ -16,7 +16,8 @@
         continue;
       }
 
-      link.style.background = `url(https://www.google.com/s2/favicons?domain=${hostname}) 4px center no-repeat`;
+      link.classList.add('link-icon');
+      link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
     }
   }
 </script>

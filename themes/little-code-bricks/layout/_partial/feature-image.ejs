@@ -1,9 +1,11 @@
 <div class="header__feature">
   <div class="featured__image">
-    <% if (featured.format) { %>
-      <%- picture(`/blog/assets/images/${featured.image}/${featured.image}.${featured.format}`, {data: featured}) %>
-    <% } else { %>
-      <%- picture(`/blog/assets/images/${featured.image}/${featured.image}.svg`, {data: featured}) %>
+    <% if (featured.image) { %>
+      <% if (featured.format) { %>
+        <%- picture(`/blog/assets/images/${featured.image}/${featured.image}.${featured.format}`, {data: featured}) %>
+      <% } else { %>
+        <%- picture(`/blog/assets/images/${featured.image}/${featured.image}.svg`, {data: featured}) %>
+      <% } %>
     <% } %>
   </div>
   <% if (featured.author) { %>

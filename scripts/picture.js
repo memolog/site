@@ -37,12 +37,12 @@ function render(data) {
       color = color || svgDom.getAttribute('fill') || svgDom.children[0].getAttribute('fill');
     } else {
       const dimension = sizeOf(path.resolve(__dirname, `../${source}/${name}_medium${ext}`));
-      width = 750;
+      width = Math.min(dimension.width, 900);
       height = parseInt(dimension.height * (width / dimension.width), 10);
     }
   }
 
-  width = width || 750;
+  width = width || 900;
   height = height || 500;
   color = color || '#f5f2f0';
   alt = alt || '';

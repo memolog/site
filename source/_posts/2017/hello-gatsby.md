@@ -3,8 +3,8 @@ title: Gatsbyでスタティックサイトを作成する
 date: 2017-12-29
 ---
 更新しなくなったブログをリニューアルしようと思って、[Gatsby](https://www.gatsbyjs.org) で構築しようと思い立って、今作成してみている。
-<!-- more -->
-Gatsbyは「Blazing-fast static site generator for React」ということで、Reactベースのスタティックサイトジェネレータらしいのだけど、実のところまだよくわかっていない。[Getting Started](https://www.gatsbyjs.org/docs/) のドキュメントをみて、[gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) のstarterをGithub pages で公開しているだけなのだ。
+
+Gatsbyは「Blazing-fast static site generator for React」ということで、Reactベースのスタティックサイトジェネレータらしいのだけど、実のところまだよくわかっていない。[Getting Started](https://www.gatsbyjs.org/docs/) のドキュメントをみて、[gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) のstarterをGithub pages で公開しているだけなのだ。<!-- more -->
 
 とはいえ、一応最初に行ったことをそのまま書き記しておこうと思う。
 

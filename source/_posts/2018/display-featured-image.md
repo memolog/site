@@ -2,13 +2,13 @@
 title: Featured Image を設置する
 date: 2018-01-08 11:07:38
 featured:
-  image: priscilla-du-preez-364385
-  author: Priscilla Du Preez
-  authorLink: https://unsplash.com/photos/qensZDlj_MA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  image: igor-ovsyannykov-258206
+  author: Igor Ovsyannykov
+  authorLink: https://unsplash.com/photos/7oTkp6P8PhM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、[Unsplash](https://unsplash.com)から良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。
-<!-- more -->
-でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に適したサイズにしておきたい... と、なんかいろいろ思ってしまい、最終的にUnsplashのサイトからダウンロードしたデータを個人的に使いたい大きさにリサイズするサービスを用意してみた。[convert-a-image-to-responsive-images](https://github.com/memolog/convert-a-image-to-responsive-images)に公開している（ES2015をターゲットにしているので、IE11では動かない）。ただの思いつきに思ったより時間をかけてしまった。最初はAWS Lambdaで画像をリサイズするつもりだったが、リサイズに使っている[Sharp](https://github.com/lovell/sharp)の扱いが少し難しく、メモリ容量のところでエラーになってしまった（これを解決する方法はありそうなのだが、やってる時間がなくなったので、しばし保留）。いずれにせよ最終的にはWEBサービスとして公開したいなと思っている。週末に時間があれば。
+
+でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に適したサイズにしておきたい... と、なんかいろいろ思ってしまい、最終的にUnsplashのサイトからダウンロードしたデータを個人的に使いたい大きさにリサイズするサービスを用意してみた。[convert-a-image-to-responsive-images](https://github.com/memolog/convert-a-image-to-responsive-images)に公開している（ES2015をターゲットにしているので、IE11では動かない）。ただの思いつきに思ったより時間をかけてしまった。最初はAWS Lambdaで画像をリサイズするつもりだったが、リサイズに使っている[Sharp](https://github.com/lovell/sharp)の扱いが少し難しく、メモリ容量のところでエラーになってしまった（これを解決する方法はありそうなのだが、やってる時間がなくなったので、しばし保留）。いずれにせよ最終的にはWEBサービスとして公開したいなと思っている。週末に時間があれば。<!-- more -->
 
 サーバーの実装は簡単で、[busboy](https://github.com/mscdex/busboy)でファイルを受け取ったあとに、指定したサイズでsharpを実行するだけである。
 ```javascript

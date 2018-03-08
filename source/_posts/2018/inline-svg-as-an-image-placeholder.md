@@ -7,8 +7,8 @@ featured:
   authorLink: https://unsplash.com/photos/N3o-leQyFsI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 
-画像が読み込まれた後にレイアウトが動かないように、画像のプレースホルダーを入れた。最初はpng画像をインラインで挿入していたのだけど、svgの方が画像のサイズをみてその場その場で適切なものを作成しやすかったので、svgを使うようにしてみた。処理自体はNode.js（Hexoの処理の中）で行っている。現在のコンテンツの最大幅は750pxなので、それを基準に縦横比が合うようにheightを計算している。
-<!-- more -->
+画像が読み込まれた後にレイアウトが動かないように、画像のプレースホルダーを入れた。最初はpng画像をインラインで挿入していたのだけど、svgの方が画像のサイズをみてその場その場で適切なものを作成しやすかったので、svgを使うようにしてみた。処理自体はNode.js（Hexoの処理の中）で行っている。現在のコンテンツの最大幅は750pxなので、それを基準に縦横比が合うようにheightを計算している。<!-- more -->
+
 ```javascript
 const sizeOf = require('image-size');
 const dimension = sizeOf(path.resolve(__dirname, `../${src}`));

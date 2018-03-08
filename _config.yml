@@ -88,7 +88,7 @@ deploy:
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'default'
-  line_number: true    # default false
+  line_number: false    # default false
 
 feed:
   type: atom

@@ -1,7 +1,8 @@
 ---
 title: {{ title }}
 date: {{ date }}
-  author:
+featured:
   image:
+  author:
   authorLink:
 ---

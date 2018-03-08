@@ -62,7 +62,7 @@ a:visited {
   padding: 5px; }
 
 .container {
-  max-width: 750px;
+  max-width: 900px;
   margin: 0 auto 4em;
   padding: 0 15px;
   border-radius: 3px;
@@ -148,6 +148,8 @@ a:visited {
 .featured__image {
   background: white;
   line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
 }
 
 .featured__credit {
@@ -175,10 +177,61 @@ a:visited {
   max-width: 100%;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 900px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"] {
     margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }

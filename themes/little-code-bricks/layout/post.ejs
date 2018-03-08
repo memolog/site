@@ -10,7 +10,7 @@
     fb_app_id: '168245123786587'
   }) %>
 </head>
-<body>
+<body class="post">
   <%- partial('_partial/common-header') %>
   <div class="container">
     <main class="main">
@@ -27,7 +27,7 @@
             <%- partial('_partial/feature-image', {featured: page.featured}) %>
           <% } %>
         </header>
-        <div id="article-content" class="content" itemprop="articleBody"><%- page.content %></div>
+        <div id="article-content" class="content <%- page.className %>" itemprop="articleBody"><%- page.content %></div>
       </article>
     </main>
   </div>
