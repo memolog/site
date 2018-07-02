@@ -3,7 +3,7 @@
 <head>
   <%- partial('_partial/common-head') %>
   <%- open_graph({
-    image: page.featured ? `/blog/assets/images/${page.featured.image}/${page.featured.image}.jpg` : '',
+    image: page.featured ? `/assets/images/${page.featured.image}/${page.featured.image}.jpg` : '',
     twitter_card: page.featured ? 'summary_large_image' : 'summary',
     twitter_id: 'memolog',
     twitter_site: 'https://twitter.com/memolog',

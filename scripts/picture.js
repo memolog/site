@@ -28,7 +28,7 @@ function render(data) {
   const {dir, name, ext} = path.parse(src);
 
   if ((!width || !height)) {
-    const source = dir.replace(/\/blog\//, '/source/');
+    const source = dir.replace(/^\//, '/source/');
     if (ext === '.svg') {
       const file = fs.readFileSync(path.resolve(__dirname, `../${source}/${name}${ext}`), {encoding: 'utf8'});
       const svgDom = new JSDOM(file).window.document.getElementsByTagName('svg')[0];

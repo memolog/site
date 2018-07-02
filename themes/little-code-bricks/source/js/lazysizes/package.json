@@ -1,16 +1,38 @@
 {
-  "name": "lazysizes",
-  "version": "4.0.1",
-  "filename": "lazysizes.min.js",
-  "license": "MIT",
-  "author": "Alexander Farkas <info@corrupt-system.de>",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/aFarkas/lazysizes.git"
+  "_from": "lazysizes@^4.0.4",
+  "_id": "lazysizes@4.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-//Qq8Su3Xpq1TvY0RiU8GkwPQTZWg4BJjp+5jGjDMRKEYNu5CAarp37XFzgBbROdEPzTJmPZQd1/SAc4Sab5BQ==",
+  "_location": "/lazysizes",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "lazysizes@^4.0.4",
+    "name": "lazysizes",
+    "escapedName": "lazysizes",
+    "rawSpec": "^4.0.4",
+    "saveSpec": null,
+    "fetchSpec": "^4.0.4"
   },
-  "namespace": "lazySizes",
-  "main": "lazysizes.js",
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/lazysizes/-/lazysizes-4.0.4.tgz",
+  "_shasum": "a28541570f32a7c385efdb798c06c22b3fd08544",
+  "_spec": "lazysizes@^4.0.4",
+  "_where": "/Users/yyamaguchi/Desktop/hexo-site",
+  "author": {
+    "name": "Alexander Farkas",
+    "email": "info@corrupt-system.de"
+  },
   "browser": "lazysizes.js",
+  "bugs": {
+    "url": "https://github.com/aFarkas/lazysizes/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "High performance (jankfree) lazy loader for images (including responsive images), iframes and scripts (widgets).",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-bytesize": "~0.1.1",
@@ -28,17 +50,8 @@
     "qunitjs": "^1.17.0",
     "respimage": "^1.4.2"
   },
-  "npmName": "lazysizes",
-  "npmFileMap": [
-    {
-      "basePath": "",
-      "files": [
-        "lazysizes.min.js",
-        "plugins/**/*.min.js"
-      ]
-    }
-  ],
-  "description": "High performance (jankfree) lazy loader for images (including responsive images), iframes and scripts (widgets).",
+  "filename": "lazysizes.min.js",
+  "homepage": "https://github.com/aFarkas/lazysizes#readme",
   "keywords": [
     "lazy",
     "loader",
@@ -61,5 +74,24 @@
     "imager.js",
     "picturefill",
     "component"
-  ]
+  ],
+  "license": "MIT",
+  "main": "lazysizes.js",
+  "name": "lazysizes",
+  "namespace": "lazySizes",
+  "npmFileMap": [
+    {
+      "basePath": "",
+      "files": [
+        "lazysizes.min.js",
+        "plugins/**/*.min.js"
+      ]
+    }
+  ],
+  "npmName": "lazysizes",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aFarkas/lazysizes.git"
+  },
+  "version": "4.0.4"
 }

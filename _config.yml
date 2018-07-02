@@ -17,8 +17,8 @@ assets:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://memolog.github.io/blog
-root: /blog/
+url: https://memolog.org/
+root: /
 permalink: :title/
 permalink_defaults:
 
