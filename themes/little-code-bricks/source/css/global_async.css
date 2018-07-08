@@ -44,3 +44,7 @@
   border-color: #ddd;
   margin-top: 4em;
 }
+
+.page-number {
+  padding: 0 2px;
+}

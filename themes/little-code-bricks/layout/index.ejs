@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="<%= config.language %>" itemscope itemtype="http://schema.org/Blog">
 <head>
+  <title><%= config.title %></title>
   <%- partial('_partial/common-head') %>
 </head>
 <body>
@@ -26,6 +27,7 @@
           <% } %>
         </article>
       <% }) %>
+      <div><%- paginator() %></div>
     </main>
   </div>
   <%- partial('_partial/common-body-footer') %>

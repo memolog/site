@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="<%= config.language %>" itemscope itemtype="http://schema.org/Blog">
 <head>
+  <title><%- page.title %> | <%= config.title %></title>
   <%- partial('_partial/common-head') %>
   <%- open_graph({
     image: page.featured ? `/assets/images/${page.featured.image}/${page.featured.image}.jpg` : '',
