@@ -1,5 +1,5 @@
-<script src="<%= url_for(theme.js.lazysizes) %>" async></script>
-<script type="text/javascript">
+<script src="<%= url_for(theme.js.lazysizes) %>"></script>
+<script type="text/javascript" async>
   // http://css-tricks.com/favicons-next-to-external-links/
   for (const link of document.querySelectorAll('.content p a')){
     const hostname = link.hostname;
@@ -19,5 +19,10 @@
       link.classList.add('link-icon');
       link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
     }
+  }
+</script>
+<script async>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
   }
 </script>

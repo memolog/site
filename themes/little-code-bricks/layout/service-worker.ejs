@@ -1,0 +1,41 @@
+const CACHE_MAIN = 'main<%- page.lastUpdated %>';
+const precacheList = [
+  <% page.precacheList.forEach(function(item){ %>
+  '<%- url_for(item) %>',<% }); %>
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_MAIN).then(cache => cache.addAll(precacheList))
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+          .filter(cacheName => cacheName !== CACHE_MAIN)
+          .map(cacheName => caches.delete(cacheName))
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  const url = new URL(request.url);
+
+  if (!precacheList.includes(url.pathname)) {
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(response => {
+      if (response) {
+        return response
+      }
+      return fetch(request);
+    })
+  )
+});
