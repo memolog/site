@@ -6,3 +6,5 @@
   <script>window.lazyLoadOptions = {};</script>
   <link rel="preload" as="style" href="<%- url_for(theme.css.global) %>" onload="this.rel='stylesheet'">
   <%- feed_tag(config.atom, {title: 'Latest Articles'}) %>
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
