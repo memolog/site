@@ -26,16 +26,31 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
 
-  if (!precacheList.includes(url.pathname)) {
-    return;
+  if (precacheList.includes(url.pathname)) {
+    return event.respondWith(
+      caches.match(request).then(response => {
+        if (response) {
+          return response
+        }
+        return fetch(request.clone());
+      })
+    );
   }
 
-  event.respondWith(
-    caches.match(request).then(response => {
-      if (response) {
-        return response
-      }
-      return fetch(request);
-    })
-  )
+  if (request.method === 'GET' && url.origin === location.origin) {
+    return event.respondWith(
+      caches.match(request).then(response => {
+        if (response) {
+          return response;
+        }
+
+        return fetch(request.clone()).then(response => {
+          caches.open(CACHE_MAIN).then(cache => {
+            cache.put(request, response);
+          });
+          return response.clone();
+        });
+      })
+    );
+  }
 });
