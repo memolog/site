@@ -6,22 +6,18 @@
     "version": "3.7.1"
   },
   "dependencies": {
-    "dir-resolve": "^1.0.2",
     "hexo": "^3.7.1",
     "hexo-deployer-git": "^0.3.1",
-    "hexo-fs": "^0.2.3",
     "hexo-generator-feed": "^1.2.2",
     "hexo-generator-index": "^0.2.0",
+    "hexo-prism-plugin": "github:ele828/hexo-prism-plugin#master",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
     "image-size": "^0.6.2",
     "jsdom": "^11.5.1",
-    "lazysizes": "^4.0.4",
-    "node-prismjs": "^0.1.2",
-    "prism-themes": "^1.0.1",
-    "prismjs": "^1.15.0"
+    "lazysizes": "^4.0.4"
   },
   "devDependencies": {}
 }
