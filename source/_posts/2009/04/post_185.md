@@ -8,14 +8,15 @@ tags:
 ---
 たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。
 
-```
+```html
 <h3 class="entry-header"><a href="/post.html">記事のタイトル</a></h3>
 
 <!-- more -->
-----
+```
+
+```css
 a {color: blue;}
 h3.entry-header {color: red;}
-
 ```
 
 まあそういうものなのだと、普段はたいして気にとめていなかったのですが、あらためて説明しようとすると、これがよく分からない。単純に詳細度で考えたら、h3.entry-headerの方が強いのにどうしてだろう。ということで、[CSS完全ガイド](http://www.amazon.co.jp/gp/product/487311232X?ie=UTF8&tag=yutakayamaguc-22&linkCode=xm2&camp=247&creativeASIN=487311232X)を購入して、きちんと読んでみました（3章まで）。p71〜p74あたりにそのあたりのことが説明されていた。

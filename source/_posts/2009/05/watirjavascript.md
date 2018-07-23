@@ -6,12 +6,10 @@ categories:
 tags:
 - watir
 ---
-watirで操作をしているときに、Javascriptのアラートを操作しないといけないときがたまにあります。私は、最近は下記のようにautoitを使って操作しています。
+watirで操作をしているときに、Javascriptのアラートを操作しないといけないときがたまにあります。私は、最近は下記のようにautoitを使って操作しています。<!-- more -->
 
-```
+```ruby
 def handling_javascript()
-
-<!-- more -->
   title = @ie.Name
   Watir.autoit.WinWait(title,"","10")
   if Watir.autoit.WinExists(title) == 1

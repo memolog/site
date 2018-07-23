@@ -9,8 +9,8 @@ tags:
 ---
 Mac(10.4.11)にgem istall mysqlしようとしたら、下記のようなエラーが出たのでメモ。
 
-```
-~ sudo gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config 
+```bash
+~ sudo gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
 
 <!-- more -->
 Password:
@@ -25,7 +25,7 @@ creating Makefile
 
 make
 gcc -I. -I. -I/opt/local/lib/ruby/1.8/i686-darwin8.10.1 -I. -DHAVE_MYSQL_H -I/opt/local/include -I/usr/local/mysql/include  -g -Os -arch i386 -no-cpp-precomp -mmacosx-version-min=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -fno-common   -D_P1003_1B_VISIBLE -DSIGNAL_WITH_VIO_CLOSE -DSIGNALS_DONT_BREAK_READ -DIGNORE_SIGHUP_SIGQUIT -fno-common -O2  -fno-common -pipe -fno-common  -c mysql.c
-cc -dynamic -bundle -undefined suppress -flat_namespace -L/opt/local/lib   -L"/opt/local/lib" -o mysql.bundle mysql.o  -lruby -arch i386  -L/usr/local/mysql/lib -lmysqlclient -lz -lm     -lmygcc  -lpthread -ldl -lobjc  
+cc -dynamic -bundle -undefined suppress -flat_namespace -L/opt/local/lib   -L"/opt/local/lib" -o mysql.bundle mysql.o  -lruby -arch i386  -L/usr/local/mysql/lib -lmysqlclient -lz -lm     -lmygcc  -lpthread -ldl -lobjc
 /usr/bin/ld: /usr/local/mysql/lib/libmysqlclient.dylib load command 5 unknown cmd field
 /usr/bin/ld: warning multiple definitions of symbol _setregid
 /opt/local/lib/libruby.dylib(process.o) definition of _setregid
@@ -40,8 +40,8 @@ make: *** [mysql.bundle] Error 1
 
 いろいろ試してみましたが、最終的にはXcodeのバージョンが古かったのが原因みたいでした。2.5をWebからダウンロードしてインストールしたら、インストールすることができました。
 
-```
-~ sudo gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config 
+```bash
+~ sudo gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
 Password:
 Building native extensions.  This could take a while...
 Successfully installed mysql-2.7
