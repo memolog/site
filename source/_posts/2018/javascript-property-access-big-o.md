@@ -6,7 +6,7 @@ featured:
   authorLink: https://unsplash.com/photos/Ib2e4-Qy9mQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 date: 2018-07-23 20:51:00
 ---
-配列に格納しているオブジェクトをそのIDで検索するとしたら、ES2015的にはfindを使って検索する。処理量は（線形探索だろうから）ビッグ・オー記法としては `O(n)` になるだろう。<!-- more -->
+配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては `O(n)` になるだろう。<!-- more -->
 
 ```javascript
 const obj = array.find( item => item.id === id );
@@ -32,7 +32,7 @@ entries.forEach( entry => entry.image = imageMap[entry.id] )
 
 処理量的には `O(N+M)` となるので、良いように思う。
 
-ちなみに上の処理量は、オブジェクトのプロパティへのアクセス（およびinsert）が `O(1)` の処理量で終わることを前提にしているけれど、
+上記の処理量はオブジェクトのプロパティへのアクセス（およびinsert）が `O(1)` の処理量で終わることを前提にしているけれど、
 オブジェクトのプロパティにアクセスするときにどのくらいの処理量でデータが取得できるかどうかについては特に仕様がない。
 
 [A Survey of the JavaScript Programming Language](https://crockford.com/javascript/survey.html)によると、オブジェクトはたいていの場合ハッシュテーブルで実装されているようで、`O(1)` でデータの取得と追加ができると考えて良いように思う。とはいえ明確にそうとは言えない。
@@ -60,9 +60,13 @@ images.forEach( image => imageMap.set(image.id, image) );
 entries.forEach( entry => entry.image = imageMap.get(entry.id) );
 ```
 
-Mapオブジェクトも中の実装はハッシュテーブルであると想定しても大丈夫な気はするけど、Mapオブジェクトが（たぶんハッシュテーブルだけど）平衡二分探索木で実装されていると想定すると、lookupとinsertaionがそれぞれ `O(log n)` の処理量になるので、`O(Log M + N Log M)` といった処理量になる。それでもやはり `O(M * N)` より効率的と言える。
+ChromeではMapオブジェクトの実装にハッシュテーブルを使っているそうだ。それ以外のブラウザでもMapオブジェクトも中の実装はハッシュテーブルであると想定しても大丈夫な気はする。
+> ECMAScript 2015 introduced several new data structures such as Map, Set, WeakSet, and WeakMap, all of which use hash tables under the hood.
+https://v8project.blogspot.com/2018/01/hash-code.html
 
-オブジェクトを使ったマップでも、Mapオブジェクトを使ったマップでも中の実装はハッシュテーブルであると想定しても大丈夫そうな気はするし、実際の処理速度は変わらないように思う。とはいえMapオブジェクトの方は sublinear であると明確に言えるし、使い方としてもより idiomatic であるし、今後はMapオブジェクト使って行く方がいいかなあと思ったところ次第である（既存のプロジェクトでは状況によるけど）。
+仮にMapオブジェクトが（たぶんハッシュテーブルだけど）平衡二分探索木で実装されていると想定すると、lookupとinsertaionがそれぞれ `O(log n)` の処理量になるので、`O(Log M + N Log M)` といった処理量になる。それでもやはり `O(M * N)` より効率的と言える。
+
+オブジェクトを使ったマップでも、Mapオブジェクトを使ったマップでも中の実装はハッシュテーブルであると想定しても大丈夫そうな気はするし、体感的な速度には大きな差はないようには思う。とはいえMapオブジェクトの方は sublinear であると明確に言えるし、使い方としてもより idiomatic であるし、[Optimizing hash tables: hiding the hash code](https://v8project.blogspot.com/2018/01/hash-code.html)のようなパフォーマンス改善の恩恵を受けることができるという点から（オブジェクトを使ったマップではプロパティのlookupに必要な処理は避けられないだろう）、今後はMapオブジェクト使って行く方がいいかなあと思ったところ次第である（既存のプロジェクトでは状況によるけど）。
 
 以下はそのほか参考にしたページ
 * [data structures - Is there anything that guarantees constant time for accessing a property of an object in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/34292087/is-there-anything-that-guarantees-constant-time-for-accessing-a-property-of-an-o)
