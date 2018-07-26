@@ -5,6 +5,9 @@
   "hexo": {
     "version": "3.7.1"
   },
+  "scripts": {
+    "primitive_bulk": "primitive_bulk -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg"
+  },
   "dependencies": {
     "hexo": "^3.7.1",
     "hexo-deployer-git": "^0.3.1",
@@ -21,5 +24,7 @@
     "lazysizes": "^4.0.4",
     "uglify-js": "^3.4.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "primitive_bulk": "^1.2.1"
+  }
 }
