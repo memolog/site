@@ -6,7 +6,7 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "primitive_bulk": "primitive_bulk -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg"
+    "pb": "primitive_bulk -i ~/Downloads/$DIRNAME.jpg -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg"
   },
   "dependencies": {
     "hexo": "^3.7.1",

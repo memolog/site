@@ -5,6 +5,7 @@ const precacheList = [
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_MAIN).then(cache => cache.addAll(precacheList))
   );
