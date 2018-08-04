@@ -89,7 +89,7 @@ prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'default'
   line_number: false,    # default false
-  no_assets: false
+  no_assets: true
 
 feed:
   type: atom
