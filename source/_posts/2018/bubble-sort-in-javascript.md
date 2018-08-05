@@ -12,7 +12,7 @@ date: 2018-08-04 07:00:11
 
 下の動画はバブルソートをハンガリアンフォークダンスで表現したもの。うける。開始50秒くらいはただ踊ってるだけである。左から進んで、隣り合う人同士で数値を比較して、大きい人が右側に移動していく。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lyZQPjUT5B4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% youtube id=lyZQPjUT5B4 %}
 
 ポイントとしては、
 
