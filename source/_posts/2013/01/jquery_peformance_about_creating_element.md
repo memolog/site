@@ -8,24 +8,20 @@ tags:
 - jquery
 - performance
 ---
-jQueryで要素を作成する場合、[jQuery()のExample](http://api.jquery.com/jQuery/#entry-examples-1)を参考にすると、作り方としては下記の二通りの方法があります。
+jQueryで要素を作成する場合、[jQuery()のExample](http://api.jquery.com/jQuery/#entry-examples-1)を参考にすると、作り方としては下記の二通りの方法があります。<!-- more -->
 
-<!-- more -->
-
-```
+```javascript
 $( "<div><p>Hello</p></div>" ).appendTo( "body" )
-
 ```
 
-```
+```javascript
 $( "<div/>", {
-"class": "test",
-text: "Click me!",
-click: function() {
-$( this ).toggleClass( "test" );
-}
+    "class": "test",
+    text: "Click me!",
+    click: function() {
+    $( this ).toggleClass( "test" );
+  }
 }).appendTo( "body" );
-
 ```
 
 処理としては、前者は最終的にdocumentFragmentにappendしたdiv要素のinnerHTMLを使って要素を作成して、後者はcreateElementで要素を作成した後に二番目の引数に指定したattributeをそれぞれ設定していく感じ。
@@ -34,12 +30,11 @@ $( this ).toggleClass( "test" );
 
 jsperfのテストでは、さらに下記のような素のJavaScriptで実行した場合の結果もつけてみました。素の方が当たり前ですが、色々何もしないので高速。
 
-```
+```javascript
 var div = document.createElement('div');
 div.setAttribute('class','foobar');
 'textContent' in div ? div.textContent = 'foobar' : div.appendChild(document.createTextNode('foobar'));
 var $div = $(div);
-
 ```
 
 最後の行の「var $div = $(div);」のように、引数がDOMElementの場合はjQueryオブジェクトのcontextにその引数を設定するだけみたいなので、素のJavaScriptでDOMElementを生成して、それをjQueryオブジェクトとしてラップする方が速い雰囲気（buildFragmentの過程で生成されるキャッシュが有効に活用できる場合はjQueryで生成した方が総合的には速いのかもしれないけど未確認）。

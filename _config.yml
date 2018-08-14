@@ -13,7 +13,7 @@ atom: http://feeds.feedburner.com/jp/memolog
 
 assets:
   logo: images/logo.png
-  favicon: assets/favicon.ico
+  favicon: assets/icons/icon-32.ico
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

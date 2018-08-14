@@ -1,3 +1,39 @@
+.profile {
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin-top: 2em;
+  color: #444;
+}
+
+.profile__heading {
+  margin-bottom: 0.3em;
+  margin-top: 0;
+  border-bottom: 1px dashed #ddd;
+  display: inline-block;
+  font-weight: normal;
+  font-family: Garamond, 'Times New Roman', serif;
+}
+
+.profile__image {
+  float: left;
+  margin-right: 6px;
+}
+
+.profile__content {
+  overflow: hidden;
+}
+
+.profile__social-list {
+  margin: .5em 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.profile__social-list-item {
+  display: inline;
+  margin-right: .5em;
+}
+
 .amazon-book-list {
   margin-top: 2em;
 }
@@ -123,11 +159,11 @@ http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascr
  .token.prolog,
  .token.doctype,
  .token.cdata {
-   color: slategray;
+   color: #5f6d7b;
  }
 
  .token.punctuation {
-   color: #999;
+   color: #525252;
  }
 
  .namespace {
@@ -150,7 +186,7 @@ http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascr
  .token.char,
  .token.builtin,
  .token.inserted {
-   color: #690;
+   color: #055a01;
  }
 
  .token.operator,
@@ -158,24 +194,23 @@ http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascr
  .token.url,
  .language-css .token.string,
  .style .token.string {
-   color: #a67f59;
-   background: hsla(0, 0%, 100%, .5);
+   color: #695037;
  }
 
  .token.atrule,
  .token.attr-value,
  .token.keyword {
-   color: #07a;
+   color: #03427b;
  }
 
  .token.function {
-   color: #DD4A68;
+   color: #9a213b;
  }
 
  .token.regex,
  .token.important,
  .token.variable {
-   color: #e90;
+   color: #714902;
  }
 
  .token.important,
@@ -226,7 +261,7 @@ http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascr
 
      .line-numbers-rows > span:before {
        content: counter(linenumber);
-       color: #999;
+       color: #6f6f6f;
        display: block;
        padding-right: 0.8em;
        text-align: right;

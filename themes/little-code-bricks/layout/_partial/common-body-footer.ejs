@@ -1,5 +1,5 @@
 <script src="<%= url_for(theme.js.lazysizes) %>" async></script>
-<script type="text/javascript" async>
+<script>
   // http://css-tricks.com/favicons-next-to-external-links/
   for (const link of document.querySelectorAll('.content p a')){
     const hostname = link.hostname;
@@ -21,7 +21,7 @@
     }
   }
 </script>
-<script async>
+<script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js');
   }

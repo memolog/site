@@ -14,7 +14,7 @@ swapをする回数が1回の繰り返しで1度しか発生しないので、�
 
 下の動画は選択ソートをGypsy folk danceで表現したもの。長い... 途中で倍速になるけど長い。最小値が変更されるときにそれぞれの人の場所がswapしてしまってるけど、実際はそのタイミングでswapしない。
 
-{% youtube id=Ns4TPTC8whw %}
+{% youtube id=Ns4TPTC8whw title="Select-sort with Gypsy folk dance" %}
 
 実装例は[選択ソート](https://en.wikipedia.org/wiki/Selection_sort#Implementation)や[The Selection sort algorithm - Ben's Blog](http://blog.benoitvallon.com/sorting-algorithms-in-javascript/the-selection-sort-algorithm/)のと変わらないけど下記。
 

@@ -52,13 +52,13 @@ function render(data) {
   const inlineSVG = 'data:image/svg+xml;base64,' + Buffer.from(svg).toString('base64');
 
   if (ext === '.svg') {
-    return `<img src="${inlineSVG}" data-src="${dir}/${name}${ext}" class="lazyload blur-up" itemprop="image" alt="${alt}" role="none" />`;
+    return `<img src="${inlineSVG}" data-src="${dir}/${name}${ext}" class="lazyload blur-up" alt="${alt}" role="presentation" />`;
   }
 
   return `<picture>
     <source data-srcset="${dir}/${name}_small${ext}, ${dir}/${name}_small@2x${ext} 2x, ${dir}/${name}_small@3x${ext} 3x" type="image/jpg" media="(max-width: 450px)" />
     <source data-srcset="${dir}/${name}_medium.webp, ${dir}/${name}_medium@2x.webp 2x" type="image/webp" />
     <source data-srcset="${dir}/${name}_medium${ext}, ${dir}/${name}_medium@2x${ext} 2x" type="image/jpg" />
-    <img src="${inlineSVG}" data-src="${dir}/${name}_medium${ext}" class="lazyload blur-up" itemprop="image" alt="${alt}" role="none" />
+    <img src="${inlineSVG}" data-src="${dir}/${name}_medium${ext}" class="lazyload blur-up" alt="${alt}" role="presentation" />
   </picture>`;
 }

@@ -9,22 +9,19 @@ tags:
 ---
 input要素にwidth:100&#x25;;を指定すると、微妙に包含ブロックからはみ出す。
 
-なんでだろうなあと思っていたんですけど、input要素にはブラウザのデフォルトでpaddingやborderが入っているので、width:100&#x25;とするとpaddingやborderのサイズ分はみ出してしまうということでした。
-
-<!-- more -->
+なんでだろうなあと思っていたんですけど、input要素にはブラウザのデフォルトでpaddingやborderが入っているので、width:100&#x25;とするとpaddingやborderのサイズ分はみ出してしまうということでした。<!-- more -->
 
 分かってしまうと大した話ではない。
 
 なので、input要素にwidth:100&#x25;に広げるときは、box-sizingをborder-boxに設定するか、padding/borderを削るとかすると、はみ出さずにはまる。うむ。
 
-```
+```css
 input[type="text"]{
-  width: 100&#x25;;
+  width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 ```
 
 そして蛇足ですけど、[Paul Irish - Google+ - box-sizing: border-box; ...is clearly superior to our...](http://paulirish.com/wp-content/uploads/2011/gplus-boxsizing.html)あたりの話を参考に確認したら、入力系のinput要素のうちtype=searchだけがborder-boxを使用しているみたいです（Firefoxは現状ではcontent-box）。searchのUI的にborder-boxの方が便利ということなのだろうか。
@@ -33,7 +30,7 @@ input[type="text"]{
 
 そのへん、[normalize.css](http://necolas.github.com/normalize.css/)では、content-boxに統一するようにCSSが用意されていました（一緒にsearch用の外観も外しているんですけど、それをするなら普通にtype=text使えば良いんじゃないかと思わなくもない）。
 
-```
+```css
 /*
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
@@ -54,5 +51,4 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
-
 ```

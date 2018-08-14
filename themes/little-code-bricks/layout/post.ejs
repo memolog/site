@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<%= config.language %>" itemscope itemtype="http://schema.org/Blog">
+<html lang="<%= config.language %>">
 <head>
   <title><%- page.title %> | <%= config.title %></title>
   <%- partial('_partial/common-head') %>
@@ -10,25 +10,57 @@
     twitter_site: 'https://twitter.com/memolog',
     fb_app_id: '168245123786587'
   }) %>
+  <link rel="canonical" href="<%- page.permalink %>">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<%- page.permalink %>"
+      },
+      "headline": "<%- page.title %>",
+      <% if (page.featured && page.featured.image) { %>
+        "image": [
+          "https://memolog.org/assets/images/<%= page.featured.image %>/<%= page.featured.image %>.jpg"
+        ],
+      <% } %>
+      "datePublished": "<%- page.date %>",
+      "dateModified": "<%- page.updated %>",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "<%- remove_html(page.description || page.excerpt) %>"
+    }
+  </script>
 </head>
 <body class="post">
   <%- partial('_partial/common-header') %>
   <div class="container">
     <main class="main">
-      <article itemprop="blogPost" itemscope itemType="http://schema.org/BlogPosting">
+      <article>
         <header class="header">
-          <h1 class="header__title" itemprop="name headline"><%- page.title %></h1>
           <div>
-            <time datetime="<%- page.date.toISOString() %>" itemprop="datePublished">
+            <time datetime="<%- page.date.toISOString() %>">
               <span class="calendar-icon">📅</span><span><%- page.date.locale(config.language).format('LL') %></span>
             </time>
-            <span class="article__author"><span class="author-icon">👨‍🎨</span><span itemprop="author publisher">Yutaka Yamaguchi</span></span>
           </div>
+          <h2 class="header__title"><%- page.title %></h2>
           <% if (page.featured) { %>
             <%- partial('_partial/feature-image', {featured: page.featured}) %>
           <% } %>
         </header>
-        <div id="article-content" class="content <%- page.className %>" itemprop="articleBody"><%- page.content %></div>
+        <div id="article-content" class="content <%- page.className %>"><%- page.content %></div>
+        <%- partial('_partial/common-footer') %>
       </article>
     </main>
   </div>

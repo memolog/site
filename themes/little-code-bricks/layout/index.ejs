@@ -1,34 +1,50 @@
 <!doctype html>
-<html lang="<%= config.language %>" itemscope itemtype="http://schema.org/Blog">
+<html lang="<%= config.language %>">
 <head>
   <title><%= config.title %></title>
+  <meta name="description" content="<%= config.subtitle %>" id="meta-description">
   <%- partial('_partial/common-head') %>
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        <% page.posts.each( (post, i) => { %>
+        {
+          "@type":"ListItem",
+          "position":<%- i+1 %>,
+          "url": "<%- post.permalink %>"
+        }<% if (i + 1 < page.posts.length ) { %>,<% } %>
+        <% }) %>
+      ]
+    }
+  </script>
 </head>
 <body>
   <%- partial('_partial/common-header') %>
   <div class="container">
     <main class="main">
       <% page.posts.each( (post, i) => { %>
-        <article class="article-summary" itemprop="blogPost" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="article-summary">
           <header class="header">
-            <h1 class="header__title article__title" itemprop="name"><a href="<%- url_for(post.path) %>"><%- post.title %></a></h1>
-            <div><time datetime="<%- post.date.toISOString() %>" itemprop="datePublished"><span class="calendar-icon">📅</span><span><%- post.date.locale(config.language).format('LL') %></span></time>
-            <span class="article__author"><span class="author-icon">👨‍🎨</span><span itemprop="author">Yutaka Yamaguchi</span></span>
+            <div><time datetime="<%- post.date.toISOString() %>"><span class="calendar-icon">📅</span><span><%- post.date.locale(config.language).format('LL') %></span></time>
             </div>
+            <h2 class="header__title article__title"><a href="<%- url_for(post.path) %>"><%- post.title %></a></h2>
             <% if (post.featured) { %>
               <%- partial('_partial/feature-image', {featured: post.featured}) %>
             <% } %>
           </header>
           <% if (post.excerpt) { %>
-            <div class="content" itemprop="description"><%- post.excerpt %></div>
-            <div><a href="<%- url_for(post.path) %>#more" itemprop="url">📖 続きを読む</a></div>
+            <div class="content"><%- post.excerpt %></div>
+            <div><a href="<%- url_for(post.path) %>">📖 続きを読む</a></div>
           <% } else { %>
-            <div class="content" itemprop="articleBody"><%- post.content %></div>
+            <div class="content"><%- post.content %></div>
           <% } %>
         </article>
       <% }) %>
-      <div><%- paginator() %></div>
+      <footer><%- paginator() %></footer>
     </main>
+    <%- partial('_partial/common-footer') %>
   </div>
   <%- partial('_partial/common-body-footer') %>
 </body>

@@ -1,5 +1,4 @@
   <meta charset="utf-8">
-  <meta name="description" content="<%= config.subtitle %>" id="meta-description">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%- favicon_tag(config.assets.favicon) %>
   <style><%- partial('_partial/global.css.ejs') %></style>
@@ -17,4 +16,29 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
   </script>

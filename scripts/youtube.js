@@ -12,12 +12,13 @@ hexo.extend.tag.register('youtube', function(args){
     options[key] = value + otherStr;
   });
 
-  let {id, width, height} = options;
+  let {id, width, height, title} = options;
 
   width = width || 560;
   height = height || 315;
+  title = title ? `title="${title}"` : '';
 
   return `<div class="youtube-wrapper">
-  <iframe width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ${title}></iframe>
   </div>`;
 });
