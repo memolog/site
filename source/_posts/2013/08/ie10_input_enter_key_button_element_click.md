@@ -5,6 +5,11 @@ categories:
 - web
 tags:
 - ie
+featured:
+  image: dave-blahlentino-149508-unsplash
+  author: Dave Blahlentino
+  authorLink: https://unsplash.com/photos/iRm292XKwA4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+
 ---
 [javascript - IE10 find first button on page and trigger click event on input submit - Stack Overflow](http://stackoverflow.com/questions/13497606/ie10-find-first-button-on-page-and-trigger-click-event-on-input-submit)参考。Internet Explorer 10 にて input fieldで Enter keyを押すと、<button>要素にclick eventが発生する。
 

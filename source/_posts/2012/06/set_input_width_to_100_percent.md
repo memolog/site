@@ -6,6 +6,10 @@ categories:
 tags:
 - css
 - html
+featured:
+  image: henrique-ferreira-306706-unsplash
+  author: Henrique Ferreira
+  authorLink: https://unsplash.com/photos/ySgSnJdPhZg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 input要素にwidth:100&#x25;;を指定すると、微妙に包含ブロックからはみ出す。
 

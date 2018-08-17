@@ -7,9 +7,7 @@ tags:
 - javascript
 - jquery
 ---
-モーダルなどjQueryでiframeを開いた場合に、jQuery 1.10.1とIE11の組み合わせだとエラーが発生する。ので、モーダル使っているなら、1.10.2にアップデートしないといけない。これはバンドルされてるSizzleに下記のような処理があるため。
-
-<!-- more -->
+モーダルなどjQueryでiframeを開いた場合に、jQuery 1.10.1とIE11の組み合わせだとエラーが発生する。ので、モーダル使っているなら、1.10.2にアップデートしないといけない。これはバンドルされてるSizzleに下記のような処理があるため。<!-- more -->
 
 ```javascript
 setDocument = Sizzle.setDocument = function( node ) {
@@ -26,7 +24,6 @@ setDocument = Sizzle.setDocument = function( node ) {
       setDocument();
     });
   }
-
 ```
 
 parentWindowで値がとれて、かつframeElement（iframeとか）があると、attachEventが実行される。IE11にはattachEventは存在しないので、エラーとなるみたいな感じ。parentWindowは[quirksmode](http://www.quirksmode.org/dom/w3c_html.html)によるとIE（と古いOpera）でのみ使われているプロパティ。
