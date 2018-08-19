@@ -56,7 +56,7 @@ function selectionSort(array, showArray) {
 }
 ```
 
-実装の全体はバブルソートの実装と合わせて[Gist](https://gist.github.com/memolog/9e9475a1b91770dd7b25d44904771fbb)に載せてある。
+実装の全体はバブルソートの実装と合わせて[Gist](https://gist.github.com/memolog/9e9475a1b91770dd7b25d44904771fbb/21c2d999495d3a0efc17bc6e28be07ec554e8d67)に載せてある。
 
 実行例
 ```javascript

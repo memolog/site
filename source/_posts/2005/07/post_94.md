@@ -5,10 +5,6 @@ categories:
 - 本
 tags:
 - book
-featured:
-  image: stas-ovsky-781959-unsplash
-  author: Stas Ovsky
-  authorLink: https://unsplash.com/photos/JlBYy9eaOxg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 ---
 [![](http://images-jp.amazon.com/images/P/4622070901.09._SL180_.jpg)](http://www.amazon.co.jp/exec/obidos/ASIN/4622070901/ref=nosim/yutakayamaguc-22)オスロ合意からラビン暗殺、自爆テロの始まり、第二次インティファーダ（民衆蜂起）、9.11同時多発テロ、シャロン再選など、1993年から2003年までのイスラエル・パレスチナ情勢を伝える本です。内容は現地のルポのようなもので歴史的背景の詳述などはありませんが、各章の冒頭に歴史的な説明が簡単に入っているのでここ10年の情勢の概観するには良い本かと思います。<!-- more -->
 

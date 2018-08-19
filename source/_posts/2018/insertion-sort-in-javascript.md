@@ -14,7 +14,7 @@ date: 2018-08-07 05:47:14
 
 実装例は[The Insertion sort algorithm - Ben's Blog](http://blog.benoitvallon.com/sorting-algorithms-in-javascript/the-insertion-sort-algorithm/)と[V8のarray.js](https://github.com/v8/v8/blob/master/src/js/array.js#L645)を参考にしている。
 
-テストの箇所は省略。[Gist](https://gist.github.com/memolog/9e9475a1b91770dd7b25d44904771fbb)を参照してください。今回は前回の[Selection Sort in JavaScript](https://memolog.org/2018/selection-sort-in-javascript.html)と同じ配列を使って比較してみた。
+テストの箇所は省略。[Gist](https://gist.github.com/memolog/9e9475a1b91770dd7b25d44904771fbb/6416fc2f3fcfff0c2e0b61fb01ea67c5f1a8b54c)を参照してください。今回は前回の[Selection Sort in JavaScript](https://memolog.org/2018/selection-sort-in-javascript.html)と同じ配列を使って比較してみた。
 
 ```javascript
 function insertionSort(array, showArray) {
