@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Sublime Text 2 で JSHint | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="Sublime Text 2 の JSLint から node がみつからない - メモログと関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime Text 2 で JSHint">
+<meta property="og:url" content="https://memolog.org/2013/04/sublime_text_2_jshint.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="Sublime Text 2 の JSLint から node がみつからない - メモログと関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.867Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime Text 2 で JSHint">
+<meta name="twitter:description" content="Sublime Text 2 の JSLint から node がみつからない - メモログと関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。">
+<meta name="twitter:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2013/04/sublime_text_2_jshint.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2013/04/sublime_text_2_jshint.html"
+      },
+      "headline": "Sublime Text 2 で JSHint",
+      
+      "datePublished": "Sat Apr 13 2013 14:50:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "Sublime Text 2 の JSLint から node がみつからない - メモログと関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2013-04-13T05:50:00.000Z">
+              <span class="calendar-icon">📅</span><span>2013年4月13日</span>
+            </time>
+          </div>
+          <h2 class="header__title">Sublime Text 2 で JSHint</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="/blog//2013/02/node_not_found_with_jsLint/">Sublime Text 2 の JSLint から node がみつからない - メモログ</a>と関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。</p>
+<a id="more"></a>
+<p>それでJSHintを使い始めてみている。JSHintについては<a href="http://www.jshint.com/about/" target="_blank" rel="noopener">About – JSHint</a>を参照。</p>
+<blockquote>
+<p>JSHint is a fork of <a href="http://jslint.com/" target="_blank" rel="noopener">JSLint</a>, the tool written and maintained by Douglas Crockford. The project originally <a href="http://anton.kovalyov.net/2011/02/20/why-i-forked-jslint-to-jshint/" target="_blank" rel="noopener">started</a> as an effort to make a more configurable version of JSLint-the one that doesn’t enforce one particular coding style on its users-but then transformed into a separate static analysis tool with its own goals and ideals.</p>
+</blockquote>
+<p>JSLintのチェックをいろいろ設定可能な状態にするところからスタートして、いまは静的コード解析までしてくれるらしい。</p>
+<p>Sublime Text 2へのJSHintのインストールは下記のような感じ。</p>
+<ol>
+<li>nodeが入っていなかったらnodeをインストール（homebrewが入っていたらbrew install nodeでインストールできる。<a href="/blog//2012/09/rvm_jewelrybox_homebrew/">RVM / JewelryBox / Homebrew をインストール - メモログ</a>）</li>
+<li>[sudo] npm install -g jshint で、nodeからJSHintをインストール</li>
+<li>メニューのTools - Command Paletteを開いて、「Package Controll: Install Package」を選択して、JSHintを選択</li>
+</ol>
+<p>Sublime Text 2のJSHintの設定は、~/Library/Application Support/Sublime Text 2/Packages/JSHint/.jshintrc にあります。デフォルトの設定を変更したい場合は、これをUserのディレクトリにコピーして、それを編集します。</p>
+<pre><code>cd ~/Library/Application Support/Sublime Text 2/Packages/
+cp JSHint/.jshintrc User/JSHint.jshintrc
+</code></pre><p>設定は<a href="http://www.jshint.com/docs/" target="_blank" rel="noopener">Documentation – JSHint</a>を参照。Enforcing optionsは書き方を制限する系の設定で、Relaxing optionsは逆に制限を緩める（warningなどを出さないように抑制する）系の設定で、Environmentsは環境関連。jquery: trueにすると、JQueryや$などはどこかでglobal変数に定義されているものとして扱ってくれます。</p>
+<p>Environmentsで用意されていないものについては、”globals”: {“define”:false,”require”:false}のような感じで、globalsで設定すると同じことができます。</p>
+<p>設定の中で「maxcomplexity」の設定は興味深くて、 <a href="http://ja.wikipedia.org/wiki/&#x25;E5&#x25;BE&#x25;AA&#x25;E7&#x25;92&#x25;B0&#x25;E7&#x25;9A&#x25;84&#x25;E8&#x25;A4&#x25;87&#x25;E9&#x25;9B&#x25;91&#x25;E5&#x25;BA&#x25;A6" target="_blank" rel="noopener">Cyclomatic complexity</a>を計算して、complexityを設定した値で制限してくれるみたいです。<a href="http://www.amazon.co.jp/gp/product/B00B1WLE92/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00B1WLE92&amp;linkCode=as2&amp;tag=yutakayamaguc-22" target="_blank" rel="noopener">Testable JavaScript</a><img src="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=B00B1WLE92" alt="">に書かれていた内容によると、Thomas J. McCabeは、すべてのメソッドはCyclomatic complexityを10以下にすべしとしているそうです。<a href="http://www.enerjy.com/blog/?p=198" target="_blank" rel="noopener">Software Integrity Blog » Blog Archive » McCabe Cyclomatic Complexity: the proof in the pudding</a>の調査では25くらいまではバグとの相関関係あまり変わらないみたいですけど、<a href="http://www.aivosto.com/project/help/pm-complexity.html" target="_blank" rel="noopener">Project Metrics Help - Complexity metrics</a>の話だとCyclomatic complexityが上がってくると、Bad fix probabilityも上がると。やはり10くらいが妥当だという話で、とりあえず10に設定してみました。</p>
+<p>そしてそして、Sublime Text 2で保存したときにJSHintを自動的に実行したい場合は、<a href="https://github.com/alexnj/SublimeOnSaveBuild" target="_blank" rel="noopener">SublimeOnSaveBuild</a>を別途インストールします。インストールは、メニューのTools - Command Paletteを開いて、「Package Controll: Install Package」を選択して、「SublimeOnSaveBuild」を選びます。インストールするだけで特に設定は必要ありません。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

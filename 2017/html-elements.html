@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>HTMLの構造を再確認する | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTMLの構造を再確認する">
+<meta property="og:url" content="https://memolog.org/2017/html-elements.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/ilya-pavlov-87438/ilya-pavlov-87438.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.873Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HTMLの構造を再確認する">
+<meta name="twitter:description" content="久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）">
+<meta name="twitter:image" content="https://memolog.org/assets/images/ilya-pavlov-87438/ilya-pavlov-87438.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2017/html-elements.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2017/html-elements.html"
+      },
+      "headline": "HTMLの構造を再確認する",
+      
+        "image": [
+          "https://memolog.org/assets/images/ilya-pavlov-87438/ilya-pavlov-87438.jpg"
+        ],
+      
+      "datePublished": "Sun Dec 31 2017 00:00:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2017-12-30T15:00:00.000Z">
+              <span class="calendar-icon">📅</span><span>2017年12月31日</span>
+            </time>
+          </div>
+          <h2 class="header__title">HTMLの構造を再確認する</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjMyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2MzIiIGZpbGw9IiMzYTNiM2MiIC8+PC9zdmc+" data-src="/assets/images/ilya-pavlov-87438/ilya-pavlov-87438.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/OqtafYT5kTw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Ilya Pavlov</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）<br><a id="more"></a></p>
+<h2 id="セクショニングコンテンツについて"><a href="#セクショニングコンテンツについて" class="headerlink" title="セクショニングコンテンツについて"></a>セクショニングコンテンツについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/dom.html#sectioning-content-2" target="_blank" rel="noopener">HTML 5.2: 3.2.4.2.3. Sectioning content</a> より</p>
+<blockquote>
+<p>Sectioning content is content that defines the scope of headings and footers.</p>
+<p>-&gt; article aside nav section</p>
+<p>Each sectioning content element potentially has a heading and an outline. See the section on headings and sections for further details.</p>
+</blockquote>
+<p>セクショニングコンテンツは見出し（h1〜h6要素）やフッター（footer要素）のスコープを定義するためのコンテンツで、articleやaside、nav、sectionなどの要素がそれに当たる。それぞれのセクショニングコンテンツは見出しとアウトラインを持つ可能性がある。それぞれのセクショニングコンテンツの要素については<a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#sections" target="_blank" rel="noopener">HTML5.2: 4.3. Sections</a> に詳細が記載されているが、特に詳述するほどでもないので、箇条書きに記す。</p>
+<ul>
+<li>article: いわゆる記事とか論文、レポート、ブログとかのポストなんかで、ドキュメント内の完結または独立した構成に使われる。</li>
+<li>section: 汎用的な要素で、セクションを区切るために使われる。</li>
+<li>nav: ナビゲーションリンクを構成するセクションに使われる。</li>
+<li>aside: 親セクションと関連したコンテンツであるが、内容的には独立したものとみなせるセクションで、サイドバーとかPull Quoteなどに使われる。</li>
+</ul>
+<p>後述するが、ブラウザが構築するアウトライン上ではセクショニングコンテンツの要素自体は考慮されないため、文書構造のアウトラインとして機能させるには、見出し要素と併用してアウトラインを作成する必要がある。</p>
+<h2 id="セクショニングルートについて"><a href="#セクショニングルートについて" class="headerlink" title="セクショニングルートについて"></a>セクショニングルートについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#sectioning-roots" target="_blank" rel="noopener">HTML 5.2: Sectioning Root</a> より</p>
+<blockquote>
+<p>Certain elements are said to be sectioning roots, including blockquote and td elements. These elements can have their own outlines, but the sections and headings inside these elements do not contribute to the outlines of their ancestors.</p>
+<p>-&gt; blockquote body details dialog fieldset figure td</p>
+</blockquote>
+<p>以上のセクショニングルートは独自のアウトライン構造を持つことができ、親要素の構造には影響与えないとされる。仕様の中でセクショニングコンテンツと併記して扱われることが多いが、あまり意識しなくても大丈夫（と思う）。</p>
+<h2 id="アウトラインについて"><a href="#アウトラインについて" class="headerlink" title="アウトラインについて"></a>アウトラインについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#outline" target="_blank" rel="noopener">HTML 5.2: 4.3.9.1. Creating an outline</a> より</p>
+<blockquote>
+<p>The outline for a sectioning content element or a sectioning root element consists of a list of one or more potentially nested sections. The element for which an outline is created is said to be the outline’s owner.</p>
+</blockquote>
+<p>つまりアウトラインとはセクショニングコンテンツの入れ子構造をさす。ドキュメントにはアウトラインをどのように構築するのかの仕様が書かれているけど割愛。このセクションの最初に書かれているWarningが重要</p>
+<blockquote>
+<p>There are currently <strong>no known native implementations of the outline algorithm in graphical browsers or assistive technology user agents</strong>, although the algorithm is implemented in other software such as conformance checkers and browser extensions. Therefore the outline algorithm cannot be relied upon to convey document structure to users. <strong>Authors should use heading rank (h1-h6) to convey document structure.</strong></p>
+</blockquote>
+<p>現状では、アウトラインの処理を行うブラウザが存在しないため、このセクションで書かれているアウトラインの処理に依拠したかたちでドキュメント構造をユーザーには提供できない。<strong>なので、実際のHTMLにおいては、セクショニングコンテンツのアウトライン構造に関わらず、ドキュメント全体で見出しのランクを扱うことでドキュメント構造を用意するしかない。</strong></p>
+<p>この現状を踏まえると、アウトラインを構成する要素はあまり気にしないで見出しレベルだけ気にすれば良いということになるが、将来性という意味でできるだけ適切な構造を用意しておく方が良いは良いと思われる。</p>
+<p>参考</p>
+<ul>
+<li><a href="http://adrianroselli.com/2013/12/the-truth-about-truth-about-multiple-h1.html" target="_blank" rel="noopener">The Truth about “The Truth About Multiple H1 Tags” | Adrian Roselli</a></li>
+<li><a href="http://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html" target="_blank" rel="noopener">There Is No Document Outline Algorithm | Adrian Roselli</a></li>
+</ul>
+<h2 id="header-要素"><a href="#header-要素" class="headerlink" title="header 要素"></a>header 要素</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#the-header-element" target="_blank" rel="noopener">HTML 5.2: 4.3.7 The header element</a> より</p>
+<blockquote>
+<p>The header element represents introductory content for its nearest ancestor main element or sectioning content or sectioning root element. A header typically contains a group of introductory or navigational aids.</p>
+</blockquote>
+<p>main要素やセクショニングコンテンツ、セクショニングルートの一番近い親要素に対する、introductory contentを現す。</p>
+<blockquote>
+<p>A header element is intended to usually contain the section’s heading (an h1–h6 element), but this is not required. The header element can also be used to wrap a section’s table of contents, a search form, or any relevant logos.</p>
+</blockquote>
+<p><strong>header要素はたいていの場合そのセクションの見出しが含まれることが想定されているけど、それは必須ではない。</strong>その以外には、そのセクションの目次とか検索フォームとか関連するロゴとかを入れることができる。W3CのページにはExampleにはdl/dt要素で、コンテンツのバージョンとか、著者名とかのリストを入れていたりしてる。</p>
+<blockquote>
+<p>For cases where an developer wants to nest a header or footer within another header: The header element can only contain a header or footer if they are themselves contained within sectioning content.</p>
+</blockquote>
+<p>header要素の中にheader要素を入れ子にしたい場合は、セクショニングコンテンツで区切ることで入れることができる。</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Flexbox: The definitive guide<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>About the author: Wes McSilly<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./wes-mcsilly/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Contact him! (Why would you?)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Expert in nothing but Flexbox. Talented circus sideshow.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ins</span><span class="token punctuation">></span></span>The guide about Flexbox was supposed to be here, but it
+    turned out Wes wasn’t a Flexbox expert either.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ins</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="footer-要素"><a href="#footer-要素" class="headerlink" title="footer 要素"></a>footer 要素</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#the-footer-element" target="_blank" rel="noopener">HTML5.2: The footer element</a></p>
+<blockquote>
+<p>The footer element represents a footer for its nearest ancestor main element or sectioning content or sectioning root element. A footer typically contains information about its section, such as who wrote it, links to related documents, copyright data, and the like.</p>
+<p>A footer element can also contain entire sections representing appendices, indexes, long colophons, verbose license agreements, and other such content.</p>
+</blockquote>
+<p>footer要素のアウトライン上の扱いは基本的にheader要素と同じ。footer要素には著者や関連ドキュメント、コピーライトとかそんな情報が含まれる。それ以外に附則や索引、奥付とか利用許諾といったものも含むことができる。</p>
+<blockquote>
+<p>Contact information for the author or editor of a section belongs in an address element, possibly itself inside a footer. Bylines and other information that could be suitable for both a header or a footer can be placed in either (or neither).</p>
+</blockquote>
+<p>著作者の情報は（そのセクションのintroductory contentだから）headerにも入る余地がある。<a href="https://www.w3.org/TR/2017/REC-html52-20171214/grouping-content.html#elementdef-address" target="_blank" rel="noopener">address要素</a> で扱われるようなコンタクト情報などはフッターに入る方が良さそうだけど、Bylineとかその他の著者情報はheaderかfooter、どちらにも適しているかもしれない（あるいはどちらにも適さないかもしれない）。</p>
+<p>上記のあたり、大変微妙なところではあるけど、headerには基本的にセクションの内容を補足する情報が入るのに対して、footerにはセクションの内容と関連するけど独立したコンテンツが入るみたいな感覚で良いのではなかろうか。</p>
+<blockquote>
+<p>Footers don’t necessarily have to appear at the end of a section, though they usually do.</p>
+</blockquote>
+<p>footer要素は別にセクションの最後に配置する必要はない。EXAMPLEで示すようにセクションの前後に配置することもできる。</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Back to index...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Lorem ipsum<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>The ipsum of all lorems<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>A dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+  ea commodo consequat. Duis aute irure dolor in reprehenderit in
+  voluptate velit esse cillum dolore eu fugiat nulla
+  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+  culpa qui officia deserunt mollit anim id est laborum.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Back to index...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="heading要素とセクションについて"><a href="#heading要素とセクションについて" class="headerlink" title="heading要素とセクションについて"></a>heading要素とセクションについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#headings-and-sections" target="_blank" rel="noopener">HTML5.2: 4.3.9. Headings and sections</a> より</p>
+<blockquote>
+<p>The first element of heading content in an element of sectioning content represents the heading for that explicit section. Subsequent headings of equal or higher rank start new implied subsections that are part of the previous section’s parent section. Subsequent headings of lower rank start new implied subsections that are part of the previous one. In both cases, the element represents the heading of the implied section.</p>
+</blockquote>
+<p>h1–h6 elements must not be used to markup subheadings, subtitles, alternative titles and taglines unless intended to be the heading for a new section or subsection. Instead use the markup patterns in the §4.13 Common idioms without dedicated elements section of the specification.</p>
+<p>セクションコンテンツ内の最初にある見出し要素がそのセクションの見出しとして使われる。その後に続く見出し要素は、見出しレベルの大きさによって、そのセクションのサブセクションとして扱われるか、親セクションのサブセクションとして扱われる。</p>
+<p>ただアウトラインの項目で記述した通り、<strong>実際のブラウザはセクショニングコンテンツでアウトラインを構成しない</strong>ので、ドキュメント全体で見出しのランクを調整する必要はある。見出し要素をセクションを区切る目的以外で、たとえばサブタイトルには使用してはいけない。</p>
+<p>EXAMLE 25 には以下の2つの例が記されている</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Apples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples are fruit.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Taste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>They taste lovely.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Sweet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Red apples are sweeter than green ones.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Color<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples come in various colors.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Apples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples are fruit.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Taste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>They taste lovely.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Sweet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Red apples are sweeter than green ones.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Color<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples come in various colors.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>文書構造的には同一で同じアウトラインで構築されるが、後者の方がアウトラインの構造が明確にわかる。</p>
+<blockquote>
+<p>Authors are also encouraged to explicitly wrap sections in elements of sectioning content, instead of relying on the implicit sections generated by having multiple headings in one element of sectioning content.</p>
+</blockquote>
+<p>と、見出し要素で暗黙的にセクションを区切るより、セクショニングコンテンツの要素で区切る方を奨励されてはいる。</p>
+<p>見出し要素のないセクショニングコンテンツは、セクショニングコンテンツの要素で区切った方がすっきりはするけど、実際にブラウザが構築するアウトラインとしては意味がないものとなる。ので、セクションを区切りたいときは見出しも用意した方がいい。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

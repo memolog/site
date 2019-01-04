@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Cyclomatic comlexity | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="Cyclomatic complexity - Wikipedia, the free encyclopedia。日本語では、循環的複雑度 - Wikipediaと呼ぶみたい。">
+<meta name="keywords" content="testing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cyclomatic comlexity">
+<meta property="og:url" content="https://memolog.org/2013/08/cyclomatic_comlexity.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="Cyclomatic complexity - Wikipedia, the free encyclopedia。日本語では、循環的複雑度 - Wikipediaと呼ぶみたい。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="http://ir-jp.amazon-adsystem.com/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Control_flow_graph_of_function_with_two_if_else_statements.svg/400px-Control_flow_graph_of_function_with_two_if_else_statements.svg.png">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cyclomatic comlexity">
+<meta name="twitter:description" content="Cyclomatic complexity - Wikipedia, the free encyclopedia。日本語では、循環的複雑度 - Wikipediaと呼ぶみたい。">
+<meta name="twitter:image" content="http://ir-jp.amazon-adsystem.com/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2013/08/cyclomatic_comlexity.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2013/08/cyclomatic_comlexity.html"
+      },
+      "headline": "Cyclomatic comlexity",
+      
+      "datePublished": "Sat Aug 03 2013 14:55:55 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "Cyclomatic complexity - Wikipedia, the free encyclopedia。日本語では、循環的複雑度 - Wikipediaと呼ぶみたい。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2013-08-03T05:55:55.000Z">
+              <span class="calendar-icon">📅</span><span>2013年8月3日</span>
+            </time>
+          </div>
+          <h2 class="header__title">Cyclomatic comlexity</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity" target="_blank" rel="noopener">Cyclomatic complexity - Wikipedia, the free encyclopedia</a>。日本語では、<a href="http://ja.wikipedia.org/wiki/&#x25;E5&#x25;BE&#x25;AA&#x25;E7&#x25;92&#x25;B0&#x25;E7&#x25;9A&#x25;84&#x25;E8&#x25;A4&#x25;87&#x25;E9&#x25;9B&#x25;91&#x25;E5&#x25;BA&#x25;A6" target="_blank" rel="noopener">循環的複雑度 - Wikipedia</a>と呼ぶみたい。</p>
+<a id="more"></a>
+<p>Cyclomatic complexityは、（Wikipediaに書いてありますが）コードの中で独立した処理の進み方がいくつあるかを示したもので、コードの複雑度の指標となります。<a href="/blog//2013/04/sublime_text_2_jshint/">Sublime Text 2 で JSHint</a>の記事でもそういえば書いていましたが（忘れてた）、Cyclomatic complexityは10以下が妥当な範囲としています（<a href="http://www.amazon.co.jp/gp/product/B00B1WLE92/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00B1WLE92&amp;linkCode=as2&amp;tag=yutakayamaguc-22" target="_blank" rel="noopener">Testable JavaScript</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=B00B1WLE92" alt=""> 参照）。JSHintでは<a href="http://www.jshint.com/docs/options/#maxcomplexity" target="_blank" rel="noopener">maxcomplexity</a>で設定することができます。</p>
+<p>計測には、M = E - N + P という計算式が使われます。詳細は<a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity#Description" target="_blank" rel="noopener">Cyclomatic complexity - Description</a>に書かれていますが、Javascriptのfunctionは、functionの処理が終わった後は、処理を実行した場所(entry point)に戻るので、JavascriptのfunctionのCyclomatic complexityを調べるなら、2PではなくPになる（日本語のWikipediaはそのあたりの説明が薄い）。</p>
+<p>この式のMはcomplexityで、Eがedgeの数、Nがnodeの数で、Pがexit nodeの数になる（javascript functionの場合、常に1つだけになる）。<a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity#Implications_for_Software_Testing" target="_blank" rel="noopener">Cyclomatic complexity - Implications for Software Testing</a>の内容を参考にすると、</p>
+<pre><code>function () {
+  if (c1()) {
+    f1();
+  } else {
+    f2();
+  }
+
+  if (c2()) {
+    f3();
+  } else {
+    f4();
+  }
+}
+</code></pre><p>のような処理をcontrol flow graphにすると、添付の図のようになる。edge(E)は矢印の部分になる。nodeは丸の部分で、赤丸がentry point、青色がexit pointとなっている。  </p>
+<p><img src="//upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Control_flow_graph_of_function_with_two_if_else_statements.svg/400px-Control_flow_graph_of_function_with_two_if_else_statements.svg.png" alt="File:Control flow graph of function with two if else statements.svg"></p>
+<p>edget（矢印）とnode（丸）をそれぞれ数えると、9個と7個になるので、ComplexityのMは、M = 9 - 7 + 1 で、3となる。</p>
+<p>つまり、Cyclomatic complexityは、入り口から出口までにあるコードのブロック（node）に対して、ブロック間を行き来する道がどれだけあるかを表したものであると。ブロックの数と比較して道が多くあるということは、色んな進み方ができるということであり、バグにつながる確率が高くなると。そしてCyclomatic complexityは10までに押さえるのがよしと。それ以上になる場合は、処理の方法を変えるとか（if文ではなくfuncton mapみたいなかたちにするとか）、functionを目的別に分割するとかして、コードの簡潔性を保つのが良い。</p>
+<p>また、既存の機能に条件分岐を増やして、Cyclomatic complexityが二倍三倍になるような修正は、バグを含みやすいので、あまり良い修正方法とは言いがたいと。</p>
+<p>というメモ。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

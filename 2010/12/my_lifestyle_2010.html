@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>続・最近の自分のライフスタイル | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="3年近く前に「最近の自分のライフスタイルの変化」という記事を書いていたのを思い出し、唐突に続編を書いてみる次第。3年前の記事では下記のようなことを書き残していました。">
+<meta name="keywords" content="thought,blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="続・最近の自分のライフスタイル">
+<meta property="og:url" content="https://memolog.org/2010/12/my_lifestyle_2010.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="3年近く前に「最近の自分のライフスタイルの変化」という記事を書いていたのを思い出し、唐突に続編を書いてみる次第。3年前の記事では下記のようなことを書き残していました。">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="続・最近の自分のライフスタイル">
+<meta name="twitter:description" content="3年近く前に「最近の自分のライフスタイルの変化」という記事を書いていたのを思い出し、唐突に続編を書いてみる次第。3年前の記事では下記のようなことを書き残していました。">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2010/12/my_lifestyle_2010.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2010/12/my_lifestyle_2010.html"
+      },
+      "headline": "続・最近の自分のライフスタイル",
+      
+      "datePublished": "Wed Dec 29 2010 22:00:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "3年近く前に「最近の自分のライフスタイルの変化」という記事を書いていたのを思い出し、唐突に続編を書いてみる次第。3年前の記事では下記のようなことを書き残していました。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2010-12-29T13:00:00.000Z">
+              <span class="calendar-icon">📅</span><span>2010年12月29日</span>
+            </time>
+          </div>
+          <h2 class="header__title">続・最近の自分のライフスタイル</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p>3年近く前に「<a href="/blog//2008/02/post_174/">最近の自分のライフスタイルの変化</a>」という記事を書いていたのを思い出し、唐突に続編を書いてみる次第。3年前の記事では下記のようなことを書き残していました。</p>
+<a id="more"></a>
+<blockquote>
+<p>物理的な制限が少なくなって、選択肢が増えたことで、自分向けににチューニングされた快適生活が安定してできるようになったというのもあるのかなと思う次第です。</p>
+</blockquote>
+<p>そして3年近くが経ち、その間に結婚し、父が他界し、子供が産まれました。アトムからビットへという流れの中、物理的な制限はますます小さくなってる感はありますが、個人的な事情による時間的、金銭的な制約は大きくなり自由度は狭まったかもしれません。まあそれは（自らが望んだ道という意味で）別に苦痛というわけではなく、そうした制約を前提に生活を再チューニングする必要があったというだけで、均衡した安定は崩れ、新たな均衡に向かったというだけの話なのです（ただお金はいつでも欲しいと思っているけど、昔から）。</p>
+<h1 id="iTunesとLast-fm、Youtube"><a href="#iTunesとLast-fm、Youtube" class="headerlink" title="iTunesとLast.fm、Youtube"></a>iTunesとLast.fm、Youtube</h1><p>iTunesに音楽を貯めて聴くというスタイルは変わっていません。ただ、金銭的な制約と関心の減衰というのがあって、新しいCDはほとんど買わなくなりました。今持っているCDである程度満足しているのも大きいのかもしれません。</p>
+<p>あと、最近は<a href="http://www.lastfm.jp/user/yamaguchi" target="_blank" rel="noopener">Last.fm</a>を有料登録してLast.fmのカスタマイズされたラジオを聴いたりしています。前は同じ曲が繰り返し流れるなあとか感じていたのですが、今はかなり快適。Last.fmから気になった音楽をyoutubeで検索して動画も楽しみつつ、最終的にCDをダウンロードで購入するということもありました。1回だけですけど。でも、関心が減衰している中で購買につながっているという点で、なんか新しいライフスタイルの流れを感じなくもないです。</p>
+<h1 id="路線情報について"><a href="#路線情報について" class="headerlink" title="路線情報について"></a>路線情報について</h1><p>なんか今さら感がありますが、この3年の間にiPhoneに携帯が変わってるので、携帯でも路線情報が調べられるようになってますます便利に。</p>
+<p>一方で、この時間の中央線は通勤快速の前の電車が空いているとか、新宿から始発が出るとか、遅延する可能性もあるから早めに出るとか、普段の通勤についてはそうしたデジタル化されていない経験則も大事だよねとか最近思います。サービスの便利さに依存しすぎると、そのサービスが予知できない事態に予防処置をしなかったり、そのサービスの範囲外の情報を活用できなくなる。</p>
+<h1 id="本はカフェで読む"><a href="#本はカフェで読む" class="headerlink" title="本はカフェで読む"></a>本はカフェで読む</h1><p>最近になって、1杯340円とか高いなとか感じつつありますけど、読書はカフェでというのは今も変わらず。最近は全席禁煙というところも増えていて、ますます快適。</p>
+<p>読んでる本の種類は基本的に歴史系、ビジネス系、哲学系、科学系ノンフィクションの新刊が中心ですが、やはり金銭的な点から最近は学術文庫とかいいなと思い始めています。</p>
+<h1 id="映画"><a href="#映画" class="headerlink" title="映画"></a>映画</h1><p>最近はほとんど見てません。もともと映画は一人で好きなものをというスタイルだったので、一人でいる時間が少なくなったというのが大きなところかもしれません。あとやはり金銭的にぜいたくな娯楽になりつつある。</p>
+<h1 id="英語の勉強"><a href="#英語の勉強" class="headerlink" title="英語の勉強"></a>英語の勉強</h1><p>iPodからiPhoneに変わっていますが、やっていることは基本的に変わってません。以前よりPodcastとか無料のコンテンツが中心になっている感はあります。あとiTunes Uとかも英語の聞き流しとして聴いたりしています。</p>
+<p>TOEICは最高865までのびてはいます。でも、やっぱり語学は点数だけで測れない部分が大きくて、一番大事なのは勇気とか、海外大好きとか人と話したいとか欲望に近い何かなんじゃないのかなあとか思う今日この頃。</p>
+<p>そういえば<a href="http://www.berlitz.co.jp/" target="_blank" rel="noopener">ベルリッツ</a>に通っていた時期もありました。今思えばぜいたくな買い物だったなと思わなくもありませんが、通って得られた経験もあるので無駄ではなかった。</p>
+<h1 id="インターネットはRSSとTwitterをいったりきたり"><a href="#インターネットはRSSとTwitterをいったりきたり" class="headerlink" title="インターネットはRSSとTwitterをいったりきたり"></a>インターネットはRSSとTwitterをいったりきたり</h1><p>RSSを定期的に購読しているのは今も変わらず。購読しているサイトにはsoftware testing関連のブログとか海外のブログが増えていますが。一時期Twitterばかりを見ている時期がありましたが、最近はRSSの方によりを戻しています。facebookが中心だった時期もありましたが、今はたまに見る程度。そのあたり、どれが良くてどれがダメというわけではなくて、関心のゆらぎが利用するサービス利用のゆらぎにつながっているという感じで。</p>
+<p>もともと友人知人が多いわけでもないし四六時中コミュニケーションしたいわけでもないので、SNS的な側面にそこまで関心が持続しないというのもあるかもしれません。LinkedInのSoftware Testingのグループを購読したり、watir関連のメーリングリストを購読したりとかしていると、技術的な情報を享受するという意味でネットワークの重要性が減じているわけではありませんが。</p>
+<h1 id="部屋にテレビが増えた"><a href="#部屋にテレビが増えた" class="headerlink" title="部屋にテレビが増えた"></a>部屋にテレビが増えた</h1><p>とはいえ、一人でいるときはあまり見てない。でも家族で何かを一緒に見るときにはやっぱりテレビって便利だなあと改めて思う次第で、ああ、テレビってみんなで一緒になってわいわい見るものなんだと思う次第であります。テレビが娯楽としてなくならない理由をかいま見た感がなきにしもあらず。</p>
+<p>ゲームはほとんどしなくなりましたが、たまに猛烈にしたくなる時期があります。</p>
+<h1 id="洋服はほとんどunited-arrowsかbeams"><a href="#洋服はほとんどunited-arrowsかbeams" class="headerlink" title="洋服はほとんどunited arrowsかbeams"></a>洋服はほとんどunited arrowsかbeams</h1><p>たまにユニクロが入るようになりました。</p>
+<h1 id="家電（イエデン）が不要になった"><a href="#家電（イエデン）が不要になった" class="headerlink" title="家電（イエデン）が不要になった"></a>家電（イエデン）が不要になった</h1><p>家電どころか通話機能不要なんじゃないかと思うくらい携帯でも通話していない。役所やお店に問い合わせるときに必要は必要なんですけど。</p>
+<p>とりあえず家電は一生用意しないんじゃないだろうか。しかし子供が小学生になったときに連絡網とかどうするんだろう。</p>
+<h1 id="カードを使うことが多くなった"><a href="#カードを使うことが多くなった" class="headerlink" title="カードを使うことが多くなった"></a>カードを使うことが多くなった</h1><p>このへんはあまり変化なし。このあいだ磁気定期券を使用している人をみかけていまだに使っている人いるんだってびっくりしたくらい。あとB-CASカードはやめてほしい。</p>
+<h1 id="マンガの単行本はあまり買わなくなった"><a href="#マンガの単行本はあまり買わなくなった" class="headerlink" title="マンガの単行本はあまり買わなくなった"></a>マンガの単行本はあまり買わなくなった</h1><p>このへんもあまり変化なし。コンビニの廉価版とかは懐かしさもあってたまに買ってたんですけど、最近は倹約しているのでそれも控えている。ジャンプとサンデーはいまだに買ってる。そろそろ卒業したい（が、ワンピースは読みたい）。</p>
+<h1 id="ブログを書き続けている"><a href="#ブログを書き続けている" class="headerlink" title="ブログを書き続けている"></a>ブログを書き続けている</h1><p>頻度は圧倒的に少なくなっていますが、いまでもこうして書いている。一時期やっていたmixiは活動休止してしまったけど。ブログのこの持続性は何なのだろう。以前に「<a href="/blog//2006/04/post_130/">ブログとは何か</a>」という記事で、ブログとは「自分をまとめるためのツール」だと書いているのですが、その意味で頻度の過多はありつつも死ぬまで続いていくのかもしれない。SNSが隣人とともにあるのなら、ブログは人生とともに存在している。隣人の入れ替わりでSNSはやめてしまうかもしれないけど、ブログはその意味では不滅である（でも人生と同じで色んな事情でリセットしたくなるかもしれませんが）。</p>
+<p>ふと、自分が死んだときこのブログはどうなるのだろうと思ったりしましたが、そのときはただ自然に朽ち果てていければいいなあと思うのです。サーバーのレンタル期限とか利用サービスが終了になったら自然にnot foundになるみたいな。ライフスタイルも、それを覆う自分の人生も、すべからく諸行無常であって、永遠に残らなくていい。あるがままにあればよしで、あとはよしなにといった具合で。</p>
+<p>（死ぬ予定はありません。念のため）</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

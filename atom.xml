@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>メモログ</title>
+  
+  <subtitle>💡 Personal notes about somthing I&#39;m interested in</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://memolog.org/"/>
+  <updated>2019-01-04T04:17:01.422Z</updated>
+  <id>https://memolog.org/</id>
+  
+  <author>
+    <name>Yutaka Yamaguchi</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Genarate Anki Cards Tool</title>
+    <link href="https://memolog.org/2019/generate-anki-cards-tool.html"/>
+    <id>https://memolog.org/2019/generate-anki-cards-tool.html</id>
+    <published>2019-01-04T02:47:48.000Z</published>
+    <updated>2019-01-04T04:17:01.422Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近&lt;a href=&quot;https://apps.ankiweb.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Anki&lt;/a&gt;を使って単語の記憶をしようという試みをしている。もともとは&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Merge Sort in JavaScript</title>
+    <link href="https://memolog.org/2018/merge-sort-in-javascript.html"/>
+    <id>https://memolog.org/2018/merge-sort-in-javascript.html</id>
+    <published>2018-08-19T08:43:28.000Z</published>
+    <updated>2019-01-04T02:09:12.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/insertion-sort-in-javascript.html&quot;&gt;Insertion Sort in JavaScript&lt;/a&gt;からの引き続き。内容は&lt;a href=&quot;https://en.wikipedia.org/wiki/Merge_sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Merge sort&lt;/a&gt;からの抜粋なので、詳細はそちらを参照。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>A11y fixes for prism default theme</title>
+    <link href="https://memolog.org/2018/a11y-fixes-for-prism-default-theme.html"/>
+    <id>https://memolog.org/2018/a11y-fixes-for-prism-default-theme.html</id>
+    <published>2018-08-17T15:18:27.000Z</published>
+    <updated>2019-01-04T02:09:12.873Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lighthouse&lt;/a&gt; reported &lt;a href=&quot;https://paulirish.github.io/lighthouse/docs/api/lighthouse/2.5.1/lighthouse-core_audits_accessibility_color-contrast.js.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;color contrast issues&lt;/a&gt; in the code block colored by &lt;a href=&quot;https://prismjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;prism.js&lt;/a&gt;. Actually I don’t care about these issues because people doesn’t read code blocks carefully. However, I just did the quick fixes for them by changing the color to see the contrast ratio in Chrome developer console.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Add JSON-LD structured data</title>
+    <link href="https://memolog.org/2018/add-json-ld-structured-data.html"/>
+    <id>https://memolog.org/2018/add-json-ld-structured-data.html</id>
+    <published>2018-08-14T09:04:54.000Z</published>
+    <updated>2019-01-04T02:09:12.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;構造化データ（structured data）の部分をmicrodataからJSON-LDに置き換えてみた。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Create a new icon</title>
+    <link href="https://memolog.org/2018/create-a-new-icon.html"/>
+    <id>https://memolog.org/2018/create-a-new-icon.html</id>
+    <published>2018-08-11T22:28:32.000Z</published>
+    <updated>2019-01-04T02:09:12.875Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;アイコンをsvgで作り直してページの一番上につけた。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Insertion Sort in JavaScript</title>
+    <link href="https://memolog.org/2018/insertion-sort-in-javascript.html"/>
+    <id>https://memolog.org/2018/insertion-sort-in-javascript.html</id>
+    <published>2018-08-06T20:47:14.000Z</published>
+    <updated>2019-01-04T02:09:12.876Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/selection-sort-in-javascript.html&quot;&gt;Selection Sort in JavaScript&lt;/a&gt;の記事から引き続き。内容は&lt;a href=&quot;https://en.wikipedia.org/wiki/Insertion_sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;挿入ソート&lt;/a&gt;からの抜粋なので詳細はそちらを参照。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Selection Sort in JavaScript</title>
+    <link href="https://memolog.org/2018/selection-sort-in-javascript.html"/>
+    <id>https://memolog.org/2018/selection-sort-in-javascript.html</id>
+    <published>2018-08-04T20:57:21.000Z</published>
+    <updated>2019-01-04T02:09:12.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/bubble-sort-in-javascript.html&quot;&gt;Bubble Sort in JavaScript&lt;/a&gt;の記事から引き続き。内容はほぼ&lt;a href=&quot;https://en.wikipedia.org/wiki/Selection_sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;選択ソート&lt;/a&gt;から抜粋してるだけなので、詳しくはそちらを参照。JavaScript上で自前のソートを実装する意味はあまりないのだが、試しに選択ソートを実装してみた。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Bubble Sort in JavaScript</title>
+    <link href="https://memolog.org/2018/bubble-sort-in-javascript.html"/>
+    <id>https://memolog.org/2018/bubble-sort-in-javascript.html</id>
+    <published>2018-08-03T22:00:11.000Z</published>
+    <updated>2019-01-04T02:09:12.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/about-array-prototype-sort.html&quot;&gt;Array.prototype.sort について&lt;/a&gt;と&lt;a href=&quot;https://memolog.org/2018/about-typedarray-prototype-sort.html&quot;&gt;TypedArray.prototype.sort について&lt;/a&gt;で書いたようにビルトインされているsortメソッドが効率的なソートを実行できるように実装されているので、JavaScript上で自前のソートを実装する意味はあまりないのだけど、試しにバブルソートをJavaScript上で作ってみた。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TypedArray.prototype.sort について</title>
+    <link href="https://memolog.org/2018/about-typedarray-prototype-sort.html"/>
+    <id>https://memolog.org/2018/about-typedarray-prototype-sort.html</id>
+    <published>2018-07-31T20:23:27.000Z</published>
+    <updated>2019-01-04T02:09:12.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前回の「&lt;a href=&quot;https://memolog.org/2018/about-array-prototype-sort.html&quot;&gt;Array.prototype.sort について&lt;/a&gt;」に引き続き、今度は&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TypedArray&lt;/a&gt;の&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;sort&lt;/a&gt;について。実装は別だけど対応は基本的に同じなので簡単に。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Array.prototype.sort について</title>
+    <link href="https://memolog.org/2018/about-array-prototype-sort.html"/>
+    <id>https://memolog.org/2018/about-array-prototype-sort.html</id>
+    <published>2018-07-29T20:49:48.000Z</published>
+    <updated>2019-01-04T02:09:12.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScriptの配列には&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;sort&lt;/a&gt;メソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。&lt;a href=&quot;http://kakts-tec.hatenablog.com/entry/2016/12/18/153845&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;v8における配列ソートについて&lt;/a&gt;の記事が大変参考になりました。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScriptでビットベクタルを使う</title>
+    <link href="https://memolog.org/2018/bit-vector-in-javascript.html"/>
+    <id>https://memolog.org/2018/bit-vector-in-javascript.html</id>
+    <published>2018-07-28T01:49:22.000Z</published>
+    <updated>2019-01-04T02:09:12.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくは&lt;a href=&quot;https://en.wikipedia.org/wiki/Bit_array&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bit array&lt;/a&gt;を参照。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>npm run script に引数を渡す</title>
+    <link href="https://memolog.org/2018/pass-arguments-to-npm-run-script.html"/>
+    <id>https://memolog.org/2018/pass-arguments-to-npm-run-script.html</id>
+    <published>2018-07-26T20:31:39.000Z</published>
+    <updated>2019-01-04T02:09:12.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;この記事の上にあるFeatured Imageを生成するときに毎回&lt;code&gt;primitive_bulk&lt;/code&gt;のコマンドを入力していたのだけど、&lt;br&gt;しかしさすがに面倒になってきたので、&lt;code&gt;npm run script&lt;/code&gt; にショートカットを用意してショートカットに引数を渡すようにしてみた。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScriptでハッシュテーブルを作る</title>
+    <link href="https://memolog.org/2018/create-hash-table-in-javascript.html"/>
+    <id>https://memolog.org/2018/create-hash-table-in-javascript.html</id>
+    <published>2018-07-25T21:31:02.000Z</published>
+    <updated>2019-01-04T02:09:12.875Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/javascript-property-access-big-o.html&quot;&gt;JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー&lt;/a&gt;で書いたようにJavaScriptのオブジェクトは基本ハッシュテーブルであるし、&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Map&lt;/a&gt;オブジェクトも中の実装はChromeではハッシュテーブルであると書かれてある(&lt;a href=&quot;https://v8project.blogspot.com/2018/01/hash-code.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Optimizing hash tables: hiding the hash code&lt;/a&gt;)。だからJavaScriptで自前のハッシュテーブルを作るというのは必要のないことなのだけど試しに作ってみたかった。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー</title>
+    <link href="https://memolog.org/2018/javascript-property-access-big-o.html"/>
+    <id>https://memolog.org/2018/javascript-property-access-big-o.html</id>
+    <published>2018-07-23T11:51:00.000Z</published>
+    <updated>2019-01-04T02:09:12.876Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては &lt;code&gt;O(n)&lt;/code&gt; になるだろう。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PWAのチェックリストを満たす</title>
+    <link href="https://memolog.org/2018/complete-all-the-pwa-checklist.html"/>
+    <id>https://memolog.org/2018/complete-all-the-pwa-checklist.html</id>
+    <published>2018-07-14T02:32:41.000Z</published>
+    <updated>2019-01-04T02:09:12.875Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;たいして更新もしない個人のブログで Service Worker とか入れる必要まったくないと思いながらも、&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/?hl=ja&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lighthouse&lt;/a&gt; の結果を見るたびに「PWAのチェックリストだけ100点に至らない」というなんとも言えないモヤモヤ感があった。別にそんなに大変でもないんだから入れてしまえ、ということでPWAのチェックリストを満たすべく、Service Worker と App manifest に対応しました。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TypeScriptとWebpackを使ってDynamic Importを行う</title>
+    <link href="https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html"/>
+    <id>https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html</id>
+    <published>2018-07-07T22:40:57.000Z</published>
+    <updated>2019-01-04T02:09:12.875Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Webpackではバンドルするファイルを3つのアプローチで分けることができる。エントリーポイントを複数設けたり、webpack.config.jsにsplitChunksの設定を入れたりなどの他に、Dyanmic importを使うことでもファイルを分けることができる。詳しくは&lt;a href=&quot;https://webpack.js.org/guides/code-splitting/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Code Splitting&lt;/a&gt;を参照。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>カスタムドメインを設定する</title>
+    <link href="https://memolog.org/2018/custom-domain-in-github-pages.html"/>
+    <id>https://memolog.org/2018/custom-domain-in-github-pages.html</id>
+    <published>2018-07-07T20:58:41.000Z</published>
+    <updated>2019-01-04T02:09:12.875Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;このサイトは&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;を使ってGithub Pagesに公開しているのだけど、最近&lt;a href=&quot;https://blog.github.com/2018-05-01-github-pages-custom-domains-https/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github PagesカスタムドメインでもHTTPSをサポートしてくれるようになった&lt;/a&gt;ので、&lt;a href=&quot;../../2018/redirect-to-my-old-blog/&quot;&gt;適当にリダイレクトかけていた&lt;/a&gt;元の memolog.org のドメインを設定することにした。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「マインド・コントロール」と「影響力の正体」を読んだ</title>
+    <link href="https://memolog.org/2018/book-mind-control.html"/>
+    <id>https://memolog.org/2018/book-mind-control.html</id>
+    <published>2018-03-07T23:09:09.000Z</published>
+    <updated>2019-01-04T02:09:12.874Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://books.bunshun.jp/ud/book/num/9784166610747&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;マインド・コントロール&lt;/a&gt;と&lt;a href=&quot;http://www.sbcr.jp/products/4797374025.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;影響力の正体&lt;/a&gt;という本を読んだ。マインドコントロールとは、&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%A4%E3%83%B3%E3%83%89%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Wikipedia&lt;/a&gt;には「他人の思想や情報をコントロールし、個人が意思決定する際に、特定の結論へと誘導する技術を指す概念」と書いてある。「マインド・コントロール」の方は題名そのまんまマインドコントロールに扱った本であるけど、「影響力の正体」の方も「相手をYESという結論に導く技術」という意味でマインドコントロールを扱った本と言える。どちらの本も内容も人間の根本的な性質を利用したものでかなりやっかいな技術だなと思った。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JSONデータを読み込んで差し替える</title>
+    <link href="https://memolog.org/2018/retrieve-json-from-require-method.html"/>
+    <id>https://memolog.org/2018/retrieve-json-from-require-method.html</id>
+    <published>2018-02-04T07:35:42.000Z</published>
+    <updated>2019-01-04T02:09:12.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Node.jsの中であれば単に&lt;code&gt;const config = require(&amp;#39;config.json&amp;#39;)&lt;/code&gt;すれば良いのだけれど、フロントエンド側のJavaScriptではそうはいかない。XMLHttpRequestとか&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Fetch_API&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fetch API&lt;/a&gt;を使うか、requireで書いたものをwebpackでbundleするとかしないといけない。他にもいろいろ方法はあると思うけど、まあとにかく一手間が必要。&lt;/p&gt;
+&lt;p&gt;その読み出すJSONデータを環境ごとに変更したい場合はなおさら面倒で、Node.jsであればprocess.env.NODE_ENVなんかを使えばいいけど、フロントエンド側ではwebpackでバンドルするときの設定を変更するとか、uglifyで&lt;code&gt;DEBUG&lt;/code&gt;みたいなglobal変数を入れておいて書き出すとかしつつ、異なるJSONデータをfetchするように実装しないといけない。いろいろ方法はあるから難しい問題ではないけど、面倒ではある。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>縦書きで表示する</title>
+    <link href="https://memolog.org/2018/show-vertical-writing-with-css.html"/>
+    <id>https://memolog.org/2018/show-vertical-writing-with-css.html</id>
+    <published>2018-02-03T03:05:36.000Z</published>
+    <updated>2019-01-04T02:09:12.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;div class=&quot;writing-vertical&quot;&gt;&lt;p&gt;最近になって&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;writing-mode&lt;/a&gt;を使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

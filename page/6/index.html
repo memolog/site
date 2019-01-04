@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2013/11/grunt-plistbuddy.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2013/11/jquery_1101ie11.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2013/11/brew_update_error.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2013/10/ie8_dontenum_bug.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2013/10/date_parse_and_timzone.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2013/09/ios7safariremote_debugging.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2013/09/css_vertical_alignment.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2013/09/try_typesquare.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2013/09/test_content_security_policy_with_grunt-contrib-connect.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2013/09/basketjs_with_content_security_policy.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-11-28T18:30:00.000Z"><span class="calendar-icon">📅</span><span>2013年11月29日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/11/grunt-plistbuddy.html">gruntでXcodeプロジェクトのVersion/Buildを変更する</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.flickr.com/photos/91221720@N00/11110211616" title="Xcode_General_setting by Yutaka Yamaguchi, on Flickr" target="_blank" rel="noopener"><img src="http://farm4.staticflickr.com/3709/11110211616_9223de9a3f.jpg" alt="Xcode_General_setting"></a>  </p></div>
+            <div><a href="/2013/11/grunt-plistbuddy.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-11-20T11:00:00.000Z"><span class="calendar-icon">📅</span><span>2013年11月20日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/11/jquery_1101ie11.html">jQuery 1.10.1とIE11の組み合わせでエラーが発生する場合がある</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>モーダルなどjQueryでiframeを開いた場合に、jQuery 1.10.1とIE11の組み合わせだとエラーが発生する。ので、モーダル使っているなら、1.10.2にアップデートしないといけない。これはバンドルされてるSizzleに下記のような処理があるため。</div>
+            <div><a href="/2013/11/jquery_1101ie11.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-11-20T02:00:00.000Z"><span class="calendar-icon">📅</span><span>2013年11月20日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/11/brew_update_error.html">brew update でエラー</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>brew updateしたら下記のようなエラーになった。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">error: Your local changes to the following files would be overwritten by merge:
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token function">more</span> --<span class="token operator">></span>
+  Library/Contributions/brew_bash_completion.sh
+  Library/Contributions/brew_fish_completion.fish
+  Library/Contributions/manpages/brew.1.md
+  Library/ENV/4.3/cc
+  Library/Formula/ace.rb
+  Library/Formula/afflib.rb
+  Library/Formula/android-sdk.rb
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>調べてみたら<a href="http://spring-mt.tumblr.com/post/18484480866/homebrew-brew-update" target="_blank" rel="noopener">homebrewのbrew updateでこけた件 - CubicLouve</a>と同じことで、homebrewで内部的に使用しているgitに変更がはいっていて、エラーになっている。特に変更した記憶はないけど。<a href="https://github.com/mxcl/homebrew/issues/5128#issuecomment-9020785" target="_blank" rel="noopener">snez commented</a>の内容に従うのがよさそう。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local
+<span class="token function">git</span> reset <span class="token function">head</span> --hard
+<span class="token function">git</span> clean -f
+brew update
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>わたしは何となくstashでしましたけど。homebrew関連ファイルの場所は brew –prefix で分かります。</p>
+<p>cd `brew –prefix`<br>sudo git stash –include-untracked<br>sudo brew update<br>sudo git stash clear</p>
+<p>というメモ。</p>
+</div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-10-07T04:40:00.000Z"><span class="calendar-icon">📅</span><span>2013年10月7日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/10/ie8_dontenum_bug.html">IE8のDontEnum bug</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="https://developer.mozilla.org/en-US/docs/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug" target="_blank" rel="noopener">ECMAScript DontEnum attribute | MDN</a>とか、<a href="https://github.com/jashkenas/underscore/issues/60" target="_blank" rel="noopener">_.extend should work-around JScript’s DontEnum bug ? Issue #60 ? jashkenas/underscore</a>とか、<a href="http://stackoverflow.com/questions/3705383/ie8-bug-in-for-in-javascript-statement" target="_blank" rel="noopener">internet explorer - IE8 bug in for-in JavaScript statement? - Stack Overflow</a>あたり参照。well known JScript bug らしい。</p></div>
+            <div><a href="/2013/10/ie8_dontenum_bug.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-10-06T00:50:00.000Z"><span class="calendar-icon">📅</span><span>2013年10月6日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/10/date_parse_and_timzone.html">Date.parseとタイムゾーン</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Date.parse(‘1999-07-07’)を実行すると、値は931305600000とUTCのタイムゾーンで解釈されるのに対して、Date.parse(‘1999/07/07’)を実行すると、値は931273200000とJSTのタイムゾーンで解釈される。あ、ローカルの時間がJSTの場合。現時点（Firefox 24、Chrome 31）</p></div>
+            <div><a href="/2013/10/date_parse_and_timzone.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-09-25T06:30:00.000Z"><span class="calendar-icon">📅</span><span>2013年9月25日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/09/ios7safariremote_debugging.html">iOS7のSafariでremote debuggingできない</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>iOS7のSafariでremote debuggingをしようとすると、inspect内容が途中で戻ってこなかったり、styleの情報が取得できなかったりする。</p>
+<p><a href="http://www.mobilexweb.com/blog/safari-ios7-html5-problems-apis-review" target="_blank" rel="noopener">Safari on iOS 7 and HTML5: problems, changes and new APIs | Breaking the Mobile Web</a>によると、Safariが6.1じゃないとダメらしい。でも、6.1は<a href="https://developer.apple.com/downloads/index.action?name=Safari&#x25;206.1" target="_blank" rel="noopener">プレビュー版</a>でしか使えない（現在の最新は6.0.5）。</p></div>
+            <div><a href="/2013/09/ios7safariremote_debugging.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-09-14T17:55:00.000Z"><span class="calendar-icon">📅</span><span>2013年9月15日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/09/css_vertical_alignment.html">CSSで横並びで真ん中にそろえたい</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>横並びにした要素を真ん中揃えにしたいという話。アプローチはいろいろあります。floatは真ん中揃えはむずかしそうなので、除外…（できるのかな）</p>
+<ul>
+<li>line-heightでそろえる</li>
+<li>display:inline-boxでそろえる</li>
+</ul></div>
+            <div><a href="/2013/09/css_vertical_alignment.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-09-10T13:55:00.000Z"><span class="calendar-icon">📅</span><span>2013年9月10日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/09/try_typesquare.html">TypeSquareを試してみる</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://typesquare.com/" target="_blank" rel="noopener">TypeSquare</a>で0円キャンペーンをやっていて、登録だけでフォントを試すことができるので、試してみています。現在、本文には「UD新ゴ」があたっています（すぐ変えるかもしれませんけど）。なかなかいい感じ。他にも良い感じのフォントがたくさんあって悩みます。</p></div>
+            <div><a href="/2013/09/try_typesquare.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-09-09T12:00:00.000Z"><span class="calendar-icon">📅</span><span>2013年9月9日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/09/test_content_security_policy_with_grunt-contrib-connect.html">grunt で Content Security Policy をテストする</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Content Security Policy (CSP)をgrunt-contrib-connectで設定するのにはどうしたら良いかという話。</p>
+<p>やり方としては、<a href="/blog//2013/07/grunt-contrib-connect_with_cors/">grunt-contrib-connect タスクで CORS を有効にする - メモログ</a>と同様、middlewareのオプションに追加する。</p></div>
+            <div><a href="/2013/09/test_content_security_policy_with_grunt-contrib-connect.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-09-08T12:00:00.000Z"><span class="calendar-icon">📅</span><span>2013年9月8日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/09/basketjs_with_content_security_policy.html">basket.js と Content Security Policy</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="/blog//2013/09/github_content_security_policy/">Github の Content Security Policy - メモログ</a>の続きのような感じで。</p>
+<p><a href="http://addyosmani.github.io/basket.js/" target="_blank" rel="noopener">basket.js - a simple script loader that caches scripts with localStorag</a>というライブラリでは、requireで指定したURLのライブラリをlocalStorageに保存して再利用することができます。対象はスクリプトファイルだけですが、AppCacheと比べて1ファイル単位でキャッシュのexpireを設定できるので柔軟に扱える。</p></div>
+            <div><a href="/2013/09/basketjs_with_content_security_policy.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/5/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/7/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

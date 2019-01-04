@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Featured Image を設置する | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、Unsplashから良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。 でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Featured Image を設置する">
+<meta property="og:url" content="https://memolog.org/2018/display-featured-image.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、Unsplashから良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。 でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/igor-ovsyannykov-258206/igor-ovsyannykov-258206.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.875Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Featured Image を設置する">
+<meta name="twitter:description" content="記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、Unsplashから良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。 でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に">
+<meta name="twitter:image" content="https://memolog.org/assets/images/igor-ovsyannykov-258206/igor-ovsyannykov-258206.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2018/display-featured-image.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2018/display-featured-image.html"
+      },
+      "headline": "Featured Image を設置する",
+      
+        "image": [
+          "https://memolog.org/assets/images/igor-ovsyannykov-258206/igor-ovsyannykov-258206.jpg"
+        ],
+      
+      "datePublished": "Mon Jan 08 2018 11:07:38 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、Unsplashから良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。
+でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に適したサイズにしておきたい… と、なんかいろいろ思ってしまい、最終的にUnsplashのサイトからダウンロードしたデータを個人的に使いたい大きさにリサイズするサービスを用意してみた。convert-a-image-to-responsive-imagesに公開している（ES2015をターゲットにしているので、IE11では動かない）。ただの思いつきに思ったより時間をかけてしまった。最初はAWS Lambdaで画像をリサイズするつもりだったが、リサイズに使っているSharpの扱いが少し難しく、メモリ容量のところでエラーになってしまった（これを解決する方法はありそうなのだが、やってる時間がなくなったので、しばし保留）。いずれにせよ最終的にはWEBサービスとして公開したいなと思っている。週末に時間があれば。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2018-01-08T02:07:38.000Z">
+              <span class="calendar-icon">📅</span><span>2018年1月8日</span>
+            </time>
+          </div>
+          <h2 class="header__title">Featured Image を設置する</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4NWMzZmMiIC8+PC9zdmc+" data-src="/assets/images/igor-ovsyannykov-258206/igor-ovsyannykov-258206.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/7oTkp6P8PhM?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Igor Ovsyannykov</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、<a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>から良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。</p>
+<p>でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に適したサイズにしておきたい… と、なんかいろいろ思ってしまい、最終的にUnsplashのサイトからダウンロードしたデータを個人的に使いたい大きさにリサイズするサービスを用意してみた。<a href="https://github.com/memolog/convert-a-image-to-responsive-images" target="_blank" rel="noopener">convert-a-image-to-responsive-images</a>に公開している（ES2015をターゲットにしているので、IE11では動かない）。ただの思いつきに思ったより時間をかけてしまった。最初はAWS Lambdaで画像をリサイズするつもりだったが、リサイズに使っている<a href="https://github.com/lovell/sharp" target="_blank" rel="noopener">Sharp</a>の扱いが少し難しく、メモリ容量のところでエラーになってしまった（これを解決する方法はありそうなのだが、やってる時間がなくなったので、しばし保留）。いずれにせよ最終的にはWEBサービスとして公開したいなと思っている。週末に時間があれば。<a id="more"></a></p>
+<p>サーバーの実装は簡単で、<a href="https://github.com/mscdex/busboy" target="_blank" rel="noopener">busboy</a>でファイルを受け取ったあとに、指定したサイズでsharpを実行するだけである。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">resizeImage</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> size<span class="token punctuation">,</span> name<span class="token punctuation">,</span> ext<span class="token punctuation">,</span> scale<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>fulfill<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    scale <span class="token operator">=</span> scale <span class="token operator">||</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    ext <span class="token operator">=</span> ext<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/^\./</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> scaleStr <span class="token operator">=</span> scale <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">''</span> <span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`@</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>scale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">x`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> relativePath <span class="token operator">=</span> <span class="token template-string"><span class="token string">`images/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>size<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>scaleStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ext<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+    <span class="token keyword">const</span> filePath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token template-string"><span class="token string">`../static/public/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>relativePath<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">sharp</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>size <span class="token operator">*</span> scale<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">toFile</span><span class="token punctuation">(</span>filePath<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">fulfill</span><span class="token punctuation">(</span>relativePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>フロント側も簡単で、基本的にはFetch APIを使ってリクエストを送っているだけである。レンダリングには<a href="https://preactjs.com/" target="_blank" rel="noopener">preact</a>を使ってみた。preact/TypeScript/SCSSなどをWebpackでバンドルするのが一番面倒くさいは面倒くさい（最初だけだけど）。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">submitHandler</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        event<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> fileElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'upload-image'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>fileElement <span class="token keyword">instanceof</span> <span class="token class-name">HTMLInputElement</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> uploadFile <span class="token operator">=</span> fileElement<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> formData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    formData<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'image'</span><span class="token punctuation">,</span> uploadFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/convert'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      method<span class="token punctuation">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> formData
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> resp<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        images<span class="token punctuation">:</span> data <span class="token operator">&amp;&amp;</span> data<span class="token punctuation">.</span>filePaths <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Hexoのテンプレートの方は、<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">Front-matter | Hexo</a>の部分にイメージ画像に関する情報を入れて、それをテンプレートに追加する。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Featured Image を設置する
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-01-08 11:07:38</span>
+<span class="token key atrule">featured</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> benjamin<span class="token punctuation">-</span>voros<span class="token punctuation">-</span><span class="token number">365387</span>
+  <span class="token key atrule">author</span><span class="token punctuation">:</span> Benjamin Voros
+  <span class="token key atrule">authorLink</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//unsplash.com/photos/StFUwkNsvcY<span class="token punctuation">?</span>utm_source=unsplash<span class="token important">&amp;utm_medium</span>=referral<span class="token important">&amp;utm_content</span>=creditCopyText
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header__feature<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>featured__image<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">data-srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_450.jpg, /blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_450@2x.jpg 2x, /blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_450@3x.jpg 3x<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/jpeg<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(max-width: 450px)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">data-srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_750.webp, /blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_750@2x.webp 2x<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/webp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">data-srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_750.jpeg, /blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_750@2x.jpeg 2x<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/jpeg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>data:image/png;base64,iVBORw0KGgoAAAANS...VORK5CYII<span class="token punctuation">=</span><span class="token punctuation">"</span></span> <span class="token attr-name">data-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/blog/assets/images/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>/&lt;%<span class="token punctuation">=</span> featured.image %<span class="token punctuation">></span>_750.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lazyload blur-up<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>featured__credit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Photo by <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%<span class="token punctuation">=</span> featured.authorLink %<span class="token punctuation">></span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>noopener<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&lt;%= featured.author %><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> on <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unsplash.com/?utm_source<span class="token punctuation">=</span>unsplash&amp;utm_medium<span class="token punctuation">=</span>referral&amp;utm_content<span class="token punctuation">=</span>creditCopyText<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>noopener<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Unsplash<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.lazyload</span>,
+<span class="token class">.lazyloading</span> </span><span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.lazyloaded</span> </span><span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token property">transition</span><span class="token punctuation">:</span> opacity <span class="token number">2</span>s <span class="token number">.3</span>s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">.5</span>, <span class="token number">0</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最初のロードで画像は表示したくないので<a href="https://github.com/aFarkas/lazysizes" target="_blank" rel="noopener">lazysizes</a>で画像を遅延読み込みしている。</p>
+<p>あとCloudFormationで作成した画像を配信するためのスタックを用意しているけど、、書いてる時間がなくなったのでまた別の機会に書く。</p>
+<p>まだいろいろ課題はあって…</p>
+<ul>
+<li>アプリケーションとして公開したい（LambdaかAmazon ECS使いたい）</li>
+<li>S3 / CloudFront からのファイルをgzipで配信したい</li>
+<li>リサイズするサイズより小さい画像の扱いができない</li>
+<li>若干、手作業が多い（最終的にはUnsplashのAPIを使いたい）</li>
+<li>imageOptimみたいな最適化処理をしたい</li>
+</ul>
+<p>など、いろいろ。時間があって、まだ興味が持続していれば、、対応していきたい。</p>
+<hr>
+<p>それでこのブログの画像もS3とCloudfrontを使ってみていたが、お金も少しだけどかかるし<a href="https://help.github.com/articles/what-is-github-pages/" target="_blank" rel="noopener">What is GitHub Pages? - User Documentation</a>には1GBまでは利用可能なので、ブログの画像は普通にGithubに画像をおくことにした。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

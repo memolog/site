@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2010/02/hooked.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2010/02/ducks_in_winter.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2010/02/watir-webdriver.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2010/02/extended_phenotype.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2010/02/address_the_stale_post.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2010/02/alcedo_atthis.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2010/02/walking_around_koganei.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2010/02/make_404_page.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2010/02/css3_column-count.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2010/02/duck_in_the_snow.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-16T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/hooked.html">本：銀むつクライシス</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/415208913X?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=415208913X" target="_blank" rel="noopener"><img src="http://ec3.images-amazon.com/images/I/415u7TdZ3UL._SL180_.jpg" alt=""></a> かなり前に読んだ本。マゼランアイナメ（和名：銀むつ）を漁獲するとある密猟船をオーストリアの巡視船が追跡するという話を主筋に、なぜ銀むつが乱獲されるようになったのかなどの背景を説明していきます。環境問題（魚の乱獲）を扱った本ですが密漁船と巡視船の攻防に緊迫感があって、普通の読み物としても面白い内容となっています。とくに南極でのチェイスにはドキドキしました。密漁船が他国の領海に入ってしまった場合の捕縛の難しさや国によって船舶の許可の基準が違うことによる弊害（規制の緩い国が違法船の温床となる）など、漁業ならではの問題にも端々触れています。</p></div>
+            <div><a href="/2010/02/hooked.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-15T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月15日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/ducks_in_winter.html">カモづくし</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://farm3.static.flickr.com/2685/4355668565_ebb6d881cc_b.jpg" target="_blank" rel="noopener"><img src="http://farm3.static.flickr.com/2685/4355668565_ebb6d881cc.jpg" alt="井の頭公園/オナガガモ"></a></p></div>
+            <div><a href="/2010/02/ducks_in_winter.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-14T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月14日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/watir-webdriver.html">Watir 2.0 / Webdriverベースのwatir</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://rubyforge.org/pipermail/wtr-development/2009-October/001313.html" target="_blank" rel="noopener">[Wtr-development] Watir 2.0 / WebDriver</a></li>
+</ul></div>
+            <div><a href="/2010/02/watir-webdriver.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-11T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月11日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/extended_phenotype.html">本：延長された表現型</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4314004851?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4314004851" target="_blank" rel="noopener"><img src="http://ec3.images-amazon.com/images/I/51nbrX68CwL._SL180_.jpg" alt=""></a> 「利己的な遺伝子」の著者、リチャード・ドーキンスの本。「延長された表現型（extended phenotype）」というのは遺伝子による生物個体への発現（表現型）を生物個体によってもたらされる形成物（たとえばクモにクモの巣、ビーバーによるダム）にまで延長（拡張）した概念。本書では最終的に「寄生体による寄主」に対する表現型効果や、「母による子」への表現型効果（遠隔作用）にまで広げていきます。</p></div>
+            <div><a href="/2010/02/extended_phenotype.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-07T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月7日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/address_the_stale_post.html">旧くなったコンテンツをどうすべきか</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://orderedlist.com/our-writing/blog/articles/stop-blogging/" target="_blank" rel="noopener">Stop Blogging - Ordered List</a></li>
+</ul>
+<p>旧くなったコンテンツをどうすべきか、という上のリンクのサイトで話されている話。ブログに投稿した技術情報は時間が経てば時代遅れになるし、場合によっては後になってその情報が正しくないことが判明したりする。そういった情報をそのまま保管しておくのは情報が存在しないよりもタチが悪い。「記録のため」という名目だけで情報をそのままにしておくのはselfishだと。上のサイトでは旧くなった記事は削除し、代わりに随時更新する「resources」というページを用意したそうです。これで情報の鮮度を保つことができると。</p></div>
+            <div><a href="/2010/02/address_the_stale_post.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-06T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月6日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/alcedo_atthis.html">井の頭公園：カワセミ！</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://farm3.static.flickr.com/2723/4334055081_642e553e79_b.jpg" target="_blank" rel="noopener"><img src="http://farm3.static.flickr.com/2723/4334055081_642e553e79.jpg" alt="井の頭公園/カワセミ"></a></p></div>
+            <div><a href="/2010/02/alcedo_atthis.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-05T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月5日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/walking_around_koganei.html">小金井散歩：ツグミとハクセキレイ</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://farm5.static.flickr.com/4040/4321663583_595fa06a4a_b.jpg" target="_blank" rel="noopener"><img src="http://farm5.static.flickr.com/4040/4321663583_595fa06a4a.jpg" alt="ツグミ"></a></p></div>
+            <div><a href="/2010/02/walking_around_koganei.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-04T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月4日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/make_404_page.html">404ページを作成する</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>今さら感はありつつも気が向くままにMTのウェブページ機能を使って404ページを作成してみました。新規ウェブページ作成画面を開いて404.phpというページを作成。.htaccessに下記のように記述。</p>
+<pre><code>
+&lt;!-- more --&gt;
+ErrorDocument 404 /404.php
+</code></pre><p>コンテンツ部分以外は他のページと同じものが使われるので、あとはコンテンツの文言を考えるだけで完了。私は<a href="/404.php">こんな風な404ページ</a>にしてみました。404ページにだけスタイルを指定したい場合は、コンテンツ部分についている個別ページ用のid属性を使用しました。</p>
+<pre><code>#page-435 {margin:-40px 60px 30px;padding:20px 30px;border:10px solid #e6e6e6;}
+#page-435 #page-title { font-size:20px; font-family:serif; color:#333; font-weight:normal;}
+#page-435 form {margin:1em 0}
+#page-435 .asset-content {font-size:12px;line-height:1.8;}
+#page-435 .asset-content ul {margin-left:1.2em; list-style-type:circle;}
+</code></pre></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-03T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月3日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/css3_column-count.html">CSS：column-count で3列レイアウトを作成</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.smashingmagazine.com/2009/12/16/stronger-better-faster-design-with-css3/" target="_blank" rel="noopener">Stronger, Better, Faster Design with CSS3</a></li>
+</ul></div>
+            <div><a href="/2010/02/css3_column-count.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-02T06:17:00.000Z"><span class="calendar-icon">📅</span><span>2010年2月2日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/duck_in_the_snow.html">雪とカルガモ</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://farm3.static.flickr.com/2769/4324729027_aff39d208f_b.jpg" target="_blank" rel="noopener"><img src="http://farm3.static.flickr.com/2769/4324729027_aff39d208f.jpg" alt="小金井/野川/カルガモ"></a></p></div>
+            <div><a href="/2010/02/duck_in_the_snow.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/17/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/19/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

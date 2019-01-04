@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2007/08/yslow.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2007/08/checkbot.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2007/08/yslow_13_configure_etags.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2007/08/font_tester.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-18T07:29:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow.html">YSLOW 勉強 &#x3a; まとめ</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="/blog//2007/08/yslow_1_minimize_http_requests/">1 : HTTPのリクエストを最小限にしよう</a></li>
+<li><a href="/blog//2007/08/yslow_2_use_a_content_delivery/">2 : CDNを利用しよう</a></li>
+</ul></div>
+            <div><a href="/2007/08/yslow.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-18T01:07:29.000Z"><span class="calendar-icon">📅</span><span>2007年8月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/checkbot.html">Checkbot &#x3a; ウェブページのリンクを自動チェックしてくれるツール</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://degraaff.org/checkbot/" target="_blank" rel="noopener">Checkbot</a></li>
+</ul>
+<p>Checkbot はウェブページのリンクを自動でチェックしてくれるツールです。ウェブページ上のリンク切れとかを探すのときに役立ちます。</p></div>
+            <div><a href="/2007/08/checkbot.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-16T07:29:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_13_configure_etags.html">YSLOW 勉強 &#x3a; 13&#x3a; Configure ETags</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#etags" target="_blank" rel="noopener">13: Configure ETags</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十三個目（最後）。ETags（Entity Tags）を設定しよう。ブラウザが持ったキャッシュが古いかどうかを判断するための情報として、構成要素（component：画像とかスクリプトとか）のバージョンをETagで特定させることで、last-modified（修正日）よりも柔軟（で確度の高い）情報を提供することができる。</p></div>
+            <div><a href="/2007/08/yslow_13_configure_etags.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-15T06:11:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月15日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_12_remove_duplicate_scri.html">YSLOW 勉強 &#x3a; 12&#x3a; Remove Duplicate Scripts</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#js_dupes" target="_blank" rel="noopener">12: Remove Duplicate Scripts</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十二個目。重複したスクリプトを削除しよう。IEの場合は、HTTPリクエストがキャッシュされていない場合は、リクエストを二回行ってしまう（キャッシュしている場合でもリロードするとHTTPリクエストを送る）。それに加えて、スクリプトの判定は二倍行われてしまうため、余計に時間がかかる。この現象はFirefoxでも発生する。</p></div>
+            <div><a href="/2007/08/yslow_12_remove_duplicate_scri.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-14T07:13:41.000Z"><span class="calendar-icon">📅</span><span>2007年8月14日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_11_avoid_redirects.html">YSLOW 勉強 &#x3a; 11&#x3a; Avoid Redirects</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#redirects" target="_blank" rel="noopener">11: Avoid Redirects</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十一個目。リダイレクトを避けよう。HTMLドキュメントにたどりつくまでは何の要素のダウンロードも始まらないので、リダイレクトしている間はすべてが遅れる。</p></div>
+            <div><a href="/2007/08/yslow_11_avoid_redirects.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-13T06:07:33.000Z"><span class="calendar-icon">📅</span><span>2007年8月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/font_tester.html">Font Tester &#x3a; 使いたいフォントをウェブ上で比較検討</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.fonttester.com/" target="_blank" rel="noopener">Font Tester</a></li>
+</ul>
+<p>Windows IE でmemolog.orgを閲覧したときに、font-size:12pxに指定している箇所よりfont-size:11pxに指定している箇所の方が大きく表示されていたので、不思議に思っていろいろテストしてたときに思い出したページ。</p></div>
+            <div><a href="/2007/08/font_tester.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-13T05:52:01.000Z"><span class="calendar-icon">📅</span><span>2007年8月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_10_minify_javascript.html">YSLOW 勉強 &#x3a; 10&#x3a; Minify JavaScript</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#minify" target="_blank" rel="noopener">10: Minify JavaScript</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十個目。Javascriptを最小化しよう。スクリプト内の不要なスペースとか改行やタブとかを削除することで、ダウンロードするファイルのサイズが減るのでレスポンスタイムを短くすることができる。代表的なツールには<a href="http://www.crockford.com/javascript/jsmin.html" target="_blank" rel="noopener">JSMIN</a>がある。</p></div>
+            <div><a href="/2007/08/yslow_10_minify_javascript.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-12T06:24:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_9_reduce_dns_lookups.html">YSLOW 勉強 &#x3a; 9&#x3a; Reduce DNS Lookups</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#dns_lookups" target="_blank" rel="noopener">9: Reduce DNS Lookups</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の九つ目。DNS lookups を減らそう。あるhost名とIPアドレスを関連づけるためにDNS（Domain Name System）lookupを行うけれど、これには20〜120ミリ秒の時間がかかる。lookupが完了するまではそのhostからダウンロードすることはできない。</p></div>
+            <div><a href="/2007/08/yslow_9_reduce_dns_lookups.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-11T07:08:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月11日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_8_make_javascript_and_cs.html">YSLOW 勉強 &#x3a; 8&#x3a; Make JavaScript and CSS External</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#external" target="_blank" rel="noopener">8: Make JavaScript and CSS External</a></li>
+</ul></div>
+            <div><a href="/2007/08/yslow_8_make_javascript_and_cs.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-09T06:58:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月9日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_7_avoid_css_expressions.html">YSLOW 勉強 &#x3a; 7&#x3a; Avoid CSS Expressions</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#css_expressions" target="_blank" rel="noopener">7: Avoid CSS Expressions</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の七つ目。CSS Expressions の使用を避けよう。CSS Expressionsとは、background-color: expression( (new Date()).getHours()&#x25;2 ? “#B8D4FF” : “#F08A00” ); （2で割れたら#B8D4FF、割れなかったらF08A00）というように、CSSの指定をダイナミックに行えるIEの独自拡張のこと。 便利な機能だけど、expressionsの判定がマウスを動かしたりするだけで行われてしまうため、何千回も判定を繰り返す可能性がある（パフォーマンスにも影響がある）。</p></div>
+            <div><a href="/2007/08/yslow_7_avoid_css_expressions.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/26/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/28/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

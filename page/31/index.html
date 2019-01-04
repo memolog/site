@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2006/04/post_133.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2006/04/macbook_promake.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2006/04/post_130.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2006/04/post_129.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2006/04/post_128.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2006/03/web.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2006/03/cd320.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2006/01/post_125.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2006/01/webweb.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2005/12/post_124.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-04-15T20:29:40.000Z"><span class="calendar-icon">📅</span><span>2006年4月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/04/post_133.html">最近読んだ本（３）</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>「<a href="http://memolog.jp/archives/2006/04/001010.html" target="_blank" rel="noopener">最近読んだ本（１）</a>」「<a href="http://memolog.jp/archives/2006/04/001011.html" target="_blank" rel="noopener">最近読んだ本（２）</a>」の続き。読書が趣味ですと自信を持って言うにはどのくらい読めば良いのでしょう。</p></div>
+            <div><a href="/2006/04/post_133.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-04-11T05:30:13.000Z"><span class="calendar-icon">📅</span><span>2006年4月11日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/04/macbook_promake.html">MacBook proでmakeがうまくいかない問題</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://jayallen.org/journey/2006/03/mac_os_x_is_make-ing_me_angry" target="_blank" rel="noopener">JayAllen.org：Mac OS X is make-ing me angry</a></li>
+</ul></div>
+            <div><a href="/2006/04/macbook_promake.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-04-08T08:05:05.000Z"><span class="calendar-icon">📅</span><span>2006年4月8日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/04/post_130.html">ブログとは何か</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>もしも「ブログとは何か？」と尋ねられたら、私は「WEBページを作成するためのWEBアプリケーション」と答える。「ブログとは○○である」という議論は、たいていブログに対する個人的な主張（あるいは社会学）や、ブログの使い方の提案であって「ブログ」そのものの意味を扱った議論ではない。これは「ブログとは○○である」論が間違っているというわけではなく、単純に質問に対する回答が異なるという話。大した話ではない。たとえば「はさみとは何か？」と尋ねられたら、「はさみとは物をはさみ切るための道具（岩波国語辞典）」と答えるのが適切だろう。それ以外はすべて「用例（あるいは意味の拡張）」であって、本来的な意味ではない。質問に対する答えを間違えると「（自分にとって）ブログとはそうではない）」という議論が巻き起こる。質問の答えを間違えてはいけない。</p></div>
+            <div><a href="/2006/04/post_130.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-04-08T05:28:19.000Z"><span class="calendar-icon">📅</span><span>2006年4月8日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/04/post_129.html">最近読んだ本（２）</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>「<a href="http://memolog.jp/archives/2006/04/001010.html" target="_blank" rel="noopener">最近読んだ本（１）</a>」の続き。本を読んだときにする行動の一つが「文中に気になった箇所があったらページの端を折る」ことです。同じ本を繰り返し読むのは飽きるので、再読するときはその折り目を中心にその部分だけ読んだりします。ページに折り目がつく本ほど私にとって有益な本になります。</p></div>
+            <div><a href="/2006/04/post_129.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-04-01T20:37:54.000Z"><span class="calendar-icon">📅</span><span>2006年4月2日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/04/post_128.html">最近読んだ本（１）</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>最近読んだ・・と言っても年末から今日にかけて読んだ本です。読了していない本については【未読了】と付記することにします。部分的に関心があったり、最後まで関心が続かなかったり、急に仕事が忙しくなったり・・と、さまざまな理由から途中で読むのを止めます。他にも読んでいますが、書いてる時間がなくなったので、とりあえず文庫本4冊だけ紹介。</p></div>
+            <div><a href="/2006/04/post_128.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-03-19T07:28:01.000Z"><span class="calendar-icon">📅</span><span>2006年3月19日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/03/web.html">黄金比によるWebレイアウト</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861003245/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://images-jp.amazon.com/images/P/4861003245.09.TZZZZZZZ.jpg" alt=""></a> 「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861003245/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">Balance in Design 美しく見せるデザインの原則</a>」に触発され、「黄金比によるWebレイアウト」を実践してみました。黄金比とは「最も美しい比」と呼ばれている比率で、具体的には5:8（1:1.618…)の縦横比をさします。バランスが良く安定した形で、人工物のみならず自然物にも美しいと感じるものの多くに黄金比が存在するそうです。</p></div>
+            <div><a href="/2006/03/web.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-03-19T06:16:06.000Z"><span class="calendar-icon">📅</span><span>2006年3月19日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/03/cd320.html">最近買ったCD（3/20）</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>いろいろと書きたいことはたまりつつも、なかなかまとまりきれずにいます。とりあえず最近買ったCDについてでも・・</p>
+<h4 id="Arctic-Monkeys-Whatever-People-Say-I-Am-That’s-What-I’m-Not"><a href="#Arctic-Monkeys-Whatever-People-Say-I-Am-That’s-What-I’m-Not" class="headerlink" title="Arctic Monkeys - Whatever People Say I Am, That’s What I’m Not"></a>Arctic Monkeys - Whatever People Say I Am, That’s What I’m Not</h4></div>
+            <div><a href="/2006/03/cd320.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-01-08T10:17:09.000Z"><span class="calendar-icon">📅</span><span>2006年1月8日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/01/post_125.html">ケナフと環境</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>先日、「ケナフ」と「エコパルプ」の表記がされていたノートを見つけました。一般的にケナフは環境にやさしい素材として知られていますが、実際にはケナフの環境貢献性については賛否両論あります。たとえば下記のような事が挙げられるかと思います。</p>
+<p>ケナフが環境を改善するかもしれない効果。</p>
+<ol>
+<li>非木材製紙である（→木材の使用を軽減させる）</li>
+<li>生長の速度が速い（→省スペース・効率的な生産）</li>
+<li>多様な製品展開が期待できる（→将来性が高い）</li>
+<li>二酸化炭素吸収能力が高い</li>
+</ol>
+<p>ケナフが環境を破壊するかもしれない効果。</p>
+<ol>
+<li>外来種（ケナフ）がその場の生態系を破壊する危険性</li>
+<li>製品加工する際に発生する二酸化炭素排出量</li>
+<li>原産地から輸入する際に発生するグッズマイレージ（重量×移動距離で二酸化炭素の排出度を計る指標）</li>
+</ol>
+<p>つまり、本当に製品が環境にやさしいかどうかを調べるためには、まず原産地を考慮する必要があり、その次に原産地からのグッズマイレージを測定する必要があり、さらに他の代替材を利用した場合と比較する必要があります。それを踏まえて、今度は製品の製造工程も考慮する必要があり、「ケナフ」という表記だけでは環境にやさしいと判断できそうにありません（このノートの場合は「エコパルプ」という基準が採用されているので、比較的判断しやすいかもしれませんが）。</p>
+<p>以上のことは、他の環境素材でも同じことが言えます。製品が本当に環境が良いものかどうかを判断するには、製品の上流から下流に至るまでのすべてを考慮して判断する必要があります。特に原産地の表記は多くの判断をもたらす材料となるため、これからの環境製品には必須になるかもしれません。<br></div>
+            <div><a href="/2006/01/post_125.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2006-01-01T23:17:00.000Z"><span class="calendar-icon">📅</span><span>2006年1月2日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2006/01/webweb.html">近年のWEBとこれからのWEB</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>新年ということで、近年のWEBとこれからのWEBについてマインドマップを広げてみました（マインドマップはエントリーの下の方に掲載）。そして、ざっくりと所感をまとめてみました。<br></div>
+            <div><a href="/2006/01/webweb.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-12-29T07:21:34.000Z"><span class="calendar-icon">📅</span><span>2005年12月29日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/12/post_124.html">マインドマップでキャリアの棚卸しをしよう</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>最近わたしの中でマインドマップが大流行中です。このマインドマップを利用して自分の今までのキャリアの棚卸しをしてみました（マインドマップの作成には<a href="http://freemind.sourceforge.net/wiki/index.php" target="_blank" rel="noopener">FreeMind</a>を利用）。まだ書き足りないところもたくさんありますが、とりあえず下の画像のような感じ。転職を考えている方や就職活動中の学生にも是非試していただきたい。下手な自己分析よりもすっきりするかもしれません。<br></div>
+            <div><a href="/2005/12/post_124.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/30/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/32/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2005/06/post_89.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2005/05/singer_songer.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2005/03/post_67.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2005/02/post_63.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2005/02/rock_the_kasbah.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2004/12/11.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2004/12/post_38.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2004/12/post_32.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2004/11/tokona_x.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2004/11/post_14.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-06-25T21:53:00.000Z"><span class="calendar-icon">📅</span><span>2005年6月26日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/06/post_89.html">リチャード・ニクソン暗殺を企てた男を見ました</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.wisepolicy.com/the_assassination_of_richard_nixon/" target="_blank" rel="noopener">The Assassination of Richard Nixon</a></li>
+</ul></div>
+            <div><a href="/2005/06/post_89.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-05-28T05:25:04.000Z"><span class="calendar-icon">📅</span><span>2005年5月28日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/05/singer_songer.html">SINGER SONGER 「初花凛々」</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.singersonger.com/" target="_blank" rel="noopener">SINGER SONGER</a></li>
+<li><a href="http://www.bounce.com/news/daily.php/5473/headlineclick" target="_blank" rel="noopener">bounce.com：SINGER SONGER、デビュー・シングルのWEB試聴スタート</a></li>
+</ul></div>
+            <div><a href="/2005/05/singer_songer.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-03-05T18:36:24.000Z"><span class="calendar-icon">📅</span><span>2005年3月6日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/03/post_67.html">ブログと情報発信</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.dir.co.jp/publicity/column/index.html" target="_blank" rel="noopener">大和総研：ブログが改めて問い掛けるインターネット時代の情報発信のあり方</a></li>
+</ul>
+<p>突き詰めていけば、信頼できる情報というのは自分の足で調べていった情報・・と、刑事ドラマのような台詞に至るわけですが、全ての情報を一から自分で調べていけば途方もない時間がかかる。それを専門にしているなら別だけれど、専門的でない情報を短い時間で調べないといけない場合の方が多い。そうなればインターネットを頼らざるを得ない。情報収集と信頼性の見極めというのは、頭の痛い問題です。</p>
+<p>翻ってブログ運営者としての視点で考えると、自分が発信する情報を、どうやって信頼させるかという課題に至ります。私自身は、リソースを明示することや、論理的に記述することを心がけています。「正しくはないかもしれないけど、何を言いたいのかが分かる文章」を書いていくことが、目下の目標です。<br></div>
+            <div><a href="/2005/03/post_67.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-02-20T07:13:01.000Z"><span class="calendar-icon">📅</span><span>2005年2月20日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/02/post_63.html">「サムライと英語」を読みました。</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4047041653/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">サムライと英語</a>」は、国連の要職を歴任された明石康さんの名著です。幕末から明治後半までの歴史を辿りながら、堀達之助（浦賀奉行通詩）、福沢諭吉、大久保利通、新渡戸稲造など、西洋文化と向き合うサムライの姿が描かれています。ちょうど「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4091528015/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">お〜い！竜馬</a>」を読破して独り幕末ブームの中、非常に面白く読めました。</p></div>
+            <div><a href="/2005/02/post_63.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-02-09T03:00:12.000Z"><span class="calendar-icon">📅</span><span>2005年2月9日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/02/rock_the_kasbah.html">Rock The Kasbah 〜自由の歌〜</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="/assets/i/cd/rock_the_kasbah.jpg" alt=""> 最近聴いているのは「Rock The Kasbah」というアルバム。正しい表現かは分かりませんが、UK Rock・Punkとレゲエやスカ融合したような感じの音楽です。アルバムの副題は「Songs of Freedom from the streets of The East」。直訳すると・・・東のストリートからの自由の歌・・ですかね。東というのはアフリカとか、エジプトとか、中東とか、アジアあたり。自由の息吹のようなものを感じる曲です。なんというか、レゲエとかスカって熱いですよね。</p>
+<p>渋谷のHMV3階のワールドのコーナーで試聴できるので、近くに寄った時には是非聴いてみてほしいです。1曲目のRock el Casbahはその筋の方（どの筋だ）には、非常に有名な曲のようですね。2曲目にはジェームスブラウンがフューチャリングされていて、とってもパンクでファンクだ。個人的に耳に残るのは、16曲目のVeto de Dieuと17曲目のRedemption Songです。16曲目は直訳すると・・「神の否認」・・かなあ。かろうじて聴きとれる「give peace a chance」という言葉がすごく印象的。17曲目は直訳すると・・「救済の歌」かなあ。かろうじて聴きとれる「sounds of freedom」という言葉がなんかグッとくる何かを感じます。<br></div>
+            <div><a href="/2005/02/rock_the_kasbah.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2004-12-29T06:54:32.000Z"><span class="calendar-icon">📅</span><span>2004年12月29日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2004/12/11.html">1文1アイデアの文を書く</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="/assets/i/web/003.gif" alt="挿絵"></p>
+<p>ほとんどの訪問者がWEBサイトに情報を求めて訪れます。訪問者にとって便利なサイトとは、求めている情報が簡単に発見でき、そしてその情報が役に立つことです。WEBサイトの価値を向上させるには、両者を向上させることが肝要です。使いやすいWEBサイトでも情報が役立たなければ意味がないですし、有益な情報が載っていても見つけられなければ使いようがありません。</p>
+<p>WEB制作では、サイトの使いやすさを向上させる技術はよく解説されていますが、有益な情報を作る技術についてはあまり解説されません。有益な情報を作る技術とは、たとえば、情報に対するアプローチの仕方であったり、取材を段取りよくすすめる技術であったり、魅力的な文章作成技術であったり、WEB制作の技術というより、企画・編集・ライティングの技術に属するからでしょう。実は個人サイトの制作するということは、一人で企画から編集、ライティング、デザイン、オペレーションまで行う事であり、雑誌や本を一人で制作することと同じです。ですから、WEBサイトの質を向上させるためには、それらの技術を幅広く向上させる事が求められます。</p>
+<p>しかし、全ての技術を網羅的に習得するのを待っていたら、いつまで経ってもWEBサイトは作れません。とりあえずWEBサイトを作りながら、コツコツと改善していくというのが、もっとも自然で長続きするやり方です。今回はライティングの中でも、「分かりやすい文を書く」技術に注目したいと思います。前置き長いな。<br></div>
+            <div><a href="/2004/12/11.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2004-12-22T12:15:18.000Z"><span class="calendar-icon">📅</span><span>2004年12月22日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2004/12/post_38.html">ブロックとインラインについて</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="/assets/i/web/002.gif" alt="挿絵"></p>
+<p>今までのHTML制作では、ブロックとインラインについてはあまり意識されてきませんでした。デザインありきの作り方で、デザインを表現する上で適切なタグが選択されてきました。しかし、最近になってSEOやアクセシビリティの重要性が強調され、「検索サイトが見て理解できる文書構造が明確なページ」が重要視されるようになりました。HTMLの制作は、文書構造として適切なタグを使い、CSSで見た目をコントロールするというやり方に変わってきています。そうした中、ブロックとインラインの表示の切り替えは、デザインをCSSでコントロールする上で便利な手法として広く使われるようになっています。<br></div>
+            <div><a href="/2004/12/post_38.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2004-12-15T20:26:11.000Z"><span class="calendar-icon">📅</span><span>2004年12月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2004/12/post_32.html">要素と属性について</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="/assets/i/web/001.gif" alt="挿絵"></p>
+<p>WEBの制作をしていると良く出てくるのが、「要素」と「属性」という言葉。専門用語ではなく単なる日本語として扱われているためか、はたまた常識として認知されているためか、その意味はWEB制作本の片隅にも載りません。でもWEB制作、特にHTML制作において「要素」と「属性」の区別がつかないと難儀します。抽象的な言葉なので分からないままにしておくと何が「要素」で何が「属性」なのか分からなくなってきます。一度その定義のようなものを理解しておくとWEBの制作はぐっと楽になります。<br></div>
+            <div><a href="/2004/12/post_32.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2004-11-25T07:45:23.000Z"><span class="calendar-icon">📅</span><span>2004年11月25日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2004/11/tokona_x.html">TOKONA X 死去</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.bounce.com/news/daily.php?C=4566" target="_blank" rel="noopener">bounce.com：名古屋ヒップホップ・シーンの顔役ラッパー、TOKONA-Xが急逝</a></li>
+<li><a href="http://www.j-wave.co.jp/original/soultrain/contents.htm" target="_blank" rel="noopener">SOUL TRAIN</a></li>
+</ul>
+<p>SOUL TRAINにて。TOKONA Xが死去したと報じられました。死因は熱中症による体力低下らしいです。熱中症とは、体の中と外の”あつさ”によって引き起こされる、様々な体の不調。重度になると体内の血液が凝固し、脳、肺、肝臓、腎臓などの全身の臓器の障害を生じる多臓器不全となり、死亡に至ることもあるのだそう（参考：<a href="http://www.heat.gr.jp/explain/index.html" target="_blank" rel="noopener">熱中症とは</a>）。<br></div>
+            <div><a href="/2004/11/tokona_x.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2004-11-21T11:19:20.000Z"><span class="calendar-icon">📅</span><span>2004年11月21日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2004/11/post_14.html">アフィリエイト所感</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.shijo24.com/blog/archives/000544.html" target="_blank" rel="noopener">波多野blog：さらに浸透する！アフィリエイトサービス</a></li>
+</ul>
+<p>ここ３〜４ヶ月の間にアフィリエイトの取り上げられ方が非常に大きくなったと思います。アフィリエイトと名のつく関連本も数多く出版されるようになりました。そろそろ宝島ムックでも登場する頃でしょうか。</p>
+<p>私がアフィリエイトについて思うことは、アフィリエイトというのがギャンブル的要素が強いということ。儲かった人がその快感を大きく伝えてる、あるいは受け手に大きく印象に残るので、アフィリエイトがすごい儲かるのではないかと幻想を抱かせるところや、誰にでもできること、成功者と自分との差があまりないように感じることなど、ギャンブルとよく似ています。また、運否天賦で短期的に儲かる人もいるけれど、長期的にはきっちり情報収集して分析して、それなりに時間をかけている人が勝利しているところも、ギャンブルに近しいものを感じます。</p>
+<p>だから、アフィリエイトはすごく儲かるような印象があるけれども、実際にはギャンブルと一緒で儲かる人もいるけれど、それは一握りで実際にはそんなに儲からない。<br></div>
+            <div><a href="/2004/11/post_14.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/33/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/35/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

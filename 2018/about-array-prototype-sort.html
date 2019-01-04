@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Array.prototype.sort について | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="JavaScriptの配列にはsortメソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。v8における配列ソートについての記事が大変参考になりました。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array.prototype.sort について">
+<meta property="og:url" content="https://memolog.org/2018/about-array-prototype-sort.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="JavaScriptの配列にはsortメソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。v8における配列ソートについての記事が大変参考になりました。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/max-panama-387781-unsplash/max-panama-387781-unsplash.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.874Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Array.prototype.sort について">
+<meta name="twitter:description" content="JavaScriptの配列にはsortメソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。v8における配列ソートについての記事が大変参考になりました。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/max-panama-387781-unsplash/max-panama-387781-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2018/about-array-prototype-sort.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2018/about-array-prototype-sort.html"
+      },
+      "headline": "Array.prototype.sort について",
+      
+        "image": [
+          "https://memolog.org/assets/images/max-panama-387781-unsplash/max-panama-387781-unsplash.jpg"
+        ],
+      
+      "datePublished": "Mon Jul 30 2018 05:49:48 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "JavaScriptの配列にはsortメソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。v8における配列ソートについての記事が大変参考になりました。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2018-07-29T20:49:48.000Z">
+              <span class="calendar-icon">📅</span><span>2018年7月30日</span>
+            </time>
+          </div>
+          <h2 class="header__title">Array.prototype.sort について</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNzc2Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NzYiIGZpbGw9IiM0NzRhNDgiIC8+PC9zdmc+" data-src="/assets/images/max-panama-387781-unsplash/max-panama-387781-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/Gt1A0jNzzbM?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Max Panamá</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>JavaScriptの配列には<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">sort</a>メソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。<a href="http://kakts-tec.hatenablog.com/entry/2016/12/18/153845" target="_blank" rel="noopener">v8における配列ソートについて</a>の記事が大変参考になりました。<a id="more"></a></p>
+<p>Chrome(V8)の実装は<a href="https://github.com/v8/v8/blob/master/src/js/array.js#L645" target="_blank" rel="noopener">array.js</a>にあり、配列の要素数が10以下の場合は<a href="https://en.wikipedia.org/wiki/Insertion_sort" target="_blank" rel="noopener">Insertion sort</a>を使い、それ以上の場合は<a href="https://en.wikipedia.org/wiki/Quicksort" target="_blank" rel="noopener">Quicksort</a>を利用する。Insersion sortの計算量はO(n^2)であるけど、少ない要素数の場合はQuicksortなどより高速になるらしい。<a href="https://github.com/v8/v8/commit/f7bad08397d922d7fe0bc10624f517c6f5412595" target="_blank" rel="noopener">直近のcommmit</a>を見る限りだと、Chrome 69か70あたりで<a href="https://en.wikipedia.org/wiki/Timsort" target="_blank" rel="noopener">Timsort</a>に置き換えるつもりらしい。TimsortはaverageがO(n log n)で、最悪でもO(n log n)の計算量で済む。QuicksortをTimSortに置き換えるつもりに至った経緯などは調べてない（ので間違ってるかも）。Quicksortはstableではないソートであるけど、Timesortは<a href="https://ja.wikipedia.org/wiki/%E5%AE%89%E5%AE%9A%E3%82%BD%E3%83%BC%E3%83%88" target="_blank" rel="noopener">stable sort</a>になるので、その辺りの挙動は変わってくるかもしれない。</p>
+<p>Firefox(Gecko)の実装は<a href="https://github.com/mozilla/gecko-dev/blob/64077545fac88592352819da9d5097d10d521667/js/src/builtin/Array.js#L186" target="_blank" rel="noopener">Array.js</a>あたりと思われる。最初にnative codeでの実装（<a href="https://github.com/mozilla/gecko-dev/blob/a80651653faa78fa4dfbd238d099c2aad1cec304/js/src/builtin/Array.cpp" target="_blank" rel="noopener">js/src/builtin/Array.cpp</a>）を試すようになっている。ざっと見た感じでは<a href="https://en.wikipedia.org/wiki/Merge_sort" target="_blank" rel="noopener">Merge sort</a>が使われている。Merge sortはaverageでO(n log n)の計算量になる。<a href="https://github.com/mozilla/gecko-dev/blob/8d9f459c772562e5d8e2e12f53a005ab38293a70/js/src/builtin/TypedArray.js#L1159" target="_blank" rel="noopener">TypedArrayの実装</a>ではQuicksortなどが使われている。</p>
+<p>Safari(Webkit)の実装は<a href="https://github.com/WebKit/webkit/blob/master/Source/JavaScriptCore/builtins/ArrayPrototype.js" target="_blank" rel="noopener">ArrayPrototype.js</a>あたりと思われる。<a href="https://www.quora.com/What-is-the-sorting-algorithm-behind-a-Javascript-Array-sort-method" target="_blank" rel="noopener">What is the sorting algorithm behind a Javascript Array.sort method?</a>あたりの話だと、以前は<a href="https://en.wikipedia.org/wiki/Selection_sort" target="_blank" rel="noopener">Selection sort</a>が使われていたそうだが、現在の実装を見る限りではMerge sortが使われているようだ。</p>
+<p>Microsoft Edege(ChakraCore)の実装は（EntrySortメソッドから入ってなんやかんやあって）<a href="https://github.com/Microsoft/ChakraCore/blob/17dbf40e9470022795d912bc207a10cfc64ff7e2/lib/Runtime/Library/JavascriptArray.cpp#L6498" target="_blank" rel="noopener">JavascriptArray.cpp</a>あたりになると思われる。配列の要素数が512個より大きい場合はQuicksortを使用する。512個以下の場合は見た感じ<a href="https://www.geeksforgeeks.org/binary-insertion-sort/" target="_blank" rel="noopener">Binary Insertion Sort</a>であると思われる。</p>
+<p>という感じで、ざっとそれぞれのブラウザの実装を見たのですけど、Quicksort、Merge sort、Timsortで実装されているのがわかった。実装の違いはあるにせよ、ビック・オー的にはO(n log n)とみなしても問題ないのだろうと思う。</p>
+<p>ChromeのsortがTimsortになると各ブラウザのsortの返りはstableになると思われるが、<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.sort" target="_blank" rel="noopener">ECMA2015の仕様</a>では、sortメソッドにおいてstable sortである必要はないとされている。なので、実際にはstableな状態で返ってくるとしても、JavaScriptのsortはstable sortではないと認識しておいた方がいい。</p>
+<blockquote>
+<p>The elements of this array are sorted. The sort is not necessarily stable (that is, elements that compare equal do not necessarily remain in their original order). If comparefn is not undefined, it should be a function that accepts two arguments x and y and returns a negative value if x &lt; y, zero if x = y, or a positive value if x &gt; y.<br><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.sort" target="_blank" rel="noopener">https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.sort</a></p>
+</blockquote>
+<hr>
+<p>そしてこれは蛇足で調べ中に知ったのですが、<code>[100, 20, 0].sort()</code>みたいに、compare function なしでソートを実行すると、デフォルトでUnicodeコードポイントの昇順にソートにされる（文字列として評価される）。だから結果は<code>[0, 100, 20]</code>となる。<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort" target="_blank" rel="noopener">TypedArray</a>の場合は数値として評価される。</p>
+<blockquote>
+<p>The following version of SortCompare is used by %TypedArray%.prototype.sort. It performs a numeric comparison rather than the string comparison used in 22.1.3.24. SortCompare has access to the comparefn and buffer values of the current invocation of the sort method.<br><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-%typedarray%.prototype.sort" target="_blank" rel="noopener">https://www.ecma-international.org/ecma-262/6.0/#sec-%typedarray%.prototype.sort</a></p>
+</blockquote>
+<p>その他参考。</p>
+<ul>
+<li><a href="https://research.preferred.jp/2011/10/tim-sort/" target="_blank" rel="noopener">高速な安定ソートアルゴリズム “TimSort” の解説</a></li>
+<li><a href="https://cs.stackexchange.com/questions/37956/why-is-the-optimal-cut-off-for-switching-from-quicksort-to-insertion-sort-machin" target="_blank" rel="noopener">Why is the optimal cut-off for switching from Quicksort to Insertion sort machine dependent?</a></li>
+<li><a href="https://stackoverflow.com/questions/736920/is-there-ever-a-good-reason-to-use-insertion-sort" target="_blank" rel="noopener">Is there ever a good reason to use Insertion Sort?</a></li>
+<li><a href="https://stackoverflow.com/questions/16585507/sorting-in-place" target="_blank" rel="noopener">Sorting in place</a></li>
+<li><a href="https://stackoverflow.com/questions/234683/javascript-array-sort-implementation" target="_blank" rel="noopener">Javascript Array.sort implementation?</a></li>
+</ul>
+<p>以上。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2012/05/css_selector_performance.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2012/05/aria-hidden.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2012/05/sublime_text_2_zen_coding.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2012/05/last-child-required-the-last-child-in-the-parent-element.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2012/05/float_and_width_auto.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2012/05/responsive_grid_box-sizing.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2012/04/install_watir-webdriver_to_windows_xp.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2012/03/responsive-is.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2012/03/the_big_short.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2012/03/pseudo-classes-for-form.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-05-27T06:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年5月27日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/05/css_selector_performance.html">CSS Selector Performance</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/" target="_blank" rel="noopener">Performance Calendar » CSS Selector Performance has changed! (For the better)</a>にWebkitでCSSのマッチングの最適化が進んでいるという話が掲載されていて、下記の4つ最適化方法について紹介しています（via <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank" rel="noopener">* { box-sizing: border-box } FTW « Paul Irish</a>）。という話の紹介。</p></div>
+            <div><a href="/2012/05/css_selector_performance.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-05-26T06:48:00.000Z"><span class="calendar-icon">📅</span><span>2012年5月26日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/05/aria-hidden.html">aria-hiddenについて</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM3NTkyOTUiIC8+PC9zdmc+" data-src="/assets/images/anthony-delanoix-28851-unsplash/anthony-delanoix-28851-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/Hk7l6DmgO7Q?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Anthony DELANOIX</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="http://css-tricks.com/html-for-icon-font-usage/" target="_blank" rel="noopener">HTML for Icon Font Usage | CSS-Tricks</a>でアイコン用フォントを使用して、対象の左側にアイコン画像を表示するという方法が紹介されているのですが、その中でスクリーンリーダー対策として「aria-hidden」という属性を入れている。</div>
+            <div><a href="/2012/05/aria-hidden.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-05-25T07:52:13.000Z"><span class="calendar-icon">📅</span><span>2012年5月25日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/05/sublime_text_2_zen_coding.html">Sublime Text 2 で Zen Coding (Emmet)</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>（追記 2013/1/30）Packageの名前がZen Codingから「<a href="https://github.com/sergeche/emmet-sublime" target="_blank" rel="noopener">Emmet</a>」に変わっていました。ので、Packageの名前をEmmetに差し替えました。あわせて最後に書いていたスニペットの変更方法もちゃんとした（？）方法に書き換えました。</p></div>
+            <div><a href="/2012/05/sublime_text_2_zen_coding.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-05-24T06:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年5月24日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/05/last-child-required-the-last-child-in-the-parent-element.html">last-child は親要素からみて最後の子要素</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>（そのままではないか）</p>
+<p>たとえば以下のようなHTMLがあるとして、</div>
+            <div><a href="/2012/05/last-child-required-the-last-child-in-the-parent-element.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-05-23T06:41:00.000Z"><span class="calendar-icon">📅</span><span>2012年5月23日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/05/float_and_width_auto.html">floatとwidth&#x3a;auto</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>いまさらながらのfloatとwidth:autoの話。</div>
+            <div><a href="/2012/05/float_and_width_auto.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-05-21T06:25:46.000Z"><span class="calendar-icon">📅</span><span>2012年5月21日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/05/responsive_grid_box-sizing.html">responsive grid と box-sizing</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.netmagazine.com/tutorials/building-modern-grid-system" target="_blank" rel="noopener">Building a modern grid system | Tutorial | .net magazine</a>にwidthをパーセントで指定したresponsiveなgrid（で、かつネストできてサイズの変更が簡単で..云々）を作成するという話が掲載されている。</p></div>
+            <div><a href="/2012/05/responsive_grid_box-sizing.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-04-12T04:38:21.000Z"><span class="calendar-icon">📅</span><span>2012年4月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/04/install_watir-webdriver_to_windows_xp.html">Windows XPにwatir-webdriverをインストールする</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>gem installするだけで簡単だろうと思って始めてみたら意外と面倒だったのでメモ。Rubyは<a href="http://rubyinstaller.org/downloads" target="_blank" rel="noopener">RubyInstallerのDownloadページ</a>から「Ruby 1.8.7-p358」をダウンロードしてインストールしました。</p></div>
+            <div><a href="/2012/04/install_watir-webdriver_to_windows_xp.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-03-17T20:32:00.000Z"><span class="calendar-icon">📅</span><span>2012年3月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/03/responsive-is.html">Responsive.is&#x3a; レスポンシブデザイン対応を確認できるサイト</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://responsive.is/" target="_blank" rel="noopener">Responsive.is</a>というサイトで 自分のサイトがiPhoneやiPadなどでどのように表示されるかを疑似体験することができます（via <a href="http://konigi.com/tools/submissions/responsiveis-display-and-present-responsive-web-designs" target="_blank" rel="noopener">Responsive.is: Display and present responsive web designs | Konigi</a>）。実際には解像度の違いがあるのでiPhone4以降や最新のiPadでは画像の解像感に違いはありますけど、手元にiPhoneやiPadがない場合に、レスポンシブデザインに対応した自分のサイトがどのように見えるかを確認するには十分かなと思います。</p></div>
+            <div><a href="/2012/03/responsive-is.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-03-16T20:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年3月17日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/03/the_big_short.html">本&#x3a; 世紀の空売り</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4163730907/ref=as_li_ss_il?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=7399&amp;creativeASIN=4163730907" target="_blank" rel="noopener"><img src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;Format=_SL160_&amp;ASIN=4163730907&amp;MarketPlace=JP&amp;ID=AsinImage&amp;WS=1&amp;tag=yutakayamaguc-22&amp;ServiceVersion=20070822" alt=""></a><img src="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=4163730907" alt=""></p></div>
+            <div><a href="/2012/03/the_big_short.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-03-04T04:31:00.000Z"><span class="calendar-icon">📅</span><span>2012年3月4日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/03/pseudo-classes-for-form.html">Form関連の疑似クラス</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://html5doctor.com/css3-pseudo-classes-and-html5-forms/" target="_blank" rel="noopener">CSS3 Pseudo-Classes and HTML5 Forms | HTML5 Doctor</a>で紹介されているForm関連の疑似クラスを試してみるというだけの内容。<a href="http://www.w3.org/TR/css3-ui/#pseudo-validity" target="_blank" rel="noopener">W3Cの定義はこのあたり</a>。required/optionalの疑似クラスは最新のブラウザでは対応しているみたい（上のリンクの記事によると）ですけど、それ以外はぼちぼち。現状では視覚的な補助という域を脱しない感はあります。</p></div>
+            <div><a href="/2012/03/pseudo-classes-for-form.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/12/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/14/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

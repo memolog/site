@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>CSS Transforms&#x3a; くるくる回るサイコロのサンプル | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Transforms&amp;#x3a; くるくる回るサイコロのサンプル">
+<meta property="og:url" content="https://memolog.org/2012/09/css_transforms_sample.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Transforms&amp;#x3a; くるくる回るサイコロのサンプル">
+<meta name="twitter:description" content="CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2012/09/css_transforms_sample.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2012/09/css_transforms_sample.html"
+      },
+      "headline": "CSS Transforms&#x3a; くるくる回るサイコロのサンプル",
+      
+      "datePublished": "Wed Sep 26 2012 22:00:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2012-09-26T13:00:00.000Z">
+              <span class="calendar-icon">📅</span><span>2012年9月26日</span>
+            </time>
+          </div>
+          <h2 class="header__title">CSS Transforms&#x3a; くるくる回るサイコロのサンプル</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p>CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。</p>
+<a id="more"></a>
+<p>* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; } .dice { -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-perspective: 1000px; -moz-perspective: 1000px; -ms-perspective: 1000px; -o-perspective: 1000px; perspective: 1000px; -webkit-perspective-origin: 50&#x25; 50&#x25;; -moz-perspective-origin: 50&#x25; 50&#x25;; -ms-perspective-origin: 50&#x25; 50&#x25;; -o-perspective-origin: 50&#x25; 50&#x25;; perspective-origin: 50&#x25; 50&#x25;; position: relative; width: 400px; height: 400px; } .dice &gt; div, .dice .five, .dice .six { position: absolute; width: 100px; height: 100px; border: 1px solid #ddd; background-color: rgba(158, 158, 158, 0.1); line-height: 100px; text-align: center; } .dice .one { top: 100px; left: 200px; } .dice .two { top: 0; left: 200px; -webkit-transform-origin: bottom left; -moz-transform-origin: bottom left; -ms-transform-origin: bottom left; -o-transform-origin: bottom left; transform-origin: bottom left; border-bottom: none; } .dice .three { top: 100px; left: 300px; -webkit-transform-origin: top left; -moz-transform-origin: top left; -ms-transform-origin: top left; -o-transform-origin: top left; transform-origin: top left; border-left: none; } .dice .three .inner { -webkit-transform: rotateZ(90deg); -moz-transform: rotateZ(90deg); -ms-transform: rotateZ(90deg); -o-transform: rotateZ(90deg); transform: rotateZ(90deg); } .dice .four { top: 100px; left: 100px; -webkit-transform-origin: top right; -moz-transform-origin: top right; -ms-transform-origin: top right; -o-transform-origin: top right; transform-origin: top right; border-right: none; } .dice .four .inner { -webkit-transform: rotateZ(-90deg); -moz-transform: rotateZ(-90deg); -ms-transform: rotateZ(-90deg); -o-transform: rotateZ(-90deg); transform: rotateZ(-90deg); } .dice .five-six { top: 200px; left: 200px; -webkit-transform-origin: top left; -moz-transform-origin: top left; -ms-transform-origin: top left; -o-transform-origin: top left; transform-origin: top left; border: none; background: transparent; height: 200px; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d; } .dice .five { top: 0; left: 0; border-top: none; border-bottom: none; } .dice .five .inner { -webkit-transform: rotateZ(180deg); -moz-transform: rotateZ(180deg); -ms-transform: rotateZ(180deg); -o-transform: rotateZ(180deg); transform: rotateZ(180deg); } .dice .six { top: 100px; left: 0; -webkit-transform-origin: top left; -moz-transform-origin: top left; -ms-transform-origin: top left; -o-transform-origin: top left; transform-origin: top left; } .dice .six .inner { -webkit-transform: rotateZ(180deg); -moz-transform: rotateZ(180deg); -ms-transform: rotateZ(180deg); -o-transform: rotateZ(180deg); transform: rotateZ(180deg); } .dice:hover, .dice:active, .dice-active { -moz-animation-duration: 5s; -moz-animation-name: cube; -moz-animation-iteration-count: infinite; -moz-animation-timing-function: linear; -webkit-animation-duration: 5s; -webkit-animation-name: cube; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; -ms-animation-duration: 5s; -ms-animation-name: cube; -ms-animation-iteration-count: infinite; -ms-animation-timing-function: linear; -o-animation-duration: 5s; -o-animation-name: cube; -o-animation-iteration-count: infinite; -o-animation-timing-function: linear; animation-duration: 5s; animation-name: cube; animation-iteration-count: infinite; animation-timing-function: linear; } .dice:hover .two, .dice:active .two, .dice-active .two { -webkit-transform: rotateX(-90deg); -moz-transform: rotateX(-90deg); -ms-transform: rotateX(-90deg); -o-transform: rotateX(-90deg); transform: rotateX(-90deg); } .dice:hover .three, .dice:active .three, .dice-active .three { -webkit-transform: rotateY(-90deg); -moz-transform: rotateY(-90deg); -ms-transform: rotateY(-90deg); -o-transform: rotateY(-90deg); transform: rotateY(-90deg); } .dice:hover .four, .dice:active .four, .dice-active .four { -webkit-transform: rotateY(90deg); -moz-transform: rotateY(90deg); -ms-transform: rotateY(90deg); -o-transform: rotateY(90deg); transform: rotateY(90deg); } .dice:hover .five-six, .dice:active .five-six, .dice-active .five-six { -webkit-transform: rotateX(90deg); -moz-transform: rotateX(90deg); -ms-transform: rotateX(90deg); -o-transform: rotateX(90deg); transform: rotateX(90deg); } .dice:hover .six, .dice:active .six, .dice-active .six { -webkit-transform: rotateX(90deg); -moz-transform: rotateX(90deg); -ms-transform: rotateX(90deg); -o-transform: rotateX(90deg); transform: rotateX(90deg); } .dice:hover .two, .dice:active .two, .dice-active .two { -moz-animation-duration: 2s; -moz-animation-name: cube-two; -moz-animation-iteration-count: 1; -moz-animation-timing-function: ease; -moz-animation-delay: 0s; -webkit-animation-duration: 2s; -webkit-animation-name: cube-two; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: ease; -webkit-animation-delay: 0s; -ms-animation-duration: 2s; -ms-animation-name: cube-two; -ms-animation-iteration-count: 1; -ms-animation-timing-function: ease; -ms-animation-delay: 0s; -o-animation-duration: 2s; -o-animation-name: cube-two; -o-animation-iteration-count: 1; -o-animation-timing-function: ease; -o-animation-delay: 0s; animation-duration: 2s; animation-name: cube-two; animation-iteration-count: 1; animation-timing-function: ease; animation-delay: 0s; } .dice:hover .three, .dice:active .three, .dice-active .three { -moz-animation-duration: 2s; -moz-animation-name: cube-three; -moz-animation-iteration-count: 1; -moz-animation-timing-function: ease; -moz-animation-delay: 0s; -webkit-animation-duration: 2s; -webkit-animation-name: cube-three; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: ease; -webkit-animation-delay: 0s; -ms-animation-duration: 2s; -ms-animation-name: cube-three; -ms-animation-iteration-count: 1; -ms-animation-timing-function: ease; -ms-animation-delay: 0s; -o-animation-duration: 2s; -o-animation-name: cube-three; -o-animation-iteration-count: 1; -o-animation-timing-function: ease; -o-animation-delay: 0s; animation-duration: 2s; animation-name: cube-three; animation-iteration-count: 1; animation-timing-function: ease; animation-delay: 0s; } .dice:hover .four, .dice:active .four, .dice-active .four { -moz-animation-duration: 2s; -moz-animation-name: cube-four; -moz-animation-iteration-count: 1; -moz-animation-timing-function: ease; -moz-animation-delay: 0s; -webkit-animation-duration: 2s; -webkit-animation-name: cube-four; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: ease; -webkit-animation-delay: 0s; -ms-animation-duration: 2s; -ms-animation-name: cube-four; -ms-animation-iteration-count: 1; -ms-animation-timing-function: ease; -ms-animation-delay: 0s; -o-animation-duration: 2s; -o-animation-name: cube-four; -o-animation-iteration-count: 1; -o-animation-timing-function: ease; -o-animation-delay: 0s; animation-duration: 2s; animation-name: cube-four; animation-iteration-count: 1; animation-timing-function: ease; animation-delay: 0s; } .dice:hover .five-six, .dice:active .five-six, .dice-active .five-six { -moz-animation-duration: 2s; -moz-animation-name: cube-five-six; -moz-animation-iteration-count: 1; -moz-animation-timing-function: ease; -moz-animation-delay: 0s; -webkit-animation-duration: 2s; -webkit-animation-name: cube-five-six; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: ease; -webkit-animation-delay: 0s; -ms-animation-duration: 2s; -ms-animation-name: cube-five-six; -ms-animation-iteration-count: 1; -ms-animation-timing-function: ease; -ms-animation-delay: 0s; -o-animation-duration: 2s; -o-animation-name: cube-five-six; -o-animation-iteration-count: 1; -o-animation-timing-function: ease; -o-animation-delay: 0s; animation-duration: 2s; animation-name: cube-five-six; animation-iteration-count: 1; animation-timing-function: ease; animation-delay: 0s; } .dice:hover .six, .dice:active .six, .dice-active .six { -moz-animation-duration: 4s; -moz-animation-name: cube-six; -moz-animation-iteration-count: 1; -moz-animation-timing-function: ease; -moz-animation-delay: 0s; -webkit-animation-duration: 4s; -webkit-animation-name: cube-six; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: ease; -webkit-animation-delay: 0s; -ms-animation-duration: 4s; -ms-animation-name: cube-six; -ms-animation-iteration-count: 1; -ms-animation-timing-function: ease; -ms-animation-delay: 0s; -o-animation-duration: 4s; -o-animation-name: cube-six; -o-animation-iteration-count: 1; -o-animation-timing-function: ease; -o-animation-delay: 0s; animation-duration: 4s; animation-name: cube-six; animation-iteration-count: 1; animation-timing-function: ease; animation-delay: 0s; } @-moz-keyframes cube { 0&#x25; { -moz-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); } 20&#x25; { -moz-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); } 40&#x25; { -moz-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); } 60&#x25; { -moz-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); } 80&#x25; { -moz-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); } 100&#x25; { -moz-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); } } @-moz-keyframes cube-two { 0&#x25; { -moz-transform: rotateX(0deg); } 100&#x25; { -moz-transform: rotateX(-90deg); } } @-moz-keyframes cube-three { 0&#x25; { -moz-transform: rotateY(0deg); } 100&#x25; { -moz-transform: rotateY(-90deg); } } @-moz-keyframes cube-four { 0&#x25; { -moz-transform: rotateY(0deg); } 100&#x25; { -moz-transform: rotateY(90deg); } } @-moz-keyframes cube-five-six { 0&#x25; { -moz-transform: rotateX(0deg); } 100&#x25; { -moz-transform: rotateX(90deg); } } @-moz-keyframes cube-six { 0&#x25; { -moz-transform: rotateX(0deg); } 100&#x25; { -moz-transform: rotateX(90deg); } } @-webkit-keyframes cube { 0&#x25; { -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); } 20&#x25; { -webkit-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); } 40&#x25; { -webkit-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); } 60&#x25; { -webkit-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); } 80&#x25; { -webkit-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); } 100&#x25; { -webkit-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); } } @-webkit-keyframes cube-two { 0&#x25; { -webkit-transform: rotateX(0deg); } 100&#x25; { -webkit-transform: rotateX(-90deg); } } @-webkit-keyframes cube-three { 0&#x25; { -webkit-transform: rotateY(0deg); } 100&#x25; { -webkit-transform: rotateY(-90deg); } } @-webkit-keyframes cube-four { 0&#x25; { -webkit-transform: rotateY(0deg); } 100&#x25; { -webkit-transform: rotateY(90deg); } } @-webkit-keyframes cube-five-six { 0&#x25; { -webkit-transform: rotateX(0deg); } 100&#x25; { -webkit-transform: rotateX(90deg); } } @-webkit-keyframes cube-six { 0&#x25; { -webkit-transform: rotateX(0deg); } 100&#x25; { -webkit-transform: rotateX(90deg); } } @-o-keyframes cube { 0&#x25; { -o-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); } 20&#x25; { -o-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); } 40&#x25; { -o-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); } 60&#x25; { -o-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); } 80&#x25; { -o-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); } 100&#x25; { -o-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); } } @-o-keyframes cube-two { 0&#x25; { -o-transform: rotateX(0deg); } 100&#x25; { -o-transform: rotateX(-90deg); } } @-o-keyframes cube-three { 0&#x25; { -o-transform: rotateY(0deg); } 100&#x25; { -o-transform: rotateY(-90deg); } } @-o-keyframes cube-four { 0&#x25; { -o-transform: rotateY(0deg); } 100&#x25; { -o-transform: rotateY(90deg); } } @-o-keyframes cube-five-six { 0&#x25; { -o-transform: rotateX(0deg); } 100&#x25; { -o-transform: rotateX(90deg); } } @-o-keyframes cube-six { 0&#x25; { -o-transform: rotateX(0deg); } 100&#x25; { -o-transform: rotateX(90deg); } } @keyframes cube { 0&#x25; { -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); -moz-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); -ms-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); -o-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); } 20&#x25; { -webkit-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); -moz-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); -ms-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); -o-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg); } 40&#x25; { -webkit-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); -moz-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); -ms-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); -o-transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); transform: rotateY(60deg) rotateX(230deg) rotateZ(144deg); } 60&#x25; { -webkit-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); -moz-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); -ms-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); -o-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg); } 80&#x25; { -webkit-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); -moz-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); -ms-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); -o-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg); } 100&#x25; { -webkit-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); -moz-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); -ms-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); -o-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); } } @keyframes cube-two { 0&#x25; { -webkit-transform: rotateX(0deg); -moz-transform: rotateX(0deg); -ms-transform: rotateX(0deg); -o-transform: rotateX(0deg); transform: rotateX(0deg); } 100&#x25; { -webkit-transform: rotateX(90deg); -moz-transform: rotateX(90deg); -ms-transform: rotateX(90deg); -o-transform: rotateX(90deg); transform: rotateX(90deg); } } @keyframes cube-three { 0&#x25; { -webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); -ms-transform: rotateY(0deg); -o-transform: rotateY(0deg); transform: rotateY(0deg); } 100&#x25; { -webkit-transform: rotateY(90deg); -moz-transform: rotateY(90deg); -ms-transform: rotateY(90deg); -o-transform: rotateY(90deg); transform: rotateY(90deg); } } @keyframes cube-four { 0&#x25; { -webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); -ms-transform: rotateY(0deg); -o-transform: rotateY(0deg); transform: rotateY(0deg); } 100&#x25; { -webkit-transform: rotateY(-90deg); -moz-transform: rotateY(-90deg); -ms-transform: rotateY(-90deg); -o-transform: rotateY(-90deg); transform: rotateY(-90deg); } } @keyframes cube-five-six { 0&#x25; { -webkit-transform: rotateX(0deg); -moz-transform: rotateX(0deg); -ms-transform: rotateX(0deg); -o-transform: rotateX(0deg); transform: rotateX(0deg); } 100&#x25; { -webkit-transform: rotateX(-90deg); -moz-transform: rotateX(-90deg); -ms-transform: rotateX(-90deg); -o-transform: rotateX(-90deg); transform: rotateX(-90deg); } } @keyframes cube-six { 0&#x25; { -webkit-transform: rotateX(0deg); -moz-transform: rotateX(0deg); -ms-transform: rotateX(0deg); -o-transform: rotateX(0deg); transform: rotateX(0deg); } 100&#x25; { -webkit-transform: rotateX(-90deg); -moz-transform: rotateX(-90deg); -ms-transform: rotateX(-90deg); -o-transform: rotateX(-90deg); transform: rotateX(-90deg); } }</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>Firefox/Chromeでは動作確認済み。Operaは<a href="http://caniuse.com/transforms3d" target="_blank" rel="noopener">transformの3Dが未対応</a>なので、動作しません。IE10でも動きますが、何か変…</p>
+<p>sassのコードは下記のような感じ。</p>
+<pre><code>@import &quot;compass/css3/box-sizing&quot;;
+@import &quot;compass/css3/transform&quot;;
+
+@mixin position($top:null,$right:null,$bottom:null,$left:null){
+  @if($top){ top: $top }
+  @if($right){ right: $right }
+  @if($left){ left: $left }
+  @if($bottom){ bottom: $bottom }  
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+.dice {
+  @include transform-style(preserve-3d);
+  @include perspective(1000px);
+  @include perspective-origin(50&amp;#x25; 50&amp;#x25;);
+
+  position: relative;
+  width: 400px;
+  height: 400px;
+
+  &gt; div,
+  .five,.six {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    background-color: rgba(158,158,158,0.1);
+    line-height: 100px;
+    text-align: center;
+  }
+
+  .one {
+    @include position(100px,null,null,200px);
+  }
+
+  .two {
+    @include position(0,null,null,200px);
+    @include transform-origin(bottom,left);
+    border-bottom: none;
+  }
+
+  .three {
+    @include position(100px,null,null,300px);
+    @include transform-origin(top,left);
+    border-left: none;
+    .inner {
+      @include transform(rotateZ(90deg));
+    }
+  }
+
+  .four {
+    @include position(100px,null,null,100px);
+    @include transform-origin(top,right);
+    border-right: none;
+    .inner {
+      @include transform(rotateZ(-90deg));
+    }
+  }
+
+  .five-six {
+    @include position(200px,null,null,200px);
+    @include transform-origin(top,left);
+    border: none;
+    background: transparent;
+    height: 200px;
+    @include transform-style(preserve-3d);
+  }
+
+  .five {
+    @include position(0,null,null,0);
+    border-top: none;
+    border-bottom: none;
+    .inner {
+      @include transform(rotateZ(180deg));
+    }
+  }
+
+  .six {
+    @include position(100px,null,null,0);
+    @include transform-origin(top,left);
+    .inner {
+      @include transform(rotateZ(180deg));
+    }
+  }
+
+}
+
+.dice:hover,
+.dice:active,
+.dice-active {
+  @each $vendor in -moz-,-webkit-,-ms-,-o-,null {
+    #{$vendor}animation-duration: 5s;
+    #{$vendor}animation-name: cube;
+    #{$vendor}animation-iteration-count: infinite;
+    #{$vendor}animation-timing-function: linear;
+  }
+
+  .two {
+    @include transform(rotateX(-90deg));
+  }
+
+  .three {
+    @include transform(rotateY(-90deg));
+  }
+
+  .four {
+    @include transform(rotateY(90deg));
+  }
+
+  .five-six {
+    @include transform(rotateX(90deg));
+
+  }  
+
+  .six {
+    @include transform(rotateX(90deg));
+  }  
+
+  @each $num in two,three,four,five-six {
+    .#{$num} {
+      @each $vendor in -moz-,-webkit-,-ms-,-o-,null {
+        #{$vendor}animation-duration: 2s;
+        #{$vendor}animation-name: cube-#{$num};
+        #{$vendor}animation-iteration-count: 1;
+        #{$vendor}animation-timing-function: ease;
+        #{$vendor}animation-delay: 0s;
+      }
+    }
+  }
+
+    .six {
+      @each $vendor in -moz-,-webkit-,-ms-,-o-,null {
+        #{$vendor}animation-duration: 4s;
+        #{$vendor}animation-name: cube-six;
+        #{$vendor}animation-iteration-count: 1;
+        #{$vendor}animation-timing-function: ease;
+        #{$vendor}animation-delay: 0s;
+      }
+    }
+}
+
+  @-moz-keyframes cube {
+    0&amp;#x25; { -moz-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) }
+    20&amp;#x25; { -moz-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg) }
+    40&amp;#x25; { -moz-transform:rotateY(60deg) rotateX(230deg) rotateZ(144deg) }
+    60&amp;#x25; { -moz-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg) }
+    80&amp;#x25; { -moz-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg) }
+    100&amp;#x25; { -moz-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg) }
+  }
+
+  @-moz-keyframes cube-two {
+    0&amp;#x25; { -moz-transform: rotateX(0deg) }
+    100&amp;#x25;{ -moz-transform: rotateX(-90deg) }
+  }
+
+  @-moz-keyframes cube-three {
+    0&amp;#x25; { -moz-transform: rotateY(0deg) }
+    100&amp;#x25;{ -moz-transform:rotateY(-90deg) }
+  }
+
+  @-moz-keyframes cube-four {
+    0&amp;#x25;{ -moz-transform: rotateY(0deg) }
+    100&amp;#x25;{ -moz-transform: rotateY(90deg) }
+  }
+
+  @-moz-keyframes cube-five-six {
+    0&amp;#x25;{ -moz-transform: rotateX(0deg) }
+    100&amp;#x25;{ -moz-transform: rotateX(90deg) }
+  }
+
+  @-moz-keyframes cube-six {
+    0&amp;#x25;{ -moz-transform: rotateX(0deg) }
+    100&amp;#x25;{ -moz-transform: rotateX(90deg) }
+  }
+
+  @-webkit-keyframes cube {
+    0&amp;#x25; { -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) }
+    20&amp;#x25; { -webkit-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg) }
+    40&amp;#x25; { -webkit-transform:rotateY(60deg) rotateX(230deg) rotateZ(144deg) }
+    60&amp;#x25; { -webkit-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg) }
+    80&amp;#x25; { -webkit-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg) }
+    100&amp;#x25; { -webkit-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg) }
+  }
+
+  @-webkit-keyframes cube-two {
+    0&amp;#x25; { -webkit-transform: rotateX(0deg) }
+    100&amp;#x25;{ -webkit-transform: rotateX(-90deg) }
+  }
+
+  @-webkit-keyframes cube-three {
+    0&amp;#x25; { -webkit-transform: rotateY(0deg) }
+    100&amp;#x25;{ -webkit-transform:rotateY(-90deg) }
+  }
+
+  @-webkit-keyframes cube-four {
+    0&amp;#x25;{ -webkit-transform: rotateY(0deg) }
+    100&amp;#x25;{ -webkit-transform: rotateY(90deg) }
+  }
+
+  @-webkit-keyframes cube-five-six {
+    0&amp;#x25;{ -webkit-transform: rotateX(0deg) }
+    100&amp;#x25;{ -webkit-transform: rotateX(90deg) }
+  }
+
+  @-webkit-keyframes cube-six {
+    0&amp;#x25;{ -webkit-transform: rotateX(0deg) }
+    100&amp;#x25;{ -webkit-transform: rotateX(90deg) }
+  }
+
+  @-o-keyframes cube {
+    0&amp;#x25; { -o-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) }
+    20&amp;#x25; { -o-transform: rotateY(30deg) rotateX(180deg) rotateZ(72deg) }
+    40&amp;#x25; { -o-transform:rotateY(60deg) rotateX(230deg) rotateZ(144deg) }
+    60&amp;#x25; { -o-transform: rotateY(90deg) rotateX(280deg) rotateZ(236deg) }
+    80&amp;#x25; { -o-transform: rotateY(180deg) rotateX(300deg) rotateZ(298deg) }
+    100&amp;#x25; { -o-transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg) }
+  }
+
+  @-o-keyframes cube-two {
+    0&amp;#x25; { -o-transform: rotateX(0deg) }
+    100&amp;#x25;{ -o-transform: rotateX(-90deg) }
+  }
+
+  @-o-keyframes cube-three {
+    0&amp;#x25; { -o-transform: rotateY(0deg) }
+    100&amp;#x25;{ -o-transform:rotateY(-90deg) }
+  }
+
+  @-o-keyframes cube-four {
+    0&amp;#x25;{ -o-transform: rotateY(0deg) }
+    100&amp;#x25;{ -o-transform: rotateY(90deg) }
+  }
+
+  @-o-keyframes cube-five-six {
+    0&amp;#x25;{ -o-transform: rotateX(0deg) }
+    100&amp;#x25;{ -o-transform: rotateX(90deg) }
+  }
+
+  @-o-keyframes cube-six {
+    0&amp;#x25;{ -o-transform: rotateX(0deg) }
+    100&amp;#x25;{ -o-transform: rotateX(90deg) }
+  }
+
+  @keyframes cube {
+    0&amp;#x25; { @include transform(rotateY(0deg) rotateX(0deg) rotateZ(0deg)) }
+    20&amp;#x25; { @include transform(rotateY(30deg) rotateX(180deg) rotateZ(72deg)) }
+    40&amp;#x25; { @include transform(rotateY(60deg) rotateX(230deg) rotateZ(144deg)) }
+    60&amp;#x25; { @include transform(rotateY(90deg) rotateX(280deg) rotateZ(236deg)) }
+    80&amp;#x25; { @include transform(rotateY(180deg) rotateX(300deg) rotateZ(298deg)) }
+    100&amp;#x25; { @include transform(rotateY(360deg) rotateX(360deg) rotateZ(360deg)) }
+  }
+
+  @keyframes cube-two {
+    0&amp;#x25; { @include transform(rotateX(0deg)) }
+    100&amp;#x25;{ @include transform(rotateX(90deg)) }
+  }
+
+  @keyframes cube-three {
+    0&amp;#x25; { @include transform(rotateY(0deg)) }
+    100&amp;#x25;{ @include transform(rotateY(90deg)) }
+  }
+
+  @keyframes cube-four {
+    0&amp;#x25;{ @include transform(rotateY(0deg)) }
+    100&amp;#x25;{ @include transform(rotateY(-90deg)) }
+  }
+
+  @keyframes cube-five-six {
+    0&amp;#x25;{ @include transform(rotateX(0deg)) }
+    100&amp;#x25;{ @include transform(rotateX(-90deg)) }
+  }
+
+  @keyframes cube-six {
+    0&amp;#x25;{ @include transform(rotateX(0deg)) }
+    100&amp;#x25;{ @include transform(rotateX(-90deg)) }
+  }
+</code></pre><p>vendor prefixのせいもありやたら長いですが、やっていることは全体をてきとうに回転させつつ、サイコロの各面の要素を90度に回転させているだけです。あとは、各面の接しているところが離れないようにtransform-originを設定していたりとか、「5」と「6」は二面を90度に曲げたあとに「6」だけさらに90度曲げるために、five-sixという親divを用意してそこに3D rendering contextを別途生成しています。でも、そのくらい。</p>
+<p>という感じ。実用的かどうかはさておき、いつの間にかCSSだけでここまでできるようになっていて、いろいろすごい。隔世の感があります。</p>
+<h2 id="CSS-Transforms-関連記事"><a href="#CSS-Transforms-関連記事" class="headerlink" title="CSS Transforms 関連記事"></a>CSS Transforms 関連記事</h2><ul>
+<li><a href="/blog//2012/09/css_transforms_2d/">CSS Transforms: transform</a></li>
+<li><a href="/blog//2012/09/css_transforms_2d_2/">CSS Transforms: transform-origin</a></li>
+<li><a href="/blog//2012/09/css_transforms_3d_and_perspective/">CSS Transforms: perspective</a></li>
+<li><a href="/blog//2012/09/css_transforms_3d_and_transform-style/">CSS Transforms: 3D rendering context (transform-style)</a></li>
+<li><a href="/blog//2012/09/css_transforms_backface-visibility/">CSS Transforms: backface-visibility</a></li>
+</ul>
+<p>var dice = document.getElementById(‘dice’); dice.addEventListener(‘touchstart’,function(e){ e.preventDefalt(); e.stopPropagation(); dice.className = ‘dice dice-active’; }); dice.addEventListener(‘touchend’,function(e){ dice.className = ‘dice’; });</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

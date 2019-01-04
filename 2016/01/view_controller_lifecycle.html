@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>View Controller Lifecycle | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。 Work with View Controllersにある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。">
+<meta name="keywords" content="ios,swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="View Controller Lifecycle">
+<meta property="og:url" content="https://memolog.org/2016/01/view_controller_lifecycle.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。 Work with View Controllersにある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Art/4_vclife_2x.png">
+<meta property="og:image" content="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Art/windowlayers.jpg">
+<meta property="og:image" content="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Art/nav_controller_notifications.png">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.873Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="View Controller Lifecycle">
+<meta name="twitter:description" content="viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。 Work with View Controllersにある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。">
+<meta name="twitter:image" content="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Art/4_vclife_2x.png">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2016/01/view_controller_lifecycle.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2016/01/view_controller_lifecycle.html"
+      },
+      "headline": "View Controller Lifecycle",
+      
+      "datePublished": "Mon Jan 11 2016 22:15:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。
+Work with View Controllersにある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2016-01-11T13:15:00.000Z">
+              <span class="calendar-icon">📅</span><span>2016年1月11日</span>
+            </time>
+          </div>
+          <h2 class="header__title">View Controller Lifecycle</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p>viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。</p>
+<p><a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson4.html" target="_blank" rel="noopener">Work with View Controllers</a>にある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。</p>
+<a id="more"></a>
+<blockquote>
+<p><img src="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Art/4_vclife_2x.png" alt=""></p>
+<p>UIViewController methods get called as follows:</p>
+<ul>
+<li>viewDidLoad()–Called when the view controller’s content view (the top of its view hierarchy) is created and loaded from a storyboard. <strong>This method is intended for initial setup. However, because views may be purged due to limited resources in an app, there is no guarantee that it will be called only once.</strong></li>
+<li>viewWillAppear()–<strong>Intended for any operations that you want always to occur before the view becomes visible.</strong> Because a view’s visibility may be toggled or obscured by other views, this method is always called immediately before the content view appears onscreen.</li>
+<li>viewDidAppear()–<strong>Intended for any operations that you want to occur as soon as the view becomes visible, such as fetching data or showing an animation.</strong> Because a view’s visibility may be toggled or obscured by other views, this method is always called immediately after the content view appears onscreen.</li>
+</ul>
+</blockquote>
+<p>viewDidLoadはstoryboardからviewが読み込まれた時に発生する。読み込んだviewの初期化のために使うことを意図してるけど、viewはリソースの制限からpurgeされる場合があるので、「一度だけ呼ばれる」ことを保証するものではない。</p>
+<p>viewWillAppearとviewDidAppearはviewがvisibleになったときに発生する。「the view becomes visible」というのは、<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/#//apple_ref/occ/instm/UIViewController/viewWillAppear:" target="_blank" rel="noopener">UIViewController Class Reference</a>あたりを参考にすると、「its view is about to be added to a view hierarchy」と同じ意味だと思う。</p>
+<p>以下は<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class" target="_blank" rel="noopener">UIViewController Class Reference</a>より。</p>
+<blockquote>
+<p><strong>viewWillAppear:</strong></p>
+<p>Notifies the view controller that its view is about to <strong>be added to a view hierarchy.</strong></p>
+<p>This method is called before the view controller’s view is about to be added to a view hierarchy and before any animations are configured for showing the view. You can override this method to perform custom tasks associated with displaying the view. For example, you might use this method to change the orientation or style of the status bar to coordinate with the orientation or style of the view being presented. If you override this method, you must call super at some point in your implementation.</p>
+<p>For more information about the how views are added to view hierarchies by a view controller, and the sequence of messages that occur, see Responding to Display-Related Notifications.</p>
+<p>NOTE<br>If a view controller is presented by a view controller inside of a popover, this method is not invoked on the presenting view controller after the presented controller is dismissed.</p>
+</blockquote>
+<p>view hierarchyは文字通り「viewの階層(構造)」ということで、<a href="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/CreatingViews/CreatingViews.html" target="_blank" rel="noopener">View Programming Guide for iOS: Views</a>あたりが参考になる。</p>
+<blockquote>
+<p>Figure 3-1 shows an example of how the layering of views creates the desired visual effect for an application. In the case of the Clock application, the view hierarchy is composed of a mixture of views derived from different sources. The tab bar and navigation views are special view hierarchies provided by the tab bar and navigation controller objects to manage portions of the overall user interface. Everything between those bars belongs to the custom view hierarchy that the Clock application provides.</p>
+<p><img src="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Art/windowlayers.jpg" alt=""></p>
+</blockquote>
+<p>たとえば navigation controller では、navigation controller では　pushViewController　とかで画面遷移したときに、viewDidAppearなどの各種イベントが発生する。</p>
+<blockquote>
+<p>Navigation Controllers</p>
+<p>A navigation controller manages a stack of view controllers to provide a drill-down interface for hierarchical content. The view hierarchy of a navigation controller is self contained. It is composed of views that the navigation controller manages directly and views that are managed by content view controllers you provide. Each content view controller manages a distinct view hierarchy, and the navigation controller coordinates the navigation between these view hierarchies.</p>
+<p>Monitoring Changes to the Navigation Stack</p>
+<p>Whenever you push or pop a view controller, the navigation controller sends messages to the affected view controllers. The navigation controller also sends messages to its delegate when its stack changes. Figure 1-5 shows the sequence of events that occurs during a push or pop operation and the corresponding messages that are sent to your custom objects at each stage. The new view controller reflects the view controller that is about to become the topmost view controller on the stack.</p>
+<p>Figure 1-5 Messages sent during stack changes</p>
+<p><img src="https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Art/nav_controller_notifications.png" alt=""></p>
+</blockquote>
+<p><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instm/UIViewController/presentViewController:animated:completion:" target="_blank" rel="noopener">presentViewController</a>でviewを表示する場合は、表示するview controller(presented view controller)の<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle" target="_blank" rel="noopener">modalPresentationStyle</a>によってイベントが発生するかどうかが変わる。 .FullScreen の場合は　presenting　viewは消えるので、viewDidDisappearなど発生する。 .OverFullScreen の場合は、presenting view は消えないので、viewDidDisappearなどのイベントが発生しない（presented view controllerの<a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/definesPresentationContext" target="_blank" rel="noopener">definesPresentationContext</a>がtrueである必要がある）。</p>
+<blockquote>
+<p>* OverFullScreen  </p>
+<p>A view presentation style in which the presented view covers the screen. The views beneath the presented content are <strong>not removed from the view hierarchy</strong> when the presentation finishes. So if the presented view controller does not fill the screen with opaque content, the underlying content shows through.  </p>
+<p>Available in iOS 8.0 and later.</p>
+</blockquote>
+<p>アプリケーションがBackground（またはSuspended）になった場合は、viewDidDisappearなどのイベントは発生しない。アプリがkillされなければ、frontにそのままの状態で戻ってくるけど、killされていれば、storyboardからあらためてviewが読み込まると思うので（ちゃんと確かめてないけど..）、viewDidLoadが発生するはず。以下は<a href="http://shop.oreilly.com/product/0636920044352.do" target="_blank" rel="noopener">Programming iOS 9</a>(<a href="https://books.google.co.jp/books?id=rxHiCgAAQBAJ&amp;pg=PT401&amp;dq=A+view+does+not+disappear+merely+because+the+app+is+backgrounded+and+suspended.&amp;hl=ja&amp;sa=X&amp;ved=0ahUKEwiCpeLL4qLKAhXF6KYKHf_HA3IQ6AEIHDAA#v=onepage&amp;q=A&#x25;20view&#x25;20does&#x25;20not&#x25;20disappear&#x25;20merely&#x25;20because&#x25;20the&#x25;20app&#x25;20is&#x25;20backgrounded&#x25;20and&#x25;20suspended.&amp;f=false" target="_blank" rel="noopener">Programming iOS 9: Dive Deep into Views, View Controllers, and Frameworks - Matt Neuburg - Google ブックス</a>)から。</p>
+<blockquote>
+<p>A view does not disappear merely because the app is backgrounded and suspended. Once suspended, your app might be killed. So you cannot rely on viewWillDisappear: and viewDidDisappear: alone for saving data that the app will need the next time it launches. If you are to cover every case, you may need to ensure that your data-saving code also runs in response to an application lifetime event such as applicationWillResignActive: or applicationDidEnterBackground:</p>
+</blockquote>
+<p>参考： <a href="http://qiita.com/mo_to_44/items/0ca628b4cc74c8c5599d" target="_blank" rel="noopener">iOS - UIViewControllerのライフサイクル - Qiita</a></p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

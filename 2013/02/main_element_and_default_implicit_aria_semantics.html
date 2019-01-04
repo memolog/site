@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>main要素 と default implicit ARIA semantics | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="Open Web Platform Weekly Summary - 2013-01-20 - 2013-01-27 - W3C Blogにて、HTML5.1で追加されるmain要素がFirefoxのコードにお目見えしたという話が掲載されていました。Firefox Nightlyで確認してみたら、確かに入っている雰囲気（main要素確認用codepenでmain要素をinspectすると、main">
+<meta name="keywords" content="html,html5,aria,semantics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="main要素 と default implicit ARIA semantics">
+<meta property="og:url" content="https://memolog.org/2013/02/main_element_and_default_implicit_aria_semantics.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="Open Web Platform Weekly Summary - 2013-01-20 - 2013-01-27 - W3C Blogにて、HTML5.1で追加されるmain要素がFirefoxのコードにお目見えしたという話が掲載されていました。Firefox Nightlyで確認してみたら、確かに入っている雰囲気（main要素確認用codepenでmain要素をinspectすると、main">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="main要素 と default implicit ARIA semantics">
+<meta name="twitter:description" content="Open Web Platform Weekly Summary - 2013-01-20 - 2013-01-27 - W3C Blogにて、HTML5.1で追加されるmain要素がFirefoxのコードにお目見えしたという話が掲載されていました。Firefox Nightlyで確認してみたら、確かに入っている雰囲気（main要素確認用codepenでmain要素をinspectすると、main">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2013/02/main_element_and_default_implicit_aria_semantics.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2013/02/main_element_and_default_implicit_aria_semantics.html"
+      },
+      "headline": "main要素 と default implicit ARIA semantics",
+      
+      "datePublished": "Thu Jan 31 2013 17:00:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "Open Web Platform Weekly Summary - 2013-01-20 - 2013-01-27 - W3C Blogにて、HTML5.1で追加されるmain要素がFirefoxのコードにお目見えしたという話が掲載されていました。Firefox Nightlyで確認してみたら、確かに入っている雰囲気（main要素確認用codepenでmain要素をinspectすると、main要素用にstyleが追加されているのが分かる）。Chrome Canaryでも対応している雰囲気。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2013-01-31T08:00:00.000Z">
+              <span class="calendar-icon">📅</span><span>2013年1月31日</span>
+            </time>
+          </div>
+          <h2 class="header__title">main要素 と default implicit ARIA semantics</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="http://www.w3.org/QA/2013/01/openweb-weekly-02.html" target="_blank" rel="noopener">Open Web Platform Weekly Summary - 2013-01-20 - 2013-01-27 - W3C Blog</a>にて、HTML5.1で追加される<a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-main-element" target="_blank" rel="noopener">main要素</a>がFirefoxのコードにお目見えしたという話が掲載されていました。<a href="http://nightly.mozilla.org/" target="_blank" rel="noopener">Firefox Nightly</a>で確認してみたら、確かに入っている雰囲気（<a href="http://codepen.io/memolog/pen/ozlGs" target="_blank" rel="noopener">main要素確認用codepen</a>でmain要素をinspectすると、main要素用にstyleが追加されているのが分かる）。<a href="https://www.google.com/intl/ja/chrome/browser/canary.html" target="_blank" rel="noopener">Chrome Canary</a>でも対応している雰囲気。</p>
+<a id="more"></a>
+<p>main要素は、ドキュメントの中で「メイン」にあたるコンテンツを囲う要素として定義されています（The main element represents the main content section of the body of a document or application. ）。sectioning contentは作らない。ドキュメントの中には一つしかおけず、article、aside、footer、header、nav要素の子要素としても含めることは禁止されている。main要素はメインコンテンツ全体を包含するのだからarticle要素の1コンテンツの子要素にはなりえないし、メインを補完するような要素のasideの中には含まれない、サイトのナビゲーションもメインの要素ではないと。main要素の導入に至る背景などを含めた詳細は<a href="http://myakura.hatenablog.com/entry/2012/12/01/025158" target="_blank" rel="noopener">HTMLに提案中のmain要素 - fragmentary</a>に書かれています。</p>
+<p>また、main要素には<a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#wai-aria" target="_blank" rel="noopener">WAI-ARIA</a>の項目で、「Strong native semantics and default implicit ARIA semantics」としてmain roleが定義されています。main 要素は明示的にrole属性を付与しなくても、main roleの属性（をつけたのと同じ意味的情報）を持っている（仕様にはブラウザが実装的にそれをサポートするまでは、明示的にrole=’main’を付与した方が良いとも書いてありますけど）。</p>
+<p>「default implicit ARIA semantics」の意味はWAI-ARIAの「<a href="http://www.w3.org/TR/wai-aria/host_languages#implicit_semantics" target="_blank" rel="noopener">implicit WAI-ARIA semantics</a>」と同等の意味らしいのですが、そこには下記のように書かれてあります。</p>
+<blockquote>
+<p>WAI-ARIA is designed to provide semantic information about objects when host languages lack native semantics for the object. WAI-ARIA is designed, however, to provide additional semantics for many host languages. Furthermore, host languages over time can evolve and provide new native features that correspond to WAI-ARIA features. Therefore, there are many situations in which WAI-ARIA semantics are redundant with host language semantics.</p>
+<p>These host language features can be viewed as having “implicit WAI-ARIA semantics”. User agent processing of features with implicit WAI-ARIA semantics would be similar to the processing for the WAI-ARIA feature. The processing might not be identical because of lexical differences between the host language feature and the WAI-ARIA feature, but generally the user agent would expose the same information to the accessibility API. Features with implicit WAI-ARIA semantics satisfy WAI-ARIA structural requirements such as required owned elements, required states and properties, etc. and do not require explicit WAI-ARIA semantics to be provided.</p>
+<p>For example, if an element with the functionality already exists, such as a checkbox or radio button, use the native semantics of the host language. WAI-ARIA markup is only intended to be used to enhance the native semantics (e.g., indicating that the element is required with aria-required), or to change the semantics to a different purpose form the standard functionality of the element.</p>
+</blockquote>
+<p>WAI-ARIAは、対象のオブジェクトとか機能が、本来的に持っている意味（native semantics）が不足している場合に、意味的な情報を提供するためにデザインされている。一方で、明示しなくてもWAI-ARIAが提供している意味的な情報を含有しているとみなせる機能もあり、それがその機能のimplicit WAI-ARIA semanticsという。たとえば、a要素で作られたリンクは<a href="http://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">linkのrole</a>を意味的に含有していると見なせる。</p>
+<p>native semanticsとは、対象の機能が本来的に持っている意味的な情報で、たとえば、checkboxはcheckboxとしての意味をそもそも持っている、みたいな。その本来的に持っている意味情報が、WAI-ARIAの定義と重なっていれば、implicit WAI-ARIA semanticsを含有しているとも言える。その場合、たとえば「必須」のcheckboxみたいに、その機能が本来的に持っていない意味を追加したい場合だけ、area-requiredみたいな属性を追加すれば良い。または、その要素の標準的な使用方法と異なる意味で使うときに、意味的な情報をoverrideするためにWAI-ARIAを使用する（HTMLの場合、default implict ARIA semanticsの変更には、制約(Restriction)が定義されている）。</p>
+<p>Strong native semanticsについては、下記のように書かれています。</p>
+<blockquote>
+<p>Host languages MAY document features that cannot be overridden with WAI-ARIA (these are called <strong>“strong native semantics”</strong>). These can be features that have implicit WAI-ARIA semantics, as well as features where the processing would be uncertain if the semantics were changed with WAI-ARIA. Conformance checkers MAY signal an error or warning when a WAI-ARIA role is used on elements with strong native semantics, but as described above, user agents MUST still use the value of the the semantic of the WAI-ARIA role when exposing the element to accessibility APIs.</p>
+</blockquote>
+<p>native semantics（とそれに付帯するimplicit ARIA semantics）は、意味的な情報を変更したければ変更することが許容される。たとえば、a要素のリンクを「link」という意味ではなく、「tab」型のナビゲーションのタブとしても使うこともできる。</p>
+<p>strong native semanticsの場合は、本来的な意味以外での使用を想定しなくて良いみたいな含意がある（と思う）。たとえば、nav要素はnavigation roleがstrong native semanticsなimplicit ARIA semanticsとして付与されている。nav要素はナビゲーション用途以外の使い方なんてないんだから、別途role属性がついていても、それを無視しても良いと（HTMLなどhost languageが）定義するかもしれないと（一方でaccessibility APIsを通して要素の情報を得る場合はrole属性の意味を使わないといけないとしている）。</p>
+<p>つまり、main要素は、HTMLの定義からも、WAI-ARIA semanticsな面からも「メインコンテンツを囲う」という、それだけの用途を持った要素と言えます。他の用途で使う余地がないという意味で、わかりやすいといえば分かりやすい。あえて新しい要素を定義しなくても良いような気もしますけど（div role=’main’でも十分な感はある）、HTMLタグを適切に使用するだけで適切なWAI-ARIA semanticsも持たせることができるというのは意味のあることかなと思います。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

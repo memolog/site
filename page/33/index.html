@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2005/09/cd919.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2005/08/post_98.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2005/08/post_97.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2005/08/dear.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2005/07/post_94.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2005/07/post_93.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2005/07/post_91.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2005/07/advantage_lucy_hellow_again_ep.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2005/07/cd.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2005/06/post_90.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-09-18T08:08:33.000Z"><span class="calendar-icon">📅</span><span>2005年9月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/09/cd919.html">最近購入したCD（9/19）</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>気がついたら２ヶ月近くCDを買いに行ってなかったのですが、先週末に久しぶりに渋谷HMVに行ってきました。会社帰りに急に思いついて閉店間際に行ったため、かなりざっくりと、大量に買ってきてしまいました。だめな私。しばらく節制の日々が続きそうです。<br></div>
+            <div><a href="/2005/09/cd919.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-08-14T08:18:05.000Z"><span class="calendar-icon">📅</span><span>2005年8月14日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/08/post_98.html">「石油の終焉」を読みました。</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="http://images-jp.amazon.com/images/P/4334961819.09.TZZZZZZZ.jpg" alt="">ポール・ロバーツ著 久保恵美子訳「石油の終焉」を読みました。現在のエネルギー事情について多角的な視点で考察しており、いろんな人に読んでもらいたい本です。500ページ超の分量なので読むの大変かと思いますが、読み応えはあります。</p></div>
+            <div><a href="/2005/08/post_98.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-08-14T06:50:06.000Z"><span class="calendar-icon">📅</span><span>2005年8月14日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/08/post_97.html">「レイアウトの法則」を読みました。</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="http://images-jp.amazon.com/images/P/4393360281.09.TZZZZZZZ.jpg" alt=""> 佐々木正人著「レイアウトの法則 - アートとアフォーダンス」を読みました。本文中に何度も引用されるジェームス・ギブソンの理論は抽象的で高度な箇所もあって、理解できないところも多々ありましたが、それでもなんとなくぼやーっと概観だけはつかめたように思います。</p></div>
+            <div><a href="/2005/08/post_97.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-08-13T07:45:28.000Z"><span class="calendar-icon">📅</span><span>2005年8月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/08/dear.html">Dear フランキーを見てきました</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.wisepolicy.com/dear_frankie/" target="_blank" rel="noopener">Dear フランキー</a></li>
+<li><a href="http://aquarius.blog.bai.ne.jp/?eid=13338" target="_blank" rel="noopener">微熱の材料</a></li>
+</ul></div>
+            <div><a href="/2005/08/dear.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-07-24T06:36:48.000Z"><span class="calendar-icon">📅</span><span>2005年7月24日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/07/post_94.html">「死を生きながら」を読みました。</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4622070901/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://images-jp.amazon.com/images/P/4622070901.09._SL180_.jpg" alt=""></a>オスロ合意からラビン暗殺、自爆テロの始まり、第二次インティファーダ（民衆蜂起）、9.11同時多発テロ、シャロン再選など、1993年から2003年までのイスラエル・パレスチナ情勢を伝える本です。内容は現地のルポのようなもので歴史的背景の詳述などはありませんが、各章の冒頭に歴史的な説明が簡単に入っているのでここ10年の情勢の概観するには良い本かと思います。</div>
+            <div><a href="/2005/07/post_94.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-07-17T22:28:58.000Z"><span class="calendar-icon">📅</span><span>2005年7月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/07/post_93.html">ブログの先行者利得</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="/blog//assets/i/etc/first-mover.gif" alt=""> 今月の<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000A0G33I/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">Harvard Business Review（2005年8月号）</a>に「先行者利得の真実」という記事があったので、それを基にブログについて個人的な考えを出してみようと思います。</p>
+<p>「先行者利得の真実」を簡単に要約すると、先行者利得が生み出される条件、生み出されない条件には、「（商品に使われる）技術が進歩するスピード」と「（商品が販売される）市場が拡大するスピード」の二つが大きく影響すると述べています（右上の図を参照）。「平静型（市場スピードが遅く、技術スピードも遅い）」では、技術スピードが遅いので後発者は先行者との差別化がしにくい。後発者が新しいアイデアを出すことができても、市場スピードが遅いので後発者が飛躍的な成長をするのは難しい。</p>
+<p>「市場主導型（市場スピードが早く、技術スピードは遅い）」は、市場が急速に拡大している上、技術的に高度ではない（技術の発展が遅い）ので、後発者が参入しやすく、先行者といえども後発者にとってかわられるかもしれない。そのため、競争優位を保つには経営資源（デザイン力、マーケティング力、ブランド）が重要になってくる。</p>
+<p>「技術主導型（市場スピードが遅く、技術スピードが速い）」では、市場の拡大が遅い一方で技術の変化が速いため、先行してもあまり利益がでないばかりか、技術の変化が速いので後発製品の方が有利になる傾向が強い。</p>
+<p>「激動型（市場スピードが速く、技術スピードも速い）」では、市場が急速に拡大しているため、新しい市場セグメントに対して後発者が次々と参入してくる。また、技術の変化が速いので、技術があっという間に陳腐化する。先行者の場合、既存の商品のメンテナンス・互換性も必要となる。<br></div>
+            <div><a href="/2005/07/post_93.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-07-16T05:57:23.000Z"><span class="calendar-icon">📅</span><span>2005年7月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/07/post_91.html">ヒトラー〜最期の１２日間〜を見てきました。</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.hitler-movie.jp/" target="_blank" rel="noopener">ヒトラー〜最後の１２日間〜</a></li>
+</ul>
+<p>評価：★★★☆☆<br>とても写実的な映画でした。映画というよりドキュメンタリーに近いかもしれない。もちろん本人が出演しているのではなく配役が演じているし、物語の緩急をつけるためのフィクションもあるとは思いますけど。でもヒトラー役のブルーノ・ガンツは本当にヒトラーのようでした。実際のヒトラーと映画の中のヒトラーはまったくの同一ではないと思いますが、ヒトラーの矛盾した人間性に少し触れることができたような気がします。「人」としてのヒトラーと、「総帥」としてのヒトラーの二面性と言いますか。</p></div>
+            <div><a href="/2005/07/post_91.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-07-12T06:29:52.000Z"><span class="calendar-icon">📅</span><span>2005年7月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/07/advantage_lucy_hellow_again_ep.html">advantage Lucy 「Hellow again e.p.」</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www006.upp.so-net.ne.jp/advantageLucy/index.html" target="_blank" rel="noopener">advantage Lucy</a></li>
+</ul>
+<p>私の中ではNo.1ギターポップバンドのAdvantage Lucyのサイトがリニューアルオープンしました。なかなかいい感じです。そしてなんとなんとmaxi singleを7/22に出すそうです。ライブ会場＆ホームページのみの限定販売ということで、とりあえずメールオーダーしました。到着が楽しみであります。秋には待望のnew albumが出るとのことで、かなり期待大であります。</p></div>
+            <div><a href="/2005/07/advantage_lucy_hellow_again_ep.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-07-10T05:24:12.000Z"><span class="calendar-icon">📅</span><span>2005年7月10日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/07/cd.html">最近購入したCD</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>私はCDと本にかかるお金に無頓着な人間で、気がつくと大量のCDと本を購入していたりします。本は読むペースが限られているので、そこまで増えないのですが、CDは本当にあっという間に溜まっていきます。収納スペースは限られているので、結構悩ましい問題なのですが、それでも買ってしまいます・・ああ。<br></div>
+            <div><a href="/2005/07/cd.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2005-06-26T07:00:00.000Z"><span class="calendar-icon">📅</span><span>2005年6月26日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2005/06/post_90.html">危ない食卓を読みました</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4309204414/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://images-jp.amazon.com/images/P/4309204414.09.TZZZZZZZ.jpg" alt=""></a> <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4309204414/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">「危ない食卓　- スーパーマーケットはお好き？」</a>という本を読みました。食の安全性について、食品ラベルとトレーサビリティ（追跡可能性）、配送システムと環境問題・フードマイル、低賃金労働、食の砂漠化、グローバル企業の購買力と搾取・フェアトレード、関税と保護政策など、多角的な視点で問題提議しています。本文は食品加工工場への潜入取材や現地でのインタビューが中心で臨場感がありました。その上難しい内容のわりに平易な文面でとても読みやすかったです。</p></div>
+            <div><a href="/2005/06/post_90.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/32/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/34/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

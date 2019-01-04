@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Node.js で AES-256-CBC で暗号化したデータを CryptoSwift で復号化する | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化するの記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。">
+<meta name="keywords" content="javascript,xcode,ios,node,security,swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js で AES-256-CBC で暗号化したデータを CryptoSwift で復号化する">
+<meta property="og:url" content="https://memolog.org/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化するの記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js で AES-256-CBC で暗号化したデータを CryptoSwift で復号化する">
+<meta name="twitter:description" content="CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化するの記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html"
+      },
+      "headline": "Node.js で AES-256-CBC で暗号化したデータを CryptoSwift で復号化する",
+      
+      "datePublished": "Thu Aug 27 2015 14:15:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化するの記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2015-08-27T05:15:00.000Z">
+              <span class="calendar-icon">📅</span><span>2015年8月27日</span>
+            </time>
+          </div>
+          <h2 class="header__title">Node.js で AES-256-CBC で暗号化したデータを CryptoSwift で復号化する</h2>
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="/blog//2015/08/encrypt-with-cryptswift-and-then-decrypt-it-with-nodejs/">CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化する</a>の記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。</p>
+<a id="more"></a>
+<h2 id="Node-jsで暗号化"><a href="#Node-jsで暗号化" class="headerlink" title="Node.jsで暗号化"></a>Node.jsで暗号化</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> key <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token string">'12345678901234567890123456789012'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> iv <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">randomBytes</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> cipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createCipheriv</span><span class="token punctuation">(</span><span class="token string">'aes-256-cbc'</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> iv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> encrypted <span class="token operator">=</span> cipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+encrypted <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span>iv<span class="token punctuation">,</span> encrypted<span class="token punctuation">,</span> cipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  encryptedToken<span class="token punctuation">:</span> encrypted<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上の例だとBase64で返しても良くて（たぶんbinary arrayでも大丈夫）、たぶんBase64の方がswiftでの取り扱いがやりやすいと思うのですが、「?token=xxxx」みたいにクエリストリングで返したい場合があったのでhexにしました。</p>
+<p>「637c04482cf264a7b39cc…」みたいな値が暗号化されたデータとして送られます。最後のresは<a href="http://expressjs.com/" target="_blank" rel="noopener">Express</a>のレスポンスオブジェクトを想定。</p>
+<h2 id="CryptoSwiftで復号化"><a href="#CryptoSwiftで復号化" class="headerlink" title="CryptoSwiftで復号化"></a>CryptoSwiftで復号化</h2><p>iOS(swift)側では、decryptというfuncを使って復号化するようにしてみました。encryptedStringに暗号化された文字列が入ります。hex string から UInt8 array にする簡単な方法がなかったので、hexStringToUInt8 という funcで処理するようにしています（もっといい方法ないのかな）。</p>
+<p>あと最後のCStringのencodingは「NSASCIIStringEncoding」にしていますけど（暗号化した文字列にアルファベットのみだったので）、日本語を暗号化するときは「NSUTF8StringEncoding」にしないと文字化けする（と思う）。</p>
+<pre class="line-numbers language-swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token builtin">UIKit</span>
+<span class="token keyword">import</span> <span class="token builtin">CryptoSwift</span>
+
+<span class="token keyword">func</span> <span class="token function">decrypt</span><span class="token punctuation">(</span>encryptedString<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">String</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">UInt8</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">"12345678901234567890123456789012"</span><span class="token punctuation">.</span>utf8<span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> ivRange <span class="token operator">=</span> <span class="token function">NSMakeRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> iv <span class="token operator">=</span> <span class="token function">hexStringToUInt8</span><span class="token punctuation">(</span>encryptedString<span class="token punctuation">,</span> range<span class="token punctuation">:</span> ivRange<span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> dataLength <span class="token operator">=</span> encryptedStr<span class="token punctuation">.</span>characters<span class="token punctuation">.</span><span class="token builtin">count</span> <span class="token operator">-</span> <span class="token number">32</span>
+    <span class="token keyword">if</span> dataLength <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">nil</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> dataRange <span class="token operator">=</span> <span class="token function">NSMakeRange</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> dataLength<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token function">hexStringToUInt8</span><span class="token punctuation">(</span>encryptedStr<span class="token punctuation">,</span> range<span class="token punctuation">:</span> dataRange<span class="token punctuation">)</span>
+
+    <span class="token keyword">do</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> aes <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token function">AES</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">,</span> iv<span class="token punctuation">:</span> iv<span class="token punctuation">,</span> blockMode<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token constant">CBC</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> decrypted <span class="token operator">=</span> <span class="token keyword">try</span> aes<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">convertUInt8ToUTF</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token keyword">let</span> error <span class="token keyword">as</span> <span class="token builtin">NSError</span> <span class="token punctuation">{</span>
+        <span class="token function">debugPrint</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token constant">nil</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// http://stackoverflow.com/questions/24465475/how-can-i-create-a-string-from-utf8-in-swift</span>
+<span class="token keyword">func</span> <span class="token function">convertUInt8ToUTF</span><span class="token punctuation">(</span>bytes<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token builtin">UInt8</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">String</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> ret <span class="token operator">=</span> <span class="token string">""</span>
+  <span class="token keyword">var</span> decoder <span class="token operator">=</span> <span class="token function">UTF8</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> generator <span class="token operator">=</span> bytes<span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> finished <span class="token operator">=</span> <span class="token boolean">false</span>
+
+  <span class="token keyword">repeat</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> decodingResult <span class="token operator">=</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>generator<span class="token punctuation">)</span>
+    <span class="token keyword">switch</span> decodingResult <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">Result</span><span class="token punctuation">(</span><span class="token keyword">let</span> char<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      ret<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      finished <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>finished<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> ret
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">hexStringToUInt8</span><span class="token punctuation">(</span>str<span class="token punctuation">:</span><span class="token builtin">String</span><span class="token punctuation">,</span> range<span class="token punctuation">:</span><span class="token builtin">NSRange</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token builtin">UInt8</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> nsstr<span class="token punctuation">:</span><span class="token builtin">NSString</span> <span class="token operator">=</span> <span class="token punctuation">(</span>str <span class="token keyword">as</span> <span class="token builtin">NSString</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substringWithRange</span><span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> strLength <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>nsstr<span class="token punctuation">)</span><span class="token punctuation">.</span>characters<span class="token punctuation">.</span><span class="token builtin">count</span>
+    <span class="token keyword">var</span> result<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token builtin">UInt8</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>strLength<span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> r <span class="token operator">=</span> <span class="token function">NSMakeRange</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> substr <span class="token operator">=</span> nsstr<span class="token punctuation">.</span><span class="token function">substringWithRange</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+        result<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">UInt8</span><span class="token punctuation">(</span><span class="token function">strtoul</span><span class="token punctuation">(</span>substr<span class="token punctuation">,</span> <span class="token constant">nil</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上です。</p>
+<p>(2015/12/22 追記) UInt8からUTF8に変換するときの処理を以下のようにしていたのですが</p>
+<pre class="line-numbers language-swift"><code class="language-swift">
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token function">UnsafePointer</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span>
+<span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token builtin">CString</span><span class="token punctuation">:</span> p<span class="token punctuation">,</span> encoding<span class="token punctuation">:</span> <span class="token builtin">NSUTF8StringEncoding</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>これだと結果が不安定になる様子（原因までは追求していない）。1000回実行するとnilになったり、末尾に変な文字がついたりする。なので、<a href="http://stackoverflow.com/a/30629181/634197" target="_blank" rel="noopener">How can I create a String from UTF8 in Swift? - Stack Overflow</a>の回答を参考にして処理を変更しました。</p>
+<p>(2016/01/25 追記) CryptoSwift 0.2.2 用のコードに変更。</p>
+<p>(2016/05/30 追記) CryptoSwift 0.4.1 用のコードに変更。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

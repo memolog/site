@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2019/generate-anki-cards-tool.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2018/merge-sort-in-javascript.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2018/a11y-fixes-for-prism-default-theme.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2018/add-json-ld-structured-data.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2018/create-a-new-icon.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2018/insertion-sort-in-javascript.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2018/selection-sort-in-javascript.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2018/bubble-sort-in-javascript.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2018/about-typedarray-prototype-sort.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2018/about-array-prototype-sort.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2019-01-04T02:47:48.000Z"><span class="calendar-icon">📅</span><span>2019年1月4日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2019/generate-anki-cards-tool.html">Genarate Anki Cards Tool</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiNiMWI1YjAiIC8+PC9zdmc+" data-src="/assets/images/kate-krivanec-212730-unsplash/kate-krivanec-212730-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/moW-dSe5CiU?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Kate Krivanec</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>最近<a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a>を使って単語の記憶をしようという試みをしている。もともとは<a href="https://fluent-forever.com/book/" target="_blank" rel="noopener">Fluent Forever</a>という本に載っていたところからこのアプリを知った（最近になって邦訳「<a href="https://amzn.to/2F35KpT" target="_blank" rel="noopener">脳が認める外国語勉強法</a>」があると知った）。</p>
+<p>最初は英語とその日本語訳を入れたシンプルなカードを作ろうとしていたのですが、なんとなく味気ないなとということで、画像を追加したり、音声を追加してみたりと色々しているうちに、手作業でやるのがしんどいなということになり、<a href="https://github.com/memolog/generate-anki-cards" target="_blank" rel="noopener">generate-anki-cards</a>というツールを作成してみた。他の人に使ってもらいたい意図もなく、npmツールとしては公開する必要性がまったくないのですが、なんとなくついでだったのでnpmにも公開<a href="https://www.npmjs.com/package/generate-anki-cards" target="_blank" rel="noopener">generate-anki-cards  -  npm</a>。npmでインストールできる。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g generate-anki-cards
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>下のようなCSVを用意して、</p>
+<pre class="line-numbers language-csv"><code class="language-csv">apple,リンゴ
+banana,バナナ
+cherry,さくらんぼ
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">generate-anki-cards -i ./data.csv -o ./out
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>みたいに実行すると、Puppeteerで<a href="https://dictionary.cambridge.org/dictionary/english/apple" target="_blank" rel="noopener">Cambridge Dictionary</a> のサイトにアクセスして、データがあれば、画像と音声データをダウンロードして保存します。Ankiで実際に利用する場合は、collection.media フォルダにそれらをコピーする必要がある（参考：<a href="https://apps.ankiweb.net/docs/manual.html#files" target="_blank" rel="noopener">File Locations</a>）。</p>
+<p>Cambridge Dictionary に画像または音声データがない場合は、<a href="https://translate.google.com/" target="_blank" rel="noopener">Google Translate</a> のサイトから音声データを取得したり、Unsplashからダウンロードしたりします。Google TranslateにPuppeteerで音声データを取得するより、<a href="https://cloud.google.com/text-to-speech/" target="_blank" rel="noopener">CLOUD TEXT-TO-SPEECH</a>を使う方が良いのかなという思いはありつつ、大量にアクセスするようなものでもないし、とりあえずそのまま。UnsplashについてもAPIを使うべきと思いつつ、Puppeteerでアクセスしてダウンロードしている。個人利用だし、単語リストの元になるCSVファイルは公開してないので、、このくらいは良いかなと…</p>
+<p>なんやかんやで作成した読み込みファイルを使ってAnkiカードを作成した結果がこんな感じ。<br><div class="youtube-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/zRsiGZloIaY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="he screen cast to describe how to work Anki cards with my 'generate-anki-cards' cli tool"></iframe>
+  </div></p>
+<p>なんやかんやで作りながら紆余曲折してしまったので、この年末年始の時間をだいぶ費やしてしまったけど、wikipediaやweblioからもデータの取得が可能で、こんな風に英語以外の暗記でも使える。使うかどうかはわからないけど。</p>
+<p><img src="../../assets/images/screen_anki.png" alt=""></p>
+<p>というメモ。</p>
+</div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-19T08:43:28.000Z"><span class="calendar-icon">📅</span><span>2018年8月19日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/merge-sort-in-javascript.html">Merge Sort in JavaScript</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM0ZDc3NzMiIC8+PC9zdmc+" data-src="/assets/images/tj-holowaychuk-62184-unsplash/tj-holowaychuk-62184-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/lssS7acGDls?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Tj Holowaychu</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="https://memolog.org/2018/insertion-sort-in-javascript.html">Insertion Sort in JavaScript</a>からの引き続き。内容は<a href="https://en.wikipedia.org/wiki/Merge_sort" target="_blank" rel="noopener">Merge sort</a>からの抜粋なので、詳細はそちらを参照。</div>
+            <div><a href="/2018/merge-sort-in-javascript.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-17T15:18:27.000Z"><span class="calendar-icon">📅</span><span>2018年8月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/a11y-fixes-for-prism-default-theme.html">A11y fixes for prism default theme</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM3YjgzODkiIC8+PC9zdmc+" data-src="/assets/images/stas-ovsky-781959-unsplash/stas-ovsky-781959-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/JlBYy9eaOxg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Stas Ovsky</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="https://developers.google.com/web/tools/lighthouse" target="_blank" rel="noopener">Lighthouse</a> reported <a href="https://paulirish.github.io/lighthouse/docs/api/lighthouse/2.5.1/lighthouse-core_audits_accessibility_color-contrast.js.html" target="_blank" rel="noopener">color contrast issues</a> in the code block colored by <a href="https://prismjs.com/" target="_blank" rel="noopener">prism.js</a>. Actually I don’t care about these issues because people doesn’t read code blocks carefully. However, I just did the quick fixes for them by changing the color to see the contrast ratio in Chrome developer console.</div>
+            <div><a href="/2018/a11y-fixes-for-prism-default-theme.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-14T09:04:54.000Z"><span class="calendar-icon">📅</span><span>2018年8月14日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/add-json-ld-structured-data.html">Add JSON-LD structured data</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjg0Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODQiIGZpbGw9IiNhNmFiYTQiIC8+PC9zdmc+" data-src="/assets/images/thomas-kelley-75110-unsplash/thomas-kelley-75110-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/HBANPxXi3aQ?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Thomas Kelley</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>構造化データ（structured data）の部分をmicrodataからJSON-LDに置き換えてみた。</div>
+            <div><a href="/2018/add-json-ld-structured-data.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-11T22:28:32.000Z"><span class="calendar-icon">📅</span><span>2018年8月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/create-a-new-icon.html">Create a new icon</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNTAwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNmZmZmZmYiIC8+PC9zdmc+" data-src="/assets/images/new-icon/new-icon.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>アイコンをsvgで作り直してページの一番上につけた。</div>
+            <div><a href="/2018/create-a-new-icon.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-06T20:47:14.000Z"><span class="calendar-icon">📅</span><span>2018年8月7日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/insertion-sort-in-javascript.html">Insertion Sort in JavaScript</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNTcyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI1NzIiIGZpbGw9IiMwOTUzNjciIC8+PC9zdmc+" data-src="/assets/images/mingwei-dong-651103-unsplash/mingwei-dong-651103-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/irA2xa68xNA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">mingwei dong</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="https://memolog.org/2018/selection-sort-in-javascript.html">Selection Sort in JavaScript</a>の記事から引き続き。内容は<a href="https://en.wikipedia.org/wiki/Insertion_sort" target="_blank" rel="noopener">挿入ソート</a>からの抜粋なので詳細はそちらを参照。</div>
+            <div><a href="/2018/insertion-sort-in-javascript.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-04T20:57:21.000Z"><span class="calendar-icon">📅</span><span>2018年8月5日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/selection-sort-in-javascript.html">Selection Sort in JavaScript</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM3YTc5N2QiIC8+PC9zdmc+" data-src="/assets/images/pietro-mattia-764559-unsplash/pietro-mattia-764559-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/zXqizKxnbBU?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Pietro Mattia</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="https://memolog.org/2018/bubble-sort-in-javascript.html">Bubble Sort in JavaScript</a>の記事から引き続き。内容はほぼ<a href="https://en.wikipedia.org/wiki/Selection_sort" target="_blank" rel="noopener">選択ソート</a>から抜粋してるだけなので、詳しくはそちらを参照。JavaScript上で自前のソートを実装する意味はあまりないのだが、試しに選択ソートを実装してみた。</div>
+            <div><a href="/2018/selection-sort-in-javascript.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-08-03T22:00:11.000Z"><span class="calendar-icon">📅</span><span>2018年8月4日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/bubble-sort-in-javascript.html">Bubble Sort in JavaScript</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNzY4Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIGZpbGw9IiMyNjY1N2EiIC8+PC9zdmc+" data-src="/assets/images/jong-marshes-458354-unsplash/jong-marshes-458354-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/79mNMAvSORg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Jong Marshes</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="https://memolog.org/2018/about-array-prototype-sort.html">Array.prototype.sort について</a>と<a href="https://memolog.org/2018/about-typedarray-prototype-sort.html">TypedArray.prototype.sort について</a>で書いたようにビルトインされているsortメソッドが効率的なソートを実行できるように実装されているので、JavaScript上で自前のソートを実装する意味はあまりないのだけど、試しにバブルソートをJavaScript上で作ってみた。</div>
+            <div><a href="/2018/bubble-sort-in-javascript.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-07-31T20:23:27.000Z"><span class="calendar-icon">📅</span><span>2018年8月1日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/about-typedarray-prototype-sort.html">TypedArray.prototype.sort について</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4MjZjNGUiIC8+PC9zdmc+" data-src="/assets/images/marcus-depaula-43304-unsplash/marcus-depaula-43304-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/tk7OAxsXNL0?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Marcus dePaula</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>前回の「<a href="https://memolog.org/2018/about-array-prototype-sort.html">Array.prototype.sort について</a>」に引き続き、今度は<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray" target="_blank" rel="noopener">TypedArray</a>の<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort" target="_blank" rel="noopener">sort</a>について。実装は別だけど対応は基本的に同じなので簡単に。</div>
+            <div><a href="/2018/about-typedarray-prototype-sort.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-07-29T20:49:48.000Z"><span class="calendar-icon">📅</span><span>2018年7月30日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/about-array-prototype-sort.html">Array.prototype.sort について</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNzc2Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NzYiIGZpbGw9IiM0NzRhNDgiIC8+PC9zdmc+" data-src="/assets/images/max-panama-387781-unsplash/max-panama-387781-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/Gt1A0jNzzbM?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Max Panamá</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>JavaScriptの配列には<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">sort</a>メソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。<a href="http://kakts-tec.hatenablog.com/entry/2016/12/18/153845" target="_blank" rel="noopener">v8における配列ソートについて</a>の記事が大変参考になりました。</div>
+            <div><a href="/2018/about-array-prototype-sort.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/2/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

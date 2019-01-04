@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2009/04/sacasiso.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2009/03/flickr_thickbox.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2009/03/thickbox.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2009/03/flickr_to_html.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2009/01/post_180.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2008/08/post_178.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2008/06/text-align_justify.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2008/06/post_177.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2008/05/post_176.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2008/05/post_175.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-04-07T14:21:16.000Z"><span class="calendar-icon">📅</span><span>2009年4月7日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/04/sacasiso.html">Sacas夜景とISO感度</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>オフィス近くのSacasと帰りがけの四ツ谷で夜景を撮ってみました。三脚なしの直立撮りでブレも少なく撮れました。ISO感度の向上には目を見張るものがありますね（よく知りませんけど・・）。6400でも問題なく奇麗。</p></div>
+            <div><a href="/2009/04/sacasiso.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-03-28T22:26:10.000Z"><span class="calendar-icon">📅</span><span>2009年3月29日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/03/flickr_thickbox.html">ThickBox対応したFlickrのAction Streamを作成する</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Action Streamで得たFlickrのActivityをThickBoxを利用して表示したいなと思いたち、そこで<a href="http://www.movabletype.jp/documentation/actionstreams/building_action_streams_plugin.html" target="_blank" rel="noopener">独自のAction Streamsプラグインを作成する</a>のページと、既存のAction Stream pluginとGoogle検索などを見ながら、自分用のFlickr for thickbox pluginを作成してみました。<br></div>
+            <div><a href="/2009/03/flickr_thickbox.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-03-21T05:36:49.000Z"><span class="calendar-icon">📅</span><span>2009年3月21日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/03/thickbox.html">Thickbox と 神代植物公園</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>前回使ってみた<a href="/blog//2009/03/flickr-to-html/">Flickr to HTML</a>ではlightboxのためのrel属性がデフォルトで付いているので、<a href="http://leandrovieira.com/projects/jquery/lightbox/" target="_blank" rel="noopener">jqueryで使えるlightbox</a>を使ってみようかなと思ったのですが、モーションテンプレートでは<a href="http://jquery.com/demo/thickbox/" target="_blank" rel="noopener">Thickbox</a>をもともと使えるようになっているのでFlickr to HTML のHTMLを少しだけ変えて、Thickboxを有効にしてみる。</p></div>
+            <div><a href="/2009/03/thickbox.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-03-01T03:10:02.000Z"><span class="calendar-icon">📅</span><span>2009年3月1日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/03/flickr_to_html.html">Flickr to HTML</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>最近<a href="http://www.sigma-photo.co.jp/camera/dp1/index.htm" target="_blank" rel="noopener">dp1</a>と<a href="http://cweb.canon.jp/camera/eosd/5dmk2/index.html" target="_blank" rel="noopener">EOS 5D mark II</a>を手に入れてしまい、ちょっとしたカメラバブル中。もっとも活発な部位はFlickr脳です。</p></div>
+            <div><a href="/2009/03/flickr_to_html.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-01-02T18:45:53.000Z"><span class="calendar-icon">📅</span><span>2009年1月3日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/01/post_180.html">今年の抱負（とデザイン変更）</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>ブログの見た目を少し変えてみたのです。シンプルに。jqueryを試してみたのだが、TypePad Connectで利用しているYUIと相性がよろしくないよう。回避方法が皆目見当がつかなかったので、TypePad Connect はとりあえずクローズした。とりあえず。暇なときにちょこちょこ変えていこうと思う。</p></div>
+            <div><a href="/2009/01/post_180.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2008-08-12T05:09:00.000Z"><span class="calendar-icon">📅</span><span>2008年8月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2008/08/post_178.html">セレンディピティと仮説立案</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>今現在「<a href="http://www.amazon.co.jp/gp/product/4046520000/503-5582248-4563145?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4046520000" target="_blank" rel="noopener">セレンディピティの探求</a>」という本を読んでいます。最初の方はセレンディピティの意味論的なところをあつかっていて、個人的にはあまり関心がそそらなかったのですが、今読んでいる「仮説立案」という章はなかなか面白いです。</p></div>
+            <div><a href="/2008/08/post_178.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2008-06-09T03:45:46.000Z"><span class="calendar-icon">📅</span><span>2008年6月9日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2008/06/text-align_justify.html">text-align&#x3a; justifyで段落を両端揃えにする</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.htmq.com/style/text-align.shtml" target="_blank" rel="noopener">text-align−スタイルシートリファレンス</a></li>
+</ul>
+<p>「text-align:justify」は、対応していないブラウザがあるから使わない・・と思っていたのでが、今ではどのブラウザでもだいたい対応しているということに今さら気がつきました。いちど見捨てたプロパティにはなかなか目を向けないものだなと思った次第でございます。</p></div>
+            <div><a href="/2008/06/text-align_justify.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2008-06-04T13:00:30.000Z"><span class="calendar-icon">📅</span><span>2008年6月4日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2008/06/post_177.html">本：第三の脳</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4255004013/249-1018494-9069940?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4255004013" target="_blank" rel="noopener"><img src="http://rcm-images.amazon.com/images/I/51IGsfO9Y-L._SL180_.jpg" alt=""></a>皮膚の研究をしている著者が、皮膚についての考察をまとめた本です。六章構成で、最初の二章は皮膚の構造や機能について書かれており、残りの四章は皮膚に関する考察・仮説などが書かれております。文体が語り口調というのと、文中に著者の体験談が比較的多く含まれているのとで、全体的にエッセイ的な雰囲気がそこはかとなくあります。220ページ。斜め読みでさらっと読めます。「第三の脳」というふれこみは、刺激をどんな刺激かを判断して対処する組織を「考える臓器」たる脳の主要な機能とするならば、消化器はいわば「第二の脳」であるという説からきています。皮膚にも自律的な仕組みが組み込まれている、だからいわば「第三の脳」と言えるのではないか、みたいな感じ。</p></div>
+            <div><a href="/2008/06/post_177.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2008-05-28T13:01:17.000Z"><span class="calendar-icon">📅</span><span>2008年5月28日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2008/05/post_176.html">本：海ゴミ</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4121019067/249-1018494-9069940?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4121019067" target="_blank" rel="noopener"><img src="http://rcm-images.amazon.com/images/I/31pfEuwG+7L._SL180_.jpg" alt=""></a>海岸に届く、大量の漂着ゴミの問題について書かれている本です。本の内容は、問題となっている地域の事例紹介から始まり、漂着ゴミの発生源と内訳、漂着ゴミによる環境への影響、法律・制度、今後の対策・提言で終わります。漂着ゴミは捨てても捨てても海からゴミがやってくるというのがやっかいなところです。漂着したゴミを片付けるだけでは解決しない。海がゴミに流れ出ないように、法の整備が求められています。</p></div>
+            <div><a href="/2008/05/post_176.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2008-05-27T13:11:46.000Z"><span class="calendar-icon">📅</span><span>2008年5月27日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2008/05/post_175.html">本：赤を見る</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4314010177/249-1018494-9069940?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4314010177" target="_blank" rel="noopener"><img src="http://rcm-images.amazon.com/images/I/21NduIqpxrL._SL180_.jpg" alt=""></a> 2004年春にハーバード大学で行われた著者の講演内容をまとめた本。「赤を見る」という行為を因数分解して、「感覚」とは何か、「知覚」とは何か、そして「意識」とは何かにまで踏み込みこんでいきます。150ページくらいの分量なのですが、内容が難解で・・ページを行ったり来たり、途中で挫折しつつ読み進めたので、読了するのに時間がかかりました。</p></div>
+            <div><a href="/2008/05/post_175.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/20/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/22/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

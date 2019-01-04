@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2010/02/entry-basename.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2010/01/the_innovators_solution.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2009/12/camera-lucida.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2009/12/learning-as-a-job.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2009/12/culture-of-the-mind.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2009/12/free.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2009/07/some_thoughts_on_jogging.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2009/06/mac_tiger_gem_mysql.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2009/06/proust_and_squid.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2009/06/kamakura-enoshima.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-02-01T05:33:07.000Z"><span class="calendar-icon">📅</span><span>2010年2月1日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/02/entry-basename.html">MT：記事の出力ファイル名がハイフンになる</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>メモ。例えば記事の出力ファイル名を「test_test」とアンダースコアを入れてに設定しているのに、実際に出力されるファイル名は「test-test」とハイフンになってしまう。</p>
+<p>なんでかなあと思っていたら、テンプレートのアーカイブマッピングのパスが「basenameyyyy/mm/entry-basename.php（&#x25;-f）」となっていました。この場合、区切り文字がハイフンに統一される。バージョンアップしたときにここが変更されてしまったみたいです。パスを「&#x25;f」に変更して再構築を実行。</p></div>
+            <div><a href="/2010/02/entry-basename.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-01-28T06:47:35.000Z"><span class="calendar-icon">📅</span><span>2010年1月28日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/01/the_innovators_solution.html">本：イノベーションへの解</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4798104930?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4798104930" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/51621J4CTVL._BO2,204,203,200_SL180_.jpg" alt=""></a>「イノベーションのジレンマ」とは、利益を最大化させるための論理的な意思決定が、逆に新興企業による市場の破壊を許してしまうというジレンマ。そのジレンマを機会として捉え、市場の破壊者としてどのように事業を構築していけば良いのか、ということを考察したのが本著です。全体は350ページほどで、イノベーションのジレンマについての理論的枠組みから始まり、市場の分析について、ターゲットとする顧客について、開発の手法について、コモディティ化（低利益化）への対応、組織、戦略、資金などについてを詳説していきます。後半のマネジメント的な話は個人的にあまり関心をそそられませんでしたが、前半部分はかなり面白かったです。</p></div>
+            <div><a href="/2010/01/the_innovators_solution.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-12-30T16:00:00.000Z"><span class="calendar-icon">📅</span><span>2009年12月31日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/12/camera-lucida.html">本：明るい部屋</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4622049058?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4622049058" target="_blank" rel="noopener"><img src="http://ec3.images-amazon.com/images/I/414AV80J4NL._SL180_.jpg" alt=""></a> 写真が本質的に有する被写体という対象から離して、「写真」という事象そのものをどのように語ることができるかを出発点に、写真とは何かを考察した本。</p></div>
+            <div><a href="/2009/12/camera-lucida.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-12-29T16:00:00.000Z"><span class="calendar-icon">📅</span><span>2009年12月30日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/12/learning-as-a-job.html">本：職業としての学問</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4833419157?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4833419157" target="_blank" rel="noopener"><img src="http://ecx.images-amazon.com/images/I/41f9vj1fdXL._SL180_.jpg" alt=""></a> マックス・ウェーバーの「職業としての学問」を「下流社会」の三浦展さんが現代訳として意訳しています。内容としては、学問することを職業としようと考えている学生に対して、努力をしても職が得られるとは限らないし、才能の多寡によって出世が決まるとも限らない、という職業としての現実を諭していくといったもの。とにかく「安心で確実な未来などなく、答えなどない」という現実感をひたすらつきつけていきます。学問を志すにあたってどのような心構えであるべきかと言えば、ひたむきに取り組んでいくことだろうと述べている。そこから得られる「ひらめき」によって、後世に残るような業績を成し遂げることができると。しかし、だからといってひたむきな人が必ずひらめきを得られるわけではない、努力を重ねてもまったくひらめかない人もいるし、やはり運も必要であると言ってしまう。</p></div>
+            <div><a href="/2009/12/learning-as-a-job.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-12-29T04:17:44.000Z"><span class="calendar-icon">📅</span><span>2009年12月29日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/12/culture-of-the-mind.html">本：修養</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4813314449?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4813314449" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/41N27N8QEQL._SL180_.jpg" alt=""></a>修養とは「身を修め、心を養う」こと。「古の明徳を天下に明らかにせんと欲する者(p24)」は根本として、身を修める必要がある。身を修めるためには、心を正しくする必要があり、そのためには意を誠にし、意を誠にするとは何かを知る。大志を抱く人は身を修め、身を修めるとはすなわち「克己」することが肝要である、というのが本書の骨幹にある考え。「青年」の頃に何を志し決心していくのか、心を揺り動かす4つの動機（色情、利益、権力、名誉）にどのように打ち克っていくかとか、逆境/順境のときの心構えなどを教えてくれます。</p></div>
+            <div><a href="/2009/12/culture-of-the-mind.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-12-13T14:26:50.000Z"><span class="calendar-icon">📅</span><span>2009年12月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/12/free.html">本：FREE　「無料」からお金を生み出す新戦略</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4140814047?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4140814047" target="_blank" rel="noopener"><img src="http://ec3.images-amazon.com/images/I/418bv41i6jL._SL180_.jpg" alt=""></a>「ロングテール」の著者であるクリス・アンダーソンの著書。インターネットの世界に広がっている「フリー（自由/無料）」のサービスについて、どうしてフリーのサービスがうまれるのかについての解説と、フリーのサービスにおけるビジネスモデル、生産者と消費者との間にある取引についての整理分類をしています。</p></div>
+            <div><a href="/2009/12/free.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-07-11T18:00:00.000Z"><span class="calendar-icon">📅</span><span>2009年7月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/07/some_thoughts_on_jogging.html">ジョギング中の頭の中</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>細く長く、止めたり再開したりしてるジョギングですが、している最中は特にすることもないので（ジョギングしているんですが）、とりとめもないことを考えています。考え事をしている方が、足に意識が行き過ぎないので、疲れにくい、気がするのです。</p></div>
+            <div><a href="/2009/07/some_thoughts_on_jogging.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-06-28T03:30:00.000Z"><span class="calendar-icon">📅</span><span>2009年6月28日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/06/mac_tiger_gem_mysql.html">Mac (tiger) で gem install mysql でエラー</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Mac(10.4.11)にgem istall mysqlしようとしたら、下記のようなエラーが出たのでメモ。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">~ <span class="token function">sudo</span> gem <span class="token function">install</span> mysql -- --with-mysql-config<span class="token operator">=</span>/usr/local/mysql/bin/mysql_config
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token function">more</span> --<span class="token operator">></span>
+Password:
+Building native extensions.  This could take a while<span class="token punctuation">..</span>.
+ERROR:  Error installing mysql:
+        ERROR: Failed to build gem native extension.
+
+/opt/local/bin/ruby extconf.rb --with-mysql-config<span class="token operator">=</span>/usr/local/mysql/bin/mysql_config
+checking <span class="token keyword">for</span> mysql_ssl_set<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">..</span>. no
+checking <span class="token keyword">for</span> mysql.h<span class="token punctuation">..</span>. <span class="token function">yes</span>
+creating Makefile
+
+<span class="token function">make</span>
+gcc -I. -I. -I/opt/local/lib/ruby/1.8/i686-darwin8.10.1 -I. -DHAVE_MYSQL_H -I/opt/local/include -I/usr/local/mysql/include  -g -Os -arch i386 -no-cpp-precomp -mmacosx-version-min<span class="token operator">=</span>10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -fno-common   -D_P1003_1B_VISIBLE -DSIGNAL_WITH_VIO_CLOSE -DSIGNALS_DONT_BREAK_READ -DIGNORE_SIGHUP_SIGQUIT -fno-common -O2  -fno-common -pipe -fno-common  -c mysql.c
+cc -dynamic -bundle -undefined suppress -flat_namespace -L/opt/local/lib   -L<span class="token string">"/opt/local/lib"</span> -o mysql.bundle mysql.o  -lruby -arch i386  -L/usr/local/mysql/lib -lmysqlclient -lz -lm     -lmygcc  -lpthread -ldl -lobjc
+/usr/bin/ld: /usr/local/mysql/lib/libmysqlclient.dylib load <span class="token function">command</span> 5 unknown cmd field
+/usr/bin/ld: warning multiple definitions of symbol _setregid
+/opt/local/lib/libruby.dylib<span class="token punctuation">(</span>process.o<span class="token punctuation">)</span> definition of _setregid
+/usr/lib/gcc/i686-apple-darwin8/4.0.1/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/libm.dylib<span class="token punctuation">(</span>setregid.So<span class="token punctuation">)</span> definition of _setregid
+/usr/bin/ld: warning multiple definitions of symbol _setreuid
+/opt/local/lib/libruby.dylib<span class="token punctuation">(</span>process.o<span class="token punctuation">)</span> definition of _setreuid
+/usr/lib/gcc/i686-apple-darwin8/4.0.1/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/libm.dylib<span class="token punctuation">(</span>setreuid.So<span class="token punctuation">)</span> definition of _setreuid
+collect2: ld returned 1 <span class="token keyword">exit</span> status
+make: *** <span class="token punctuation">[</span>mysql.bundle<span class="token punctuation">]</span> Error 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>いろいろ試してみましたが、最終的にはXcodeのバージョンが古かったのが原因みたいでした。2.5をWebからダウンロードしてインストールしたら、インストールすることができました。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">~ <span class="token function">sudo</span> gem <span class="token function">install</span> mysql -- --with-mysql-config<span class="token operator">=</span>/usr/local/mysql/bin/mysql_config
+Password:
+Building native extensions.  This could take a while<span class="token punctuation">..</span>.
+Successfully installed mysql-2.7
+1 gem installed
+Installing ri documentation <span class="token keyword">for</span> mysql-2.7<span class="token punctuation">..</span>.
+Installing RDoc documentation <span class="token keyword">for</span> mysql-2.7<span class="token punctuation">..</span>.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>XcodeのバージョンアップにはApple developerサイトからダウンロードしてこないといけないのですが、Tiger用のXcodeはすでに最新のバージョンではないので、ダウンロードする場所がおそろしく分かりにくい。ので、メモ。</p>
+<ol>
+<li><a href="http://developer.apple.com/mac/" target="_blank" rel="noopener">Mac Dev Center</a> にアクセス</li>
+<li>ログイン（登録していない場合は、まず登録する必要があります）</li>
+<li>右サイドバーにある「Member Site」をクリック</li>
+<li>左下にある「Downloads」のリンクをクリック。クリックできない場合は再度ログインしてみる。</li>
+<li>右サイドバーにある「Developer Tools」のリンクをクリック</li>
+<li>表示された画面を「Xcode 2.5」検索</li>
+<li>Xcode 2.5 Developer Tools (Disk Image) のリンクをクリック</li>
+</ol>
+</div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-06-20T16:24:25.000Z"><span class="calendar-icon">📅</span><span>2009年6月21日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/06/proust_and_squid.html">本：プルーストとイカ - 読書は脳をどのように変えるのか?</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4772695133?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4772695133" target="_blank" rel="noopener"><img src="https://images-na.ssl-images-amazon.com/images/I/51A&#x25;2Bh6ZB4iL._SL180_.jpg" alt=""></a> 「文字を読む」というのは、「ものを見る」ことや「音を聞く」のような、生来備わっている能力ではない。人は読書をどのように習得するのか、脳内ではどのように認識するのか、というような内容を「文字の発明の歴史」「子供が文字をどのように学ぶのか」「読字障害者（ディスレクシア）の研究」という3つのアプローチで紹介しています。</p></div>
+            <div><a href="/2009/06/proust_and_squid.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-06-13T05:06:00.000Z"><span class="calendar-icon">📅</span><span>2009年6月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/06/kamakura-enoshima.html">鎌倉・新江ノ島水族館・片瀬西浜海水浴場</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>もう一ヶ月以上前になってしまいましたが、GW中に鎌倉と江ノ島に行ってきました。</p>
+<p>まずは長谷で大仏様を参拝。内人(?)外人入り交じり、とても混んでいました。さすがGW。それともいつもああなのか。大仏様の背中が空いていることに、小さな感動。ちょっとしたロボみたいでした。</p></div>
+            <div><a href="/2009/06/kamakura-enoshima.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/18/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/20/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

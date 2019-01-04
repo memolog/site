@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては O(n) になるだろう。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー">
+<meta property="og:url" content="https://memolog.org/2018/javascript-property-access-big-o.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては O(n) になるだろう。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/emre-karatas-194353-unsplash/emre-karatas-194353-unsplash.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.876Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー">
+<meta name="twitter:description" content="配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては O(n) になるだろう。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/emre-karatas-194353-unsplash/emre-karatas-194353-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2018/javascript-property-access-big-o.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2018/javascript-property-access-big-o.html"
+      },
+      "headline": "JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー",
+      
+        "image": [
+          "https://memolog.org/assets/images/emre-karatas-194353-unsplash/emre-karatas-194353-unsplash.jpg"
+        ],
+      
+      "datePublished": "Mon Jul 23 2018 20:51:00 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては O(n) になるだろう。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2018-07-23T11:51:00.000Z">
+              <span class="calendar-icon">📅</span><span>2018年7月23日</span>
+            </time>
+          </div>
+          <h2 class="header__title">JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM0NDJhNGMiIC8+PC9zdmc+" data-src="/assets/images/emre-karatas-194353-unsplash/emre-karatas-194353-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/Ib2e4-Qy9mQ?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Emre Karataş</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては <code>O(n)</code> になるだろう。<a id="more"></a></p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span> item <span class="token operator">=</span><span class="token operator">></span> item<span class="token punctuation">.</span>id <span class="token operator">===</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>配列の数が多くなければそこまで気にしなくて良いかもしれないけど</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>entry <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> image <span class="token operator">=</span> images<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span> image <span class="token operator">=</span><span class="token operator">></span> image<span class="token punctuation">.</span>id <span class="token operator">===</span> entry<span class="token punctuation">.</span>id <span class="token punctuation">)</span>
+  entry<span class="token punctuation">.</span>image <span class="token operator">=</span> image
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>みたいな感じで、M個の記事についてN個の画像の中から対象になる画像を選んでプロパティに割り当てるみたいなことをしだすと処理量は <code>O(M*N)</code> となり、パフォーマンスの懸念は大きくなる（imageのidとentryのidは同じ値のものが入ると想定）。例えば、10個の記事について10個の画像中から対象の画像を探そうとすると、100回の処理が必要になる。これが20個の記事で20個の画像になれば400回になり、数が増えれば増えるだけ処理量が上がっていく。</p>
+<p>この場合、IDをキーにしたマップを作成してそこから探す方がいい。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> imagesMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+images<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> image <span class="token operator">=</span><span class="token operator">></span> imagesMap<span class="token punctuation">[</span>image<span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> image <span class="token punctuation">)</span><span class="token punctuation">;</span>
+entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> entry <span class="token operator">=</span><span class="token operator">></span> entry<span class="token punctuation">.</span>image <span class="token operator">=</span> imageMap<span class="token punctuation">[</span>entry<span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>処理量的には <code>O(N+M)</code> となるので、良いように思う。</p>
+<p>上記の処理量はオブジェクトのプロパティへのアクセス（およびinsert）が <code>O(1)</code> の処理量で終わることを前提にしているけれど、<br>オブジェクトのプロパティにアクセスするときにどのくらいの処理量でデータが取得できるかどうかについては特に仕様がない。</p>
+<p><a href="https://crockford.com/javascript/survey.html" target="_blank" rel="noopener">A Survey of the JavaScript Programming Language</a>によると、オブジェクトはたいていの場合ハッシュテーブルで実装されているようで、<code>O(1)</code> でデータの取得と追加ができると考えて良いように思う。とはいえ明確にそうとは言えない。</p>
+<blockquote>
+<p>Objects are usually implemented as hash-tables, but none of the hash-table nature (such as hash functions or rehashing methods) is visible.<br><a href="https://crockford.com/javascript/survey.html" target="_blank" rel="noopener">https://crockford.com/javascript/survey.html</a></p>
+</blockquote>
+<p>ES2015では新しく<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="noopener">Map</a>が用意されていて、こちらは<a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-map-objects" target="_blank" rel="noopener">ECMAの仕様</a>によると、線形よりも低い（sublinear）処理量になるように規定されている。</p>
+<blockquote>
+<p>Map object must be implemented using either hash tables or other mechanisms that, on average, provide access times that are sublinear on the number of elements in the collection. The data structures used in this Map objects specification is only intended to describe the required observable semantics of Map objects. It is not intended to be a viable implementation model.<br><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-map-objects" target="_blank" rel="noopener">http://www.ecma-international.org/ecma-262/6.0/index.html#sec-map-objects</a></p>
+</blockquote>
+<p>ハッシュテーブルで実装されているかどうかはブラウザの実装を確認しないとわからない。<a href="https://en.wikipedia.org/wiki/Associative_array" target="_blank" rel="noopener">連想配列</a>の説明を読むと、<a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank" rel="noopener">ハッシュテーブル</a>か<a href="https://en.wikipedia.org/wiki/Search_tree" target="_blank" rel="noopener">探索木</a>が代表的な実装方法で、探索木では平衡二分探索木が使われるようだ。</p>
+<blockquote>
+<p>Compared to hash tables, these structures have both advantages and weaknesses. The worst-case performance of self-balancing binary search trees is significantly better than that of a hash table, with a time complexity in big O notation of O(log n). This is in contrast to hash tables, whose worst-case performance involves all elements sharing a single bucket, resulting in O(n) time complexity. In addition, and like all binary search trees, self-balancing binary search trees keep their elements in order. Thus, traversing its elements follows a least-to-greatest pattern, whereas traversing a hash table can result in elements being in seemingly random order. However, hash tables have a much better average-case time complexity than self-balancing binary search trees of O(1), and their worst-case performance is highly unlikely when a good hash function is used.<br><a href="https://en.wikipedia.org/wiki/Associative_array#Comparison" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Associative_array#Comparison</a></p>
+</blockquote>
+<p>平衡二分探索木（Self-balancing binary search trees）での実装とハッシュテーブルを比較すると、最悪なケースの場合のパフォーマンスは平衡二分探索木の方が <code>O(log n)</code> で良くなる。一方ハッシュテーブルは最悪のケース（すべての要素が同じ場所に格納されてしまう）では <code>O(n)</code> になる（線形探索と同じになる）。とはいえ、平均的なケースではハッシュテーブルは <code>O(1)</code> の処理量で済むし、ハッシュ関数がうまく実装されていれば最悪のケースになる可能性は低いと。</p>
+<p>Mapオブジェクトを利用すると下記のような感じになる。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> imageMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+images<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> image <span class="token operator">=</span><span class="token operator">></span> imageMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>image<span class="token punctuation">.</span>id<span class="token punctuation">,</span> image<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> entry <span class="token operator">=</span><span class="token operator">></span> entry<span class="token punctuation">.</span>image <span class="token operator">=</span> imageMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>ChromeではMapオブジェクトの実装にハッシュテーブルを使っているそうだ。それ以外のブラウザでもMapオブジェクトも中の実装はハッシュテーブルであると想定しても大丈夫な気はする。</p>
+<blockquote>
+<p>ECMAScript 2015 introduced several new data structures such as Map, Set, WeakSet, and WeakMap, all of which use hash tables under the hood.<br><a href="https://v8project.blogspot.com/2018/01/hash-code.html" target="_blank" rel="noopener">https://v8project.blogspot.com/2018/01/hash-code.html</a></p>
+</blockquote>
+<p>仮にMapオブジェクトが（たぶんハッシュテーブルだけど）平衡二分探索木で実装されていると想定すると、lookupとinsertaionがそれぞれ <code>O(log n)</code> の処理量になるので、<code>O(Log M + N Log M)</code> といった処理量になる。それでもやはり <code>O(M * N)</code> より効率的と言える。</p>
+<p>オブジェクトを使ったマップでも、Mapオブジェクトを使ったマップでも中の実装はハッシュテーブルであると想定しても大丈夫そうな気はするし、体感的な速度には大きな差はないようには思う。とはいえMapオブジェクトの方は sublinear であると明確に言えるし、使い方としてもより idiomatic であるし、<a href="https://v8project.blogspot.com/2018/01/hash-code.html" target="_blank" rel="noopener">Optimizing hash tables: hiding the hash code</a>のようなパフォーマンス改善の恩恵を受けることができるという点から（オブジェクトを使ったマップではプロパティのlookupに必要な処理は避けられないだろう）、今後はMapオブジェクト使って行く方がいいかなあと思ったところ次第である（既存のプロジェクトでは状況によるけど）。</p>
+<p>以下はそのほか参考にしたページ</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/34292087/is-there-anything-that-guarantees-constant-time-for-accessing-a-property-of-an-o" target="_blank" rel="noopener">data structures - Is there anything that guarantees constant time for accessing a property of an object in JavaScript? - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/31091772/javascript-es6-computational-time-complexity-of-collections" target="_blank" rel="noopener">Javascript ES6 computational/time complexity of collections - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/7374171/javascript-big-o-property-access-performance" target="_blank" rel="noopener">Javascript big-O property access performance - Stack Overflow</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/%E9%80%A3%E6%83%B3%E9%85%8D%E5%88%97" target="_blank" rel="noopener">連想配列 - Wikipedia</a></li>
+<li><a href="https://qiita.com/raccy/items/816a322fb330193e788b" target="_blank" rel="noopener">連想配列はMapを使うべきは本当か？ - Qiita</a></li>
+<li><a href="https://youtu.be/7rx9fSUG8H0?t=23m22s" target="_blank" rel="noopener">V8 Today and in the Future (Chrome Dev Summit 2017)</a></li>
+</ul>
+<p>というメモ。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

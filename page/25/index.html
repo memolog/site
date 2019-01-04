@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2007/09/css_sprite_generator_http_requ.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2007/09/pmbok.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2007/09/post_150.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2007/09/offside-girls.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2007/09/mt4mt3.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2007/09/post_149.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2007/09/mtif.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2007/09/jr.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2007/09/post_148.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2007/09/post_147.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-29T05:24:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月29日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/css_sprite_generator_http_requ.html">CSS Sprite Generator &#x3a; 画像を統合してHTTP requestを減らす</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.designshack.co.uk/news/css-sprite-generator" target="_blank" rel="noopener">CSS Sprite Generator | Design Shack</a></li>
+<li><a href="http://spritegen.website-performance.org/" target="_blank" rel="noopener">Website Performance | CSS Sprite Generator</a></li>
+</ul></div>
+            <div><a href="/2007/09/css_sprite_generator_http_requ.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-25T07:42:19.000Z"><span class="calendar-icon">📅</span><span>2007年9月25日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/pmbok.html">PMBOK入門</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4274066150?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4274066150" target="_blank" rel="noopener"><img src="http://ec1.images-amazon.com/images/I/51MP26S4AHL._SL180_.jpg" alt=""></a> プロジェクトマネジメント体系の標準であるPMBOK（Project Management Body of Knowledge）を解説した本です。本書は1〜2章がプロジェクトマネジメントとPMBOKについての基本説明、3〜7章がPMBOKを利用したケーススタディという二構成になっています。本の分量的には150ページ弱と比較的少なめな感じですが、ケーススタディではPMBOKに記述できないようなプロジェクトマネジメントの勘所についても幅広く扱っています。</p></div>
+            <div><a href="/2007/09/pmbok.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-21T00:30:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月21日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/post_150.html">デジカメを購入</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><img src="/blog//assets/i/2007/09/L1000012.jpg" alt="L1000012.jpg"><br>久しぶりにデジカメを買っちゃいました。一眼レフは実力的にも重量的も荷が重いので、スリムなコンパクトカメラ。スペック的にもよくわからないので、見た目で<a href="http://www.leica-camera.co.jp/photography/compact_cameras/c-lux_2/" target="_blank" rel="noopener">LEICAのC-Lux 2</a>のブラックを選択してみました。サイトに載っているサンプルのように奇麗に撮れるようにがんばっていきたいなと思ったり思わなかったり。すぐに自分の中の写真ブームが去る気がしないでもないですが。</p></div>
+            <div><a href="/2007/09/post_150.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-18T07:07:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/offside-girls.html">オフサイド・ガールズを見てきました</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.espace-sarou.co.jp/offside/" target="_blank" rel="noopener">オフサイド・ガールズ（公式サイト）</a></li>
+<li><a href="http://movie.goo.ne.jp/contents/movies/MOVCSTD10987/story.html" target="_blank" rel="noopener">goo 映画（あらすじ）オフサイド・ガールズ</a></li>
+</ul></div>
+            <div><a href="/2007/09/offside-girls.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-17T20:22:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/mt4mt3.html">MT4のダッシュボードにMT3ライクなブログ一覧を表示</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://plugins.movalog.com/my-blogs/" target="_blank" rel="noopener">My Blogs | Movalog Plugins: Movable Type plugins by Arvind Satyanarayan</a></li>
+</ul></div>
+            <div><a href="/2007/09/mt4mt3.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-13T07:30:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/post_149.html">透明度のクロスブラウザ対応</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://www.designshack.co.uk/news/cross-browser-transparency" target="_blank" rel="noopener">Cross Browser Transparency | Design Shack</a></li>
+</ul></div>
+            <div><a href="/2007/09/post_149.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-12T08:14:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/mtif.html">MTIfタグを利用したタブ型ナビゲーション</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://movabletype.jp/documentation/appendices/tags/if.html" target="_blank" rel="noopener">タグリファレンス：MTif</a></li>
+<li><a href="http://www.skyarc.co.jp/engineerblog/entry/3312.html" target="_blank" rel="noopener">ＭＴ４から追加されたＭＴＩｆタグ | MT エンジニアブログ | スカイアークシステム</a></li>
+</ul></div>
+            <div><a href="/2007/09/mtif.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-11T08:30:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月11日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/jr.html">JR福知山線事故の本質</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4757121962?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4757121962" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/413X9G7bmuL._SL180_.jpg" alt=""></a> 本は3章構成で1章が被害者の宮崎千通子さんの手記、2章は事故の科学的な見知による分析、3章は社会への提言といったかたち。1章の手記は事故から手術、リハビリまでの1年間について詳しく触れられています。実体験を通しているがゆえに、その場にいるかのようなリアルな描写となっています。事故の被害者を自分に置き換えて想像すると、ほんとに恐ろしすぎて何も言えません。そんなきつい経験を乗り越えて、前を向いて体の回復へと行動しているのですから、宮崎さんには深い敬意を覚えます。また、ニュースで見る事故は、1日で終わってしまいますが、現実にはずっと何年もの長い道のりであることを認識させられました。</p></div>
+            <div><a href="/2007/09/jr.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-07T04:27:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月7日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/post_148.html">ハーバードでは教えない実践経営学</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4532313368?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4532313368" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/41cRb0KpYEL._SL180_.jpg" alt=""></a> 1985年に「<a href="http://www.amazon.co.jp/gp/product/4087730654?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4087730654" target="_blank" rel="noopener">マコーマックのマンビジネス</a>」というタイトルで出版された本の新訳版です。いわゆるビジネスに必要な「処世術」、パートナーシップの構築など、筆者曰く「ハーバード・ビジネススクールでは教えたくても教えられない（p8）」内容を扱っています。「人間」「営業と交渉」「企業経営」の３部構成。</p></div>
+            <div><a href="/2007/09/post_148.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-09-03T05:20:26.000Z"><span class="calendar-icon">📅</span><span>2007年9月3日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/09/post_147.html">頭のいい人の時間攻略法</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4534042612?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4534042612" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/41B5cEhN3qL._SL180_.jpg" alt=""></a> 最近、勉強本がブームなのかよくわかりませんが、この手の本が書店にたくさん並んでいます。ついついなんとなく買ってしまいました。</p></div>
+            <div><a href="/2007/09/post_147.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/24/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/26/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>JavaScriptでビットベクタルを使う | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくはBit arrayを参照。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScriptでビットベクタルを使う">
+<meta property="og:url" content="https://memolog.org/2018/bit-vector-in-javascript.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくはBit arrayを参照。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/miles-storey-142842-unsplash/miles-storey-142842-unsplash.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.874Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JavaScriptでビットベクタルを使う">
+<meta name="twitter:description" content="ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくはBit arrayを参照。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/miles-storey-142842-unsplash/miles-storey-142842-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2018/bit-vector-in-javascript.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2018/bit-vector-in-javascript.html"
+      },
+      "headline": "JavaScriptでビットベクタルを使う",
+      
+        "image": [
+          "https://memolog.org/assets/images/miles-storey-142842-unsplash/miles-storey-142842-unsplash.jpg"
+        ],
+      
+      "datePublished": "Sat Jul 28 2018 10:49:22 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくはBit arrayを参照。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2018-07-28T01:49:22.000Z">
+              <span class="calendar-icon">📅</span><span>2018年7月28日</span>
+            </time>
+          </div>
+          <h2 class="header__title">JavaScriptでビットベクタルを使う</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM1ZTQ0MzEiIC8+PC9zdmc+" data-src="/assets/images/miles-storey-142842-unsplash/miles-storey-142842-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/X45VKpWV7hw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Miles Storey</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくは<a href="https://en.wikipedia.org/wiki/Bit_array" target="_blank" rel="noopener">Bit array</a>を参照。<a id="more"></a></p>
+<p>JavaScriptの数値（<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener">Number</a>）は64ビットの<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format" target="_blank" rel="noopener">倍精度浮動小数点型数値</a>で表現される。Swiftみたいな<a href="https://developer.apple.com/documentation/swift/int" target="_blank" rel="noopener">Int</a>と<a href="https://developer.apple.com/documentation/swift/double" target="_blank" rel="noopener">Double</a>といった区別はなく、JavaScriptの数値はすべてDoubleとして表現される。</p>
+<blockquote>
+<p>8.5 The Number type<br>The Number type has exactly 18437736874454810627 (that is, 2^64−2^53+3) values, representing the double-precision 64-bit format IEEE 754 values as specified in the IEEE Standard for Binary Floating-Point Arithmetic, except that the 9007199254740990 (that is, 2^53−2) distinct “Not-a-Number” values of the IEEE Standard are represented in ECMAScript as a single special NaN value. (Note that the NaN value is produced by the program expression NaN, assuming that the globally defined variable NaN has not been altered by program execution.) In some implementations, external code might be able to detect a difference between various Non-a-N<br><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" target="_blank" rel="noopener">https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf</a></p>
+</blockquote>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank" rel="noopener">ビット演算子</a> は数値をビットとして操作するための演算子。ビット演算子では数値を32ビットのビットの並びとして扱う。</p>
+<blockquote>
+<p>ビット演算子は、オペランドとして整数値が必要です。また、この整数値は、64ビットの浮動小数点表現形式ではなく、32ビット整数表現形式で表されているものとして処理を行います。これらの演算子は、必要であればオペランドを数値に変換し、オペランドの小数点部分を削除したり、33ビット目以上のビットを捨てたりすることで、32ビットの整数表現で表せるようにします。<br><a href="https://www.oreilly.co.jp/books/9784873115733/" target="_blank" rel="noopener">JavaScript 第6版</a> 73ページ</p>
+</blockquote>
+<p>特定のビットを1（True）にセットする場合は下記のような感じのことをする。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> bits <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+bits <span class="token operator">=</span> bits <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>a &lt;&lt; b</code>はaをbビット分だけ左にシフトして、右側に0を埋める。<code>1 &lt;&lt; 2</code>だと、<code>00000000000000000000000000000001</code>というビットの並びを <code>00000000000000000000000000000100</code>とする感じ。<code>a | b</code>はaかbのどちらかのビットが1だったら1にするので、<code>0 | (1 &lt;&lt; 2)</code>の場合、<code>00000000000000000000000000000000 | 00000000000000000000000000000100</code>となるので、<code>00000000000000000000000000000100</code>というビットの並びが返ってくる。右から3つ目のビットだけTrueに設定できる。</p>
+<p>特定のビットを0（False）にセットする場合は下記のような感じになる。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">bits <span class="token operator">=</span> bits <span class="token operator">&amp;</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>~</code>は各ビットを反転させるので、<code>~(1 &lt;&lt; 2)</code>の返りは<code>11111111111111111111111111111011</code>となる。<code>a &amp; b</code>はaとbの両方のビットがどちらも1の場合は1を返す。例えば<code>bits</code>の値が<code>00010000000000000000000000100101</code>だとしたら、<code>bits &amp; ~(1 &lt;&lt; 2)</code>のは <code>00010000000000000000000000100101 &amp; 11111111111111111111111111111011</code>となるので、<code>00010000000000000000000000100001</code>というビットの並びが返ってくる。右から3つ目のビットだけを0に変更できる。</p>
+<p>特定のビットが1（True）かどうかを確認するのには、下記のような感じになる。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">return</span> bits <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>例えばbitsの値が<code>00010000000000000000000000100101</code>としたら、<code>bits &amp; (1 &lt;&lt; 2)</code>は<code>00010000000000000000000000100101 &amp; 00000000000000000000000000000100</code> となるので返りは<code>00000000000000000000000000000100</code>となる。これは10進数でいうと<code>4</code>になるので、<code>4 !== 0</code>ということでTrueになる。bitsの値が<code>00010000000000000000000000100001</code>としたら、返りは<code>00000000000000000000000000000000</code>となるので <code>0 !== 0</code> ということでFalseとなる。</p>
+<p>1つの数値は32個のビットの並びになるので、32個のTrue/Falseの値を保持できる。たとえば特定のアルファベット（大文字小文字区別しない）が使われたかどうかを確認するとしたら、</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">let</span> bits <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> checkThisAlphabetIsAlreadyUsed <span class="token operator">=</span> <span class="token punctuation">(</span>char<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> index <span class="token operator">=</span> char<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">97</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>bits <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> index<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  bits <span class="token operator">=</span> bits <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> useAlphabetOnlyOnce <span class="token operator">=</span> <span class="token punctuation">(</span>char<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">checkThisAlphabetIsAlreadyUsed</span><span class="token punctuation">(</span>char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>char<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">' is already in use`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Use </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>char<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>みたいな感じで、各アルファベットが使われたどうかを1から26個目までのビットに格納する。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">></span> <span class="token function">useAlphabetOnlyOnce</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Use a
+<span class="token operator">></span> <span class="token function">useAlphabetOnlyOnce</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Error<span class="token punctuation">:</span> <span class="token string">'a'</span> is already <span class="token keyword">in</span> use
+    at useAlphabetOnlyOnce <span class="token punctuation">(</span>repl<span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">11</span><span class="token punctuation">)</span>
+<span class="token operator">></span> <span class="token function">useAlphabetOnlyOnce</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Use b
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>32個以上の値を保持したい場合は、<code>bits</code>を配列にして数値を複数扱うようにすれば良い。<a href="https://github.com/ashaffer/bit-vector" target="_blank" rel="noopener">bit-vector</a>ではそのようにして32個以上の値を保持できるようにしている。<a href="https://github.com/ashaffer/bit-vector/blob/master/src/index.js" target="_blank" rel="noopener">index.js</a>を見ると、設定するindexを32で割って、配列のindexと、数値の32ビットの位置とを分けている。</p>
+<p><a href="https://jsperf.com/bit-vector-vs-object/2" target="_blank" rel="noopener">js-perfの結果</a>を見ると、普通のオブジェクトに値を保持するよりもだいぶ高速に処理できている。</p>
+<p>これは蛇足だけど、bit-vectorでは<code>FastArray</code>ということで、</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> FastArray <span class="token operator">=</span> <span class="token keyword">typeof</span> Uint32Array <span class="token operator">===</span> <span class="token string">'undefined'</span> <span class="token operator">?</span> Array <span class="token punctuation">:</span> Uint32Array
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>と言う感じで、Uint32Arrayが利用可能な場合は<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array" target="_blank" rel="noopener">Uint32Array</a>を使用している。Uint32Arrayのような<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray" target="_blank" rel="noopener">TypedArray</a>は、通常の配列（standard array）に比べると高速らしいのだが、実際に測定してみると同じくらいの速度になる(<a href="https://stackoverflow.com/a/24855023/634197" target="_blank" rel="noopener">Javascript TypedArray performance</a>)。これはJavaScriptのエンジンが内部で最適化していて、通常の配列でも利用可能な場合は同じように<code>true array</code>を使い、使えない場合は<code>old-fashioned property map &quot;arrays,&quot;</code>を使うためらしい。</p>
+<blockquote>
+<p>That suggests that because you’re filling the array in a simple, predictable way, a modern engine continues to use a true array (with the performance benefits thereof) under the covers rather than shifting over. We see basically the same performance for both. The difference in speed could relate to type conversion taking the Uint32 value and assigning it to sum as a number (though I’m surprised if that type conversion isn’t deferred…).<br>…(snip)…<br>…so that the engine has to fall back on old-fashioned property map “arrays,” and you see that typed arrays markedly outperform the old-fashioned kind<br><a href="https://stackoverflow.com/a/24855023/634197" target="_blank" rel="noopener">Javascript TypedArray performance</a></p>
+</blockquote>
+<p>いずれにしてもビットベクトルように明らかに32ビットまでの数値だけを扱っている配列の場合は、明確にUint32Arrayを使った方が良いなと思う。</p>
+<p>というメモ。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>学習について考える | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="最近学習系・自己啓発系の本をいくつか読んだのでそれを読んでいま思っていることをそのまま書いてみようと思う。「本に書いてあること」をまとめようとすると正確さが気になって時間もかかるし本に書いてあること以上のことは書きにくいし、本に書いてあることが適切に網羅されているかも気になってくる。だから、本に書いてあることの趣旨と変わってるかもしれないけど、そういったところを気にせず、本を読んで思ったことを記す">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学習について考える">
+<meta property="og:url" content="https://memolog.org/2018/how-to-learn.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="最近学習系・自己啓発系の本をいくつか読んだのでそれを読んでいま思っていることをそのまま書いてみようと思う。「本に書いてあること」をまとめようとすると正確さが気になって時間もかかるし本に書いてあること以上のことは書きにくいし、本に書いてあることが適切に網羅されているかも気になってくる。だから、本に書いてあることの趣旨と変わってるかもしれないけど、そういったところを気にせず、本を読んで思ったことを記す">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/paul-gilmore-145802/paul-gilmore-145802.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.876Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="学習について考える">
+<meta name="twitter:description" content="最近学習系・自己啓発系の本をいくつか読んだのでそれを読んでいま思っていることをそのまま書いてみようと思う。「本に書いてあること」をまとめようとすると正確さが気になって時間もかかるし本に書いてあること以上のことは書きにくいし、本に書いてあることが適切に網羅されているかも気になってくる。だから、本に書いてあることの趣旨と変わってるかもしれないけど、そういったところを気にせず、本を読んで思ったことを記す">
+<meta name="twitter:image" content="https://memolog.org/assets/images/paul-gilmore-145802/paul-gilmore-145802.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2018/how-to-learn.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2018/how-to-learn.html"
+      },
+      "headline": "学習について考える",
+      
+        "image": [
+          "https://memolog.org/assets/images/paul-gilmore-145802/paul-gilmore-145802.jpg"
+        ],
+      
+      "datePublished": "Fri Feb 02 2018 05:51:02 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "最近学習系・自己啓発系の本をいくつか読んだのでそれを読んでいま思っていることをそのまま書いてみようと思う。「本に書いてあること」をまとめようとすると正確さが気になって時間もかかるし本に書いてあること以上のことは書きにくいし、本に書いてあることが適切に網羅されているかも気になってくる。だから、本に書いてあることの趣旨と変わってるかもしれないけど、そういったところを気にせず、本を読んで思ったことを記す。
+最初は「ブレインプログラミングという本を読んだ。「なりたい自分」とか「やりたいこと」を具体的にイメージして「いつまでにこうなる」みたいに目標を決める。具体的な方法は「注目」していると自然と見つかるから、具体的な方法を考えて足を止めるよりも「こうなる」と決めて足を進めよう、みたいな本である。科学的なバックグラウンドとしてRASを挙げているが、ここはよくわからない。アファメーションとか自己暗示とかそういったものの力を使う。やりたいことを書き出してみて、自分がどうありたいのかを見つめ直すというのは良いなと思った。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2018-02-01T20:51:02.000Z">
+              <span class="calendar-icon">📅</span><span>2018年2月2日</span>
+            </time>
+          </div>
+          <h2 class="header__title">学習について考える</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjMyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2MzIiIGZpbGw9IiMxYjgxYTgiIC8+PC9zdmc+" data-src="/assets/images/paul-gilmore-145802/paul-gilmore-145802.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/mqO0Rf-PUMs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Paul Gilmore</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>最近学習系・自己啓発系の本をいくつか読んだのでそれを読んでいま思っていることをそのまま書いてみようと思う。「本に書いてあること」をまとめようとすると正確さが気になって時間もかかるし本に書いてあること以上のことは書きにくいし、本に書いてあることが適切に網羅されているかも気になってくる。だから、本に書いてあることの趣旨と変わってるかもしれないけど、そういったところを気にせず、本を読んで思ったことを記す。</p>
+<p>最初は「<a href="https://www.sunmark.co.jp/detail.php?csid=3552-0" target="_blank" rel="noopener">ブレインプログラミング</a>という本を読んだ。「なりたい自分」とか「やりたいこと」を具体的にイメージして「いつまでにこうなる」みたいに目標を決める。具体的な方法は「注目」していると自然と見つかるから、具体的な方法を考えて足を止めるよりも「こうなる」と決めて足を進めよう、みたいな本である。科学的なバックグラウンドとして<a href="https://bsd.neuroinf.jp/wiki/%E8%84%B3%E5%B9%B9%E7%B6%B2%E6%A7%98%E4%BD%93%E8%B3%A6%E6%B4%BB%E7%B3%BB" target="_blank" rel="noopener">RAS</a>を挙げているが、ここはよくわからない。アファメーションとか自己暗示とかそういったものの力を使う。やりたいことを書き出してみて、自分がどうありたいのかを見つめ直すというのは良いなと思った。<a id="more"></a></p>
+<p>次に「<a href="https://www.diamond.co.jp/book/9784478102497.html" target="_blank" rel="noopener">PEAK PERFORMANCE 最強の成長術</a>」を読んだ。「パフォーマンスの科学」「長く持続可能でかつパフォーマンを発揮するにはどうしたら良いか」みたいな原則とか習慣といったものが書かれている。著者の経験から「長くハードなトレーニングをずっと続ける」と<a href="https://ja.wikipedia.org/wiki/%E7%87%83%E3%81%88%E5%B0%BD%E3%81%8D%E7%97%87%E5%80%99%E7%BE%A4" target="_blank" rel="noopener">燃え尽き症候群</a>に陥る可能性があると指摘している。長く持続的にパフォーマンスを維持するには、適切な間隔でトレーニング（負荷）と休息を繰り返すのがいい。「心の疲労」と「体の疲労」は連動しているというのは（聞くと当たり前かもしれないけど）一つ気づきであった。</p>
+<p>次に<a href="http://www.soshisha.com/book_wadai/books/2064.html" target="_blank" rel="noopener">東大教授が教える独学勉強法</a>を読んだ。この本は勉強法といえば勉強法ではあるけど「読書術」の方がピンとくる感じはある。本を読んで理解を深めるには、自分の中に疑問を持つことが大事であり、自分の疑問をいかに消化するのかが要諦である、という風に理解した。1+1=2というような、答えの決まっている問いに対しての答えではなく、答えのない問いに対して自分なりの答えを探す、といった感じ。本が提示している内容をそのままトレースするのではなく、そこから自分の疑問を見つけて、それを消化していくために他のリソースにも当たる。そういった点で研究者の読書術と言えるのかもしれない。（本の著者という）権威に疑問を持つこと、資料を最初に集めすぎず走りながら探すところなど<a href="http://www.hayakawa-online.co.jp/shopdetail/000000013595/" target="_blank" rel="noopener">9プリンシプルズ</a>に通じるところがある。</p>
+<p>ここで急に思い出した<a href="https://www.nhk-book.co.jp/detail/000000817042016.html" target="_blank" rel="noopener">〈インターネット〉の次に来るもの</a>の「Questioning」の章から良い質問とは何かを引用（引用と呼べるのか）しておきたい。</p>
+<blockquote>
+<p>良い質問とは、正しい答えを求めるものではない。<br>良い質問とは、すぐには答えが見つからない<br>良い質問とは、現在の答えに挑むもだ。<br>良い質問とは、ひとたび聞くとすぐに答えが知りたくなるが、その質問を聞くまではそれについて考えてもみなかったようなものだ。<br>良い質問とは、思考の新しい領域を創り出すものだ。<br>良い質問とは、その答えの枠組み自体を変えてしまうものだ。<br>良い質問とは、科学やテクノロジーや政治やビジネスにおけるイノベーションの種となるものだ。<br>良い質問とは、探針であり、「もし〜だったら」というシナリオを調べるものだ。<br>良い質問とは、ばかげたものでも答えが明白なものでもなく、知られていることと知られていないことの狭間にあるものだ<br>良い質問とは、予想もしない質問だ。<br>良い質問とは、教養のある人の証だ。<br>良い質問とは、さらに他の良い質問をたくさん生み出すものだ。<br>良い質問とは、マシンが最後までできないかもしれないものだ。<br>良い質問とは、人間だからこそできるものだ。</p>
+</blockquote>
+<p>推測可能なものはすべて機械化されていく現代においては、推測された答えに対して疑問に思うことの方が大事になってくるかもしれない。そういった意味からもこれからの社会に必要な思考術とも言えると思う。</p>
+<p>最後に<a href="www.shunjusha.co.jp/detail/isbn/978-4-393-74158-0/">進化教育学入門</a>という本を読んだ。学習とは「ヒトが自然環境に適応するために行われるもの」という視点から、ヒトが学習しやすいもの、学習しにくいものはどんなものか、ヒトとして学習するための工夫・アイデアを紹介している。<a href="http://xknowledge-books.jp/ipscs-book/BooksApp?act=book&amp;isbn=9784767820286" target="_blank" rel="noopener">動物たちの武器</a>では動物たちが食料から得た限られたリソースを使って自身の武器を強化していく様が描かれている。リソースは限られているというのが重要で、生存淘汰、性淘汰などの対応にリソースを適切に振り分けられた個体だけが次世代に自分の遺伝子を残すことができる。「学習」または認知・記憶のシステムもまた、生存淘汰・性淘汰に必須な要件であり、学習そのものが「獲物をすばやく見極められる」「火とかの物理的な特性を見極められる」「人間同士協力して生き延びる」などのことを効率よく学ぶようにできているというのは自然な流れな気がする。抽象的な話を、擬人化した漫画で表現するというのは、学習的にはわりと理にかなってるんだなと思った。</p>
+<p>以上。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

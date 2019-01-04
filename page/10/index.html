@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>メモログ</title>
+  <meta name="description" content="💡 Personal notes about somthing I&#39;m interested in" id="meta-description">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url": "https://memolog.org/2012/12/adobe_css_filterlab.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url": "https://memolog.org/2012/12/android_camera_kills_phonegap_app.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url": "https://memolog.org/2012/12/hayaku_sublime_plugin_for_writing_css_faster.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":4,
+          "url": "https://memolog.org/2012/11/inspect_uiwebview_with_safari.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":5,
+          "url": "https://memolog.org/2012/11/notes_around_marathon.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":6,
+          "url": "https://memolog.org/2012/09/css_transforms_sample.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":7,
+          "url": "https://memolog.org/2012/09/phonegap21-xcode45.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":8,
+          "url": "https://memolog.org/2012/09/fallback_warning_in_sass.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":9,
+          "url": "https://memolog.org/2012/09/css_transforms_backface-visibility.html"
+        },
+        
+        {
+          "@type":"ListItem",
+          "position":10,
+          "url": "https://memolog.org/2012/09/css_transforms_3d_and_transform-style.html"
+        }
+        
+      ]
+    }
+  </script>
+</head>
+<body>
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-12-24T13:10:00.000Z"><span class="calendar-icon">📅</span><span>2012年12月24日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/12/adobe_css_filterlab.html">Filter Effects / Adobe CSS FilterLab</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.w3.org/TR/filter-effects/" target="_blank" rel="noopener">Filter Effects 1.0</a>では、HTML上に配置した画像とかにグレースケールなどのフィルターをかけることができます。<a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/" target="_blank" rel="noopener">Understanding CSS Filter Effects - HTML5 Rocks</a>にて詳しく紹介されていますが、HTMLの要素に適用できるようにSVGから取り入れられた仕様で、多くのFilter Functionは高速に動きます（手元で試している限りではblurも速い）。対応状況は、<a href="http://caniuse.com/css-filters" target="_blank" rel="noopener">Can I use CSS Filter Effects</a>にて。今のところChromeとSafariでのみwebkitのプレフィックス付きで確認できます。</p></div>
+            <div><a href="/2012/12/adobe_css_filterlab.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-12-21T03:11:00.000Z"><span class="calendar-icon">📅</span><span>2012年12月21日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/12/android_camera_kills_phonegap_app.html">PhoneGap&#x3a; Androidでカメラを使用するとアプリが止まる</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>PhoneGapからAndroidでカメラを起動して撮影すると、たまにアプリが止まってしまうという問題について。</p>
+<p>これは<a href="https://issues.apache.org/jira/browse/CB-1513" target="_blank" rel="noopener">[#CB-1513] Cordova app gets killed by garbage collector when out of memory due to camera - ASF JIRA</a>に書いてある内容によると、カメラが起動している間は、PhoneGapのアプリ本体はバックグラウンドにいるので、その間にガベージコレクタがメモリを解放しようとして、アプリ本体のアクティビティをkillするのだそう（おそらくカメラ機能はメモリをたくさん使う）。</p></div>
+            <div><a href="/2012/12/android_camera_kills_phonegap_app.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-12-09T03:51:00.000Z"><span class="calendar-icon">📅</span><span>2012年12月9日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/12/hayaku_sublime_plugin_for_writing_css_faster.html">Hayaku &#x3a; CSSを早く書くためのSublime text 2 plugin</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.brucelawson.co.uk/2012/reading-list-33/" target="_blank" rel="noopener">Bruce Lawsonのreading list</a>で小さく紹介されていた「<a href="https://github.com/hayaku/hayaku" target="_blank" rel="noopener">Hayaku</a>」というSublime Text 2のpluginを簡単に紹介。使ってみた感じは、今のところ劇的に役立っている感じはないですけど…邪魔にもならない。人によっては便利かも。</p></div>
+            <div><a href="/2012/12/hayaku_sublime_plugin_for_writing_css_faster.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-11-18T11:37:00.000Z"><span class="calendar-icon">📅</span><span>2012年11月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/11/inspect_uiwebview_with_safari.html">SafariからUIWebViewのHTMLをinspectする</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.mobilexweb.com/blog/iphone-5-ios-6-html5-developers" target="_blank" rel="noopener">iPhone 5 and iOS 6 for HTML5 developers, a big step forward: web inspector, new APIs and more | Breaking the Mobile Web</a>に、iPhone 5とiOS 6について詳しく載っていますが、その中で「Remote Debugging」というところの項目の話。</p></div>
+            <div><a href="/2012/11/inspect_uiwebview_with_safari.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-11-08T05:35:00.000Z"><span class="calendar-icon">📅</span><span>2012年11月8日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/11/notes_around_marathon.html">マラソンとジョギングのメモ</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>2012年11月3日に行われた湘南国際マラソンに参加しました。去年（2011年）の湘南国際マラソンが初マラソンで、今回が2回目。目標にしていたサブフォーを達成できた。<br><img src="http://farm9.staticflickr.com/8204/8153861310_47dfefe4cf_z.jpg" alt=""></p></div>
+            <div><a href="/2012/11/notes_around_marathon.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-09-26T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年9月26日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/09/css_transforms_sample.html">CSS Transforms&#x3a; くるくる回るサイコロのサンプル</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。</p></div>
+            <div><a href="/2012/09/css_transforms_sample.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-09-25T18:28:07.000Z"><span class="calendar-icon">📅</span><span>2012年9月26日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/09/phonegap21-xcode45.html">PhoneGap2.1とXcode4.5でエラー</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://www.phonegap.com/" target="_blank" rel="noopener">PhoneGap</a>の2.1を使用して作成したプロジェクトを、Xcodeの4.5でRunしたら下記のようなエラーが発生。</p>
+<pre><code>clang: error: no such file or directory: 
+
+&lt;!-- more --&gt;
+&#39;/Users/username/Library/Developer/Xcode/DerivedData/projectname/Build/Products/Debug-iphoneos/libCordova.a&#39;
+</code></pre><p>Googleで検索したところによると、<a href="https://issues.apache.org/jira/browse/CB-1360" target="_blank" rel="noopener">[#CB-1360] iOS 6 - bump deployment target support to 4.3, add/remove architectures - ASF JIRA</a>で報告されているissueによるものらしくて、<a href="https://git-wip-us.apache.org/repos/asf?p=incubator-cordova-ios.git;a=commitdiff;h=07b54f14;hp=cf2412b5a0db4c67b144561abd201810e3f5f2a5" target="_blank" rel="noopener">ASF Git Repos - incubator-cordova-ios.git/commitdiff</a>の差分を、ダウンロードしてきたPhoneGapのライブラリ（lib/ios/CordovaLib/CordovaLib.xcodeproj/project.pbxproj）に適用すると解消される。</p>
+<p>この修正は2.2では含まれるようなので、2.2では問題は発生しない（と思われる）。</p>
+</div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-09-25T04:03:56.000Z"><span class="calendar-icon">📅</span><span>2012年9月25日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/09/fallback_warning_in_sass.html">Sass&#x3a; Fallbackでpollingしているとwarning</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Sassを–watchで動かしているときに下記のようなwarningが発生する。</p>
+<blockquote>
+<blockquote>
+<p>> Sass is watching for changes. Press Ctrl-C to stop.<br>WARNING: Listen has fallen back to polling, learn more at <a href="https://github.com/guard/listen#fallback" target="_blank" rel="noopener">https://github.com/guard/listen#fallback</a>.</p>
+</blockquote>
+</blockquote></div>
+            <div><a href="/2012/09/fallback_warning_in_sass.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-09-23T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年9月23日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/09/css_transforms_backface-visibility.html">CSS Transforms&#x3a; backface-visibility</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>CSS Transformsには<a href="http://www.w3.org/TR/css3-transforms/#backface-visibility" target="_blank" rel="noopener">backface-visibility</a>という設定もあって、これはその名の通り、背面側を表示するかどうかの設定。</p></div>
+            <div><a href="/2012/09/css_transforms_backface-visibility.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-09-23T03:24:00.000Z"><span class="calendar-icon">📅</span><span>2012年9月23日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/09/css_transforms_3d_and_transform-style.html">CSS Transforms&#x3a; 3D rendering context (transform-style)</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="/blog//2012/09/css_transforms_3d_and_perspective/">CSS Transforms: (3D/perspective) - メモログ</a>の続きで3d rendering contextについて。<a href="http://www.w3.org/TR/css3-transforms/#perspective-matrix-computation" target="_blank" rel="noopener">CSS Transforms</a>のExample7から9を紹介するだけという内容。</p></div>
+            <div><a href="/2012/09/css_transforms_3d_and_transform-style.html">📖 続きを読む</a></div>
+          
+        </article>
+      
+      <footer><a class="extend prev" rel="prev" href="/page/9/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/11/">Next</a></footer>
+    </main>
+    <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>縦書きで表示する | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  display: inline-block;
+  background-color: #f5f2f0;
+  margin: .2em 0 .2em;
+  padding: 5px;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a {
+  color: black;
+  text-decoration: none;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  margin-top: .5em;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="最近になってwriting-modeを使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="縦書きで表示する">
+<meta property="og:url" content="https://memolog.org/2018/show-vertical-writing-with-css.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="最近になってwriting-modeを使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/dmitri-popov-441562/dmitri-popov-441562.jpg">
+<meta property="og:updated_time" content="2019-01-04T02:09:12.877Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="縦書きで表示する">
+<meta name="twitter:description" content="最近になってwriting-modeを使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/dmitri-popov-441562/dmitri-popov-441562.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2018/show-vertical-writing-with-css.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2018/show-vertical-writing-with-css.html"
+      },
+      "headline": "縦書きで表示する",
+      
+        "image": [
+          "https://memolog.org/assets/images/dmitri-popov-441562/dmitri-popov-441562.jpg"
+        ],
+      
+      "datePublished": "Sat Feb 03 2018 12:05:36 GMT+0900",
+      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "最近になってwriting-modeを使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about somthing I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2018-02-03T03:05:36.000Z">
+              <span class="calendar-icon">📅</span><span>2018年2月3日</span>
+            </time>
+          </div>
+          <h2 class="header__title">縦書きで表示する</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM5NTkxNzciIC8+PC9zdmc+" data-src="/assets/images/dmitri-popov-441562/dmitri-popov-441562.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/IDF_awES6Zg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Dmitri Popov</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><div class="writing-vertical"><p>最近になって<a href="https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode" target="_blank" rel="noopener">writing-mode</a>を使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。<a id="more"></a></p>
+<p>読みやすいか読みにくいかでいうと読みにくいかな。日本語の書籍だと、技術系のものを除けば基本的に縦書きの方が読みやすいのだけど、WEBだと縦書きはだいぶ読みにくい。右から左の流れも慣れない。もう目の流れが横書きに慣れてしまっていると言うことなのだろうか。タイトル部分もも縦書きにすると印象変わるかもしれないので、あとで試してみようと思う。</p>
+<p>雰囲気は良いなと思う。WEBの文章はやはりゴシックの方が読みやすいところがあるけれど、縦書きになると明朝体の方がずっと読みやすくなる。明朝体は縦書きの流れに適しているということだろうか。今ふと気になってGoogleで調べてみたら<a href="https://news.mynavi.jp/article/20170411-source_han_serif/" target="_blank" rel="noopener">源ノ明朝には縦書き用の”かたち”がある</a>らしい。</p>
+<blockquote>
+<p>また、一般的に縦書きの文字の方が、横書きと比較して大きく見えるため、「源ノ明朝」では横書き・縦書きで異なる字形を保有し、自動的に最適なものに切り替えている。</p>
+</blockquote>
+<p>なるほど🤔（Safariだと絵文字が横になる）。個人的には明朝体はゴシック体に比べて小さいと読みにくいとことはあるから、逆に大きく見えるくらいの方が読みやすい気もするけど、統一感で考えたらやっぱり同じフォントサイズの指定をしているときは見た目は同じに見える方がいいですね。日本語フォントはWEBフォントとしては大きすぎるし、サブフォント作るの面倒くさいしで結局使ったことはないですけど、そのうちこの記事と同じように実験的に使ってみようかなあと今思った。</p>
+<p>コードブロックを縦書きにするとどうなるかも一応試してみたけど、だいぶどうしようもない感じになるので止めておいた。コードブロックなどの部分は横書きにして、下にまとめて書こうと思う。</p>
+<p>長い文章を書き続けると、親の要素でwidthの指定があるにも関わらず、どこまでも横に伸びていってしまう。これはどうしてそうなるのかはよくわからない。仕様を見ればわかるのだろうけど詳細はまた別の機会に調べようと思う。たぶんテキストの流れの縦横の関係がスイッチしていて、縦幅を指定していてもテキストがそれより長い場合はあふれて表示されることと同じなのだろうと思う。とはいえ、writing-modeを指定している要素にwidthを指定しつつ、<a href="https://developer.mozilla.org/ja/docs/Web/CSS/column-count" target="_blank" rel="noopener">column-count</a>を1に指定しておくと（1で指定するとSafariで反応しないので2に指定した）、期待通りの横幅で縦に折り返すことができるようになった。これも<a href="https://developer.mozilla.org/ja/docs/Web/Guide/CSS/Using_multi-column_layouts" target="_blank" rel="noopener">マルチカラムレイアウト</a>の仕様が関係していると思うけど、詳しくは調べていない。だからこれが正しい挙動なのかどうかはわからない。あと現状のline-heightとかwidthの関係で、テキストの横幅が微妙に横幅より狭く見えるので、少しだけ調整している。折り返しの位置が横幅によって微妙に変なのは、仕方ないのかな。</p>
+<p>あと最後の段落は文章の左側に余白が残るのだけど、WEBで見るとだいぶ不自然な感じはある。縦書きは一つの段落でおさまる文章で書くのがベストかもしれない。文章量的には縦書きに比べてだいぶ入るなあという感じはある。数えてないけど。</p>
+</div>
+<hr>
+<p>最近になって<a href="https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode" target="_blank" rel="noopener">writing-mode</a>を使うと文章の表示を簡単に縦書きにできるということを最近知ったので使ってみたという話。縦書きにすると文章量が長くなっても横幅に関係なく折り返されずに表示されるようになる。横幅は表示する端末によって変わることを考えると厳しい制限事項だなと思う。</p>
+<p>指定しているCSSの中で縦書きと関係ある部分はだいたいこんな感じ。</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.writing-vertical</span> </span><span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">900</span>px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">102%</span><span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">800</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>マルチカラムレイアウトを使用すると折り返して表示することができるようだが、heightの調整が難しい。heightの指定はauto（最大でウィンドウと同じ大きさになる様子）か、800pxとか固定値で決める必要がある。ボックスからあふれたコンテンツはoverflowがhiddenでなければ表示されるのだけど、ボックスの大きさは変わらないので縦書きコンテンツの下に何か他のコンテンツを挿入するとコンテンツが重なって表示されてしまうようだ。これは仕様上の問題なのか実装上の問題なのかは調べてないのでわからない。とにかく現状ではそういう感じになる。コンテンツの横幅が狭いとその分コンテンツの高さが必要になるので、どんな固定値であってもコンテンツがバシッとおさまるようにはできない。</p>
+<p>だから分量の多いコンテンツを縦書きにするなら下にコンテンツを置かないか、<code>overflow:auto</code> などしてあふれたコンテンツを重ならないようにする必要がある。</p>
+<p>そしてマルチカラムで次のカラムに移動するときに折り返し位置を指定する手段がなさそうにみえる（あるかもしれないけど）。それで左側に微妙な余白が生まれてしまうので、ここの見た目は微妙。<a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout" target="_blank" rel="noopener">グリッドレイアウト</a>ならもしかしたらうまい回避方法見つかるかも…とも思ったが、今のところ見つかってない。</p>
+<p>という感じでまだまだなところが多いが、最小な端末（320 x 480 かな）で1画面でおさまる分量なら問題なく使えると思われる。だからリード文とかコンテンツの量が少なくてすむ箇所とか、現状でも使い道はあるかなという気はした。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
