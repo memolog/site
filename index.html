@@ -414,26 +414,8 @@ a:visited {
             
           </header>
           
-            <div class="content"><p>最近<a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a>を使って単語の記憶をしようという試みをしている。もともとは<a href="https://fluent-forever.com/book/" target="_blank" rel="noopener">Fluent Forever</a>という本に載っていたところからこのアプリを知った（最近になって邦訳「<a href="https://amzn.to/2F35KpT" target="_blank" rel="noopener">脳が認める外国語勉強法</a>」があると知った）。</p>
-<p>最初は英語とその日本語訳を入れたシンプルなカードを作ろうとしていたのですが、なんとなく味気ないなとということで、画像を追加したり、音声を追加してみたりと色々しているうちに、手作業でやるのがしんどいなということになり、<a href="https://github.com/memolog/generate-anki-cards" target="_blank" rel="noopener">generate-anki-cards</a>というツールを作成してみた。他の人に使ってもらいたい意図もなく、npmツールとしては公開する必要性がまったくないのですが、なんとなくついでだったのでnpmにも公開<a href="https://www.npmjs.com/package/generate-anki-cards" target="_blank" rel="noopener">generate-anki-cards  -  npm</a>。npmでインストールできる。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g generate-anki-cards
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>下のようなCSVを用意して、</p>
-<pre class="line-numbers language-csv"><code class="language-csv">apple,リンゴ
-banana,バナナ
-cherry,さくらんぼ
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash"><code class="language-bash">generate-anki-cards -i ./data.csv -o ./out
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>みたいに実行すると、Puppeteerで<a href="https://dictionary.cambridge.org/dictionary/english/apple" target="_blank" rel="noopener">Cambridge Dictionary</a> のサイトにアクセスして、データがあれば、画像と音声データをダウンロードして保存します。Ankiで実際に利用する場合は、collection.media フォルダにそれらをコピーする必要がある（参考：<a href="https://apps.ankiweb.net/docs/manual.html#files" target="_blank" rel="noopener">File Locations</a>）。</p>
-<p>Cambridge Dictionary に画像または音声データがない場合は、<a href="https://translate.google.com/" target="_blank" rel="noopener">Google Translate</a> のサイトから音声データを取得したり、Unsplashからダウンロードしたりします。Google TranslateにPuppeteerで音声データを取得するより、<a href="https://cloud.google.com/text-to-speech/" target="_blank" rel="noopener">CLOUD TEXT-TO-SPEECH</a>を使う方が良いのかなという思いはありつつ、大量にアクセスするようなものでもないし、とりあえずそのまま。UnsplashについてもAPIを使うべきと思いつつ、Puppeteerでアクセスしてダウンロードしている。個人利用だし、単語リストの元になるCSVファイルは公開してないので、、このくらいは良いかなと…</p>
-<p>なんやかんやで作成した読み込みファイルを使ってAnkiカードを作成した結果がこんな感じ。<br><div class="youtube-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/zRsiGZloIaY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="he screen cast to describe how to work Anki cards with my 'generate-anki-cards' cli tool"></iframe>
-  </div></p>
-<p>なんやかんやで作りながら紆余曲折してしまったので、この年末年始の時間をだいぶ費やしてしまったけど、wikipediaやweblioからもデータの取得が可能で、こんな風に英語以外の暗記でも使える。使うかどうかはわからないけど。</p>
-<p><img src="../../assets/images/screen_anki.png" alt=""></p>
-<p>というメモ。</p>
-</div>
+            <div class="content"><p>最近<a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a>を使って単語の記憶をしようという試みをしている。もともとは<a href="https://fluent-forever.com/book/" target="_blank" rel="noopener">Fluent Forever</a>という本に載っていたところからこのアプリを知った（最近になって邦訳「<a href="https://amzn.to/2F35KpT" target="_blank" rel="noopener">脳が認める外国語勉強法</a>」があると知った）。</div>
+            <div><a href="/2019/generate-anki-cards-tool.html">📖 続きを読む</a></div>
           
         </article>
       
