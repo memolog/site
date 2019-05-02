@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2019-01-04T04:21:07.312Z</updated>
+  <updated>2019-05-02T04:38:07.393Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「第四の革命」を読んだ</title>
+    <link href="https://memolog.org/2019/book-the-4th-revolution.html"/>
+    <id>https://memolog.org/2019/book-the-4th-revolution.html</id>
+    <published>2019-05-01T23:41:09.000Z</published>
+    <updated>2019-05-02T04:38:07.393Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;「&lt;a href=&quot;https://www.shin-yo-sha.co.jp/mokuroku/books/978-4-7885-1522-2.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;第四の革命&lt;/a&gt;」を読んだ。情報通信技術が、従来の「記録する・履歴をとる」という単純な伝達手段であったものから飛躍して、記録・履歴のデータが処理され、情報として再利用されるようになった。それが様々なテクノロジーに内包されるにつれ、情報通信技術が単なるツールという枠を越えて、情報世界（情報圏・インフォスフィア）を構成するようになっている。インフォスフィアがどのように個々人や世界に影響をもたらすのか、といった内容である。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ナノテクノロジー、IOT、ウェブ2.0 …（中略。いろんなテクノロジー）… これらすべての現象を、一つの、マクロなトレンンドの多様な側面として説明できるような、統合的視点を見つけ出すことができるだろうか？　それに答えるのが難しいのは、まず我々がいまだにICT（情報通信技術）を、外界と、そして我々相互が関わりあうためのツール見なしているという点にある。ICTは、実際にはすでに環境なのであり、人類学的な、そして社会的な、世界を解釈する力となっているのである。それは、我々の知的、物理的な現実を生み出し、形成し、我々の自己理解を変え、我々が相互に関わるやり方を変え、世界を理解する方法をより高度化している。そしてこれらすべてが、広く、深く、強力に進んでいるのである。（「はじめに」より）
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Genarate Anki Cards Tool</title>
@@ -315,22 +333,6 @@
     
       &lt;p&gt;Node.jsの中であれば単に&lt;code&gt;const config = require(&amp;#39;config.json&amp;#39;)&lt;/code&gt;すれば良いのだけれど、フロントエンド側のJavaScriptではそうはいかない。XMLHttpRequestとか&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Fetch_API&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fetch API&lt;/a&gt;を使うか、requireで書いたものをwebpackでbundleするとかしないといけない。他にもいろいろ方法はあると思うけど、まあとにかく一手間が必要。&lt;/p&gt;
 &lt;p&gt;その読み出すJSONデータを環境ごとに変更したい場合はなおさら面倒で、Node.jsであればprocess.env.NODE_ENVなんかを使えばいいけど、フロントエンド側ではwebpackでバンドルするときの設定を変更するとか、uglifyで&lt;code&gt;DEBUG&lt;/code&gt;みたいなglobal変数を入れておいて書き出すとかしつつ、異なるJSONデータをfetchするように実装しないといけない。いろいろ方法はあるから難しい問題ではないけど、面倒ではある。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>縦書きで表示する</title>
-    <link href="https://memolog.org/2018/show-vertical-writing-with-css.html"/>
-    <id>https://memolog.org/2018/show-vertical-writing-with-css.html</id>
-    <published>2018-02-03T03:05:36.000Z</published>
-    <updated>2019-01-04T02:09:12.877Z</updated>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;writing-vertical&quot;&gt;&lt;p&gt;最近になって&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;writing-mode&lt;/a&gt;を使うと文章の表示を簡単に縦書きにできるということを最近知った。ので、この記事では縦書きの表示を試している。以下の文章は文章量が長くなった時にどう表示されるのかを知りたくて入れているだけなので、内容的にほぼ意味はない（ないというほどでもないけど限りなく無に近いものではある）。なおインデックスページでは横書きである。
     
     </summary>
     
