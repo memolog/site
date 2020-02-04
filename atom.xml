@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2019-05-02T04:38:07.393Z</updated>
+  <updated>2020-02-04T01:16:24.047Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Load jQuery library in the Chrome developer console</title>
+    <link href="https://memolog.org/2020/load-jquery-in-developer-console.html"/>
+    <id>https://memolog.org/2020/load-jquery-in-developer-console.html</id>
+    <published>2020-02-03T22:19:43.000Z</published>
+    <updated>2020-02-04T01:16:24.047Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;スクリプト内のDOM操作でjQueryを使っているけれど、処理がスクリプト内で完結していて、GlobalにはjQueryをロードさせていないという場合がある。あると思う。&lt;/p&gt;
+&lt;p&gt;そういった場合、例えばそのスクリプトに新しい実装を入れたいけどjQueryでのDOM操作が自分の期待通りに行えるかをChromeのデベロッパーツールでちょっと確認したいみたいな時に少し困る。大して困らない気もするけど、少し手間ではある。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>「第四の革命」を読んだ</title>
@@ -316,23 +333,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;http://books.bunshun.jp/ud/book/num/9784166610747&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;マインド・コントロール&lt;/a&gt;と&lt;a href=&quot;http://www.sbcr.jp/products/4797374025.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;影響力の正体&lt;/a&gt;という本を読んだ。マインドコントロールとは、&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%A4%E3%83%B3%E3%83%89%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Wikipedia&lt;/a&gt;には「他人の思想や情報をコントロールし、個人が意思決定する際に、特定の結論へと誘導する技術を指す概念」と書いてある。「マインド・コントロール」の方は題名そのまんまマインドコントロールに扱った本であるけど、「影響力の正体」の方も「相手をYESという結論に導く技術」という意味でマインドコントロールを扱った本と言える。どちらの本も内容も人間の根本的な性質を利用したものでかなりやっかいな技術だなと思った。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JSONデータを読み込んで差し替える</title>
-    <link href="https://memolog.org/2018/retrieve-json-from-require-method.html"/>
-    <id>https://memolog.org/2018/retrieve-json-from-require-method.html</id>
-    <published>2018-02-04T07:35:42.000Z</published>
-    <updated>2019-01-04T02:09:12.877Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Node.jsの中であれば単に&lt;code&gt;const config = require(&amp;#39;config.json&amp;#39;)&lt;/code&gt;すれば良いのだけれど、フロントエンド側のJavaScriptではそうはいかない。XMLHttpRequestとか&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Fetch_API&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fetch API&lt;/a&gt;を使うか、requireで書いたものをwebpackでbundleするとかしないといけない。他にもいろいろ方法はあると思うけど、まあとにかく一手間が必要。&lt;/p&gt;
-&lt;p&gt;その読み出すJSONデータを環境ごとに変更したい場合はなおさら面倒で、Node.jsであればprocess.env.NODE_ENVなんかを使えばいいけど、フロントエンド側ではwebpackでバンドルするときの設定を変更するとか、uglifyで&lt;code&gt;DEBUG&lt;/code&gt;みたいなglobal変数を入れておいて書き出すとかしつつ、異なるJSONデータをfetchするように実装しないといけない。いろいろ方法はあるから難しい問題ではないけど、面倒ではある。
     
     </summary>
     

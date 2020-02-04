@@ -317,61 +317,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2018/show-vertical-writing-with-css.html"
+          "url": "https://memolog.org/2018/retrieve-json-from-require-method.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2018/how-to-learn.html"
+          "url": "https://memolog.org/2018/show-vertical-writing-with-css.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2018/convert-multiple-primitive-images-at-once.html"
+          "url": "https://memolog.org/2018/how-to-learn.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2018/book-intro-blockchain.html"
+          "url": "https://memolog.org/2018/convert-multiple-primitive-images-at-once.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2018/life-project.html"
+          "url": "https://memolog.org/2018/book-intro-blockchain.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2018/redirect-to-my-old-blog.html"
+          "url": "https://memolog.org/2018/life-project.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2018/inline-svg-as-an-image-placeholder.html"
+          "url": "https://memolog.org/2018/redirect-to-my-old-blog.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2018/image-manipulation-with-primitive.html"
+          "url": "https://memolog.org/2018/inline-svg-as-an-image-placeholder.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2018/display-featured-image.html"
+          "url": "https://memolog.org/2018/image-manipulation-with-primitive.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2018/import-from-old-blog.html"
+          "url": "https://memolog.org/2018/display-featured-image.html"
         }
         
       ]
@@ -391,6 +391,34 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-02-04T07:35:42.000Z"><span class="calendar-icon">📅</span><span>2018年2月4日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/retrieve-json-from-require-method.html">JSONデータを読み込んで差し替える</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNzY4Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIGZpbGw9IiM0Nzk1YWIiIC8+PC9zdmc+" data-src="/assets/images/aaron-burden-286686/aaron-burden-286686.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/h7wpIMY3O3E?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Aaron Burden</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>Node.jsの中であれば単に<code>const config = require(&#39;config.json&#39;)</code>すれば良いのだけれど、フロントエンド側のJavaScriptではそうはいかない。XMLHttpRequestとか<a href="https://developer.mozilla.org/ja/docs/Web/API/Fetch_API" target="_blank" rel="noopener">Fetch API</a>を使うか、requireで書いたものをwebpackでbundleするとかしないといけない。他にもいろいろ方法はあると思うけど、まあとにかく一手間が必要。</p>
+<p>その読み出すJSONデータを環境ごとに変更したい場合はなおさら面倒で、Node.jsであればprocess.env.NODE_ENVなんかを使えばいいけど、フロントエンド側ではwebpackでバンドルするときの設定を変更するとか、uglifyで<code>DEBUG</code>みたいなglobal変数を入れておいて書き出すとかしつつ、異なるJSONデータをfetchするように実装しないといけない。いろいろ方法はあるから難しい問題ではないけど、面倒ではある。</div>
+            <div><a href="/2018/retrieve-json-from-require-method.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -641,34 +669,6 @@ a:visited {
           
         </article>
       
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2018-01-03T18:36:06.000Z"><span class="calendar-icon">📅</span><span>2018年1月4日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2018/import-from-old-blog.html">古い記事をインポートする</a></h2>
-            
-              <div class="header__feature" aria-hidden="true">
-  <div class="featured__image">
-    
-      
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjMyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2MzIiIGZpbGw9IiNhN2MxZGIiIC8+PC9zdmc+" data-src="/assets/images/jordan-sanchez-111052/jordan-sanchez-111052.svg" class="lazyload blur-up" alt="" role="presentation" />
-      
-    
-  </div>
-  
-    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/71hQxE-Sfvg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Jordan Sanchez</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
-  
-</div>
-
-            
-          </header>
-          
-            <div class="content"><p>ブログの古い記事なんてほとんど顧みることはない。ほとんどの記事が「以前は役に立ったかもしれないけど、すでに役には立たない」コードの端切れのようなもので古い記事なんてそのまま放置していつの日かインターネットから姿を消すくらいでもいいかなあとか思っていた。</p>
-<p>のだが、数は少ないけどまだ誰かの役に立つかもしれないものもたぶんあるだろうし、過去の時点で自分が何を書いていたのか振り返ることもあるかもしれない（今まで一度もなかったけど）と思い直し、頑張ってインポートをしてみることにした。</div>
-            <div><a href="/2018/import-from-old-blog.html">📖 続きを読む</a></div>
-          
-        </article>
-      
       <footer><a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/4/">Next</a></footer>
     </main>
     <footer class="profile">
@@ -677,7 +677,7 @@ a:visited {
     <h2 class="profile__heading">About the Author</h2>
     <div class="profile__content">
       <div>Yutaka Yamaguchi</div>
-      <div>Mainly working for Web application (JavaScript), but also working for iOS application (Swift)</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
       <ul class="profile__social-list">
         <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
         <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
