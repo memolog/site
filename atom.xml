@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-06T00:11:39.256Z</updated>
+  <updated>2020-02-06T00:14:13.989Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -21,11 +21,12 @@
     <link href="https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html"/>
     <id>https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html</id>
     <published>2020-02-05T22:25:28.000Z</published>
-    <updated>2020-02-06T00:11:39.256Z</updated>
+    <updated>2020-02-06T00:14:13.989Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;ES2020で新しく追加された機能（&lt;a href=&quot;https://kangax.github.io/compat-table/es2016plus/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ECMAScript 2016+ compatibility table&lt;/a&gt;の画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。
+      &lt;p&gt;ES2020で新しく追加された機能（&lt;a href=&quot;https://kangax.github.io/compat-table/es2016plus/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ECMAScript 2016+ compatibility table&lt;/a&gt;の画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。&lt;/p&gt;
+&lt;p&gt;その中で、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nullish coalescing&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Optional chaining&lt;/a&gt; はかなり便利。なくても大丈夫だし、使わなくても良いんだけど、便利だから日常的に書かれるJavaScriptの書き方を変えるものになると思う。
     
     </summary>
     

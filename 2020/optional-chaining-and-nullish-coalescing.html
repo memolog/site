@@ -307,18 +307,18 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。">
+  <meta name="description" content="ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。 その中で、Nullish coalescingとOptional chaining はかなり便利。なくても大丈夫だし、使わなくても良いんだ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Optional chaining and Nullish coalescing">
 <meta property="og:url" content="https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。">
+<meta property="og:description" content="ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。 その中で、Nullish coalescingとOptional chaining はかなり便利。なくても大丈夫だし、使わなくても良いんだ">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://memolog.org/assets/images/ben-hershey-1IZBAlIs4ug-unsplash/ben-hershey-1IZBAlIs4ug-unsplash.jpg">
-<meta property="og:updated_time" content="2020-02-06T00:11:39.256Z">
+<meta property="og:updated_time" content="2020-02-06T00:14:13.989Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Optional chaining and Nullish coalescing">
-<meta name="twitter:description" content="ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。">
+<meta name="twitter:description" content="ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。 その中で、Nullish coalescingとOptional chaining はかなり便利。なくても大丈夫だし、使わなくても良いんだ">
 <meta name="twitter:image" content="https://memolog.org/assets/images/ben-hershey-1IZBAlIs4ug-unsplash/ben-hershey-1IZBAlIs4ug-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
@@ -339,7 +339,7 @@ a:visited {
         ],
       
       "datePublished": "Thu Feb 06 2020 07:25:28 GMT+0900",
-      "dateModified": "Thu Feb 06 2020 09:11:39 GMT+0900",
+      "dateModified": "Thu Feb 06 2020 09:14:13 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -352,7 +352,8 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。"
+      "description": "ES2020で新しく追加された機能（ECMAScript 2016+ compatibility tableの画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。
+その中で、Nullish coalescingとOptional chaining はかなり便利。なくても大丈夫だし、使わなくても良いんだけど、便利だから日常的に書かれるJavaScriptの書き方を変えるものになると思う。"
     }
   </script>
 </head>
@@ -393,8 +394,8 @@ a:visited {
 
           
         </header>
-        <div id="article-content" class="content "><p>ES2020で新しく追加された機能（<a href="https://kangax.github.io/compat-table/es2016plus/" target="_blank" rel="noopener">ECMAScript 2016+ compatibility table</a>の画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。<a id="more"></a></p>
-<p>その中で、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator" target="_blank" rel="noopener">Nullish coalescing</a>と<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" rel="noopener">Optional chaining</a> はかなり便利。なくても大丈夫だし、使わなくても良いんだけど、便利だから日常的に書かれるJavaScriptの書き方を変えるものになると思う。</p>
+        <div id="article-content" class="content "><p>ES2020で新しく追加された機能（<a href="https://kangax.github.io/compat-table/es2016plus/" target="_blank" rel="noopener">ECMAScript 2016+ compatibility table</a>の画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。</p>
+<p>その中で、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator" target="_blank" rel="noopener">Nullish coalescing</a>と<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" rel="noopener">Optional chaining</a> はかなり便利。なくても大丈夫だし、使わなくても良いんだけど、便利だから日常的に書かれるJavaScriptの書き方を変えるものになると思う。<a id="more"></a></p>
 <p>まず、Nullishとは何かというと、値がnullかundefinedになるものを言う。<a href="https://developer.mozilla.org/ja/docs/Glossary/Falsy" target="_blank" rel="noopener">Falsy</a>の場合、数値の0とかNaN、空文字列などが含まれるけど、Nullishは値が存在しない場合（nullとundefined）だけを扱う。</p>
 <p>論理演算子の<code>&amp;&amp;</code>や<code>||</code>（<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank" rel="noopener">論理演算子</a>）は、Falsyな値ははすべてFalseとして扱うので、</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
