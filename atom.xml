@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-06T00:14:13.989Z</updated>
+  <updated>2020-02-06T22:32:31.523Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Workers work on IE10</title>
+    <link href="https://memolog.org/2020/web-workers-work-on-ie10.html"/>
+    <id>https://memolog.org/2020/web-workers-work-on-ie10.html</id>
+    <published>2020-02-06T21:18:11.000Z</published>
+    <updated>2020-02-06T22:32:31.523Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Web Workers&lt;/a&gt;を使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる。&lt;/p&gt;
+&lt;p&gt;なのだけど、Web Workersは意外と歴史があり（よく知らないけど）、IE10でも動作する（&lt;a href=&quot;https://caniuse.com/#feat=webworkers&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Can I use Web Workers&lt;/a&gt;）。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Optional chaining and Nullish coalescing</title>
@@ -318,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;たいして更新もしない個人のブログで Service Worker とか入れる必要まったくないと思いながらも、&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/?hl=ja&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lighthouse&lt;/a&gt; の結果を見るたびに「PWAのチェックリストだけ100点に至らない」というなんとも言えないモヤモヤ感があった。別にそんなに大変でもないんだから入れてしまえ、ということでPWAのチェックリストを満たすべく、Service Worker と App manifest に対応しました。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>TypeScriptとWebpackを使ってDynamic Importを行う</title>
-    <link href="https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html"/>
-    <id>https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html</id>
-    <published>2018-07-07T22:40:57.000Z</published>
-    <updated>2019-01-04T02:09:12.875Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Webpackではバンドルするファイルを3つのアプローチで分けることができる。エントリーポイントを複数設けたり、webpack.config.jsにsplitChunksの設定を入れたりなどの他に、Dyanmic importを使うことでもファイルを分けることができる。詳しくは&lt;a href=&quot;https://webpack.js.org/guides/code-splitting/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Code Splitting&lt;/a&gt;を参照。
     
     </summary>
     

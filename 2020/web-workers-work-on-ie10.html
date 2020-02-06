@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>watir-webdriver&#x3a; バックグラウンドで実行する | メモログ</title>
+  <title>Web Workers work on IE10 | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -307,34 +307,39 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="「Watir-WebDriver: A detailed introduction | WatirMelon」の「The remote WebDriver Server」と「Hello Watir-WebDriver in Headless (HTML Unit)」あたりの話。Seleniumのサーバーを使うことで、ブラウザを立ち上げずにバックグラウンドでwebdriverを実行することができます">
-<meta name="keywords" content="watir,webdriver,selenium">
+  <meta name="description" content="JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。Web Workersを使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる">
 <meta property="og:type" content="article">
-<meta property="og:title" content="watir-webdriver&amp;#x3a; バックグラウンドで実行する">
-<meta property="og:url" content="https://memolog.org/2011/01/watir-webdriver-in-headless.html">
+<meta property="og:title" content="Web Workers work on IE10">
+<meta property="og:url" content="https://memolog.org/2020/web-workers-work-on-ie10.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="「Watir-WebDriver: A detailed introduction | WatirMelon」の「The remote WebDriver Server」と「Hello Watir-WebDriver in Headless (HTML Unit)」あたりの話。Seleniumのサーバーを使うことで、ブラウザを立ち上げずにバックグラウンドでwebdriverを実行することができます">
+<meta property="og:description" content="JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。Web Workersを使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-01-04T02:09:12.858Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="watir-webdriver&amp;#x3a; バックグラウンドで実行する">
-<meta name="twitter:description" content="「Watir-WebDriver: A detailed introduction | WatirMelon」の「The remote WebDriver Server」と「Hello Watir-WebDriver in Headless (HTML Unit)」あたりの話。Seleniumのサーバーを使うことで、ブラウザを立ち上げずにバックグラウンドでwebdriverを実行することができます">
+<meta property="og:image" content="https://memolog.org/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-06T22:32:31.523Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Workers work on IE10">
+<meta name="twitter:description" content="JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。Web Workersを使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる">
+<meta name="twitter:image" content="https://memolog.org/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2011/01/watir-webdriver-in-headless.html">
+  <link rel="canonical" href="https://memolog.org/2020/web-workers-work-on-ie10.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2011/01/watir-webdriver-in-headless.html"
+        "@id": "https://memolog.org/2020/web-workers-work-on-ie10.html"
       },
-      "headline": "watir-webdriver&#x3a; バックグラウンドで実行する",
+      "headline": "Web Workers work on IE10",
       
-      "datePublished": "Mon Jan 17 2011 03:00:00 GMT+0900",
-      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+        "image": [
+          "https://memolog.org/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.jpg"
+        ],
+      
+      "datePublished": "Fri Feb 07 2020 06:18:11 GMT+0900",
+      "dateModified": "Fri Feb 07 2020 07:32:31 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -347,7 +352,8 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "「Watir-WebDriver: A detailed introduction | WatirMelon」の「The remote WebDriver Server」と「Hello Watir-WebDriver in Headless (HTML Unit)」あたりの話。Seleniumのサーバーを使うことで、ブラウザを立ち上げずにバックグラウンドでwebdriverを実行することができます。"
+      "description": "JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。Web Workersを使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる。
+なのだけど、Web Workersは意外と歴史があり（よく知らないけど）、IE10でも動作する（Can I use Web Workers）。"
     }
   </script>
 </head>
@@ -367,27 +373,34 @@ a:visited {
       <article>
         <header class="header">
           <div>
-            <time datetime="2011-01-16T18:00:00.000Z">
-              <span class="calendar-icon">📅</span><span>2011年1月17日</span>
+            <time datetime="2020-02-06T21:18:11.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月7日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver&#x3a; バックグラウンドで実行する</h2>
+          <h2 class="header__title">Web Workers work on IE10</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4ZmFkY2QiIC8+PC9zdmc+" data-src="/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/s/photos/worker?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Josue Isai Ramos Figueroa</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
           
         </header>
-        <div id="article-content" class="content "><p>「<a href="http://watirmelon.com/2010/12/14/watir-webdriver-a-detailed-introduction/" target="_blank" rel="noopener">Watir-WebDriver: A detailed introduction | WatirMelon</a>」の「The remote WebDriver Server」と「Hello Watir-WebDriver in Headless (HTML Unit)」あたりの話。Seleniumのサーバーを使うことで、ブラウザを立ち上げずにバックグラウンドでwebdriverを実行することができます。</p>
-<a id="more"></a>
-<p>使用方法は（上のブログとほぼ同じですが…）下記のような感じ。てきとうに改行入れています。selenium-serverは<a href="http://code.google.com/p/selenium/downloads/list" target="_blank" rel="noopener">Downloads - selenium - Project Hosting on Google Code</a>のページからダウンロードできます。サーバーはJavaで動作します。</p>
-<pre><code>require &#39;selenium/server&#39;
-Selenium_Server = File.expand_path(&#39;selenium-server-standalone-2.0b1.jar&#39;)
-@server = Selenium::Server.new(Selenium_Server, :background =&gt; true)
-@server.start
-capabilities = Selenium::WebDriver::Remote::Capabilities
-                                 .htmlunit(:javascript_enabled =&gt; true)
-@b = Watir::Browser.new(:remote, :url =&gt; &quot;http://127.0.0.1:4444/wd/hub&quot;, 
-                                 :desired_capabilities =&gt; capabilities)
-## いろいろな動作
-@server.stop # 最後にサーバーを止める
-</code></pre><p>ブラウザを立ち上げずに実行できるので、Hudson(Jenkins)などを使ってインテグレーションテストをするようなときに便利、という話。通常のブラウザと比較するとまだ動作が不安定のように見えますけど（betaだし）。</p>
+        <div id="article-content" class="content "><p>JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。<a href="https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener">Web Workers</a>を使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる。</p>
+<p>なのだけど、Web Workersは意外と歴史があり（よく知らないけど）、IE10でも動作する（<a href="https://caniuse.com/#feat=webworkers" target="_blank" rel="noopener">Can I use Web Workers</a>）。<a id="more"></a></p>
+<p>IE10はIE8と比べるとだいぶ良いのだけど、それでもES5（ES2015ではない）までしか対応していない（<a href="https://kangax.github.io/compat-table/es5/" target="_blank" rel="noopener">ECMAScript 5 compatibility table</a>）。Fetch API など一部のWeb APIにも対応していない（<a href="https://caniuse.com/#feat=fetch" target="_blank" rel="noopener">Can I use Fetch API</a>）など、いろいろつらい部分がある。</p>
+<p>とはいえ、Babelとかでtranspileしてしまえばたぶん問題は起きないと思し、Fetch APIについてもpolyfillを入れることで解決する。だから「Web Workersはモダンブラウザでしか動作しないから、モダンブラウザ向きの処理をしても良い」と誤解しなければ、さほど困らない。たぶん。</p>
+<p>このあたり、<a href="https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener">Service Worker</a> では少し事情が異なり、Service Workerの場合は、Service Worker自体がモダンブラウザでしか動作しない。Service Worker用のスクリプトはモダンブラウザ向けに書いてしまっても特段問題ない。</p>
+<p>Web Workersの方が歴史があるわりに今まで必携の機能ではなかった。プッシュ通知などの機能を持ったService Workerの方がサービスに先に導入されやすい。そうした事情から、Service Workerに携わった後に、Web Workersを導入し始める場合も多いと思う。そこに「Web WorkerもService Workerと同じように動く（モダンブラウザでしか動作しないからそれを前提に作ってもいい）」と誤解するという罠がある。</p>
+<p>というメモ。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">
