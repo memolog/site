@@ -1,23 +1,23 @@
-const CACHE_MAIN = 'main1580860321900';
+const CACHE_MAIN = 'main1580947899256';
 const precacheList = [
   
   '/',
+  '/2020/optional-chaining-and-nullish-coalescing.html',
   '/2020/event-target-and-currenttarget.html',
   '/2020/load-jquery-in-developer-console.html',
   '/2019/book-the-4th-revolution.html',
   '/2019/generate-anki-cards-tool.html',
   '/2018/merge-sort-in-javascript.html',
-  '/2018/selection-sort-in-javascript.html',
   '/2018/insertion-sort-in-javascript.html',
   '/2018/create-a-new-icon.html',
   '/2018/add-json-ld-structured-data.html',
   '/2018/a11y-fixes-for-prism-default-theme.html',
+  '/assets/images/ben-hershey-1IZBAlIs4ug-unsplash/ben-hershey-1IZBAlIs4ug-unsplash.svg',
   '/assets/images/erik-mclean-CIO4c2xmtHQ-unsplash/erik-mclean-CIO4c2xmtHQ-unsplash.svg',
   '/assets/images/harsh-jain-xoMeq3-GwTY-unsplash/harsh-jain-xoMeq3-GwTY-unsplash.svg',
   '/assets/images/sorry-imkirk-215248-unsplash/sorry-imkirk-215248-unsplash.svg',
   '/assets/images/kate-krivanec-212730-unsplash/kate-krivanec-212730-unsplash.svg',
   '/assets/images/tj-holowaychuk-62184-unsplash/tj-holowaychuk-62184-unsplash.svg',
-  '/assets/images/pietro-mattia-764559-unsplash/pietro-mattia-764559-unsplash.svg',
   '/assets/images/mingwei-dong-651103-unsplash/mingwei-dong-651103-unsplash.svg',
   '/assets/images/new-icon/new-icon.svg',
   '/assets/images/thomas-kelley-75110-unsplash/thomas-kelley-75110-unsplash.svg',

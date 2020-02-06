@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-04T23:52:01.900Z</updated>
+  <updated>2020-02-06T00:11:39.256Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Optional chaining and Nullish coalescing</title>
+    <link href="https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html"/>
+    <id>https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html</id>
+    <published>2020-02-05T22:25:28.000Z</published>
+    <updated>2020-02-06T00:11:39.256Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ES2020で新しく追加された機能（&lt;a href=&quot;https://kangax.github.io/compat-table/es2016plus/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ECMAScript 2016+ compatibility table&lt;/a&gt;の画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Event target and currentTarget</title>
@@ -317,22 +333,6 @@
     <summary type="html">
     
       &lt;p&gt;Webpackではバンドルするファイルを3つのアプローチで分けることができる。エントリーポイントを複数設けたり、webpack.config.jsにsplitChunksの設定を入れたりなどの他に、Dyanmic importを使うことでもファイルを分けることができる。詳しくは&lt;a href=&quot;https://webpack.js.org/guides/code-splitting/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Code Splitting&lt;/a&gt;を参照。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>カスタムドメインを設定する</title>
-    <link href="https://memolog.org/2018/custom-domain-in-github-pages.html"/>
-    <id>https://memolog.org/2018/custom-domain-in-github-pages.html</id>
-    <published>2018-07-07T20:58:41.000Z</published>
-    <updated>2019-01-04T02:09:12.875Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;このサイトは&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;を使ってGithub Pagesに公開しているのだけど、最近&lt;a href=&quot;https://blog.github.com/2018-05-01-github-pages-custom-domains-https/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Github PagesカスタムドメインでもHTTPSをサポートしてくれるようになった&lt;/a&gt;ので、&lt;a href=&quot;../../2018/redirect-to-my-old-blog/&quot;&gt;適当にリダイレクトかけていた&lt;/a&gt;元の memolog.org のドメインを設定することにした。
     
     </summary>
     

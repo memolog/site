@@ -317,61 +317,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2013/01/jquery_peformance_about_creating_element.html"
+          "url": "https://memolog.org/2013/01/a_style_sheet_that_is_blocking_scripts_and_dom_content_loaded.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2012/12/prevent_variables_collides_in_closure_compiled_scripts.html"
+          "url": "https://memolog.org/2013/01/jquery_peformance_about_creating_element.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2012/12/css_supports_at-rule.html"
+          "url": "https://memolog.org/2012/12/prevent_variables_collides_in_closure_compiled_scripts.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2012/12/adobe_css_filterlab.html"
+          "url": "https://memolog.org/2012/12/css_supports_at-rule.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2012/12/android_camera_kills_phonegap_app.html"
+          "url": "https://memolog.org/2012/12/adobe_css_filterlab.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2012/12/hayaku_sublime_plugin_for_writing_css_faster.html"
+          "url": "https://memolog.org/2012/12/android_camera_kills_phonegap_app.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2012/11/inspect_uiwebview_with_safari.html"
+          "url": "https://memolog.org/2012/12/hayaku_sublime_plugin_for_writing_css_faster.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2012/11/notes_around_marathon.html"
+          "url": "https://memolog.org/2012/11/inspect_uiwebview_with_safari.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2012/09/css_transforms_sample.html"
+          "url": "https://memolog.org/2012/11/notes_around_marathon.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2012/09/phonegap21-xcode45.html"
+          "url": "https://memolog.org/2012/09/css_transforms_sample.html"
         }
         
       ]
@@ -391,6 +391,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-01-23T06:07:00.000Z"><span class="calendar-icon">📅</span><span>2013年1月23日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/01/a_style_sheet_that_is_blocking_scripts_and_dom_content_loaded.html">a style sheet that is blocking scripts と DOMContentLoaded</a></h2>
+            
+          </header>
+          
+            <div class="content"><p><a href="http://molily.de/weblog/domcontentloaded" target="_blank" rel="noopener">DOMContentLoaded and stylesheets · molily</a>（via <a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/DOMContentLoaded_&#x25;28event&#x25;29" target="_blank" rel="noopener">DOMContentLoaded - Mozilla event reference | MDN</a>）にて、head内のスタイルシートとJavascriptの配置の違いで、DOMContentLoadedイベントが発生するタイミングが変わるという内容が掲載されています。スタイルシートのあとにJavascriptが入っていると、DOMContentLoadedはスタイルシートをロードしたあとに発生して、スタイルシートのあとにJavascriptがないと、スタイルシートのロードを待たずにDOMContentLoadedが発生する。</p></div>
+            <div><a href="/2013/01/a_style_sheet_that_is_blocking_scripts_and_dom_content_loaded.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -507,25 +520,6 @@ a:visited {
           
             <div class="content"><p>CSS Transforms関連記事のまとめ的意味を込めて、くるくる回るサイコロを作成してみました。下のサイコロ（の開き）をクリック（またはhover）すると、クリックした間だけアニメーションします。CSSのみ（と思ったらiPhoneだと期待したようにactive状態にならないので、touchstartしたときにdice-actionというclassを追加するようにJavascriptを入れた）。</p></div>
             <div><a href="/2012/09/css_transforms_sample.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2012-09-25T18:28:07.000Z"><span class="calendar-icon">📅</span><span>2012年9月26日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2012/09/phonegap21-xcode45.html">PhoneGap2.1とXcode4.5でエラー</a></h2>
-            
-          </header>
-          
-            <div class="content"><p><a href="http://www.phonegap.com/" target="_blank" rel="noopener">PhoneGap</a>の2.1を使用して作成したプロジェクトを、Xcodeの4.5でRunしたら下記のようなエラーが発生。</p>
-<pre><code>clang: error: no such file or directory: 
-
-&lt;!-- more --&gt;
-&#39;/Users/username/Library/Developer/Xcode/DerivedData/projectname/Build/Products/Debug-iphoneos/libCordova.a&#39;
-</code></pre><p>Googleで検索したところによると、<a href="https://issues.apache.org/jira/browse/CB-1360" target="_blank" rel="noopener">[#CB-1360] iOS 6 - bump deployment target support to 4.3, add/remove architectures - ASF JIRA</a>で報告されているissueによるものらしくて、<a href="https://git-wip-us.apache.org/repos/asf?p=incubator-cordova-ios.git;a=commitdiff;h=07b54f14;hp=cf2412b5a0db4c67b144561abd201810e3f5f2a5" target="_blank" rel="noopener">ASF Git Repos - incubator-cordova-ios.git/commitdiff</a>の差分を、ダウンロードしてきたPhoneGapのライブラリ（lib/ios/CordovaLib/CordovaLib.xcodeproj/project.pbxproj）に適用すると解消される。</p>
-<p>この修正は2.2では含まれるようなので、2.2では問題は発生しない（と思われる）。</p>
-</div>
           
         </article>
       
