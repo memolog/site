@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>watir-webdriver でjavascriptのポップアップをなんとかする | メモログ</title>
+  <title>Top-level await will be soon | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -307,34 +307,39 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="watirとwatir-webdriver違いはComparison with watir 1.x - watir-webdriver - GitHubにリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり">
-<meta name="keywords" content="javascript,watir,webdriver">
+  <meta name="description" content="asyncとawaitの書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="watir-webdriver でjavascriptのポップアップをなんとかする">
-<meta property="og:url" content="https://memolog.org/2010/12/watir-webdriver_handling_javascript.html">
+<meta property="og:title" content="Top-level await will be soon">
+<meta property="og:url" content="https://memolog.org/2020/top-level-await-will-be-soon.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="watirとwatir-webdriver違いはComparison with watir 1.x - watir-webdriver - GitHubにリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり">
+<meta property="og:description" content="asyncとawaitの書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-01-04T02:09:12.857Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="watir-webdriver でjavascriptのポップアップをなんとかする">
-<meta name="twitter:description" content="watirとwatir-webdriver違いはComparison with watir 1.x - watir-webdriver - GitHubにリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり">
+<meta property="og:image" content="https://memolog.org/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-07T21:45:34.383Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Top-level await will be soon">
+<meta name="twitter:description" content="asyncとawaitの書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2010/12/watir-webdriver_handling_javascript.html">
+  <link rel="canonical" href="https://memolog.org/2020/top-level-await-will-be-soon.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2010/12/watir-webdriver_handling_javascript.html"
+        "@id": "https://memolog.org/2020/top-level-await-will-be-soon.html"
       },
-      "headline": "watir-webdriver でjavascriptのポップアップをなんとかする",
+      "headline": "Top-level await will be soon",
       
-      "datePublished": "Mon Dec 06 2010 03:00:00 GMT+0900",
-      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+        "image": [
+          "https://memolog.org/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.jpg"
+        ],
+      
+      "datePublished": "Sat Feb 08 2020 05:55:41 GMT+0900",
+      "dateModified": "Sat Feb 08 2020 06:45:34 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -347,7 +352,7 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "watirとwatir-webdriver違いはComparison with watir 1.x - watir-webdriver - GitHubにリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり前と言えば当たり前ですが。"
+      "description": "asyncとawaitの書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。"
     }
   </script>
 </head>
@@ -367,30 +372,44 @@ a:visited {
       <article>
         <header class="header">
           <div>
-            <time datetime="2010-12-05T18:00:00.000Z">
-              <span class="calendar-icon">📅</span><span>2010年12月6日</span>
+            <time datetime="2020-02-07T20:55:41.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月8日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver でjavascriptのポップアップをなんとかする</h2>
+          <h2 class="header__title">Top-level await will be soon</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4Yzg5ODgiIC8+PC9zdmc+" data-src="/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/s/photos/wait?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Kai Pilger</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
           
         </header>
-        <div id="article-content" class="content "><p>watirとwatir-webdriver違いは<a href="https://github.com/jarib/watir-webdriver/wiki/Comparison-with-Watir-1.X" target="_blank" rel="noopener">Comparison with watir 1.x - watir-webdriver - GitHub</a>にリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり前と言えば当たり前ですが。</p>
-<a id="more"></a>
-<p>ここで困るのはjavascriptのポップアップなどの処理です。watir 1.xにはWinClickerなどのツールもありましたが、watir-webdriverではそうしたOS依存の機能は現在のところありません（私は日本語のメニューの処理などがあったのでWinClickerを使用せずに、autoitで処理していました）。</p>
-<p>そこでwatir-webdriverでは<a href="http://watirmelon.com/2010/10/31/dismissing-pesky-javascript-dialogs-with-watir/" target="_blank" rel="noopener">execute_scriptのメソッドを使用して、javascriptを回避する方法</a>が紹介されています。execute_scriptは（詳しくは理解できていませんが）表示しているページで使用しているjavascriptを上書きして実行することができるメソッドです。</p>
-<p>そして<a href="http://www.itreallymatters.net/post/1482786902/testing-webpages-with-javascript-popups-correctly" target="_blank" rel="noopener">Testing webpages with JavaScript popups correctly</a>では、それを簡単に実行するためのメソッドを紹介しています。使い方はこんな感じ。</p>
-<pre><code>require &#39;rubygems&#39;
-require &#39;watir-webdriver&#39;
-require &#39;watir-webdriver/extensions/alerts&#39;
-
-browser = Watir::Webdriver.new
-browser.confirm(true) do
-  browser.link.click
-end
-</code></pre><p>watir-webdriver/extensions/alerts は拡張機能（extension）という位置づけであるため、watir-webdriverとは別にrequire する必要があります。</p>
-<p>上記の場合では、リンクをクリックするとJavascriptでconfirmationのメッセージを表示されるような場合に、メッセージが表示されることなく「ok」の状態で次の状態に進みます。これでJavascriptのメッセージは回避することができます。Javscriptをオーバーライドして回避するので、（素のままのアプリケーションをテストするわけではないので）完璧なテストとは言えないかもしれませんが、そのへんはわりきって。</p>
-<p>あと蛇足ですが、watir-webdriverでは、linkのメソッドなどelment関連のメソッドに引数を与えない場合は、はじめのlinkエレメントを実行します（watir 1.xで言うとlink(:index,1) と同じ動作になる）。</p>
-<p>autoitを使用して処理していたものとして、BASIC認証のハンドリングなんかもあるんですが、今のところwatir-webdriverでの回避方法はわかっておりません。</p>
+        <div id="article-content" class="content "><p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank" rel="noopener">async</a>と<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/await" target="_blank" rel="noopener">await</a>の書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。<a id="more"></a></p>
+<p>つまり</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> resp <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"./foo.json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> json <span class="token operator">=</span> <span class="token keyword">await</span> resp<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>みたいにトップレベルで使えない。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> resp <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"./foo.json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> json <span class="token operator">=</span> <span class="token keyword">await</span> resp<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>みたいにasyncのfunction内ならできる。</p>
+<p>だからトップレベルでも使えるようにしようというのが<a href="https://github.com/tc39/proposal-top-level-await" target="_blank" rel="noopener">ECMAScript proposal: Top-level await</a>の話（詳細は読んでない）。Top-level awaitのステージは現在3。ECMAScriptのproposalにはステージの状態があって、ステージについて詳しくは <a href="https://tc39.es/process-document/" target="_blank" rel="noopener">The TC39 Process</a>に書いてある。読んでないけど、まあ、仕様追加一歩手前という感じだと思われる。だが<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">Stage 3の提案</a>を見るとStage 3のまま留まるものもあるみたいなので、実際いつ仕様に追加されるかよくわからない。</p>
+<p>とにかく、いつ追加されるかはわからないけど、TypeScriptでは3.8でサポートが予定されている（<a href="https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/#top-level-await" target="_blank" rel="noopener">Announcing TypeScript 3.8 Beta</a>）。ので、TypeScript上ではもうすぐ使えるのだ。</p>
+<p>というメモ。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

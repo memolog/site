@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1581028351523';
+const CACHE_MAIN = 'main1581111934383';
 const precacheList = [
   
   '/',
+  '/2020/top-level-await-will-be-soon.html',
   '/2020/web-workers-work-on-ie10.html',
   '/2020/optional-chaining-and-nullish-coalescing.html',
   '/2020/event-target-and-currenttarget.html',
@@ -9,9 +10,9 @@ const precacheList = [
   '/2019/book-the-4th-revolution.html',
   '/2019/generate-anki-cards-tool.html',
   '/2018/merge-sort-in-javascript.html',
-  '/2018/create-a-new-icon.html',
   '/2018/add-json-ld-structured-data.html',
   '/2018/a11y-fixes-for-prism-default-theme.html',
+  '/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.svg',
   '/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.svg',
   '/assets/images/ben-hershey-1IZBAlIs4ug-unsplash/ben-hershey-1IZBAlIs4ug-unsplash.svg',
   '/assets/images/erik-mclean-CIO4c2xmtHQ-unsplash/erik-mclean-CIO4c2xmtHQ-unsplash.svg',
@@ -19,7 +20,6 @@ const precacheList = [
   '/assets/images/sorry-imkirk-215248-unsplash/sorry-imkirk-215248-unsplash.svg',
   '/assets/images/kate-krivanec-212730-unsplash/kate-krivanec-212730-unsplash.svg',
   '/assets/images/tj-holowaychuk-62184-unsplash/tj-holowaychuk-62184-unsplash.svg',
-  '/assets/images/new-icon/new-icon.svg',
   '/assets/images/thomas-kelley-75110-unsplash/thomas-kelley-75110-unsplash.svg',
   '/assets/images/stas-ovsky-781959-unsplash/stas-ovsky-781959-unsplash.svg',
   '/css/prism.css',
