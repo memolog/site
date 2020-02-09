@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-07T21:45:34.383Z</updated>
+  <updated>2020-02-09T22:18:31.312Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Convert screen capture to animation GIF</title>
+    <link href="https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html"/>
+    <id>https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html</id>
+    <published>2020-02-09T21:49:09.000Z</published>
+    <updated>2020-02-09T22:18:31.312Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Macの場合、&lt;a href=&quot;https://support.apple.com/ja-jp/HT201066#record&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Quicktime Player&lt;/a&gt;のファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合は&lt;a href=&quot;https://support.apple.com/ja-jp/HT207935&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;iPhone、iPad、iPod touch で画面を録画する方法&lt;/a&gt;参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのissueに貼り付ける事ができない。なので、&lt;a href=&quot;https://www.ffmpeg.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ffmpeg&lt;/a&gt;を使ってgifに変換しようという話。gifならgithubのissueに貼り付けられる。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Top-level await will be soon</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/javascript-property-access-big-o.html&quot;&gt;JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー&lt;/a&gt;で書いたようにJavaScriptのオブジェクトは基本ハッシュテーブルであるし、&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Map&lt;/a&gt;オブジェクトも中の実装はChromeではハッシュテーブルであると書かれてある(&lt;a href=&quot;https://v8project.blogspot.com/2018/01/hash-code.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Optimizing hash tables: hiding the hash code&lt;/a&gt;)。だからJavaScriptで自前のハッシュテーブルを作るというのは必要のないことなのだけど試しに作ってみたかった。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー</title>
-    <link href="https://memolog.org/2018/javascript-property-access-big-o.html"/>
-    <id>https://memolog.org/2018/javascript-property-access-big-o.html</id>
-    <published>2018-07-23T11:51:00.000Z</published>
-    <updated>2019-01-04T02:09:12.876Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;配列に格納しているオブジェクトをそのIDで検索するとしたら処理量は（線形探索だろうから）ビッグ・オー記法としては &lt;code&gt;O(n)&lt;/code&gt; になるだろう。
     
     </summary>
     

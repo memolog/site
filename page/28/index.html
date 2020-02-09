@@ -317,61 +317,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
+          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/font_tester.html"
+          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
+          "url": "https://memolog.org/2007/08/font_tester.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
+          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
+          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
+          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/post_141.html"
+          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
+          "url": "https://memolog.org/2007/08/post_141.html"
         }
         
       ]
@@ -391,6 +391,22 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-15T06:11:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月15日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_12_remove_duplicate_scri.html">YSLOW 勉強 &#x3a; 12&#x3a; Remove Duplicate Scripts</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#js_dupes" target="_blank" rel="noopener">12: Remove Duplicate Scripts</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十二個目。重複したスクリプトを削除しよう。IEの場合は、HTTPリクエストがキャッシュされていない場合は、リクエストを二回行ってしまう（キャッシュしている場合でもリロードするとHTTPリクエストを送る）。それに加えて、スクリプトの判定は二倍行われてしまうため、余計に時間がかかる。この現象はFirefoxでも発生する。</p></div>
+            <div><a href="/2007/08/yslow_12_remove_duplicate_scri.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -529,22 +545,6 @@ a:visited {
           
             <div class="content"><p>単純にwidthを指定しているところであればブロック要素の横幅はすぐにわかるのですが、borderやpadding、marginが入るとわかりにくくなる。たとえば <div style="width:100px;"><div style="padding:10px;"></div></div> のように、入れ子で指定されている横幅がいくつになるのか、いちいち計算するのはめんどうくさい（右の例のように単純なときはいいですけど）。</p></div>
             <div><a href="/2007/08/post_141.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-07T07:30:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月7日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/yslow_4_gzip_components.html">YSLOW 勉強 &#x3a; 4&#x3a; Gzip Components</a></h2>
-            
-          </header>
-          
-            <div class="content"><ul>
-<li><a href="http://developer.yahoo.com/performance/rules.html#gzip" target="_blank" rel="noopener">4: Gzip Components</a></li>
-</ul>
-<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の四つ目。gzipで構成要素を圧縮して、HTTPのresponseサイズを減少させようという話。gzipについては、<a href="http://ja.wikipedia.org/wiki/Gzip" target="_blank" rel="noopener">Wikipediaのgzipのページ</a>を参照。</p></div>
-            <div><a href="/2007/08/yslow_4_gzip_components.html">📖 続きを読む</a></div>
           
         </article>
       

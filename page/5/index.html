@@ -317,61 +317,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2016/01/angular2_and_import_statement.html"
+          "url": "https://memolog.org/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2016/01/angular2_with_decorators.html"
+          "url": "https://memolog.org/2016/01/angular2_and_import_statement.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2016/01/view_controller_lifecycle.html"
+          "url": "https://memolog.org/2016/01/angular2_with_decorators.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html"
+          "url": "https://memolog.org/2016/01/view_controller_lifecycle.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2015/08/firefox_40_csp.html"
+          "url": "https://memolog.org/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2015/08/try-cryptojs.html"
+          "url": "https://memolog.org/2015/08/firefox_40_csp.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2015/08/encrypt-with-cryptswift-and-then-decrypt-it-with-nodejs.html"
+          "url": "https://memolog.org/2015/08/try-cryptojs.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2014/08/convert_indexof_result_with_bitwise_operators.html"
+          "url": "https://memolog.org/2015/08/encrypt-with-cryptswift-and-then-decrypt-it-with-nodejs.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2014/08/angular_lightbox_and_right_click_with_firefox.html"
+          "url": "https://memolog.org/2014/08/convert_indexof_result_with_bitwise_operators.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2014/06/passing_by_value_or_reference_in_javascript.html"
+          "url": "https://memolog.org/2014/08/angular_lightbox_and_right_click_with_firefox.html"
         }
         
       ]
@@ -391,6 +391,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2016-02-03T12:37:00.000Z"><span class="calendar-icon">📅</span><span>2016年2月3日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html">Bitcodeを使ったアプリがCrashlyticsでmissing dSYMsになる</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Xcodeでpublishした内部テスター向けのビルドで、<a href="https://fabric.io/kits/ios/crashlytics" target="_blank" rel="noopener">Crashlytics</a>へクラッシュレポートが届かない。「missing dSYM」というエラーが出てるので、dSYMの問題だろうというところまでわかるけど、<a href="https://docs.fabric.io/ios/crashlytics/index.html" target="_blank" rel="noopener">CrashlyticsのDocument</a>などを読んでもわからない。Crashlyticsのmissing dSYMの画面に出てるUUIDを検索しても見つからない…</p></div>
+            <div><a href="/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -521,19 +534,6 @@ a:visited {
           
             <div class="content"><p><a href="http://stackoverflow.com/questions/16898330/firefox-strange-right-click-event-bubbling-behavior" target="_blank" rel="noopener">javascript - Firefox strange right click event bubbling behavior - Stack Overflow</a>でレポートされている変な挙動はFirefox 31.0でも残っているようで、右クリックしたときに、documentに対してclickイベントを発火する。他の要素ではlistenできないようなので、どうもbubblingしてきたのではなくて、documentにclickイベントが起きている。みたい。</p></div>
             <div><a href="/2014/08/angular_lightbox_and_right_click_with_firefox.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2014-06-08T06:00:00.000Z"><span class="calendar-icon">📅</span><span>2014年6月8日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2014/06/passing_by_value_or_reference_in_javascript.html">JavaScriptにおける値の受け渡しについて</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>少し前にJavaScriptの値の受け渡し方について改めて調べていたら、<a href="https://developer.mozilla.org/en-US/docs/Talk:JavaScript/Guide/Obsolete_Pages/Defining_Functions" target="_blank" rel="noopener">Passing by value vs. by reference</a>の話が大変参考になった。詳しくは上記リンクを参照。</p></div>
-            <div><a href="/2014/06/passing_by_value_or_reference_in_javascript.html">📖 続きを読む</a></div>
           
         </article>
       

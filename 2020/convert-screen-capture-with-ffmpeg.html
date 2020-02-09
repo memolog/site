@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>WYSIWYG &#x3a; IEのDOMではobjectタグの中にあるembedタグを認識しない？ | メモログ</title>
+  <title>Convert screen capture to animation GIF | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -307,34 +307,39 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。 webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動">
-<meta name="keywords" content="javascript,ie">
+  <meta name="description" content="Macの場合、Quicktime Playerのファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合はiPhone、iPad、iPod touch で画面を録画する方法参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WYSIWYG &amp;#x3a; IEのDOMではobjectタグの中にあるembedタグを認識しない？">
-<meta property="og:url" content="https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html">
+<meta property="og:title" content="Convert screen capture to animation GIF">
+<meta property="og:url" content="https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。 webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動">
+<meta property="og:description" content="Macの場合、Quicktime Playerのファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合はiPhone、iPad、iPod touch で画面を録画する方法参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのi">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-01-04T02:09:12.840Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WYSIWYG &amp;#x3a; IEのDOMではobjectタグの中にあるembedタグを認識しない？">
-<meta name="twitter:description" content="あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。 webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動">
+<meta property="og:image" content="https://memolog.org/assets/images/jakob-owens-CiUR8zISX60-unsplash/jakob-owens-CiUR8zISX60-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-09T22:18:31.312Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Convert screen capture to animation GIF">
+<meta name="twitter:description" content="Macの場合、Quicktime Playerのファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合はiPhone、iPad、iPod touch で画面を録画する方法参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのi">
+<meta name="twitter:image" content="https://memolog.org/assets/images/jakob-owens-CiUR8zISX60-unsplash/jakob-owens-CiUR8zISX60-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html">
+  <link rel="canonical" href="https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
+        "@id": "https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html"
       },
-      "headline": "WYSIWYG &#x3a; IEのDOMではobjectタグの中にあるembedタグを認識しない？",
+      "headline": "Convert screen capture to animation GIF",
       
-      "datePublished": "Mon Aug 06 2007 14:45:00 GMT+0900",
-      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+        "image": [
+          "https://memolog.org/assets/images/jakob-owens-CiUR8zISX60-unsplash/jakob-owens-CiUR8zISX60-unsplash.jpg"
+        ],
+      
+      "datePublished": "Mon Feb 10 2020 06:49:09 GMT+0900",
+      "dateModified": "Mon Feb 10 2020 07:18:31 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -347,8 +352,7 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。
-webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動かしている。言い換えると、ブラウザが持っている情報を引き出して、変更して押し込んで、というやりとりをしている。そのため、ブラウザ側で期待されるデータを出力してくれないと、エディタから情報が消えてしまったりする可能性がある。"
+      "description": "Macの場合、Quicktime Playerのファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合はiPhone、iPad、iPod touch で画面を録画する方法参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのissueに貼り付ける事ができない。なので、ffmpegを使ってgifに変換しようという話。gifならgithubのissueに貼り付けられる。"
     }
   </script>
 </head>
@@ -368,18 +372,36 @@ webアプリケーションでよくあるWYSIWYGエディタ（リッチテキ�
       <article>
         <header class="header">
           <div>
-            <time datetime="2007-08-06T05:45:00.000Z">
-              <span class="calendar-icon">📅</span><span>2007年8月6日</span>
+            <time datetime="2020-02-09T21:49:09.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月10日</span>
             </time>
           </div>
-          <h2 class="header__title">WYSIWYG &#x3a; IEのDOMではobjectタグの中にあるembedタグを認識しない？</h2>
+          <h2 class="header__title">Convert screen capture to animation GIF</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjkyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2OTIiIGZpbGw9IiM4Mjg1N2EiIC8+PC9zdmc+" data-src="/assets/images/jakob-owens-CiUR8zISX60-unsplash/jakob-owens-CiUR8zISX60-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/s/photos/video?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Jakob Owens</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
           
         </header>
-        <div id="article-content" class="content "><p>あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。</p>
-<p>webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動かしている。言い換えると、ブラウザが持っている情報を引き出して、変更して押し込んで、というやりとりをしている。そのため、ブラウザ側で期待されるデータを出力してくれないと、エディタから情報が消えてしまったりする可能性がある。</p>
-<a id="more"></a>
-<p>たとえば&lt;object classid=&guot;” &gt;<embed> というobjectタグの中にembedタグが入っている状態のタグをコピーしてWYSIWYGエディタで貼付けると、Firefoxでは貼付けたままのものが出力されるけれど、IEではembedタグが抜けた状態で出力される。</p>
-<p>objectタグとembedタグを別々に使っている分には、特に問題ないように見受けられる。どうもobjectタグの中にembedタグが入るということをIEがDOM構造として認めていない（無視している）のではないだろうかと推察している。IE developer toolでDOMを見たところでも、objectタグに埋めたembedはどこにも表示されない。しかし確たる情報もなく、悶々としている。</p>
+        <div id="article-content" class="content "><p>Macの場合、<a href="https://support.apple.com/ja-jp/HT201066#record" target="_blank" rel="noopener">Quicktime Player</a>のファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合は<a href="https://support.apple.com/ja-jp/HT207935" target="_blank" rel="noopener">iPhone、iPad、iPod touch で画面を録画する方法</a>参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのissueに貼り付ける事ができない。なので、<a href="https://www.ffmpeg.org/" target="_blank" rel="noopener">ffmpeg</a>を使ってgifに変換しようという話。gifならgithubのissueに貼り付けられる。<a id="more"></a></p>
+<p>ffmpegのインストールは<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>にて行う。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> ffmpeg
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>ffmpegをインストールしたら、以下のようなコマンドを実行</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ffmpeg -i foo.mov -r 24 foo.gif
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>-r</code>のオプションは<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AC%E3%83%BC%E3%83%88" target="_blank" rel="noopener">フレームレート</a>の設定でfpsで指定する。このオプションはなくても良いけど、24くらいなら品質を損わずにファイルサイズを減らすことができる。場合によってはもっと減らしても大丈夫と思う。</p>
+<p>というメモ。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">
