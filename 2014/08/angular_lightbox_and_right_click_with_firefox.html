@@ -54,6 +54,13 @@ a:visited {
   color: black;
 }
 
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+}
+
 .header__description {
   margin-top: 0;
   margin-bottom: 1em; }
@@ -308,7 +315,7 @@ a:visited {
   </script>
 
   <meta name="description" content="javascript - Firefox strange right click event bubbling behavior - Stack Overflowでレポートされている変な挙動はFirefox 31.0でも残っているようで、右クリックしたときに、documentに対してclickイベントを発火する。他の要素ではlistenできないようなので、どうもbubblingしてきたのではなくて">
-<meta name="keywords" content="javascript,firefox,angularJS,lightbox">
+<meta name="keywords" content="javascript,angularJS,firefox,lightbox">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJSとlightBoxと右クリックとFirefox">
 <meta property="og:url" content="https://memolog.org/2014/08/angular_lightbox_and_right_click_with_firefox.html">

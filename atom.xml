@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-11T05:24:39.932Z</updated>
+  <updated>2020-02-11T20:26:17.547Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Convert video files with the ffmpeg.js worker</title>
+    <link href="https://memolog.org/2020/convert-video-files-with-ffmpegjs-worker.html"/>
+    <id>https://memolog.org/2020/convert-video-files-with-ffmpegjs-worker.html</id>
+    <published>2020-02-11T20:26:00.000Z</published>
+    <updated>2020-02-11T20:26:17.547Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html&quot;&gt;Convert screen capture to animation GIF&lt;/a&gt;の話でffmpegを使ってキャプチャをGIFに変えるということをした。Macだとffmpegのインストールは簡単だしその方が良いと思うけど、環境によっては難しい場合もあるだろうし、そもそもインストールしてはならない状況もあるかもしれない。そんな時に&lt;a href=&quot;https://github.com/Kagami/ffmpeg.js&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ffmpeg.js&lt;/a&gt;をWeb Workersで動かすのはどうだろうかと思ってやってみた。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>n^2 sort algorithms again</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくは&lt;a href=&quot;https://en.wikipedia.org/wiki/Bit_array&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bit array&lt;/a&gt;を参照。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>npm run script に引数を渡す</title>
-    <link href="https://memolog.org/2018/pass-arguments-to-npm-run-script.html"/>
-    <id>https://memolog.org/2018/pass-arguments-to-npm-run-script.html</id>
-    <published>2018-07-26T20:31:39.000Z</published>
-    <updated>2019-01-04T02:09:12.877Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;この記事の上にあるFeatured Imageを生成するときに毎回&lt;code&gt;primitive_bulk&lt;/code&gt;のコマンドを入力していたのだけど、&lt;br&gt;しかしさすがに面倒になってきたので、&lt;code&gt;npm run script&lt;/code&gt; にショートカットを用意してショートカットに引数を渡すようにしてみた。
     
     </summary>
     

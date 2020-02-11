@@ -55,6 +55,13 @@ a:visited {
   color: black;
 }
 
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+}
+
 .header__description {
   margin-top: 0;
   margin-bottom: 1em; }
@@ -317,61 +324,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2018/book-intro-blockchain.html"
+          "url": "https://memolog.org/2018/convert-multiple-primitive-images-at-once.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2018/life-project.html"
+          "url": "https://memolog.org/2018/book-intro-blockchain.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2018/redirect-to-my-old-blog.html"
+          "url": "https://memolog.org/2018/life-project.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2018/inline-svg-as-an-image-placeholder.html"
+          "url": "https://memolog.org/2018/redirect-to-my-old-blog.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2018/image-manipulation-with-primitive.html"
+          "url": "https://memolog.org/2018/inline-svg-as-an-image-placeholder.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2018/display-featured-image.html"
+          "url": "https://memolog.org/2018/image-manipulation-with-primitive.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2018/import-from-old-blog.html"
+          "url": "https://memolog.org/2018/display-featured-image.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2018/New-Year-Resolutions.html"
+          "url": "https://memolog.org/2018/import-from-old-blog.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2017/html-elements.html"
+          "url": "https://memolog.org/2018/New-Year-Resolutions.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2017/hello-hexo.html"
+          "url": "https://memolog.org/2017/html-elements.html"
         }
         
       ]
@@ -391,6 +398,34 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-01-30T13:50:15.000Z"><span class="calendar-icon">📅</span><span>2018年1月30日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/convert-multiple-primitive-images-at-once.html">Primitiveの変換をまとめて行う</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjI4Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2MjgiIGZpbGw9IiNjM2IyNzIiIC8+PC9zdmc+" data-src="/assets/images/kazuend-25767/kazuend-25767.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/JHMDtWaNZaA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">kazuend</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p><a href="https://github.com/fogleman/primitive" target="_blank" rel="noopener">Primitive</a> を使って画像を変換すると、だいたい一回目ではしっくりこない。だから何回か画像を変えたりモードを変えてみたりとか色々試すのだけど、これがなかなか面倒くさい。一回の実行にも時間がかかるから待っている間に実行していたことを忘れてしまったりする。だから一回のPrimitiveの実行で全てのモードのパターンを出力するためのスクリプトを用意してみた。<a href="https://github.com/memolog/primitive_bulk_output" target="_blank" rel="noopener">primitive_bulk</a>という名前でnpmに公開している。個人的にはほとんど使っていないオプションもあるけど、一応primitiveのすべてのオプションを渡せるようにしている。名前はそのうち変えるかもしれない。</p>
+<p>実行は<code>primitive_bulk -i photo.jpg</code>みたいにする。primitiveでは出力先（<code>-o</code>）を指定する必要があるが、primitive_bulkでは指定がない場合はphoto.jpgと同じディレクトリに出力ファイルを作成する。これが地味に便利。<code>-m</code>の指定がない場合は、modeの0から8まで全ての種類を出力する。primitiveの処理そのものは8回繰り返すのと同じだから、だいぶ重いし時間もそれなりにかかる。でも実行して時が経つのを待つだけなので、だいぶ気は楽になった。</div>
+            <div><a href="/2018/convert-multiple-primitive-images-at-once.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -646,20 +681,6 @@ a:visited {
           
             <div class="content"><p>久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）<br></div>
             <div><a href="/2017/html-elements.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2017-12-29T15:00:00.000Z"><span class="calendar-icon">📅</span><span>2017年12月30日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2017/hello-hexo.html">Hello Hexo</a></h2>
-            
-          </header>
-          
-            <div class="content"><p><a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener">Gatsby</a> はなかなかに高機能で素晴らしく、React、GraphQL、PWAなど技術的なプレイグラウンドとしても魅力的だったのだけど、結局<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>にすることにした。</p>
-<p><a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener">Gatsby</a> は高機能ゆえにたとえばデザインを少し変えたいというときに、<a href="http://kyleamathews.github.io/typography.js/" target="_blank" rel="noopener">Typography</a> の実装上でどう変更するかを調べる必要があったり、<a href="https://github.com/KyleAMathews/react-responsive-grid" target="_blank" rel="noopener">react-responsive-grid</a> とかバンドルされてるReact Componentがどんな実装になっているかを確認したりとか、とにかく面倒くさい。この最初のラーニングカーブを乗り切ってしまえば便利なのかもしれないけど、メモ書きサイトを作るのにあまり時間をかけたくない（でもデザインは調整したい）という目的には、どうもオーバースペック感があった。あとpublicに生成されるファイルが変に多くて把握しにくいし、LightHouseのPerformanceのスコアも70前後（十分だけど）なのが少し気になった。</div>
-            <div><a href="/2017/hello-hexo.html">📖 続きを読む</a></div>
           
         </article>
       
