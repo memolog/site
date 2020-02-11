@@ -317,61 +317,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
+          "url": "https://memolog.org/2007/08/yslow_13_configure_etags.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
+          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/font_tester.html"
+          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
+          "url": "https://memolog.org/2007/08/font_tester.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
+          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
+          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
+          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/post_141.html"
+          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
         }
         
       ]
@@ -391,6 +391,22 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-16T07:29:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_13_configure_etags.html">YSLOW 勉強 &#x3a; 13&#x3a; Configure ETags</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#etags" target="_blank" rel="noopener">13: Configure ETags</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十三個目（最後）。ETags（Entity Tags）を設定しよう。ブラウザが持ったキャッシュが古いかどうかを判断するための情報として、構成要素（component：画像とかスクリプトとか）のバージョンをETagで特定させることで、last-modified（修正日）よりも柔軟（で確度の高い）情報を提供することができる。</p></div>
+            <div><a href="/2007/08/yslow_13_configure_etags.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -532,19 +548,6 @@ a:visited {
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の五つ目。スタイルシートはheadタグの中で指定しよう、という話。なんか普通の使い方のような気がするのですが・・話の主旨はスタイルシートが最初の方に読み込まれておけば、ページのレンダリングが暫時的にすすんでいくから、ページを早く見ることができるということ。完全に読み切るまで真っ白な画面で待たされるより、少しずつでも表示されていく方がユーザーエクスペリエンスも高くなる。</p></div>
             <div><a href="/2007/08/yslow_5_put_css_at_the_top.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-07T07:47:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月7日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/post_141.html">実際に表示されているブロック要素のサイズを表示する</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>単純にwidthを指定しているところであればブロック要素の横幅はすぐにわかるのですが、borderやpadding、marginが入るとわかりにくくなる。たとえば <div style="width:100px;"><div style="padding:10px;"></div></div> のように、入れ子で指定されている横幅がいくつになるのか、いちいち計算するのはめんどうくさい（右の例のように単純なときはいいですけど）。</p></div>
-            <div><a href="/2007/08/post_141.html">📖 続きを読む</a></div>
           
         </article>
       

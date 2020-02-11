@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>weinreでAndroidのWebViewをInspectする | メモログ</title>
+  <title>n^2 sort algorithms again | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -307,34 +307,39 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="AndroidのWebViewをinspectするという話。調べてたら第3回　weinreを使ったiOS／Androidアプリの動作検証：もっと使おうPhoneGap／Cordova 2.0.0｜gihyo.jp … 技術評論社にすでに詳細に書いてあったのでそちらも参考に。Remote Debugging Firefox OS with Weinre ✩Mozilla Hacks – the We">
-<meta name="keywords" content="phonegap,node,android">
+  <meta name="description" content="O(n^2)の計算量で実行するソートアルゴリズムについては、Bubble Sort in JavaScript（バブルソート）、Insertion Sort in JavaScript（挿入ソート）、Selection Sort in JavaScript（選択ソート）にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="weinreでAndroidのWebViewをInspectする">
-<meta property="og:url" content="https://memolog.org/2013/02/inspect_android_webview_with_weinre.html">
+<meta property="og:title" content="n^2 sort algorithms again">
+<meta property="og:url" content="https://memolog.org/2020/n2-sort-algorithms-again.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="AndroidのWebViewをinspectするという話。調べてたら第3回　weinreを使ったiOS／Androidアプリの動作検証：もっと使おうPhoneGap／Cordova 2.0.0｜gihyo.jp … 技術評論社にすでに詳細に書いてあったのでそちらも参考に。Remote Debugging Firefox OS with Weinre ✩Mozilla Hacks – the We">
+<meta property="og:description" content="O(n^2)の計算量で実行するソートアルゴリズムについては、Bubble Sort in JavaScript（バブルソート）、Insertion Sort in JavaScript（挿入ソート）、Selection Sort in JavaScript（選択ソート）にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-01-04T02:09:12.866Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="weinreでAndroidのWebViewをInspectする">
-<meta name="twitter:description" content="AndroidのWebViewをinspectするという話。調べてたら第3回　weinreを使ったiOS／Androidアプリの動作検証：もっと使おうPhoneGap／Cordova 2.0.0｜gihyo.jp … 技術評論社にすでに詳細に書いてあったのでそちらも参考に。Remote Debugging Firefox OS with Weinre ✩Mozilla Hacks – the We">
+<meta property="og:image" content="https://memolog.org/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-11T05:24:39.932Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="n^2 sort algorithms again">
+<meta name="twitter:description" content="O(n^2)の計算量で実行するソートアルゴリズムについては、Bubble Sort in JavaScript（バブルソート）、Insertion Sort in JavaScript（挿入ソート）、Selection Sort in JavaScript（選択ソート）にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2013/02/inspect_android_webview_with_weinre.html">
+  <link rel="canonical" href="https://memolog.org/2020/n2-sort-algorithms-again.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2013/02/inspect_android_webview_with_weinre.html"
+        "@id": "https://memolog.org/2020/n2-sort-algorithms-again.html"
       },
-      "headline": "weinreでAndroidのWebViewをInspectする",
+      "headline": "n^2 sort algorithms again",
       
-      "datePublished": "Sat Feb 02 2013 13:52:00 GMT+0900",
-      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+        "image": [
+          "https://memolog.org/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.jpg"
+        ],
+      
+      "datePublished": "Tue Feb 11 2020 13:54:52 GMT+0900",
+      "dateModified": "Tue Feb 11 2020 14:24:39 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -347,7 +352,7 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "AndroidのWebViewをinspectするという話。調べてたら第3回　weinreを使ったiOS／Androidアプリの動作検証：もっと使おうPhoneGap／Cordova 2.0.0｜gihyo.jp … 技術評論社にすでに詳細に書いてあったのでそちらも参考に。Remote Debugging Firefox OS with Weinre ✩Mozilla Hacks – the Web developer blogの話だと、Firefox OSでも同じようにinspectができるみたい。"
+      "description": "O(n^2)の計算量で実行するソートアルゴリズムについては、Bubble Sort in JavaScript（バブルソート）、Insertion Sort in JavaScript（挿入ソート）、Selection Sort in JavaScript（選択ソート）にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。"
     }
   </script>
 </head>
@@ -367,32 +372,35 @@ a:visited {
       <article>
         <header class="header">
           <div>
-            <time datetime="2013-02-02T04:52:00.000Z">
-              <span class="calendar-icon">📅</span><span>2013年2月2日</span>
+            <time datetime="2020-02-11T04:54:52.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月11日</span>
             </time>
           </div>
-          <h2 class="header__title">weinreでAndroidのWebViewをInspectする</h2>
+          <h2 class="header__title">n^2 sort algorithms again</h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiNlM2FkOTAiIC8+PC9zdmc+" data-src="/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@neringa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Neringa Šidlauskaitė</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
           
         </header>
-        <div id="article-content" class="content "><p>AndroidのWebViewをinspectするという話。調べてたら<a href="http://gihyo.jp/dev/serial/01/phonegap2/0003" target="_blank" rel="noopener">第3回　weinreを使ったiOS／Androidアプリの動作検証：もっと使おうPhoneGap／Cordova 2.0.0｜gihyo.jp … 技術評論社</a>にすでに詳細に書いてあったのでそちらも参考に。<a href="https://hacks.mozilla.org/2013/01/remote-debugging-firefox-os-with-weinre/" target="_blank" rel="noopener">Remote Debugging Firefox OS with Weinre ✩Mozilla Hacks – the Web developer blog</a>の話だと、Firefox OSでも同じようにinspectができるみたい。</p>
-<a id="more"></a>
-<p>なお、iOSの場合は、<a href="/blog//2012/11/inspect_uiwebview_with_safari/">SafariからUIWebViewのHTMLをinspectする</a>で紹介した方法で簡単にinspectをすることができます（アプリ内のUIWebViewをinspectする場合は、Xcodeでアプリをビルドしないとできません）。</p>
-<p>Androidの場合、標準的な方法としては、<a href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging" target="_blank" rel="noopener">Remote Debugging</a>があるのですが、これは携帯端末側のブラウザで開いているページを共有するような感じなので、アプリ内のページをinspectすることができない。あとUSBでの接続が必要。（ちなみにAndoridの4.2では開発者用のオプションは設定のAbout PhoneのBuild numberを7回タップしないと表示されないらしい。）</p>
-<p>もう一つの方法として、<a href="http://html.adobe.com/jp/edge/inspect/" target="_blank" rel="noopener">Adobe Edge Inspect</a>を使用するという方法があります。Adobe Edge Inspectではweinreを使用してinspectするので、基本的な操作はweinreと同じですが、複数台の端末を同時に扱えるところが便利（無償版だと1台のみ）。あとweinreでは必要なscriptを埋め込む作業が必要ない。これもありがたい。なので、普通のWebページをinspectする場合はAdobe Edge Inspectがおすすめなのですが、Adobe Edge InspectはPC側のChromeで表示したページを携帯端末側に表示させるため、アプリ内のWebViewを表示することができない。</p>
-<p>それで最初の<a href="http://gihyo.jp/dev/serial/01/phonegap2/0003" target="_blank" rel="noopener">第3回　weinreを使ったiOS／Androidアプリの動作検証：もっと使おうPhoneGap／Cordova 2.0.0｜gihyo.jp … 技術評論社</a>に戻るのですが、Androidアプリ内のWebViewをinspectするには自分でweinreを起動してinspectするしかなさそう。</p>
-<p>weinreのインストール方法は下記のような感じ。Nodeが必要なのでHomebrewを使って一緒にインストール。Homebrewのインストールは<a href="/blog//2012/09/rvm_jewelrybox_homebrew/">RVM / JewelryBox / Homebrew をインストール</a>を参考。</p>
-<pre><code>brew install node
-npm -g install weinre
-</code></pre><p>HomebrewでインストールしたNode(npm)でweinreをインストールした場合、/usr/local/share/npm/bin/weinre にアプリケーションのエイリアスが作られるのですが、ここはパスが通っていないので、.bash_profileを開いて、PATHの設定を追加（PATH=$PATH:/usr/local/share/npm/bin）。なお、<a href="http://nodejs.org/download/" target="_blank" rel="noopener">Nodeのインストーラー</a>でインストールした場合は、エイリアスが/usr/local/bin/weinreに作られるのでパスを通さなくても大丈夫。これで新しいターミナルを開いて「weinre」と入力するだけで、weinreが起動できます。</p>
-<pre><code>weinre
-</code></pre><p>weinreは、オプションなしだと<a href="http://localhost:8080/" target="_blank" rel="noopener">localhost:8080</a>で動くので、そこにアクセスすると実際にweinreの画面が確認できます。</p>
-<p>しかしlocalhostで動かすと、あとで埋め込む予定のスクリプトに携帯端末からアクセスできなくなります。ので、Wifiで使用しているIPでアドレスを設定します。同じWifiで接続すれば、このIPで携帯端末からでもアクセスが可能になります。</p>
-<p>Macの場合、システム環境設定のネットワークの項目で、Wifiに接続済みの場合「状況」の箇所にIPが表示されます（もしくはアプリケーションフォルダのユーティリティから、ネットワークユーティリティを開いて、Wifiのインターフェース情報を確認する）。weinreのオプションについては<a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Running.html" target="_blank" rel="noopener">weinre - Running</a>などを参照。</p>
-<pre><code>weinre --boundHost 192.168.0.1(WifiでMacに設定されているIP)
-</code></pre><p>そして確認する画面のHTMLに次のようなスクリプトを埋め込む。PhoneGap(Cordova)の場合は、config.xmlに<access origin="192.168.0.1">を加えて、スクリプトへのアクセスを許可する。そしてビルドしなおして端末にインストールする。</access></p>
-<pre><code>&lt;script src=&quot;http://192.168.0.1:8080/target/target-script-min.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>これで、Android携帯でアプリ画面にアクセスすると、先ほどのweinreの画面で携帯からのアクセスがあったことが分かります。そこから「debug client user interface」のリンクをクリックすると、inspectのための画面(/client)が表示されます。</p>
-<p>という感じで、若干手間がかかるのですが、Node/weinreのインストール自体は簡単ですし、Androidの端末上でしか再現しない問題をinspectなしで解決する方がずっと大変なので、それよりはましかなと。</p>
+        <div id="article-content" class="content "><p>O(n^2)の計算量で実行するソートアルゴリズムについては、<a href="https://memolog.org/2018/bubble-sort-in-javascript.html">Bubble Sort in JavaScript（バブルソート）</a>、<a href="https://memolog.org/2018/insertion-sort-in-javascript.html">Insertion Sort in JavaScript（挿入ソート）</a>、<a href="https://memolog.org/2018/selection-sort-in-javascript.html">Selection Sort in JavaScript（選択ソート）</a>にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。<a id="more"></a></p>
+<ul>
+<li>バブルソート：配列の左側から隣り同士を比較して、大きい方を右にする。右側に完成したソートができる</li>
+<li>選択ソート：配列の左側から始めて、一番小さい値を選んで一番左に移す。左側に完成したソートができる</li>
+<li>挿入ソート：配列の左側から始めて、左側に完成したソート結果に対して新しい値を適切な場所に挿入する</li>
+</ul>
+<p>JavaScriptにおけるソートは<a href="https://memolog.org/2018/about-array-prototype-sort.html">Array.prototype.sort について</a>で扱ったようにsortメソッドがO(n log n)の計算量で実行してくれるので、実践でO(n^2)のソートを使うことはないけど。</p>
+<p>というメモ。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

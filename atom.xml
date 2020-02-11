@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-09T22:18:31.312Z</updated>
+  <updated>2020-02-11T05:24:39.932Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -17,11 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>n^2 sort algorithms again</title>
+    <link href="https://memolog.org/2020/n2-sort-algorithms-again.html"/>
+    <id>https://memolog.org/2020/n2-sort-algorithms-again.html</id>
+    <published>2020-02-11T04:54:52.000Z</published>
+    <updated>2020-02-11T05:24:39.932Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;O(n^2)の計算量で実行するソートアルゴリズムについては、&lt;a href=&quot;https://memolog.org/2018/bubble-sort-in-javascript.html&quot;&gt;Bubble Sort in JavaScript（バブルソート）&lt;/a&gt;、&lt;a href=&quot;https://memolog.org/2018/insertion-sort-in-javascript.html&quot;&gt;Insertion Sort in JavaScript（挿入ソート）&lt;/a&gt;、&lt;a href=&quot;https://memolog.org/2018/selection-sort-in-javascript.html&quot;&gt;Selection Sort in JavaScript（選択ソート）&lt;/a&gt;にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Convert screen capture to animation GIF</title>
     <link href="https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html"/>
     <id>https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html</id>
     <published>2020-02-09T21:49:09.000Z</published>
-    <updated>2020-02-09T22:18:31.312Z</updated>
+    <updated>2020-02-11T05:03:37.086Z</updated>
     
     <summary type="html">
     
@@ -37,7 +53,7 @@
     <link href="https://memolog.org/2020/top-level-await-will-be-soon.html"/>
     <id>https://memolog.org/2020/top-level-await-will-be-soon.html</id>
     <published>2020-02-07T20:55:41.000Z</published>
-    <updated>2020-02-07T21:45:34.383Z</updated>
+    <updated>2020-02-11T05:00:28.537Z</updated>
     
     <summary type="html">
     
@@ -53,7 +69,7 @@
     <link href="https://memolog.org/2020/web-workers-work-on-ie10.html"/>
     <id>https://memolog.org/2020/web-workers-work-on-ie10.html</id>
     <published>2020-02-06T21:18:11.000Z</published>
-    <updated>2020-02-06T22:32:31.523Z</updated>
+    <updated>2020-02-11T05:00:57.370Z</updated>
     
     <summary type="html">
     
@@ -70,7 +86,7 @@
     <link href="https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html"/>
     <id>https://memolog.org/2020/optional-chaining-and-nullish-coalescing.html</id>
     <published>2020-02-05T22:25:28.000Z</published>
-    <updated>2020-02-06T00:14:13.989Z</updated>
+    <updated>2020-02-11T05:01:46.278Z</updated>
     
     <summary type="html">
     
@@ -103,7 +119,7 @@
     <link href="https://memolog.org/2020/load-jquery-in-developer-console.html"/>
     <id>https://memolog.org/2020/load-jquery-in-developer-console.html</id>
     <published>2020-02-03T22:19:43.000Z</published>
-    <updated>2020-02-04T01:16:24.047Z</updated>
+    <updated>2020-02-11T05:02:04.881Z</updated>
     
     <summary type="html">
     
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;この記事の上にあるFeatured Imageを生成するときに毎回&lt;code&gt;primitive_bulk&lt;/code&gt;のコマンドを入力していたのだけど、&lt;br&gt;しかしさすがに面倒になってきたので、&lt;code&gt;npm run script&lt;/code&gt; にショートカットを用意してショートカットに引数を渡すようにしてみた。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScriptでハッシュテーブルを作る</title>
-    <link href="https://memolog.org/2018/create-hash-table-in-javascript.html"/>
-    <id>https://memolog.org/2018/create-hash-table-in-javascript.html</id>
-    <published>2018-07-25T21:31:02.000Z</published>
-    <updated>2019-01-04T02:09:12.875Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/javascript-property-access-big-o.html&quot;&gt;JavaScriptオブジェクトのプロパティアクセスにおけるビッグ・オー&lt;/a&gt;で書いたようにJavaScriptのオブジェクトは基本ハッシュテーブルであるし、&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Map&lt;/a&gt;オブジェクトも中の実装はChromeではハッシュテーブルであると書かれてある(&lt;a href=&quot;https://v8project.blogspot.com/2018/01/hash-code.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Optimizing hash tables: hiding the hash code&lt;/a&gt;)。だからJavaScriptで自前のハッシュテーブルを作るというのは必要のないことなのだけど試しに作ってみたかった。
     
     </summary>
     
