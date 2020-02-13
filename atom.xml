@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-11T20:26:17.547Z</updated>
+  <updated>2020-02-13T11:17:20.797Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The Web Worker&#39;s lifetime</title>
+    <link href="https://memolog.org/2020/web-workers-lifetime.html"/>
+    <id>https://memolog.org/2020/web-workers-lifetime.html</id>
+    <published>2020-02-13T11:17:00.000Z</published>
+    <updated>2020-02-13T11:17:20.797Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Web Worker（以下worker）はいつ止まるのか。端的に言うと、画面遷移した時など、関連するDocumentがなくなった時に止まる。workerの実行は&lt;code&gt;closing&lt;/code&gt;フラグで管理されていて、このフラグがtrueになるとworkerはそれ以降の処理をしなくなる。workerのインスタンスが削除されるかどうかは仕様上では考慮されていない雰囲気だけど（ガベージコレクトされたときに削除されるのではなかろうか）、とにかく、実質的に、closingフラグがtrueになったタイミングでworkerは止まると言える。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Convert video files with the ffmpeg.js worker</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;JavaScriptの配列には&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;sort&lt;/a&gt;メソッドがあり配列のソートを実行することができるけど、この配列のソートの中の実装はどうなっているのかという話。&lt;a href=&quot;http://kakts-tec.hatenablog.com/entry/2016/12/18/153845&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;v8における配列ソートについて&lt;/a&gt;の記事が大変参考になりました。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScriptでビットベクタルを使う</title>
-    <link href="https://memolog.org/2018/bit-vector-in-javascript.html"/>
-    <id>https://memolog.org/2018/bit-vector-in-javascript.html</id>
-    <published>2018-07-28T01:49:22.000Z</published>
-    <updated>2019-01-04T02:09:12.874Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ビットベクトルは2進数の値（ビット）の配列を使って状態を保持する。ビット配列（bit array）とかbit set, bit stringとも言うらしい。詳しくは&lt;a href=&quot;https://en.wikipedia.org/wiki/Bit_array&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bit array&lt;/a&gt;を参照。
     
     </summary>
     

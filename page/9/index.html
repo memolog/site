@@ -119,7 +119,8 @@ a:visited {
   padding: 0 1em;
 }
 
-.content p > code {
+.content p > code,
+.content li > code {
   background-color: #f5f2f0;
   display: inline-block;
   padding: 0 6px;
@@ -324,61 +325,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2013/08/cyclomatic_comlexity.html"
+          "url": "https://memolog.org/2013/08/git_stash_options.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2013/08/spy_on_requirejs_module.html"
+          "url": "https://memolog.org/2013/08/cyclomatic_comlexity.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2013/08/internet_explorer_useragent.html"
+          "url": "https://memolog.org/2013/08/spy_on_requirejs_module.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2013/07/grunt-contrib-connect_with_cors.html"
+          "url": "https://memolog.org/2013/08/internet_explorer_useragent.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2013/06/ghost_with_android_4_canvas.html"
+          "url": "https://memolog.org/2013/07/grunt-contrib-connect_with_cors.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2013/05/grunt_loadnpmtasks_with_matchdep.html"
+          "url": "https://memolog.org/2013/06/ghost_with_android_4_canvas.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2013/04/grunt_getting_started.html"
+          "url": "https://memolog.org/2013/05/grunt_loadnpmtasks_with_matchdep.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2013/04/preparation_for_xxhdpi.html"
+          "url": "https://memolog.org/2013/04/grunt_getting_started.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2013/04/sublime_text_2_jshint.html"
+          "url": "https://memolog.org/2013/04/preparation_for_xxhdpi.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2013/02/webkit-overflow-scrolling-touch.html"
+          "url": "https://memolog.org/2013/04/sublime_text_2_jshint.html"
         }
         
       ]
@@ -398,6 +399,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-08-05T04:00:00.000Z"><span class="calendar-icon">📅</span><span>2013年8月5日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/08/git_stash_options.html">git stash の便利なオプション</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>git stash は、コミットしていない変更されたファイルを一時的にstashとして保存して、変更がない状態に戻すことができます。仕掛かり中の作業の間に別の緊急の作業が入ってしまったりとか、変更前の状態から違う方法で修正をやり直してみたい場合とか、とりあえず現状を保存しておいて戻すことができるので、大変便利。</p></div>
+            <div><a href="/2013/08/git_stash_options.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -513,19 +527,6 @@ a:visited {
           
             <div class="content"><p><a href="/blog//2013/02/node_not_found_with_jsLint/">Sublime Text 2 の JSLint から node がみつからない - メモログ</a>と関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。</p></div>
             <div><a href="/2013/04/sublime_text_2_jshint.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2013-02-27T06:58:00.000Z"><span class="calendar-icon">📅</span><span>2013年2月27日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2013/02/webkit-overflow-scrolling-touch.html">-webkit-overflow-scrollingと慣性スクロール</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>コンテンツがオーバーフローしたときにスクロールバーを表示させる場合に、そのコンテンツのスクロールの仕方を設定する値として-webkit-overflow-scrollingというのがある。 詳細は<a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safaricssref/articles/standardcssproperties.html" target="_blank" rel="noopener">Safari CSS Reference</a>の「-webkit-overflow-scrolling」を参照。値を「touch」にするとnativeアプリでスクロールしたときのような、いわゆる慣性スクロールの状態になる。</div>
-            <div><a href="/2013/02/webkit-overflow-scrolling-touch.html">📖 続きを読む</a></div>
           
         </article>
       

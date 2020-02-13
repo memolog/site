@@ -119,7 +119,8 @@ a:visited {
   padding: 0 1em;
 }
 
-.content p > code {
+.content p > code,
+.content li > code {
   background-color: #f5f2f0;
   display: inline-block;
   padding: 0 6px;
@@ -324,61 +325,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2012/06/stream_webcam_with_javascript.html"
+          "url": "https://memolog.org/2012/06/viewport_declaration_in_css.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2012/06/jquery_masonry.html"
+          "url": "https://memolog.org/2012/06/stream_webcam_with_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2012/06/how_css_handles_errors.html"
+          "url": "https://memolog.org/2012/06/jquery_masonry.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2012/06/set_input_width_to_100_percent.html"
+          "url": "https://memolog.org/2012/06/how_css_handles_errors.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2012/06/collapsing_magin_with_overflow_or_clearance.html"
+          "url": "https://memolog.org/2012/06/set_input_width_to_100_percent.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2012/06/focus_on_the_content.html"
+          "url": "https://memolog.org/2012/06/collapsing_magin_with_overflow_or_clearance.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2012/05/b_element.html"
+          "url": "https://memolog.org/2012/06/focus_on_the_content.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2012/05/invited_elements.html"
+          "url": "https://memolog.org/2012/05/b_element.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2012/05/favicons_next_to_external_link.html"
+          "url": "https://memolog.org/2012/05/invited_elements.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2012/05/css_selector_performance.html"
+          "url": "https://memolog.org/2012/05/favicons_next_to_external_link.html"
         }
         
       ]
@@ -398,6 +399,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-06-24T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年6月24日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/06/viewport_declaration_in_css.html">viewportをCSSで指定する</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Internet Explorer 10 Guide for Developersの<a href="http://msdn.microsoft.com/en-us/library/ie/hh708740&#x25;28v=vs.85&#x25;29.aspx" target="_blank" rel="noopener">Device adaptation</a>にて、@viewportについての説明がされています。現時点ではmsのprefixが必要なので、実際に使用する場合は @-ms-viewportということになる（そして@-o-viewportの形で<a href="http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/" target="_blank" rel="noopener">Operaでも対応している</a>と<a href="http://www.brucelawson.co.uk/about/" target="_blank" rel="noopener">Bruce Lawson</a>からコメントがついている）。</p></div>
+            <div><a href="/2012/06/viewport_declaration_in_css.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -528,19 +542,6 @@ a:visited {
           
             <div class="content"><p><a href="http://css-tricks.com/favicons-next-to-external-links/" target="_blank" rel="noopener">Favicons Next To External Links | CSS-Tricks</a>という、リンクの左側にリンク先のfaviconを表示するというテクニックが紹介されていて、試してみました。簡単にできて、見た目にも華やかになるので面白い（個人的に）。</p></div>
             <div><a href="/2012/05/favicons_next_to_external_link.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2012-05-27T06:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年5月27日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2012/05/css_selector_performance.html">CSS Selector Performance</a></h2>
-            
-          </header>
-          
-            <div class="content"><p><a href="http://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/" target="_blank" rel="noopener">Performance Calendar » CSS Selector Performance has changed! (For the better)</a>にWebkitでCSSのマッチングの最適化が進んでいるという話が掲載されていて、下記の4つ最適化方法について紹介しています（via <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank" rel="noopener">* { box-sizing: border-box } FTW « Paul Irish</a>）。という話の紹介。</p></div>
-            <div><a href="/2012/05/css_selector_performance.html">📖 続きを読む</a></div>
           
         </article>
       
