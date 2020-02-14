@@ -57,9 +57,10 @@ a:visited {
 
 .main .header .header__title {
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 100;
   opacity: .8;
+  margin-bottom: 0;
 }
 
 .header__description {
@@ -152,6 +153,7 @@ a:visited {
 
 .header__feature {
   margin: .5em 0 -.5em;
+  position: relative;
 }
 
 .header__feature img {
@@ -171,6 +173,12 @@ a:visited {
   font-size: .825em;
   text-align: right;
   margin-top: .5em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: .5em;
+  background: #f0f0f0;
+  opacity: .8;
 }
 
 .lazyload,
