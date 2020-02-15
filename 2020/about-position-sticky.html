@@ -345,7 +345,7 @@ a:visited {
 <meta property="og:description" content="position:stickyを使った事がなかったので見出し部分につけてみた。Can I use…によると、IE以外ならだいたい動作する。">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://memolog.org/assets/images/david-travis-WC6MJ0kRzGw-unsplash/david-travis-WC6MJ0kRzGw-unsplash.jpg">
-<meta property="og:updated_time" content="2020-02-15T04:33:04.381Z">
+<meta property="og:updated_time" content="2020-02-15T21:16:53.166Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About position:sticky">
 <meta name="twitter:description" content="position:stickyを使った事がなかったので見出し部分につけてみた。Can I use…によると、IE以外ならだいたい動作する。">
@@ -369,7 +369,7 @@ a:visited {
         ],
       
       "datePublished": "Sat Feb 15 2020 10:17:04 GMT+0900",
-      "dateModified": "Sat Feb 15 2020 13:33:04 GMT+0900",
+      "dateModified": "Sun Feb 16 2020 06:16:53 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -461,8 +461,8 @@ a:visited {
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>.header__title</code>に<code>position:sticky</code>をつけると、<code>header</code>に対してstickyに動作するようになる。</p>
-<p>Safariの場合、もしかしたら <code>position: -webkit-sticky;</code> の指定が必要かもしれないけど、最新のSafariでみた限りでは、-webkig-stickyは必要ないみたい。</p>
-<p>だが、Safariの場合、たとえば .header__title が <code>display:inline-block</code> とかになっていると、うまく動作しないみたい。flow root の問題かなと思うんだけど、単なる不具合なのかも。ちょっとよくわからない。</p>
+<p>Safariの場合、もしかしたら <code>position: -webkit-sticky;</code> の指定が必要かもしれないけど、最新のSafari（macとiOS）でみた限りでは、-webkit-stickyは必要ないみたい。</p>
+<p>だが、Safariの場合、たとえば .header__title が <code>display:inline-block</code> とかになっていると、うまく動作しないみたい。<code>display:inline</code>でも動作しないので、いわゆるインラインな表示に指定されていると動かないと思われるけど、それ以上は調べていない。</p>
 <p>というメモ。</p>
 </div>
         <footer class="profile">
