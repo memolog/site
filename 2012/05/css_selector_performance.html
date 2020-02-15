@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年5月27日</span>
             </time>
           </div>
-          <h2 class="header__title">CSS Selector Performance</h2>
+          <h2 class="header__title"><span>CSS Selector Performance</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/" target="_blank" rel="noopener">Performance Calendar » CSS Selector Performance has changed! (For the better)</a>にWebkitでCSSのマッチングの最適化が進んでいるという話が掲載されていて、下記の4つ最適化方法について紹介しています（via <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank" rel="noopener">* { box-sizing: border-box } FTW « Paul Irish</a>）。という話の紹介。</p>

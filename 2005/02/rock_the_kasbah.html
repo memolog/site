@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -391,7 +392,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2005年2月9日</span>
             </time>
           </div>
-          <h2 class="header__title">Rock The Kasbah 〜自由の歌〜</h2>
+          <h2 class="header__title"><span>Rock The Kasbah 〜自由の歌〜</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><img src="/assets/i/cd/rock_the_kasbah.jpg" alt=""> 最近聴いているのは「Rock The Kasbah」というアルバム。正しい表現かは分かりませんが、UK Rock・Punkとレゲエやスカ融合したような感じの音楽です。アルバムの副題は「Songs of Freedom from the streets of The East」。直訳すると・・・東のストリートからの自由の歌・・ですかね。東というのはアフリカとか、エジプトとか、中東とか、アジアあたり。自由の息吹のようなものを感じる曲です。なんというか、レゲエとかスカって熱いですよね。</p>

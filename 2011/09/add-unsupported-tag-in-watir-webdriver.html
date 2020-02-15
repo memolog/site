@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2011年9月15日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver&#x3a; 使用できる要素を追加する</h2>
+          <h2 class="header__title"><span>watir-webdriver&#x3a; 使用できる要素を追加する</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>watir-webdriverでは広範囲のHTMLタグ（ほとんど全部）をサポートしているけれど、svgやcircleなど一部のタグは現在のところサポートしていません（参考：<a href="http://groups.google.com/group/watir-general/msg/271325e18d2b98f2?pli=1" target="_blank" rel="noopener">Does watir support svg - Watir General | Google グループ</a>）。</p>

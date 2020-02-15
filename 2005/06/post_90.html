@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2005年6月26日</span>
             </time>
           </div>
-          <h2 class="header__title">危ない食卓を読みました</h2>
+          <h2 class="header__title"><span>危ない食卓を読みました</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4309204414/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://images-jp.amazon.com/images/P/4309204414.09.TZZZZZZZ.jpg" alt=""></a> <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4309204414/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">「危ない食卓　- スーパーマーケットはお好き？」</a>という本を読みました。食の安全性について、食品ラベルとトレーサビリティ（追跡可能性）、配送システムと環境問題・フードマイル、低賃金労働、食の砂漠化、グローバル企業の購買力と搾取・フェアトレード、関税と保護政策など、多角的な視点で問題提議しています。本文は食品加工工場への潜入取材や現地でのインタビューが中心で臨場感がありました。その上難しい内容のわりに平易な文面でとても読みやすかったです。</p>

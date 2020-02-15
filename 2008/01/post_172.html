@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年1月27日</span>
             </time>
           </div>
-          <h2 class="header__title">本：もっとわがままになれ!</h2>
+          <h2 class="header__title"><span>本：もっとわがままになれ!</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4478001677?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4478001677" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/419ksXhu12L._SL180_.jpg" alt=""></a>「わがまま」とは、<a href="http://dic.yahoo.co.jp/dsearch?enc=UTF-8&amp;p=&#x25;E3&#x25;82&#x25;8F&#x25;E3&#x25;81&#x25;8C&#x25;E3&#x25;81&#x25;BE&#x25;E3&#x25;81&#x25;BE&amp;dtype=0&amp;dname=0na&amp;stype=0&amp;pagenum=1&amp;index=20722519771600" target="_blank" rel="noopener">yahoo辞書</a>で調べると、「自分の思いどおりに振る舞うこと。また、そのさま。気まま。ほしいまま。自分勝手。「―を通す」「―な人」」という意味ですが、本書における「わがまま」とは、どちらかというと「日和見主義にならずに、自分が正しいと思うことや、やりたいと思うこと実践するために、アクションを起こすこと」という感じの意味。おかしな常識を疑うことや、創意工夫を奨励するための言葉としても、本書では「わがまま」という言葉を使って表現しています。</p>

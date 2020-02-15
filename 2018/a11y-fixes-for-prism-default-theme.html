@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -393,7 +394,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2018年8月18日</span>
             </time>
           </div>
-          <h2 class="header__title">A11y fixes for prism default theme</h2>
+          <h2 class="header__title"><span>A11y fixes for prism default theme</span></h2>
           
             <div class="header__feature" aria-hidden="true">
   <div class="featured__image">

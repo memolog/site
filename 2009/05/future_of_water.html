@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2009年5月25日</span>
             </time>
           </div>
-          <h2 class="header__title">本：水の未来</h2>
+          <h2 class="header__title"><span>本：水の未来</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4822246892?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4822246892" target="_blank" rel="noopener"><img src="https://images-na.ssl-images-amazon.com/images/I/51z3R-QnE4L._SL180_.jpg" alt=""></a> 水の未来についての本。10章構成で、水の使われ方から、現在の過度の取水状況、水が生み出す自然と災害、水紛争、これからの水との関わり方まで、水に関する話題を多角的に取り上げています。水資源の問題の本質は水そのものが足りなくなっているというよりは、国レベルでの非効率な水資源の使用（主に砂漠での灌漑農業やダムの建設）や、上流側の資源の独占による生態系の変化などにある、という印象を持ちました。</p>

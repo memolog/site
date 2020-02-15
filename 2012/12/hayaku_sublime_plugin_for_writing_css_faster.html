@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年12月9日</span>
             </time>
           </div>
-          <h2 class="header__title">Hayaku &#x3a; CSSを早く書くためのSublime text 2 plugin</h2>
+          <h2 class="header__title"><span>Hayaku &#x3a; CSSを早く書くためのSublime text 2 plugin</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.brucelawson.co.uk/2012/reading-list-33/" target="_blank" rel="noopener">Bruce Lawsonのreading list</a>で小さく紹介されていた「<a href="https://github.com/hayaku/hayaku" target="_blank" rel="noopener">Hayaku</a>」というSublime Text 2のpluginを簡単に紹介。使ってみた感じは、今のところ劇的に役立っている感じはないですけど…邪魔にもならない。人によっては便利かも。</p>

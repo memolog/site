@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年6月4日</span>
             </time>
           </div>
-          <h2 class="header__title">本：第三の脳</h2>
+          <h2 class="header__title"><span>本：第三の脳</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4255004013/249-1018494-9069940?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4255004013" target="_blank" rel="noopener"><img src="http://rcm-images.amazon.com/images/I/51IGsfO9Y-L._SL180_.jpg" alt=""></a>皮膚の研究をしている著者が、皮膚についての考察をまとめた本です。六章構成で、最初の二章は皮膚の構造や機能について書かれており、残りの四章は皮膚に関する考察・仮説などが書かれております。文体が語り口調というのと、文中に著者の体験談が比較的多く含まれているのとで、全体的にエッセイ的な雰囲気がそこはかとなくあります。220ページ。斜め読みでさらっと読めます。「第三の脳」というふれこみは、刺激をどんな刺激かを判断して対処する組織を「考える臓器」たる脳の主要な機能とするならば、消化器はいわば「第二の脳」であるという説からきています。皮膚にも自律的な仕組みが組み込まれている、だからいわば「第三の脳」と言えるのではないか、みたいな感じ。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年1月28日</span>
             </time>
           </div>
-          <h2 class="header__title">本：イノベーションへの解</h2>
+          <h2 class="header__title"><span>本：イノベーションへの解</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4798104930?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4798104930" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/51621J4CTVL._BO2,204,203,200_SL180_.jpg" alt=""></a>「イノベーションのジレンマ」とは、利益を最大化させるための論理的な意思決定が、逆に新興企業による市場の破壊を許してしまうというジレンマ。そのジレンマを機会として捉え、市場の破壊者としてどのように事業を構築していけば良いのか、ということを考察したのが本著です。全体は350ページほどで、イノベーションのジレンマについての理論的枠組みから始まり、市場の分析について、ターゲットとする顧客について、開発の手法について、コモディティ化（低利益化）への対応、組織、戦略、資金などについてを詳説していきます。後半のマネジメント的な話は個人的にあまり関心をそそられませんでしたが、前半部分はかなり面白かったです。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2006年12月18日</span>
             </time>
           </div>
-          <h2 class="header__title">情報の行間を読む（3/4）発信者を知る</h2>
+          <h2 class="header__title"><span>情報の行間を読む（3/4）発信者を知る</span></h2>
           
         </header>
         <div id="article-content" class="content "><h4 id="発信者の意図を知る"><a href="#発信者の意図を知る" class="headerlink" title="発信者の意図を知る"></a>発信者の意図を知る</h4><p>「情報のさばき方（外岡秀俊著 朝日新書）」では、情報をさばくための技術として、下記の5つの基本原則のひとつとして「情報発信者の意図やメディアのからくりを知り、偏り（バイアス）を取り除く」をあげています。簡単にいえば「相手の立場になって考えてみる」ということになるかと思いますが、このアプローチは非常に重要です。わたしたちの仕事や生活のほとんどは、相対的なコミュニケーションで成り立っています。競争相手の「一歩先を読む」のは、相手の戦略を考えることが重要ですし、ユーザーエクスペリエンスを高めるためにはユーザーの立場を体感することが重要です。</p>

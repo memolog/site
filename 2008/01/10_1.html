@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年1月22日</span>
             </time>
           </div>
-          <h2 class="header__title">本：効率が10倍アップする新・知的生産術--自分をグーグル化する方法</h2>
+          <h2 class="header__title"><span>本：効率が10倍アップする新・知的生産術--自分をグーグル化する方法</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4478002037?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4478002037" target="_blank" rel="noopener"><img src="http://ecx.images-amazon.com/images/I/41w1dFWWB3L._SL180_.jpg" alt=""></a> 生産性を上げるための方法を著者の経験をもとにまとめた本。「自分をグーグル化する」という意味は、情報を武器に生産性を上げるといった感じです。全体が280ページほどですが、ざっと3時間ほどで読みました。要点箇所は太字になっているので、流し読みはしやすいです。どうも売れに売れているようで、わたしの持っている本は第七刷でした。発売一ヶ月で七刷まで出てるのはけっこうすごいと思います、たぶん。</p>

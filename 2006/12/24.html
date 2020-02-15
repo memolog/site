@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2006年12月15日</span>
             </time>
           </div>
-          <h2 class="header__title">情報の行間を読む（2/4）自分を知る</h2>
+          <h2 class="header__title"><span>情報の行間を読む（2/4）自分を知る</span></h2>
           
         </header>
         <div id="article-content" class="content "><h4 id="真実と判断するための6つの基準"><a href="#真実と判断するための6つの基準" class="headerlink" title="真実と判断するための6つの基準"></a>真実と判断するための6つの基準</h4><p>「富の未来（アルビン・トフラー、ハイジ・トフラー　講談社」によると、人は真実を見極める手段として下記の6つの基準をよく使うそうです（上巻のp233から。カッコ部分は私による補足です）。</p>

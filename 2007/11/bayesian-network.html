@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年11月4日</span>
             </time>
           </div>
-          <h2 class="header__title">本：ベイジアンネットワーク技術</h2>
+          <h2 class="header__title"><span>本：ベイジアンネットワーク技術</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4501541601/503-5894528-3997520?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4501541601" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/41TXJFKKDXL._SL180_.jpg" alt=""></a> 副題は「ユーザ・顧客のモデル化と不確実性推論」。「ベイジアンネットワーク」とは何かを解説した本で、初めにベイジアンネットワークの理論的な基礎を解説した後に、ユーザーモデル、関連ソフトウェアの紹介、人間のモデル化から「ユーザー適応システム」への取り組みの紹介など、基礎から応用まで幅広くあつかっています。分量的には160ページ程度ですが、理解するのに時間がかかりました。わたしは最初の基礎部分をじっくり読んで、最後の応用事例は軽く読み流す感じで読みました。</p>

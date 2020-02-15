@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -392,7 +393,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年9月23日</span>
             </time>
           </div>
-          <h2 class="header__title">CSS Transforms&#x3a; 3D rendering context (transform-style)</h2>
+          <h2 class="header__title"><span>CSS Transforms&#x3a; 3D rendering context (transform-style)</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2012/09/css_transforms_3d_and_perspective/">CSS Transforms: (3D/perspective) - メモログ</a>の続きで3d rendering contextについて。<a href="http://www.w3.org/TR/css3-transforms/#perspective-matrix-computation" target="_blank" rel="noopener">CSS Transforms</a>のExample7から9を紹介するだけという内容。</p>

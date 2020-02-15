@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -392,7 +393,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2005年2月20日</span>
             </time>
           </div>
-          <h2 class="header__title">「サムライと英語」を読みました。</h2>
+          <h2 class="header__title"><span>「サムライと英語」を読みました。</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4047041653/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">サムライと英語</a>」は、国連の要職を歴任された明石康さんの名著です。幕末から明治後半までの歴史を辿りながら、堀達之助（浦賀奉行通詩）、福沢諭吉、大久保利通、新渡戸稲造など、西洋文化と向き合うサムライの姿が描かれています。ちょうど「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4091528015/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">お〜い！竜馬</a>」を読破して独り幕末ブームの中、非常に面白く読めました。</p>

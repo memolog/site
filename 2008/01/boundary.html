@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年1月4日</span>
             </time>
           </div>
-          <h2 class="header__title">本：知らなかった! 驚いた! 日本全国「県境」の謎</h2>
+          <h2 class="header__title"><span>本：知らなかった! 驚いた! 日本全国「県境」の謎</span></h2>
           
         </header>
         <div id="article-content" class="content "><p> <a href="http://www.amazon.co.jp/gp/product/4408107123?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4408107123" target="_blank" rel="noopener"><img src="http://ecx.images-amazon.com/images/I/51Q26XLQ5yL._SL180_.jpg" alt=""></a> いまの県境（けんざかい）がどのような形でできあがったのか、という話をまとまた本。5部構成で、1部が現在の47都道県に落ち着くまでの成り立ち。2部は県境にまつわる逸話など、3部は「飛び地」や「越県合併」などを中心にした話、4部は県境をめぐる争い、5部は「県境未定地」と呼ばれる、県境があやふやなところについての話。最後のほうはかるく読み流しています。県境の多くは、明治よりも前に定められた国の形を踏襲しているようで、話の中心は県境そのものというよりは、県の成り立ちと言った感じです。県境についての小話を交えながら、いまの県のかたちとなった経緯を知ることができます。</p>

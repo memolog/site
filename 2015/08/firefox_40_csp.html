@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2015年8月24日</span>
             </time>
           </div>
-          <h2 class="header__title">Firefox 40 の CSP で「*」だけでは blob&#x3a; を許容しなくなった。</h2>
+          <h2 class="header__title"><span>Firefox 40 の CSP で「*」だけでは blob&#x3a; を許容しなくなった。</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>File APIから取得した画像のサムネイルを<a href="https://github.com/blueimp/JavaScript-Load-Image" target="_blank" rel="noopener">blueimp/JavaScript-Load-Image</a>を使って表示していたところが、Firefox 40になってから表示されなくなったので、なんでだろうなあと思っていたら、<a href="https://developer.mozilla.org/ja/Firefox/Releases/40/Site_Compatibility" target="_blank" rel="noopener">Firefox 40</a>からのCSPのポリシーに修正が入っていて、*（ワイルドカード）でblob:、data:、filesystem:のリソースを許容しなくなったのが原因でした。</p>

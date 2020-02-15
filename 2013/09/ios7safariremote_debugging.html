@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -389,7 +390,7 @@ Safari on iOS 7 and HTML5: problems, changes and new APIs | Breaking the Mobile 
               <span class="calendar-icon">📅</span><span>2013年9月25日</span>
             </time>
           </div>
-          <h2 class="header__title">iOS7のSafariでremote debuggingできない</h2>
+          <h2 class="header__title"><span>iOS7のSafariでremote debuggingできない</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>iOS7のSafariでremote debuggingをしようとすると、inspect内容が途中で戻ってこなかったり、styleの情報が取得できなかったりする。</p>

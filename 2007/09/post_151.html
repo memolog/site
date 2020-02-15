@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年9月29日</span>
             </time>
           </div>
-          <h2 class="header__title">ソーシャル・キャピタル</h2>
+          <h2 class="header__title"><span>ソーシャル・キャピタル</span></h2>
           
         </header>
         <div id="article-content" class="content "><p> <a href="http://www.amazon.co.jp/gp/product/4820118609?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4820118609" target="_blank" rel="noopener"><img src="http://ec1.images-amazon.com/images/I/41XVqFo98HL._SL180_.jpg" alt=""></a> ソーシャル・キャピタル（社会における信頼・規範・ネットワーク）に関する本で、ソーシャル・キャピタルの概念（第一部）、社会問題とソーシャル・キャピタル（第二部）、政策への提言（第三部）の三部構成となっています。すごくすごくかいつまんで言うと、ソーシャル・キャピタルが大きい社会では個人の満足度が高く、取引費用も少なくてすむ、だから経済の分析、政策の立案などにおいてソーシャル・キャピタルは考慮する必要があるのだ、とかいう感じの話。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年12月4日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver のattachメソッドの代替メソッド</h2>
+          <h2 class="header__title"><span>watir-webdriver のattachメソッドの代替メソッド</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>去年の今頃、<a href="/blog//2010/02/watir-webdriver/">watir 2.0</a> として始まったwatir-webdriverですが、現在 0.1.7。着々と進んでいます。その当時はseleniumとwatirの関係性がよくわかってませんでしたが、watirはselenium-webdriverのラッパー的な感じみたいです。watir-webdriverの内部では、Selenium::Webdriver.for でseleniumのdriverを呼び出しています。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年1月23日</span>
             </time>
           </div>
-          <h2 class="header__title">a style sheet that is blocking scripts と DOMContentLoaded</h2>
+          <h2 class="header__title"><span>a style sheet that is blocking scripts と DOMContentLoaded</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://molily.de/weblog/domcontentloaded" target="_blank" rel="noopener">DOMContentLoaded and stylesheets · molily</a>（via <a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/DOMContentLoaded_&#x25;28event&#x25;29" target="_blank" rel="noopener">DOMContentLoaded - Mozilla event reference | MDN</a>）にて、head内のスタイルシートとJavascriptの配置の違いで、DOMContentLoadedイベントが発生するタイミングが変わるという内容が掲載されています。スタイルシートのあとにJavascriptが入っていると、DOMContentLoadedはスタイルシートをロードしたあとに発生して、スタイルシートのあとにJavascriptがないと、スタイルシートのロードを待たずにDOMContentLoadedが発生する。</p>

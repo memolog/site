@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -395,7 +396,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2004年3月17日</span>
             </time>
           </div>
-          <h2 class="header__title">誕生日事典（誕生日辞典）で性格診断</h2>
+          <h2 class="header__title"><span>誕生日事典（誕生日辞典）で性格診断</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4047913510/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/51NV0TY105L._SL180_.jpg" alt="誕生日事典"></a> この本は誕生日からその日に生まれた人の性格を診断するという本です。ページの内容は、その日を特徴づける一言と、解説（目算で600字程度）、ナンバーと惑星（支配される数字と惑星）、タロット（タロットカードの顕示）、健康、アドバイス、瞑想の言葉などです。1日ごとに2ページの構成なので、本はかなりの大容量で分厚いです。<br><a id="more"></a><br>この本は心理学、歴史学、数秘術、タロット占い、占星術をベースに診断します。誕生日が分かれば、どんな人の性格も調べることができるので、自分や友達、恋人はもちろん、初対面の人、タレントだって調べることができます。たとえば、吉井怜（3月18日）なら、「循環して成長する人」、現在わたしの中で一押しの池脇千鶴（11月21日）なら「洗練された美意識の持ち主」などなど、タレントの性格をひっそり調べて悦に入ることができます。また、同じ日に生まれた有名人も載っているので、自己紹介のときなどに「ニコラスケージと誕生日一緒の山口です。」とか言ったりして、ちょっとした雑学王を演じることができます。</p>

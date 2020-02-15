@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -395,7 +396,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2009年3月21日</span>
             </time>
           </div>
-          <h2 class="header__title">Thickbox と 神代植物公園</h2>
+          <h2 class="header__title"><span>Thickbox と 神代植物公園</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>前回使ってみた<a href="/blog//2009/03/flickr-to-html/">Flickr to HTML</a>ではlightboxのためのrel属性がデフォルトで付いているので、<a href="http://leandrovieira.com/projects/jquery/lightbox/" target="_blank" rel="noopener">jqueryで使えるlightbox</a>を使ってみようかなと思ったのですが、モーションテンプレートでは<a href="http://jquery.com/demo/thickbox/" target="_blank" rel="noopener">Thickbox</a>をもともと使えるようになっているのでFlickr to HTML のHTMLを少しだけ変えて、Thickboxを有効にしてみる。</p>

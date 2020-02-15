@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -392,7 +393,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2006年4月8日</span>
             </time>
           </div>
-          <h2 class="header__title">最近読んだ本（２）</h2>
+          <h2 class="header__title"><span>最近読んだ本（２）</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>「<a href="http://memolog.jp/archives/2006/04/001010.html" target="_blank" rel="noopener">最近読んだ本（１）</a>」の続き。本を読んだときにする行動の一つが「文中に気になった箇所があったらページの端を折る」ことです。同じ本を繰り返し読むのは飽きるので、再読するときはその折り目を中心にその部分だけ読んだりします。ページに折り目がつく本ほど私にとって有益な本になります。</p>

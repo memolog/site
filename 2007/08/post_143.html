@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年8月20日</span>
             </time>
           </div>
-          <h2 class="header__title">アンビエント・ファインダビリティ</h2>
+          <h2 class="header__title"><span>アンビエント・ファインダビリティ</span></h2>
           
         </header>
         <div id="article-content" class="content "><p> <a href="http://www.amazon.co.jp/gp/product/4873112834?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873112834" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/51JAKEE21DL._SL180_.jpg" alt=""></a> ambient（周囲を取り巻く・完全に包囲している）とfindability（位置特定可能な・特定の対象物の発見のしやすさ）を二つあわせて、アンビエント・ファインダビリティ。直訳すると「周囲を取り巻く特定の対象物の発見のしやすさ」というような感じですが、私なりに解釈するとしたら「自分の取り囲む広大な情報の波から特定の情報を発見する」ようなことを表しているのかと思います。アンビエント・ファインダビリティの世界では、個人は「広大な情報から適切な素早く情報を入手する」ことが肝要で、本書では情報とは何か、情報の見つけやすさとは何かを伝え、最後に台頭しつつある情報を選りすぐる社会的な仕組み（タクソノミーとかフォークソノミーとか）などを次々と紹介しています。</p>

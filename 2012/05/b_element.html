@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年5月30日</span>
             </time>
           </div>
-          <h2 class="header__title">b要素について</h2>
+          <h2 class="header__title"><span>b要素について</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>HTML5になってb要素の定義が変更されている。4.01のときの仕様は<a href="http://www.w3.org/TR/1999/REC-html401-19991224/present/graphics.html#edef-B" target="_blank" rel="noopener">Alignment, font styles, and horizontal rules in HTML documents</a>に書かれていて、太字でスタイリングされることが書かれている（強調表示みたいな含意がある..ように思ってたけど、覚えてない）。HTML5での定義は<a href="http://www.w3.org/TR/html5-diff/#changed-elements" target="_blank" rel="noopener">HTML5 differences from HTML4</a>や<a href="http://www.w3.org/TR/html5/the-b-element.html#the-b-element" target="_blank" rel="noopener">4.6.17 The b element — HTML5</a>で、下記のように書かれている。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年9月7日</span>
             </time>
           </div>
-          <h2 class="header__title">Github の Content Security Policy</h2>
+          <h2 class="header__title"><span>Github の Content Security Policy</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>github.com のサイトでdelicious bookmarklet を動かしても、モーダルが開いてくれない。これはなんでかなと思っていたら、どうやら Content Security Policy と関連するらしいです。詳しくは <a href="https://github.com/blog/1477-content-security-policy" target="_blank" rel="noopener">Content Security Policy</a>に書かれています。Shortcomingsの部分。<a href="http://www.w3.org/TR/CSP/#script-src" target="_blank" rel="noopener">W3Cの仕様</a>的には、Content Security Policy (CSP) がbookmarkletの挙動を阻害するものではないはずだけど、実際にはbookmarkletの動作に影響を及ぼしていると。</p>

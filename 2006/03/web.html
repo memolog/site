@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -391,7 +392,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2006年3月19日</span>
             </time>
           </div>
-          <h2 class="header__title">黄金比によるWebレイアウト</h2>
+          <h2 class="header__title"><span>黄金比によるWebレイアウト</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861003245/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://images-jp.amazon.com/images/P/4861003245.09.TZZZZZZZ.jpg" alt=""></a> 「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861003245/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">Balance in Design 美しく見せるデザインの原則</a>」に触発され、「黄金比によるWebレイアウト」を実践してみました。黄金比とは「最も美しい比」と呼ばれている比率で、具体的には5:8（1:1.618…)の縦横比をさします。バランスが良く安定した形で、人工物のみならず自然物にも美しいと感じるものの多くに黄金比が存在するそうです。</p>

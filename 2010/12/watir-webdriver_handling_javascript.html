@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年12月6日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver でjavascriptのポップアップをなんとかする</h2>
+          <h2 class="header__title"><span>watir-webdriver でjavascriptのポップアップをなんとかする</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>watirとwatir-webdriver違いは<a href="https://github.com/jarib/watir-webdriver/wiki/Comparison-with-Watir-1.X" target="_blank" rel="noopener">Comparison with watir 1.x - watir-webdriver - GitHub</a>にリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり前と言えば当たり前ですが。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年4月13日</span>
             </time>
           </div>
-          <h2 class="header__title">Sublime Text 2 で JSHint</h2>
+          <h2 class="header__title"><span>Sublime Text 2 で JSHint</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2013/02/node_not_found_with_jsLint/">Sublime Text 2 の JSLint から node がみつからない - メモログ</a>と関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。</p>

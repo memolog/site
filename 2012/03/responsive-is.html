@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年3月18日</span>
             </time>
           </div>
-          <h2 class="header__title">Responsive.is&#x3a; レスポンシブデザイン対応を確認できるサイト</h2>
+          <h2 class="header__title"><span>Responsive.is&#x3a; レスポンシブデザイン対応を確認できるサイト</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://responsive.is/" target="_blank" rel="noopener">Responsive.is</a>というサイトで 自分のサイトがiPhoneやiPadなどでどのように表示されるかを疑似体験することができます（via <a href="http://konigi.com/tools/submissions/responsiveis-display-and-present-responsive-web-designs" target="_blank" rel="noopener">Responsive.is: Display and present responsive web designs | Konigi</a>）。実際には解像度の違いがあるのでiPhone4以降や最新のiPadでは画像の解像感に違いはありますけど、手元にiPhoneやiPadがない場合に、レスポンシブデザインに対応した自分のサイトがどのように見えるかを確認するには十分かなと思います。</p>

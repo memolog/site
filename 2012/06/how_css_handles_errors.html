@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年6月9日</span>
             </time>
           </div>
-          <h2 class="header__title">CSSのエラーの扱い方</h2>
+          <h2 class="header__title"><span>CSSのエラーの扱い方</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.xanthir.com/blog/b4JF0" target="_blank" rel="noopener">How CSS Handles Errors - Tab Completion</a>にて、CSSのパースで問題が発生した場合に、ブラウザがどのようにハンドリングするかの紹介がされています、という内容の紹介。仕様の<a href="http://www.w3.org/TR/CSS21/syndata.html#parsing-errors" target="_blank" rel="noopener">4.2 Rules for handling parsing errors</a>や、<a href="http://www.w3.org/TR/CSS2/syndata.html#rule-sets" target="_blank" rel="noopener">4.1.7 Rule sets, declaration blocks, and selectors</a>で説明されているものと内容的には同じですけど。</p>

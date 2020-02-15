@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -391,7 +392,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年1月28日</span>
             </time>
           </div>
-          <h2 class="header__title">Navigation TimingとDom processing phase</h2>
+          <h2 class="header__title"><span>Navigation TimingとDom processing phase</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.w3.org/TR/navigation-timing/" target="_blank" rel="noopener">Navigation Timing</a>の仕様では、ナビゲーションや要素にアクセスするタイミングの情報を得ることができる。このNavigation Timingの情報を表示するには、ブラウザのデベロッパーツールなどのコンソールで、<a href="http://www.w3.org/TR/navigation-timing/#sec-window.performance-attribute" target="_blank" rel="noopener">window.performance.timing</a>を実行する。現在のサポートブラウザは<a href="http://caniuse.com/#feat=nav-timing" target="_blank" rel="noopener">Can I use… Support tables for HTML5, CSS3, etc</a>の通り。</p>

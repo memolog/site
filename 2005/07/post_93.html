@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -394,7 +395,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2005年7月18日</span>
             </time>
           </div>
-          <h2 class="header__title">ブログの先行者利得</h2>
+          <h2 class="header__title"><span>ブログの先行者利得</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><img src="/blog//assets/i/etc/first-mover.gif" alt=""> 今月の<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000A0G33I/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">Harvard Business Review（2005年8月号）</a>に「先行者利得の真実」という記事があったので、それを基にブログについて個人的な考えを出してみようと思います。</p>

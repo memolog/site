@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年12月24日</span>
             </time>
           </div>
-          <h2 class="header__title">Filter Effects / Adobe CSS FilterLab</h2>
+          <h2 class="header__title"><span>Filter Effects / Adobe CSS FilterLab</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.w3.org/TR/filter-effects/" target="_blank" rel="noopener">Filter Effects 1.0</a>では、HTML上に配置した画像とかにグレースケールなどのフィルターをかけることができます。<a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/" target="_blank" rel="noopener">Understanding CSS Filter Effects - HTML5 Rocks</a>にて詳しく紹介されていますが、HTMLの要素に適用できるようにSVGから取り入れられた仕様で、多くのFilter Functionは高速に動きます（手元で試している限りではblurも速い）。対応状況は、<a href="http://caniuse.com/css-filters" target="_blank" rel="noopener">Can I use CSS Filter Effects</a>にて。今のところChromeとSafariでのみwebkitのプレフィックス付きで確認できます。</p>

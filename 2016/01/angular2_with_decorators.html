@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2016年1月13日</span>
             </time>
           </div>
-          <h2 class="header__title">Angular2とDecorators</h2>
+          <h2 class="header__title"><span>Angular2とDecorators</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>Decorators は <a href="https://github.com/tc39/ecma262" target="_blank" rel="noopener">ECMAScript</a> で Propose となっている実装で、Angular 2 と TypeScript を使った実装ではよく出てくる。 <a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841" target="_blank" rel="noopener">Exploring ES2016 Decorators – Google Developers – Medium</a>を参考にすると、定義したfunction名の頭に「@」をつけて、使いたいclassやpropertyの前に記述するらしい。</p>

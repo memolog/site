@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2011年9月13日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver&#x3a; 要素で使用できる属性を増やす</h2>
+          <h2 class="header__title"><span>watir-webdriver&#x3a; 要素で使用できる属性を増やす</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>watir-webdriverでは、たとえば「b.link(:id,’memolog’).href」みたいなかたちで要素を特定させて、特定した要素の属性を取得することができます（詳細は<a href="http://jarib.github.com/watir-webdriver/doc/" target="_blank" rel="noopener">API</a>などを参照）。ただ<a href="http://dev.w3.org/html5/spec/Overview.html#the-a-element" target="_blank" rel="noopener">W3C</a>で規定されている属性しかメソッド化されていないので、たとえばtwitterのt.coのリンクの元URLの属性（data-expanded-url）などは通常では取得することができません。</p>

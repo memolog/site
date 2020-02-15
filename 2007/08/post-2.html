@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年8月1日</span>
             </time>
           </div>
-          <h2 class="header__title">似顔絵</h2>
+          <h2 class="header__title"><span>似顔絵</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><img src="/assets/i/me.gif" alt="me.gif"> 今日は以前に無駄に描いて結局お蔵入りしていた似顔絵を、場つなぎ的に出してみようと思います。描き方は簡単で、写真をタブレット使ってトレースしただけ。似顔絵の方が「歯抜け」感があって似ているような気がします。</p>

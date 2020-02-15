@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年12月13日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver で開いたFirefoxのFirebugを起動状態にする</h2>
+          <h2 class="header__title"><span>watir-webdriver で開いたFirefoxのFirebugを起動状態にする</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>watir-webdriverからFirefoxを起動すると、webdriver用に調整された設定(profile)を使用します（厳密にはSelenium::Webdriverが用意した設定）。この調整された設定では、アドオンはwebdriverしか起動状態になりません。そのため、watir-webdriverで開いたFirefoxでFirebugを起動させたい場合は、用意された設定に予め追加しておく必要があります。具体的には下記のような感じ。<a href="http://groups.google.com/group/watir-general/browse_thread/thread/54058823b655f7e6" target="_blank" rel="noopener">Handle Security warining - Watir General | Google グループ</a>の情報を参考にしています。</p>

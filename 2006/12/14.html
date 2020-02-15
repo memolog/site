@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2006年12月12日</span>
             </time>
           </div>
-          <h2 class="header__title">情報の行間を読む（1/4）</h2>
+          <h2 class="header__title"><span>情報の行間を読む（1/4）</span></h2>
           
         </header>
         <div id="article-content" class="content "><h4 id="情報の行間を読む"><a href="#情報の行間を読む" class="headerlink" title="情報の行間を読む"></a>情報の行間を読む</h4><p>「行間を読む」とは「文章には直接表現されていない筆者の真意をくみとる」という意味です。情報も元をたどれば人によって作られています。情報にも文章と同じように「行間」が存在しているのではないかと思います。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年10月18日</span>
             </time>
           </div>
-          <h2 class="header__title">watir 1.6.5 (higher) で日本語が文字化けする</h2>
+          <h2 class="header__title"><span>watir 1.6.5 (higher) で日本語が文字化けする</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>watirを1.6.5にアップデートしたあたりからwatirで日本語を入力しようとすると文字が化ける。困って調べみたら、どうやらUTF-8で文字を送る必要があることがわかり（スクリプトの文字コードはSJIS）、text_fieldなどで入力する文字列をrequire “kconv”しつつ.to_utf8すると問題を回避してました。</p>

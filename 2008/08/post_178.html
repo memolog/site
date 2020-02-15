@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年8月12日</span>
             </time>
           </div>
-          <h2 class="header__title">セレンディピティと仮説立案</h2>
+          <h2 class="header__title"><span>セレンディピティと仮説立案</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>今現在「<a href="http://www.amazon.co.jp/gp/product/4046520000/503-5582248-4563145?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4046520000" target="_blank" rel="noopener">セレンディピティの探求</a>」という本を読んでいます。最初の方はセレンディピティの意味論的なところをあつかっていて、個人的にはあまり関心がそそらなかったのですが、今読んでいる「仮説立案」という章はなかなか面白いです。</p>

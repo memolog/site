@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2011年4月19日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver-performance&#x3a; PerformanceTimingの集計</h2>
+          <h2 class="header__title"><span>watir-webdriver-performance&#x3a; PerformanceTimingの集計</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>「<a href="http://altentee.com/blogs/2011/watir-webdriver-performance-gem-released/" target="_blank" rel="noopener">Watir-Webdriver-Performance gem released</a>」にて紹介されているものを紹介。watir-webdriver上で<a href="http://w3c-test.org/webperf/specs/NavigationTiming/#nt-navigation-timing-interface" target="_blank" rel="noopener">PerformanceTiming</a>に関する情報を収集できるようになります。PeformanceTimingとはJavascriptについてweb application内でクライアントサイドの待ち時間の測定を行えるようにするためのインターフェイスだそう（To address the need for complete information on user experience, this document introduces the PerformanceTiming interfaces. This interface allows JavaScript mechanisms to provide complete client-side latency measurements within applications. ）。Javascriptの処理毎の細かな待ち時間情報を得ることができるらしい。詳細は<a href="http://w3c-test.org/webperf/specs/NavigationTiming/" target="_blank" rel="noopener">Navigation Timing</a>を参照。</p>

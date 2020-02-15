@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年2月27日</span>
             </time>
           </div>
-          <h2 class="header__title">-webkit-overflow-scrollingと慣性スクロール</h2>
+          <h2 class="header__title"><span>-webkit-overflow-scrollingと慣性スクロール</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>コンテンツがオーバーフローしたときにスクロールバーを表示させる場合に、そのコンテンツのスクロールの仕方を設定する値として-webkit-overflow-scrollingというのがある。 詳細は<a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safaricssref/articles/standardcssproperties.html" target="_blank" rel="noopener">Safari CSS Reference</a>の「-webkit-overflow-scrolling」を参照。値を「touch」にするとnativeアプリでスクロールしたときのような、いわゆる慣性スクロールの状態になる。<a id="more"></a></p>

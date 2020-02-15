@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2009年6月21日</span>
             </time>
           </div>
-          <h2 class="header__title">本：プルーストとイカ - 読書は脳をどのように変えるのか?</h2>
+          <h2 class="header__title"><span>本：プルーストとイカ - 読書は脳をどのように変えるのか?</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4772695133?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4772695133" target="_blank" rel="noopener"><img src="https://images-na.ssl-images-amazon.com/images/I/51A&#x25;2Bh6ZB4iL._SL180_.jpg" alt=""></a> 「文字を読む」というのは、「ものを見る」ことや「音を聞く」のような、生来備わっている能力ではない。人は読書をどのように習得するのか、脳内ではどのように認識するのか、というような内容を「文字の発明の歴史」「子供が文字をどのように学ぶのか」「読字障害者（ディスレクシア）の研究」という3つのアプローチで紹介しています。</p>

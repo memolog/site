@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -391,7 +392,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年10月14日</span>
             </time>
           </div>
-          <h2 class="header__title">本：捨てられるホワイトカラー</h2>
+          <h2 class="header__title"><span>本：捨てられるホワイトカラー</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4492260854/249-8435951-8869142?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4492260854" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/511Z603taOL._SL180_.jpg" alt=""></a> ホワイトカラーの転職を題材にした体験ルポ。序盤から中盤までは転職のカウンセリングとか、転職指導などの体験ルポが中心で、中盤から終盤にかけて「ネットワーキング」をするための活動が中心です。300ページくらいあるので、分量的にはまあまあありますが、情景描写とか著者の感情描写などが多いので、そのあたりをざっと読んでいくと2〜3日で読みこなせる感じです。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年9月10日</span>
             </time>
           </div>
-          <h2 class="header__title">CSS Transforms&#x3a; transform</h2>
+          <h2 class="header__title"><span>CSS Transforms&#x3a; transform</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.w3.org/TR/css3-transforms/" target="_blank" rel="noopener">CSS Transform</a>は要素の座標変換を行うもので、transformに<a href="http://www.w3.org/TR/css3-transforms/#transform-functions" target="_blank" rel="noopener">transform functions</a>を指定することで移動/拡大/縮小/回転などを簡単に行うことができる。2Dと3Dの変換に対応していて、transform-styleが設定されていない場合は2D（flat）となる。</p>

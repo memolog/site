@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2011年9月4日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver でCSVファイルをダウンロードする</h2>
+          <h2 class="header__title"><span>watir-webdriver でCSVファイルをダウンロードする</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>FirefoxでCSVファイルにアクセスすると、ダウンロードのダイアログが表示されるのですが、webdriver上でダイアログが出てくるとハンドリングできない（たぶん）ので困る。ので、profileを設定してダイアログを表示しないようにする。そしてダウンロードするフォルダも一緒に設定する、という話。詳しくは<a href="http://stackoverflow.com/questions/5473354/firefox-4-with-watir-webdriver-need-help-using-helperapps-neverask-to-save-csv-w" target="_blank" rel="noopener">Firefox 4 with watir webdriver: Need help using helperApps.neverAsk to save CSV without prompting - Stack Overflow</a>と<a href="http://watirwebdriver.com/browser-downloads/" target="_blank" rel="noopener">Browser Downloads | Watir WebDriver</a>などを参照</p>

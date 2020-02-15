@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年1月12日</span>
             </time>
           </div>
-          <h2 class="header__title">本：「達人」の英語学習法</h2>
+          <h2 class="header__title"><span>本：「達人」の英語学習法</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4794216513?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4794216513" target="_blank" rel="noopener"><img src="http://ecx.images-amazon.com/images/I/51iZ8Jo1PJL._SL180_.jpg" alt=""></a>内容はそのまんま、英語の学習法についての話です。第一章と第二章は「英語は子供のうちにやらないとうまくならない」とか、特異な学習法など、よくある誤解について解説しています。第三章から第五章までが、英語の達人（英語圏でなく、12歳ごろ以降に英語学習を始め、主として日本で学習し、留学していても短期。(p59-60)）の学習計画、学習法を紹介しています。英語教育の研究者の方が書いている本だけあって、論文やインタビューなどをもとに確度の高い情報を提供してくれています。個人的に第一章と第二章は関心がなかったので、かるく読み飛ばして、第三章から第五章を中心に、1時間くらいでさらりと読みました。文の構成がわかりやすく、文体も平易な感じなので読みやすいです。</p>

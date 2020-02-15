@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2005年12月29日</span>
             </time>
           </div>
-          <h2 class="header__title">マインドマップでキャリアの棚卸しをしよう</h2>
+          <h2 class="header__title"><span>マインドマップでキャリアの棚卸しをしよう</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>最近わたしの中でマインドマップが大流行中です。このマインドマップを利用して自分の今までのキャリアの棚卸しをしてみました（マインドマップの作成には<a href="http://freemind.sourceforge.net/wiki/index.php" target="_blank" rel="noopener">FreeMind</a>を利用）。まだ書き足りないところもたくさんありますが、とりあえず下の画像のような感じ。転職を考えている方や就職活動中の学生にも是非試していただきたい。下手な自己分析よりもすっきりするかもしれません。<br><a id="more"></a><br><img src="/blog//assets/i/etc/yutaka.gif" alt=""> マインドマップとは「放射思考を外面化したものであり、脳の自然な働きを表したもの（ザ・マインドマップ 59ページより）」で、端的に言うとひとつの核を中心に考えを広げていく思考法です。さらにマインドマップは下記のような特徴を持ちます。</p>

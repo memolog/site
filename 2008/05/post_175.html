@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2008年5月27日</span>
             </time>
           </div>
-          <h2 class="header__title">本：赤を見る</h2>
+          <h2 class="header__title"><span>本：赤を見る</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4314010177/249-1018494-9069940?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4314010177" target="_blank" rel="noopener"><img src="http://rcm-images.amazon.com/images/I/21NduIqpxrL._SL180_.jpg" alt=""></a> 2004年春にハーバード大学で行われた著者の講演内容をまとめた本。「赤を見る」という行為を因数分解して、「感覚」とは何か、「知覚」とは何か、そして「意識」とは何かにまで踏み込みこんでいきます。150ページくらいの分量なのですが、内容が難解で・・ページを行ったり来たり、途中で挫折しつつ読み進めたので、読了するのに時間がかかりました。</p>

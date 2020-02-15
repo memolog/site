@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年4月21日</span>
             </time>
           </div>
-          <h2 class="header__title">xxhdpiの準備とdpiとdpについて</h2>
+          <h2 class="header__title"><span>xxhdpiの準備とdpiとdpについて</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density" target="_blank" rel="noopener">List of displays by pixel density - Wikipedia, the free encyclopedia</a> を見ていて気がついたのですけど、Galaxy S4は<a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">Supporting Multiple Screens | Android Developers</a>で言うところの「xxhdpi」という枠に入るらしい。Android Developersには記載がないのですけど、<a href="https://plus.google.com/+NickButcher/posts/ePQya3KsTjW" target="_blank" rel="noopener">Nick Butcher - Google+ - Nexus 10 launcher icons The gorgeous screen on the Nexus…</a>に、（Nexus 10はxhdpiの範囲を超えてくるので）xxhdpiかdrawable-480dpiフォルダーを用意する必要がある、というような記述がある（Nexus 10は300ppiと仕様には書かれていますけど、事実関係は未調査）。</p>

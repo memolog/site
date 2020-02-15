@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年11月6日</span>
             </time>
           </div>
-          <h2 class="header__title">watir&#x3a; click_no_wait が動作しない その2</h2>
+          <h2 class="header__title"><span>watir&#x3a; click_no_wait が動作しない その2</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2010/07/watir_click_no_wait_doesnt_work/">watir 1.6.5ではclick_no_waitが動作しない</a>という話をして、その後<a href="/blog//2010/10/watir_166/">watir 1.6.6</a>では修正されているという話をしました。<a href="http://jira.openqa.org/browse/WTR-449" target="_blank" rel="noopener">1.6.6では性能も改善されていて</a>、click_no_waitのメソッドを実行すると、10〜20秒くらい止まってしまうということもなくなりました。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年6月24日</span>
             </time>
           </div>
-          <h2 class="header__title">viewportをCSSで指定する</h2>
+          <h2 class="header__title"><span>viewportをCSSで指定する</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>Internet Explorer 10 Guide for Developersの<a href="http://msdn.microsoft.com/en-us/library/ie/hh708740&#x25;28v=vs.85&#x25;29.aspx" target="_blank" rel="noopener">Device adaptation</a>にて、@viewportについての説明がされています。現時点ではmsのprefixが必要なので、実際に使用する場合は @-ms-viewportということになる（そして@-o-viewportの形で<a href="http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/" target="_blank" rel="noopener">Operaでも対応している</a>と<a href="http://www.brucelawson.co.uk/about/" target="_blank" rel="noopener">Bruce Lawson</a>からコメントがついている）。</p>

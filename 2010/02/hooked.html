@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年2月16日</span>
             </time>
           </div>
-          <h2 class="header__title">本：銀むつクライシス</h2>
+          <h2 class="header__title"><span>本：銀むつクライシス</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/415208913X?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=415208913X" target="_blank" rel="noopener"><img src="http://ec3.images-amazon.com/images/I/415u7TdZ3UL._SL180_.jpg" alt=""></a> かなり前に読んだ本。マゼランアイナメ（和名：銀むつ）を漁獲するとある密猟船をオーストリアの巡視船が追跡するという話を主筋に、なぜ銀むつが乱獲されるようになったのかなどの背景を説明していきます。環境問題（魚の乱獲）を扱った本ですが密漁船と巡視船の攻防に緊迫感があって、普通の読み物としても面白い内容となっています。とくに南極でのチェイスにはドキドキしました。密漁船が他国の領海に入ってしまった場合の捕縛の難しさや国によって船舶の許可の基準が違うことによる弊害（規制の緩い国が違法船の温床となる）など、漁業ならではの問題にも端々触れています。</p>

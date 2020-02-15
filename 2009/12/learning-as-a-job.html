@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2009年12月30日</span>
             </time>
           </div>
-          <h2 class="header__title">本：職業としての学問</h2>
+          <h2 class="header__title"><span>本：職業としての学問</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4833419157?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4833419157" target="_blank" rel="noopener"><img src="http://ecx.images-amazon.com/images/I/41f9vj1fdXL._SL180_.jpg" alt=""></a> マックス・ウェーバーの「職業としての学問」を「下流社会」の三浦展さんが現代訳として意訳しています。内容としては、学問することを職業としようと考えている学生に対して、努力をしても職が得られるとは限らないし、才能の多寡によって出世が決まるとも限らない、という職業としての現実を諭していくといったもの。とにかく「安心で確実な未来などなく、答えなどない」という現実感をひたすらつきつけていきます。学問を志すにあたってどのような心構えであるべきかと言えば、ひたむきに取り組んでいくことだろうと述べている。そこから得られる「ひらめき」によって、後世に残るような業績を成し遂げることができると。しかし、だからといってひたむきな人が必ずひらめきを得られるわけではない、努力を重ねてもまったくひらめかない人もいるし、やはり運も必要であると言ってしまう。</p>

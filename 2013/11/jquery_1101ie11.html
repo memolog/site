@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年11月20日</span>
             </time>
           </div>
-          <h2 class="header__title">jQuery 1.10.1とIE11の組み合わせでエラーが発生する場合がある</h2>
+          <h2 class="header__title"><span>jQuery 1.10.1とIE11の組み合わせでエラーが発生する場合がある</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>モーダルなどjQueryでiframeを開いた場合に、jQuery 1.10.1とIE11の組み合わせだとエラーが発生する。ので、モーダル使っているなら、1.10.2にアップデートしないといけない。これはバンドルされてるSizzleに下記のような処理があるため。<a id="more"></a></p>

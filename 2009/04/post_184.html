@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -395,7 +396,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2009年4月18日</span>
             </time>
           </div>
-          <h2 class="header__title">野川公園とアオサギとカルガモ</h2>
+          <h2 class="header__title"><span>野川公園とアオサギとカルガモ</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>野川公園でパシャリ。<a href="http://www.amazon.co.jp/gp/product/4635596206?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4635596206" target="_blank" rel="noopener">散歩で楽しむ野鳥の本</a>を参考に、撮った野鳥をチェックする。写真のカモはたぶんカルガモ。1年中生息しているカモ科の鳥。マガモの雌と色形が似ているので、ぱっと見できちんと判別できません。青色の鳥は、本に載っているアオサギの写真と少し違うのですが、くちばしの色と首すじの色が似ているのでたぶんアオサギ。</p>

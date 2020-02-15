@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2005年11月5日</span>
             </time>
           </div>
-          <h2 class="header__title">トム・ピーターズのデザイン魂を読みました</h2>
+          <h2 class="header__title"><span>トム・ピーターズのデザイン魂を読みました</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/427000083x/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://images-jp.amazon.com/images/P/427000083X.01._OU09_PE0_SCMZZZZZZZ_.jpg" alt=""></a>前回のエントリーで「手持ちの良書を復読する」と言いながら、以前から気になっていたこの本を新しく買って読んでしまいました。しかし熟読したわけではなく、2時間半くらいでざっくりと読んでいます。</p>

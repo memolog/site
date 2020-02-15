@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2016年2月3日</span>
             </time>
           </div>
-          <h2 class="header__title">Bitcodeを使ったアプリがCrashlyticsでmissing dSYMsになる</h2>
+          <h2 class="header__title"><span>Bitcodeを使ったアプリがCrashlyticsでmissing dSYMsになる</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>Xcodeでpublishした内部テスター向けのビルドで、<a href="https://fabric.io/kits/ios/crashlytics" target="_blank" rel="noopener">Crashlytics</a>へクラッシュレポートが届かない。「missing dSYM」というエラーが出てるので、dSYMの問題だろうというところまでわかるけど、<a href="https://docs.fabric.io/ios/crashlytics/index.html" target="_blank" rel="noopener">CrashlyticsのDocument</a>などを読んでもわからない。Crashlyticsのmissing dSYMの画面に出てるUUIDを検索しても見つからない…</p>

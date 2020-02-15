@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -393,7 +394,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2012年11月8日</span>
             </time>
           </div>
-          <h2 class="header__title">マラソンとジョギングのメモ</h2>
+          <h2 class="header__title"><span>マラソンとジョギングのメモ</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>2012年11月3日に行われた湘南国際マラソンに参加しました。去年（2011年）の湘南国際マラソンが初マラソンで、今回が2回目。目標にしていたサブフォーを達成できた。<br><img src="http://farm9.staticflickr.com/8204/8153861310_47dfefe4cf_z.jpg" alt=""></p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年6月6日</span>
             </time>
           </div>
-          <h2 class="header__title">本：世界の多様性 家族構造と近代性</h2>
+          <h2 class="header__title"><span>本：世界の多様性 家族構造と近代性</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4894346486?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4894346486" target="_blank" rel="noopener"><img src="https://images-na.ssl-images-amazon.com/images/I/51aCmmPm6lL._SL180_.jpg" alt=""></a>エマニュエル・ドットが1983年に著した「第三世界」と1984年に著した「世界の幼少期」を二つ合わせたのがこの本。「第三世界」では「世界にある多様なイデオロギーの基底にあるのは家族構造」と論じ、家族構造とイデオロギーは対になっていると主張しています。「世界の幼少期」では教育における女性の権威の重要性を述べ、女性の権威を受け入れる家族構造は文化的成長が速いと論じています（ただし文化的成長は地理的な伝播の影響を受けるので、それも考慮する必要がある）。</p>

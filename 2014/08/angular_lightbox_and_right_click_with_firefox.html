@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2014年8月25日</span>
             </time>
           </div>
-          <h2 class="header__title">AngularJSとlightBoxと右クリックとFirefox</h2>
+          <h2 class="header__title"><span>AngularJSとlightBoxと右クリックとFirefox</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://stackoverflow.com/questions/16898330/firefox-strange-right-click-event-bubbling-behavior" target="_blank" rel="noopener">javascript - Firefox strange right click event bubbling behavior - Stack Overflow</a>でレポートされている変な挙動はFirefox 31.0でも残っているようで、右クリックしたときに、documentに対してclickイベントを発火する。他の要素ではlistenできないようなので、どうもbubblingしてきたのではなくて、documentにclickイベントが起きている。みたい。</p>

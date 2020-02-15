@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年1月27日</span>
             </time>
           </div>
-          <h2 class="header__title">style要素のscoped属性</h2>
+          <h2 class="header__title"><span>style要素のscoped属性</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="https://hacks.mozilla.org/2013/01/firefox-development-highlights-h-264-mp3-support-on-windows-scoped-stylesheets-more/" target="_blank" rel="noopener">Firefox Development Highlights - H.264 &amp; MP3 support on Windows, scoped stylesheets + more ✩Mozilla Hacks – the Web developer blog</a>（<a href="https://dev.mozilla.jp/2013/01/firefox-development-highlights-h-264-mp3-support-on-windows-scoped-stylesheets-more/" target="_blank" rel="noopener">日本語</a>）にて、<a href="http://nightly.mozilla.org/" target="_blank" rel="noopener">Firefoxのnightly</a>でstyle要素のscoped属性に対応したという話が出ていたので、試してみました。<a href="http://codepen.io/memolog/pen/uedGg" target="_blank" rel="noopener">style scoped動作確認用のcodepen</a>。</p>

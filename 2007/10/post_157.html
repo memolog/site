@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年10月20日</span>
             </time>
           </div>
-          <h2 class="header__title">本：指一本の執念が勝負を決める</h2>
+          <h2 class="header__title"><span>本：指一本の執念が勝負を決める</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4903241491/249-8435951-8869142?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4903241491" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/I/51cplirGtZL._SL180_.jpg" alt=""></a> 産業再生機構のCEOであった富山和彦さんの著書。内容は「リーダーに必要なのは「ストレス耐性」と「胆力」だ！」という帯のあおり文そのままという感じです。産業再生機構という仕事で結果を出した富山さんの言葉は重みがあり、ひたすらに尊敬の念を覚えます。170ページほどですが、1ページあたりの字数が少ないので一日あれば読めます。</p>

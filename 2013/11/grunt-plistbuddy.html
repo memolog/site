@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -387,7 +388,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年11月29日</span>
             </time>
           </div>
-          <h2 class="header__title">gruntでXcodeプロジェクトのVersion/Buildを変更する</h2>
+          <h2 class="header__title"><span>gruntでXcodeプロジェクトのVersion/Buildを変更する</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.flickr.com/photos/91221720@N00/11110211616" title="Xcode_General_setting by Yutaka Yamaguchi, on Flickr" target="_blank" rel="noopener"><img src="http://farm4.staticflickr.com/3709/11110211616_9223de9a3f.jpg" alt="Xcode_General_setting"></a>  </p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年12月14日</span>
             </time>
           </div>
-          <h2 class="header__title">watir-webdriver でFireMobileSimulatorを使用する</h2>
+          <h2 class="header__title"><span>watir-webdriver でFireMobileSimulatorを使用する</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2010/12/watir-webdriver_with_firebug/">watir-webdriver で開いたFirefoxのFirebugを起動状態にする</a>と同じ要領で、FireMobileSimulatorを起動した状態でwatir-webdriverを実行することができます。ただFirebugに比べると若干設定の追加が必要です。具体的には下記のような感じ。</p>

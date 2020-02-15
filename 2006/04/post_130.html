@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2006年4月8日</span>
             </time>
           </div>
-          <h2 class="header__title">ブログとは何か</h2>
+          <h2 class="header__title"><span>ブログとは何か</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>もしも「ブログとは何か？」と尋ねられたら、私は「WEBページを作成するためのWEBアプリケーション」と答える。「ブログとは○○である」という議論は、たいていブログに対する個人的な主張（あるいは社会学）や、ブログの使い方の提案であって「ブログ」そのものの意味を扱った議論ではない。これは「ブログとは○○である」論が間違っているというわけではなく、単純に質問に対する回答が異なるという話。大した話ではない。たとえば「はさみとは何か？」と尋ねられたら、「はさみとは物をはさみ切るための道具（岩波国語辞典）」と答えるのが適切だろう。それ以外はすべて「用例（あるいは意味の拡張）」であって、本来的な意味ではない。質問に対する答えを間違えると「（自分にとって）ブログとはそうではない）」という議論が巻き起こる。質問の答えを間違えてはいけない。</p>

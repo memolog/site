@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2007年2月25日</span>
             </time>
           </div>
-          <h2 class="header__title">Book Review：経営理論 偽りの系譜</h2>
+          <h2 class="header__title"><span>Book Review：経営理論 偽りの系譜</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4492521593/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/P/4492521593.01._SL180_SCLZZZZZZZ_.jpg" alt=""></a> ハブソン大学歴史学特別教授のジェームズ・フープス氏の著作。本書では、マネジメントの大家（グル）の生い立ちとその歴史的背景を紹介しながら、グル達の思考について優れていた部分と優れていなかった部分を評価しています。マネジメントの大家そのものの人生を掘り下げて紹介しているという点で他の本とは違う趣きを持っています。</p>

@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -388,7 +389,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2011年4月20日</span>
             </time>
           </div>
-          <h2 class="header__title">Site-Page-Data Object Pattern (Page Objects 拡張)</h2>
+          <h2 class="header__title"><span>Site-Page-Data Object Pattern (Page Objects 拡張)</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>以前に<a href="/blog//2010/11/page_objects/">Page Objects : テストスイート構築のためのデザインパターン - メモログ</a>というのを紹介しました。今回はそのパターンをちょっと拡張してみようという話。なお、特に参考にした訳ではないのですが、<a href="http://fijiaaron.wordpress.com/2009/09/02/selenium-page-objects-site-objects-data-objects-high-level-navigation/" target="_blank" rel="noopener">Selenium Page Objects + Site Objects, Data Objects &amp; High Level Navigation « Fiji Ecuador Seattle Greece Montana</a>に同じような話を提示している人はいます（2年前に）。</p>

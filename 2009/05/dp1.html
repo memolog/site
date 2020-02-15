@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -395,7 +396,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2009年5月6日</span>
             </time>
           </div>
-          <h2 class="header__title">明治神宮と原宿と雨上がりとdp1</h2>
+          <h2 class="header__title"><span>明治神宮と原宿と雨上がりとdp1</span></h2>
           
         </header>
         <div id="article-content" class="content "><p>4月の中頃に明治神宮に行ってきました。初めて行く場所ではマイ最強装備であるEOS 5D mark IIを持って行くのですが、明治神宮には何回か訪れているので今回は手軽なDP1を持参。この日は雨上がりだったので、ひさびさに<a href="http://www.amazon.co.jp/gp/product/B0017X6NN2?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=B0017X6NN2" target="_blank" rel="noopener">サーキュラー</a>をつけてみました。DP1でサーキュレータを利用すると、昼間でも光量が足りずにシャッタースピードが遅くなりがちですが、そこは絞り開放で撮るとか、日陰では撮らないとか、ISO感度を200にするとかして光量を工面（あと、頑張って固定する）。この光量を工面しつつ、カメラをぶらさないようになんとかかんとか工夫して撮るのが個人的にDP1の楽しいところ。</p>

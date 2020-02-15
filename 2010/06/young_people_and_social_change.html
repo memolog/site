@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -390,7 +391,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2010年6月21日</span>
             </time>
           </div>
-          <h2 class="header__title">本：若者と社会変容 リスク社会を生きる</h2>
+          <h2 class="header__title"><span>本：若者と社会変容 リスク社会を生きる</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/gp/product/4272350315?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4272350315" target="_blank" rel="noopener"><img src="https://images-na.ssl-images-amazon.com/images/I/41RPWn1OG-L._SL180_.jpg" alt=""></a> 現代社会の著しい変容が若者に与えている影響について論述した本。本書では、現代社会の生活と人生は「認識論的誤謬」が根底にあると述べています。現代は新しい時代の登場であり、いままでの集団や階級などの社会的な構造が人生に大きな影響力を持たなくなりつつあり、個人が中心の社会となってきていると言えるのか。本書では社会構造が人生の機会に与える影響力は変わらず存在しているとしています。</p>

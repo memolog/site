@@ -31,18 +31,19 @@ a:visited {
 }
 
 .header__title {
-  display: inline-block;
-  background-color: #f5f2f0;
   margin: .2em 0 .2em;
-  padding: 5px;
   font-size: 1.8em;
   font-weight: normal;
   vertical-align: bottom;
 }
 
-.header__title a {
+.header__title a,
+.header__title > span {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
 }
 
 .header_component_global .header__title {
@@ -55,12 +56,12 @@ a:visited {
 }
 
 .main .header .header__title {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   opacity: .8;
   margin-bottom: 0;
-  will-change: transform;
 }
 
 .header__description {
@@ -391,7 +392,7 @@ a:visited {
               <span class="calendar-icon">📅</span><span>2013年8月3日</span>
             </time>
           </div>
-          <h2 class="header__title">Cyclomatic comlexity</h2>
+          <h2 class="header__title"><span>Cyclomatic comlexity</span></h2>
           
         </header>
         <div id="article-content" class="content "><p><a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity" target="_blank" rel="noopener">Cyclomatic complexity - Wikipedia, the free encyclopedia</a>。日本語では、<a href="http://ja.wikipedia.org/wiki/&#x25;E5&#x25;BE&#x25;AA&#x25;E7&#x25;92&#x25;B0&#x25;E7&#x25;9A&#x25;84&#x25;E8&#x25;A4&#x25;87&#x25;E9&#x25;9B&#x25;91&#x25;E5&#x25;BA&#x25;A6" target="_blank" rel="noopener">循環的複雑度 - Wikipedia</a>と呼ぶみたい。</p>
