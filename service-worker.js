@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1581592640797';
+const CACHE_MAIN = 'main1581738581295';
 const precacheList = [
   
   '/',
+  '/2020/about-position-sticky.html',
   '/2020/web-workers-lifetime.html',
   '/2020/convert-video-files-with-ffmpegjs-worker.html',
   '/2020/n2-sort-algorithms-again.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/web-workers-work-on-ie10.html',
   '/2020/top-level-await-will-be-soon.html',
   '/2020/event-target-and-currenttarget.html',
-  '/2019/book-the-4th-revolution.html',
+  '/assets/images/david-travis-WC6MJ0kRzGw-unsplash/david-travis-WC6MJ0kRzGw-unsplash.svg',
   '/assets/images/harley-davidson-4ixHdlcROPI-unsplash/harley-davidson-4ixHdlcROPI-unsplash.svg',
   '/assets/images/greg-rakozy-0LU4vO5iFpM-unsplash/greg-rakozy-0LU4vO5iFpM-unsplash.svg',
   '/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.svg',
   '/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.svg',
   '/assets/images/erik-mclean-CIO4c2xmtHQ-unsplash/erik-mclean-CIO4c2xmtHQ-unsplash.svg',
-  '/assets/images/sorry-imkirk-215248-unsplash/sorry-imkirk-215248-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',
