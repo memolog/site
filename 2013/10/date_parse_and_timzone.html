@@ -56,7 +56,6 @@ a:visited {
 }
 
 .main .header .header__title {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -150,6 +149,19 @@ a:visited {
   .content {
     font-size: 1em;
   }
+
+  .main .header .header__title {
+    margin: 5px -15px 30px;
+  }
+
+  .header__title a,
+  .header__title > span {
+    padding: 10px;
+  }
+
+  .featured__credit {
+    margin: 0 -15px;
+  }
 }
 
 .header__feature {
@@ -177,7 +189,7 @@ a:visited {
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: .5em;
+  padding: 7px;
   background: #f0f0f0;
   opacity: .8;
 }
