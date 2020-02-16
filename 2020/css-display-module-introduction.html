@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>CSS Display Module Introduction | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="用語的な理解を得るために、CSS Display Module Level 3 Introductionの部分を読んで簡単にメモる、というメモ。日本語訳も参考にしてる。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Display Module Introduction">
+<meta property="og:url" content="https://memolog.org/2020/css-display-module-introduction.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="用語的な理解を得るために、CSS Display Module Level 3 Introductionの部分を読んで簡単にメモる、というメモ。日本語訳も参考にしてる。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-16T14:34:01.081Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSS Display Module Introduction">
+<meta name="twitter:description" content="用語的な理解を得るために、CSS Display Module Level 3 Introductionの部分を読んで簡単にメモる、というメモ。日本語訳も参考にしてる。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/css-display-module-introduction.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/css-display-module-introduction.html"
+      },
+      "headline": "CSS Display Module Introduction",
+      
+        "image": [
+          "https://memolog.org/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.jpg"
+        ],
+      
+      "datePublished": "Sun Feb 16 2020 23:17:00 GMT+0900",
+      "dateModified": "Sun Feb 16 2020 23:34:01 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "用語的な理解を得るために、CSS Display Module Level 3 Introductionの部分を読んで簡単にメモる、というメモ。日本語訳も参考にしてる。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-02-16T14:17:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月16日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>CSS Display Module Introduction</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM3ZjhlOTciIC8+PC9zdmc+" data-src="/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@saadchdhry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Saad Chaudhry</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>用語的な理解を得るために、<a href="https://drafts.csswg.org/css-display/#intro" target="_blank" rel="noopener">CSS Display Module Level 3 Introduction</a>の部分を読んで簡単にメモる、というメモ。<a href="https://triple-underscore.github.io/css-display-ja.html" target="_blank" rel="noopener">日本語訳</a>も参考にしてる。<a id="more"></a></p>
+<blockquote>
+<p>CSS takes a source document, organized as a <strong>tree</strong> of <strong>elements</strong> and <strong>text nodes</strong>, and renders it onto a <a href="https://www.w3.org/TR/CSS2/intro.html#canvas" target="_blank" rel="noopener">canvas</a> (such as your screen, a piece of paper, or an audio stream). To do this, it generates an intermediary structure, the <strong>box tree</strong>, which represents the formatting structure of the rendered document. Each <strong>box</strong> in the box tree represents its corresponding element (or pseudo-element) in space and/or time on the canvas, while each <strong>text run</strong> in the box tree likewise represents the contents of its corresponding text nodes.</p>
+</blockquote>
+<p>CSSは受け取ったsource document（要素とテキストノードのツリー）を画面上に出力するために、その中間となる構造として、<strong>box tree</strong>を構築する。box treeはrendered documentのformatting構造を表現する。box treeの各boxは画面上に対応する要素（または擬似要素）を表現し、box tree内のtext runは対応するテキストノードの内容を表す。</p>
+<blockquote>
+<p>To create the box tree, CSS first uses <a href="https://www.w3.org/TR/css-cascade/" target="_blank" rel="noopener">cascading and inheritance</a>, to assign a <a href="https://drafts.csswg.org/css-cascade-4/#computed-value" target="_blank" rel="noopener">computed value</a> for each CSS property to each element and text node in the source tree. (See [CSS3-CASCADE].)</p>
+</blockquote>
+<p>box treeを作るために、CSSはまずカスケードと継承を利用して、source treeにある各要素とテキストノードに対して、計算したプロパティの値を割り当てる。</p>
+<blockquote>
+<p>Then, for each element, CSS generates zero or more boxes as specified by that element’s display property. Typically, an element generates a single box, the <a href="https://drafts.csswg.org/css-display/#principal-box" target="_blank" rel="noopener">principal box</a>, which represents itself and contains its contents in the box tree. However, some display values (e.g. display: list-item) generate more than one box (e.g. a principal block box and a child marker box). And some values (such as none or contents) cause the element and/or its descendants to not generate any boxes at all. Boxes are often referred to by their display type—e.g. a box generated by an element with display: block is called a “block box” or just a “block”.</p>
+</blockquote>
+<p>それから、各要素に対して、CSSは要素のdisplayプロパティに応じてboxを生成する。通常は、要素は一つのbox、<strong>principal box</strong>を生成する。principal boxはそれ自身を表現し、box treeの中にこのコンテンツ含める。… boxはしばしばdisplayの種類によって呼ばれる。display:blockの要素は<strong>block box</strong>または<strong>block</strong>と呼ばれる。</p>
+<blockquote>
+<p>A box is assigned the same styles as its generating element, unless otherwise indicated. In general, <a href="https://drafts.csswg.org/css-cascade-4/#inherited-property" target="_blank" rel="noopener">inherited properties</a> are assigned to the principal box, and then inherit through the box tree to any other boxes generated by the same element. Non-inherited properties default to applying to the principal box, but when the element generates multiple boxes, are sometimes defined to apply to a different box: for example, the border properties applied to a table element are applied to its table grid box, not to its principal table wrapper box. If the value computation process alters the styles of those boxes, and the element’s style is requested (such as through getComputedStyle()), the element reflects, for each property, the value from the box to which that property was applied.</p>
+<p>Similarly, each contiguous sequence of sibling text nodes generates a text run containing their text contents, which is assigned the same styles as the generating text nodes. If the sequence contains no text, however, it does not generate a text run.</p>
+</blockquote>
+<p>boxには、特段の指定がなければ生成された要素と同じスタイルが割り当てられる。通常は<strong>inherited properties</strong>がprincipal boxに割り当てられ、そしてbox treeを通して、同じ要素によって生成された他のboxにも継承される。継承されないプロパティはデフォルトの値がprincipal boxに適用されるが、要素が複数のboxを生成する場合は、異なるboxに適用するよう定義されている場合もある。</p>
+<blockquote>
+<p>In constructing the box tree, boxes generated by an element are descendants of the principal box of any ancestor elements. In the general case, the direct parent box of an element’s principal box is the principal box of its nearest ancestor element that generates a box; however, there are some exceptions, such as for <a href="https://drafts.csswg.org/css-display/#valdef-display-run-in" target="_blank" rel="noopener">run-in</a> boxes, display types (like tables) that generate multiple container boxes, and intervening <a href="https://drafts.csswg.org/css-display/#anonymous" target="_blank" rel="noopener">anonymous boxes</a>.</p>
+</blockquote>
+<p>要素の子孫関係について。基本的にはprincipal box同士で子孫関係を作るが、run-in boxesや、tableのように複数のcontaienr boxを生成するdisplay typeや、<strong>anonymous boxes</strong>が間に入る場合がある。</p>
+<blockquote>
+<p>An <strong>anonymous box</strong> is a box that is not associated with any element. Anonymous boxes are generated in certain circumstances to fix up the box tree when it requires a particular nested structure that is not provided by the boxes generated from the element tree. For example, a table cell box requires a particular type of parent box (the table row box), and will generate an anonymous table row box around itself if its parent is not a table row box. (See [CSS2] § 17.2.1.) Unlike element-generated boxes, whose styles inherit strictly through the element tree, anonymous boxes (which only exist in the box tree) inherit through their box tree parentage.</p>
+</blockquote>
+<p>anonymous boxはどの要素とも関連がないboxで、特定の状況でbox treeを修正する目的で生成される。たとえば、table cell boxは特定のタイプの親box（row box）を必要とするが、親がtable row boxでなかった場合、anonymousなtable row boxを生成する。通常、スタイルは要素ツリーを通して厳密に継承されるが、anonymous boxはbox treeの親から継承する。</p>
+<blockquote>
+<p>In the course of layout, boxes and text runs can be broken into multiple fragments. This happens, for example, when an inline box and/or text run is broken across lines, or when a block box is broken across pages or columns, in a process called <a href="https://drafts.csswg.org/css-break-4/#fragmentation" target="_blank" rel="noopener">fragmentation</a>. It can also happen due to bidi reordering of text (see Applying the Bidirectional Reordering Algorithm in CSS Writing Modes) or higher-level display type box splitting, e.g. block-in-inline splitting (see CSS2§9.2) or column-spanner-in-block splitting (see CSS Multi-column Layout). A box therefore consists of one or more box fragments, and a text run consists of one or more text fragments. See [CSS3-BREAK] for more information on fragmentation.</p>
+</blockquote>
+<p>layoutの途中でboxとtext runは複数に分かれるかもしれない。これはたとえば、inline boxやtext runが行を跨いだり、block boxがページやcolumnをまだく場合に発生します。この過程を<strong>fragmentation</strong>と呼ぶ。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

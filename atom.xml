@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-15T21:16:53.166Z</updated>
+  <updated>2020-02-16T14:34:01.081Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS Display Module Introduction</title>
+    <link href="https://memolog.org/2020/css-display-module-introduction.html"/>
+    <id>https://memolog.org/2020/css-display-module-introduction.html</id>
+    <published>2020-02-16T14:17:00.000Z</published>
+    <updated>2020-02-16T14:34:01.081Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用語的な理解を得るために、&lt;a href=&quot;https://drafts.csswg.org/css-display/#intro&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSS Display Module Level 3 Introduction&lt;/a&gt;の部分を読んで簡単にメモる、というメモ。&lt;a href=&quot;https://triple-underscore.github.io/css-display-ja.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;日本語訳&lt;/a&gt;も参考にしてる。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>About position:sticky</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/about-array-prototype-sort.html&quot;&gt;Array.prototype.sort について&lt;/a&gt;と&lt;a href=&quot;https://memolog.org/2018/about-typedarray-prototype-sort.html&quot;&gt;TypedArray.prototype.sort について&lt;/a&gt;で書いたようにビルトインされているsortメソッドが効率的なソートを実行できるように実装されているので、JavaScript上で自前のソートを実装する意味はあまりないのだけど、試しにバブルソートをJavaScript上で作ってみた。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>TypedArray.prototype.sort について</title>
-    <link href="https://memolog.org/2018/about-typedarray-prototype-sort.html"/>
-    <id>https://memolog.org/2018/about-typedarray-prototype-sort.html</id>
-    <published>2018-07-31T20:23:27.000Z</published>
-    <updated>2019-01-04T02:09:12.874Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前回の「&lt;a href=&quot;https://memolog.org/2018/about-array-prototype-sort.html&quot;&gt;Array.prototype.sort について&lt;/a&gt;」に引き続き、今度は&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TypedArray&lt;/a&gt;の&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;sort&lt;/a&gt;について。実装は別だけど対応は基本的に同じなので簡単に。
     
     </summary>
     
