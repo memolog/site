@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>ブログの内在的価値 | メモログ</title>
+  <title>Inner and outer display types | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -337,36 +337,39 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="（これは「えいっ」的なやつである。） マーク・ローランズの「哲学者が走る」という本では、走ることで得られる道具的価値と内在的価値について語られています。">
-<meta name="keywords" content="thought,book">
+  <meta name="description" content="前回のCSS Display Module Introductionに引き続き、CSS Display Module Level 3の2. Box Layout Modes: the display property冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ブログの内在的価値">
-<meta property="og:url" content="https://memolog.org/2013/12/intrinsic_value_of_blog.html">
+<meta property="og:title" content="Inner and outer display types">
+<meta property="og:url" content="https://memolog.org/2020/inner-and-outer-display-type.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="（これは「えいっ」的なやつである。） マーク・ローランズの「哲学者が走る」という本では、走ることで得られる道具的価値と内在的価値について語られています。">
+<meta property="og:description" content="前回のCSS Display Module Introductionに引き続き、CSS Display Module Level 3の2. Box Layout Modes: the display property冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。">
 <meta property="og:locale" content="ja">
-<meta property="og:image" content="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4560083215&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=yutakayamaguc-22">
-<meta property="og:updated_time" content="2019-01-04T02:09:12.871Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ブログの内在的価値">
-<meta name="twitter:description" content="（これは「えいっ」的なやつである。） マーク・ローランズの「哲学者が走る」という本では、走ることで得られる道具的価値と内在的価値について語られています。">
-<meta name="twitter:image" content="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4560083215&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=yutakayamaguc-22">
+<meta property="og:image" content="https://memolog.org/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-17T21:25:52.765Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inner and outer display types">
+<meta name="twitter:description" content="前回のCSS Display Module Introductionに引き続き、CSS Display Module Level 3の2. Box Layout Modes: the display property冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2013/12/intrinsic_value_of_blog.html">
+  <link rel="canonical" href="https://memolog.org/2020/inner-and-outer-display-type.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2013/12/intrinsic_value_of_blog.html"
+        "@id": "https://memolog.org/2020/inner-and-outer-display-type.html"
       },
-      "headline": "ブログの内在的価値",
+      "headline": "Inner and outer display types",
       
-      "datePublished": "Mon Dec 30 2013 06:20:00 GMT+0900",
-      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+        "image": [
+          "https://memolog.org/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.jpg"
+        ],
+      
+      "datePublished": "Tue Feb 18 2020 06:25:00 GMT+0900",
+      "dateModified": "Tue Feb 18 2020 06:25:52 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -379,8 +382,7 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "（これは「えいっ」的なやつである。）
-マーク・ローランズの「哲学者が走る」という本では、走ることで得られる道具的価値と内在的価値について語られています。"
+      "description": "前回のCSS Display Module Introductionに引き続き、CSS Display Module Level 3の2. Box Layout Modes: the display property冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。"
     }
   </script>
 </head>
@@ -400,28 +402,62 @@ a:visited {
       <article>
         <header class="header">
           <div>
-            <time datetime="2013-12-29T21:20:00.000Z">
-              <span class="calendar-icon">📅</span><span>2013年12月30日</span>
+            <time datetime="2020-02-17T21:25:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月18日</span>
             </time>
           </div>
-          <h2 class="header__title"><span>ブログの内在的価値</span></h2>
+          <h2 class="header__title"><span>Inner and outer display types</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM2ZTU0M2QiIC8+PC9zdmc+" data-src="/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@fotografierende?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">fotografierende</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
           
         </header>
-        <div id="article-content" class="content "><p>（これは「<a href="http://kotoripiyopiyo.com/2013/12/yorinuki201320131227.html" target="_blank" rel="noopener">えいっ</a>」的なやつである。）</p>
-<p>マーク・ローランズの「<a href="http://www.amazon.co.jp/gp/product/4560083215/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4560083215&amp;linkCode=as2&amp;tag=yutakayamaguc-22" target="_blank" rel="noopener">哲学者が走る</a>」という本では、走ることで得られる道具的価値と内在的価値について語られています。</p>
-<a id="more"></a>
+        <div id="article-content" class="content "><p>前回の<a href="https://memolog.org/2020/css-display-module-introduction.html">CSS Display Module Introduction</a>に引き続き、CSS Display Module Level 3の<a href="https://www.w3.org/TR/css-display-3/#the-display-properties" target="_blank" rel="noopener">2. Box Layout Modes: the display property</a>冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。<a id="more"></a></p>
+<p>最初にIntroductionからの抜粋。</p>
 <blockquote>
-<p><a href="http://www.amazon.co.jp/gp/product/4560083215/ref=as_li_ss_il?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=4560083215&amp;linkCode=as2&amp;tag=yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4560083215&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=yutakayamaguc-22" alt=""></a> もはやわたしたちは、本質的には、価値を有用性の機能以外の点では考えられなくなってしまったのだと行ったら、言い過ぎかもしれない。それでも、これはむずかしくなった。たしかに、走るという活動は自分自身にとっても、他の人にとっても、ふつうはこの有用性の点で正統化される。人は健康のために、太らないように、リラックスするために、活力を保つために走るのだというわけだ。このような答えに暗に含まれているのは、もし走ることが正当な時間の過ごし方だとすれば、それは「何かのために良く」なければならない、何らかの形で有用でなければならないという仮定である。走ることは、それがわたしたちにもたらすものとは無関係に価値をもつのだとか、道具的な点では理解できないような価値をもつかもしれない—こういった考え方を、わたしたちは理解しにくくなっている。わたしはこれを自分の経験から言っている。この点がわかるまでには、何年も、いや実際には何十年もの混乱した年月がかかった。p11より</p>
+<p>Each <strong>box</strong> in the box tree represents its corresponding element (or pseudo-element) in space and/or time on the canvas, while each <strong>text run</strong> in the box tree likewise represents the contents of its corresponding text nodes.</p>
 </blockquote>
-<p>内在的価値/道具的価値については<a href="http://plaza.umin.ac.jp/kodama/ethics/wordbook/intrinsic.html" target="_blank" rel="noopener">INTRINSIC VALUE</a>なども参照。</p>
-<p>つまり、道具的価値とは、何かの別の目的のために役に立つ、価値があることを指していて、内在的価値は、それそのものの価値を指す。実際のところ、内在的価値を言葉で表現するのは難しい。語弊を恐れずに言えば、それを行うことに伴う「喜び」という感じでしょうか（息抜きにゲームをするとかそういうのとは違う）。</p>
-<p>では、ブログの内在的価値とはなんだろうと。いつの日か、ブログは、PVを稼いで副収入を得るのに良いとか、継続的な情報発信によってブランドの価値をほにゃららほにゃららとか、道具的価値のみで語られるようになった気がします。</p>
-<p>もともとブログは手軽に発信するためのツールであり、そこには何らかの「解放」があったように思う。「ホームページ」という固定的なサイト構成を破壊して、膨大なhtmlを管理することの苦痛からの解放。そこには発信することの「喜び」が伴っていたように思います。言いたいことをぱっと書いて、ぱっと出す。副作用として、速報性という道具的価値が伴っていた。</p>
-<p>トラックバックもブログに重要な内在的価値を与えていたような気がします。ブログという孤島と孤島をつなげて、サイト流入を増やすという道具的価値だけではなく、自分と同じ「何か」を共有することの喜びのようなものがあったように思う。それもまた最終的にはスパムが大量すぎるようになったり、代替サービスが増えてきて、サイト流入という道具的価値が失われていき、衰退していったわけですけど。</p>
-<p>他にもSEO効果とか、まあ何やかやとブログには道具的価値が備わっていた。そしてそれをビジネスとして、仕事の中で活用することで、道具的価値がさらに強調されていく。そしてそのうち、ブログは、道具的価値だけが、注目されるようになっていたような、気がする。そしてそれらの道具的価値は、より道具的価値を持つ代替サービスに移動していった。イノベーションのジレンマ。</p>
-<p>でもたぶん、ブログを書くということは、ブログじゃなくても良いですけど、「発信する」ことそのものにある「喜び」こそが重要なのだと思う。tumblrとかfacebook、twitterでもできるしコミュニケーションをするのなら、そっちの方が良い。でも、ブログという孤島が、自己を形作り、書き捨てることのない発信が、まとまった文章を書くという、苦痛に近い行為に、喜びがあるのではないだろうか。ないかもしれないけど。</p>
-<p>走るのと同じように、万人がみんな走る必要はない。健康のためとか、きっかけが道具的価値でも良い（その意味でコミュニティの広がりには道具的価値があった方がいい）。内在的価値は外側からは気づくのは難しいし、やってみてもすぐに気がつかないかもしれない。でも、ブログにある内在的価値に、うまいこと出会って、うまいことハマることがあれば、たぶん、その人は生涯を通してブログを書き続けるんだろうと思う。</p>
-<p>本年中はお世話になりました。来年もよろしくお願いいたします。</p>
+<p>box treeにおいて、boxは、スクリーン上で要素を時間的・空間的に表現する。text runはtext nodesの内容を表現する。</p>
+<blockquote>
+<p>Then, for each element, CSS generates zero or more boxes as specified by that element’s display property. Typically, an element generates a single box, the <a href="https://drafts.csswg.org/css-display/#principal-box" target="_blank" rel="noopener">principal box</a>, which represents itself and contains its contents in the box tree.</p>
+</blockquote>
+<p>CSSは、各要素に対して、displayプロパティに応じて0個以上のboxを生成する。通常は、一つの要素につき、一つのboxを生成する。そのboxは<strong>principal box</strong>と呼ばれ、box自身と内包するコンテンツをbox tree内に表現する。</p>
+<p>抜粋ここまで。</p>
+<hr>
+<blockquote>
+<p>The display property defines an element’s display type, which consists of the two basic qualities of how an element generates boxes:</p>
+<ul>
+<li><p>the <strong>inner display type</strong>, which defines (if it is a <a href="https://www.w3.org/TR/css-display-3/#replaced-element" target="_blank" rel="noopener">non-replaced element</a>) the kind of <a href="https://www.w3.org/TR/css-display-3/#formatting-context" target="_blank" rel="noopener">formatting context</a> it generates, dictating how its descendant boxes are laid out. (The inner display of a replaced element is outside the scope of CSS.)</p>
+</li>
+<li><p>the <strong>outer display type</strong>, which dictates how the principal box itself participates in <a href="https://www.w3.org/TR/css-display-3/#flow-layout" target="_blank" rel="noopener">flow layout</a>.</p>
+</li>
+</ul>
+</blockquote>
+<p>displayプロパティには<strong>inner display type</strong>と<strong>outer display type</strong>という二つの基本的な性質を持つ。inner display typeは（それが置換要素ではない場合（<strong>non-replaced element</strong>））<strong>formatting context</strong>について定義し、子孫となるboxがどのように配置されるかを決める。</p>
+<p>outer display typeは<strong>principal box</strong>（要素ごとに生成されたbox）自身がどのようにflow layoutに参加するかを決める。</p>
+<blockquote>
+<p>Text runs have no display type.</p>
+</blockquote>
+<p>text run（box treeにおいて、対応するtext nodeの内容を表現する）はdisplay typeを持たない。</p>
+<blockquote>
+<p>Some display values have additional side-effects: such as list-item, which also generates a ::marker pseudo-element, and none, which causes the element’s entire subtree to be left out of the box tree.</p>
+</blockquote>
+<p>displayの値によっては副次的な効果があるものもある。list-itemは<code>::marker</code>擬似要素を生成する。noneの場合は要素のsubtree全体をbox treeの外側に残す。</p>
+<blockquote>
+<p>The display property has no effect on an element’s semantics: these are defined by the document language and are not affected by CSS. Aside from the none value, which also affects the aural/speech output [<a href="https://www.w3.org/TR/css-display-3/#biblio-css-speech-1" target="_blank" rel="noopener">CSS-SPEECH-1</a>] and interactivity of an element and its descendants, the display property only affects visual layout: its purpose is to allow designers freedom to change the layout behavior of an element without affecting the underlying document semantics.</p>
+</blockquote>
+<p><strong>displayプロパティは要素のセマンティクスに影響を与えない。</strong>セマンティクスはdocumentの言語（HTML）によって定義され、CSSに影響されない。<code>none</code>についてはスピーチの出力や要素とその子孫要素の相互作用に影響を与えるが、displayプロパティは見た目のレイアウトにのみ影響を与える。これはデザイナーがdocumentのセマンティクスの影響を気にしないで、要素のレイアウト上の振る舞いを自由に変更できるようにするためである。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

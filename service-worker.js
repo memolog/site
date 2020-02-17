@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1581863641081';
+const CACHE_MAIN = 'main1581974752765';
 const precacheList = [
   
   '/',
+  '/2020/inner-and-outer-display-type.html',
   '/2020/css-display-module-introduction.html',
   '/2020/about-position-sticky.html',
   '/2020/web-workers-lifetime.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/optional-chaining-and-nullish-coalescing.html',
   '/2020/web-workers-work-on-ie10.html',
   '/2020/top-level-await-will-be-soon.html',
-  '/2020/event-target-and-currenttarget.html',
+  '/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.svg',
   '/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.svg',
   '/assets/images/david-travis-WC6MJ0kRzGw-unsplash/david-travis-WC6MJ0kRzGw-unsplash.svg',
   '/assets/images/harley-davidson-4ixHdlcROPI-unsplash/harley-davidson-4ixHdlcROPI-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/ben-hershey-1IZBAlIs4ug-unsplash/ben-hershey-1IZBAlIs4ug-unsplash.svg',
   '/assets/images/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash/josue-isai-ramos-figueroa-Pj4je7OjrME-unsplash.svg',
   '/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.svg',
-  '/assets/images/erik-mclean-CIO4c2xmtHQ-unsplash/erik-mclean-CIO4c2xmtHQ-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',
