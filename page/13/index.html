@@ -347,61 +347,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2012/07/rich_snippets_testing_tool.html"
+          "url": "https://memolog.org/2012/07/dropped_pubdate_in_time_element.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2012/07/around_dnt.html"
+          "url": "https://memolog.org/2012/07/rich_snippets_testing_tool.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2012/06/around_social_buttons.html"
+          "url": "https://memolog.org/2012/07/around_dnt.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2012/06/viewport_declaration_in_css.html"
+          "url": "https://memolog.org/2012/06/around_social_buttons.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2012/06/stream_webcam_with_javascript.html"
+          "url": "https://memolog.org/2012/06/viewport_declaration_in_css.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2012/06/jquery_masonry.html"
+          "url": "https://memolog.org/2012/06/stream_webcam_with_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2012/06/how_css_handles_errors.html"
+          "url": "https://memolog.org/2012/06/jquery_masonry.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2012/06/set_input_width_to_100_percent.html"
+          "url": "https://memolog.org/2012/06/how_css_handles_errors.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2012/06/collapsing_magin_with_overflow_or_clearance.html"
+          "url": "https://memolog.org/2012/06/set_input_width_to_100_percent.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2012/06/focus_on_the_content.html"
+          "url": "https://memolog.org/2012/06/collapsing_magin_with_overflow_or_clearance.html"
         }
         
       ]
@@ -421,6 +421,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2012-07-02T13:00:00.000Z"><span class="calendar-icon">📅</span><span>2012年7月2日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2012/07/dropped_pubdate_in_time_element.html">time要素からpubdate属性が抜けていた</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>何の気なしに<a href="http://html5.validator.nu/" target="_blank" rel="noopener">Validator.nu (X)HTML5 Validator</a>でサイトの検証をしてみたら、time要素のpubdateがnot allowedだと言われて、気がついたら<a href="http://www.w3.org/TR/html5/the-time-element.html#the-time-element" target="_blank" rel="noopener">W3Cの仕様</a>のContent Attributesからも抹消されているので、なんでだろうなあと調べていたら<a href="http://www.w3.org/TR/2012/WD-html5-diff-20120329/#changes-2011-05-25" target="_blank" rel="noopener">20120329の更新</a>で、pubdateが削除されていた（The time element was redesigned to make it match how people wanted to use it. Its pubdate attribute was dropped. ）。参考<a href="http://myakura.hatenablog.com/entry/2012/03/30/095033" target="_blank" rel="noopener">HTML5 (と関連WD) 更新 - fragmentary</a>。</p></div>
+            <div><a href="/2012/07/dropped_pubdate_in_time_element.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -554,19 +567,6 @@ a:visited {
           
             <div class="content"><p>垂直方向に隣接するマージンは<a href="http://www.w3.org/TR/CSS21/box#collapsing-margins" target="_blank" rel="noopener">マージンの相殺（collapsing）</a>が働くけれど、overflow:hiddenがあると相殺されない、という仕様の話。あとclearanceについて。</p></div>
             <div><a href="/2012/06/collapsing_magin_with_overflow_or_clearance.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2012-06-03T12:33:00.000Z"><span class="calendar-icon">📅</span><span>2012年6月3日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2012/06/focus_on_the_content.html">広告についてのてきとうな雑感</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>Zeldmanが自身のサイトのリデザインについて<a href="http://www.zeldman.com/2012/05/18/web-design-manifesto-2012/" target="_blank" rel="noopener">自分のサイト</a>と<a href="http://www.netmagazine.com/interviews/jeffrey-zeldman-his-web-design-manifesto-2012" target="_blank" rel="noopener">.net Magazing</a>で解説しています。</p></div>
-            <div><a href="/2012/06/focus_on_the_content.html">📖 続きを読む</a></div>
           
         </article>
       

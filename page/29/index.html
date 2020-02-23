@@ -347,61 +347,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
+          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
+          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
+          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/post_141.html"
+          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
+          "url": "https://memolog.org/2007/08/post_141.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/yslow_3_add_an_expires_header.html"
+          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
+          "url": "https://memolog.org/2007/08/yslow_3_add_an_expires_header.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/yslow_2_use_a_content_delivery.html"
+          "url": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
         }
         
       ]
@@ -421,6 +421,22 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-13T05:52:01.000Z"><span class="calendar-icon">📅</span><span>2007年8月13日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_10_minify_javascript.html">YSLOW 勉強 &#x3a; 10&#x3a; Minify JavaScript</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#minify" target="_blank" rel="noopener">10: Minify JavaScript</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十個目。Javascriptを最小化しよう。スクリプト内の不要なスペースとか改行やタブとかを削除することで、ダウンロードするファイルのサイズが減るのでレスポンスタイムを短くすることができる。代表的なツールには<a href="http://www.crockford.com/javascript/jsmin.html" target="_blank" rel="noopener">JSMIN</a>がある。</p></div>
+            <div><a href="/2007/08/yslow_10_minify_javascript.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -557,22 +573,6 @@ a:visited {
             <div class="content"><p>あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。</p>
 <p>webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動かしている。言い換えると、ブラウザが持っている情報を引き出して、変更して押し込んで、というやりとりをしている。そのため、ブラウザ側で期待されるデータを出力してくれないと、エディタから情報が消えてしまったりする可能性がある。</p></div>
             <div><a href="/2007/08/wysiwyg_iedomobjectembed.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-04T21:20:05.000Z"><span class="calendar-icon">📅</span><span>2007年8月5日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/yslow_2_use_a_content_delivery.html">YSLOW 勉強 &#x3a; 2&#x3a; Use a Content Delivery Network</a></h2>
-            
-          </header>
-          
-            <div class="content"><ul>
-<li><a href="http://developer.yahoo.com/performance/rules.html#cdn" target="_blank" rel="noopener">2: Use a Content Delivery Network</a></li>
-</ul>
-<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の二つ目。 ユーザーの待ち時間の大半は画像やCSSなどの構成要素をダウンロードするのに費やされているという視点から、待ち時間を減らす為にCDN（Content Delivery Network ）を利用しようという話。Content Delivery Network (CDN) とは、ユーザーに効率的にコンテンツを配信するために分散化させたネットワークのことをさします（<a href="http://e-words.jp/w/CDN.html" target="_blank" rel="noopener">e-word</a>もあわせてごらんください）。</p></div>
-            <div><a href="/2007/08/yslow_2_use_a_content_delivery.html">📖 続きを読む</a></div>
           
         </article>
       
