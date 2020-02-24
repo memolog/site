@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-23T00:26:48.225Z</updated>
+  <updated>2020-02-24T21:48:59.177Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS property conventions</title>
+    <link href="https://memolog.org/2020/css-property-conventions.html"/>
+    <id>https://memolog.org/2020/css-property-conventions.html</id>
+    <published>2020-02-24T21:48:00.000Z</published>
+    <updated>2020-02-24T21:48:59.177Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/display-property-definition-in-css2.html&quot;&gt;The display property definition in CSS2&lt;/a&gt;に引き続き。&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#values&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.2. Values&lt;/a&gt;に、プロパティの仕様については&lt;a href=&quot;https://www.w3.org/TR/CSS22/about.html#property-defs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.4.2 CSS property definitions&lt;/a&gt;の表記に従うと書いてあるので、そのあたりを確認していく。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>The display property definition in CSS2</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;アイコンをsvgで作り直してページの一番上につけた。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Insertion Sort in JavaScript</title>
-    <link href="https://memolog.org/2018/insertion-sort-in-javascript.html"/>
-    <id>https://memolog.org/2018/insertion-sort-in-javascript.html</id>
-    <published>2018-08-06T20:47:14.000Z</published>
-    <updated>2019-01-04T02:09:12.876Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/selection-sort-in-javascript.html&quot;&gt;Selection Sort in JavaScript&lt;/a&gt;の記事から引き続き。内容は&lt;a href=&quot;https://en.wikipedia.org/wiki/Insertion_sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;挿入ソート&lt;/a&gt;からの抜粋なので詳細はそちらを参照。
     
     </summary>
     

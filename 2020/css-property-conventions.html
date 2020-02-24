@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>CSS property conventions | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="前回のThe display property definition in CSS2に引き続き。1.2. Valuesに、プロパティの仕様については1.4.2 CSS property definitionsの表記に従うと書いてあるので、そのあたりを確認していく。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS property conventions">
+<meta property="og:url" content="https://memolog.org/2020/css-property-conventions.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="前回のThe display property definition in CSS2に引き続き。1.2. Valuesに、プロパティの仕様については1.4.2 CSS property definitionsの表記に従うと書いてあるので、そのあたりを確認していく。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.jpg">
+<meta property="og:updated_time" content="2020-02-24T21:48:59.177Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSS property conventions">
+<meta name="twitter:description" content="前回のThe display property definition in CSS2に引き続き。1.2. Valuesに、プロパティの仕様については1.4.2 CSS property definitionsの表記に従うと書いてあるので、そのあたりを確認していく。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/css-property-conventions.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/css-property-conventions.html"
+      },
+      "headline": "CSS property conventions",
+      
+        "image": [
+          "https://memolog.org/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.jpg"
+        ],
+      
+      "datePublished": "Tue Feb 25 2020 06:48:00 GMT+0900",
+      "dateModified": "Tue Feb 25 2020 06:48:59 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "前回のThe display property definition in CSS2に引き続き。1.2. Valuesに、プロパティの仕様については1.4.2 CSS property definitionsの表記に従うと書いてあるので、そのあたりを確認していく。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-02-24T21:48:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月25日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>CSS property conventions</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiMzNDJmMmQiIC8+PC9zdmc+" data-src="/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@delaneyvan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Delaney Van</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>前回の<a href="https://memolog.org/2020/display-property-definition-in-css2.html">The display property definition in CSS2</a>に引き続き。<a href="https://www.w3.org/TR/css-display-3/#values" target="_blank" rel="noopener">1.2. Values</a>に、プロパティの仕様については<a href="https://www.w3.org/TR/CSS22/about.html#property-defs" target="_blank" rel="noopener">1.4.2 CSS property definitions</a>の表記に従うと書いてあるので、そのあたりを確認していく。<a id="more"></a></p>
+<h3 id="CSS-property-definitions"><a href="#CSS-property-definitions" class="headerlink" title="CSS property definitions"></a>CSS property definitions</h3><p>プロパティの定義には以下の項目の情報が並ぶ。</p>
+<ul>
+<li>Name:    プロパティ名</li>
+<li>Value:    正しい値とシンタックス</li>
+<li>Initial:    初期値</li>
+<li>Applies to:    このプロパティが適用される要素（対象）</li>
+<li>Inherited:    プロパティが子孫要素に引き継がれるか</li>
+<li>Percentages:    パーセンテージ(%)が値として与えられた時にどのように解釈されるか。<code>n/a</code>の場合はプロパティがパーセンテージの値を受け取らないことを意味する</li>
+<li>Media:    プロパティが適用されるメディアグループ</li>
+<li>Computed value:    算出値（computed value）がどのように算出されるか</li>
+</ul>
+<p>以下はCSS2の<a href="https://www.w3.org/TR/CSS22/about.html#value-defs" target="_blank" rel="noopener">1.4.2.1 Value</a>について。ValueについてはCSS3のValue and Unitの<a href="https://www.w3.org/TR/css-values-3/#value-defs" target="_blank" rel="noopener">2. Value Definition Syntax</a>で追記されている部分があるが、そこは改めて触れようかなと思う。章立てについては後で比較しやすいようにValue and Unitの方から持ってきている。</p>
+<h3 id="Component-Value-Types"><a href="#Component-Value-Types" class="headerlink" title="Component Value Types"></a>Component Value Types</h3><p>Component value types はいくつかの方法で指定される。</p>
+<blockquote>
+<ol>
+<li>keyword values (e.g., auto, disc, etc.)</li>
+<li>basic data types, which appear between “&lt;” and “&gt;” (e.g., <length>, <percentage>, etc.). In the electronic version of the document, each instance of a basic data type links to its definition.</percentage></length></li>
+<li>types that have the same range of values as a property bearing the same name (e.g., &lt;’border-width’&gt; &lt;’background-attachment’&gt;, etc.). In this case, the type name is the property name (complete with quotes) between “&lt;” and “&gt;” (e.g., &lt;’border-width’&gt;). Such a type does not include the value ‘inherit’. In the electronic version of the document, each instance of this type of non-terminal links to the corresponding property definition.</li>
+<li>non-terminals that do not share the same name as a property. In this case, the non-terminal name appears between “&lt;” and “&gt;”, as in <border-width>. Notice the distinction between <border-width> and &lt;’border-width’&gt;; the latter is defined in terms of the former. The definition of a non-terminal is located near its first appearance in the specification. In the electronic version of the document, each instance of this type of value links to the corresponding value definition.</border-width></border-width></li>
+</ol>
+</blockquote>
+<ol>
+<li><code>auto</code> とかのキーワード</li>
+<li><code>&lt;length&gt;</code>とか基本的なデータタイプ。<code>&lt;</code>と<code>&gt;</code>で囲われてる</li>
+<li><code>&lt;&#39;border-width&#39;&gt;</code>みたいにプロパティ名で指定するタイプ。<code>&lt;&#39;</code>と<code>&#39;&gt;</code>で囲われてる。このタイプでは<code>inherit</code>される値は含まない</li>
+<li><code>&lt;border-width&gt;</code>みたいにプロパティ名だけど、その定義が当該仕様の中に含まれているもの。</li>
+</ol>
+<blockquote>
+<p>Other words in these definitions are keywords that must appear literally, without quotes (e.g., red). The slash (/) and the comma (,) must also appear literally.</p>
+</blockquote>
+<p>これらの定義に含まれる他の単語はキーワードであり、クオートなしで記述する。/や,はそのまま記述する。</p>
+<h3 id="Component-Value-Combinators"><a href="#Component-Value-Combinators" class="headerlink" title="Component Value Combinators"></a>Component Value Combinators</h3><blockquote>
+<p>Component values may be arranged into property values as follows:</p>
+<ul>
+<li>Several juxtaposed words mean that all of them must occur, in the given order.</li>
+<li>A bar (|) separates two or more alternatives: exactly one of them must occur.</li>
+<li>A double bar (||) separates two or more options: one or more of them must occur, in any order.</li>
+<li>A double ampersand (&amp;&amp;) separates two or more components, all of which must occur, in any order.</li>
+<li>Brackets ([ ]) are for grouping.</li>
+</ul>
+</blockquote>
+<ul>
+<li>並記されてる単語は、それらの全部が、順番通りに記述されないといけない。</li>
+<li><code>|</code>は二つ以上の値に分ける。どれか一つが記述されないといけない。</li>
+<li><code>||</code>は二つ以上のオプションに分ける。それらのうち一つ以上が記述されないといけない。順不同</li>
+<li><code>&amp;&amp;</code>は二つ以上のcomponentsを分ける。それらのすべてが記述されないといけない。順不同</li>
+<li><code>[]</code>はグループ化のため。<code>[]</code>の外側とは、内側の処理が解決した後に処理される。</li>
+</ul>
+<p>並記（juxtaposed）については特段説明がないけど、スペースで区切られている複数の単語は並記されてる単語と理解して問題なさそう。</p>
+<blockquote>
+<p>Juxtaposition is stronger than the double ampersand, the double ampersand is stronger than the double bar, and the double bar is stronger than the bar. Thus, the following lines are equivalent:</p>
+<pre><code>    a b   |   c ||   d &amp;&amp;   e f
+  [ a b ] | [ c || [ d &amp;&amp; [ e f ]]]
+</code></pre></blockquote>
+<p><code>並記（Juxtaposition） &gt; &amp;&amp; &gt; || &gt; |</code> となる。<code>[]</code>はグループ化なので、どの値が強く結合しているかを明確にしてくれる。並記部分は順番が決まっているけど、それ以外は順不同になる。</p>
+<h3 id="Component-Value-Multipliers"><a href="#Component-Value-Multipliers" class="headerlink" title="Component Value Multipliers"></a>Component Value Multipliers</h3><blockquote>
+<p>Every type, keyword, or bracketed group may be followed by one of the following modifiers:</p>
+<ul>
+<li>An asterisk (*) indicates that the preceding type, word, or group occurs zero or more times.</li>
+<li>A plus (+) indicates that the preceding type, word, or group occurs one or more times.</li>
+<li>A question mark (?) indicates that the preceding type, word, or group is optional.</li>
+<li>A pair of numbers in curly braces ({A,B}) indicates that the preceding type, word, or group occurs at least A and at most B times.</li>
+</ul>
+</blockquote>
+<p>モディファイア（意味を付け加えたりする）について。普通の正規表現と同じ。</p>
+<ul>
+<li><code>*</code> 直前のタイプ、単語、グループを0回以上記述する</li>
+<li><code>+</code> 直前のタイプ、単語、グループを1回以上記述する</li>
+<li><code>?</code> 直前のタイプ、単語、グループを0回または1回記述する</li>
+<li><code>{A, B}</code> 直前のタイプ、単語、グループを少なくともA回、最大でB回記述する</li>
+</ul>
+<h3 id="Combinator-and-Multiplier-Patterns"><a href="#Combinator-and-Multiplier-Patterns" class="headerlink" title="Combinator and Multiplier Patterns"></a>Combinator and Multiplier Patterns</h3><p>その下に書いてある例で言うと、<br><code>N | NW | NE</code> なら、NかNWかNEのどれか一つ。<code>[ &lt;length&gt; | thick | thin ]{1,4}</code>なら、<a href="https://www.w3.org/TR/css-values-3/#length-value" target="_blank" rel="noopener">&lt;length&gt;</a>かthickかthinのどれかを1回〜4回記述する。<code>[&lt;family-name&gt; , ]* &lt;family-name&gt;</code>は、<code>&lt;family-name&gt;</code>をカンマ区切りで複数個記述できるということ。<code>&lt;uri&gt;? &lt;color&gt; [ / &lt;color&gt; ]?</code>は、<code>&lt;uri&gt;</code>（なくても可）で、colorは、<code>&lt;color&gt;</code>か<code>&lt;color&gt;/&lt;color&gt;</code>の形で記述できる…みたいな感じ。</p>
+<h3 id="Component-Values-and-White-Space"><a href="#Component-Values-and-White-Space" class="headerlink" title="Component Values and White Space"></a>Component Values and White Space</h3><blockquote>
+<p>Component values are specified in terms of tokens, as described in Appendix G.2. As the grammar allows spaces between tokens in the components of the expr production, spaces may appear between tokens in property values.</p>
+</blockquote>
+<p>値はtokenの記法で記述される。詳細は<a href="https://www.w3.org/TR/CSS22/grammar.html#scanner" target="_blank" rel="noopener">Appendix G.2 Lexical scanner</a>に書かれている。<a href="https://www.w3.org/TR/CSS22/grammar.html#grammar" target="_blank" rel="noopener">grammer</a>では、<strong>expr</strong> productionの構成において、トークンの間にスペースが許されているので、設定値のトークンの間にスペースが含まれるかもしれない。</p>
+<p>ここでのproductionの意味は、<a href="https://www.w3.org/TR/CSS22/grammar.html#grammar" target="_blank" rel="noopener">grammer</a>に書かれている用語のことで、<code>expr</code>は<code>term [ operator? term ]*</code>の意味になる。<code>term</code>は<code>[ NUMBER S* | PERCENTAGE S* | LENGTH S* | EMS S* | EXS S* | ANGLE S* | TIME S* | FREQ S* ] | STRING S* | IDENT S* | URI S* | hexcolor | function</code>であり、<code>operator</code>は<code>&#39;/&#39; S* | &#39;,&#39; S*</code>となっている。<code>S</code>は<code>[ \t\r\n\f]+</code>だから、つまり、その、termとtermの間にスペースが入ってても問題ないということかなと思う。tokenとtermの違いが気になるが、、tokenはtokenizerで分割された要素のことだと思うので、ここでのtokenはtermの意味だと解釈してる。</p>
+<blockquote>
+<p>Note: In many cases, spaces will in fact be required between tokens in order to distinguish them from each other. For example, the value ‘1em2em’ would be parsed as a single DIMEN token with the number ‘1’ and the identifier ‘em2em’, which is an invalid unit. In this case, a space would be required before the ‘2’ to get this parsed as the two lengths ‘1em’ and ‘2em’.</p>
+</blockquote>
+<p>実際のところ、多くのケースでスペースはトークンを分解するために必須となる。たとえば<code>1em2em</code>は、数値<code>1</code>の<code>DIMEN</code>tokenと、invalid unitな<code>em2em</code>というidentifierとしてパースされる。このケースでは<code>2</code>の前にスペースが必須になる。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
