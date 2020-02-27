@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-24T21:48:59.177Z</updated>
+  <updated>2020-02-27T09:15:54.993Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Value Definition Syntax on CSS Value and Units Module</title>
+    <link href="https://memolog.org/2020/value-definition-syntax-on-css-value-and-units-module.html"/>
+    <id>https://memolog.org/2020/value-definition-syntax-on-css-value-and-units-module.html</id>
+    <published>2020-02-27T09:10:13.000Z</published>
+    <updated>2020-02-27T09:15:54.993Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/css-property-conventions.html&quot;&gt;CSS property conventions&lt;/a&gt;から引き続き。&lt;a href=&quot;https://www.w3.org/TR/css-values-3/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSS Value and Units Module&lt;/a&gt;がvalueについての定義を、拡張または置き換えるものとして用意されているので、CSS2との差分を確認する。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSS property conventions</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;構造化データ（structured data）の部分をmicrodataからJSON-LDに置き換えてみた。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Create a new icon</title>
-    <link href="https://memolog.org/2018/create-a-new-icon.html"/>
-    <id>https://memolog.org/2018/create-a-new-icon.html</id>
-    <published>2018-08-11T22:28:32.000Z</published>
-    <updated>2019-01-04T02:09:12.875Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;アイコンをsvgで作り直してページの一番上につけた。
     
     </summary>
     

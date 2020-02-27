@@ -130,6 +130,27 @@ a:visited {
   color:#444;
 }
 
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
 .content code[class*="language-"] {
   color: #444;
 }
@@ -347,61 +368,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2009/04/feedburner.html"
+          "url": "https://memolog.org/2009/04/post_185.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2009/04/windows_vista_ie_7watir.html"
+          "url": "https://memolog.org/2009/04/feedburner.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2009/04/post_184.html"
+          "url": "https://memolog.org/2009/04/windows_vista_ie_7watir.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2009/04/shinjuku-gyoen-1.html"
+          "url": "https://memolog.org/2009/04/post_184.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2009/04/shinagawa-aqualium.html"
+          "url": "https://memolog.org/2009/04/shinjuku-gyoen-1.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2009/04/sacasiso.html"
+          "url": "https://memolog.org/2009/04/shinagawa-aqualium.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2009/03/flickr_thickbox.html"
+          "url": "https://memolog.org/2009/04/sacasiso.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2009/03/thickbox.html"
+          "url": "https://memolog.org/2009/03/flickr_thickbox.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2009/03/flickr_to_html.html"
+          "url": "https://memolog.org/2009/03/thickbox.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2009/01/post_180.html"
+          "url": "https://memolog.org/2009/03/flickr_to_html.html"
         }
         
       ]
@@ -421,6 +442,29 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-04-26T06:40:56.000Z"><span class="calendar-icon">📅</span><span>2009年4月26日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/04/post_185.html">リンクの色の方が優先される理由</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>entry-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/post.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>記事のタイトル<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- more --></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">a </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">h3<span class="token class">.entry-header</span> </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>まあそういうものなのだと、普段はたいして気にとめていなかったのですが、あらためて説明しようとすると、これがよく分からない。単純に詳細度で考えたら、h3.entry-headerの方が強いのにどうしてだろう。ということで、<a href="http://www.amazon.co.jp/gp/product/487311232X?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=487311232X" target="_blank" rel="noopener">CSS完全ガイド</a>を購入して、きちんと読んでみました（3章まで）。p71〜p74あたりにそのあたりのことが説明されていた。</p>
+<p>要するに、祖先から継承した指定の詳細度は「なし」という扱いになるため、aタグに指定した内容の方が詳細度が高く、より強く作用するということなのだ。うーん、調べてみてみると、そんなに難しい話じゃない。継承した指定の詳細度がもともとと同じ詳細度を持っていたら、たとえば body#foo というような指定があったら、いろんな子孫に不要に作用してしまう。うまくできている。</p>
+<p>ふむ。つまり。この件について、CSSを生業としていないような人に質問されたら、「より内側にあるタグに指定したCSSの方が、外側のタグに指定したものより有効に作用します」と伝えても特に問題はなさそうだ。</p>
+</div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -539,20 +583,7 @@ a:visited {
           
         </article>
       
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2009-01-02T18:45:53.000Z"><span class="calendar-icon">📅</span><span>2009年1月3日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2009/01/post_180.html">今年の抱負（とデザイン変更）</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>ブログの見た目を少し変えてみたのです。シンプルに。jqueryを試してみたのだが、TypePad Connectで利用しているYUIと相性がよろしくないよう。回避方法が皆目見当がつかなかったので、TypePad Connect はとりあえずクローズした。とりあえず。暇なときにちょこちょこ変えていこうと思う。</p></div>
-            <div><a href="/2009/01/post_180.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-      <footer><a class="extend prev" rel="prev" href="/page/21/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/23/">Next</a></footer>
+      <footer><a class="extend prev" rel="prev" href="/page/21/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/23/">Next</a></footer>
     </main>
     <footer class="profile">
   <div class="profile-inner">

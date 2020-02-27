@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1582580939177';
+const CACHE_MAIN = 'main1582794954993';
 const precacheList = [
   
   '/',
+  '/2020/value-definition-syntax-on-css-value-and-units-module.html',
   '/2020/css-property-conventions.html',
   '/2020/display-property-definition-in-css2.html',
   '/2020/inner-and-outer-display-type.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/convert-video-files-with-ffmpegjs-worker.html',
   '/2020/n2-sort-algorithms-again.html',
   '/2020/convert-screen-capture-with-ffmpeg.html',
-  '/2020/top-level-await-will-be-soon.html',
+  '/assets/images/debby-hudson-LQHW1hEO3RA-unsplash/debby-hudson-LQHW1hEO3RA-unsplash.svg',
   '/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.svg',
   '/assets/images/frankie-cordoba-YDBEIv9KcwE-unsplash/frankie-cordoba-YDBEIv9KcwE-unsplash.svg',
   '/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/greg-rakozy-0LU4vO5iFpM-unsplash/greg-rakozy-0LU4vO5iFpM-unsplash.svg',
   '/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.svg',
   '/assets/images/jakob-owens-CiUR8zISX60-unsplash/jakob-owens-CiUR8zISX60-unsplash.svg',
-  '/assets/images/kai-pilger-1k3vsv7iIIc-unsplash/kai-pilger-1k3vsv7iIIc-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',
