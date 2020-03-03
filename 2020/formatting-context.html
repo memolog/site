@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>HTML LINTから学んだHTMLとアクセシビリティ | メモログ</title>
+  <title>Formatting Context | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -358,34 +358,39 @@ a:visited {
   }
   </script>
 
-  <meta name="description" content="CSSとHTMLを変更したついでに、WEB Developer（FireFoxの拡張機能）のToolsからHTML LINTを実行してみました。結果はみごとにマイナス点。減点の嵐。なかなか手厳しいです。">
-<meta name="keywords" content="accessibility,html">
+  <meta name="description" content="Inner and outer display typesにて、inner display type はformatting contextについて定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML LINTから学んだHTMLとアクセシビリティ">
-<meta property="og:url" content="https://memolog.org/2006/11/html_linthtml.html">
+<meta property="og:title" content="Formatting Context">
+<meta property="og:url" content="https://memolog.org/2020/formatting-context.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="CSSとHTMLを変更したついでに、WEB Developer（FireFoxの拡張機能）のToolsからHTML LINTを実行してみました。結果はみごとにマイナス点。減点の嵐。なかなか手厳しいです。">
+<meta property="og:description" content="Inner and outer display typesにて、inner display type はformatting contextについて定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2019-01-04T02:09:12.836Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML LINTから学んだHTMLとアクセシビリティ">
-<meta name="twitter:description" content="CSSとHTMLを変更したついでに、WEB Developer（FireFoxの拡張機能）のToolsからHTML LINTを実行してみました。結果はみごとにマイナス点。減点の嵐。なかなか手厳しいです。">
+<meta property="og:image" content="https://memolog.org/assets/images/cameron-venti-QUt6Ww8OQx0-unsplash/cameron-venti-QUt6Ww8OQx0-unsplash.jpg">
+<meta property="og:updated_time" content="2020-03-03T23:39:14.051Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Formatting Context">
+<meta name="twitter:description" content="Inner and outer display typesにて、inner display type はformatting contextについて定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/cameron-venti-QUt6Ww8OQx0-unsplash/cameron-venti-QUt6Ww8OQx0-unsplash.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https://twitter.com/memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2006/11/html_linthtml.html">
+  <link rel="canonical" href="https://memolog.org/2020/formatting-context.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2006/11/html_linthtml.html"
+        "@id": "https://memolog.org/2020/formatting-context.html"
       },
-      "headline": "HTML LINTから学んだHTMLとアクセシビリティ",
+      "headline": "Formatting Context",
       
-      "datePublished": "Tue Nov 28 2006 11:37:23 GMT+0900",
-      "dateModified": "Fri Jan 04 2019 11:09:12 GMT+0900",
+        "image": [
+          "https://memolog.org/assets/images/cameron-venti-QUt6Ww8OQx0-unsplash/cameron-venti-QUt6Ww8OQx0-unsplash.jpg"
+        ],
+      
+      "datePublished": "Fri Feb 28 2020 17:12:58 GMT+0900",
+      "dateModified": "Wed Mar 04 2020 08:39:14 GMT+0900",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -398,7 +403,7 @@ a:visited {
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "CSSとHTMLを変更したついでに、WEB Developer（FireFoxの拡張機能）のToolsからHTML LINTを実行してみました。結果はみごとにマイナス点。減点の嵐。なかなか手厳しいです。"
+      "description": "Inner and outer display typesにて、inner display type はformatting contextについて定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。"
     }
   </script>
 </head>
@@ -418,21 +423,43 @@ a:visited {
       <article>
         <header class="header">
           <div>
-            <time datetime="2006-11-28T02:37:23.000Z">
-              <span class="calendar-icon">📅</span><span>2006年11月28日</span>
+            <time datetime="2020-02-28T08:12:58.000Z">
+              <span class="calendar-icon">📅</span><span>2020年2月28日</span>
             </time>
           </div>
-          <h2 class="header__title"><span>HTML LINTから学んだHTMLとアクセシビリティ</span></h2>
+          <h2 class="header__title"><span>Formatting Context</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4MDY4MmMiIC8+PC9zdmc+" data-src="/assets/images/cameron-venti-QUt6Ww8OQx0-unsplash/cameron-venti-QUt6Ww8OQx0-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@cmventi20?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Cameron Venti</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
           
         </header>
-        <div id="article-content" class="content "><p>CSSとHTMLを変更したついでに、WEB Developer（FireFoxの拡張機能）のToolsからHTML LINTを実行してみました。結果はみごとにマイナス点。減点の嵐。なかなか手厳しいです。</p>
-<a id="more"></a>
-<p>多くの減点箇所のうち、次の3点が今回の注目点でした。</p>
-<h4 id="cssやjavascriptに関するmetaタグがない"><a href="#cssやjavascriptに関するmetaタグがない" class="headerlink" title="cssやjavascriptに関するmetaタグがない"></a><a href="http://openlab.ring.gr.jp/k16/htmllint/explain.html#content-xxxx-type" target="_blank" rel="noopener">cssやjavascriptに関するmetaタグがない</a></h4><p>HTML内でcssやjavascriptを利用している場合は、metaにcontent-typeを追加しないといけないというのは、初めて知りました。もともとそうでしたっけ？</p>
-<h4 id="pタグの中にul、ol、blockquoteが入っている"><a href="#pタグの中にul、ol、blockquoteが入っている" class="headerlink" title="pタグの中にul、ol、blockquoteが入っている"></a><a href="http://openlab.ring.gr.jp/k16/htmllint/explain.html#excluded-element" target="_blank" rel="noopener">pタグの中にul、ol、blockquoteが入っている</a></h4><p>段落や引用文の構造的な大小関係は言われてみると納得。段落とリストの関係は、要素として並列の関係にあると言われると確かにそのような気もしますが、段落の中にリストがあっても良いような気もしないでもないです。</p>
-<h4 id="同じ文字列に異なるリンクが貼られている"><a href="#同じ文字列に異なるリンクが貼られている" class="headerlink" title="同じ文字列に異なるリンクが貼られている"></a><a href="http://openlab.ring.gr.jp/k16/htmllint/explain.html#same-link-text" target="_blank" rel="noopener">同じ文字列に異なるリンクが貼られている</a></h4><p>HTML LINTでは<a href="http://www.w3.org/TR/WCAG10-TECHS/#links" target="_blank" rel="noopener">アクセス指針技術文書</a>に基づいたチェックもしてくれます。便利ですね。たとえば「permalink」など同じ文字列に異なるリンクが貼られているのは、アクセシビリティの観点からはNGなのだそうです。対応策としてTitle属性に注釈を加えるというガイドラインがあったので、Title属性にエントリーのタイトル（MTEntryTitle）を加えました。</p>
+        <div id="article-content" class="content "><p><a href="https://memolog.org/2020/inner-and-outer-display-type.html">Inner and outer display types</a>にて、inner display type は<strong>formatting context</strong>について定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。<a id="more"></a></p>
+<p>先にまとめ。</p>
+<ul>
+<li>boxは画面上に要素（または擬似要素）を表現するもの。</li>
+<li>formatting contextはboxをどう配置するかを決定づける。fomatting contextのタイプによってどう配置するかは変わってくる。</li>
+<li>boxは包含（親）ブロックのformatting contextに入るか、floatみたいに独自のformatting contextを作る場合もある。</li>
+<li>inner display typeで配下のboxをどのように配置するか（formatting context）を決定する。inner display typeには、flow、flow-root、table、flex、grid、rubyみたいな値がある。</li>
+</ul>
 <hr>
-<p>そんなこんなで修正に修正を重ね、とりあえずメインページだけはHTML LINTで100点となるようにがんばりました。おめでとう。ぱちぱちぱち。個別アーカイブはFORM関連の構造がNGで50点くらいにしかまだ至りませんが、それはまたそのうち。</p>
+<p><a href="https://www.w3.org/TR/css-display-3/#formatting-context" target="_blank" rel="noopener">Formatting Context</a>について、以下に適当な訳と一緒に記載する。適当な訳で抜け落ちたり間違っているかもしれないけど、後でどう読んだかを思い出すために残しておく。</p>
+<blockquote>
+<p>A formatting context is the environment into which a set of related boxes are laid out. Different formatting contexts lay out their boxes according to different rules. For example, a <a href="https://www.w3.org/TR/css-flexbox-1/#flex-formatting-context" target="_blank" rel="noopener">flex formatting context</a> lays out boxes according to the flex layout rules [CSS3-FLEXBOX], whereas a <a href="https://www.w3.org/TR/css-display-3/#block-formatting-context" target="_blank" rel="noopener">block formatting context</a> lays out boxes according to the block-and-inline layout rules [CSS2]. Additionally, some types of formatting contexts interleave and co-exist: for example, an <a href="https://www.w3.org/TR/css-display-3/#inline-formatting-context" target="_blank" rel="noopener">inline formatting context</a> exists within and interacts with the block formatting context of the element that establishes it, and a <a href="https://drafts.csswg.org/css-ruby-1/#ruby-container" target="_blank" rel="noopener">ruby container</a> overlays a <a href="https://drafts.csswg.org/css-ruby-1/#ruby-formatting-context" target="_blank" rel="noopener">ruby formatting context</a> over the inline formatting context in which its <a href="https://drafts.csswg.org/css-ruby-1/#ruby-base-container-box" target="_blank" rel="noopener">ruby base container</a> participates.</p>
+<p>A box either establishes a new <a href="https://www.w3.org/TR/css-display-3/#independent-formatting-context" target="_blank" rel="noopener">independent formatting context</a> or continues the formatting context of its containing block. In some cases, it might additionally establish a new (non-independent) co-existing formatting context. Unless otherwise specified, however, establishing a new formatting context creates an independent formatting context. The type of formatting context established by the box is determined by its inner display type. E.g. a grid container establishes a new grid formatting context, a ruby container establishes a new ruby formatting context, and a block container can establish a new block formatting context and/or a new inline formatting context. See the display property.</p>
+</blockquote>
+<p>formatting contextは関連するboxを配置するための環境である。異なるformatting contextでは異なるルールでboxを配置する。たとえば <a href="https://www.w3.org/TR/css-flexbox-1/#flex-formatting-context" target="_blank" rel="noopener">flex formatting context</a>はflexレイアウトのルールにしたがってboxを配置するし、<a href="https://www.w3.org/TR/css-display-3/#block-formatting-context" target="_blank" rel="noopener">block formatting context</a>はblock-and-inlineレイアウトのルールにしたがってboxを配置する。さらに、いくつかのformatting contextでは、不連続な形で配置（interleave）したり、同じ場所に同時に存在させたり（co-exist）する。たとえば、<a href="https://www.w3.org/TR/css-display-3/#inline-formatting-context" target="_blank" rel="noopener">inline formatting context</a>は、その要素のblock formatting contextの内部に存在し、かつblock formatting textと相互に作用する。また、<a href="https://drafts.csswg.org/css-ruby-1/#ruby-container" target="_blank" rel="noopener">ruby container</a>は、<a href="https://drafts.csswg.org/css-ruby-1/#ruby-base-container-box" target="_blank" rel="noopener">ruby base container</a>の中にあるinline formatting contextの上の<a href="https://drafts.csswg.org/css-ruby-1/#ruby-formatting-context" target="_blank" rel="noopener">ruby formatting context</a>の上に置かれる。</p>
+<p>boxは新しい<a href="https://www.w3.org/TR/css-display-3/#independent-formatting-context" target="_blank" rel="noopener">independent formatting context</a>を生成するか、boxが含まれるブロックのformatting contextを継続する。ケースによってはさらに新しい（独立していない）co-existing formatting context を生成するかもしれないが、そうした特定のケースを除いては新しいformatting contextはindependent formatting contextを生成する。boxによって生成されたformatting contextのタイプはinner displayのタイプによって決定される。たとえばgrid containerは新しいgrid formatting contextを生成する。ruby containerは新しいruby formatting contextを生成する。block containerは新しいblock formatting contextや新しいinline formatting contextを生成する。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-02-27T09:15:54.993Z</updated>
+  <updated>2020-03-03T23:39:14.051Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Formatting Context</title>
+    <link href="https://memolog.org/2020/formatting-context.html"/>
+    <id>https://memolog.org/2020/formatting-context.html</id>
+    <published>2020-02-28T08:12:58.000Z</published>
+    <updated>2020-03-03T23:39:14.051Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/inner-and-outer-display-type.html&quot;&gt;Inner and outer display types&lt;/a&gt;にて、inner display type は&lt;strong&gt;formatting context&lt;/strong&gt;について定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Value Definition Syntax on CSS Value and Units Module</title>
@@ -37,7 +53,7 @@
     <link href="https://memolog.org/2020/css-property-conventions.html"/>
     <id>https://memolog.org/2020/css-property-conventions.html</id>
     <published>2020-02-24T21:48:00.000Z</published>
-    <updated>2020-02-24T21:48:59.177Z</updated>
+    <updated>2020-02-27T09:16:39.222Z</updated>
     
     <summary type="html">
     
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lighthouse&lt;/a&gt; reported &lt;a href=&quot;https://paulirish.github.io/lighthouse/docs/api/lighthouse/2.5.1/lighthouse-core_audits_accessibility_color-contrast.js.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;color contrast issues&lt;/a&gt; in the code block colored by &lt;a href=&quot;https://prismjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;prism.js&lt;/a&gt;. Actually I don’t care about these issues because people doesn’t read code blocks carefully. However, I just did the quick fixes for them by changing the color to see the contrast ratio in Chrome developer console.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Add JSON-LD structured data</title>
-    <link href="https://memolog.org/2018/add-json-ld-structured-data.html"/>
-    <id>https://memolog.org/2018/add-json-ld-structured-data.html</id>
-    <published>2018-08-14T09:04:54.000Z</published>
-    <updated>2019-01-04T02:09:12.874Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;構造化データ（structured data）の部分をmicrodataからJSON-LDに置き換えてみた。
     
     </summary>
     
