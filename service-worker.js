@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1583278754051';
+const CACHE_MAIN = 'main1583504068831';
 const precacheList = [
   
   '/',
+  '/2020/css-flow-layout.html',
   '/2020/formatting-context.html',
   '/2020/css-property-conventions.html',
   '/2020/value-definition-syntax-on-css-value-and-units-module.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/about-position-sticky.html',
   '/2020/web-workers-lifetime.html',
   '/2020/convert-video-files-with-ffmpegjs-worker.html',
-  '/2020/n2-sort-algorithms-again.html',
+  '/assets/images/boris-smokrovic-HWwF4OnXAdM-unsplash/boris-smokrovic-HWwF4OnXAdM-unsplash.svg',
   '/assets/images/cameron-venti-QUt6Ww8OQx0-unsplash/cameron-venti-QUt6Ww8OQx0-unsplash.svg',
   '/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.svg',
   '/assets/images/debby-hudson-LQHW1hEO3RA-unsplash/debby-hudson-LQHW1hEO3RA-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/david-travis-WC6MJ0kRzGw-unsplash/david-travis-WC6MJ0kRzGw-unsplash.svg',
   '/assets/images/harley-davidson-4ixHdlcROPI-unsplash/harley-davidson-4ixHdlcROPI-unsplash.svg',
   '/assets/images/greg-rakozy-0LU4vO5iFpM-unsplash/greg-rakozy-0LU4vO5iFpM-unsplash.svg',
-  '/assets/images/neringa-sidlauskaite-YGWODwrWi4k-unsplash/neringa-sidlauskaite-YGWODwrWi4k-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',

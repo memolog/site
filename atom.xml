@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-03T23:39:14.051Z</updated>
+  <updated>2020-03-06T14:14:28.831Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS Flow Layout</title>
+    <link href="https://memolog.org/2020/css-flow-layout.html"/>
+    <id>https://memolog.org/2020/css-flow-layout.html</id>
+    <published>2020-03-06T14:11:00.000Z</published>
+    <updated>2020-03-06T14:14:28.831Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今回は&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#flow-layout&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;flow layout&lt;/a&gt;について確認しようと思う。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Formatting Context</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/insertion-sort-in-javascript.html&quot;&gt;Insertion Sort in JavaScript&lt;/a&gt;からの引き続き。内容は&lt;a href=&quot;https://en.wikipedia.org/wiki/Merge_sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Merge sort&lt;/a&gt;からの抜粋なので、詳細はそちらを参照。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>A11y fixes for prism default theme</title>
-    <link href="https://memolog.org/2018/a11y-fixes-for-prism-default-theme.html"/>
-    <id>https://memolog.org/2018/a11y-fixes-for-prism-default-theme.html</id>
-    <published>2018-08-17T15:18:27.000Z</published>
-    <updated>2019-01-04T02:09:12.873Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/tools/lighthouse&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lighthouse&lt;/a&gt; reported &lt;a href=&quot;https://paulirish.github.io/lighthouse/docs/api/lighthouse/2.5.1/lighthouse-core_audits_accessibility_color-contrast.js.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;color contrast issues&lt;/a&gt; in the code block colored by &lt;a href=&quot;https://prismjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;prism.js&lt;/a&gt;. Actually I don’t care about these issues because people doesn’t read code blocks carefully. However, I just did the quick fixes for them by changing the color to see the contrast ratio in Chrome developer console.
     
     </summary>
     
