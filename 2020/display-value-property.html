@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>The display value property (outside / inside) | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="Inner and outer display typesの続き。displayプロパティのvalueについて確認していく。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The display value property (outside &#x2F; inside)">
+<meta property="og:url" content="https://memolog.org/2020/display-value-property.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="Inner and outer display typesの続き。displayプロパティのvalueについて確認していく。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/pawel-czerwinski-31xVIgIXbws-unsplash/pawel-czerwinski-31xVIgIXbws-unsplash.jpg">
+<meta property="og:updated_time" content="2020-03-07T08:25:20.045Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The display value property (outside &#x2F; inside)">
+<meta name="twitter:description" content="Inner and outer display typesの続き。displayプロパティのvalueについて確認していく。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/pawel-czerwinski-31xVIgIXbws-unsplash/pawel-czerwinski-31xVIgIXbws-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/display-value-property.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/display-value-property.html"
+      },
+      "headline": "The display value property (outside / inside)",
+      
+        "image": [
+          "https://memolog.org/assets/images/pawel-czerwinski-31xVIgIXbws-unsplash/pawel-czerwinski-31xVIgIXbws-unsplash.jpg"
+        ],
+      
+      "datePublished": "Sat Mar 07 2020 17:25:00 GMT+0900",
+      "dateModified": "Sat Mar 07 2020 17:25:20 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "Inner and outer display typesの続き。displayプロパティのvalueについて確認していく。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-03-07T08:25:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年3月7日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>The display value property (outside / inside)</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiNlYWI4ZDYiIC8+PC9zdmc+" data-src="/assets/images/pawel-czerwinski-31xVIgIXbws-unsplash/pawel-czerwinski-31xVIgIXbws-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Paweł Czerwiński</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="https://memolog.org/2020/inner-and-outer-display-type.html">Inner and outer display types</a>の続き。displayプロパティのvalueについて確認していく。<a id="more"></a></p>
+<p>displayプロパティのvalueは以下のように定義されている。</p>
+<pre><code>[ &lt;display-outside&gt; || &lt;display-inside&gt; ] | &lt;display-listitem&gt; | &lt;display-internal&gt; | &lt;display-box&gt; | &lt;display-legacy&gt;
+</code></pre><p>つまり、上記のキーワードのどれか一つを値として使う。もしくは<code>&lt;display-outside&gt;</code>と<code>&lt;display-inside&gt;</code>を組み合わせて指定する。仕様では各キーワードを章立てて説明されているので、それに沿って確認する。</p>
+<h3 id="display-outside"><a href="#display-outside" class="headerlink" title="display-outside"></a>display-outside</h3><pre><code>&lt;display-outside&gt;  = block | inline | run-in
+</code></pre><p>なので、display-outsideには、blockかinline, run-inのキーワードが入る。</p>
+<blockquote>
+<p>The <display-outside> keywords specify the element’s outer display type, which is essentially its principal box’s role in flow layout. They are defined as follows:</display-outside></p>
+<ul>
+<li><strong><em>block</em></strong><br>The element generates a box that is block-level when placed in flow layout. [CSS2]</li>
+<li><strong><em>inline</em></strong><br>The element generates a box that is inline-level when placed in flow layout. [CSS2]</li>
+<li><strong><em>run-in</em></strong><br>The element generates an run-in box, which is a type of inline-level box with special behavior that attempts to merge it into a subsequent block container. See § 3 Run-In Layout for details.</li>
+</ul>
+</blockquote>
+<p><code>&lt;display-outsite&gt;</code>は<strong>outer display type</strong>を設定するためのキーワード。outer display typeは、principal box（要素ごとに生成されるbox）が<strong>flow layout</strong>上でどのように振舞うかを決める。flow layoutは左から右（書き文字によって方向は異なる）、上から下というコンテンツの流れに沿って配置すること。そのレイアウト。値は<code>block</code>、<code>inline</code>、<code>run-in</code>の3つ。<code>block</code>ならブロック要素のように配置され、<code>inline</code>ならインライン要素のように配置される。</p>
+<p><code>run-in</code>（追い込み）は後続のblock containerにインラインboxとして挿入されるという特殊な振る舞いをするらしいが、最新のブラウザではサポートしなくなっているので（<a href="https://caniuse.com/#feat=run-in" target="_blank" rel="noopener">Can I use display:run-in</a>）、とりたてて扱わない。</p>
+<blockquote>
+<p>If a <display-outside> value is specified but <display-inside> is omitted, the element’s inner display type defaults to flow.</display-inside></display-outside></p>
+</blockquote>
+<p><code>&lt;display-outside&gt;</code>は指定されているが、<code>&lt;display-inside&gt;</code>は省略されている場合、その要素のinner display typeは<code>flow</code>として扱われる。</p>
+<h3 id="display-inside"><a href="#display-inside" class="headerlink" title="display-inside"></a>display-inside</h3><pre><code>&lt;display-inside&gt;   = flow | flow-root | table | flex | grid | ruby
+</code></pre><blockquote>
+<p>The <display-inside> keywords specify the element’s inner display type, which defines the type of formatting context that lays out its contents (assuming it is a non-replaced element). They are defined as follows:</display-inside></p>
+</blockquote>
+<p><code>&lt;display-inside&gt;</code>は<strong>inner display type</strong>を設定するためのキーワード。inner display typeは、formatting contextを定義し、子孫boxがどのように配置されるかを決める。</p>
+<blockquote>
+<p><strong>flow</strong><br>The element lays out its contents using flow layout (block-and-inline layout).<br>If its outer display type is inline or run-in, and it is participating in a block or inline formatting context, then it generates an inline box.</p>
+<p>Otherwise it generates a block container box.</p>
+<p>Depending on the value of other properties (such as position, float, or overflow) and whether it is itself participating in a block or inline formatting context, it either establishes a new block formatting context for its contents or integrates its contents into its parent formatting context. See CSS2.1 Chapter 9. [CSS2] A block container that establishes a new block formatting context is considered to have a used inner display type of flow-root.</p>
+</blockquote>
+<p><code>flow</code>では、flow layoutにしたがってコンテンツを配置する。もしouter display typeが<code>inline</code>か<code>run-in</code>で、blockかinline formatting contextに含まれているなら、inline boxを生成する。</p>
+<p>それ以外では、block container box を生成する。</p>
+<p>他のプロパティ（position, float, overflowなど）の値や所属しているblock or inline formatting contextによって、新しいblock formatting contextを生成したり、親のformatting contextに加わったりする。新しいblock formatting contextを生成するblock containerは、inner display typeに<code>flow-root</code>を使用しているとみなされる。</p>
+<p>つまり、文脈に応じて適切なformatting contextに参加するみたいな感じ。</p>
+<blockquote>
+<p><strong>flow-root</strong><br>The element generates a block container box, and lays out its contents using flow layout. It always establishes a new block formatting context for its contents. [CSS2]</p>
+</blockquote>
+<p><code>flow-root</code>はblock container boxを生成して、flow layoutに沿ってコンテンツを配置する。常に新しいblock formatting contextを生成する。</p>
+<p>flow-rootは最新のブラウザではサポートされている（<a href="https://caniuse.com/#feat=flow-root" target="_blank" rel="noopener">Can I use display:flow-root</a>）。Can I useには以下のように書かれており、</p>
+<blockquote>
+<p>It provides a better solution to the most use cases of the “clearfix” hack.</p>
+</blockquote>
+<p>（明示的に新しいblock formatting contextを生成するので）、いわゆる<code>clearfix hack</code>（floatなどの回り込みを止めるためのハック）のより良い解決策を提供すると書かれてある。</p>
+<blockquote>
+<p><strong>table</strong><br>The element generates a principal table wrapper box that establishes a block formatting context, and which contains an additionally-generated table grid box that establishes a table formatting context. [CSS2]<br><strong>flex</strong><br>The element generates a principal flex container box and establishes a flex formatting context. [CSS3-FLEXBOX]<br><strong>grid</strong><br>The element generates a principal grid container box, and establishes a grid formatting context. [CSS3-GRID-LAYOUT]<br><strong>ruby</strong><br>The element generates a ruby container box and establishes a ruby formatting context in addition to integrating its base-level contents into its parent formatting context (if it is inline) or generating a wrapper box of the appropriate outer display type (if it is not). [CSS3RUBY]</p>
+</blockquote>
+<p><code>table</code>、<code>flex</code>、<code>grid</code>、<code>ruby</code>は、それぞれそれ用のformatting contextを生成する。詳細には今回は触れない。</p>
+<blockquote>
+<p>If a <display-inside> value is specified but <display-outside> is omitted, the element’s outer display type defaults to block—except for ruby, which defaults to inline.</display-outside></display-inside></p>
+</blockquote>
+<p><code>&lt;display-inside&gt;</code>が指定されていて、<code>&lt;display-outside&gt;</code>が省略されている場合、outer display typeは<code>block</code>になる。<code>ruby</code>の場合だけ<code>inline</code>となる。</p>
+<hr>
+<p>と、ここまで書いて力尽きてきたので、今日はここまで。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

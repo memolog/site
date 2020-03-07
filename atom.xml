@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-06T14:14:28.831Z</updated>
+  <updated>2020-03-07T08:25:20.045Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The display value property (outside / inside)</title>
+    <link href="https://memolog.org/2020/display-value-property.html"/>
+    <id>https://memolog.org/2020/display-value-property.html</id>
+    <published>2020-03-07T08:25:00.000Z</published>
+    <updated>2020-03-07T08:25:20.045Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/inner-and-outer-display-type.html&quot;&gt;Inner and outer display types&lt;/a&gt;の続き。displayプロパティのvalueについて確認していく。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSS Flow Layout</title>
@@ -319,22 +335,6 @@
     <summary type="html">
     
       &lt;p&gt;最近&lt;a href=&quot;https://apps.ankiweb.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Anki&lt;/a&gt;を使って単語の記憶をしようという試みをしている。もともとは&lt;a href=&quot;https://fluent-forever.com/book/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fluent Forever&lt;/a&gt;という本に載っていたところからこのアプリを知った（最近になって邦訳「&lt;a href=&quot;https://amzn.to/2F35KpT&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;脳が認める外国語勉強法&lt;/a&gt;」があると知った）。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Merge Sort in JavaScript</title>
-    <link href="https://memolog.org/2018/merge-sort-in-javascript.html"/>
-    <id>https://memolog.org/2018/merge-sort-in-javascript.html</id>
-    <published>2018-08-19T08:43:28.000Z</published>
-    <updated>2019-01-04T02:09:12.877Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2018/insertion-sort-in-javascript.html&quot;&gt;Insertion Sort in JavaScript&lt;/a&gt;からの引き続き。内容は&lt;a href=&quot;https://en.wikipedia.org/wiki/Merge_sort&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Merge sort&lt;/a&gt;からの抜粋なので、詳細はそちらを参照。
     
     </summary>
     
