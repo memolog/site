@@ -368,61 +368,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2010/12/watir-webdriver_with_firemobilesimulator.html"
+          "url": "https://memolog.org/2010/12/redesign_2011.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2010/12/watir-webdriver_with_firebug.html"
+          "url": "https://memolog.org/2010/12/watir-webdriver_with_firemobilesimulator.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2010/12/watir-webdriver_handling_javascript.html"
+          "url": "https://memolog.org/2010/12/watir-webdriver_with_firebug.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2010/12/watir-webdriver_drag-and-drop.html"
+          "url": "https://memolog.org/2010/12/watir-webdriver_handling_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2010/12/watir-webdriver-alternative-attach-method.html"
+          "url": "https://memolog.org/2010/12/watir-webdriver_drag-and-drop.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2010/11/page_objects.html"
+          "url": "https://memolog.org/2010/12/watir-webdriver-alternative-attach-method.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2010/11/watir_click_no_wait_2.html"
+          "url": "https://memolog.org/2010/11/page_objects.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2010/11/watir_167.html"
+          "url": "https://memolog.org/2010/11/watir_click_no_wait_2.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2010/10/double_byte_char_garbled_on_watir_165_higher.html"
+          "url": "https://memolog.org/2010/11/watir_167.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2010/10/watir_166.html"
+          "url": "https://memolog.org/2010/10/double_byte_char_garbled_on_watir_165_higher.html"
         }
         
       ]
@@ -442,6 +442,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2010-12-24T11:00:00.000Z"><span class="calendar-icon">📅</span><span>2010年12月24日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2010/12/redesign_2011.html">デザイン変更</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>ひさしぶりにブログのデザインを変更してみました。今回はHTML5をベースに。IE8以下だとHTML5の新しい要素を認識しないとかいう話なので、<a href="http://code.google.com/p/html5shiv/" target="_blank" rel="noopener">html5shiv</a>というのを追加しています（Windowsが手元にないので実際の表示は確認していませんが）。HTML5の作成には「<a href="http://www.amazon.co.jp/gp/product/4822284220?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=7399&amp;creativeASIN=4822284220" target="_blank" rel="noopener">HTML5&amp;API入門</a>」を参考にしました。しかし、これで正しいのかいまいち自信なし。h1とか、こんなに入れていいんですかねえ（<a href="http://validator.w3.org/check?uri=http&#x25;3A&#x25;2F&#x25;2Fmemolog.org" target="_blank" rel="noopener">validator</a>では大丈夫そうですけど）。</p></div>
+            <div><a href="/2010/12/redesign_2011.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -558,19 +571,6 @@ a:visited {
           
             <div class="content"><p>watirを1.6.5にアップデートしたあたりからwatirで日本語を入力しようとすると文字が化ける。困って調べみたら、どうやらUTF-8で文字を送る必要があることがわかり（スクリプトの文字コードはSJIS）、text_fieldなどで入力する文字列をrequire “kconv”しつつ.to_utf8すると問題を回避してました。</p></div>
             <div><a href="/2010/10/double_byte_char_garbled_on_watir_165_higher.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2010-10-15T06:45:00.000Z"><span class="calendar-icon">📅</span><span>2010年10月15日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2010/10/watir_166.html">watir 1.6.6 リリース</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>2週間近く前ですが、watirの1.6.6がリリースされましたね。変更点は<a href="http://watir.com/2010/10/04/watir-1-6-6-final-released/" target="_blank" rel="noopener">Watir 1.6.6 final released</a>に書かれている通りで、個人的には確実に使用するclick_no_waitのメソッドが修正されているのが大きいなあと思います。以前に「<a href="/blog//2010/07/watir_click_no_wait_doesnt_work/">watir: click_no_wait が動作しない - メモログ</a>」で行った修正で動作することにはするのですが、処理に妙に時間がかかってしまってました。1.6.6ではそういう副作用もなく解消されているようです。</p></div>
-            <div><a href="/2010/10/watir_166.html">📖 続きを読む</a></div>
           
         </article>
       

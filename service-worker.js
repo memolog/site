@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1583569520045';
+const CACHE_MAIN = 'main1583645081521';
 const precacheList = [
   
   '/',
+  '/2020/display-value-property-2.html',
   '/2020/display-value-property.html',
   '/2020/css-flow-layout.html',
   '/2020/formatting-context.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/inner-and-outer-display-type.html',
   '/2020/css-display-module-introduction.html',
   '/2020/about-position-sticky.html',
-  '/2020/web-workers-lifetime.html',
+  '/assets/images/glen-hooper-8LWtpfhGP4U-unsplash/glen-hooper-8LWtpfhGP4U-unsplash.svg',
   '/assets/images/pawel-czerwinski-31xVIgIXbws-unsplash/pawel-czerwinski-31xVIgIXbws-unsplash.svg',
   '/assets/images/boris-smokrovic-HWwF4OnXAdM-unsplash/boris-smokrovic-HWwF4OnXAdM-unsplash.svg',
   '/assets/images/cameron-venti-QUt6Ww8OQx0-unsplash/cameron-venti-QUt6Ww8OQx0-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.svg',
   '/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.svg',
   '/assets/images/david-travis-WC6MJ0kRzGw-unsplash/david-travis-WC6MJ0kRzGw-unsplash.svg',
-  '/assets/images/harley-davidson-4ixHdlcROPI-unsplash/harley-davidson-4ixHdlcROPI-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',

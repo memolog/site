@@ -368,61 +368,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/checkbot.html"
+          "url": "https://memolog.org/2007/08/yslow.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/yslow_13_configure_etags.html"
+          "url": "https://memolog.org/2007/08/checkbot.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
+          "url": "https://memolog.org/2007/08/yslow_13_configure_etags.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
+          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/font_tester.html"
+          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
+          "url": "https://memolog.org/2007/08/font_tester.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
+          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
+          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
         }
         
       ]
@@ -442,6 +442,22 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-18T07:29:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月18日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow.html">YSLOW 勉強 &#x3a; まとめ</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="/blog//2007/08/yslow_1_minimize_http_requests/">1 : HTTPのリクエストを最小限にしよう</a></li>
+<li><a href="/blog//2007/08/yslow_2_use_a_content_delivery/">2 : CDNを利用しよう</a></li>
+</ul></div>
+            <div><a href="/2007/08/yslow.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -583,22 +599,6 @@ a:visited {
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の七つ目。CSS Expressions の使用を避けよう。CSS Expressionsとは、background-color: expression( (new Date()).getHours()&#x25;2 ? “#B8D4FF” : “#F08A00” ); （2で割れたら#B8D4FF、割れなかったらF08A00）というように、CSSの指定をダイナミックに行えるIEの独自拡張のこと。 便利な機能だけど、expressionsの判定がマウスを動かしたりするだけで行われてしまうため、何千回も判定を繰り返す可能性がある（パフォーマンスにも影響がある）。</p></div>
             <div><a href="/2007/08/yslow_7_avoid_css_expressions.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-09T06:35:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月9日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/yslow_6_move_scripts_to_the_bo.html">YSLOW 勉強 &#x3a; 6&#x3a; Move Scripts to the Bottom</a></h2>
-            
-          </header>
-          
-            <div class="content"><ul>
-<li><a href="http://developer.yahoo.com/performance/rules.html#js_bottom" target="_blank" rel="noopener">6: Move Scripts to the Bottom</a></li>
-</ul>
-<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の六つ目。スクリプトはできるだけ（HTMLの）下に移動させよう。これも5と同じくレンダリングに関わる話で、CSSは読み込みきらないとレンダリングが始まらなかったのですが、スクリプト（javascript）の場合は読み込み始めると、そこから下に記述されている内容のレンダリングがストップしてしまうので、できるだけ下に置く方がいい。</p></div>
-            <div><a href="/2007/08/yslow_6_move_scripts_to_the_bo.html">📖 続きを読む</a></div>
           
         </article>
       
