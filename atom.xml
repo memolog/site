@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-08T05:24:41.521Z</updated>
+  <updated>2020-03-09T09:35:43.650Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The display value property (box / legacy)</title>
+    <link href="https://memolog.org/2020/display-value-property-3.html"/>
+    <id>https://memolog.org/2020/display-value-property-3.html</id>
+    <published>2020-03-09T09:35:47.000Z</published>
+    <updated>2020-03-09T09:35:43.650Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/display-value-property-2.html&quot;&gt;The display value property (list-item / internal)&lt;/a&gt;の続き。&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2. Box Layout Modes: the display property&lt;/a&gt;からdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>The display value property (list-item / internal)</title>
@@ -317,24 +333,6 @@
     
       &lt;p&gt;スクリプト内のDOM操作でjQueryを使っているけれど、処理がスクリプト内で完結していて、GlobalにはjQueryをロードさせていないという場合がある。あると思う。&lt;/p&gt;
 &lt;p&gt;そういった場合、例えばそのスクリプトに新しい実装を入れたいけどjQueryでのDOM操作が自分の期待通りに行えるかをChromeのデベロッパーツールでちょっと確認したいみたいな時に少し困る。大して困らない気もするけど、少し手間ではある。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>「第四の革命」を読んだ</title>
-    <link href="https://memolog.org/2019/book-the-4th-revolution.html"/>
-    <id>https://memolog.org/2019/book-the-4th-revolution.html</id>
-    <published>2019-05-01T23:41:09.000Z</published>
-    <updated>2019-05-02T04:38:07.393Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;「&lt;a href=&quot;https://www.shin-yo-sha.co.jp/mokuroku/books/978-4-7885-1522-2.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;第四の革命&lt;/a&gt;」を読んだ。情報通信技術が、従来の「記録する・履歴をとる」という単純な伝達手段であったものから飛躍して、記録・履歴のデータが処理され、情報として再利用されるようになった。それが様々なテクノロジーに内包されるにつれ、情報通信技術が単なるツールという枠を越えて、情報世界（情報圏・インフォスフィア）を構成するようになっている。インフォスフィアがどのように個々人や世界に影響をもたらすのか、といった内容である。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ナノテクノロジー、IOT、ウェブ2.0 …（中略。いろんなテクノロジー）… これらすべての現象を、一つの、マクロなトレンンドの多様な側面として説明できるような、統合的視点を見つけ出すことができるだろうか？　それに答えるのが難しいのは、まず我々がいまだにICT（情報通信技術）を、外界と、そして我々相互が関わりあうためのツール見なしているという点にある。ICTは、実際にはすでに環境なのであり、人類学的な、そして社会的な、世界を解釈する力となっているのである。それは、我々の知的、物理的な現実を生み出し、形成し、我々の自己理解を変え、我々が相互に関わるやり方を変え、世界を理解する方法をより高度化している。そしてこれらすべてが、広く、深く、強力に進んでいるのである。（「はじめに」より）
     
     </summary>
     

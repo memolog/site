@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>The display value property (box / legacy) | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: darkred;
+}
+
+a:visited {
+  color: rebeccapurple;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 2em;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 1em;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 900px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 930px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="The display value property (list-item / internal)の続き。2. Box Layout Modes: the display propertyからdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The display value property (box &#x2F; legacy)">
+<meta property="og:url" content="https://memolog.org/2020/display-value-property-3.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="The display value property (list-item / internal)の続き。2. Box Layout Modes: the display propertyからdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.jpg">
+<meta property="og:updated_time" content="2020-03-09T09:35:43.650Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The display value property (box &#x2F; legacy)">
+<meta name="twitter:description" content="The display value property (list-item / internal)の続き。2. Box Layout Modes: the display propertyからdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/display-value-property-3.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/display-value-property-3.html"
+      },
+      "headline": "The display value property (box / legacy)",
+      
+        "image": [
+          "https://memolog.org/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.jpg"
+        ],
+      
+      "datePublished": "Mon Mar 09 2020 18:35:47 GMT+0900",
+      "dateModified": "Mon Mar 09 2020 18:35:43 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "The display value property (list-item / internal)の続き。2. Box Layout Modes: the display propertyからdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-03-09T09:35:47.000Z">
+              <span class="calendar-icon">📅</span><span>2020年3月9日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>The display value property (box / legacy)</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjMyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2MzIiIGZpbGw9IiM2NDg0ODgiIC8+PC9zdmc+" data-src="/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@whoisbenjamin?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Whoisbenjamin</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="https://memolog.org/2020/display-value-property-2.html">The display value property (list-item / internal)</a>の続き。<a href="https://www.w3.org/TR/css-display-3/#the-display-properties" target="_blank" rel="noopener">2. Box Layout Modes: the display property</a>からdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。<a id="more"></a></p>
+<h3 id="display-box"><a href="#display-box" class="headerlink" title="display-box"></a>display-box</h3><blockquote>
+<p>&lt;display-box&gt; = contents | none</p>
+<p>While display can control the types of boxes an element will generate, it can also control whether an element will generate any boxes at all.</p>
+</blockquote>
+<p><code>&lt;display-box&gt;</code>には<code>contens</code>と<code>none</code>の二つのキーワードがあって、要素が生成するboxのタイプや、要素がboxを生成するかどうかを制御する。</p>
+<blockquote>
+<p>The <display-box> keywords are defined as follows:</display-box></p>
+<p><strong>contents</strong><br>The element itself does not generate any boxes, but its children and pseudo-elements still generate boxes and text runs as normal. For the purposes of box generation and layout, the element must be treated as if it had been replaced in the element tree by its contents (including both its source-document children and its pseudo-elements, such as ::before and ::after pseudo-elements, which are generated before/after the element’s children as normal).</p>
+</blockquote>
+<p>その要素自身のboxは生成しなくなるが、子孫要素や擬似要素についてはboxとtext runを通常通りに生成する。その目的として、要素が中のコンテンツ（source-documentの子孫要素と<code>::before</code>や<code>::after</code>など子孫要素の前後に生成される擬似要素を両方含む）によって要素のツリーが置き換わるかのように扱われなければならない。</p>
+<blockquote>
+<p>Note: As only the box tree is affected, any semantics based on the document tree, such as selector-matching, event handling, and property inheritance, are not affected. As of writing, however, this is not implemented correctly in major browsers, so using this feature on the Web must be done with care as it can prevent accessibility tools from accessing the element’s semantics.</p>
+</blockquote>
+<p>box treeのみが影響を受けるので、セレクタやイベントハンドリング、プロパティの継承など、document treeをベースにしたセマンティクスには影響を与えない。</p>
+<p>しかしながら、現時点ではブラウザが正しく実装されていないので、この機能を使う時はアクセシビリティツールが要素のセマンティクスにアクセスするのを妨げないように気をつけないといけない。</p>
+<blockquote>
+<p>This value computes to display: none on replaced elements and other elements whose rendering is not entirely controlled by CSS; see Appendix B: Effects of display: contents on Unusual Elements for details.</p>
+</blockquote>
+<p>この値は、置換要素などレンダリングがCSSによる制御の外にある要素上では、<code>display:none</code>として計算される。詳細は<a href="https://www.w3.org/TR/css-display-3/#unbox" target="_blank" rel="noopener">Appendix B: Effects of display: contents on Unusual Elements</a></p>
+<p>imgとかvideoに<code>display:contents</code>を指定しても、その子孫要素だけ独立して扱うことはできない、ということを説明している。このあたりは直観的に理解できるところだし、必要になったときに確認すれば良いと思うので、詳細については確認しない。</p>
+<blockquote>
+<p>Note: Replaced elements and form controls are treated specially because removing only the element’s own generating box is a more-or-less undefined operation. As this behavior may be refined if use cases (and more precise rendering models) develop, authors should use display: none rather than display: contents on such elements for forward-compatibility.</p>
+</blockquote>
+<p>置換要素やフォームコントロールは、その要素のboxを削除することは多かれ少なかれ不定な操作になるので、特殊なものとして扱われる。この振る舞いは、もしユースケース（より精細なレンダリングモデル）が開発されたら見直されるかもしれない。なので、そのような要素に対して、前方互換性のために、<code>display:contents</code>よりも<code>display:none</code>を使うべきである。</p>
+<blockquote>
+<p><strong>none</strong><br>The element and its descendants generate no boxes or text runs.<br>Similarly, if a text node is defined to behave as display: none, it generates no text runs.</p>
+</blockquote>
+<p><code>none</code>では、その要素および子孫要素がboxとtext runを生成しなくなる。同様に、もしテキストノードが<code>display:none</code>として振舞うように定義された場合、text runを生成しなくなる。</p>
+<blockquote>
+<p>Elements with either of these values do not have inner or outer display types, because they don’t generate any boxes at all.</p>
+</blockquote>
+<p>display-boxがついた要素は、boxを生成しないため、innerとouter display typeを持たない。</p>
+<blockquote>
+<p>Note: As these values cause affected elements to not generate a box, anonymous box generation rules will ignore the elided elements entirely, as if they did not exist in the box tree.</p>
+<p>Markup-based relationships, however, are not affected by these values, as they are solely rendering-time effects. For example, although they may affect which table cell appears in a column, they do not affect which table cell is associated with a particular column element. Similarly, they cannot affect which HTML summary element is associated with a particular table or whether a legend is considered to be labelling the contents of a particular fieldset.</p>
+</blockquote>
+<p>これらの値の影響下にある要素はboxを生成しないので、anonymous boxの生成ルールは、まるでbox treeに存在しないかのように、その生成されなかった要素を無視するだろう。</p>
+<p>しかしながら、マークアップを基礎にしたリレーションシップの場合、それらがレンダリング時の効果であることから、display-boxの値による影響を受けない。たとえば、display-boxはカラム内にtable cellの表示に影響を与えるかもしれないけれど、特定のカラム要素に関係するtable cellには影響を与えない。</p>
+<p>同様に、特定のtableに関連したsummary要素や、特定のfieldsetのコンテンツにlegendがラベリングされているとみなすかどうかに影響を与えない。</p>
+<h3 id="display-legacy"><a href="#display-legacy" class="headerlink" title="display-legacy"></a>display-legacy</h3><blockquote>
+<p>&lt;display-legacy&gt; = inline-block | inline-table | inline-flex | inline-grid</p>
+<p>CSS level 2 used a single-keyword syntax for display, requiring separate keywords for block-level and inline-level variants of the same layout mode. These <display-legacy> keywords map as follows:</display-legacy></p>
+</blockquote>
+<p><code>inline-block</code>など、CSS2で一つのキーワードとして使われていたもので、CSS3のDisplay moduleではoutsideとinsideに分けて記述されるべきものなのがここに入ってる。</p>
+<blockquote>
+<ul>
+<li>inline-block<br>Behaves as inline flow-root.</li>
+<li>inline-table<br>Behaves as inline table.</li>
+<li>inline-flex<br>Behaves as inline flex.</li>
+<li>inline-grid<br>Behaves as inline grid.</li>
+</ul>
+</blockquote>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

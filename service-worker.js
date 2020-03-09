@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1583645081521';
+const CACHE_MAIN = 'main1583746543650';
 const precacheList = [
   
   '/',
+  '/2020/display-value-property-3.html',
   '/2020/display-value-property-2.html',
   '/2020/display-value-property.html',
   '/2020/css-flow-layout.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/display-property-definition-in-css2.html',
   '/2020/inner-and-outer-display-type.html',
   '/2020/css-display-module-introduction.html',
-  '/2020/about-position-sticky.html',
+  '/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.svg',
   '/assets/images/glen-hooper-8LWtpfhGP4U-unsplash/glen-hooper-8LWtpfhGP4U-unsplash.svg',
   '/assets/images/pawel-czerwinski-31xVIgIXbws-unsplash/pawel-czerwinski-31xVIgIXbws-unsplash.svg',
   '/assets/images/boris-smokrovic-HWwF4OnXAdM-unsplash/boris-smokrovic-HWwF4OnXAdM-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/frankie-cordoba-YDBEIv9KcwE-unsplash/frankie-cordoba-YDBEIv9KcwE-unsplash.svg',
   '/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.svg',
   '/assets/images/saad-chaudhry-pM2Hpsi-Hxs-unsplash/saad-chaudhry-pM2Hpsi-Hxs-unsplash.svg',
-  '/assets/images/david-travis-WC6MJ0kRzGw-unsplash/david-travis-WC6MJ0kRzGw-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',

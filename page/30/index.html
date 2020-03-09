@@ -368,61 +368,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
+          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/post_141.html"
+          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
+          "url": "https://memolog.org/2007/08/post_141.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/yslow_3_add_an_expires_header.html"
+          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
+          "url": "https://memolog.org/2007/08/yslow_3_add_an_expires_header.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/yslow_2_use_a_content_delivery.html"
+          "url": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/yslow_1_minimize_http_requests.html"
+          "url": "https://memolog.org/2007/08/yslow_2_use_a_content_delivery.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/safari_3_webkit_css_3.html"
+          "url": "https://memolog.org/2007/08/yslow_1_minimize_http_requests.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/ie6.html"
+          "url": "https://memolog.org/2007/08/safari_3_webkit_css_3.html"
         }
         
       ]
@@ -442,6 +442,22 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-09T06:58:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月9日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_7_avoid_css_expressions.html">YSLOW 勉強 &#x3a; 7&#x3a; Avoid CSS Expressions</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#css_expressions" target="_blank" rel="noopener">7: Avoid CSS Expressions</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の七つ目。CSS Expressions の使用を避けよう。CSS Expressionsとは、background-color: expression( (new Date()).getHours()&#x25;2 ? “#B8D4FF” : “#F08A00” ); （2で割れたら#B8D4FF、割れなかったらF08A00）というように、CSSの指定をダイナミックに行えるIEの独自拡張のこと。 便利な機能だけど、expressionsの判定がマウスを動かしたりするだけで行われてしまうため、何千回も判定を繰り返す可能性がある（パフォーマンスにも影響がある）。</p></div>
+            <div><a href="/2007/08/yslow_7_avoid_css_expressions.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -578,22 +594,6 @@ a:visited {
 <li><a href="http://westciv.com/iphonetests/" target="_blank" rel="noopener">CSS3 properties tests for webkit based browsers, including the iPhone</a></li>
 </ul></div>
             <div><a href="/2007/08/safari_3_webkit_css_3.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-03T06:33:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月3日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/ie6.html">複数のセレクタを指定したときにIE6バグ</a></h2>
-            
-          </header>
-          
-            <div class="content"><ul>
-<li><a href="http://www.ryanbrill.com/archives/multiple-classes-in-ie/" target="_blank" rel="noopener">Multiple Classes in IE | Ryan Brill</a></li>
-<li><a href="http://hp.vector.co.jp/authors/VA022006/css/corrbrwser/selector.html" target="_blank" rel="noopener">付録：セレクタ関連の対応状況 - CSS2リファレンス</a></li>
-</ul></div>
-            <div><a href="/2007/08/ie6.html">📖 続きを読む</a></div>
           
         </article>
       
