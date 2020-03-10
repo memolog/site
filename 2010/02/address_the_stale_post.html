@@ -8,17 +8,9 @@
   <style>body {
   background-color: white;
   color: black;
-  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-a {
-  color: darkred;
-}
-
-a:visited {
-  color: rebeccapurple;
 }
 
 .header {
@@ -27,7 +19,8 @@ a:visited {
 
 .header_component_global {
   text-align: center;
-  margin: 1em 0;
+  margin: 1em auto;
+  max-width: 700px;
 }
 
 .header__title {
@@ -79,14 +72,14 @@ a:visited {
   padding: 5px; }
 
 .container {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto 4em;
   padding: 0 15px;
   border-radius: 3px;
 }
 
 .content {
-  font-size: 1.1em;
+  font-size: 1.125em;
   line-height: 2em;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -116,7 +109,7 @@ a:visited {
 .content blockquote {
   border: 5px solid #ddd;
   background: #f9f9f9;
-  margin: 1.5em 1em;
+  margin: 1.5em 0;
   padding: 0 1em;
 }
 
@@ -167,7 +160,7 @@ a:visited {
 .featured__image {
   background: white;
   line-height: 0;
-  max-height: 430px;
+  max-height: 335px;
   overflow: hidden;
 }
 
@@ -248,7 +241,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"],
@@ -257,7 +250,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"] {
@@ -278,7 +271,7 @@ a:visited {
   font-size: 1em;
   margin: 1.5em 0;
   column-count: 2;
-  max-width: 900px;
+  max-width: 700px;
   width: 102%;
   overflow: auto;
   height: 800px;
@@ -309,7 +302,7 @@ a:visited {
   background: #f0f0f0;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 730px) {
   .post .writing-vertical {
     margin-left: 0;
     margin-right: 0;
@@ -359,7 +352,7 @@ a:visited {
   </script>
 
   <meta name="description" content="Stop Blogging - Ordered List  旧くなったコンテンツをどうすべきか、という上のリンクのサイトで話されている話。ブログに投稿した技術情報は時間が経てば時代遅れになるし、場合によっては後になってその情報が正しくないことが判明したりする。そういった情報をそのまま保管しておくのは情報が存在しないよりもタチが悪い。「記録のため」という名目だけで情報をそのままにしておくのはsel">
-<meta name="keywords" content="blog,literacy">
+<meta name="keywords" content="literacy,blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="旧くなったコンテンツをどうすべきか">
 <meta property="og:url" content="https://memolog.org/2010/02/address_the_stale_post.html">

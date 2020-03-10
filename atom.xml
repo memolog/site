@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-09T09:35:43.650Z</updated>
+  <updated>2020-03-10T13:12:15.232Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Automatic Box Type Transformations</title>
+    <link href="https://memolog.org/2020/automatic-box-type-transformations.html"/>
+    <id>https://memolog.org/2020/automatic-box-type-transformations.html</id>
+    <published>2020-03-10T13:12:24.000Z</published>
+    <updated>2020-03-10T13:12:15.232Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Box Layout Modes: the display property&lt;/a&gt;の最後の節として&lt;br&gt;&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#transformations&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2.7. Automatic Box Type Transformations&lt;/a&gt;について書かれているので、簡単に確認する。何らかのレイアウト効果の影響でboxのタイプが自動的に変わる場合があるという話。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>The display value property (box / legacy)</title>
@@ -316,23 +332,6 @@
     <summary type="html">
     
       &lt;p&gt;Eventオブジェクトには&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Event/currentTarget&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;currentTarget&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Event/target&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;target&lt;/a&gt;の2つのプロパティがあるけど、いつもどっちがどっちか混同する。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Load jQuery library in the Chrome developer console</title>
-    <link href="https://memolog.org/2020/load-jquery-in-developer-console.html"/>
-    <id>https://memolog.org/2020/load-jquery-in-developer-console.html</id>
-    <published>2020-02-03T22:19:43.000Z</published>
-    <updated>2020-02-11T05:02:04.881Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;スクリプト内のDOM操作でjQueryを使っているけれど、処理がスクリプト内で完結していて、GlobalにはjQueryをロードさせていないという場合がある。あると思う。&lt;/p&gt;
-&lt;p&gt;そういった場合、例えばそのスクリプトに新しい実装を入れたいけどjQueryでのDOM操作が自分の期待通りに行えるかをChromeのデベロッパーツールでちょっと確認したいみたいな時に少し困る。大して困らない気もするけど、少し手間ではある。
     
     </summary>
     

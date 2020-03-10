@@ -21,6 +21,9 @@
 
 .profile__content {
   overflow: hidden;
+  font-family: Garamond, 'Times New Roman', serif;
+  line-height: 1.5em;
+  color: #666;
 }
 
 .profile__social-list {

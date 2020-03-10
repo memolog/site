@@ -9,17 +9,9 @@
   <style>body {
   background-color: white;
   color: black;
-  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-a {
-  color: darkred;
-}
-
-a:visited {
-  color: rebeccapurple;
 }
 
 .header {
@@ -28,7 +20,8 @@ a:visited {
 
 .header_component_global {
   text-align: center;
-  margin: 1em 0;
+  margin: 1em auto;
+  max-width: 700px;
 }
 
 .header__title {
@@ -80,14 +73,14 @@ a:visited {
   padding: 5px; }
 
 .container {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto 4em;
   padding: 0 15px;
   border-radius: 3px;
 }
 
 .content {
-  font-size: 1.1em;
+  font-size: 1.125em;
   line-height: 2em;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -117,7 +110,7 @@ a:visited {
 .content blockquote {
   border: 5px solid #ddd;
   background: #f9f9f9;
-  margin: 1.5em 1em;
+  margin: 1.5em 0;
   padding: 0 1em;
 }
 
@@ -168,7 +161,7 @@ a:visited {
 .featured__image {
   background: white;
   line-height: 0;
-  max-height: 430px;
+  max-height: 335px;
   overflow: hidden;
 }
 
@@ -249,7 +242,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"],
@@ -258,7 +251,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"] {
@@ -279,7 +272,7 @@ a:visited {
   font-size: 1em;
   margin: 1.5em 0;
   column-count: 2;
-  max-width: 900px;
+  max-width: 700px;
   width: 102%;
   overflow: auto;
   height: 800px;
@@ -310,7 +303,7 @@ a:visited {
   background: #f0f0f0;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 730px) {
   .post .writing-vertical {
     margin-left: 0;
     margin-right: 0;
@@ -368,61 +361,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/blueprint_a_css_framework.html"
+          "url": "https://memolog.org/2007/08/post_143.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/yslow.html"
+          "url": "https://memolog.org/2007/08/blueprint_a_css_framework.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/checkbot.html"
+          "url": "https://memolog.org/2007/08/yslow.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_13_configure_etags.html"
+          "url": "https://memolog.org/2007/08/checkbot.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
+          "url": "https://memolog.org/2007/08/yslow_13_configure_etags.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
+          "url": "https://memolog.org/2007/08/yslow_12_remove_duplicate_scri.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/font_tester.html"
+          "url": "https://memolog.org/2007/08/yslow_11_avoid_redirects.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
+          "url": "https://memolog.org/2007/08/font_tester.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
+          "url": "https://memolog.org/2007/08/yslow_10_minify_javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
         }
         
       ]
@@ -442,6 +435,19 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-20T07:49:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月20日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/post_143.html">アンビエント・ファインダビリティ</a></h2>
+            
+          </header>
+          
+            <div class="content"><p> <a href="http://www.amazon.co.jp/gp/product/4873112834?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873112834" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/51JAKEE21DL._SL180_.jpg" alt=""></a> ambient（周囲を取り巻く・完全に包囲している）とfindability（位置特定可能な・特定の対象物の発見のしやすさ）を二つあわせて、アンビエント・ファインダビリティ。直訳すると「周囲を取り巻く特定の対象物の発見のしやすさ」というような感じですが、私なりに解釈するとしたら「自分の取り囲む広大な情報の波から特定の情報を発見する」ようなことを表しているのかと思います。アンビエント・ファインダビリティの世界では、個人は「広大な情報から適切な素早く情報を入手する」ことが肝要で、本書では情報とは何か、情報の見つけやすさとは何かを伝え、最後に台頭しつつある情報を選りすぐる社会的な仕組み（タクソノミーとかフォークソノミーとか）などを次々と紹介しています。</p></div>
+            <div><a href="/2007/08/post_143.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -583,21 +589,6 @@ a:visited {
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の九つ目。DNS lookups を減らそう。あるhost名とIPアドレスを関連づけるためにDNS（Domain Name System）lookupを行うけれど、これには20〜120ミリ秒の時間がかかる。lookupが完了するまではそのhostからダウンロードすることはできない。</p></div>
             <div><a href="/2007/08/yslow_9_reduce_dns_lookups.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-11T07:08:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月11日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/yslow_8_make_javascript_and_cs.html">YSLOW 勉強 &#x3a; 8&#x3a; Make JavaScript and CSS External</a></h2>
-            
-          </header>
-          
-            <div class="content"><ul>
-<li><a href="http://developer.yahoo.com/performance/rules.html#external" target="_blank" rel="noopener">8: Make JavaScript and CSS External</a></li>
-</ul></div>
-            <div><a href="/2007/08/yslow_8_make_javascript_and_cs.html">📖 続きを読む</a></div>
           
         </article>
       

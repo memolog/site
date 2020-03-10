@@ -9,17 +9,9 @@
   <style>body {
   background-color: white;
   color: black;
-  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-a {
-  color: darkred;
-}
-
-a:visited {
-  color: rebeccapurple;
 }
 
 .header {
@@ -28,7 +20,8 @@ a:visited {
 
 .header_component_global {
   text-align: center;
-  margin: 1em 0;
+  margin: 1em auto;
+  max-width: 700px;
 }
 
 .header__title {
@@ -80,14 +73,14 @@ a:visited {
   padding: 5px; }
 
 .container {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto 4em;
   padding: 0 15px;
   border-radius: 3px;
 }
 
 .content {
-  font-size: 1.1em;
+  font-size: 1.125em;
   line-height: 2em;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -117,7 +110,7 @@ a:visited {
 .content blockquote {
   border: 5px solid #ddd;
   background: #f9f9f9;
-  margin: 1.5em 1em;
+  margin: 1.5em 0;
   padding: 0 1em;
 }
 
@@ -168,7 +161,7 @@ a:visited {
 .featured__image {
   background: white;
   line-height: 0;
-  max-height: 430px;
+  max-height: 335px;
   overflow: hidden;
 }
 
@@ -249,7 +242,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"],
@@ -258,7 +251,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"] {
@@ -279,7 +272,7 @@ a:visited {
   font-size: 1em;
   margin: 1.5em 0;
   column-count: 2;
-  max-width: 900px;
+  max-width: 700px;
   width: 102%;
   overflow: auto;
   height: 800px;
@@ -310,7 +303,7 @@ a:visited {
   background: #f0f0f0;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 730px) {
   .post .writing-vertical {
     margin-left: 0;
     margin-right: 0;
@@ -368,61 +361,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2018/about-array-prototype-sort.html"
+          "url": "https://memolog.org/2018/about-typedarray-prototype-sort.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2018/bit-vector-in-javascript.html"
+          "url": "https://memolog.org/2018/about-array-prototype-sort.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2018/pass-arguments-to-npm-run-script.html"
+          "url": "https://memolog.org/2018/bit-vector-in-javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2018/create-hash-table-in-javascript.html"
+          "url": "https://memolog.org/2018/pass-arguments-to-npm-run-script.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2018/javascript-property-access-big-o.html"
+          "url": "https://memolog.org/2018/create-hash-table-in-javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2018/complete-all-the-pwa-checklist.html"
+          "url": "https://memolog.org/2018/javascript-property-access-big-o.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html"
+          "url": "https://memolog.org/2018/complete-all-the-pwa-checklist.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2018/custom-domain-in-github-pages.html"
+          "url": "https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2018/book-mind-control.html"
+          "url": "https://memolog.org/2018/custom-domain-in-github-pages.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2018/retrieve-json-from-require-method.html"
+          "url": "https://memolog.org/2018/book-mind-control.html"
         }
         
       ]
@@ -442,6 +435,33 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-07-31T20:23:27.000Z"><span class="calendar-icon">📅</span><span>2018年8月1日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/about-typedarray-prototype-sort.html">TypedArray.prototype.sort について</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4MjZjNGUiIC8+PC9zdmc+" data-src="/assets/images/marcus-depaula-43304-unsplash/marcus-depaula-43304-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/tk7OAxsXNL0?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Marcus dePaula</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>前回の「<a href="https://memolog.org/2018/about-array-prototype-sort.html">Array.prototype.sort について</a>」に引き続き、今度は<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray" target="_blank" rel="noopener">TypedArray</a>の<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort" target="_blank" rel="noopener">sort</a>について。実装は別だけど対応は基本的に同じなので簡単に。</div>
+            <div><a href="/2018/about-typedarray-prototype-sort.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -683,34 +703,6 @@ a:visited {
           
             <div class="content"><p><a href="http://books.bunshun.jp/ud/book/num/9784166610747" target="_blank" rel="noopener">マインド・コントロール</a>と<a href="http://www.sbcr.jp/products/4797374025.html" target="_blank" rel="noopener">影響力の正体</a>という本を読んだ。マインドコントロールとは、<a href="https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%A4%E3%83%B3%E3%83%89%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB" target="_blank" rel="noopener">Wikipedia</a>には「他人の思想や情報をコントロールし、個人が意思決定する際に、特定の結論へと誘導する技術を指す概念」と書いてある。「マインド・コントロール」の方は題名そのまんまマインドコントロールに扱った本であるけど、「影響力の正体」の方も「相手をYESという結論に導く技術」という意味でマインドコントロールを扱った本と言える。どちらの本も内容も人間の根本的な性質を利用したものでかなりやっかいな技術だなと思った。</div>
             <div><a href="/2018/book-mind-control.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2018-02-04T07:35:42.000Z"><span class="calendar-icon">📅</span><span>2018年2月4日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2018/retrieve-json-from-require-method.html">JSONデータを読み込んで差し替える</a></h2>
-            
-              <div class="header__feature" aria-hidden="true">
-  <div class="featured__image">
-    
-      
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNzY4Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIGZpbGw9IiM0Nzk1YWIiIC8+PC9zdmc+" data-src="/assets/images/aaron-burden-286686/aaron-burden-286686.svg" class="lazyload blur-up" alt="" role="presentation" />
-      
-    
-  </div>
-  
-    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/h7wpIMY3O3E?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Aaron Burden</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
-  
-</div>
-
-            
-          </header>
-          
-            <div class="content"><p>Node.jsの中であれば単に<code>const config = require(&#39;config.json&#39;)</code>すれば良いのだけれど、フロントエンド側のJavaScriptではそうはいかない。XMLHttpRequestとか<a href="https://developer.mozilla.org/ja/docs/Web/API/Fetch_API" target="_blank" rel="noopener">Fetch API</a>を使うか、requireで書いたものをwebpackでbundleするとかしないといけない。他にもいろいろ方法はあると思うけど、まあとにかく一手間が必要。</p>
-<p>その読み出すJSONデータを環境ごとに変更したい場合はなおさら面倒で、Node.jsであればprocess.env.NODE_ENVなんかを使えばいいけど、フロントエンド側ではwebpackでバンドルするときの設定を変更するとか、uglifyで<code>DEBUG</code>みたいなglobal変数を入れておいて書き出すとかしつつ、異なるJSONデータをfetchするように実装しないといけない。いろいろ方法はあるから難しい問題ではないけど、面倒ではある。</div>
-            <div><a href="/2018/retrieve-json-from-require-method.html">📖 続きを読む</a></div>
           
         </article>
       

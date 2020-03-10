@@ -9,17 +9,9 @@
   <style>body {
   background-color: white;
   color: black;
-  font-family: 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-a {
-  color: darkred;
-}
-
-a:visited {
-  color: rebeccapurple;
 }
 
 .header {
@@ -28,7 +20,8 @@ a:visited {
 
 .header_component_global {
   text-align: center;
-  margin: 1em 0;
+  margin: 1em auto;
+  max-width: 700px;
 }
 
 .header__title {
@@ -80,14 +73,14 @@ a:visited {
   padding: 5px; }
 
 .container {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto 4em;
   padding: 0 15px;
   border-radius: 3px;
 }
 
 .content {
-  font-size: 1.1em;
+  font-size: 1.125em;
   line-height: 2em;
   color: #444;
   -webkit-font-smoothing: antialiased;
@@ -117,7 +110,7 @@ a:visited {
 .content blockquote {
   border: 5px solid #ddd;
   background: #f9f9f9;
-  margin: 1.5em 1em;
+  margin: 1.5em 0;
   padding: 0 1em;
 }
 
@@ -168,7 +161,7 @@ a:visited {
 .featured__image {
   background: white;
   line-height: 0;
-  max-height: 430px;
+  max-height: 335px;
   overflow: hidden;
 }
 
@@ -249,7 +242,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"],
@@ -258,7 +251,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .featured__image,
   .content__image,
   .content pre[class*="language-"] {
@@ -279,7 +272,7 @@ a:visited {
   font-size: 1em;
   margin: 1.5em 0;
   column-count: 2;
-  max-width: 900px;
+  max-width: 700px;
   width: 102%;
   overflow: auto;
   height: 800px;
@@ -310,7 +303,7 @@ a:visited {
   background: #f0f0f0;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 730px) {
   .post .writing-vertical {
     margin-left: 0;
     margin-right: 0;
@@ -368,61 +361,61 @@ a:visited {
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/11/bayesian-network.html"
+          "url": "https://memolog.org/2007/11/post_159.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/10/mac-htaccess.html"
+          "url": "https://memolog.org/2007/11/bayesian-network.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/10/mtpaginate_movable_type.html"
+          "url": "https://memolog.org/2007/10/mac-htaccess.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/10/post_157.html"
+          "url": "https://memolog.org/2007/10/mtpaginate_movable_type.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/10/post_156.html"
+          "url": "https://memolog.org/2007/10/post_157.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/10/prototypejs.html"
+          "url": "https://memolog.org/2007/10/post_156.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/10/post_155.html"
+          "url": "https://memolog.org/2007/10/prototypejs.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/10/post_154.html"
+          "url": "https://memolog.org/2007/10/post_155.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/10/post_153.html"
+          "url": "https://memolog.org/2007/10/post_154.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/09/post_152.html"
+          "url": "https://memolog.org/2007/10/post_153.html"
         }
         
       ]
@@ -442,6 +435,22 @@ a:visited {
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-11-11T04:40:00.000Z"><span class="calendar-icon">📅</span><span>2007年11月11日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/11/post_159.html">続・ブログとは何か</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="/blog//2006/04/post_130/">ブログとは何か - メモログ</a></li>
+</ul>
+<p>1年半くらい前に書いた記事をきゅうに思い出して、その続きを書いてみようと思い立ちました。いい加減な私。以前に記した「自分をまとめるためのツール」という考え方は、まだ変わっていません。ただ、今はアウトプットするよりもインプットする方に関心が向いています。</p></div>
+            <div><a href="/2007/11/post_159.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -562,19 +571,6 @@ a:visited {
           
             <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4757213751/249-8435951-8869142?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4757213751" target="_blank" rel="noopener"><img src="http://g-ec2.images-amazon.com/images/I/41OJQS5KwRL._SL180_.jpg" alt=""></a>意思決定の方法論を著した本で、ゴー・ポイント（情報収集が完了し、計画の是非が論じ尽くされ、はっきりと態度をきめなければならない瞬間。ゴーかノーゴーか）に直面した人たちの状況を知り、内面を探り、彼らの経験から、決断の公式を導きだしていくというような内容（p10より一部抜粋）。</p></div>
             <div><a href="/2007/10/post_153.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-09-29T16:12:00.000Z"><span class="calendar-icon">📅</span><span>2007年9月30日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/09/post_152.html">世界一やさしい問題解決の授業</a></h2>
-            
-          </header>
-          
-            <div class="content"><p><a href="http://www.amazon.co.jp/gp/product/4478000492/249-8435951-8869142?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4478000492" target="_blank" rel="noopener"><img src="http://ec1.images-amazon.com/images/I/51oz4spSPHL._SL180_.jpg" alt=""></a> 問題解決をするための思考法について説明した本で、「問題解決能力」について、原因の調べ方（原因の洗い出しと原因の仮説・検証）、問題を解決するための目標設定のしかたについて書かれています。115ページ程度の薄い本で1〜2時間程度の時間で読み切れてしまう平易さが魅力的です。冒頭の「どうせどうせ」子ちゃん（わたしなんてどうせだめよ、とすぐにあきらめてしまう）、「評論家」くん（自分なりの意見は持っていて、人にあれこれ指図するけど、言いっぱなしで自分では何もやらない）、「気合いでゴー」くん（やる気があって前向きだけど、うまくいかないときでも精神論で片付けてしまう）、問題解決キッズの話は、「そうそう、いるいる。そうなんだよねー」と共感してしまいました。<a href="http://matsu.petit.cc/" target="_blank" rel="noopener">マツモトナオコ</a>さんのイラストもかわいらしくていい感じです。</p></div>
-            <div><a href="/2007/09/post_152.html">📖 続きを読む</a></div>
           
         </article>
       
