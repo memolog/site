@@ -54,7 +54,7 @@
               <span class="calendar-icon">📅</span><span><%- page.date.locale(config.language).format('LL') %></span>
             </time>
           </div>
-          <h2 class="header__title"><%- page.title %></h2>
+          <h2 class="header__title"><span><%- page.title %></span></h2>
           <% if (page.featured) { %>
             <%- partial('_partial/feature-image', {featured: page.featured}) %>
           <% } %>
