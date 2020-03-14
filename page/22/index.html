@@ -361,61 +361,61 @@
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2009/06/proust_and_squid.html"
+          "url": "https://memolog.org/2009/06/mac_tiger_gem_mysql.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2009/06/kamakura-enoshima.html"
+          "url": "https://memolog.org/2009/06/proust_and_squid.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2009/05/future_of_water.html"
+          "url": "https://memolog.org/2009/06/kamakura-enoshima.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2009/05/watirjavascript.html"
+          "url": "https://memolog.org/2009/05/future_of_water.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2009/05/inherit.html"
+          "url": "https://memolog.org/2009/05/watirjavascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2009/05/dp1.html"
+          "url": "https://memolog.org/2009/05/inherit.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2009/04/post_185.html"
+          "url": "https://memolog.org/2009/05/dp1.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2009/04/feedburner.html"
+          "url": "https://memolog.org/2009/04/post_185.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2009/04/windows_vista_ie_7watir.html"
+          "url": "https://memolog.org/2009/04/feedburner.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2009/04/post_184.html"
+          "url": "https://memolog.org/2009/04/windows_vista_ie_7watir.html"
         }
         
       ]
@@ -435,6 +435,64 @@
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2009-06-28T03:30:00.000Z"><span class="calendar-icon">📅</span><span>2009年6月28日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2009/06/mac_tiger_gem_mysql.html">Mac (tiger) で gem install mysql でエラー</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>Mac(10.4.11)にgem istall mysqlしようとしたら、下記のようなエラーが出たのでメモ。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">~ <span class="token function">sudo</span> gem <span class="token function">install</span> mysql -- --with-mysql-config<span class="token operator">=</span>/usr/local/mysql/bin/mysql_config
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token function">more</span> --<span class="token operator">></span>
+Password:
+Building native extensions.  This could take a while<span class="token punctuation">..</span>.
+ERROR:  Error installing mysql:
+        ERROR: Failed to build gem native extension.
+
+/opt/local/bin/ruby extconf.rb --with-mysql-config<span class="token operator">=</span>/usr/local/mysql/bin/mysql_config
+checking <span class="token keyword">for</span> mysql_ssl_set<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">..</span>. no
+checking <span class="token keyword">for</span> mysql.h<span class="token punctuation">..</span>. <span class="token function">yes</span>
+creating Makefile
+
+<span class="token function">make</span>
+gcc -I. -I. -I/opt/local/lib/ruby/1.8/i686-darwin8.10.1 -I. -DHAVE_MYSQL_H -I/opt/local/include -I/usr/local/mysql/include  -g -Os -arch i386 -no-cpp-precomp -mmacosx-version-min<span class="token operator">=</span>10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -fno-common   -D_P1003_1B_VISIBLE -DSIGNAL_WITH_VIO_CLOSE -DSIGNALS_DONT_BREAK_READ -DIGNORE_SIGHUP_SIGQUIT -fno-common -O2  -fno-common -pipe -fno-common  -c mysql.c
+cc -dynamic -bundle -undefined suppress -flat_namespace -L/opt/local/lib   -L<span class="token string">"/opt/local/lib"</span> -o mysql.bundle mysql.o  -lruby -arch i386  -L/usr/local/mysql/lib -lmysqlclient -lz -lm     -lmygcc  -lpthread -ldl -lobjc
+/usr/bin/ld: /usr/local/mysql/lib/libmysqlclient.dylib load <span class="token function">command</span> 5 unknown cmd field
+/usr/bin/ld: warning multiple definitions of symbol _setregid
+/opt/local/lib/libruby.dylib<span class="token punctuation">(</span>process.o<span class="token punctuation">)</span> definition of _setregid
+/usr/lib/gcc/i686-apple-darwin8/4.0.1/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/libm.dylib<span class="token punctuation">(</span>setregid.So<span class="token punctuation">)</span> definition of _setregid
+/usr/bin/ld: warning multiple definitions of symbol _setreuid
+/opt/local/lib/libruby.dylib<span class="token punctuation">(</span>process.o<span class="token punctuation">)</span> definition of _setreuid
+/usr/lib/gcc/i686-apple-darwin8/4.0.1/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/<span class="token punctuation">..</span>/libm.dylib<span class="token punctuation">(</span>setreuid.So<span class="token punctuation">)</span> definition of _setreuid
+collect2: ld returned 1 <span class="token keyword">exit</span> status
+make: *** <span class="token punctuation">[</span>mysql.bundle<span class="token punctuation">]</span> Error 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>いろいろ試してみましたが、最終的にはXcodeのバージョンが古かったのが原因みたいでした。2.5をWebからダウンロードしてインストールしたら、インストールすることができました。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">~ <span class="token function">sudo</span> gem <span class="token function">install</span> mysql -- --with-mysql-config<span class="token operator">=</span>/usr/local/mysql/bin/mysql_config
+Password:
+Building native extensions.  This could take a while<span class="token punctuation">..</span>.
+Successfully installed mysql-2.7
+1 gem installed
+Installing ri documentation <span class="token keyword">for</span> mysql-2.7<span class="token punctuation">..</span>.
+Installing RDoc documentation <span class="token keyword">for</span> mysql-2.7<span class="token punctuation">..</span>.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>XcodeのバージョンアップにはApple developerサイトからダウンロードしてこないといけないのですが、Tiger用のXcodeはすでに最新のバージョンではないので、ダウンロードする場所がおそろしく分かりにくい。ので、メモ。</p>
+<ol>
+<li><a href="http://developer.apple.com/mac/" target="_blank" rel="noopener">Mac Dev Center</a> にアクセス</li>
+<li>ログイン（登録していない場合は、まず登録する必要があります）</li>
+<li>右サイドバーにある「Member Site」をクリック</li>
+<li>左下にある「Downloads」のリンクをクリック。クリックできない場合は再度ログインしてみる。</li>
+<li>右サイドバーにある「Developer Tools」のリンクをクリック</li>
+<li>表示された画面を「Xcode 2.5」検索</li>
+<li>Xcode 2.5 Developer Tools (Disk Image) のリンクをクリック</li>
+</ol>
+</div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -561,19 +619,6 @@
           
             <div class="content"><p>WatirをWindows VistaのIE 7で実行する場合は、「保護モード」を何とかする必要がある。これが有効になっていると、Watirで起動したIEに対して処理を指令できなくなる。たとえば、Watir::IE.newしたあとに、gotoメソッド（内部でnavigateメソッドを使用）を実行すると、newしたブラウザではなく、別ブラウザが立ち上がってgotoで指定したURLに移動してしまう。</p></div>
             <div><a href="/2009/04/windows_vista_ie_7watir.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2009-04-17T20:49:00.000Z"><span class="calendar-icon">📅</span><span>2009年4月18日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2009/04/post_184.html">野川公園とアオサギとカルガモ</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>野川公園でパシャリ。<a href="http://www.amazon.co.jp/gp/product/4635596206?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4635596206" target="_blank" rel="noopener">散歩で楽しむ野鳥の本</a>を参考に、撮った野鳥をチェックする。写真のカモはたぶんカルガモ。1年中生息しているカモ科の鳥。マガモの雌と色形が似ているので、ぱっと見できちんと判別できません。青色の鳥は、本に載っているアオサギの写真と少し違うのですが、くちばしの色と首すじの色が似ているのでたぶんアオサギ。</p></div>
-            <div><a href="/2009/04/post_184.html">📖 続きを読む</a></div>
           
         </article>
       

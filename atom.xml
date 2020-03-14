@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-10T13:12:15.232Z</updated>
+  <updated>2020-03-14T09:57:04.287Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Display module glossary</title>
+    <link href="https://memolog.org/2020/display-module-glossary.html"/>
+    <id>https://memolog.org/2020/display-module-glossary.html</id>
+    <published>2020-03-12T07:18:28.000Z</published>
+    <updated>2020-03-14T09:57:04.287Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今回はDisplay Moduleの&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#glossary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Appendix A: Glossary&lt;/a&gt;のところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Automatic Box Type Transformations</title>
@@ -316,22 +332,6 @@
     
       &lt;p&gt;ES2020で新しく追加された機能（&lt;a href=&quot;https://kangax.github.io/compat-table/es2016plus/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ECMAScript 2016+ compatibility table&lt;/a&gt;の画面の下の方にある）はどれもわりと実用的で、なくても大丈夫なんだけどあると便利といったものが並んでいる。Bigintは日常的には使わないとは思うけど。&lt;/p&gt;
 &lt;p&gt;その中で、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nullish coalescing&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Optional chaining&lt;/a&gt; はかなり便利。なくても大丈夫だし、使わなくても良いんだけど、便利だから日常的に書かれるJavaScriptの書き方を変えるものになると思う。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Event target and currentTarget</title>
-    <link href="https://memolog.org/2020/event-target-and-currenttarget.html"/>
-    <id>https://memolog.org/2020/event-target-and-currenttarget.html</id>
-    <published>2020-02-04T22:32:36.000Z</published>
-    <updated>2020-02-04T23:52:01.900Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Eventオブジェクトには&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Event/currentTarget&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;currentTarget&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Event/target&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;target&lt;/a&gt;の2つのプロパティがあるけど、いつもどっちがどっちか混同する。
     
     </summary>
     

@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1583845935232';
+const CACHE_MAIN = 'main1584179824287';
 const precacheList = [
   
   '/',
+  '/2020/display-module-glossary.html',
   '/2020/automatic-box-type-transformations.html',
   '/2020/display-value-property-3.html',
   '/2020/display-value-property-2.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/css-property-conventions.html',
   '/2020/value-definition-syntax-on-css-value-and-units-module.html',
   '/2020/display-property-definition-in-css2.html',
-  '/2020/inner-and-outer-display-type.html',
+  '/assets/images/francesco-ungaro-JHypHcOObf4-unsplash/francesco-ungaro-JHypHcOObf4-unsplash.svg',
   '/assets/images/jeremy-bishop-t52E8yzCURM-unsplash/jeremy-bishop-t52E8yzCURM-unsplash.svg',
   '/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.svg',
   '/assets/images/glen-hooper-8LWtpfhGP4U-unsplash/glen-hooper-8LWtpfhGP4U-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/delaney-van-EUVN4bihZug-unsplash/delaney-van-EUVN4bihZug-unsplash.svg',
   '/assets/images/debby-hudson-LQHW1hEO3RA-unsplash/debby-hudson-LQHW1hEO3RA-unsplash.svg',
   '/assets/images/frankie-cordoba-YDBEIv9KcwE-unsplash/frankie-cordoba-YDBEIv9KcwE-unsplash.svg',
-  '/assets/images/fotografierende-HMGNL811SQE-unsplash/fotografierende-HMGNL811SQE-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',

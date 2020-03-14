@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Display module glossary | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="今回はDisplay ModuleのAppendix A: Glossaryのところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Display module glossary">
+<meta property="og:url" content="https://memolog.org/2020/display-module-glossary.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="今回はDisplay ModuleのAppendix A: Glossaryのところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://memolog.org/assets/images/francesco-ungaro-JHypHcOObf4-unsplash/francesco-ungaro-JHypHcOObf4-unsplash.jpg">
+<meta property="og:updated_time" content="2020-03-14T09:57:04.287Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Display module glossary">
+<meta name="twitter:description" content="今回はDisplay ModuleのAppendix A: Glossaryのところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。">
+<meta name="twitter:image" content="https://memolog.org/assets/images/francesco-ungaro-JHypHcOObf4-unsplash/francesco-ungaro-JHypHcOObf4-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https://twitter.com/memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/display-module-glossary.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/display-module-glossary.html"
+      },
+      "headline": "Display module glossary",
+      
+        "image": [
+          "https://memolog.org/assets/images/francesco-ungaro-JHypHcOObf4-unsplash/francesco-ungaro-JHypHcOObf4-unsplash.jpg"
+        ],
+      
+      "datePublished": "Thu Mar 12 2020 16:18:28 GMT+0900",
+      "dateModified": "Sat Mar 14 2020 18:57:04 GMT+0900",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "今回はDisplay ModuleのAppendix A: Glossaryのところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。"
+    }
+  </script>
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-03-12T07:18:28.000Z">
+              <span class="calendar-icon">📅</span><span>2020年3月12日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Display module glossary</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM1YjNlMTEiIC8+PC9zdmc+" data-src="/assets/images/francesco-ungaro-JHypHcOObf4-unsplash/francesco-ungaro-JHypHcOObf4-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@francesco_ungaro?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Francesco Ungaro</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>今回はDisplay Moduleの<a href="https://www.w3.org/TR/css-display-3/#glossary" target="_blank" rel="noopener">Appendix A: Glossary</a>のところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。<a id="more"></a></p>
+<h3 id="block-container"><a href="#block-container" class="headerlink" title="block container"></a>block container</h3><blockquote>
+<p>A block container either contains only inline-level boxes participating in an inline formatting context, or contains only block-level boxes participating in a block formatting context (possibly generating anonymous block boxes to ensure this constraint, as defined in CSS2§9.2.1.1).</p>
+</blockquote>
+<p>block containerは、inline formatting contextに参加するインラインレベルのboxだけを含むか、block formatting contextに参加するブロックレベルのboxのみを含んでいる（この制約を保証するためにanonymous boxを生成する可能性がある）。</p>
+<blockquote>
+<p>A block container that contains only inline-level content establishes a new inline formatting context. The element then also generates a root inline box which wraps all of its inline content.<br><strong>Note</strong>, this root inline box concept effectively replaces the “anonymous inline element” concept introduced in CSS2§9.2.2.1.</p>
+</blockquote>
+<p>インラインレベルのコンテンツのみを含むblock containerは、新しいinline formatting contextを設置する。その要素はインラインのコンテンツをすべて囲うようなroot inline boxもまた設置する。</p>
+<p>このroot inline boxのコンセプトは、「anonymous inline element」のコンセプトを実質的に置き換えるものである。</p>
+<blockquote>
+<p>A block container establishes a new block formatting context if its parent formatting context is not a block formatting context; otherwise, when participating in a block formatting context itself, it either establishes a new block formatting context for its contents or continues the one in which it participates, as determined by the constraints of other properties (such as overflow or align-content).</p>
+</blockquote>
+<p>block containerは、親のformatting contextがblock formatting contextではない場合、新しいblock formatting contextを設置する。そうでない場合、block formatting context自身に参加するときに、（overflowやalign-contentなどのような）他のプロパティの制約を基にして、自身のコンテンツのための新しいblock formatting contextを設置するか、参加してるcontextを継続する。</p>
+<blockquote>
+<p><strong>Note</strong>: A block container box can both establish a block formatting context and an inline formatting context simultaneously.</p>
+</blockquote>
+<p>block container boxは、block formatting contextとinline formatting contextを同時に設置することもできる。</p>
+<h3 id="block-box"><a href="#block-box" class="headerlink" title="block box"></a>block box</h3><blockquote>
+<p>A block-level box that is also a block container.<br><strong>Note</strong>: Not all block container boxes are block-level boxes: non-replaced inline blocks and non-replaced table cells, for example, are block containers but not block-level boxes. Similarly, not all block-level boxes are block containers: block-level replaced elements (display: block) and flex containers (display: flex), for example, are not block containers.</p>
+</blockquote>
+<p>block containerでもあるブロックレベルのbox。</p>
+<p>すべてのblock container boxがブロックレベルのboxというわけではない。たとえば、非置換のインラインブロックや、非置換のテーブルセルは、block containerであるけど、ブロックレベルのboxではない。同様に、すべてのブロックレベルのboxがblock containerというわけではない。たとえば、ブロックレベルの置換要素（<code>display: block</code>）やflex container（<code>display: flex</code>）はblock containerではない。</p>
+<h3 id="containing-block"><a href="#containing-block" class="headerlink" title="containing block"></a>containing block</h3><blockquote>
+<p>A rectangle that forms the basis of sizing and positioning for the boxes associated with it (usually the children of the box that generated it). Notably, a containing block is not a box (it is a rectangle), however it is often derived from the dimensions of a box. If properties of a containing block are referenced, they reference the values on the box that generated the containing block. (For the initial containing block, values are taken from the root element unless otherwise specified.) See [CSS2] Section 9.1.2 and Section 10.1 for details.</p>
+</blockquote>
+<p>関連するbox（たいてい生成したboxの子）のために、縦横幅やポジションなどの基本的な値な形成する長方形（rectangle）。containing blockはboxではない（it is a rectangle）。けれども、しばしばrectangleはboxの寸法から導き出される。もしcontaining blockのプロパティが参照される場合、それらはcontaining blockを生成したboxの値を参照する。（特に指定がなければinitial containing blockでは、値はルートの要素から導かれる。）</p>
+<h3 id="initial-containing-block"><a href="#initial-containing-block" class="headerlink" title="initial containing block"></a>initial containing block</h3><blockquote>
+<p>The containing block of the root element. See CSS2.1§10.1 for continuous media; and [CSS3PAGE] for paged media.</p>
+</blockquote>
+<p>ルート要素のcontaining block</p>
+<h3 id="out-of-flow-in-flow"><a href="#out-of-flow-in-flow" class="headerlink" title="out-of-flow / in-flow"></a>out-of-flow / in-flow</h3><blockquote>
+<p>A box is out-of-flow if it is floated (via float) or absolutely-positioned (via position). A box is in-flow if it is not out-of-flow.</p>
+</blockquote>
+<p>boxがfloatしている、またはpositionによって絶対配置されている場合、boxはout-of-flowの状態にある。boxがout-of-flowでなければboxがin-flowの状態になる。</p>
+<blockquote>
+<p><strong>Note</strong>: some formatting contexts inhibit floating, so that an element with float: left is not necessarily out-of-flow.</p>
+</blockquote>
+<p>いくつかのformatting contextはfloatingを抑制する。そのため<code>float: left</code>のついた要素が必ずout-of-flowになるわけではない。</p>
+<h3 id="independent-formatting-context"><a href="#independent-formatting-context" class="headerlink" title="independent formatting context"></a>independent formatting context</h3><blockquote>
+<p>When a あ establishes an independent formatting context (whether that formatting context is of the same type as its parent or not), it essentially creates a new, independent layout environment: except through the sizing of the box itself, the layout of its descendants is (generally) not affected by the the rules and contents of the formatting context outside the box, and vice versa.</p>
+</blockquote>
+<p>boxが（formatting contextは親と同じタイプかどうかに関係なく）independent formatting contextを設置するとき、新しい、独立したレイアウト環境を作成する。box自身のサイズを除いて、その子孫のレイアウトは（一般的に）boxの外側のformatting contextのルールやコンテンツによって影響を受けない。反対も同じ。</p>
+<blockquote>
+<p><strong>EXAMPLE 4</strong><br>For example, in a block formatting context, floated boxes affect the layout of surrounding boxes. But their effects do not escape their formatting context: the box establishing their formatting context grows to fully contain them, and floats from outside that box are not allowed to protrude into and affect the contents inside the box.</p>
+</blockquote>
+<p>たとえば、block formatting contextの中で、floated boxesは周囲のboxのレイアウトに影響を与える。しかし、それらの効果は、それらのformatting contextからは逃れられない。それらのformatting contextを生成したboxは、それらが完全に含まれるように大きくなり、外側からfloatする。外側のboxは、boxの内側のコンテンツに影響を与えたりはみ出させたりすることは許されない。</p>
+<blockquote>
+<p><strong>EXAMPLE 5</strong><br>As another example, margins do not collapse across formatting context boundaries.</p>
+</blockquote>
+<p>別の例としては、マージンはformatting contextの境界を越えて折りたたまれない。</p>
+<blockquote>
+<p>Exclusions are able to affect content across independent formatting context boundaries. (At time of writing, they are the only layout feature that can.) [CSS3-EXCLUSIONS]</p>
+</blockquote>
+<p>Exclusionsは、formatting contextを越えてコンテンツに影響を与えることができる（執筆時点では、exclusionsはそのようなことができる唯一のレイアウトである）。</p>
+<blockquote>
+<p>Certain properties can force a box to establish an independent formatting context in cases where it wouldn’t ordinarily. For example, making a box out-of-flow causes it to blockify as well as to establish an independent formatting context. As another example, certain values of the contain property can cause a box to establish an independent formatting context. Turning a block into a scroll container will cause it to establish an independent formatting context; however turning a subgrid into a scroll container will not—it continues to act as a subgrid, with its contents participating in the layout of its parent grid container.</p>
+</blockquote>
+<p>特定のプロパティは、通常ではないケースにおいて、boxにindependent formatting contextを設置することを強制できる。たとえば、boxをout-of-flowにすると、boxのブロック化とindependent formatting contextの確率を引き起こす。別の例としては、特定のプロパティの特定の値は、boxにindependent formatting contextを設置させることができる。ブロックをscroll containerにすることでindependent formatting contextを設置するだろう。しかしながら、subgridをscroll containerにしてもそうはならない。subgridとして引き続き機能して、親のgrid containerのレイアウトにコンテンツに参加し続ける。</p>
+<blockquote>
+<p>A block box that establishes an independent formatting context establishes a new block formatting context for its contents. In most other cases, forcing a box to establish an independent formatting context is a no-op—either the box already establishes an independent formatting context (e.g. flex containers), or it’s not possible to establish a totally independent new formatting context on that type of box (e.g. non-replaced inline boxes).</p>
+</blockquote>
+<p>independent formatting contextを設置したブロックはそのコンテンツのための新しいblock formatting contextを設置する。他のほとんどの場合、boxはindependent formatting contextを設置することを強制しても何も処理されない（no-op）。そのboxは（flex containerのように）すでにindependent formatting contextを確立しているか、（非置換インラインboxのような）box上でindependentな新しいformatting contextを確立できない。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
