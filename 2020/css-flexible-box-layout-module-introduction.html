@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>CSS Flexible Box Layout Module Introduction | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="前回CSS Display Moduleについて一通り確認したので、今回からはCSS Flexible Box Layout Moduleを確認しようかなと思っている。flex boxはCan I use flexboxによると、IE11以外では問題なく利用できる。IE11についてはいろいろ問題があるそうでPartial Supportという扱いになっている。Flexbugsにいろいろ問題やそれに">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Flexible Box Layout Module Introduction">
+<meta property="og:url" content="https://memolog.org/2020/css-flexible-box-layout-module-introduction.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="前回CSS Display Moduleについて一通り確認したので、今回からはCSS Flexible Box Layout Moduleを確認しようかなと思っている。flex boxはCan I use flexboxによると、IE11以外では問題なく利用できる。IE11についてはいろいろ問題があるそうでPartial Supportという扱いになっている。Flexbugsにいろいろ問題やそれに">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.jpg">
+<meta property="article:published_time" content="2020-03-15T12:16:28.000Z">
+<meta property="article:modified_time" content="2020-03-15T12:16:43.194Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/css-flexible-box-layout-module-introduction.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/css-flexible-box-layout-module-introduction.html"
+      },
+      "headline": "CSS Flexible Box Layout Module Introduction",
+      
+        "image": [
+          "https://memolog.org/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.jpg"
+        ],
+      
+      "datePublished": "1584274588000",
+      "dateModified": "1584274603194",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "前回CSS Display Moduleについて一通り確認したので、今回からはCSS Flexible Box Layout Moduleを確認しようかなと思っている。flex boxはCan I use flexboxによると、IE11以外では問題なく利用できる。IE11についてはいろいろ問題があるそうでPartial Supportという扱いになっている。Flexbugsにいろいろ問題やそれに対する回避策などが書いてある。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-03-15T12:16:28.000Z">
+              <span class="calendar-icon">📅</span><span>2020年3月15日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>CSS Flexible Box Layout Module Introduction</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiMzNzRhNTAiIC8+PC9zdmc+" data-src="/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@rocinante_11?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Mick Haupt</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>前回CSS Display Moduleについて一通り確認したので、今回からは<a href="https://www.w3.org/TR/css-flexbox-1" target="_blank" rel="noopener">CSS Flexible Box Layout Module</a>を確認しようかなと思っている。flex boxは<a href="https://caniuse.com/#feat=flexbox" target="_blank" rel="noopener">Can I use flexbox</a>によると、IE11以外では問題なく利用できる。IE11についてはいろいろ問題があるそうでPartial Supportという扱いになっている。<a href="https://github.com/philipwalton/flexbugs" target="_blank" rel="noopener">Flexbugs</a>にいろいろ問題やそれに対する回避策などが書いてある。<a id="more"></a></p>
+<h3 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h3><blockquote>
+<p>The specification describes a CSS box model optimized for user interface design. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions.</p>
+</blockquote>
+<blockquote>
+<p>CSS is a language for describing the rendering of structured documents (such as HTML and XML) on screen, on paper, etc.</p>
+</blockquote>
+<p>flexレイアウトモデルでは、flex containerの子供はどの方向にも配置することができ、それらのサイズを「flex（伸縮自在にみたいな意味で捉えている）」にすることができる。使われていないスペースを満たすように拡大したり、親要素をあふれさせないように縮小することができる。行揃えも水平方向、垂直方向の両方とも簡単に操作することができる。二次元のレイアウトを構築するのにこれらのboxを入れ子（垂直の中に水平、または水平の中に垂直のbox）にして使うこともできる。</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
+<p>CSS 2.1 defined four layout modes — algorithms which determine the size and position of boxes based on their relationships with their sibling and ancestor boxes:</p>
+</blockquote>
+<p>CSS2.1では、4つのレイアウトモードを定義していた。アルゴリズム的には、boxのサイズや位置をそれらの兄弟や先祖のboxとの関係性を基に決定している。</p>
+<blockquote>
+<ul>
+<li>block layout, designed for laying out documents</li>
+<li>inline layout, designed for laying out text</li>
+<li>table layout, designed for laying out 2D data in a tabular format</li>
+<li>positioned layout, designed for very explicit positioning without much regard for other elements in the document</li>
+</ul>
+<p>This module introduces a new layout mode, flex layout, which is designed for laying out more complex applications and webpages.</p>
+</blockquote>
+<p>このモジュールでは、新しいレイアウトモードの、flexレイアウトについて説明する。flex layoutはより複雑なアプリケーションやウェブページのレイアウトをするために設計されている。</p>
+<h4 id="1-1-Overview"><a href="#1-1-Overview" class="headerlink" title="1.1. Overview"></a>1.1. Overview</h4><blockquote>
+<p>Flex layout is superficially similar to block layout. It lacks many of the more complex text- or document-centric properties that can be used in block layout, such as floats and columns. In return it gains simple and powerful tools for distributing space and aligning content in ways that web apps and complex web pages often need. The contents of a flex container:</p>
+</blockquote>
+<p>Flexレイアウトはブロックレイアウトに一見すると似ているが、floatやcolumnのようなブロックレイアウトでは使えるより複雑なテキスト、またはドキュメント中心のプロパティの多くが欠けている。その代わりに、アプリや複雑なページで必要となるスペースや行揃えを行うためのシンプルでパワフルなツールとなっている。</p>
+<blockquote>
+<ul>
+<li>can be laid out in any flow direction (leftwards, rightwards, downwards, or even upwards!)</li>
+<li>can have their display order reversed or rearranged at the style layer (i.e., visual order can be independent of source and speech order)</li>
+<li>can be laid out linearly along a single (main) axis or wrapped into multiple lines along a secondary (cross) axis</li>
+<li>can “flex” their sizes to respond to the available space</li>
+<li>can be aligned with respect to their container or each other on the secondary (cross)</li>
+<li>can be dynamically collapsed or uncollapsed along the main axis while preserving the container’s cross size</li>
+</ul>
+</blockquote>
+<p>flexコンテナーは、</p>
+<ul>
+<li>どのflow方向（左方向、右方向、下方向、上方向）にもレイアウトできる</li>
+<li>スタイルレイヤーにおいて、表示順を反対にしたり並び替えたりすることができる（視覚的な順番はソースやスピーチの順番とは独立してる）</li>
+<li>一つの（メインの）軸に沿って直線的にレイアウトしたり、セカンダリ（横方向）の軸に沿って複数の線に折り返す（wrap）ことができる</li>
+<li>利用可能なスペースに合わせてサイズを「flex」にできる</li>
+<li>コンテナやセカンダリ（横方向）の軸上のそれぞれに合わせて整列させることができる</li>
+<li>コンテナの横方向のサイズを保持しつつ、メインの軸に沿って動的に折りたたんだり（collapsed）、展開したり（uncollapsed）できる。</li>
+</ul>
+<blockquote>
+<p><strong>EXAMPLE1</strong><br>Here’s an example of a catalog where each item has a title, a photo, a description, and a purchase button. The designer’s intention is that each entry has the same overall size, that the photo be above the text, and that the purchase buttons aligned at the bottom, regardless of the length of the item’s description. Flex layout makes many aspects of this design easy:</p>
+</blockquote>
+<p>カタログの例。それぞれのアイテムにはタイトル、写真、概要と購入ボタンがある。デザイナーの意図は、それぞれのエントリーが同じ全体サイズを持ち、写真はテキストの上で、購入ボタンはアイテムの概要の長さに関わらず下に配置されることである。flexレイアウトはこのデザインの多くの面を簡単にする。</p>
+<blockquote>
+<ul>
+<li>The catalog uses flex layout to lay out rows of items horizontally, and to ensure that items within a row are all equal-height. Each entry is then itself a column flex container, laying out its contents vertically.</li>
+<li>Within each entry, the source document content is ordered logically with the title first, followed by the description and the photo. This provides a sensible ordering for speech rendering and in non-CSS browsers. For a more compelling visual presentation, however, order is used to pull the image up from later in the content to the top, and align-self is used to center it horizontally.</li>
+<li>An auto margin above the purchase button forces it to the bottom within each entry box, regardless of the height of that item’s description.</li>
+</ul>
+</blockquote>
+<ul>
+<li>カタログは、アイテムの行が、水平に配置して行内のアイテムがすべて同じ高さに保証されるようにflexレイアウトを使う。それぞれのエントリーは、それ自身が列のflex containerであり、そのコンテンツを縦方向に配置する。</li>
+<li>それぞれのエントリー内では、ソースドキュメントのコンテンツは論理的な順番に並ぶ。タイトルが最初で、概要と写真が続く。これはスピーチレンダリングやnon-CSSブラウザに対して、意味のある順序を与える。しかしながら、より説得力のある視覚的な表示にするために、orderプロパティを画像をトップに移動させるために使い、align-selfを水平方向に中央揃えにするのに使う。</li>
+<li>購入ボタンのmarginをautoにすることで、アイテムの概要ボタンの高さに関係なく、購入ボタンをそれぞれのエントリーbox内の下に配置されるよう強制する。</li>
+</ul>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#deals</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* Flexレイアウトでアイテムに同じ高さを持たせる  */</span>
+  <span class="token property">flex-flow</span><span class="token punctuation">:</span> row wrap<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* アイテムが複数行に折り返すことを許可する */</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.sale-item</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* それぞれのアイテムをflexレイアウトを使って配置する */</span>
+  <span class="token property">flex-flow</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* アイテムのコンテンツを垂直に配置する  */</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.sale-item</span> > img </span><span class="token punctuation">{</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">/* 画像を（視覚的な順番で）他のコンテンツの前に移す */</span>
+  <span class="token property">align-self</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* 画像を横方向に（水平に）中央揃えにする         */</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.sale-item</span> > button </span><span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* magin topをautoにすることでボタンを下に押さえる */</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>deals<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sale-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Computer Starter Kit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>This is the best computer money can buy, if you don’t have much money.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Computer
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Monitor
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Keyboard
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Mouse
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/computer.jpg<span class="token punctuation">"</span></span>
+         <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>You get: a white computer with matching peripherals.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>BUY NOW<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sale-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    …
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  …
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-Module-interactions"><a href="#1-2-Module-interactions" class="headerlink" title="1.2. Module interactions"></a>1.2. Module interactions</h4><blockquote>
+<p>This module extends the definition of the display property [CSS21], adding a new block-level and new inline-level display type, and defining a new type of formatting context along with properties to control its layout. None of the properties defined in this module apply to the ::first-line or ::first-letter pseudo-elements.</p>
+</blockquote>
+<blockquote>
+<p>The CSS Box Alignment Module extends and supercedes the definitions of the alignment properties (justify-content, align-items, align-self, align-content) introduced here.</p>
+</blockquote>
+<p>このモジュールはdisplay propertyの定義を拡張し、新しいブロックレベルとインラインレベルのdisplay typeを追加して、レイアウトを制御するためのプロパティを備えた新しいタイプのformatting contextを定義する。このモジュールで定義されたプロパティの全ては::first-lineまたは::first-letter擬似要素に対しては適用されない。</p>
+<p>CSS Box Alignmentモジュールはこのモジュールで説明されるalignmentのプロパティ（justify-content, align-items, align-self, align-content）の定義を拡張したり置き換えたりする。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
