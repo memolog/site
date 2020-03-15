@@ -56,7 +56,7 @@ boxがfloatしている、またはpositionによって絶対配置されてい�
 いくつかのformatting contextはfloatingを抑制する。そのため`float: left`のついた要素が必ずout-of-flowになるわけではない。
 
 ### independent formatting context
-> When a あ establishes an independent formatting context (whether that formatting context is of the same type as its parent or not), it essentially creates a new, independent layout environment: except through the sizing of the box itself, the layout of its descendants is (generally) not affected by the the rules and contents of the formatting context outside the box, and vice versa.
+> When a box establishes an independent formatting context (whether that formatting context is of the same type as its parent or not), it essentially creates a new, independent layout environment: except through the sizing of the box itself, the layout of its descendants is (generally) not affected by the the rules and contents of the formatting context outside the box, and vice versa.
 
 boxが（formatting contextは親と同じタイプかどうかに関係なく）independent formatting contextを設置するとき、新しい、独立したレイアウト環境を作成する。box自身のサイズを除いて、その子孫のレイアウトは（一般的に）boxの外側のformatting contextのルールやコンテンツによって影響を受けない。反対も同じ。
 

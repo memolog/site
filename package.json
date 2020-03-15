@@ -3,29 +3,34 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.7.1"
+    "version": "4.2.0"
   },
   "scripts": {
-    "pb": "primitive_bulk -i ~/Downloads/$DIRNAME.jpg -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg"
+    "pb": "primitive_bulk -i ~/Downloads/$DIRNAME.jpg -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg",
+    "update-package": "./node_modules/.bin/npm-check-updates -u"
   },
   "dependencies": {
-    "hexo": "^3.7.1",
-    "hexo-deployer-git": "^0.3.1",
-    "hexo-generator-feed": "^1.2.2",
-    "hexo-generator-index": "^0.2.0",
-    "hexo-generator-sitemap": "^1.2.0",
-    "hexo-prism-plugin": "git://github.com/ele828/hexo-prism-plugin.git#master",
-    "hexo-renderer-ejs": "^0.3.0",
-    "hexo-renderer-marked": "^0.3.0",
-    "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.2.0",
-    "hoek": "^5.0.3",
-    "image-size": "^0.6.2",
-    "jsdom": "^11.5.1",
-    "lazysizes": "^4.0.4",
-    "uglify-js": "^3.4.4"
+    "hexo": "^4.2.0",
+    "hexo-deployer-git": "^2.1.0",
+    "hexo-generator-feed": "^2.2.0",
+    "hexo-generator-index": "^1.0.0",
+    "hexo-generator-sitemap": "^2.0.0",
+    "hexo-prism-plugin": "^2.3.0",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-stylus": "^1.1.0",
+    "hexo-server": "^1.0.0",
+    "hoek": "^6.1.3",
+    "image-size": "^0.8.3",
+    "jsdom": "^16.2.1",
+    "lazysizes": "^5.2.0",
+    "uglify-js": "^3.8.0"
   },
   "devDependencies": {
-    "primitive_bulk": "^1.2.1"
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
+    "npm-check-updates": "^4.0.4",
+    "primitive_bulk": "^1.2.1",
+    "utf-8-validate": "^5.0.2"
   }
 }
