@@ -29,6 +29,7 @@
   "devDependencies": {
     "bufferutil": "^4.0.1",
     "canvas": "^2.6.1",
+    "minimist": "^1.2.5",
     "npm-check-updates": "^4.0.4",
     "primitive_bulk": "^1.2.1",
     "utf-8-validate": "^5.0.2"
