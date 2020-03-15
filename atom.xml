@@ -14,7 +14,7 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>Display module glossary</title>
@@ -28,6 +28,7 @@
       &lt;p&gt;今回はDisplay Moduleの&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#glossary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Appendix A: Glossary&lt;/a&gt;のところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。
     
     </summary>
+    
     
     
   </entry>
@@ -46,6 +47,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -60,6 +62,7 @@
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/display-value-property-2.html&quot;&gt;The display value property (list-item / internal)&lt;/a&gt;の続き。&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2. Box Layout Modes: the display property&lt;/a&gt;からdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。
     
     </summary>
+    
     
     
   </entry>
@@ -78,6 +81,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -92,6 +96,7 @@
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/inner-and-outer-display-type.html&quot;&gt;Inner and outer display types&lt;/a&gt;の続き。&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2. Box Layout Modes: the display property&lt;/a&gt;からdisplayプロパティのvalueについて確認していく。
     
     </summary>
+    
     
     
   </entry>
@@ -110,6 +115,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -124,6 +130,7 @@
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/inner-and-outer-display-type.html&quot;&gt;Inner and outer display types&lt;/a&gt;にて、inner display type は&lt;strong&gt;formatting context&lt;/strong&gt;について定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。
     
     </summary>
+    
     
     
   </entry>
@@ -142,6 +149,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -156,6 +164,7 @@
       &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/display-property-definition-in-css2.html&quot;&gt;The display property definition in CSS2&lt;/a&gt;に引き続き。&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#values&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.2. Values&lt;/a&gt;に、プロパティの仕様については&lt;a href=&quot;https://www.w3.org/TR/CSS22/about.html#property-defs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.4.2 CSS property definitions&lt;/a&gt;の表記に従うと書いてあるので、そのあたりを確認していく。
     
     </summary>
+    
     
     
   </entry>
@@ -174,6 +183,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -188,6 +198,7 @@
       &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/css-display-module-introduction.html&quot;&gt;CSS Display Module Introduction&lt;/a&gt;に引き続き、CSS Display Module Level 3の&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2. Box Layout Modes: the display property&lt;/a&gt;冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。
     
     </summary>
+    
     
     
   </entry>
@@ -206,6 +217,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -220,6 +232,7 @@
       &lt;p&gt;&lt;code&gt;position:sticky&lt;/code&gt;を使った事がなかったので見出し部分につけてみた。&lt;a href=&quot;https://caniuse.com/#feat=css-sticky&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Can I use…&lt;/a&gt;によると、IE以外ならだいたい動作する。
     
     </summary>
+    
     
     
   </entry>
@@ -238,6 +251,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -252,6 +266,7 @@
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html&quot;&gt;Convert screen capture to animation GIF&lt;/a&gt;の話でffmpegを使ってキャプチャをGIFに変えるということをした。Macだとffmpegのインストールは簡単だしその方が良いと思うけど、環境によっては難しい場合もあるだろうし、そもそもインストールしてはならない状況もあるかもしれない。そんな時に&lt;a href=&quot;https://github.com/Kagami/ffmpeg.js&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ffmpeg.js&lt;/a&gt;をWeb Workersで動かすのはどうだろうかと思ってやってみた。
     
     </summary>
+    
     
     
   </entry>
@@ -270,6 +285,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -286,6 +302,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -300,6 +317,7 @@
       &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;async&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/await&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;await&lt;/a&gt;の書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。
     
     </summary>
+    
     
     
   </entry>
@@ -319,6 +337,7 @@
     </summary>
     
     
+    
   </entry>
   
   <entry>
@@ -334,6 +353,7 @@
 &lt;p&gt;その中で、&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nullish coalescing&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Optional chaining&lt;/a&gt; はかなり便利。なくても大丈夫だし、使わなくても良いんだけど、便利だから日常的に書かれるJavaScriptの書き方を変えるものになると思う。
     
     </summary>
+    
     
     
   </entry>
