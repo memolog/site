@@ -360,7 +360,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://memolog.org/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.jpg">
 <meta property="article:published_time" content="2020-03-15T12:16:28.000Z">
-<meta property="article:modified_time" content="2020-03-15T12:16:43.194Z">
+<meta property="article:modified_time" content="2020-03-19T14:19:43.511Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://memolog.org/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.jpg">
@@ -383,7 +383,7 @@
         ],
       
       "datePublished": "1584274588000",
-      "dateModified": "1584274603194",
+      "dateModified": "1584627583511",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -478,10 +478,10 @@
 <ul>
 <li>どのflow方向（左方向、右方向、下方向、上方向）にもレイアウトできる</li>
 <li>スタイルレイヤーにおいて、表示順を反対にしたり並び替えたりすることができる（視覚的な順番はソースやスピーチの順番とは独立してる）</li>
-<li>一つの（メインの）軸に沿って直線的にレイアウトしたり、セカンダリ（横方向）の軸に沿って複数の線に折り返す（wrap）ことができる</li>
+<li>一つの（メインの）軸に沿って直線的にレイアウトしたり、セカンダリ（交差方向）の軸に沿って複数の線に折り返す（wrap）ことができる</li>
 <li>利用可能なスペースに合わせてサイズを「flex」にできる</li>
-<li>コンテナやセカンダリ（横方向）の軸上のそれぞれに合わせて整列させることができる</li>
-<li>コンテナの横方向のサイズを保持しつつ、メインの軸に沿って動的に折りたたんだり（collapsed）、展開したり（uncollapsed）できる。</li>
+<li>コンテナやセカンダリ（交差方向）の軸上のそれぞれに合わせて整列させることができる</li>
+<li>コンテナの交差方向のサイズを保持しつつ、メインの軸に沿って動的に折りたたんだり（collapsed）、展開したり（uncollapsed）できる。</li>
 </ul>
 <blockquote>
 <p><strong>EXAMPLE1</strong><br>Here’s an example of a catalog where each item has a title, a photo, a description, and a purchase button. The designer’s intention is that each entry has the same overall size, that the photo be above the text, and that the purchase buttons aligned at the bottom, regardless of the length of the item’s description. Flex layout makes many aspects of this design easy:</p>
@@ -509,7 +509,7 @@
 <span class="token punctuation">}</span>
 <span class="token selector"><span class="token class">.sale-item</span> > img </span><span class="token punctuation">{</span>
   <span class="token property">order</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">/* 画像を（視覚的な順番で）他のコンテンツの前に移す */</span>
-  <span class="token property">align-self</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* 画像を横方向に（水平に）中央揃えにする         */</span>
+  <span class="token property">align-self</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">/* 画像を交差方向に（水平に）中央揃えにする         */</span>
 <span class="token punctuation">}</span>
 <span class="token selector"><span class="token class">.sale-item</span> > button </span><span class="token punctuation">{</span>
   <span class="token property">margin-top</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">/* magin topをautoにすることでボタンを下に押さえる */</span>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-15T12:16:43.194Z</updated>
+  <updated>2020-03-20T07:21:09.696Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Flex Layout Box Model and Terminology</title>
+    <link href="https://memolog.org/2020/flex-layout-box-model-and-terminology.html"/>
+    <id>https://memolog.org/2020/flex-layout-box-model-and-terminology.html</id>
+    <published>2020-03-20T07:21:22.000Z</published>
+    <updated>2020-03-20T07:21:09.696Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/css-flexible-box-layout-module-introduction.html&quot;&gt;CSS Flexible Box Layout Module Introduction&lt;/a&gt;から引き続き、&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#box-model&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2. Flex Layout Box Model and Terminology&lt;/a&gt;について確認する。
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>CSS Flexible Box Layout Module Introduction</title>
     <link href="https://memolog.org/2020/css-flexible-box-layout-module-introduction.html"/>
     <id>https://memolog.org/2020/css-flexible-box-layout-module-introduction.html</id>
     <published>2020-03-15T12:16:28.000Z</published>
-    <updated>2020-03-15T12:16:43.194Z</updated>
+    <updated>2020-03-19T14:19:43.511Z</updated>
     
     <summary type="html">
     
@@ -332,24 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;async&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/await&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;await&lt;/a&gt;の書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Web Workers work on IE10</title>
-    <link href="https://memolog.org/2020/web-workers-work-on-ie10.html"/>
-    <id>https://memolog.org/2020/web-workers-work-on-ie10.html</id>
-    <published>2020-02-06T21:18:11.000Z</published>
-    <updated>2020-02-11T05:00:57.370Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JavaScriptはシングルスレッドでイベントドリブンであり、実行を非同期にすることはできるけど、基本的に同時に一つのことしかできない。&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Web Workers&lt;/a&gt;を使えば、メインスレッドとは別のスレッドで処理を実行することができるので、メインスレッドとは別の処理を同時に実行することができる。Web Workersを使ったメインスレッドの負荷低減は今後のフロンドエンドにおいて必携の技術になると思われる。&lt;/p&gt;
-&lt;p&gt;なのだけど、Web Workersは意外と歴史があり（よく知らないけど）、IE10でも動作する（&lt;a href=&quot;https://caniuse.com/#feat=webworkers&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Can I use Web Workers&lt;/a&gt;）。
     
     </summary>
     
