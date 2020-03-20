@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-20T07:21:09.696Z</updated>
+  <updated>2020-03-20T08:45:58.410Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex Containers</title>
+    <link href="https://memolog.org/2020/flex-containers.html"/>
+    <id>https://memolog.org/2020/flex-containers.html</id>
+    <published>2020-03-20T08:45:51.000Z</published>
+    <updated>2020-03-20T08:45:58.410Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/flex-layout-box-model-and-terminology.html&quot;&gt;Flex Layout Box Model and Terminology&lt;/a&gt;から引き続き、&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#flex-containers&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;3. Flex Containers: the flex and inline-flex display values&lt;/a&gt;について確認していく。
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Flex Layout Box Model and Terminology</title>
@@ -332,23 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;Macの場合、&lt;a href=&quot;https://support.apple.com/ja-jp/HT201066#record&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Quicktime Player&lt;/a&gt;のファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合は&lt;a href=&quot;https://support.apple.com/ja-jp/HT207935&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;iPhone、iPad、iPod touch で画面を録画する方法&lt;/a&gt;参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのissueに貼り付ける事ができない。なので、&lt;a href=&quot;https://www.ffmpeg.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ffmpeg&lt;/a&gt;を使ってgifに変換しようという話。gifならgithubのissueに貼り付けられる。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Top-level await will be soon</title>
-    <link href="https://memolog.org/2020/top-level-await-will-be-soon.html"/>
-    <id>https://memolog.org/2020/top-level-await-will-be-soon.html</id>
-    <published>2020-02-07T20:55:41.000Z</published>
-    <updated>2020-02-11T05:00:28.537Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;async&lt;/a&gt;と&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/await&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;await&lt;/a&gt;の書き方に慣れてくると、非同期の処理を待つ時はいつでもawaitを使いたくなるのだが、使えるのはasyncのついたfunctionの中だけでトップレベルでは使えない。
     
     </summary>
     
