@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-03-20T08:45:58.410Z</updated>
+  <updated>2020-03-22T04:00:23.751Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex Items</title>
+    <link href="https://memolog.org/2020/flex-items.html"/>
+    <id>https://memolog.org/2020/flex-items.html</id>
+    <published>2020-03-21T09:17:12.000Z</published>
+    <updated>2020-03-22T04:00:23.751Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/flex-containers.html&quot;&gt;Flex Containers&lt;/a&gt;から引き続き、&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#flex-items&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;4. Flex Items&lt;/a&gt;について確認していく。
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Flex Containers</title>
@@ -332,23 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;O(n^2)の計算量で実行するソートアルゴリズムについては、&lt;a href=&quot;https://memolog.org/2018/bubble-sort-in-javascript.html&quot;&gt;Bubble Sort in JavaScript（バブルソート）&lt;/a&gt;、&lt;a href=&quot;https://memolog.org/2018/insertion-sort-in-javascript.html&quot;&gt;Insertion Sort in JavaScript（挿入ソート）&lt;/a&gt;、&lt;a href=&quot;https://memolog.org/2018/selection-sort-in-javascript.html&quot;&gt;Selection Sort in JavaScript（選択ソート）&lt;/a&gt;にて扱ったのだけど、完全に忘れてしまったので、もう一度確認する。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Convert screen capture to animation GIF</title>
-    <link href="https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html"/>
-    <id>https://memolog.org/2020/convert-screen-capture-with-ffmpeg.html</id>
-    <published>2020-02-09T21:49:09.000Z</published>
-    <updated>2020-02-11T05:03:37.086Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Macの場合、&lt;a href=&quot;https://support.apple.com/ja-jp/HT201066#record&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Quicktime Player&lt;/a&gt;のファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合は&lt;a href=&quot;https://support.apple.com/ja-jp/HT207935&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;iPhone、iPad、iPod touch で画面を録画する方法&lt;/a&gt;参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのissueに貼り付ける事ができない。なので、&lt;a href=&quot;https://www.ffmpeg.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ffmpeg&lt;/a&gt;を使ってgifに変換しようという話。gifならgithubのissueに貼り付けられる。
     
     </summary>
     

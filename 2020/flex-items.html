@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Flex Items | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="Flex Containersから引き続き、4. Flex Itemsについて確認していく。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex Items">
+<meta property="og:url" content="https://memolog.org/2020/flex-items.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="Flex Containersから引き続き、4. Flex Itemsについて確認していく。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/vincent-van-zalinge-8bOwZ8ag9UY-unsplash/vincent-van-zalinge-8bOwZ8ag9UY-unsplash.jpg">
+<meta property="article:published_time" content="2020-03-21T09:17:12.000Z">
+<meta property="article:modified_time" content="2020-03-22T04:00:23.751Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/vincent-van-zalinge-8bOwZ8ag9UY-unsplash/vincent-van-zalinge-8bOwZ8ag9UY-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/flex-items.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/flex-items.html"
+      },
+      "headline": "Flex Items",
+      
+        "image": [
+          "https://memolog.org/assets/images/vincent-van-zalinge-8bOwZ8ag9UY-unsplash/vincent-van-zalinge-8bOwZ8ag9UY-unsplash.jpg"
+        ],
+      
+      "datePublished": "1584782232000",
+      "dateModified": "1584849623751",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "Flex Containersから引き続き、4. Flex Itemsについて確認していく。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-03-21T09:17:12.000Z">
+              <span class="calendar-icon">📅</span><span>2020年3月21日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Flex Items</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM1MzRkMmMiIC8+PC9zdmc+" data-src="/assets/images/vincent-van-zalinge-8bOwZ8ag9UY-unsplash/vincent-van-zalinge-8bOwZ8ag9UY-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@vincentvanzalinge?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Vincent van Zalinge</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p><a href="https://memolog.org/2020/flex-containers.html">Flex Containers</a>から引き続き、<a href="https://www.w3.org/TR/css-flexbox-1/#flex-items" target="_blank" rel="noopener">4. Flex Items</a>について確認していく。<a id="more"></a></p>
+<blockquote>
+<p>Loosely speaking, the flex items of a flex container are boxes representing its in-flow contents.</p>
+</blockquote>
+<p>大まかに言うと、　flex containerのflex itemは、（flex containerの）in-flowコンテンツを表現したboxである。</p>
+<p>つまり、大まかには<code>display:flex</code>配下の子要素がflex itemとして処理される。以下の説明では、例外的なケースについての説明を含んだ、より厳密な内容が続く。</p>
+<blockquote>
+<p>Each in-flow child of a flex container becomes a flex item, and each contiguous sequence of child text runs is wrapped in an anonymous block container flex item. However, if the entire sequence of child text runs contains only white space (i.e. characters that can be affected by the white-space property) it is instead not rendered (just as if its text nodes were display:none).</p>
+</blockquote>
+<p>flex containerのそれぞれのin-flowの子供は、flex itemになり、子のtext runの連続する列のそれぞれは、anonymous block container flex itemでラップされる。しかしながら、もし全てのtext runの列が空白（white-spaceプロパティによって影響をうける文字列）のみを含む場合、ラップされる代わりにレンダリングされなくなる（ちょうどtextノードがdisplay:noneであるかのように）。</p>
+<p><strong>EXAMPLE 2</strong></p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span>flex</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- flex item: block child --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- flex item: floated element; floatの指定は無視される --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>float<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- flex item: インラインコンテンツはanonymous block boxで囲われる --></span>
+    anonymous item 3
+
+    <span class="token comment" spellcheck="true">&lt;!-- flex item: inline child --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>
+        item 4
+        <span class="token comment" spellcheck="true">&lt;!-- flex items はブロックの周囲で分かれない --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> block</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span>not-an-item</span><span class="token punctuation">></span></span>item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">></span></span>
+        item 4
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>flex itemsは下の画像みたいになる。<br><img src="../../assets/images/screenshot_flex_items.png" lazyload width="327" height="100" /></p>
+<blockquote>
+<p>Note that the inter-element white space disappears: it does not become its own flex item, even though the inter-element text does get wrapped in an anonymous flex item.</p>
+</blockquote>
+<p>要素と要素の間にある空白は消える。要素間のtextはanonymous flex itemでラップされるけれど、空白だけではflex itemにはならない。</p>
+<blockquote>
+<p>Note also that the anonymous item’s box is unstyleable, since there is no element to assign style rules to. Its contents will however inherit styles (such as font settings) from the flex container.</p>
+</blockquote>
+<p>anonymous itemのboxは、スタイルのルールを割り当てる要素がないので、スタイルがない（unstyleable）状態になる。しかしながら、flex containerから（fontのような）スタイルは引き継がれる。</p>
+<blockquote>
+<p>A flex item establishes an independent formatting context for its contents. However, flex items themselves are flex-level boxes, not block-level boxes: they participate in their container’s flex formatting context, not in a block formatting context.</p>
+</blockquote>
+<p>flex itemはそのコンテンツに対してindependent formatting contextを設置する。しかしながら、flex itemそのものはflexレベルのboxであり、blockレベルのboxではない。つまりflex itemsはcontainerのflex formatting contextに参加する。block formatting contextには参加しない。</p>
+<hr>
+<blockquote>
+<p><strong>Note</strong>: Authors reading this spec may want to skip past the following box-generation and static position details.</p>
+</blockquote>
+<blockquote>
+<p>The display value of a flex item is blockified: if the specified display of an in-flow child of an element generating a flex container is an inline-level value, it computes to its block-level equivalent. (See CSS2.1§9.7 [CSS21] and CSS Display [CSS3-DISPLAY] for details on this type of display value conversion.)</p>
+</blockquote>
+<p>flex itemのdisplay valueは、ブロック化される。もしflex containerを生成した要素のin-flowの子どものspecified valueがインラインベルのvalueであった場合、ブロックレベルのvalueとして計算される。これは<a href="https://memolog.org/2020/flex-containers.html">Flex Containers</a>の最後に書いた、インラインレベルのものがブロックレベルとして扱われるという話と同様。</p>
+<blockquote>
+<p><strong>Note</strong>: Some values of display normally trigger the creation of anonymous boxes around the original box. If such a box is a flex item, it is blockified first, and so anonymous box creation will not happen. For example, two contiguous flex items with display: table-cell will become two separate display: block flex items, instead of being wrapped into a single anonymous table.</p>
+</blockquote>
+<p>display valueの値によっては、通常オリジナルのboxの周りにanonymous boxの作成をもたらす。もしそのようなboxがflex itemであったばあい、それはまずブロック化され、anonymous boxの生成は起こらなくなる。たとえば、2つの連続したflex itemがdisplay:table-cellであった場合、一つのanonymous  tableによってラップされるのではなく、それらは二つのdisplay:blockなflex itemsになる。</p>
+<blockquote>
+<p>In the case of flex items with display: table, the table wrapper box becomes the flex item, and the order and align-self properties apply to it. The contents of any caption boxes contribute to the calculation of the table wrapper box’s min-content and max-content sizes. However, like width and height, the flex longhands apply to the table box as follows: the flex item’s final size is calculated by performing layout as if the distance between the table wrapper box’s edges and the table box’s content edges were all part of the table box’s border+padding area, and the table box were the flex item.</p>
+</blockquote>
+<p><code>display:table</code>であるflex itemsの場合、table wrapper boxがflex itemとなり、その他のとalign-selfのプロパティはそこに適用される。caption boxのコンテンツもtable wrapper boxのmin-content、max-contentのサイズの計算に貢献する。しかしながら、widthとheightのように、flex longhandsは次のようにtable boxに適用される。flex itemの最終的なサイズはtable wrapper boxの端とtable boxのコンテンツの端との間の距離が、すべてtable boxのborderとpaddingエリアの一部であるかのようになり、そのtable boxがflex itemであるかのようにレイアウトを実行されることによって、計算される。</p>
+<hr>
+<p><code>longhand</code>とは、<code>shorthand</code>の反対ということで、fontでいうと<code>font: 18px sans-serif;</code>みたいに関連するプロパティをまとめて指定するのがshorthandで、<code>font-family: sans-serif;</code>とプロパティを個別に指定するのがlonghand（だと思う）。</p>
+<p><code>display:table</code>は、<a href="https://www.w3.org/TR/css-display-3/#valdef-display-table" target="_blank" rel="noopener">2.2. Inner Display Layout Models</a>から引用すると以下の通り。</p>
+<blockquote>
+<p><strong>table</strong><br>The element generates a principal <a href="https://drafts.csswg.org/css-tables-3/#table-wrapper-box" target="_blank" rel="noopener">table wrapper box</a> that establishes a block formatting context, and which contains an additionally-generated <a href="https://drafts.csswg.org/css-tables-3/#table-grid-box" target="_blank" rel="noopener">table grid box</a> that establishes a table formatting context. [CSS2]</p>
+</blockquote>
+<p>要素はblock formatting contextを設置する<strong>table wrapper box</strong>を生成し、そこにtable formatting contextを設置する<strong>table grid box</strong>を包含する。</p>
+<blockquote>
+<p><strong>table wrapper box</strong><br>A block container box generated <a href="https://drafts.csswg.org/css-tables-3/#fixup-algorithm" target="_blank" rel="noopener">around table grid boxes</a> to account for any space occupied by each <a href="https://drafts.csswg.org/css-tables-3/#table-caption" target="_blank" rel="noopener">table-caption</a> it owns.</p>
+</blockquote>
+<p>table wrapper boxはblock containerであり、それが所有する各table-captionによって占めるスペースを考慮しつつ、table grid boxesの周りに生成される。</p>
+<blockquote>
+<p><strong>table grid box</strong><br>A block-level box containing the table-internal boxes, excluding its captions.</p>
+</blockquote>
+<p>table grid boxは、ブロックレベルのboxでcaptionを除いた、table-internal boxesが含まれる。</p>
+<hr>
+<p>つまり、<code>display:table</code>になっているとprincipal box（通常、要素は一つのboxを生成する、それをprincipal boxと呼ぶ）として、table wrapper boxを生成する。flex containerの子要素が<code>display:table</code>であった場合、table wrapper boxがflex itemとして扱われる。table wrapper box には、table-captionによるキャプションのエリアとtable-internal boxesが含まれていて、min-content、max-contentの計算にはcaption部分も含まれる。でもflexの各種設定値では、caption部分（table wrapper boxとtable boxの間にある距離）はpaddingとかborderと同じ扱いになり、（content-box・コンテンツ領域のみを対象とする）widthやheightと同じようにコンテンツ領域としては考慮されない。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
