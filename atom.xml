@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-04-05T09:14:23.535Z</updated>
+  <updated>2020-04-12T10:37:07.141Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Collapsed Items</title>
+    <link href="https://memolog.org/2020/flex-collpased-items.html"/>
+    <id>https://memolog.org/2020/flex-collpased-items.html</id>
+    <published>2020-04-05T09:34:53.000Z</published>
+    <updated>2020-04-12T10:37:07.141Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今回は&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#visibility-collapse&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;4.4. Collapsed Items&lt;/a&gt;について
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Flex Item Margin, Padding and Z-Ordering</title>
@@ -332,23 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;code&gt;position:sticky&lt;/code&gt;を使った事がなかったので見出し部分につけてみた。&lt;a href=&quot;https://caniuse.com/#feat=css-sticky&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Can I use…&lt;/a&gt;によると、IE以外ならだいたい動作する。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>The Web Worker&#39;s lifetime</title>
-    <link href="https://memolog.org/2020/web-workers-lifetime.html"/>
-    <id>https://memolog.org/2020/web-workers-lifetime.html</id>
-    <published>2020-02-13T11:17:00.000Z</published>
-    <updated>2020-02-13T11:17:20.797Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Web Worker（以下worker）はいつ止まるのか。端的に言うと、画面遷移した時など、関連するDocumentがなくなった時に止まる。workerの実行は&lt;code&gt;closing&lt;/code&gt;フラグで管理されていて、このフラグがtrueになるとworkerはそれ以降の処理をしなくなる。workerのインスタンスが削除されるかどうかは仕様上では考慮されていない雰囲気だけど（ガベージコレクトされたときに削除されるのではなかろうか）、とにかく、実質的に、closingフラグがtrueになったタイミングでworkerは止まると言える。
     
     </summary>
     

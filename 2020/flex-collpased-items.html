@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Collapsed Items | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="今回は4.4. Collapsed Itemsについて">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Collapsed Items">
+<meta property="og:url" content="https://memolog.org/2020/flex-collpased-items.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="今回は4.4. Collapsed Itemsについて">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/nong-vang-w5tI4WACAKo-unsplash/nong-vang-w5tI4WACAKo-unsplash.jpg">
+<meta property="article:published_time" content="2020-04-05T09:34:53.000Z">
+<meta property="article:modified_time" content="2020-04-12T10:37:07.141Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/nong-vang-w5tI4WACAKo-unsplash/nong-vang-w5tI4WACAKo-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/flex-collpased-items.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/flex-collpased-items.html"
+      },
+      "headline": "Collapsed Items",
+      
+        "image": [
+          "https://memolog.org/assets/images/nong-vang-w5tI4WACAKo-unsplash/nong-vang-w5tI4WACAKo-unsplash.jpg"
+        ],
+      
+      "datePublished": "1586079293000",
+      "dateModified": "1586687827141",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "今回は4.4. Collapsed Itemsについて"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-04-05T09:34:53.000Z">
+              <span class="calendar-icon">📅</span><span>2020年4月5日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Collapsed Items</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM5NjhlN2IiIC8+PC9zdmc+" data-src="/assets/images/nong-vang-w5tI4WACAKo-unsplash/nong-vang-w5tI4WACAKo-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@californong?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Nong Vang</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>今回は<a href="https://www.w3.org/TR/css-flexbox-1/#visibility-collapse" target="_blank" rel="noopener">4.4. Collapsed Items</a>について<a id="more"></a></p>
+<blockquote>
+<p>Specifying visibility:collapse on a flex item causes it to become a collapsed flex item, producing an effect similar to visibility:collapse on a table-row or table-column: the collapsed flex item is removed from rendering entirely, but leaves behind a “strut” that keeps the flex line’s cross-size stable. Thus, if a flex container has only one flex line, dynamically collapsing or uncollapsing items may change the flex container’s main size, but is guaranteed to have no effect on its cross size and won’t cause the rest of the page’s layout to “wobble”. Flex line wrapping is re-done after collapsing, however, so the cross-size of a flex container with multiple lines might or might not change.</p>
+<p>Though collapsed flex items aren’t rendered, they do appear in the formatting structure. Therefore, unlike on display:none items [CSS21], effects that depend on a box appearing in the formatting structure (like incrementing counters or running animations and transitions) still operate on collapsed items.</p>
+</blockquote>
+<p>flex itemに<code>visibility:collapse</code>を指定するとflex itemが折り畳まれるようになり、table-rowやtable-columnにおけるvisibility:collapseと同様の効果を得ることができる。折り畳まれたflex itemはレンダリングから完全に削除されるが、flex lineのcross-sizeを安定させるための「支柱」を残す。そのため、もしflex containerにflex lineが一つしかない場合、itemsを折り畳んだり開いたりすることはflex containerのmain sizeを変更するかもしれないが、cross sizeには効果を及ぼさないことが保証され、ページの残りのレイアウトが「揺らぐ」ことはない。しかしながら、Flex lineの折り返しは折り畳まれた後に再度折り返しが実行されるので、複数行にまたがるflex containerのcross-sizeは変わるかもしれないし、変わらないかもしれない。</p>
+<p>折り畳まれたflex itemsはレンダリングされないけれども、それらはformatting structureには出現する。したがって、display:noneとは異なり、（incrementing counterやアニメーションやtransitionなどの実行のように）formatting structureに現れるboxに依存する効果は、折り畳まれたitemに対しても実行が続く。</p>
+<blockquote>
+<p><strong>EXAMPLE 4</strong> In the following example, a sidebar is sized to fit its content. visibility: collapse is used to dynamically hide parts of a navigation sidebar without affecting its width, even though the widest item (“Architecture”) is in a collapsed section.</p>
+</blockquote>
+<p>次の例では、サイドバーはコンテンツに合わせてサイズが調整される。<code>visibility: collapse</code>はサイドバーの一部分を動的に見えなくする。たとえ最も幅が広いアイテム（ここでは「Architecture」の項目）が折り畳まれたセクションにある場合でも、横幅に影響が出ないようになっている。</p>
+<img src="/assets/images/screencapture_collapsed_itmes.gif" width="803" style="border:5px solid #f0f0f0" />
+
+<p>（上の例はflexで作られてないけど）</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 60em<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">/* 十分な空間があるときだけ2カラムのレイアウトになる
+  （文字サイズはデフォルトのサイズから相対的に決まる） */</span>
+  <span class="token selector">div </span><span class="token punctuation">{</span> <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector"><span class="token id">#main</span> </span><span class="token punctuation">{</span>
+    <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">/* メイン部分は残った空間全てを使う */</span>
+    <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* （右の）ナビゲーションの後に配置する */</span>
+    <span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">12</span>em<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* メインコンテンツのサイズを最適化する */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/* メニューのアイテムはvisibility:collapseが動くように
+flex layoutを利用する。 */</span>
+<span class="token selector">nav > ul > li </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-flow</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/* サブメニューはターゲットでないときに折り畳まれる */</span>
+<span class="token selector">nav > ul > li<span class="token pseudo-class">:not(:target):not(:hover)</span> > ul </span><span class="token punctuation">{</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> collapse<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Interesting Stuff to Read
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nav-about<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#nav-about<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        …
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nav-projects<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#nav-projects<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Projects<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>…<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Art<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>…<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Architecture<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>…<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Music<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nav-interact<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#nav-interact<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Interact<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        …
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+…<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>flex</code>ショートハンドは、以下のような定義になっている。</p>
+<blockquote>
+<p>none | [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? || &lt;‘flex-basis’&gt; ]`</p>
+</blockquote>
+<p><code>flex: 1</code>の場合、<code>flex: 1 1 0</code> と記述されるのと同じになる。未設定の初期値は <code>flex: 0 1 auto</code>となるのだが、<a href="https://www.w3.org/TR/css-flexbox-1/#flex-initial" target="_blank" rel="noopener">7.1.1. Basic Values of flex</a>に以下のような説明がついている。</p>
+<blockquote>
+<p><strong>flex: initial</strong><br>Equivalent to flex: 0 1 auto. (This is the initial value.) Sizes the item based on the width/height properties. (If the item’s main size property computes to auto, this will size the flex item based on its contents.) Makes the flex item inflexible when there is positive free space, but allows it to shrink to its minimum size when there is insufficient space. The alignment abilities or auto margins can be used to align flex items along the main axis.</p>
+</blockquote>
+<p>flex itemはwidth/heightのプロパティに基づいてサイズ調整される（もしitemのmain sizeプロパティがautoと計算された場合、そのコンテンツを基にサイズが調整される）。空いてるスペースがある場合、flex itemは不変（inflexible）であるけど、十分なスペースがない場合は最小サイズまで縮小することができる。alignmentやauto marginsはmain axisに沿ってflex itemsを揃えるために使われる。</p>
+<p>つまり、上の例のCSSの場合、<code>nav</code>の部分の横幅は（十分な空間があれば）コンテンツの長さと同じになる。その時のコンテンツの長さは<code>visibility: collapse</code>による影響を受けない。<code>#main</code>の部分は空いてる空間に応じて広がる。</p>
+<p><code>order</code>の初期値は0なので（<a href="https://www.w3.org/TR/css-flexbox-1/#order-property" target="_blank" rel="noopener">5.4. Display Order: the order property</a>）、<code>order: 1</code>を設定することで、<code>&lt;nav&gt;</code>の方が先に配置される。</p>
+<blockquote>
+<p>To compute the size of the strut, flex layout is first performed with all items uncollapsed, and then re-run with each collapsed item replaced by a strut that maintains the original cross-size of the item’s original line. See the <a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">Flex Layout Algorithm</a> for the normative definition of how visibility:collapse interacts with flex layout.</p>
+</blockquote>
+<p>「支柱(strut)」のサイズを計算するために、flexレイアウトは最初にすべてのitemを折り畳まれていない状態（uncollapsed）で実行され、その後に、折り畳まれるitemをitemのオリジナルの行のオリジナルのcross-sizeを維持する支柱によって置き換えて再実行する。</p>
+<blockquote>
+<p><strong>Note</strong>: Using visibility:collapse on any flex items will cause the flex layout algorithm to repeat partway through, re-running the most expensive steps. It’s recommended that authors continue to use display:none to hide items if the items will not be dynamically collapsed and uncollapsed, as that is more efficient for the layout engine. (Since only part of the steps need to be repeated when visibility is changed, however, ‘visibility: collapse’ is still recommended for dynamic cases.)</p>
+</blockquote>
+<p>flex itemにvisibility:collapseを使うことは、flexレイアウトのアルゴリズムを途中で繰り返すことになり、最も高コストなステップを再実行することになる。もしitemを動的に折り畳んだり展開したりしないなら、アイテムを非表示にするのには display:none を使うことを推奨する。レイアウトエンジンにとってその方が効率的だから。（しかしながら、visibilityが変わったらステップの一部は繰り返す必要があるので、動的に変更するケースにおいては <code>visibility: collapse</code> は推奨される）。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
