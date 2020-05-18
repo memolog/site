@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://www.netmagazine.com/tutorials/building-modern-grid-system" target="_blank" rel="noopener">Building a modern grid system | Tutorial | .net magazine</a>にwidthをパーセントで指定したresponsiveなgrid（で、かつネストできてサイズの変更が簡単で..云々）を作成するという話が掲載されている。</p>
 <a id="more"></a>
+
 <p>このgridが便利かどうかは使ってみないとなんともですが、その中で紹介されているbox-sizingというプロパティが面白い（ずいぶん前からあるみたいですけど）。box-sizingではwidth/heightの数値にどの範囲までを含めるかを設定することができる（参照:<a href="https://developer.mozilla.org/En/CSS/Box-sizing" target="_blank" rel="noopener">box-sizing - MDN</a>）。初期設定は標準モードで使われる「content-box（widthはコンテンツのエリアのみでpadding/border/marginは含まれない）」。これを「border-box」に設定すると、widthにpaddingとborderを含めることができる（IE6の互換モードと同じ）。</p>
 <p>たとえば画像にborderで枠をつけつつ、横幅いっぱいに表示したいというときに、便利。content-boxのままだと、borderの1pxとかpaddingの幅をある程度考慮してwidthを調整しないといけなくなるけど、border-boxにしてしておけば</p>
 <pre><code>img.image-full{

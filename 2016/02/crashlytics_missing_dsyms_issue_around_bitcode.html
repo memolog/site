@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p>Xcodeでpublishした内部テスター向けのビルドで、<a href="https://fabric.io/kits/ios/crashlytics" target="_blank" rel="noopener">Crashlytics</a>へクラッシュレポートが届かない。「missing dSYM」というエラーが出てるので、dSYMの問題だろうというところまでわかるけど、<a href="https://docs.fabric.io/ios/crashlytics/index.html" target="_blank" rel="noopener">CrashlyticsのDocument</a>などを読んでもわからない。Crashlyticsのmissing dSYMの画面に出てるUUIDを検索しても見つからない…</p>
 <a id="more"></a>
+
 <p>それで、わりとさんざん悩んだ末に<a href="https://twittercommunity.com/t/any-alternative-to-manually-uploading-dsyms-for-bitcode-enabled-apps/60064" target="_blank" rel="noopener">Any alternative to manually uploading dSYMs for bitcode enabled apps? - Crashlytics - Twitter Developers</a>に書いてある現象なのがわかった。</p>
 <blockquote>
 <p>Awesome question and we’re actively looking at ways to simplify this process, however there’s a few difficulties. When using Bitcode, which isn’t required for iOS apps, Apple is recompiling your app on their servers and can do this whenever they want to, with any changes, which would result in a new dSYM that is generated. There is also no way to know currently when Apple has done this.</p>
@@ -429,8 +430,7 @@
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~/Downloads
 unzip dSYMs -d _dSYMs
 <span class="token function">cd</span> _dSYMs
-<span class="token function">ls</span> -q <span class="token operator">|</span> <span class="token function">grep</span> -v META-INF <span class="token operator">|</span> <span class="token function">xargs</span> dwarfdump -u
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">ls</span> -q <span class="token operator">|</span> <span class="token function">grep</span> -v META-INF <span class="token operator">|</span> <span class="token function">xargs</span> dwarfdump -u<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>今のところ新しいビルドをパブリッシュしたら、毎回手動でdSYMをアップロードしないといけないみたい。AppleがrecompileしたアプリのdSYMはiTunes Connectで処理完了するまでは取得する手段もなさそう。これはなかなかに面倒くさい。</p>
 <p>とはいえ、recompileしてもCocoaPodsでインストールしてるモジュールのUUIDは変わらない（更新しなければ）みたいだし、毎回アップロードしないといけないdSYMは自分のアプリのarmv7版とarm64版の2つだけっぽいので、いまのところこういうものとわりきって作業することにした。</p>
 <p>というメモ。たぶんそのうちもっと良い感じになる、はず。</p>

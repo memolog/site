@@ -423,6 +423,7 @@ text-align−スタイルシートリファレンス
 </ul>
 <p>「text-align:justify」は、対応していないブラウザがあるから使わない・・と思っていたのでが、今ではどのブラウザでもだいたい対応しているということに今さら気がつきました。いちど見捨てたプロパティにはなかなか目を向けないものだなと思った次第でございます。</p>
 <a id="more"></a>
+
 <p>追加したCSSはこんな感じ。特に何のひねりもないです。</p>
 <pre><code>.asset-content{text-align:justify; text-justify:distribute;}
 </code></pre><p>IE 6で確認した感じでは、日本語の両端揃えはまだtext-justifyの方が有効に機能するようなので、text-justify:distribute;を入れています。英文であればtext-align:justifyのみで問題なさそうな感じでした。</p>

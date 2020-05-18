@@ -422,6 +422,7 @@
         </header>
         <div id="article-content" class="content "><p>iOS側で<a href="https://github.com/krzyzanowskim/CryptoSwift" target="_blank" rel="noopener">CryptoSwift</a>を使ってAES-256-CBCで暗号化したデータを、Node.jsで受け取って復号化するという話。</p>
 <a id="more"></a>
+
 <h2 id="CocoaPodsのインストール"><a href="#CocoaPodsのインストール" class="headerlink" title="CocoaPodsのインストール"></a>CocoaPodsのインストール</h2><p>CryptoSwiftをインストールするときにCocoaPodsを使うので、まず<a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="noopener">CocoaPods Guides - Getting Started</a>を参考にCocoaPodsのインストールをします。CocoaPodsについては<a href="http://qiita.com/nori0620/items/b81ae171f0e82b0c2d8a" target="_blank" rel="noopener">[Swift] CocoaPodsとCarthageの違い / ライブラリ管理 - Qiita</a>など参照（CarthageでもCryptoSwiftインストールできる）。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">gem <span class="token function">install</span> cocoapods
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -437,8 +438,7 @@ pod 'CryptoSwift', "0.4.1"
 <p>ちなみに、user_frameworks!の宣言がないと下記のようなエラーが出ます。詳しくは<a href="http://blog.cocoapods.org/CocoaPods-0.36/" target="_blank" rel="noopener">CocoaPods 0.36 - Framework and Swift Support - CocoaPods Blog</a>を参照（読んでないけど）。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> Pods written <span class="token keyword">in</span> Swift can only be integrated as frameworks<span class="token punctuation">;</span>
 this feature is still <span class="token keyword">in</span> beta. Add <span class="token variable"><span class="token variable">`</span>use_frameworks<span class="token operator">!</span><span class="token variable">`</span></span> to your Podfile or target to opt into using it.
-The Swift Pod being used is: CryptoSwift
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+The Swift Pod being used is: CryptoSwift<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>あと、試した限りでは XCodeのBuild Settingsのうち「Allow Non-modular Includes In Framework Modules」を「Yes」にする必要がありました。</p>
 <h2 id="CryptoSwiftで暗号化"><a href="#CryptoSwiftで暗号化" class="headerlink" title="CryptoSwiftで暗号化"></a>CryptoSwiftで暗号化</h2><p>とりあえずviewDidLoadの中で使った場合の例。bytesが暗号化する文字列で。keyが暗号に使うキー。サーバー側にはivと暗号化したデータをBase64にエンコードして送ります。実装は<a href="https://github.com/krzyzanowskim/CryptoSwift/issues/20#issuecomment-115217610" target="_blank" rel="noopener">Convert encrypted data to string? ? Issue #20 ? krzyzanowskim/CryptoSwift</a>の<a href="https://gist.github.com/tlarevo/63840cdd421937ba9174#file-php-compatible-swift-aes-encryption-using-cryptoswift-swift" target="_blank" rel="noopener">PHP compatible AES Encryption and Decryption with Swift and CryptoSwift</a>と<a href="https://gist.github.com/tlarevo/b65c94b02993fd50fc68#file-swift-compatible-php-aes-encryption-using-mcrypt-php" target="_blank" rel="noopener">Swift compatible AES Encryption and Decryption with PHP and mcrypt</a>を参考にしてます。実装例ではPOST送信しないでprintlnしてるだけですが、送信しているつもりで。</p>
 <pre class="line-numbers language-swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token builtin">UIKit</span>

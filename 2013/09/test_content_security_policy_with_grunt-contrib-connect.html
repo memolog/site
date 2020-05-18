@@ -420,6 +420,7 @@
         <div id="article-content" class="content "><p>Content Security Policy (CSP)をgrunt-contrib-connectで設定するのにはどうしたら良いかという話。</p>
 <p>やり方としては、<a href="/blog//2013/07/grunt-contrib-connect_with_cors/">grunt-contrib-connect タスクで CORS を有効にする - メモログ</a>と同様、middlewareのオプションに追加する。</p>
 <a id="more"></a>
+
 <pre class="line-numbers language-javascript"><code class="language-javascript">middleware<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>connect<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">[</span>
     <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -432,8 +433,7 @@
     <span class="token comment" spellcheck="true">// Make empty directories browsable.</span>
     connect<span class="token punctuation">.</span><span class="token function">directory</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>base<span class="token punctuation">)</span>
   <span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>こんな感じ。上記では、<a href="https://developer.mozilla.org/ja/docs/Security/CSP/Using_Content_Security_Policy#Testing_your_policy" target="_blank" rel="noopener">ポリシーのテスト</a>を目的にしているので、「Content-Security-Policy-Report-Only」を使用しています。また、report-onlyモードではreport-uriの設定が必須なので、それを追加しています。report-uriには<a href="https://developer.mozilla.org/ja/docs/Security/CSP/Using_CSP_violation_reports" target="_blank" rel="noopener">Using CSP violation reports - Security | MDN</a>によると、CSPにひっかかった場合にその内容をreport-uriにPOSTで送ってくれます。</p>
 <p>これで、たとえばjasmineのテストをするときにCSPを有効にしてテストすることで違反した場合にレポート送らせることができるなと思ったのですが、まだそこまでは試していません。</p>
 <p>というメモ。</p>

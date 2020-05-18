@@ -415,7 +415,9 @@
           <h2 class="header__title"><span>ThickBox対応したFlickrのAction Streamを作成する</span></h2>
           
         </header>
-        <div id="article-content" class="content "><p>Action Streamで得たFlickrのActivityをThickBoxを利用して表示したいなと思いたち、そこで<a href="http://www.movabletype.jp/documentation/actionstreams/building_action_streams_plugin.html" target="_blank" rel="noopener">独自のAction Streamsプラグインを作成する</a>のページと、既存のAction Stream pluginとGoogle検索などを見ながら、自分用のFlickr for thickbox pluginを作成してみました。<br><a id="more"></a><br>作成したconfig.yaml（action_streams部分のみ）はこんな感じ。</p>
+        <div id="article-content" class="content "><p>Action Streamで得たFlickrのActivityをThickBoxを利用して表示したいなと思いたち、そこで<a href="http://www.movabletype.jp/documentation/actionstreams/building_action_streams_plugin.html" target="_blank" rel="noopener">独自のAction Streamsプラグインを作成する</a>のページと、既存のAction Stream pluginとGoogle検索などを見ながら、自分用のFlickr for thickbox pluginを作成してみました。</p>
+<a id="more"></a>
+<p>作成したconfig.yaml（action_streams部分のみ）はこんな感じ。</p>
 <pre><code>action_streams:
     flickrthickbox:
         photos:
@@ -449,6 +451,7 @@
 
 callbacks:
     pre_build_action_streams_event.flickrthickbox_photos: sub { $_[2]-&gt;{thumbnail_b} =~ s/_m\.jpg/_b\.jpg/ }
+
 </code></pre><p>scraperで行ったのは、thickbox　実行時に表示するための大きな画像(thumbnail_b)のURLを取得するために　‘thumbnail_b’=&gt; [‘@src’,sub { s/_m\.jpg/_b\.jpg/}]　みたいなことをやろうとしてのことだったのですが、Action Stream　のplugin上ではうまく動かず・・。結局、callbacksで置換するようにしました。scraperでやる必然性は特になく、atomでもrssでも同じことはできそう。</p>
 <p>そして実際に表示させてみたのですが、思ったより収まりが悪い。外観についてはまたそのうち考えてみよう・・</p>
 <p><strong>そして追記。</strong></p>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-04-12T10:45:22.692Z</updated>
+  <updated>2020-05-18T09:43:55.347Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Automatic Minimum Size of Flex Items</title>
+    <link href="https://memolog.org/2020/automatic-minimum-size-of-flex-items.html"/>
+    <id>https://memolog.org/2020/automatic-minimum-size-of-flex-items.html</id>
+    <published>2020-05-18T03:00:00.000Z</published>
+    <updated>2020-05-18T09:43:55.347Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;時間が開いてしまった。開きすぎてもはや自分でもよく覚えてないけど今回は&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#min-size-auto&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;4.5. Automatic Minimum Size of Flex Items&lt;/a&gt;、autoキーワードで自動的に決定される最小値について。
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Collapsed Items</title>
@@ -229,7 +246,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今回は&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#flow-layout&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;flow layout&lt;/a&gt;について確認しようと思う。&lt;br&gt;
+      &lt;p&gt;今回は&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#flow-layout&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;flow layout&lt;/a&gt;について確認しようと思う。&lt;/p&gt;
     
     </summary>
     
@@ -332,23 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;用語的な理解を得るために、&lt;a href=&quot;https://drafts.csswg.org/css-display/#intro&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSS Display Module Level 3 Introduction&lt;/a&gt;の部分を読んで簡単にメモる、というメモ。&lt;a href=&quot;https://triple-underscore.github.io/css-display-ja.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;日本語訳&lt;/a&gt;も参考にしてる。内容を見直して、変だなと思うところは随時修正してる。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>About position:sticky</title>
-    <link href="https://memolog.org/2020/about-position-sticky.html"/>
-    <id>https://memolog.org/2020/about-position-sticky.html</id>
-    <published>2020-02-15T01:17:04.000Z</published>
-    <updated>2020-02-15T21:16:53.166Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;position:sticky&lt;/code&gt;を使った事がなかったので見出し部分につけてみた。&lt;a href=&quot;https://caniuse.com/#feat=css-sticky&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Can I use…&lt;/a&gt;によると、IE以外ならだいたい動作する。
     
     </summary>
     

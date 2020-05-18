@@ -358,8 +358,8 @@
 <meta property="article:modified_time" content="2019-01-04T02:09:12.859Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta property="article:tag" content="watir">
-<meta property="article:tag" content="webdriver">
 <meta property="article:tag" content="selenium">
+<meta property="article:tag" content="webdriver">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p>watir-webdriverでは広範囲のHTMLタグ（ほとんど全部）をサポートしているけれど、svgやcircleなど一部のタグは現在のところサポートしていません（参考：<a href="http://groups.google.com/group/watir-general/msg/271325e18d2b98f2?pli=1" target="_blank" rel="noopener">Does watir support svg - Watir General | Google グループ</a>）。</p>
 <a id="more"></a>
+
 <p>なので、自分で追加して使おうという話。watir-webdriver上にタグを追加するのは仕組み上は簡単で、下記のようにclassを追加すれば良い（circleでの追加例）。</p>
 <pre><code>module Watir
 class Circle &lt; HTMLElement

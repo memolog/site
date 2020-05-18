@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1586688322692';
+const CACHE_MAIN = 'main1589795035347';
 const precacheList = [
   
   '/',
+  '/2020/automatic-minimum-size-of-flex-items.html',
   '/2020/flex-collpased-items.html',
   '/2020/flex-item-margin-padding-and-z-ordering.html',
   '/2020/absolutely-positioned-flex-children.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/css-flexible-box-layout-module-introduction.html',
   '/2020/display-module-glossary.html',
   '/2020/automatic-box-type-transformations.html',
-  '/2020/display-value-property-3.html',
+  '/assets/images/febiyan-z85gD0sTOQ0-unsplash/febiyan-z85gD0sTOQ0-unsplash.svg',
   '/assets/images/nong-vang-w5tI4WACAKo-unsplash/nong-vang-w5tI4WACAKo-unsplash.svg',
   '/assets/images/marc-klemm-rXDoLi1nqJo-unsplash/marc-klemm-rXDoLi1nqJo-unsplash.svg',
   '/assets/images/patrick-schneider-8bPJ0vagphw-unsplash/patrick-schneider-8bPJ0vagphw-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/mick-haupt-XMLRK8xpEIs-unsplash/mick-haupt-XMLRK8xpEIs-unsplash.svg',
   '/assets/images/francesco-ungaro-JHypHcOObf4-unsplash/francesco-ungaro-JHypHcOObf4-unsplash.svg',
   '/assets/images/jeremy-bishop-t52E8yzCURM-unsplash/jeremy-bishop-t52E8yzCURM-unsplash.svg',
-  '/assets/images/whoisbenjamin-ApJp5Nk24a0-unsplash/whoisbenjamin-ApJp5Nk24a0-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',

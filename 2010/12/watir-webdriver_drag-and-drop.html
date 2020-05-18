@@ -358,8 +358,8 @@
 <meta property="article:modified_time" content="2019-01-04T02:09:12.857Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta property="article:tag" content="watir">
-<meta property="article:tag" content="webdriver">
 <meta property="article:tag" content="selenium">
+<meta property="article:tag" content="webdriver">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p>一つ前の記事で<a href="/blog//2010/12/watir-webdriver-alternative-attach-method/">watirはselenium-webdriverのラッパー的な感じ</a>であると申しました。なので、watir-webdriverでもselenium-webdriverで実装されているメソッドを直接使用することも可能です。</p>
 <a id="more"></a>
+
 <p>ドラッグアンドドロップのUIはわりとwatirで自動化する場合の泣き所だったのですが（watirでもできなくないはずですが）、selenium-webdriverではDrag and Dropをするためのメソッドが用意されていて、それを利用するとwatir-webdriverでも簡単にDrag and dropをすることができます。詳しくは<a href="http://code.google.com/p/selenium/wiki/TipsAndTricks" target="_blank" rel="noopener">TipsAndTricks - selenium</a>や<a href="http://selenium.googlecode.com/svn-history/r9054/trunk/docs/api/rb/Selenium/WebDriver/Element.html#drag_and_drop_by-instance_method" target="_blank" rel="noopener">Class: Selenium::WebDriver::Element</a>などをご参照。</p>
 <p>drag_and_drop_by(right_by, down_by) は、メソッドの対象の要素の現在位置から移動する距離を第一引数で右への移動距離、第二引数で下への移動距離を設定します（左または上に移動したい場合は負の値で指定する）。drag_and_drop_on(other)は、第一引数で指定した要素（find_elementのメソッドなどで指定したオブジェクト）に移動させます。</p>
 <p>実際にwatir-webdriver上で動かす場合はこんな具合に。</p>

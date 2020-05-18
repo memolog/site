@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://gridinit.com/" target="_blank" rel="noopener">Gridinit</a>という新サービスをざっくり紹介。SeleniumやWatirなどの自動化スクリプトをクラウド上にある複数のブラウザに配布してくれるそうです。作成したテストスクリプトを複数ブラウザで実行することによって、負荷検証を行うことができる、みたいな。「<a href="/blog//2011/04/watir-webdriver-performance/">watir-webdriver-performance: PerformanceTimingの集計 - メモログ</a>」で紹介したwatir-webdriver-peformanceのモジュールを組み合わせてブラウザのPerformanceTimingの情報を取得することもできるみたい。</p>
 <a id="more"></a>
+
 <p>価格（<a href="http://gridinit.com/public/pricing" target="_blank" rel="noopener">Pricing</a>）は「credit」という単位で使った分だけ支払うみたいな感じになっています（登録時に20 credit がついてくる）。1 creditで1リソースを1時間使用することができるそうです。つまり500ブラウザを同時実行したい場合は500 credit 必要ということになります。500 credit は50$（1$80円で4000円）なので、商用のパフォーマンステストツールと比較すると相当に安いと思います。</p>
 <p>ただ、クラウド上のブラウザからアクセスがくるのでプライベートなサイトには今のところ使用できないみたいです。<a href="http://altentee.com/blogs/2011/gridinit-beta-released/" target="_blank" rel="noopener">Altentee</a>によると次期機能としては考えているみたいですけど。あと、1ブラウザを10秒ごとに増やすとかできるのかとか、そもそも500ブラウザ同時に動かせるのかとか、ちゃんと使ってみないと分からないところもある。HTTPの通信だけではなくて、ブラウザそのものを操作するかたちになるので、500ブラウザでも負荷の量としてはもしかしたら少ないかもしれない。それもやはり実際に動かしてみないと分からない。それと、ネットワークを経由するので適切に負荷がかかるのか（ネットワークの遅延によって負荷がかからないかもしれない）、きちんとした負荷検証になるのかとかも気になるところではある。</p>
 <p>しかし、とにかくこの安さは魅力的。とりあえず負荷を与えてみて、サーバーがどんな状態になるかをみたいという場合には試してみる価値はありそうな気がします。</p>

@@ -347,12 +347,12 @@
   }
   </script>
 
-  <meta name="description" content="たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。 &lt;h3 class&#x3D;&quot;entry-header&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;post.html&quot;&gt;記事のタイトル&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;  &lt;!-- more --&gt;  a {color: blue;} h3.entry-header {color: red;}  まあ">
+  <meta name="description" content="たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。 &lt;h3 class&#x3D;&quot;entry-header&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;post.html&quot;&gt;記事のタイトル&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;  &lt;!-- more --&gt; a {color: blue;} h3.entry-header {color: red;} まあそう">
 <meta property="og:type" content="article">
 <meta property="og:title" content="リンクの色の方が優先される理由">
 <meta property="og:url" content="https://memolog.org/2009/04/post_185.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。 &lt;h3 class&#x3D;&quot;entry-header&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;post.html&quot;&gt;記事のタイトル&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;  &lt;!-- more --&gt;  a {color: blue;} h3.entry-header {color: red;}  まあ">
+<meta property="og:description" content="たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。 &lt;h3 class&#x3D;&quot;entry-header&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;post.html&quot;&gt;記事のタイトル&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;  &lt;!-- more --&gt; a {color: blue;} h3.entry-header {color: red;} まあそう">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2009-04-26T06:40:56.000Z">
 <meta property="article:modified_time" content="2019-01-04T02:09:12.850Z">
@@ -418,12 +418,10 @@
         <div id="article-content" class="content "><p>たとえば下記のようなHTMLに、下記のようなCSSを指定した場合、aタグに指定したCSSの方が有効に作用する。</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>entry-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/post.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>記事のタイトル<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
 
-<span class="token comment" spellcheck="true">&lt;!-- more --></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true">&lt;!-- more --></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-css"><code class="language-css"><span class="token selector">a </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token punctuation">}</span>
-<span class="token selector">h3<span class="token class">.entry-header</span> </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>まあそういうものなのだと、普段はたいして気にとめていなかったのですが、あらためて説明しようとすると、これがよく分からない。単純に詳細度で考えたら、h3.entry-headerの方が強いのにどうしてだろう。ということで、<a href="http://www.amazon.co.jp/gp/product/487311232X?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=487311232X" target="_blank" rel="noopener">CSS完全ガイド</a>を購入して、きちんと読んでみました（3章まで）。p71〜p74あたりにそのあたりのことが説明されていた。</p>
+<span class="token selector">h3<span class="token class">.entry-header</span> </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>まあそういうものなのだと、普段はたいして気にとめていなかったのですが、あらためて説明しようとすると、これがよく分からない。単純に詳細度で考えたら、h3.entry-headerの方が強いのにどうしてだろう。ということで、<a href="http://www.amazon.co.jp/gp/product/487311232X?ie=UTF8&tag=yutakayamaguc-22&linkCode=xm2&camp=247&creativeASIN=487311232X" target="_blank" rel="noopener">CSS完全ガイド</a>を購入して、きちんと読んでみました（3章まで）。p71〜p74あたりにそのあたりのことが説明されていた。</p>
 <p>要するに、祖先から継承した指定の詳細度は「なし」という扱いになるため、aタグに指定した内容の方が詳細度が高く、より強く作用するということなのだ。うーん、調べてみてみると、そんなに難しい話じゃない。継承した指定の詳細度がもともとと同じ詳細度を持っていたら、たとえば body#foo というような指定があったら、いろんな子孫に不要に作用してしまう。うまくできている。</p>
 <p>ふむ。つまり。この件について、CSSを生業としていないような人に質問されたら、「より内側にあるタグに指定したCSSの方が、外側のタグに指定したものより有効に作用します」と伝えても特に問題はなさそうだ。</p>
 </div>

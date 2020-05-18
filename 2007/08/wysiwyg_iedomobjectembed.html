@@ -420,7 +420,8 @@ webアプリケーションでよくあるWYSIWYGエディタ（リッチテキ�
         <div id="article-content" class="content "><p>あいまいなタイトル。実のところ、詳しくはよくわかっていないのですが、どうもIEのDOMではobjectタグの中にあるembedタグは削ってしまうようなのである。謎なのです。</p>
 <p>webアプリケーションでよくあるWYSIWYGエディタ（リッチテキスト）では、すごくざっくりいうと、Javascriptで入力フォームであるiframe中のHTMLをツールボタンのクリックなどのイベントにあわせて、書き換えて動かしている。言い換えると、ブラウザが持っている情報を引き出して、変更して押し込んで、というやりとりをしている。そのため、ブラウザ側で期待されるデータを出力してくれないと、エディタから情報が消えてしまったりする可能性がある。</p>
 <a id="more"></a>
-<p>たとえば&lt;object classid=&guot;” &gt;<embed> というobjectタグの中にembedタグが入っている状態のタグをコピーしてWYSIWYGエディタで貼付けると、Firefoxでは貼付けたままのものが出力されるけれど、IEではembedタグが抜けた状態で出力される。</p>
+
+<p>たとえば&lt;object classid=&guot;” &gt;<embed></embed></object> というobjectタグの中にembedタグが入っている状態のタグをコピーしてWYSIWYGエディタで貼付けると、Firefoxでは貼付けたままのものが出力されるけれど、IEではembedタグが抜けた状態で出力される。</p>
 <p>objectタグとembedタグを別々に使っている分には、特に問題ないように見受けられる。どうもobjectタグの中にembedタグが入るということをIEがDOM構造として認めていない（無視している）のではないだろうかと推察している。IE developer toolでDOMを見たところでも、objectタグに埋めたembedはどこにも表示されない。しかし確たる情報もなく、悶々としている。</p>
 </div>
         <footer class="profile">

@@ -421,6 +421,7 @@
 <li><a href="http://developer.yahoo.com/performance/rules.html#external" target="_blank" rel="noopener">8: Make JavaScript and CSS External</a></li>
 </ul>
 <a id="more"></a>
+
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の八つ目。JavascriptとCSSを外部ファイルにしよう。インラインで記述していると（外部ファイルを設置するより）HTTPのリクエストを減らせるけれど、毎回読み込むのでhtmlファイルのサイズは増えてしまう。外部ファイルにしておくと、ブラウザがキャッシュするのでhtmlファイルサイズも減らせるし、次回からのHTTPレスポンスも減る。ただ、Yahoo!のホームのようにセッションごとのページビューの少ない場合は、インラインで記述してしまった方がレスポンスが良好の場合もある。</p>
 <p>ポータルサイトのトップみたいに、大量にアクセスがあって、トップページだけ見て別のサイトに移動してしまうユーザーが多い場合、すべてのユーザーにキャッシュを持たせるよりは、インラインにしてHTTPリクエストを減らた方が良い場合もある。というのが、パフォーマンスチューニングの醍醐味なのかなと、個人的な感慨にひたったしだいです。</p>
 </div>

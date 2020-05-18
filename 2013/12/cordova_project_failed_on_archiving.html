@@ -435,8 +435,7 @@ Command /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoo
 <p>根本的にはtmpディレクトリにアクセスできないのが原因のようなので、/private/tmpのディレクトリのパーミッションを変更すればエラーが発生しなくなる。tmpディレクトリのパーミションを変更した記憶はないのだけど…</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /private
 <span class="token function">sudo</span> <span class="token function">chmod</span> 777 tmp
-<span class="token function">sudo</span> <span class="token function">chmod</span> +t tmp
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token function">sudo</span> <span class="token function">chmod</span> +t tmp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>ほかの人や他のMacではこのパーミッションであったので、設定自体は問題ないと思いますけど、変えた記憶はないんだよなあ。</p>
 <p>というメモ。</p>
 </div>

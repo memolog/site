@@ -419,12 +419,13 @@
         </header>
         <div id="article-content" class="content "><p>Gruntのpluginで<a href="https://github.com/jsoverson/grunt-plato" target="_blank" rel="noopener">grunt-plato</a>というのがあって、<a href="https://github.com/jsoverson/plato" target="_blank" rel="noopener">Plato</a>を使ってJavascriptの静的解析結果をvisualizeしてレポートしてくれます。</p>
 <a id="more"></a>
+
 <p>レポートのサンプルがいくつか載っていて、<a href="http://jsoverson.github.io/plato/examples/jquery/" target="_blank" rel="noopener">jQueryのサンプルはこんな感じ</a>。解析は主に<a href="https://github.com/philbooth/complexityReport.js" target="_blank" rel="noopener">philbooth/complexityReport.js</a>を使ったcomplexityの解析結果で、Platoはそれをグラフに出力してくれる。あとJSHintでの検知結果もついてくる。  </p>
 <p><img src="http://farm6.staticflickr.com/5343/9522271089_6496427759_o.png" alt=""></p>
 <p>complexityReport.jsでは何を出力してくれるかというと、lines of code、number of parameters、cyclomatic complexity、Halstead metrics、maintainability indexなど。<a href="https://github.com/philbooth/complexityReport.js/blob/master/SELF.md" target="_blank" rel="noopener">サンプルがこんな感じ</a>。</p>
 <p>Platoのグラフで注目されるのは、Maintainabilityという項目かなと思われますが、Maintainabilityの項目は、<a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx" target="_blank" rel="noopener">Maintainability Index Range and Meaning - Code Analysis Team Blog - Site Home - MSDN Blogs</a>とか<a href="http://en.wikipedia.org/wiki/Maintainability" target="_blank" rel="noopener">Maintainability - Wikipedia, the free encyclopedia</a>、<a href="http://www.virtualmachinery.com/sidebar4.htm" target="_blank" rel="noopener">Virtual Machinery - Sidebar 4 - MI and MINC - Maintainability Index</a>に詳しく書かれている。コードの複雑性を評価することで、維持しやすい状態を保つ指標になる、と思われる。msdnの<a href="http://msdn.microsoft.com/ja-jp/library/bb385914.aspx" target="_blank" rel="noopener">コード メトリックス値</a>で類似する内容が日本語で読める。</p>
 <p>Maintainabilityの計算方法は下記のようになっている。</p>
-<pre><code>171 - 5.2 * ln(Halstead Volume) - 0.23 * (Cyclomatic Complexity) - 16.2 * ln(Lines of Code)
+<pre><code>171 - 5.2 * ln(Halstead Volume) - 0.23 * (Cyclomatic Complexity) - 16.2 * ln(Lines of Code) 
 </code></pre><p>係数がなぜこの値なのかは、勉強不足ゆえ不明…</p>
 <p>Maintainability Index は、この値を0から100までの数値に変換したもの。microsoftのサイトでは、20-100までの間はnoiseレベルのものと見なして、0-20になるようなら注意しないといけないということにしている。</p>
 <pre><code>Maintainability Index = 

@@ -423,6 +423,7 @@ rules for high performance web sitesの十一個目。リダイレクトを避�
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十一個目。リダイレクトを避けよう。HTMLドキュメントにたどりつくまでは何の要素のダウンロードも始まらないので、リダイレクトしている間はすべてが遅れる。</p>
 <a id="more"></a>
+
 <p>もっとも無駄なリダイレクトの一つは、URLの末尾「/（スラッシュ）」が抜けているときに起るリダイレクトで、/のついたURLにリダイレクトします（<a href="http://memolog.org">http://memolog.org</a> =&gt; <a href="http://memolog.org/）。この問題はAlias">http://memolog.org/）。この問題はAlias</a> や mod_rewrite、DirectorySlashを利用することで、対処することができます。</p>
 <p>次の例として旧サイトから新サイトへの移行の話に触れていますが、要するに、HTTPでレスポンスのやりとりをするのはできるだけ避けて、代わりにApacheのAliasやmod_rewriteを使った方が良いということのようです。</p>
 <p>あとは末尾のスラッシュは忘れずにつけるということでしょうか。</p>

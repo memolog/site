@@ -423,7 +423,8 @@ Multiple Classes in IE | Ryan Brill
 <li><a href="http://hp.vector.co.jp/authors/VA022006/css/corrbrwser/selector.html" target="_blank" rel="noopener">付録：セレクタ関連の対応状況 - CSS2リファレンス</a></li>
 </ul>
 <a id="more"></a>
-<p>たとえば、</p><p class="foo bar"> と複数classをつけている場合に、p.foo.bar {font-size:100px;}というかたちで指定すると、IE5と6では、p.bar {font-size:100px;}と指定しているのと同じ状態になってしまう、という話。IE7ではこの現象は発生しない。</p>
+
+<p>たとえば、<p class="foo bar" > と複数classをつけている場合に、p.foo.bar {font-size:100px;}というかたちで指定すると、IE5と6では、p.bar {font-size:100px;}と指定しているのと同じ状態になってしまう、という話。IE7ではこの現象は発生しない。</p>
 <p>この現象は、たとえば「奇数行で最後の行にはこの背景色にして、偶数行で最後の行になる場合はこの背景色にする」というようなことをしたい場合に少し困る。p.odd.last {color:#000;}とp.even.last {color:#fff;} というような指定をしても、どちらもp.lastと解釈されてしまい、CSSファイルの後ろで指定した方が反映されてしまう。</p>
 <p>たとえばodd_lastとか、even_lastとか、そういうユニークなクラスを指定するとか、そういった回避方法はなくはないのですが、スマートな方法じゃないし、なによりめんどうくさい。</p>
 </div>

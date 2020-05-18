@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2010/07/watir_click_no_wait_doesnt_work/">watir 1.6.5ではclick_no_waitが動作しない</a>という話をして、その後<a href="/blog//2010/10/watir_166/">watir 1.6.6</a>では修正されているという話をしました。<a href="http://jira.openqa.org/browse/WTR-449" target="_blank" rel="noopener">1.6.6では性能も改善されていて</a>、click_no_waitのメソッドを実行すると、10〜20秒くらい止まってしまうということもなくなりました。</p>
 <a id="more"></a>
+
 <p>それで基本的に動作に問題はなくなったのですが、自分の環境で動作させたときにclick_no_waitが動作しない場合がありました。それのメモ。</p>
 <p>click_no_waitのメソッドのソースを<a href="http://rdoc.info/gems/watir/1.6.7/Watir/Element:click_no_wait" target="_blank" rel="noopener">rdoc.info</a>から抜粋</p>
 <pre><code># File &#39;lib/watir/element.rb&#39;, line 234

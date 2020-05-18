@@ -418,8 +418,9 @@
         </header>
         <div id="article-content" class="content "><p>最近になって-webkit-font-smoothingというプロパティの存在を知りました。<a href="http://maxvoltar.com/archive/-Webkit-font-smoothing" target="_blank" rel="noopener">maxvoltar - -webkit-font-smoothing</a>によると2010年には存在していたようですけど。</p>
 <a id="more"></a>
+
 <p>W3CのCSS3の仕様には<a href="http://www.w3.org/TR/WD-font/#font-smooth" target="_blank" rel="noopener">font-smooth</a>というものがありますが、これと-webkit-font-smoothingは、値の指定の仕方とかが異なります（参考：<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth" target="_blank" rel="noopener">font-smooth - CSS | MDN</a>）。</p>
-<p>-webkit-font-smoothingでは、「none」と「subpixel-antialiased」と「antialiased」の3つの値が指定できます。デフォルトの状態は「subpixel-antialiased」の状態で、Subpixelについては<a href="http://en.wikipedia.org/wiki/Subpixel_rendering&quot;" target="_blank" rel="noopener">Subpixel rendering - Wikipedia, the free encyclopedia</a>を参考。Subpixelを使用する方が解像感があがる。</p>
+<p>-webkit-font-smoothingでは、「none」と「subpixel-antialiased」と「antialiased」の3つの値が指定できます。デフォルトの状態は「subpixel-antialiased」の状態で、Subpixelについては<a href="http://en.wikipedia.org/wiki/Subpixel_rendering" target="_blank" rel="noopener"">Subpixel rendering - Wikipedia, the free encyclopedia</a>を参考。Subpixelを使用する方が解像感があがる。</p>
 <p>「antialiased」は「subpixel-antialiased」を無効にした状態で、「none」はアンチエイリアスをしない状態。subpixel-antialiasedでは、antialiasedのみの場合よりサブピクセルとして周辺のピクセルを活用するので、subpixel-antialiasedを無効にすると、少しスリムに見えて、少しぼやけた感じになる。見た目的にはフォントが柔らかい感じになっていい感じ。</p>
 <p>でも、<a href="http://www.usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/" target="_blank" rel="noopener">Please Stop “Fixing” Font Smoothing · UsabilityPost</a>という記事では、やたらにこの指定しない方が良いと述べられています。理由としては、解像感が落ちるので、読みにくくなるということで。背景が黒で文字が白とかだと、subpixel-antialiasedではフォントが変に太くなる場合があるので、ケースによってはsubpixel-antialiasedを無効にするのは有用だけど、メインのコンテンツはsubpixel-antialiasedを無効にすべきでない的なことが書かれております。</p>
 <p>たしかに、最初はスッキリ見えてたけど、慣れてくると読みにくさを感じなくもない。見た目は少しぼんやりした方が、背景と少しなじんでいる感じがあって良い気もするけど。このサイトでも「antialiased」の状態を試してみましたけど、結局止めておくことにしました。</p>

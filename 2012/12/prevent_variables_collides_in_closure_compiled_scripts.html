@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p>Closure CompilerのAdvanced modeでscriptをcompileした場合、Property RenamingとFlatteningがかかるので、global scope上にabとかBaとか短い名前のプロパティがたくさん作られるようになります。compileしたスクリプトが一つの場合は問題ありませんが、まったく別にcompileしたスクリプトを複数併用しようとすると、プロパティ名が衝突してしまって使うことができないという状態になります。</p>
 <a id="more"></a>
+
 <p>併用するスクリプトを全部まとめて1つのファイルにcompileすることで回避することもできますが、–output_wrapperというオプションでスクリプト全体を無名関数で囲われるかたちにすれば、複数のスクリプトを併用しつつ、global scope上でプロパティ名が衝突するのを回避することができます。</p>
 <pre><code>java -jar compiler.jar --output_wrapper=&quot;(function(){&amp;#x25;output&amp;#x25;})();&quot; ....
 </code></pre><p>と、ブログに書く前にGoogleで検索したら<a href="http://code.google.com/p/closure-compiler/wiki/FAQ#When_using_Advanced_Optimizations,_Closure_Compiler_adds_new_var" target="_blank" rel="noopener">FAQ - closure-compiler - Frequently asked questions. - Closure Compiler (When using Advanced Optimizations, Closure Compiler adds new variables to the global scope. How do I make sure my variables don’t collide with other scripts on the page?)</a>にさらっと書いてありました。</p>

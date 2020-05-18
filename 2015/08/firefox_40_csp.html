@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p>File APIから取得した画像のサムネイルを<a href="https://github.com/blueimp/JavaScript-Load-Image" target="_blank" rel="noopener">blueimp/JavaScript-Load-Image</a>を使って表示していたところが、Firefox 40になってから表示されなくなったので、なんでだろうなあと思っていたら、<a href="https://developer.mozilla.org/ja/Firefox/Releases/40/Site_Compatibility" target="_blank" rel="noopener">Firefox 40</a>からのCSPのポリシーに修正が入っていて、*（ワイルドカード）でblob:、data:、filesystem:のリソースを許容しなくなったのが原因でした。</p>
 <a id="more"></a>
+
 <p>真面目に調べようとして時間が経ってしまったのでざっくりいうと、<a href="http://www.w3.org/TR/CSP/" target="_blank" rel="noopener">現行のCSP</a>（2015年2月にCandidate Recommendationとなっている）では、<a href="http://www.w3.org/TR/CSP/#match-source-expression" target="_blank" rel="noopener">4.2.2. Matching Source Expressions</a>にて下記のように規定されている。</p>
 <blockquote>
 <p>If the source expression a consists of a single U+002A ASTERISK character (*), and url’s scheme is not one of blob, data, filesystem, then return does match.</p>

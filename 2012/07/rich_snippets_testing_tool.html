@@ -421,6 +421,7 @@
         </header>
         <div id="article-content" class="content "><p>GoogleのWebmaster toolsのひとつに<a href="http://www.google.com/webmasters/tools/richsnippets" target="_blank" rel="noopener">Rich Snippets Testing Tool</a>というのがあって、このツールではサイトに記述したMicrodataやMicroformatsなどの構造化データマークアップ(structured data markup)をGoogleがきちんとパースしてくれるかどうかをチェックすることができます。</p>
 <a id="more"></a>
+
 <p>それでメモログを検証した結果が<a href="http://www.google.com/webmasters/tools/richsnippets?url=http&#x25;3A&#x25;2F&#x25;2Fmemolog.org&#x25;2F2012&#x25;2F07&#x25;2Faround_dnt.php" target="_blank" rel="noopener">こんな感じ</a>（インデックスページだとhfeedがたくさん出力されるので、個別アーカイブにて）。</p>
 <p>最初に<a href="http://microformats.org/wiki/hentry" target="_blank" rel="noopener">hentry</a>に必須のentry-titleがない（entry-titleのclassを指定していなかった）とか、hcardで著作者情報を示した方が良い的なことをいろいろ言われたので、言われるがままに対応してみました。microdata的にはblogPostingに<a href="http://www.w3.org/TR/html5/microdata.html#attr-itemref" target="_blank" rel="noopener">itemref</a>を設定して、author情報としてsection#profileの箇所を参照するように設定しました（itemrefの使い方を知る）。</p>
 <p>自分の名前があるところでは日本語で、あるところでは英表記で記述していたりしたのですが、構造化データ的には英表記部分で統一してみたりしてみました。ひとつのデータの中にitemprop=nameを複数追加してはいけないという規則はなさそうな感はあるのですけど、調査不足。</p>
@@ -428,13 +429,13 @@
 <blockquote>
 <p>if the Entry Title is missing, use</p>
 <ul>
-<li>the first <h#> element in the Entry, or</h#></li>
-<li>the <title> of the page, if there is no enclosing Feed element, or</title></li>
+<li>the first &lt;h#&gt; element in the Entry, or</li>
+<li>the <title> of the page, if there is no enclosing Feed element, or</li>
 <li>assume it is the empty string</li>
 </ul>
 </blockquote>
 <p>検証結果の「Extracted Author/Publisher for this page」の項目では、Google Plusのプロフィール画面とリンクされているかどうかをチェックしてくれるようです。Google Plusとの連携がとれている場合は、「Verified: Authorship markup is verified for this page.」と表示される。Google Plusへのリンクが存在しない場合は、なんとなくauthor関連のURLを引っ張ってくる様子。そして時には「Error: Author profile page does not have an authorship link to a Google Profile」みたいなエラーを出力する様子（このエラーが出る理由はいまいち不明）。 <img src="http://farm8.staticflickr.com/7106/7478678764_650b123865_z.jpg" alt=""></p>
-<p>Google Plusとの連携の取り方は<a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986" target="_blank" rel="noopener">検索結果内の著者情報 - ウェブマスター ツール ヘルプ</a>を参照的なリンクがついていたので、それを参考に設定してみました。要するにサイトにリンクをつけて、Google Plusの「投稿先」にリンクを追加するだけで良いみたい。これでそのうち検索結果にGoogle Plusのプロフィールアイコンが表示されるようになるのかしら。</p>
+<p>Google Plusとの連携の取り方は<a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&answer=1408986" target="_blank" rel="noopener">検索結果内の著者情報 - ウェブマスター ツール ヘルプ</a>を参照的なリンクがついていたので、それを参考に設定してみました。要するにサイトにリンクをつけて、Google Plusの「投稿先」にリンクを追加するだけで良いみたい。これでそのうち検索結果にGoogle Plusのプロフィールアイコンが表示されるようになるのかしら。</p>
 <p>microdataに対応したあとに使ってみると、いろいろ楽しいかなと思います。</p>
 <h2 id="追記-2012-7-16"><a href="#追記-2012-7-16" class="headerlink" title="追記(2012/7/16)"></a>追記(2012/7/16)</h2><p>検索結果にプロフィール画像が表示されるようになりました。2週間くらいかかった感じですね。 <img src="http://farm8.staticflickr.com/7107/7582802106_dd9e4e73cb_z.jpg" alt=""></p>
 </div>

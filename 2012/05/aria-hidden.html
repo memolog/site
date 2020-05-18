@@ -440,14 +440,12 @@
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stats<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">data-icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&amp;#x21dd;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
   Stats
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token attribute">[data-icon]</span><span class="token pseudo-element">:before</span> </span><span class="token punctuation">{</span>
   <span class="token property">font-family</span><span class="token punctuation">:</span> icons<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* BYO icon font, mapped smartly */</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-icon<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">speak</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* Not to be trusted, but hey. */</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>このaria-hiddenについて知らなかったので（というよりARIAはlandmarkしか分からない…）、<a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden" target="_blank" rel="noopener">仕様</a>を読んだ。</p>
 <blockquote>
 <p>Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author. See related aria-disabled.</p>

@@ -446,8 +446,7 @@
   <span class="token property">-moz-box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
   <span class="token property">-webkit-box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
   <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>そして蛇足ですけど、<a href="http://paulirish.com/wp-content/uploads/2011/gplus-boxsizing.html" target="_blank" rel="noopener">Paul Irish - Google+ - box-sizing: border-box; …is clearly superior to our…</a>あたりの話を参考に確認したら、入力系のinput要素のうちtype=searchだけがborder-boxを使用しているみたいです（Firefoxは現状ではcontent-box）。searchのUI的にborder-boxの方が便利ということなのだろうか。</p>
 <p>とにかく。たとえばsearchとtext, email, urlなど別のtypeで同じwidthを指定したら、searchだけ少し幅が狭いみたいな現象が発生することになる。いっそのことinput要素はborder-boxに統一した方が便利な気がしなくもない。</p>
 <p>そのへん、<a href="http://necolas.github.com/normalize.css/" target="_blank" rel="noopener">normalize.css</a>では、content-boxに統一するようにCSSが用意されていました（一緒にsearch用の外観も外しているんですけど、それをするなら普通にtype=text使えば良いんじゃないかと思わなくもない）。</p>
@@ -470,8 +469,7 @@
 <span class="token selector">input<span class="token attribute">[type="search"]</span><span class="token pseudo-element">::-webkit-search-decoration</span>,
 input<span class="token attribute">[type="search"]</span><span class="token pseudo-element">::-webkit-search-cancel-button</span> </span><span class="token punctuation">{</span>
     <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </div>
         <footer class="profile">
   <div class="profile-inner">

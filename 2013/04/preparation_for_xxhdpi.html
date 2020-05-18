@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density" target="_blank" rel="noopener">List of displays by pixel density - Wikipedia, the free encyclopedia</a> を見ていて気がついたのですけど、Galaxy S4は<a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">Supporting Multiple Screens | Android Developers</a>で言うところの「xxhdpi」という枠に入るらしい。Android Developersには記載がないのですけど、<a href="https://plus.google.com/+NickButcher/posts/ePQya3KsTjW" target="_blank" rel="noopener">Nick Butcher - Google+ - Nexus 10 launcher icons The gorgeous screen on the Nexus…</a>に、（Nexus 10はxhdpiの範囲を超えてくるので）xxhdpiかdrawable-480dpiフォルダーを用意する必要がある、というような記述がある（Nexus 10は300ppiと仕様には書かれていますけど、事実関係は未調査）。</p>
 <a id="more"></a>
+
 <p>Androidの画面のサイズで出てくる単位としては、dpiとdpがあり、<a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="noopener">Supporting Multiple Screens | Android Developers</a>に用語の説明が書かれています。</p>
 <p>dpiは、dots per inchのことで、1インチの中に含まれるdotの数を表しますと（<a href="http://ja.wikipedia.org/wiki/Dpi" target="_blank" rel="noopener">dpi - Wikipedia</a>）。ピクセルとドットが1対1の関係であれば、<a href="http://ja.wikipedia.org/wiki/Ppi" target="_blank" rel="noopener">ppi - Wikipedia</a>の計算式で算出できます。</p>
 <p>dpは、density-independent pixelのことだそうで、px = dp * (dpi / 160)という計算式で算出するそうです。dpi = 240 の場合、px = 1.5dp になるので、dp=1なら、pxは1.5になる。つまり、dpは、1dpあたりのpixel数が、dpiによって増減するので、画面の密度とは独立して扱うことができると。160dpiでも、240dpiでも、1インチあたりのdpは160になる。ピクセルの数に影響されずに画面のサイズを特定することができる。</p>

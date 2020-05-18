@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p>matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install –save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsで<a href="http://gruntjs.com/api/grunt#grunt.loadnpmtasks" target="_blank" rel="noopener">grunt.loadNpmTasks</a>を使ってタスクのloadをする必要があります。</p>
 <a id="more"></a>
+
 <p>しかし、grunt pluginを追加するたびにgrunt.loadNpmTasksをGruntfileに追加するのはわずらわしいし、お試しで追加したpluginとか使わなくなったpluginを削除するときにloadNpmTasksをいちいち除かないといけないのもまた面倒くさい。</p>
 <p>ので、<a href="https://npmjs.org/package/matchdep" target="_blank" rel="noopener">matchdep</a>を使用する。matchdepについては<a href="http://nantokaworks.com/?p=955" target="_blank" rel="noopener">matchdepを使ってGrunt.jsのプラグインを自動ロードする | Re* Programming</a>で簡潔に解説されています。</p>
 <pre><code>require(&#39;matchdep&#39;).filterDev(&#39;grunt-*&#39;).forEach(grunt.loadNpmTasks);

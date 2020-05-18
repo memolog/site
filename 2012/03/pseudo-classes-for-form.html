@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://html5doctor.com/css3-pseudo-classes-and-html5-forms/" target="_blank" rel="noopener">CSS3 Pseudo-Classes and HTML5 Forms | HTML5 Doctor</a>で紹介されているForm関連の疑似クラスを試してみるというだけの内容。<a href="http://www.w3.org/TR/css3-ui/#pseudo-validity" target="_blank" rel="noopener">W3Cの定義はこのあたり</a>。required/optionalの疑似クラスは最新のブラウザでは対応しているみたい（上のリンクの記事によると）ですけど、それ以外はぼちぼち。現状では視覚的な補助という域を脱しない感はあります。</p>
 <a id="more"></a>
+
 <p>&lt;!-- #form input {margin-right: 4px;} #form input:required + label{color:#c90000; } #form input:required + label::after { content: “ *”; } #form input:required { border: 1px solid #666; } #form input:optional { border: 1px solid #ccc; } #form #email:invalid + label{ color:#c90000; } #form #email:invalid + label::after { content: ‘ NG’; } #form #email:valid + label::after { content: ‘ OK’; } #form #email:valid + label{ color:green; } #form input[type=’number’]:out-of-range { border-color: #c90000; } #form input[type=’number’]:in-range { border-color: green; } #form textarea:read-only { user-select: none; -moz-user-select: none;-webkit-user-select: none; border:2px dashed #ccc;} #form textarea:read-write { user-select: text; } –&gt; Required<br>Not Required<br>Email<br>Number<br>Read only<br>Read and Write</p>
 <p>上記のHTMLソースはこんな感じ（あまり良い例ではない）。</p>
 <pre><code>&lt;form id=&quot;form&quot;&gt;
@@ -447,7 +448,7 @@
 &lt;/form&gt;
 </code></pre><p>type=emailの場合のvalidationについては、<a href="http://dev.w3.org/html5/spec/Overview.html#e-mail-state-type-email" target="_blank" rel="noopener">HTML5のE-mailの項目</a>の下の方に詳しく記載されています。RFC5322の規定よりも実際的な内容になっていて、いわゆるDocomo携帯の「@」の前に「.」が入ったアドレスでもvalidとして判定されます。</p>
 <blockquote>
-<p>A valid e-mail address is a string that matches the ABNF production 1<em>( atext / “.” ) “@” ldh-str </em>( “.” ldh-str ) where atext is defined in RFC 5322 section 3.2.3, and ldh-str is defined in RFC 1034 section 3.5. [ABNF] [RFC5322] [RFC1034]</p>
+<p>A valid e-mail address is a string that matches the ABNF production 1*( atext / “.” ) “@” ldh-str *( “.” ldh-str ) where atext is defined in RFC 5322 section 3.2.3, and ldh-str is defined in RFC 1034 section 3.5. [ABNF] [RFC5322] [RFC1034]</p>
 <p>This requirement is a willful violation of RFC 5322, which defines a syntax for e-mail addresses that is simultaneously too strict (before the “@” character), too vague (after the “@” character), and too lax (allowing comments, whitespace characters, and quoted strings in manners unfamiliar to most users) to be of practical use here.</p>
 <p>The following JavaScript- and Perl-compatible regular expression is an implementation of the above definition.</p>
 <p>/^[a-zA-Z0-9.!#$&#x25;&amp;’<em>+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)</em>$/</p>

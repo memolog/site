@@ -435,9 +435,11 @@
           
         </header>
         <div id="article-content" class="content "><p><code>position:sticky</code>を使った事がなかったので見出し部分につけてみた。<a href="https://caniuse.com/#feat=css-sticky" target="_blank" rel="noopener">Can I use…</a>によると、IE以外ならだいたい動作する。<a id="more"></a></p>
-<p>ページのCSSは急に変えてしまうので、position:stickyが動いている様子を動画の残しておいた。<br><div class="youtube-wrapper">
+<p>ページのCSSは急に変えてしまうので、position:stickyが動いている様子を動画の残しておいた。</p>
+<div class="youtube-wrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/57YsR4LjSMU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="The sticky heading element inside header element"></iframe>
-  </div></p>
+  </div>
+
 <hr>
 <p>positionプロパティの仕様は<a href="https://drafts.csswg.org/css-position-3/#position-property" target="_blank" rel="noopener">6.5. Choosing a positioning scheme: position property</a>にある。stickyについては以下のように書かれている。</p>
 <blockquote>
@@ -463,14 +465,12 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>featured__image<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>featured__credit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.header__title</span> </span><span class="token punctuation">{</span>
   <span class="token property">position</span><span class="token punctuation">:</span> sticky<span class="token punctuation">;</span>
   <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token number">...</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>.header__title</code>に<code>position:sticky</code>をつけると、<code>header</code>に対してstickyに動作するようになる。</p>
 <p>Safariの場合、もしかしたら <code>position: -webkit-sticky;</code> の指定が必要かもしれないけど、最新のSafari（macとiOS）でみた限りでは、-webkit-stickyは必要ないみたい。</p>
 <p>だが、Safariの場合、たとえば .header__title が <code>display:inline-block</code> とかになっていると、うまく動作しないみたい。<code>display:inline</code>でも動作しないので、いわゆるインラインな表示に指定されていると動かないと思われるけど、それ以上は調べていない。</p>

@@ -421,6 +421,7 @@
         </header>
         <div id="article-content" class="content "><p>gruntからXcodeプロジェクトのDeployment infoを変更する。Xcodeから変更するのは簡単。でもそれをgruntでtaskとして実行する。こうした作業をgrunt taskで行うメリットは、繰り返し行う作業の場合は、それを自動化できるという点。  </p>
 <a id="more"></a>
+
 <p><img src="http://farm4.staticflickr.com/3680/11268544774_8985928bc5_o.png" alt=""></p>
 <p>AppName.xcodeprojのパッケージの中には、project.pbxprojというファイルがあって、ここにXcodeのプロジェクト関連の設定が入っています。<a href="https://github.com/alunny/node-xcode" target="_blank" rel="noopener">node-xcode</a>というスクリプトはこのproject.pbxprojの内容をパースして、内容を更新保存させることができます。全体のスクリプトは<a href="https://gist.github.com/memolog/7855866" target="_blank" rel="noopener">Gist</a>に（ローカルタスクとして動くようになっている）。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> xcode <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'xcode'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -447,8 +448,7 @@
 
       fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> project<span class="token punctuation">.</span><span class="token function">writeSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>プロジェクトのパースは、xcode.project(path)でproject.pbxprojを指定して、そのあとproject.parse()を実行するだけです。引数にfunctionを渡すと、パース実行後にproject内容の操作ができます。</p>
 <p>project.pbxXCBuildConfigurationSection()では、project.pbxproj内のisa=XCBuildConfigurationになっている設定が配列で返ってきます（通常「Release」と「Debug」が、プロジェクトとビルドごとに一つずつで計4つくるはず）。</p>
 <p>設定本体は「buildSettings」というオブジェクトに含まれています。Deployment targetの設定は「IPHONEOS_DEPLOYMENT_TARGET」という名前で入っているので、そのkeyの値を変更する。「Devices」の設定は「TARGETED_DEVICE_FAMILY」。このあたりの名前はproject.pbxprojをテキストエディタで開いてみると、だいたいわかります。</p>

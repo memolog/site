@@ -426,13 +426,13 @@
 <li>プロパティハック（_property:value）の記述があるかどうか</li>
 </ol>
 <a id="more"></a>
-<ol>
+<ol start="3">
 <li>html&gt;bodyの記述があるかどうか</li>
 </ol>
 <p>これらの記述がなく、それでいてIE6で十分きれいに表示できていれば、IE7でも大体大丈夫だと思います。IE7で確認する必要がないということではありませんが。</p>
 <h4 id="スターハック対応"><a href="#スターハック対応" class="headerlink" title="スターハック対応"></a>スターハック対応</h4><p>スターハックで記述されている箇所はIE7では無視されてしまいますが、その上の行に*+htmlで指定を追加すると問題なくなります。きれいなCSSとはいえませんけど、他のブラウザに影響を与えない方法としては有効です。</p>
 <p><code>*+html body .class {height : 100px;} * html body .class {height : 100px;}</code></p>
-<p>同じ指定を並記するなら、「<em>+html, </em> html」という形で記述した方がきれいなのですが、この形ではIE6でハックが有効に機能しないようです（<em> html, </em>+htmlという順番では試してません）。</p>
+<p>同じ指定を並記するなら、「<em>+html, * html」という形で記述した方がきれいなのですが、この形ではIE6でハックが有効に機能しないようです（</em> html, *+htmlという順番では試してません）。</p>
 <h4 id="プロパティハック対応"><a href="#プロパティハック対応" class="headerlink" title="プロパティハック対応"></a>プロパティハック対応</h4><p>プロパティハック（_property:value）もスターハックと同様に、IE7では無効となります。スターハックの場合と同様に<em>+htmlで追加で指定することで対応することができます。_propaty:valueを、「</em>property:value」という形に置き換えることで対応することも可能のようですが、実際に試したことがないのできちんと動作するかは分かりません。</p>
 <p><code>body { width:100px; _width:120px; } * html body { width:120px; }</code></p>
 <h4 id="html-gt-body対応"><a href="#html-gt-body対応" class="headerlink" title="html&gt;body対応"></a>html&gt;body対応</h4><p>html&gt;bodyの指定はIE6では対応していなかったのですが、IE7では対応しています。そのため、*+htmlで記述を相殺させる必要があります。</p>

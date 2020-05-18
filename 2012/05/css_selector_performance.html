@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/" target="_blank" rel="noopener">Performance Calendar » CSS Selector Performance has changed! (For the better)</a>にWebkitでCSSのマッチングの最適化が進んでいるという話が掲載されていて、下記の4つ最適化方法について紹介しています（via <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank" rel="noopener">* { box-sizing: border-box } FTW « Paul Irish</a>）。という話の紹介。</p>
 <a id="more"></a>
+
 <ol>
 <li>Style Sharing</li>
 <li>Rule Hashes</li>
@@ -426,7 +427,7 @@
 </ol>
 <p>Style Sharingは、Style treeにある要素が、すでに計算済みのものと同じスタイルであるかどうかを把握できるようにする仕組みで、たとえば1つ目のp要素で計算したスタイルが、2つ目のp要素にも適用可能であることを理解できると、2つ目のp要素で再計算する必要がなくなるとか。そういう話。</p>
 <p>Rule Hashesはスタイルシートの一番右に記述されているセレクタでグルーピングする仕組み。グルーピングされたセレクタ群のうち、当該要素とマッチングしないセレクタは参照する必要がなくなるので効率的。</p>
-<p>Ancestor Filtersは、いろいろ書いてあるのですが、ざっくり言うと、確度高めの「見切り」をすることで、子孫セレクタなどを効率的にマッチングさせる仕組み。仕組み的に「<a href="http://eow.alc.co.jp/search?q=false-positive&amp;ref=wl" target="_blank" rel="noopener">false positive</a>」は許容するけど、「<a href="http://eow.alc.co.jp/search?q=false-negative&amp;ref=wl" target="_blank" rel="noopener">false negative</a>」は許容しないようになっているらしい。あるセレクタが「マッチングする」と判定した場合には、100&#x25;マッチングすると言えるところまで通常のマッチング処理を進めて、マッチングしないセレクタを誤ってマッチングさせないようにしている。逆に、マッチングするはずのセレクタが無視される可能性はあるので、CSSに無駄がないようにして、false positiveが発生する可能性を無用に増やさないようにするのは大事だと。</p>
+<p>Ancestor Filtersは、いろいろ書いてあるのですが、ざっくり言うと、確度高めの「見切り」をすることで、子孫セレクタなどを効率的にマッチングさせる仕組み。仕組み的に「<a href="http://eow.alc.co.jp/search?q=false-positive&ref=wl" target="_blank" rel="noopener">false positive</a>」は許容するけど、「<a href="http://eow.alc.co.jp/search?q=false-negative&ref=wl" target="_blank" rel="noopener">false negative</a>」は許容しないようになっているらしい。あるセレクタが「マッチングする」と判定した場合には、100&#x25;マッチングすると言えるところまで通常のマッチング処理を進めて、マッチングしないセレクタを誤ってマッチングさせないようにしている。逆に、マッチングするはずのセレクタが無視される可能性はあるので、CSSに無駄がないようにして、false positiveが発生する可能性を無用に増やさないようにするのは大事だと。</p>
 <p>Fast Pathは汎用的なマッチング処理を「a non-recursive, fully inlined loop」なかたちに再実装することによる効率化を指すようです。</p>
 <blockquote>
 <p>The take-away is that if we can keep stylesheet size sane, and be reasonable with our selectors, we don’t need to contort ourselves to match yesterdays browser landscape. Bravo Antti!</p>
@@ -434,7 +435,7 @@
 <p>結論としては、スタイルシートが妥当なサイズで、セレクタも十分妥当な状態になっていれば、それ以上頑張らなくても良いよ！みたいな。</p>
 <p>ついでに、<a href="http://paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank" rel="noopener">* { box-sizing: border-box } FTW « Paul Irish</a>の最後に書かれているperformanceの節には下記のように書かれています（全称セレクタはパフォーマンスどうなの的なコメントに対して）。</p>
 <blockquote>
-<p>You might get up in arms about the universal <em> selector. Apparently you’ve heard its slow. Firstly, it’s not. It is as fast as h1 as a selector. It can be slow when you specifically use it like .foo &gt; </em>, so don’t do that. Aside from that, you are not allowed to care about the performance of * unless you concatenate all your javascript, have it at the bottom, minify your css and js, gzip all your assets, and losslessly compress all your images. If you aren’t getting 90+ Page Speed scores, it’s way too early to be thinking about selector optimization.</p>
+<p>You might get up in arms about the universal * selector. Apparently you’ve heard its slow. Firstly, it’s not. It is as fast as h1 as a selector. It can be slow when you specifically use it like .foo &gt; *, so don’t do that. Aside from that, you are not allowed to care about the performance of * unless you concatenate all your javascript, have it at the bottom, minify your css and js, gzip all your assets, and losslessly compress all your images. If you aren’t getting 90+ Page Speed scores, it’s way too early to be thinking about selector optimization.</p>
 </blockquote>
 <p>全称セレクタは言われているほど遅くないと（.foo &gt; *みたいな使い方すると遅いかも）。というより、そこ気にするより先にすることあるよ的な。なるほど！</p>
 </div>

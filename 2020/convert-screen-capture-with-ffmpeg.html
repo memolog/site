@@ -436,11 +436,9 @@
         </header>
         <div id="article-content" class="content "><p>Macの場合、<a href="https://support.apple.com/ja-jp/HT201066#record" target="_blank" rel="noopener">Quicktime Player</a>のファイルメニューの「新規画面収録」から簡単にスクリーンキャプチャを録画することができる（iPhoneの場合は<a href="https://support.apple.com/ja-jp/HT207935" target="_blank" rel="noopener">iPhone、iPad、iPod touch で画面を録画する方法</a>参照）。再現性が難しいケースなどで複雑な手順を書き記すよりずっとわかりやすく動作を見せることができるのでとても便利。だけれども、動画はmov形式で保存されるので、githubのissueに貼り付ける事ができない。なので、<a href="https://www.ffmpeg.org/" target="_blank" rel="noopener">ffmpeg</a>を使ってgifに変換しようという話。gifならgithubのissueに貼り付けられる。<a id="more"></a></p>
 <p>ffmpegのインストールは<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>にて行う。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> ffmpeg
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">brew <span class="token function">install</span> ffmpeg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>ffmpegをインストールしたら、以下のようなコマンドを実行</p>
-<pre class="line-numbers language-bash"><code class="language-bash">ffmpeg -i foo.mov -r 24 foo.gif
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">ffmpeg -i foo.mov -r 24 foo.gif<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>-r</code>のオプションは<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AC%E3%83%BC%E3%83%88" target="_blank" rel="noopener">フレームレート</a>の設定でfpsで指定する。このオプションはなくても良いけど、24くらいなら品質を損わずにファイルサイズを減らすことができる。場合によってはもっと減らしても大丈夫と思う。</p>
 <p>というメモ。</p>
 </div>

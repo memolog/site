@@ -418,7 +418,7 @@
           <h2 class="header__title"><span>gruntでXcodeプロジェクトのVersion/Buildを変更する</span></h2>
           
         </header>
-        <div id="article-content" class="content "><p><a href="http://www.flickr.com/photos/91221720@N00/11110211616" title="Xcode_General_setting by Yutaka Yamaguchi, on Flickr" target="_blank" rel="noopener"><img src="http://farm4.staticflickr.com/3709/11110211616_9223de9a3f.jpg" alt="Xcode_General_setting"></a>  </p>
+        <div id="article-content" class="content "><p><a href="http://www.flickr.com/photos/91221720@N00/11110211616" target="_blank" rel="noopener" title="Xcode_General_setting by Yutaka Yamaguchi, on Flickr"><img src="http://farm4.staticflickr.com/3709/11110211616_9223de9a3f.jpg" alt="Xcode_General_setting"></a>  </p>
 <a id="more"></a>
 <p>XcodeプロジェクトのVersion(CFBundleShortVersionString)、Build(CFBundleVersion）の値はXcodeのUIで簡単に変更することができます。しかし、それをGruntタスクで変更するようにしたい。ということで、そのためのGruntタスクを作成しました。<a href="https://npmjs.org/package/grunt-plistbuddy" target="_blank" rel="noopener">grunt-plistbuddy</a>です。</p>
 <p>XcodeプロジェクトのVersion/Buildの文字は、info.plist(AppName-Info.plistとか)で管理されています。PlistBuddyは、plistファイルを扱うためのコマンドで、詳細は<a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/PlistBuddy.8.html" target="_blank" rel="noopener">PlistBuddy(8) Mac OS X Manual Page</a>に書かれています。</p>
@@ -431,11 +431,9 @@
     value<span class="token punctuation">:</span> <span class="token string">'1.0.1'</span><span class="token punctuation">,</span>
     src<span class="token punctuation">:</span> <span class="token string">'AppName-Info.plist'</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>これは下記のようなコマンドを実行するのと同じになります。</p>
-<pre class="line-numbers language-bash"><code class="language-bash">/usr/libexec/PlistBuddy -c <span class="token string">"Set :CFBundleVersion 1.0.1"</span> yourApp-Info.plist
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">/usr/libexec/PlistBuddy -c <span class="token string">"Set :CFBundleVersion 1.0.1"</span> yourApp-Info.plist<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Versionの値も同様に変更することができます。Xcode上でVersionの値が入っていない場合は、あらかじめ追加しておく必要があります（もしくはPlistBuddyでAddを実行する）。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript">plistbuddy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
   versionShort<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -444,8 +442,7 @@
     value<span class="token punctuation">:</span> <span class="token string">'1.0'</span><span class="token punctuation">,</span>
     src<span class="token punctuation">:</span> <span class="token string">'AppName-Info.plist'</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>詳細は<a href="https://github.com/memolog/grunt-plistbuddy" target="_blank" rel="noopener">memolog/grunt-plistbuddy</a>もご参考いただければ。</p>
 <p>というメモ。</p>
 </div>

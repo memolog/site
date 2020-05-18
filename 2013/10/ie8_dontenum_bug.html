@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="https://developer.mozilla.org/en-US/docs/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug" target="_blank" rel="noopener">ECMAScript DontEnum attribute | MDN</a>とか、<a href="https://github.com/jashkenas/underscore/issues/60" target="_blank" rel="noopener">_.extend should work-around JScript’s DontEnum bug ? Issue #60 ? jashkenas/underscore</a>とか、<a href="http://stackoverflow.com/questions/3705383/ie8-bug-in-for-in-javascript-statement" target="_blank" rel="noopener">internet explorer - IE8 bug in for-in JavaScript statement? - Stack Overflow</a>あたり参照。well known JScript bug らしい。</p>
 <a id="more"></a>
+
 <p><a href="http://momentjs.com/" target="_blank" rel="noopener">Moment.js</a>の2.2.xでは、IE8でmoment().valueOf()をしてもtime valueが返ってこないというissueがあります。developでは修正されているので、たぶんもうすぐ出るであろう2.3では修正されているはず。</p>
 <p>なぜIE8でvalueOfがうまく動かなかったのかは、どうも上記の問題によるものみたい。Objectのプロパティ、toStringとかvalueOfとかが、列挙不可になっているため、for in のループでそれらのプロパティが入ってこない。なので、下記のようにObjectのプロパティを別途extendするようになった。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">extend</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -435,8 +436,7 @@
   <span class="token punctuation">}</span>
 
   <span class="token keyword">return</span> a<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>というメモ。</p>
 </div>
         <footer class="profile">

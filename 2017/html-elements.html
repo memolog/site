@@ -434,7 +434,8 @@
 
           
         </header>
-        <div id="article-content" class="content "><p>久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）<br><a id="more"></a></p>
+        <div id="article-content" class="content "><p>久しくHTML要素について振り返っていなかったので、このタイミングで一度主要な構造についてのHTML要素について振り返ってみようと思う。（TL;DR:適切な見出し要素が大事。あとはおまけ）</p>
+<a id="more"></a>
 <h2 id="セクショニングコンテンツについて"><a href="#セクショニングコンテンツについて" class="headerlink" title="セクショニングコンテンツについて"></a>セクショニングコンテンツについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/dom.html#sectioning-content-2" target="_blank" rel="noopener">HTML 5.2: 3.2.4.2.3. Sectioning content</a> より</p>
 <blockquote>
 <p>Sectioning content is content that defines the scope of headings and footers.</p>
@@ -452,6 +453,8 @@
 <h2 id="セクショニングルートについて"><a href="#セクショニングルートについて" class="headerlink" title="セクショニングルートについて"></a>セクショニングルートについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#sectioning-roots" target="_blank" rel="noopener">HTML 5.2: Sectioning Root</a> より</p>
 <blockquote>
 <p>Certain elements are said to be sectioning roots, including blockquote and td elements. These elements can have their own outlines, but the sections and headings inside these elements do not contribute to the outlines of their ancestors.</p>
+</blockquote>
+<blockquote>
 <p>-&gt; blockquote body details dialog fieldset figure td</p>
 </blockquote>
 <p>以上のセクショニングルートは独自のアウトライン構造を持つことができ、親要素の構造には影響与えないとされる。仕様の中でセクショニングコンテンツと併記して扱われることが多いが、あまり意識しなくても大丈夫（と思う）。</p>
@@ -496,8 +499,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ins</span><span class="token punctuation">></span></span>The guide about Flexbox was supposed to be here, but it
     turned out Wes wasn’t a Flexbox expert either.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ins</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="footer-要素"><a href="#footer-要素" class="headerlink" title="footer 要素"></a>footer 要素</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#the-footer-element" target="_blank" rel="noopener">HTML5.2: The footer element</a></p>
 <blockquote>
 <p>The footer element represents a footer for its nearest ancestor main element or sectioning content or sectioning root element. A footer typically contains information about its section, such as who wrote it, links to related documents, copyright data, and the like.</p>
@@ -527,8 +529,7 @@
   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
   culpa qui officia deserunt mollit anim id est laborum.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Back to index...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="heading要素とセクションについて"><a href="#heading要素とセクションについて" class="headerlink" title="heading要素とセクションについて"></a>heading要素とセクションについて</h2><p><a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#headings-and-sections" target="_blank" rel="noopener">HTML5.2: 4.3.9. Headings and sections</a> より</p>
 <blockquote>
 <p>The first element of heading content in an element of sectioning content represents the heading for that explicit section. Subsequent headings of equal or higher rank start new implied subsections that are part of the previous section’s parent section. Subsequent headings of lower rank start new implied subsections that are part of the previous one. In both cases, the element represents the heading of the implied section.</p>
@@ -548,8 +549,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Color<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples come in various colors.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Apples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples are fruit.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
@@ -565,8 +565,7 @@
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Apples come in various colors.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>文書構造的には同一で同じアウトラインで構築されるが、後者の方がアウトラインの構造が明確にわかる。</p>
 <blockquote>
 <p>Authors are also encouraged to explicitly wrap sections in elements of sectioning content, instead of relying on the implicit sections generated by having multiple headings in one element of sectioning content.</p>

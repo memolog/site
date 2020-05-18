@@ -435,8 +435,9 @@
 
           
         </header>
-        <div id="article-content" class="content "><p><a href="http://stackoverflow.com/questions/13497606/ie10-find-first-button-on-page-and-trigger-click-event-on-input-submit" target="_blank" rel="noopener">javascript - IE10 find first button on page and trigger click event on input submit - Stack Overflow</a>参考。Internet Explorer 10 にて input fieldで Enter keyを押すと、<button>要素にclick eventが発生する。</button></p>
+        <div id="article-content" class="content "><p><a href="http://stackoverflow.com/questions/13497606/ie10-find-first-button-on-page-and-trigger-click-event-on-input-submit" target="_blank" rel="noopener">javascript - IE10 find first button on page and trigger click event on input submit - Stack Overflow</a>参考。Internet Explorer 10 にて input fieldで Enter keyを押すと、<button>要素にclick eventが発生する。</p>
 <a id="more"></a>
+
 <p>理由としては、button elementは、type属性が省略されている場合のdefaultが「submit」であるためらしい。<a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element" target="_blank" rel="noopener">w3cのspec</a>にも「default is the Submit Button state」と記述されている。IE10では、button要素でtype属性が省略されている場合、submitと同じと見なして、input fieldでエンターしたときに、buttonに対してclickイベントが発生させる、ということみたい。</p>
 <p>対策としては、submitではないbuttonではtype=”button”というように、属性を明記すること。またはinput fieldをform要素で囲うこと（同じformに存在するbuttonが、click eventを発生させる対象のボタンになる）。</p>
 <p>input fieldがform要素で囲われていない場合は、document全体で最初に見つかったbutton要素（form要素で囲われていない）に対して、clickイベントが発生する。そのため、わりと予想しないところでclick eventが発生することになる可能性があり、びっくりすることになる。<a href="http://codepen.io/memolog/pen/afGmI" target="_blank" rel="noopener">現象確認用のcodepen</a></p>

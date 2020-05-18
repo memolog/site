@@ -420,24 +420,20 @@ Gatsbyは「Blazing-fast static site generator for React」ということで、
 <p>とはいえ、一応最初に行ったことをそのまま書き記しておこうと思う。</p>
 <h2 id="nvmで-Node-9-xをインストール"><a href="#nvmで-Node-9-xをインストール" class="headerlink" title="nvmで Node 9.xをインストール"></a>nvmで Node 9.xをインストール</h2><p>インストール時か<code>gatsby develop</code>のときか失念してしまったが、どこかのタイミングで<code>error serve@6.4.3: The engine &quot;node&quot; is incompatible with this module. Expected version &quot;&gt;=6.9.0&quot;.</code>というエラーが発生してしまったので、ローカル環境に9.2をインストール（今確認したらすでに最新は9.3だったが）。<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> はだいぶ前にインストールしたのでどうインストールしたか失念。<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> でインストールしたのかもしれない。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">nvm <span class="token function">install</span> 9
-nvm <span class="token function">alias</span> default 9
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+nvm <span class="token function">alias</span> default 9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>デフォルトの設定を6.xにしていたのだけど、これを機にローカルで使用するバージョンは9.xに変更した。</p>
 <h2 id="Gatsby-CLI-のインストール-とサイトの作成"><a href="#Gatsby-CLI-のインストール-とサイトの作成" class="headerlink" title="Gatsby CLI のインストール とサイトの作成"></a>Gatsby CLI のインストール とサイトの作成</h2><p>ここから先は基本的には<a href="https://www.gatsbyjs.org/docs/" target="_blank" rel="noopener">Gatsby getting started</a> と同じことをただやった。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g gatsby-cli
-gatsby new memolog https://github.com/gatsbyjs/gatsby-starter-blog
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+gatsby new memolog https://github.com/gatsbyjs/gatsby-starter-blog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Github-Pages-へのデプロイ"><a href="#Github-Pages-へのデプロイ" class="headerlink" title="Github Pages へのデプロイ"></a>Github Pages へのデプロイ</h2><p>Github pagesにデプロイするためにレポジトリをGithub上で作成して、レポジトリを設定。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> init
 <span class="token function">git</span> remote add origin git@github.com:memolog/site.git
 <span class="token function">git</span> add <span class="token keyword">.</span>
 <span class="token function">git</span> commit
-<span class="token function">git</span> push origin master
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">git</span> push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>そのあと、 <a href="https://www.gatsbyjs.org/docs/deploy-gatsby/#github-pages" target="_blank" rel="noopener">Deploying Getsby</a> の内容にしたがって、Github Pagesへのデプロイ準備<br><a href="https://yarnpkg.com/docs/install" target="_blank" rel="noopener">Yarn</a> はいつインストールしたか失念したが、<code>brew install yarn --without-node</code> でインストールしたと思う。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">yarn add gh-pages --dev
-yarn deploy
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+yarn deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>これで完了。いまのところデフォルトのテンプレートそのままなので、これからその辺りを更新していこうと思う。とりあえずプロフィール画像だけでも変更しておきたい。</p>
 <p>個人的にはカスタムドメインを使用したかっただけど、SSL証明書の関係や、Amazon S3とCloudFront、Route53で新しいドメイン用意しても、個人サイトのトラフィックだとたいしてお金かからないらしいのだけど、個人サイトだし、いつ気が変わってやめるかもわからないし、お金かけずにやる方がいいかなと思ってgithub.ioをそのまま使うことにした。</p>
 <p>（テスト投稿するつもりだけだったのに無駄に文字を書き連ねてしまった）</p>

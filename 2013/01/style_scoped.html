@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="https://hacks.mozilla.org/2013/01/firefox-development-highlights-h-264-mp3-support-on-windows-scoped-stylesheets-more/" target="_blank" rel="noopener">Firefox Development Highlights - H.264 &amp; MP3 support on Windows, scoped stylesheets + more ✩Mozilla Hacks – the Web developer blog</a>（<a href="https://dev.mozilla.jp/2013/01/firefox-development-highlights-h-264-mp3-support-on-windows-scoped-stylesheets-more/" target="_blank" rel="noopener">日本語</a>）にて、<a href="http://nightly.mozilla.org/" target="_blank" rel="noopener">Firefoxのnightly</a>でstyle要素のscoped属性に対応したという話が出ていたので、試してみました。<a href="http://codepen.io/memolog/pen/uedGg" target="_blank" rel="noopener">style scoped動作確認用のcodepen</a>。</p>
 <a id="more"></a>
+
 <p><a href="http://www.w3.org/TR/html5/document-metadata.html#attr-style-scoped" target="_blank" rel="noopener">style scopeの仕様</a>によると、sytle scoped要素の親要素をルートとして、その範囲のみにstyleを適用させるみたいな感じ。親要素の最初のノードとして配置する必要がある（コメントノードなどinter-element whitespaceを除く）。</p>
 <p>そして親要素のcontent modelは<a href="http://www.w3.org/TR/html5/dom.html#transparent" target="_blank" rel="noopener">transparent</a>であってはいけないらしい。代表的なのは<a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element" target="_blank" rel="noopener">a要素</a>（それ以外はinsとかmap要素がtransparentらしい）で、</p>
 <pre><code>&lt;a&gt;

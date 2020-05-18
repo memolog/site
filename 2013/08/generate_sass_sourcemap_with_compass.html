@@ -421,14 +421,13 @@
         </header>
         <div id="article-content" class="content "><p>sassのsourcemapを用意すると、Chromeのdeveloper toolsを使ったときにscssファイルでスタイルのinspectができるようになるので、非常に便利。詳細は<a href="http://www.skyward-design.net/blog/archives/000163.html" target="_blank" rel="noopener">Sassファイルでの記述位置を知るより美しい方法｜Blog｜Skyward Design</a>などを参照。  </p>
 <a id="more"></a>
+
 <p><img src="http://farm8.staticflickr.com/7365/9563224728_a3f1aae573_o.png" alt=""></p>
 <p>ということで、compassでsassのsourcemapを生成したい。いろいろ試してみたのですが、とりあえずうまくいった手順が下記のような感じ。まずはインストール。preview版なのでインストール後に問題起こるかもしれません。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">gem <span class="token function">install</span> sass --pre
-gem <span class="token function">install</span> compass-sourcemaps --pre
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+gem <span class="token function">install</span> compass-sourcemaps --pre<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>そして、config.rbに下記を追加。</p>
-<pre class="line-numbers language-none"><code class="language-none">sass_options = { :sourcemap => true }
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">sass_options = { :sourcemap => true }<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>これで compass –compile を実行したら、css_dirの同じ場所に css.map ファイルができるようになりました。</p>
 <p>本当は<a href="https://github.com/gruntjs/grunt-contrib-compass" target="_blank" rel="noopener">grunt-contrib-compass</a>のタスクでsourmapを作成したかったのですが、compass-sourcemapsのcompassでは、options.timeが有効になっている場合にsourcemapを作成するとエラーになってしまう（grunt-contrib-compassのタスクの中でcompass cleanの実行ではない場合はoptions.timeを有効にするようになっている）。ので、そのうち…</p>
 <p>あと sass –pre と compass –pre の組み合わせも試してみましたが、試した時点では、compass compileも、sass –compassもどちらもsource mapを作成できませんでした。sass –compassの方は、compassのrequireに失敗して「Could not find compass」みたいなエラーが発生しました。時が経てば使えるようになるかも。</p>

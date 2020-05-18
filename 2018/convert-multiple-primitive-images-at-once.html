@@ -456,8 +456,7 @@
     <span class="token punctuation">.</span><span class="token function">option</span><span class="token punctuation">(</span><span class="token string">'-d, --dist &lt;dist>'</span><span class="token punctuation">)</span>
     <span class="token punctuation">.</span><span class="token function">option</span><span class="token punctuation">(</span><span class="token string">'--fname &lt;string>'</span><span class="token punctuation">)</span>
     <span class="token punctuation">.</span><span class="token function">option</span><span class="token punctuation">(</span><span class="token string">'--sync'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>オプションを用途にあわせて調整した上で、<code>child_process</code>を使ってprimitiveを実行しているだけである。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript">  <span class="token keyword">const</span> childProcess <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token operator">...</span>
@@ -466,8 +465,7 @@
     args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'-'</span> <span class="token operator">+</span> key<span class="token punctuation">,</span> options<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
-  <span class="token keyword">const</span> cp <span class="token operator">=</span> childProcess<span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'primitive'</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token keyword">const</span> cp <span class="token operator">=</span> childProcess<span class="token punctuation">.</span><span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'primitive'</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>単純なんだけど、手作業の回数が減らすことができて気分はだいぶ良い。</p>
 <p>以上。</p>
 </div>

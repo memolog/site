@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://code.google.com/p/android/issues/detail?id=41312" target="_blank" rel="noopener">Issue 41312 - android - Html5 Canvas drawing issue - duplicated drawing - when parent has overflow:hidden - Android - An Open Handset Alliance Project - Google Project Hosting</a>という問題があるようで、Android 4.1/4.2のブラウザ（stock browser）でCanvasを使用すると、描画が二重に発生する。</p>
 <a id="more"></a>
+
 <p>解決方法は、oveflow:hiddenをなくす。もしくは<a href="http://www.w3.org/TR/css-overflow-3/#overflow-properties" target="_blank" rel="noopener">overflow property</a>のinitialであるoverflow:visibleに設定するとよさそう。わたしの場合はcanvasをposition:absoluteにしてもしなくても現象に変更はなかった。</p>
 <p>個人的に確認した限りでは、Google Chromeでは発生しない様子。</p>
 </div>

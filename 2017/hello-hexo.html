@@ -420,21 +420,17 @@ Gatsby は高機能ゆえにたとえばデザインを少し変えたいとい�
 <p>なので、何か別のスタティックサイトジェネレーターを使おうと思っていろいろ探した。<a href="https://github.com/developit/preact-cli" target="_blank" rel="noopener">preact cli</a> からのサイト生成も良さそうだったけど、この状態から個別のページを生成する実装を作るのはだいぶ面倒くさそうだったので諦めた。<a href="https://jekyllrb.com/" target="_blank" rel="noopener">jekyll</a> は必要十分な感じはあるけど実装がRubyなので、できればNode.jsで実装されているものを使いたい。</p>
 <p>それで結局<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> を試している。今のところ簡単にスタティックサイトを作成したい（学習コストは低めに）という目的に十分あっているような気はしている。</p>
 <p>Hexoのインストールと公開はとりたてていうことがないくらい簡単で、<code>npm install -g hexo-cli</code> でCLIをインストールしたあとで</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo init hexo-site
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo init hexo-site<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>でサイトを新規作成し、作成したサイトをGithubで作成した新規レポジトリに割り当てして、</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> init
 <span class="token function">git</span> remote add origin git@github.com:memolog/site.git
 <span class="token function">git</span> add <span class="token keyword">.</span>
 <span class="token function">git</span> commit
-<span class="token function">git</span> push origin master
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">git</span> push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Github Pages 用のデプロイヤーをインストール</p>
-<pre class="line-numbers language-bash"><code class="language-bash">yarn add hexo-deployer-git --save
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yarn add hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>して、_config.yml の deploy の箇所のrepo欄にレポジトリのURLを追加して、</p>
-<pre class="line-numbers language-bash"><code class="language-bash">hexo deploy -g
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hexo deploy -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>しただけである。</p>
 <p>そのあとは、デフォルトで入ってたlandscapeのテーマをコピーして、以前に使おうと思って作成していたHTMLとCSSをそのまま適用させただけである。Microdataとか今どき必要なのかは不明ではあるが、そのあたりの修正とかはそのうちにやろうと思っている。リソースの最適化もそのうちやるであろうけど、現時点では何もしなくても大丈夫な感は大いにある。Authorの情報とかは少しは必要かなと思っている。</p>
 <p>あとは <code>yarn add hexo-prism-plugin --save</code> してコードのハイライトをprismにしたくらいかな。</p>

@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p>HTC EVO(2.3.4)のAndroid端末で、localStorageに入れた値をJSON.parseした場合に、localStorageからnullが渡るとillegal accessのエラーになる。エラーを出力しないようだけど。。。weinreのコンソールでJSON.parse(null)と打つとそのようなエラーが確認できる。</p>
 <a id="more"></a>
+
 <p><a href="http://codepen.io/memolog/full/IdwJL" target="_blank" rel="noopener">現象再現用のcodepen</a>。エラーが発生しない場合は、alertで「null」と表示されます。alertが出ない場合は、JSON.parse(null)の処理でillegal accessのエラーが発生していて、途中で処理が止まっている。</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank" rel="noopener">JSON.parseのsyntax</a>的にparseの対象はtextである必要があって、nullがillegalというのは当然なのかもしれない。でもモダンなブラウザではエラーにならない。JSON.parse(null)をしてもnullが返ってくる。おそらく、モダンブラウザではillegalにせずにtype convertをして結果を返してくれるけど、HTC EVOの(stock)ブラウザではtype convertしてくれない。うむむ。なお、HTC EVOの場合、JSON.parse(false)の場合もillegalになる。string以外はだめ。</p>
 <p>さらに悪いことに、console.logでも、渡した値がtoStringをもたない場合は、エラーになってしまう。console.logでデバックするときに、渡した値がundefinedやnullになっていると、そこで処理が止まってしまう。 これはなかなかつらい。外部動作的にはただ処理が途中で止まっているようにしか見えないし、console.logでも状況把握が一歩遅れる。</p>

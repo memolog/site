@@ -428,17 +428,15 @@ Icon specified in the Info.plist not found under the top level app wrapper: AppI
 <pre class="line-numbers language-none"><code class="language-none">Icon specified in the Info.plist not found under the top level app wrapper: AppIcon40x40
 
 <a id="more"></a>
-Icon specified in the Info.plist not found under the top level app wrapper: AppIcon60x60
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+Icon specified in the Info.plist not found under the top level app wrapper: AppIcon60x60<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>エラーの内容を理解するのに時間がかかりましたが、どうやらビルドしたipaファイルのtop levelにAppIcon40x40とAppIcon60x60がないということらしい。</p>
 <p>なので、ipaファイルの展開して中身を確認してみる。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> Foobar.ipa Foobar.zip
 unzip Foobar.zip
 <span class="token function">cd</span> Payload/Foobar.app/
-<span class="token function">ls</span> -al
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">ls</span> -al<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://farm4.staticflickr.com/3672/11617781174_39076cd6d0_o.png" alt="">  </p>
-<p>たしかに存在しない。AppIcon40x40@2x.pngはあるけど、AppIcon40x40はない…</p>
+<p>たしかに存在しない。<a href="mailto:AppIcon40x40@2x.png">AppIcon40x40@2x.png</a>はあるけど、AppIcon40x40はない…</p>
 <p>そして、asset catalogsでアサインしたアイコン（AppIcon）は、ビルドしたipaファイルのInfo.plistの「CFBundleIconFiles」に「AppIcon40x40」のように値が追加される。ゆえに、上述のエラーが返ってくると。  </p>
 <p><img src="http://farm4.staticflickr.com/3785/11617666323_3b51b040c6_o.png" alt=""></p>
 <p>しかし、AppIcon40x40を追加したくても、asset catalogsではRetina用の2xのアイコンしかアサインできない。AppIcon60x60も同じ。asset catalogsにアサインされていないアイコンは、ビルドしたipaファイルには入ってこないので、どうしようもない。  </p>

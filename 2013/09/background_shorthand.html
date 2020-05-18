@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p>backgroundのスタイルをショートハンドで指定した場合、指定していないプロパティはinitialと同じ値が指定される。<a href="http://www.w3.org/TR/css3-background/#the-background" target="_blank" rel="noopener">CSS Backgrounds and Borders Module Level 3</a>を参照。</p>
 <a id="more"></a>
+
 <blockquote>
 <p>The ‘background’ property is a shorthand property for setting most background properties at the same place in the style sheet. The number of comma-separated items defines the number of background layers. Given a valid declaration, for each layer the shorthand first sets the corresponding layer of each of ‘background-image’, ‘background-position’, ‘background-size’, ‘background-repeat’, ‘background-origin’, ‘background-clip’ and ‘background-attachment’ to that property’s initial value, then assigns any explicit values specified for this layer in the declaration. Finally ‘background-color’ is set to the specified color, if any, else set to its initial value.</p>
 </blockquote>
@@ -433,8 +434,7 @@
 <span class="token punctuation">}</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no-repeat bg-foobar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>no-repeat bg-foobar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上のような例の場合（<a href="http://codepen.io/memolog/pen/goLuI" target="_blank" rel="noopener">同じ内容のcodepen</a>）、.no-repeatで宣言しているbackground-colorと、background-repeatの指定より、.bg-foobarで宣言しているbackgroundショートハンドで設定されるinitialの値（transparent, repeat）が適用される。背景画像は繰り返し表示されることになる。</p>
 <p>つまり、指定していないプロパティを初期化したいのであれば、backgroundのショートハンドを使う方が良いけれど、背景画像だけを差し替えたいのであればbackground-imageを使わないといけない。ということになる。</p>
 <p>というメモ</p>

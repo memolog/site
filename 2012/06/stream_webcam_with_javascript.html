@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://www.sitepoint.com/stream-your-webcam-to-a-browser-in-javascript/" target="_blank" rel="noopener">Stream Your Webcam to a Browser in JavaScript</a>というSitepointの記事で、Operaがバージョン12でgetUserMediaに対応したという話が掲載されていて、サンプルのJavascriptが載っていたので試してみました。シンプルなJavascriptでWebカメラが動くというところが面白い。</p>
 <a id="more"></a>
+
 <p>getUserMediaの仕様は<a href="http://dev.w3.org/2011/webrtc/editor/getusermedia.html#dom-navigator-getusermedia" target="_blank" rel="noopener">W3Cのサイトを参照</a>。良く分からなかったけど…</p>
 <p>上述のサイトを参考にすると、第一引数に使用するメディアのタイプを指定して、第二引数にgetUserMediaの実行に成功した場合に実行される処理が入り、第三引数に失敗した場合に実行される処理が入る。</p>
 <p>getUserMediaを実行するときにはユーザーにWebカメラを使用するための許可が求められる（Prompts the user for permission to use their Web cam or other video or audio input）。ので、ユーザーが使用を許可した場合は第二引数の処理が動き、拒否した場合は第三引数の処理が動く、のが典型的な動きになる。</p>

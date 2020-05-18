@@ -469,12 +469,12 @@
 <p>boxがそのコンテキストと合っていない場合、boxのタイプを修正するための方法が二つある。一つは上記で述べた blockification や inlinificationのようなdisplayのcomputed valueを変換することである。もう一つは、tableやruby、flow layoutで行われるような、box treeを構築するところで、boxの間にanonymous boxを作成することである。</p>
 <blockquote>
 <p><strong>EXAMPLE 2</strong><br>Some examples of computed-value fixup include:</p>
+</blockquote>
 <ul>
 <li>Absolute positioning or floating an element blockifies the box’s display type. [CSS2]</li>
 <li>Containment in a ruby container inlinifies the box’s display type, as described in [CSS3RUBY].</li>
 <li>A parent with a grid or flex display value blockifies the box’s display type. [CSS3-GRID-LAYOUT] [CSS3-FLEXBOX]</li>
 </ul>
-</blockquote>
 <p>以下の例はcomputed-value fixupが含まれている。</p>
 <ul>
 <li>absoluteによるposition設定、または要素の回り込み（float）は、そのboxのdisplay typeをブロック化する</li>

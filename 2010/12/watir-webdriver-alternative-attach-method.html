@@ -418,10 +418,11 @@
         </header>
         <div id="article-content" class="content "><p>去年の今頃、<a href="/blog//2010/02/watir-webdriver/">watir 2.0</a> として始まったwatir-webdriverですが、現在 0.1.7。着々と進んでいます。その当時はseleniumとwatirの関係性がよくわかってませんでしたが、watirはselenium-webdriverのラッパー的な感じみたいです。watir-webdriverの内部では、Selenium::Webdriver.for でseleniumのdriverを呼び出しています。</p>
 <a id="more"></a>
+
 <p>watir-webdriverを使用するのに一つの問題としてattachメソッドがないというものがありましたが、これを回避する方法が<a href="http://groups.google.com/group/watir-general/browse_thread/thread/232df221602d4cfb" target="_blank" rel="noopener">Attach method not working with Watir-WebDriver</a>にて、紹介されています。具体的には下記のような感じ。browserはWatir::Webdriverのインスタンス。</p>
 <pre><code>browser.window(:title =&gt; &#39;annoying popup&#39;).use do
   browser.button(:id =&gt; &#39;close&#39;).click
-end
+end 
 </code></pre><p>watir-webdriverのextension(addon)が動作している状態で開いたウィンドウであれば、watirのコマンドをその指定したウィンドウを対象に行うことができます。これでattachメソッドがなくてもたいてい大丈夫そうですね。</p>
 </div>
         <footer class="profile">

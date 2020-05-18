@@ -424,6 +424,7 @@ Work with View Controllersにある「Understand the View Controller Lifecycle�
         <div id="article-content" class="content "><p>viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。</p>
 <p><a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson4.html" target="_blank" rel="noopener">Work with View Controllers</a>にある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。</p>
 <a id="more"></a>
+
 <blockquote>
 <p><img src="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Art/4_vclife_2x.png" alt=""></p>
 <p>UIViewController methods get called as follows:</p>
@@ -452,6 +453,8 @@ Work with View Controllersにある「Understand the View Controller Lifecycle�
 <blockquote>
 <p>Navigation Controllers</p>
 <p>A navigation controller manages a stack of view controllers to provide a drill-down interface for hierarchical content. The view hierarchy of a navigation controller is self contained. It is composed of views that the navigation controller manages directly and views that are managed by content view controllers you provide. Each content view controller manages a distinct view hierarchy, and the navigation controller coordinates the navigation between these view hierarchies.</p>
+</blockquote>
+<blockquote>
 <p>Monitoring Changes to the Navigation Stack</p>
 <p>Whenever you push or pop a view controller, the navigation controller sends messages to the affected view controllers. The navigation controller also sends messages to its delegate when its stack changes. Figure 1-5 shows the sequence of events that occurs during a push or pop operation and the corresponding messages that are sent to your custom objects at each stage. The new view controller reflects the view controller that is about to become the topmost view controller on the stack.</p>
 <p>Figure 1-5 Messages sent during stack changes</p>
@@ -463,7 +466,7 @@ Work with View Controllersにある「Understand the View Controller Lifecycle�
 <p>A view presentation style in which the presented view covers the screen. The views beneath the presented content are <strong>not removed from the view hierarchy</strong> when the presentation finishes. So if the presented view controller does not fill the screen with opaque content, the underlying content shows through.  </p>
 <p>Available in iOS 8.0 and later.</p>
 </blockquote>
-<p>アプリケーションがBackground（またはSuspended）になった場合は、viewDidDisappearなどのイベントは発生しない。アプリがkillされなければ、frontにそのままの状態で戻ってくるけど、killされていれば、storyboardからあらためてviewが読み込まると思うので（ちゃんと確かめてないけど..）、viewDidLoadが発生するはず。以下は<a href="http://shop.oreilly.com/product/0636920044352.do" target="_blank" rel="noopener">Programming iOS 9</a>(<a href="https://books.google.co.jp/books?id=rxHiCgAAQBAJ&amp;pg=PT401&amp;dq=A+view+does+not+disappear+merely+because+the+app+is+backgrounded+and+suspended.&amp;hl=ja&amp;sa=X&amp;ved=0ahUKEwiCpeLL4qLKAhXF6KYKHf_HA3IQ6AEIHDAA#v=onepage&amp;q=A&#x25;20view&#x25;20does&#x25;20not&#x25;20disappear&#x25;20merely&#x25;20because&#x25;20the&#x25;20app&#x25;20is&#x25;20backgrounded&#x25;20and&#x25;20suspended.&amp;f=false" target="_blank" rel="noopener">Programming iOS 9: Dive Deep into Views, View Controllers, and Frameworks - Matt Neuburg - Google ブックス</a>)から。</p>
+<p>アプリケーションがBackground（またはSuspended）になった場合は、viewDidDisappearなどのイベントは発生しない。アプリがkillされなければ、frontにそのままの状態で戻ってくるけど、killされていれば、storyboardからあらためてviewが読み込まると思うので（ちゃんと確かめてないけど..）、viewDidLoadが発生するはず。以下は<a href="http://shop.oreilly.com/product/0636920044352.do" target="_blank" rel="noopener">Programming iOS 9</a>(<a href="https://books.google.co.jp/books?id=rxHiCgAAQBAJ&pg=PT401&dq=A+view+does+not+disappear+merely+because+the+app+is+backgrounded+and+suspended.&hl=ja&sa=X&ved=0ahUKEwiCpeLL4qLKAhXF6KYKHf_HA3IQ6AEIHDAA#v=onepage&q=A&#x25;20view&#x25;20does&#x25;20not&#x25;20disappear&#x25;20merely&#x25;20because&#x25;20the&#x25;20app&#x25;20is&#x25;20backgrounded&#x25;20and&#x25;20suspended.&f=false" target="_blank" rel="noopener">Programming iOS 9: Dive Deep into Views, View Controllers, and Frameworks - Matt Neuburg - Google ブックス</a>)から。</p>
 <blockquote>
 <p>A view does not disappear merely because the app is backgrounded and suspended. Once suspended, your app might be killed. So you cannot rely on viewWillDisappear: and viewDidDisappear: alone for saving data that the app will need the next time it launches. If you are to cover every case, you may need to ensure that your data-saving code also runs in response to an application lifetime event such as applicationWillResignActive: or applicationDidEnterBackground:</p>
 </blockquote>

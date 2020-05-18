@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p>以前に<a href="/blog//2010/11/page_objects/">Page Objects : テストスイート構築のためのデザインパターン - メモログ</a>というのを紹介しました。今回はそのパターンをちょっと拡張してみようという話。なお、特に参考にした訳ではないのですが、<a href="http://fijiaaron.wordpress.com/2009/09/02/selenium-page-objects-site-objects-data-objects-high-level-navigation/" target="_blank" rel="noopener">Selenium Page Objects + Site Objects, Data Objects &amp; High Level Navigation « Fiji Ecuador Seattle Greece Montana</a>に同じような話を提示している人はいます（2年前に）。</p>
 <a id="more"></a>
+
 <p>Page Objectsは、自動化テストのスクリプトをまとめるための一つのパターン。ページを一つのオブジェクトとして捉えて、そのページのアクション（サービス）を一つの「区切り」にしてスクリプトをまとめます。他のページに移動する場合は、移動するページのオブジェクトを返り値として渡す（そうすることで複数ページのアクションを続けていくことができる）。</p>
 <p>ただ、テスト手順として、連続性のない複数のページのアクションを実行する場合、Page Objectsのパターンでは悩ましいところがあります。たとえば、ブログの設定ページで設定をしたあとに、記事作成ページで記事を作成して、その記事がブログに期待通りに生成されているかを確認する、とか。それぞれのページは独立していて、アクション間の連携はない場合、Page Objectを渡すわけにはいかない。リンクをクリックしてページを遷移していくことで連携させることもできるけれど、効率性から考えるとやはり直接該当のページにアクセスしたい（リンクをたどった方がより人間的と言えるかもしれないけど）。とか。</p>
 <p>Page Objectsの上位のオブジェクトして「Site Object」を設けて、そこから操作するとそうした悩みがなくなります。たとえば<a href="http://zenback.jp" target="_blank" rel="noopener">zenback</a>なら、「Dashboard」とか「Customize」とかのPage Objectsの他に「zenback」というSite Objectを設ける。zenbackというSite Objectから、DashboardやCustomizeなどのPage Objectsを操作したり、ページ間の移動を行うことでDashboardとCustomizeのページがアクション（サービス）で連携がない場合でも連続的に操作を行うことができる。</p>

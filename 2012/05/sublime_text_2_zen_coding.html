@@ -417,10 +417,11 @@
         </header>
         <div id="article-content" class="content "><p>（追記 2013/1/30）Packageの名前がZen Codingから「<a href="https://github.com/sergeche/emmet-sublime" target="_blank" rel="noopener">Emmet</a>」に変わっていました。ので、Packageの名前をEmmetに差し替えました。あわせて最後に書いていたスニペットの変更方法もちゃんとした（？）方法に書き換えました。</p>
 <a id="more"></a>
+
 <p><a href="http://designshack.net/articles/css/cant-get-into-preprocessors-try-zen-coding/" target="_blank" rel="noopener">Can’t Get Into Preprocessors? Try Zen Coding | Design Shack</a>でSublime Text 2でZen Codingのインストール方法が紹介されていたので、試してみました。</p>
 <p>まずSublime Package Controlをインストール。起動してSublimeのコンソールを開く（View-&gt;Show Console）。コンソール上で、<a href="http://wbond.net/sublime_packages/package_control/installation" target="_blank" rel="noopener">Installation - Sublime Package Control - a Sublime Text 2 Package Manager by wbond</a>に書かれているインストール用のコマンドを実行する。</p>
 <blockquote>
-<p>import urllib2,os; pf=’Package Control.sublime-package’; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),’wb’).write(urllib2.urlopen(‘<a href="http://sublime.wbond.net/&#39;+pf.replace(" target="_blank" rel="noopener">http://sublime.wbond.net/&#39;+pf.replace(</a>‘ ‘,’&#x25;20’)).read()); print ‘Please restart Sublime Text to finish installation’</p>
+<p>import urllib2,os; pf=’Package Control.sublime-package’; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),’wb’).write(urllib2.urlopen(‘<a href="http://sublime.wbond.net/&#39;+pf.replace" target="_blank" rel="noopener">http://sublime.wbond.net/&#39;+pf.replace</a>(‘ ‘,’&#x25;20’)).read()); print ‘Please restart Sublime Text to finish installation’</p>
 </blockquote>
 <p>コンソールに「’Please restart Sublime Text to finish installation’」と出力されるので、Sublimeを再起動する。再起動後はPackage Contorlが使用可能になっている。</p>
 <p>再起動後、コマンドパレットを開く（Tools-&gt;Command Palette)。コマンドパレット上で「install」とか入力すると、候補に「Package Control: Install Package」が出てくるので、それを選択。</p>

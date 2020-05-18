@@ -445,6 +445,7 @@
 <p>長い文章を書き続けると、親の要素でwidthの指定があるにも関わらず、どこまでも横に伸びていってしまう。これはどうしてそうなるのかはよくわからない。仕様を見ればわかるのだろうけど詳細はまた別の機会に調べようと思う。たぶんテキストの流れの縦横の関係がスイッチしていて、縦幅を指定していてもテキストがそれより長い場合はあふれて表示されることと同じなのだろうと思う。とはいえ、writing-modeを指定している要素にwidthを指定しつつ、<a href="https://developer.mozilla.org/ja/docs/Web/CSS/column-count" target="_blank" rel="noopener">column-count</a>を1に指定しておくと（1で指定するとSafariで反応しないので2に指定した）、期待通りの横幅で縦に折り返すことができるようになった。これも<a href="https://developer.mozilla.org/ja/docs/Web/Guide/CSS/Using_multi-column_layouts" target="_blank" rel="noopener">マルチカラムレイアウト</a>の仕様が関係していると思うけど、詳しくは調べていない。だからこれが正しい挙動なのかどうかはわからない。あと現状のline-heightとかwidthの関係で、テキストの横幅が微妙に横幅より狭く見えるので、少しだけ調整している。折り返しの位置が横幅によって微妙に変なのは、仕方ないのかな。</p>
 <p>あと最後の段落は文章の左側に余白が残るのだけど、WEBで見るとだいぶ不自然な感じはある。縦書きは一つの段落でおさまる文章で書くのがベストかもしれない。文章量的には縦書きに比べてだいぶ入るなあという感じはある。数えてないけど。</p>
 </div>
+
 <hr>
 <p>最近になって<a href="https://developer.mozilla.org/ja/docs/Web/CSS/writing-mode" target="_blank" rel="noopener">writing-mode</a>を使うと文章の表示を簡単に縦書きにできるということを最近知ったので使ってみたという話。縦書きにすると文章量が長くなっても横幅に関係なく折り返されずに表示されるようになる。横幅は表示する端末によって変わることを考えると厳しい制限事項だなと思う。</p>
 <p>指定しているCSSの中で縦書きと関係ある部分はだいたいこんな感じ。</p>
@@ -455,8 +456,7 @@
   <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">102%</span><span class="token punctuation">;</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">800</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>マルチカラムレイアウトを使用すると折り返して表示することができるようだが、heightの調整が難しい。heightの指定はauto（最大でウィンドウと同じ大きさになる様子）か、800pxとか固定値で決める必要がある。ボックスからあふれたコンテンツはoverflowがhiddenでなければ表示されるのだけど、ボックスの大きさは変わらないので縦書きコンテンツの下に何か他のコンテンツを挿入するとコンテンツが重なって表示されてしまうようだ。これは仕様上の問題なのか実装上の問題なのかは調べてないのでわからない。とにかく現状ではそういう感じになる。コンテンツの横幅が狭いとその分コンテンツの高さが必要になるので、どんな固定値であってもコンテンツがバシッとおさまるようにはできない。</p>
 <p>だから分量の多いコンテンツを縦書きにするなら下にコンテンツを置かないか、<code>overflow:auto</code> などしてあふれたコンテンツを重ならないようにする必要がある。</p>
 <p>そしてマルチカラムで次のカラムに移動するときに折り返し位置を指定する手段がなさそうにみえる（あるかもしれないけど）。それで左側に微妙な余白が生まれてしまうので、ここの見た目は微妙。<a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout" target="_blank" rel="noopener">グリッドレイアウト</a>ならもしかしたらうまい回避方法見つかるかも…とも思ったが、今のところ見つかってない。</p>

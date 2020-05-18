@@ -436,19 +436,16 @@
         </header>
         <div id="article-content" class="content "><p>この記事の上にあるFeatured Imageを生成するときに毎回<code>primitive_bulk</code>のコマンドを入力していたのだけど、<br>しかしさすがに面倒になってきたので、<code>npm run script</code> にショートカットを用意してショートカットに引数を渡すようにしてみた。<a id="more"></a></p>
 <p>今までのコマンド</p>
-<pre class="line-numbers language-bash"><code class="language-bash">primitive_bulk -i ~/Downloads/chelsea-aaron-312666-unsplash.jpg -d ./source/assets/images/chelsea-aaron-312666-unsplash --output chelsea-aaron-312666-unsplash --format jpg,svg -m 0
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">primitive_bulk -i ~/Downloads/chelsea-aaron-312666-unsplash.jpg -d ./source/assets/images/chelsea-aaron-312666-unsplash --output chelsea-aaron-312666-unsplash --format jpg,svg -m 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>package.json</code>に用意したコマンド</p>
 <pre class="line-numbers language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
   <span class="token property">"pb"</span><span class="token operator">:</span> <span class="token string">"primitive_bulk -i ~/Downloads/$DIRNAME.jpg -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg"</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
   <span class="token property">"primitive_bulk"</span><span class="token operator">:</span> <span class="token string">"^1.2.1"</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>実行例</p>
-<pre class="line-numbers language-bash"><code class="language-bash">DIRNAME<span class="token operator">=</span>chelsea-aaron-312666-unsplash <span class="token function">npm</span> run pb -- -m 0
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">DIRNAME<span class="token operator">=</span>chelsea-aaron-312666-unsplash <span class="token function">npm</span> run pb -- -m 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>$DIRNAME</code>に値を渡しつつ、<code>--</code>の後ろで<code>primitive_bulk</code>用の追加のオプションを渡している（<code>-m</code>の値はそのまま<code>primitive_bulk</code>に渡すので）。このショートカットだと入力用のファイルが<code>~/Downloads</code>フォルダ以下に<code>.jpg</code>で存在しないとエラーになってしまうのだけど、いつもjpgだしまあこの方が良いかなと思っている。</p>
 <p>というメモ。</p>
 <p>関連記事</p>

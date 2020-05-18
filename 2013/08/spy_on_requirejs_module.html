@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p>jasmineでのテストで、requireJSのmoduleに対してspyOnしたい場合、どうしたら良いのかなという話。moduleを呼び出す側の処理で、moduleに適切な値をちゃんと渡しているかを確認したいときが、ある。普通はないかもしれないけど。とにかく、そういうときにspyOnしてその値を確認したい。</p>
 <a id="more"></a>
+
 <p>たとえば下記のようなモジュールの場合。foo.jsというファイル名でモジュール名は「foo」となるとして。</p>
 <pre><code>define(function(){
   return function(arg1,arg2){
@@ -463,8 +464,7 @@
 </code></pre><p>spyOnはspyOn(object, methodName)という形で、第一引数でobjectを渡して、第二引数でobjectの中のメソッド名を指定するという風に使うので、stubModuleはオブジェクトとして用意する。 そして、defineでfooモジュールを定義して、stubModule.stubを返すようにする。</p>
 <p>それでstubModuleのstubをspyOn(stubModule,’stub’)でspyOnすると。</p>
 <p>すでにmoduleがrequireされている場合は、require.undef(‘foo’)で<a href="http://requirejs.org/docs/api.html#undef" target="_blank" rel="noopener">undefining</a>して、$(‘script[src$=”foo.js”]‘).remove();とかして、requireされていないのと同様の状態に戻さないとだめかもしれない（そしてテスト後に、stubをrequire.undefしてrequireし直す）。</p>
-<p>というメモ… 内容は<a href="http://iterativo.wordpress.com/2012/03/06/unit-testing-javascript-
-modules-using-requirejs-and-jasmine/" target="_blank" rel="noopener">Unit testing JavaScript modules using RequireJS and Jasmine | iterativo</a>の記事を参考にしました。TDDで開発しているとこうしたTestability的にgoodでない状況に陥らないのかどうなのか。もっと良いやり方あるかなあ。</p>
+<p>というメモ… 内容は[Unit testing JavaScript modules using RequireJS and Jasmine | iterativo](<a href="http://iterativo.wordpress.com/2012/03/06/unit-testing-javascript-" target="_blank" rel="noopener">http://iterativo.wordpress.com/2012/03/06/unit-testing-javascript-</a><br>modules-using-requirejs-and-jasmine/)の記事を参考にしました。TDDで開発しているとこうしたTestability的にgoodでない状況に陥らないのかどうなのか。もっと良いやり方あるかなあ。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

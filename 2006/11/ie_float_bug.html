@@ -422,8 +422,9 @@ The IE Doubled Float-Margin Bug
 <li><a href="http://www.positioniseverything.net/explorer/doubled-margin.html" target="_blank" rel="noopener">The IE Doubled Float-Margin Bug</a></li>
 </ul>
 <a id="more"></a>
+
 <p>IEにはいろいろなバグが存在するのは周知の事実ですが、その一つにfloatされた要素のmargin（またはpadding）を二重に計算してしまうというものがあるそうです。今回作成したCSSとHTMLではこのバグに直面したようです。</p>
-<p>調べていくと、floatをかけている要素をdisplay:inlineにすれば回避できるようなのですが、どうもうまくいかない（人違いならず、バグ違いだったかも）。時間もないので、美しくないですがmain-navigationの下に<br clear="left;">を追加しててきとうに回避しました。一番最後のリストタグに、style=”clear:left;”と入れても良かったかもしれませんが、検証し直すほどのことでもない気がするので、そのまま。このまま。気の向くままに。</p>
+<p>調べていくと、floatをかけている要素をdisplay:inlineにすれば回避できるようなのですが、どうもうまくいかない（人違いならず、バグ違いだったかも）。時間もないので、美しくないですがmain-navigationの下に<br clear="left;" />を追加しててきとうに回避しました。一番最後のリストタグに、style=”clear:left;”と入れても良かったかもしれませんが、検証し直すほどのことでもない気がするので、そのまま。このまま。気の向くままに。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

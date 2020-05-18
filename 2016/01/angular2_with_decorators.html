@@ -420,6 +420,7 @@
         </header>
         <div id="article-content" class="content "><p>Decorators は <a href="https://github.com/tc39/ecma262" target="_blank" rel="noopener">ECMAScript</a> で Propose となっている実装で、Angular 2 と TypeScript を使った実装ではよく出てくる。 <a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841" target="_blank" rel="noopener">Exploring ES2016 Decorators – Google Developers – Medium</a>を参考にすると、定義したfunction名の頭に「@」をつけて、使いたいclassやpropertyの前に記述するらしい。</p>
 <a id="more"></a>
+
 <blockquote>
 <p>An ES2016 decorator is an expression which returns function and can take a target, name and property descriptor as arguments. You apply it by prefixing the decorator with an <code>@</code> character and placing this at the very top of what you are trying to decorate. Decorators can be defined for either a class or property.</p>
 </blockquote>
@@ -431,8 +432,7 @@
 <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token punctuation">{</span>
   @readonly
   <span class="token function">meow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> says Meow`</span></span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上記の例の場合、meow functionオブジェクトの writable プロパティが false に設定される。</p>
 <p>Angular.ioの<a href="https://angular.io/docs/ts/latest/quickstart.html" target="_blank" rel="noopener">5 Min Quickstart</a>では、下記のようなサンプルコードが載っている。@ComponentのDecoratorsで設定したプロパティが、AppComponentに設定される。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'angular2/core'</span><span class="token punctuation">;</span>
@@ -441,8 +441,7 @@
     selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
     template<span class="token punctuation">:</span> <span class="token string">'My First Angular 2 App'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（なお、TypeScriptをJavascriptにcompileする場合には、tsconfigのcompilerOptionsで”experimentalDecorators”: trueの設定が必要がある。）</p>
 <p>という感じのメモ（書いてみたら大して書くこと思いつかなかった）。</p>
 <p>そのほか参考：</p>

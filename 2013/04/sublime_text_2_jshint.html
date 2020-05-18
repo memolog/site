@@ -354,13 +354,13 @@
 <meta property="og:site_name" content="メモログ">
 <meta property="og:description" content="Sublime Text 2 の JSLint から node がみつからない - メモログと関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=B00B1WLE92">
+<meta property="og:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92">
 <meta property="article:published_time" content="2013-04-13T05:50:00.000Z">
 <meta property="article:modified_time" content="2019-01-04T02:09:12.867Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=B00B1WLE92">
+<meta name="twitter:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
 <meta property="fb:app_id" content="168245123786587">
@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2013/02/node_not_found_with_jsLint/">Sublime Text 2 の JSLint から node がみつからない - メモログ</a>と関連して、少しの間JSLintを使用していたのですが、jQueryなどglobalに定義されている変数があるとそこで定義されていないと言われたりなどしてしまい、若干使い勝手が悪い。</p>
 <a id="more"></a>
+
 <p>それでJSHintを使い始めてみている。JSHintについては<a href="http://www.jshint.com/about/" target="_blank" rel="noopener">About – JSHint</a>を参照。</p>
 <blockquote>
 <p>JSHint is a fork of <a href="http://jslint.com/" target="_blank" rel="noopener">JSLint</a>, the tool written and maintained by Douglas Crockford. The project originally <a href="http://anton.kovalyov.net/2011/02/20/why-i-forked-jslint-to-jshint/" target="_blank" rel="noopener">started</a> as an effort to make a more configurable version of JSLint-the one that doesn’t enforce one particular coding style on its users-but then transformed into a separate static analysis tool with its own goals and ideals.</p>
@@ -435,7 +436,7 @@
 cp JSHint/.jshintrc User/JSHint.jshintrc
 </code></pre><p>設定は<a href="http://www.jshint.com/docs/" target="_blank" rel="noopener">Documentation – JSHint</a>を参照。Enforcing optionsは書き方を制限する系の設定で、Relaxing optionsは逆に制限を緩める（warningなどを出さないように抑制する）系の設定で、Environmentsは環境関連。jquery: trueにすると、JQueryや$などはどこかでglobal変数に定義されているものとして扱ってくれます。</p>
 <p>Environmentsで用意されていないものについては、”globals”: {“define”:false,”require”:false}のような感じで、globalsで設定すると同じことができます。</p>
-<p>設定の中で「maxcomplexity」の設定は興味深くて、 <a href="http://ja.wikipedia.org/wiki/&#x25;E5&#x25;BE&#x25;AA&#x25;E7&#x25;92&#x25;B0&#x25;E7&#x25;9A&#x25;84&#x25;E8&#x25;A4&#x25;87&#x25;E9&#x25;9B&#x25;91&#x25;E5&#x25;BA&#x25;A6" target="_blank" rel="noopener">Cyclomatic complexity</a>を計算して、complexityを設定した値で制限してくれるみたいです。<a href="http://www.amazon.co.jp/gp/product/B00B1WLE92/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=B00B1WLE92&amp;linkCode=as2&amp;tag=yutakayamaguc-22" target="_blank" rel="noopener">Testable JavaScript</a><img src="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=B00B1WLE92" alt="">に書かれていた内容によると、Thomas J. McCabeは、すべてのメソッドはCyclomatic complexityを10以下にすべしとしているそうです。<a href="http://www.enerjy.com/blog/?p=198" target="_blank" rel="noopener">Software Integrity Blog » Blog Archive » McCabe Cyclomatic Complexity: the proof in the pudding</a>の調査では25くらいまではバグとの相関関係あまり変わらないみたいですけど、<a href="http://www.aivosto.com/project/help/pm-complexity.html" target="_blank" rel="noopener">Project Metrics Help - Complexity metrics</a>の話だとCyclomatic complexityが上がってくると、Bad fix probabilityも上がると。やはり10くらいが妥当だという話で、とりあえず10に設定してみました。</p>
+<p>設定の中で「maxcomplexity」の設定は興味深くて、 <a href="http://ja.wikipedia.org/wiki/&#x25;E5&#x25;BE&#x25;AA&#x25;E7&#x25;92&#x25;B0&#x25;E7&#x25;9A&#x25;84&#x25;E8&#x25;A4&#x25;87&#x25;E9&#x25;9B&#x25;91&#x25;E5&#x25;BA&#x25;A6" target="_blank" rel="noopener">Cyclomatic complexity</a>を計算して、complexityを設定した値で制限してくれるみたいです。<a href="http://www.amazon.co.jp/gp/product/B00B1WLE92/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00B1WLE92&linkCode=as2&tag=yutakayamaguc-22" target="_blank" rel="noopener">Testable JavaScript</a><img src="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=B00B1WLE92" alt="">に書かれていた内容によると、Thomas J. McCabeは、すべてのメソッドはCyclomatic complexityを10以下にすべしとしているそうです。<a href="http://www.enerjy.com/blog/?p=198" target="_blank" rel="noopener">Software Integrity Blog » Blog Archive » McCabe Cyclomatic Complexity: the proof in the pudding</a>の調査では25くらいまではバグとの相関関係あまり変わらないみたいですけど、<a href="http://www.aivosto.com/project/help/pm-complexity.html" target="_blank" rel="noopener">Project Metrics Help - Complexity metrics</a>の話だとCyclomatic complexityが上がってくると、Bad fix probabilityも上がると。やはり10くらいが妥当だという話で、とりあえず10に設定してみました。</p>
 <p>そしてそして、Sublime Text 2で保存したときにJSHintを自動的に実行したい場合は、<a href="https://github.com/alexnj/SublimeOnSaveBuild" target="_blank" rel="noopener">SublimeOnSaveBuild</a>を別途インストールします。インストールは、メニューのTools - Command Paletteを開いて、「Package Controll: Install Package」を選択して、「SublimeOnSaveBuild」を選びます。インストールするだけで特に設定は必要ありません。</p>
 </div>
         <footer class="profile">

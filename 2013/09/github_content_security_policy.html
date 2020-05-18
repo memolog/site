@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p>github.com のサイトでdelicious bookmarklet を動かしても、モーダルが開いてくれない。これはなんでかなと思っていたら、どうやら Content Security Policy と関連するらしいです。詳しくは <a href="https://github.com/blog/1477-content-security-policy" target="_blank" rel="noopener">Content Security Policy</a>に書かれています。Shortcomingsの部分。<a href="http://www.w3.org/TR/CSP/#script-src" target="_blank" rel="noopener">W3Cの仕様</a>的には、Content Security Policy (CSP) がbookmarkletの挙動を阻害するものではないはずだけど、実際にはbookmarkletの動作に影響を及ぼしていると。</p>
 <a id="more"></a>
+
 <p>それで、ついでにGithubでどんなCSPの設定がされているのかを見てみました。それがこんな感じ（x-content-security-policyのheader）。</p>
 <ul>
 <li>default-src *;</li>

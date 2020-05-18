@@ -419,6 +419,7 @@
         <div id="article-content" class="content "><p><a href="http://watir.com/2010/10/28/watir-1-6-7-released/" target="_blank" rel="noopener">watirの1.6.7がリリース</a>されたみたいですね。</p>
 <p>今回のリリースはwaitメソッドの追加が主のようです。Watir::Elementに#when_present, #wait_until_present, #wait_while_present, #present?という4つのメソッドを追加して、Watir::IE and Watir::Firefoxに#wait_until, #wait_whileという2つのメソッドが追加されています。</p>
 <a id="more"></a>
+
 <p><a href="http://rdoc.info/gems/watir/1.6.7/frames" target="_blank" rel="noopener">1.6.7のドキュメント</a>にはメソッドの詳細がまだ載ってないようですが、#present?はelement(:id,’id’).present?と指定すると、existでvisibleの場合にtrueを返すみたいなメソッドで、#when_presentは、element(:id,’id’).when_present{ |element| element.click} みたいに、対象がpresentになった場合にブロッグを実行するみたいなメソッド。</p>
 <p>#wait_untilは、browser.wait_until(60){|b| b.link(:id, ‘flyout’).exist?}みたいに、ブロックの条件がtrueになるまでwaitする。引数にタイムアウトの秒数を設定できる（タイムアウトした場合は例外が発生）。#wait_whileはブロックの条件がtrueの間waitする（falseになるまでwaitする）。</p>
 <p>そして、#wait_until_presentは対象がpresentになるまでwaitして、#wait_while_presentは対象がpresentの間はwaitするみたいな感じ。Javascript/AJAX的な処理をした場合で画面全体が遷移しないようなときに使えそうですね。</p>

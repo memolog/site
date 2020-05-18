@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p>AngularJSで<a href="http://docs.angularjs.org/api/ng/directive/ngBindHtml" target="_blank" rel="noopener">ngBindHtml</a>を使用すると、ngSanitize(angular-sanitize.js)のencodeEntitiesに行き着く（はず）。そこでは下記のような処理が行われています。</p>
 <a id="more"></a>
+
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">encodeEntities</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> value<span class="token punctuation">.</span>
     <span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/&amp;/g</span><span class="token punctuation">,</span> <span class="token string">'&amp;'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
@@ -453,8 +454,7 @@
   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> $sce<span class="token punctuation">.</span><span class="token function">trustAsHtml</span><span class="token punctuation">(</span>$sce<span class="token punctuation">.</span><span class="token function">getTrustedHtml</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>$sceは<a href="http://docs.angularjs.org/api/ng/service/$sce#Example" target="_blank" rel="noopener">Strict Contextual Escaping services to AngularJS</a>を参照。対処療法に過ぎないので、あんまりいい感じではないけど、一応表示できるようになる。</p>
 <p>そもそも、ngSanitizeでsurrogate pairを適切に処理するようにpull requestを作るべきなんだろうなあと思いつつ、そこまでいたってない。そして基本的には、ngBindHtmlを使わずにngBindだけでうまく設計する方がいい。ngSanitizeの処理量半端ない。</p>
 <p>というメモ。走り書き。</p>

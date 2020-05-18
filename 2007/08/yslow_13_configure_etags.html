@@ -423,6 +423,7 @@ rules for high performance web sitesの十三個目（最後）。ETags（Entity
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の十三個目（最後）。ETags（Entity Tags）を設定しよう。ブラウザが持ったキャッシュが古いかどうかを判断するための情報として、構成要素（component：画像とかスクリプトとか）のバージョンをETagで特定させることで、last-modified（修正日）よりも柔軟（で確度の高い）情報を提供することができる。</p>
 <a id="more"></a>
+
 <p>ETagにおける問題は、サーバーを特定させるような属性で（ETagが）構成されていると、複数台のサーバーで運用している場合に、キャッシュしたサーバーと、再度アクセスしたときのサーバーのEtagが異なるために、304（not modified）ではなく200のレスポンスを返してしまうということ。</p>
 <p>複数台で運用しているウェブサービスで、ETagがサーバーを特定させるような書式になっている場合は（デフォルトの書式ではサーバーを特定させるような状態になっている）、ETagを利用すると返って動作が遅くなってしまう。ETagの恩恵に授かれない場合には、ETagを削除してしまった方がいい。</p>
 </div>

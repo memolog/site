@@ -451,6 +451,8 @@
 <p>そして<a href="https://www.w3.org/TR/workers/#processing-model" target="_blank" rel="noopener">Processing model</a>の10番目と11番目に以下のように記述されている。</p>
 <blockquote>
 <p><strong>10. Closing orphan workers:</strong> Start monitoring the worker such that no sooner than it stops being a protected worker, and no later than it stops being a permissible worker, worker global scope’s closing flag is set to true.</p>
+</blockquote>
+<blockquote>
 <p><strong>11. Suspending workers:</strong> Start monitoring the worker, such that whenever worker global scope’s closing flag is false and the worker is a suspendable worker, the user agent suspends execution of script in that worker until such time as either the closing flag switches to true or the worker stops being a suspendable worker.</p>
 </blockquote>
 <p>仕様はShared Workerが考慮された記述なのでわかりにくいのだけど、つまり、関連するドキュメントがなくなりworkerが孤立（orphan）したと判定されたら、workerのclosingフラグがtrueになる。</p>

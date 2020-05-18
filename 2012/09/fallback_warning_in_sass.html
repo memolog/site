@@ -424,15 +424,16 @@
         <div id="article-content" class="content "><p>Sassを–watchで動かしているときに下記のようなwarningが発生する。</p>
 <blockquote>
 <blockquote>
-<p>> Sass is watching for changes. Press Ctrl-C to stop.<br>WARNING: Listen has fallen back to polling, learn more at <a href="https://github.com/guard/listen#fallback" target="_blank" rel="noopener">https://github.com/guard/listen#fallback</a>.</p>
+<p>&gt; Sass is watching for changes. Press Ctrl-C to stop.<br>WARNING: Listen has fallen back to polling, learn more at <a href="https://github.com/guard/listen#fallback" target="_blank" rel="noopener">https://github.com/guard/listen#fallback</a>.</p>
 </blockquote>
 </blockquote>
 <a id="more"></a>
+
 <p>詳しくは調べていないけど、内容的にファイルの変更をlistenするための仕組みが動いていなくて、Fallbackとしてpollingするかたちになっている、ということのよう。pollingの状態になっていると変更は一定間隔で反映されるようになる、と思う。pollingだから。なので少し反応が鈍い感じになる。その上、私のMacだとCPUをかなり使う。たぶん頻繁にpollingするから。</p>
 <p>メッセージにある <a href="https://github.com/guard/listen" target="_blank" rel="noopener">guard/listen ? GitHub</a>がローカルにインストールされていなかったので、とりあえずgem install listenでインストールしてみた。そうすると下記のようなdependencyのwarningが表示。</p>
 <blockquote>
 <blockquote>
-<p>> Sass is watching for changes. Press Ctrl-C to stop.<br>[Listen warning]:<br>  Missing dependency ‘rb-fsevent’ (version ‘~&gt; 0.9.1’)!<br>  Please run the following to satisfy the dependency:<br>    gem install –version ‘~&gt; 0.9.1’ rb-fsevent</p>
+<p>&gt; Sass is watching for changes. Press Ctrl-C to stop.<br>[Listen warning]:<br>  Missing dependency ‘rb-fsevent’ (version ‘<del>&gt; 0.9.1’)!<br>  Please run the following to satisfy the dependency:<br>    gem install –version ‘</del>&gt; 0.9.1’ rb-fsevent</p>
 </blockquote>
 </blockquote>
 <p>  For a better performance, it’s recommended that you satisfy the missing dependency.<br>  Listen will be polling changes. Learn more at <a href="https://github.com/guard/listen#polling-fallback" target="_blank" rel="noopener">https://github.com/guard/listen#polling-fallback</a>.</p>

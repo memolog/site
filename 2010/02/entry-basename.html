@@ -419,6 +419,7 @@
         <div id="article-content" class="content "><p>メモ。例えば記事の出力ファイル名を「test_test」とアンダースコアを入れてに設定しているのに、実際に出力されるファイル名は「test-test」とハイフンになってしまう。</p>
 <p>なんでかなあと思っていたら、テンプレートのアーカイブマッピングのパスが「basenameyyyy/mm/entry-basename.php（&#x25;-f）」となっていました。この場合、区切り文字がハイフンに統一される。バージョンアップしたときにここが変更されてしまったみたいです。パスを「&#x25;f」に変更して再構築を実行。</p>
 <a id="more"></a>
+
 <p>いい加減にバージョンアップするとこういう切ないことになりますが、これもバージョンアップの一つの楽しみということで。前向きに。</p>
 <ul>
 <li><a href="http://www.movabletype.jp/documentation/appendices/archive-file-path-specifiers.html" target="_blank" rel="noopener">アーカイブマッピングで利用するアーカイブファイル名の定義</a></li>

@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p>「<a href="http://www.infoq.com/news/2011/01/facebook-coding-practices" target="_blank" rel="noopener">InfoQ: How Facebook Ships Code</a>（<a href="http://www.infoq.com/jp/news/2011/01/facebook-coding-practices" target="_blank" rel="noopener">日本語版記事</a>が出た）」にて、Facebookではどのように開発し、サービスを公開しているかについて紹介していて、その開発の仕方を developer driven culture と呼んでいます。日本語にすると、開発者駆動文化でしょうか（開発者中心主義の方が近い気が）。記事によると、Facebookでは開発者が自分で実装を考え、フロントエンドからバックエンドまで開発して、バグの発見/修正までするみたい。必要な場合はデザイナーにも助けを借りることができるけど、基本的には自分で全部開発する、らしい。プロダクトマネージャーもいるみたいですけど、エンジニアマネージャーとかと話し合って、実装に対する合意を得ないといけない。興味のそそらない実装は認可されないという意味で、開発者は常に自分の好きなことに集中できるようになっているみたい。</p>
 <a id="more"></a>
+
 <p>QAについては、公式なQAチームは存在しないと言及しています（「<a href="/blog//2010/07/facebook_has_no_dedicated_qa/">Facebookには専任のQAチームがいない - メモログ</a>」でも以前に紹介しました）。開発者同士でコードレビューしたり、ステージング的な環境に問題があった場合はみんなで報告し合う。</p>
 <p>そのへん「<a href="http://framethink.wordpress.com/2011/01/17/how-facebook-ships-code/" target="_blank" rel="noopener">How Facebook Ships Code « FrameThink</a>」の記事の長いリストの中で少し詳しく触れられています。前に紹介していたunit testとかintegration testとかは散発的に(sporadically)使用しているみたいで、日常的にはあまり使用していない雰囲気。あとQAチームがあるとバグはQAで発見するからと自分のコードを精査しないで投げちゃうインセンティブになる的なことが書かれています（主観的な意見だけど、通常の開発体制との引き合いで記載しているとの但し書き付き。私の知っているエンジニアの人にはそんな人いません）。あと、push-blockingのテストはリリース前に必ずやるみたい。</p>
 <blockquote>

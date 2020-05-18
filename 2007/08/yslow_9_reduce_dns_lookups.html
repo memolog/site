@@ -423,6 +423,7 @@ rules for high performance web sitesの九つ目。DNS lookups を減らそう�
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の九つ目。DNS lookups を減らそう。あるhost名とIPアドレスを関連づけるためにDNS（Domain Name System）lookupを行うけれど、これには20〜120ミリ秒の時間がかかる。lookupが完了するまではそのhostからダウンロードすることはできない。</p>
 <a id="more"></a>
+
 <p>ウェブページに存在するhostについてOSにもブラウザにもDNSのキャッシュがない場合に、DNS lookupが行われる。Webページ上で利用しているhost名が少ない方がDNS lookupがおこなれる回数が少なくなる。</p>
 <p>ただ、hostを単一に減らすことは、ページ上での並行したダウンロードを減らすことにもつながる。DNS lookupの数を減らしてレスポンスタイムを下げる一方で、並行したダウンロードが減ったことによってレスポンスタイムが増えてしまうかもしれない。ガイドラインでは、hostはすくなくとも2つ、多くても4つとしている。</p>
 </div>

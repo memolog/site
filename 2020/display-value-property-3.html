@@ -437,11 +437,15 @@
         <div id="article-content" class="content "><p><a href="https://memolog.org/2020/display-value-property-2.html">The display value property (list-item / internal)</a>の続き。<a href="https://www.w3.org/TR/css-display-3/#the-display-properties" target="_blank" rel="noopener">2. Box Layout Modes: the display property</a>からdisplayプロパティのvalueについて、残りのboxとlegacyについて確認していく。<a id="more"></a></p>
 <h3 id="display-box"><a href="#display-box" class="headerlink" title="display-box"></a>display-box</h3><blockquote>
 <p>&lt;display-box&gt; = contents | none</p>
+</blockquote>
+<blockquote>
 <p>While display can control the types of boxes an element will generate, it can also control whether an element will generate any boxes at all.</p>
 </blockquote>
 <p><code>&lt;display-box&gt;</code>には<code>contens</code>と<code>none</code>の二つのキーワードがあって、要素が生成するboxのタイプや、要素がboxを生成するかどうかを制御する。</p>
 <blockquote>
-<p>The <display-box> keywords are defined as follows:</display-box></p>
+<p>The <display-box> keywords are defined as follows:</p>
+</blockquote>
+<blockquote>
 <p><strong>contents</strong><br>The element itself does not generate any boxes, but its children and pseudo-elements still generate boxes and text runs as normal. For the purposes of box generation and layout, the element must be treated as if it had been replaced in the element tree by its contents (including both its source-document children and its pseudo-elements, such as ::before and ::after pseudo-elements, which are generated before/after the element’s children as normal).</p>
 </blockquote>
 <p>その要素自身のboxは生成しなくなるが、子孫要素や擬似要素についてはboxとtext runを通常通りに生成する。その目的として、要素が中のコンテンツ（source-documentの子孫要素と<code>::before</code>や<code>::after</code>など子孫要素の前後に生成される擬似要素を両方含む）によって要素のツリーが置き換わるかのように扱われなければならない。</p>
@@ -469,6 +473,8 @@
 <p>display-boxがついた要素は、boxを生成しないため、innerとouter display typeを持たない。</p>
 <blockquote>
 <p>Note: As these values cause affected elements to not generate a box, anonymous box generation rules will ignore the elided elements entirely, as if they did not exist in the box tree.</p>
+</blockquote>
+<blockquote>
 <p>Markup-based relationships, however, are not affected by these values, as they are solely rendering-time effects. For example, although they may affect which table cell appears in a column, they do not affect which table cell is associated with a particular column element. Similarly, they cannot affect which HTML summary element is associated with a particular table or whether a legend is considered to be labelling the contents of a particular fieldset.</p>
 </blockquote>
 <p>これらの値の影響下にある要素はboxを生成しないので、anonymous boxの生成ルールは、まるでbox treeに存在しないかのように、その生成されなかった要素を無視するだろう。</p>
@@ -476,17 +482,21 @@
 <p>同様に、特定のtableに関連したsummary要素や、特定のfieldsetのコンテンツにlegendがラベリングされているとみなすかどうかに影響を与えない。</p>
 <h3 id="display-legacy"><a href="#display-legacy" class="headerlink" title="display-legacy"></a>display-legacy</h3><blockquote>
 <p>&lt;display-legacy&gt; = inline-block | inline-table | inline-flex | inline-grid</p>
-<p>CSS level 2 used a single-keyword syntax for display, requiring separate keywords for block-level and inline-level variants of the same layout mode. These <display-legacy> keywords map as follows:</display-legacy></p>
+</blockquote>
+<blockquote>
+<p>CSS level 2 used a single-keyword syntax for display, requiring separate keywords for block-level and inline-level variants of the same layout mode. These <display-legacy> keywords map as follows:</p>
 </blockquote>
 <p><code>inline-block</code>など、CSS2で一つのキーワードとして使われていたもので、CSS3のDisplay moduleではoutsideとinsideに分けて記述されるべきものなのがここに入ってる。</p>
 <blockquote>
 <ul>
 <li>inline-block<br>Behaves as inline flow-root.</li>
+</ul>
+</blockquote>
+<ul>
 <li>inline-table<br>Behaves as inline table.</li>
 <li>inline-flex<br>Behaves as inline flex.</li>
 <li>inline-grid<br>Behaves as inline grid.</li>
 </ul>
-</blockquote>
 </div>
         <footer class="profile">
   <div class="profile-inner">

@@ -425,14 +425,12 @@
   Library/ENV/4.3/cc
   Library/Formula/ace.rb
   Library/Formula/afflib.rb
-  Library/Formula/android-sdk.rb
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  Library/Formula/android-sdk.rb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>調べてみたら<a href="http://spring-mt.tumblr.com/post/18484480866/homebrew-brew-update" target="_blank" rel="noopener">homebrewのbrew updateでこけた件 - CubicLouve</a>と同じことで、homebrewで内部的に使用しているgitに変更がはいっていて、エラーになっている。特に変更した記憶はないけど。<a href="https://github.com/mxcl/homebrew/issues/5128#issuecomment-9020785" target="_blank" rel="noopener">snez commented</a>の内容に従うのがよさそう。</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local
 <span class="token function">git</span> reset <span class="token function">head</span> --hard
 <span class="token function">git</span> clean -f
-brew update
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+brew update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>わたしは何となくstashでしましたけど。homebrew関連ファイルの場所は brew –prefix で分かります。</p>
 <p>cd `brew –prefix`<br>sudo git stash –include-untracked<br>sudo brew update<br>sudo git stash clear</p>
 <p>というメモ。</p>

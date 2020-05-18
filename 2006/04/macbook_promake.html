@@ -421,9 +421,10 @@ JayAllen.org：Mac OS X is make-ing me angry
 <li><a href="http://jayallen.org/journey/2006/03/mac_os_x_is_make-ing_me_angry" target="_blank" rel="noopener">JayAllen.org：Mac OS X is make-ing me angry</a></li>
 </ul>
 <a id="more"></a>
+
 <p>MacBook proにてmakeしようとしたときに下記のようなエラーが返り、makeが失敗する問題。</p>
 <blockquote>
-<p>make: <strong><em> wait: Interrupted system call.  Stop.<br>make: </em></strong> Waiting for unfinished jobs….<br>make: <strong><em> Waiting for unfinished jobs….<br>make: </em></strong> wait: Interrupted system call.  Stop.</p>
+<p>make: <strong>* wait: Interrupted system call.  Stop.<br>make: *</strong> Waiting for unfinished jobs….<br>make: <strong>* Waiting for unfinished jobs….<br>make: *</strong> wait: Interrupted system call.  Stop.</p>
 </blockquote>
 <p>この問題はどうやらXcodeのバージョンが低いために起きているようです。Xcodeのバージョンを2.2にあげてみたところ、正常にmakeできるようになりました。</p>
 </div>

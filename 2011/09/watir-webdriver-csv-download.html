@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p>FirefoxでCSVファイルにアクセスすると、ダウンロードのダイアログが表示されるのですが、webdriver上でダイアログが出てくるとハンドリングできない（たぶん）ので困る。ので、profileを設定してダイアログを表示しないようにする。そしてダウンロードするフォルダも一緒に設定する、という話。詳しくは<a href="http://stackoverflow.com/questions/5473354/firefox-4-with-watir-webdriver-need-help-using-helperapps-neverask-to-save-csv-w" target="_blank" rel="noopener">Firefox 4 with watir webdriver: Need help using helperApps.neverAsk to save CSV without prompting - Stack Overflow</a>と<a href="http://watirwebdriver.com/browser-downloads/" target="_blank" rel="noopener">Browser Downloads | Watir WebDriver</a>などを参照</p>
 <a id="more"></a>
+
 <p>pdfファイルやicoファイルなどブラウザで処理しないような拡張子のファイルなどは同じような手順でダウンロード可能。jpgなどの画像ファイルは基本的にブラウザ上で表示するのでこの設定を入れるだけではダウンロードの状態にすることはできないみたい。</p>
 <pre><code>profile = Selenium::WebDriver::Firefox::Profile.new
 profile[&#39;browser.download.useDownloadDir&#39;] = true

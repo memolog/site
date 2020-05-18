@@ -354,13 +354,13 @@
 <meta property="og:site_name" content="メモログ">
 <meta property="og:description" content="コンテンツがオーバーフローしたときにスクロールバーを表示させる場合に、そのコンテンツのスクロールの仕方を設定する値として-webkit-overflow-scrollingというのがある。 詳細はSafari CSS Referenceの「-webkit-overflow-scrolling」を参照。値を「touch」にするとnativeアプリでスクロールしたときのような、いわゆる慣性スクロールの">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=487311232X">
+<meta property="og:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=487311232X">
 <meta property="article:published_time" content="2013-02-27T06:58:00.000Z">
 <meta property="article:modified_time" content="2019-01-04T02:09:12.866Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=487311232X">
+<meta name="twitter:image" content="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=487311232X">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
 <meta property="fb:app_id" content="168245123786587">
@@ -424,9 +424,8 @@
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
   <span class="token property">-webkit-overflow-scrolling</span><span class="token punctuation">:</span> touch<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>値を「touch」にした場合は、そこにstacking contextが作成される。stacking contextが作られると、その要素の子要素たちは、そのstacking contextを基準にして、z-index順に重なるようになる（z軸上のz-indexにある親要素の平面で子要素が重なるイメージ）。なので、この指定によって、子要素のz軸上の配置が変わる可能性がある。詳細は<a href="http://www.w3.org/TR/CSS21/zindex.html" target="_blank" rel="noopener">Elaborate description of Stacking Contexts</a>とか、<a href="https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index/The_stacking_context?redirectlocale=en-US&amp;redirectslug=Understanding_CSS_z-index&#x25;2FThe_stacking_context" target="_blank" rel="noopener">The stacking context - CSS | MDN</a>とか、<a href="http://hail2u.net/blog/webdesign/stacking-contexts-on-fixed-element.html" target="_blank" rel="noopener">位置を固定した要素のすたっきんぐ・こんてきすと？ - Weblog - hail2u.net</a>とか、<a href="http://www.amazon.co.jp/gp/product/487311232X/ref=as_li_ss_tl?ie=UTF8&amp;camp=247&amp;creative=7399&amp;creativeASIN=487311232X&amp;linkCode=as2&amp;tag=yutakayamaguc-22" target="_blank" rel="noopener">CSS完全ガイド 第2版</a><img src="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&amp;l=as2&amp;o=9&amp;a=487311232X" alt="">の348ページあたりを参考。</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>値を「touch」にした場合は、そこにstacking contextが作成される。stacking contextが作られると、その要素の子要素たちは、そのstacking contextを基準にして、z-index順に重なるようになる（z軸上のz-indexにある親要素の平面で子要素が重なるイメージ）。なので、この指定によって、子要素のz軸上の配置が変わる可能性がある。詳細は<a href="http://www.w3.org/TR/CSS21/zindex.html" target="_blank" rel="noopener">Elaborate description of Stacking Contexts</a>とか、<a href="https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index/The_stacking_context?redirectlocale=en-US&redirectslug=Understanding_CSS_z-index&#x25;2FThe_stacking_context" target="_blank" rel="noopener">The stacking context - CSS | MDN</a>とか、<a href="http://hail2u.net/blog/webdesign/stacking-contexts-on-fixed-element.html" target="_blank" rel="noopener">位置を固定した要素のすたっきんぐ・こんてきすと？ - Weblog - hail2u.net</a>とか、<a href="http://www.amazon.co.jp/gp/product/487311232X/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=487311232X&linkCode=as2&tag=yutakayamaguc-22" target="_blank" rel="noopener">CSS完全ガイド 第2版</a><img src="http://www.assoc-amazon.jp/e/ir?t=yutakayamaguc-22&l=as2&o=9&a=487311232X" alt="">の348ページあたりを参考。</p>
 <p>というメモ。</p>
 </div>
         <footer class="profile">

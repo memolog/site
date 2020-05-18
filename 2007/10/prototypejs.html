@@ -423,17 +423,18 @@ Prototype JavaScript framework
 </ul>
 <p>個人的にトラックバックの機能をあまり利用しなくなった。だから表示を控えめにしつつ、機能は残しておきたい。ということでJavascriptで開閉するかたちにしてみました。といっても、たいしたことしてませんが・・</p>
 <a id="more"></a>
+
 <p>以下が作業手順</p>
 <ol>
 <li>prototype.jsをダウンロードして、headerにscriptタグを追加。</li>
-<li>トラックバックの表示欄全体を<div id="trackbacks-open-content">で囲う</div></li>
+<li>トラックバックの表示欄全体を<div id=trackbacks-open-content >で囲う</li>
 <li>開閉用のリンクを追加。</li>
 </ol>
 <p>開閉用のリンクは下記のように追加。prototype.jsの機能の一つのElement.toggle(element)を使っているだけ。toggle(element)は、指定したタグのidを表示を切り替えてくれます。</p>
 <pre><code>&lt;a href=&quot;javascript:void(0)&quot; onclick=&quot;javascript:Element.toggle(&#39;trackbacks-open-content&#39;);&quot;&gt;
-開く/閉じる&lt;/a&gt;
+開く/閉じる&lt;/a&gt; 
 </code></pre><p>表示するリンクと非表示にするリンクを別々にしたいときには、Element.show()、Element.hideを使うとできます。</p>
-<p>prototypeについては、<a href="http://www.amazon.co.jp/gp/product/4861004314/249-8435951-8869142?ie=UTF8&amp;tag=yutakayamaguc-22&amp;linkCode=xm2&amp;camp=247&amp;creativeASIN=4861004314" target="_blank" rel="noopener">Ajaxライブラリリファレンス</a>という本を参照しています。本書に載っているバージョンは1.4（いま1.5.1.1）ですが、きっと大丈夫。便利な世の中なのである。</p>
+<p>prototypeについては、<a href="http://www.amazon.co.jp/gp/product/4861004314/249-8435951-8869142?ie=UTF8&tag=yutakayamaguc-22&linkCode=xm2&camp=247&creativeASIN=4861004314" target="_blank" rel="noopener">Ajaxライブラリリファレンス</a>という本を参照しています。本書に載っているバージョンは1.4（いま1.5.1.1）ですが、きっと大丈夫。便利な世の中なのである。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

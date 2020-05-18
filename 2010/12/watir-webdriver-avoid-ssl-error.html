@@ -358,8 +358,8 @@
 <meta property="article:modified_time" content="2019-01-04T02:09:12.856Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta property="article:tag" content="watir">
-<meta property="article:tag" content="webdriver">
 <meta property="article:tag" content="selenium">
+<meta property="article:tag" content="webdriver">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
@@ -421,8 +421,7 @@
 <p>その場合はwatirを起動する前に証明書エラーを回避するようにprofileを用意しておく必要があります。詳細は<a href="http://code.google.com/p/selenium/issues/detail?id=116" target="_blank" rel="noopener">Issue 116 - selenium - Should be able to access sites secured with an unverified SSL certificate - Project Hosting on Google Code</a>を参照。具体的には下記のような感じ。</p>
 <pre class="line-numbers language-ruby"><code class="language-ruby">profile <span class="token operator">=</span> <span class="token constant">Selenium</span><span class="token punctuation">:</span><span class="token symbol">:WebDriver</span><span class="token punctuation">:</span><span class="token symbol">:Firefox</span><span class="token punctuation">:</span><span class="token symbol">:Profile</span><span class="token punctuation">.</span><span class="token keyword">new</span>
 <span class="token class-name">profile<span class="token punctuation">.</span>assume_untrusted_certificate_issuer</span> <span class="token operator">=</span> <span class="token keyword">false</span>
-browser <span class="token operator">=</span> <span class="token constant">Watir</span><span class="token punctuation">:</span><span class="token symbol">:Browser</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token symbol">:firefox</span><span class="token punctuation">,</span>profile
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+browser <span class="token operator">=</span> <span class="token constant">Watir</span><span class="token punctuation">:</span><span class="token symbol">:Browser</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token symbol">:firefox</span><span class="token punctuation">,</span>profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>assume_untrusted_certificate_issuerのメソッドにfalseを渡すことで、seleniumが生成する「webdriver_assume_untrusted_issuer」というwebdriver用のprofileの設定をfalseに変更することができます（デフォルトはtrueに設定されている）。「webdriver_assume_untrusted_issuer」のprofileは証明書の処理をする際に、エラーの判定を行わずに進めることができます。詳しくは<a href="http://code.google.com/p/selenium/source/browse/trunk/firefox/src/extension/components/badCertListener.js" target="_blank" rel="noopener">badCertListener.js - selenium - Project Hosting on Google Code</a>の55行目あたりからが該当箇所になります。</p>
 <p>追記（2011/1/24）自己証明書（self-signed SSL certificate)を使用しているような場合は、この設定を入れると逆に先に進めなくなる場合があるみたい。</p>
 </div>

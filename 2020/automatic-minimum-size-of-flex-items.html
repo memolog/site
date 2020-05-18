@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Automatic Minimum Size of Flex Items | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="時間が開いてしまった。開きすぎてもはや自分でもよく覚えてないけど今回は4.5. Automatic Minimum Size of Flex Items、autoキーワードで自動的に決定される最小値について。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automatic Minimum Size of Flex Items">
+<meta property="og:url" content="https://memolog.org/2020/automatic-minimum-size-of-flex-items.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="時間が開いてしまった。開きすぎてもはや自分でもよく覚えてないけど今回は4.5. Automatic Minimum Size of Flex Items、autoキーワードで自動的に決定される最小値について。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/febiyan-z85gD0sTOQ0-unsplash/febiyan-z85gD0sTOQ0-unsplash.jpg">
+<meta property="article:published_time" content="2020-05-18T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-18T09:43:55.347Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/febiyan-z85gD0sTOQ0-unsplash/febiyan-z85gD0sTOQ0-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/automatic-minimum-size-of-flex-items.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/automatic-minimum-size-of-flex-items.html"
+      },
+      "headline": "Automatic Minimum Size of Flex Items",
+      
+        "image": [
+          "https://memolog.org/assets/images/febiyan-z85gD0sTOQ0-unsplash/febiyan-z85gD0sTOQ0-unsplash.jpg"
+        ],
+      
+      "datePublished": "1589770800000",
+      "dateModified": "1589795035347",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "時間が開いてしまった。開きすぎてもはや自分でもよく覚えてないけど今回は4.5. Automatic Minimum Size of Flex Items、autoキーワードで自動的に決定される最小値について。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-05-18T03:00:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年5月18日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Automatic Minimum Size of Flex Items</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiNiM2I1YjIiIC8+PC9zdmc+" data-src="/assets/images/febiyan-z85gD0sTOQ0-unsplash/febiyan-z85gD0sTOQ0-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@febiyanr?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Febiyan</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>時間が開いてしまった。開きすぎてもはや自分でもよく覚えてないけど今回は<a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto" target="_blank" rel="noopener">4.5. Automatic Minimum Size of Flex Items</a>、autoキーワードで自動的に決定される最小値について。<a id="more"></a></p>
+<blockquote>
+<p><strong>Note:</strong> The auto keyword, representing an <a href="https://www.w3.org/TR/css-sizing-3/#automatic-minimum-size" target="_blank" rel="noopener">automatic minimum size</a>, is the new initial value of the min-width and min-height properties. The keyword was previously defined in this specification, but is now defined in the CSS Sizing module.</p>
+</blockquote>
+<p><code>auto</code>のキーワードは<strong>automatic minimum size</strong>を表し、これがmin-widthやmin-heightの新しい初期値になる。このキーワードはこの仕様の中で定義されていたけど、今は<a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-sizing-3" target="_blank" rel="noopener">CSS Sizing module</a>の中で定義されている。</p>
+<p><code>auto</code>キーワードの説明を<a href="https://www.w3.org/TR/css-sizing-3/#automatic-minimum-size" target="_blank" rel="noopener">CSS Sizing module</a>より抜粋。</p>
+<blockquote>
+<p><strong>auto</strong><br>For width/height, specifies an automatic size. See the relevant layout module for how to calculate this.<br>For min-width/min-height, specifies an automatic minimum size. Unless otherwise defined by the relevant layout module, however, it resolves to a used value of 0. For backwards-compatibility, the resolved value of this keyword is zero for boxes of all CSS2 display types: block and inline boxes, inline blocks, and all the table layout boxes. It also resolves to zero when no box is generated.</p>
+</blockquote>
+<p>autoは、width/heightに対してはautomatic sizeを指定する。算出方法は関連するレイアウトモジュールを参照。</p>
+<p>min-width/min-heightに対しては、<strong>automatic minimum size</strong>を指定する。しかしながら、関連するレイアウトモジュールによって定義されていない限り、値はゼロとなる。後方互換性のため、このキーワードで渡される値は、CSS2のdisplay type（block, inline, inline-block, table）のboxに対してはゼロとなる。boxが生成されないときもゼロとなる。</p>
+<blockquote>
+<p>To provide a more reasonable default minimum size for flex items, the used value of a main axis automatic minimum size on a flex item that is not a scroll container is a content-based minimum size; for scroll containers the automatic minimum size is zero, as usual.</p>
+</blockquote>
+<p>flex itemsに対するより合理的なデフォルトの最小サイズを提供するために、<a href="https://www.w3.org/TR/css-overflow-3/#scroll-container" target="_blank" rel="noopener">scroll container</a>ではないflex itemのmain axisのautomatic minimum sizeとして使用される値は、<strong>content-based minimum size</strong>となる。scroll containersに対しては、automatic minimum size は従来通りゼロとなる。</p>
+<img src="../../assets/images/flex-direction-terms.svg" />
+
+<blockquote>
+<p>In general, the content-based minimum size of a flex item is the smaller of its content size suggestion and its specified size suggestion. However, if the box has an aspect ratio and no specified size, its content-based minimum size is the smaller of its content size suggestion and its transferred size suggestion. If the box has neither a specified size suggestion nor an aspect ratio, its content-based minimum size is the content size suggestion.</p>
+</blockquote>
+<p>一般的には、flex itemのcontent-based minimum sizeは、<strong>content size suggestion</strong>と<strong>specified size suggestion</strong>の小さい方になる。しかし、もしboxがアスペクト比を持っているが<strong>specified size</strong>を持っていない場合、content-based minimum sizeはそのcontent size suggestionと<strong>transferred size suggestion</strong>の小さい方になる。もし boxがspecified sizeもアスペクト比もどちらも持っていない場合、content-based minimum sizeはcontent size suggestionになる。</p>
+<p>specified sizeとは<a href="https://www.w3.org/TR/css-images-3/#specified-size" target="_blank" rel="noopener">CSS Images Module Level 3</a>によると以下の通り。</p>
+<blockquote>
+<p>The specified size of an object is given by CSS, such as through the width and height or background-size properties. The specified size can be a definite width and height, a set of constraints, or a combination thereof.</p>
+</blockquote>
+<p>オブジェクトのspecified sizeは、widthとheight、またはbackground-sizeなどのCSSによって与えられる。specified sizeはwidthとheight、制約のセット、またはそれらの組み合わせによって決定される。</p>
+<blockquote>
+<p>The content size suggestion, specified size suggestion, and transferred size suggestion used in this calculation account for the relevant min/max/preferred size properties so that the content-based minimum size does not interfere with any author-provided constraints, and are defined below:</p>
+</blockquote>
+<p>この計算で使われるcontent size suggestionやspecified size suggestion、transferred size suggestionは、content-based minimum sizeが制作者が用意したどの制約にも干渉しないように、関連したmin/max/preferredサイズのプロパティを考慮しており、以下に定義されている。</p>
+<blockquote>
+<p><strong>specified size suggestion</strong><br>If the item’s computed main size property is definite, then the specified size suggestion is that size (clamped by its max main size property if it’s definite). It is otherwise undefined.</p>
+</blockquote>
+<p>itemのcomputed main sizeプロパティが決まっている場合、specified size suggestionはそのサイズになる（その場合、max main sizeプロパティによって固定される）。それ以外ではundefinedとなる。</p>
+<blockquote>
+<p><strong>transferred size suggestion</strong><br>If the item has an intrinsic aspect ratio and its computed cross size property is definite, then the transferred size suggestion is that size (clamped by its min and max cross size properties if they are definite), converted through the aspect ratio. It is otherwise undefined.</p>
+</blockquote>
+<p>itemがintrinsicなアスペクト比を持ち、computed cross sizeプロパティが決まっている場合、transferred size suggestionはそのサイズになる（それらが定義されている場合、そのminとmax cross sizeプロパティによって固定される）。それ以外ではundefinedとなる。</p>
+<p>intrinsicとは、<a href="https://developer.mozilla.org/ja/docs/Glossary/Intrinsic_Size" target="_blank" rel="noopener">Intrinsic Size (内在サイズ)</a>あたりを参考にすると、つまり、そのflex itemが画像のときなど、要素がそもそも持っている値を指す。アスペクト比（縦横比）があってcross側のサイズが判明していたら、transferred size suggestionはそこから算出される。<a href="https://www.w3.org/TR/css-sizing-3" target="_blank" rel="noopener">CSS Intrinsic &amp; Extrinsic Sizing Module Level 3</a>あたりに詳しく書かれていそうだけど、今は触れない。</p>
+<blockquote>
+<p><strong>content size suggestion</strong><br>The content size suggestion is the min-content size in the main axis, clamped, if it has an aspect ratio, by any definite min and max cross size properties converted through the aspect ratio, and then further clamped by the max main size property if that is definite.</p>
+</blockquote>
+<p>content size suggestionは、main axisの<a href="https://www.w3.org/TR/css-sizing-3/#min-content" target="_blank" rel="noopener">min-content size</a>であり、もしアスペクト比がある場合、アスペクト比を通して変換され決定された任意のminまたはmax cross サイズプロパティによって固定され、さらにそれが定義されている場合は、max main サイズプロパティによって固定される。</p>
+<p>min-content size とは、<a href="https://www.w3.org/TR/css-sizing-3/#min-conten" target="_blank" rel="noopener">CSS Intrinsic &amp; Extrinsic Sizing Module Level 3</a>に以下のように書かれている。</p>
+<blockquote>
+<p>The smallest size a box could take that doesn’t lead to overflow that could be avoided by choosing a larger size. (See <a href="https://www.w3.org/TR/css-sizing-3/#intrinsic" target="_blank" rel="noopener">§4 Intrinsic Size Determination</a>)</p>
+</blockquote>
+<p>boxがより大きなサイズを選ぶことによって避けることができるオーバーフローを引き起こさない最小のサイズ。</p>
+<p>つまり、逆に言うと、どんなに大きなサイズを選んでも避けられないオーバーフローは対象にならない。</p>
+<blockquote>
+<p>For the purpose of calculating an intrinsic size of the box (e.g. the box’s min-content size), a content-based minimum size causes the box’s size in that axis to become indefinite (even if e.g. its width property specifies a definite size). Note this means that percentages calculated against this size will behave as auto.</p>
+</blockquote>
+<p>boxのintrinsicサイズ（たとえばboxのmin-contentサイズ）を計算する目的で、content-based minimum sizeがそのaxis内のboxのサイズを不定の状態にする（たとえwidthプロパティが固定サイズを指定していたとしても）。これは、このサイズに対する計算されたパーセンテージがautoとして振舞うことを意味する。</p>
+<blockquote>
+<p>Nonetheless, although this may require an additional layout pass to re-resolve percentages in some cases, this value (like the min-content, max-content, and fit-content values defined in [CSS-SIZING-3]) does not prevent the resolution of percentage sizes within the item.</p>
+</blockquote>
+<p>それにもかかわらず、場合によってはパーセンテージを再解決するための追加のレイアウトパスが必要になる場合があるけれども、（<a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-sizing-3" target="_blank" rel="noopener">CSS-SIZING-3</a>で定義されているmin-content、max-content、fit-contentなどのような）値は、アイテム内のパーセンテージのサイズの解決を妨げるものではない。</p>
+<blockquote>
+<p>Note that while a content-based minimum size is often appropriate, and helps prevent content from overlapping or spilling outside its container, in some cases it is not:<br>In particular, if flex sizing is being used for a major content area of a document, it is better to set an explicit font-relative minimum width such as min-width: 12em. A content-based minimum width could result in a large table or large image stretching the size of the entire content area into an overflow zone, and thereby making lines of text gratuitously long and hard to read.</p>
+</blockquote>
+<p>content-based minimum sizeはたいていの場合適切であり、contentがオーバーラップまたはコンテナの外にこぼれることを防ぐ一方で、そうではない場合もあることに注意が必要。特に、flex sizingがdocumentの主要なコンテンツエリアに使われている場合、<code>min-width:12em</code>のような明示的なfont相対的な最小widthを指定する方が良い。content-based minimum widthは、大きなテーブルや大きな画像がコンテンツエリア全体のサイズをoverflow zoneに引き延ばすことになり、したがってテキストの行が不当に長くなり読みにくくなってしまう。</p>
+<blockquote>
+<p>Note also, when content-based sizing is used on an item with large amounts of content, the layout engine must traverse all of this content before finding its minimum size, whereas if the author sets an explicit minimum, this is not necessary. (For items with small amounts of content, however, this traversal is trivial and therefore not a performance concern.)</p>
+</blockquote>
+<p>また、content-based sizingが大量のコンテンツのあるitemに使われると、レイアウトエンジンは最小サイズを見つける前にコンテンツの全てを走査しなければならなくなる。一方、もし制作者が明示的な最小値を設定すれば、これは必要なくなる。（しかしながら、コンテンツ量が少ないitemsについてはこの操作は些細なことなので、パフォーマンスにたいする懸念はない。）</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

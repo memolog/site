@@ -419,8 +419,9 @@
         </header>
         <div id="article-content" class="content "><p>たとえば、画像ファイルが上書きされているかどうかを確認したい場合などで、画像のsrcなどには差分がなく画像データを比較しないとその動作の正否が分からないとか、そういうときはやはり画像データを評価して差を見るしかない。</p>
 <a id="more"></a>
+
 <p>しかし、webdriver上では画像をローカルに保存するようなメソッドはいまのところ実装されていなくて、通常のdriverでは画像のデータにアクセスする方法がない。publicなところにある画像なら、Net::HTTPとかその他何らかの方法で画像をダウンロードしてきてダウンロードした画像を評価すれば良いのだけど、ログインしないとたどり着けないようなところにある画像の場合はやっかいなので、やはりwebdriver上でなんとかしたい。</p>
-<p>では、どうするか。2つの方法にたどり着きました。一つはFirefoxのabout:cacheというページでlengthを比較するというもの。Firefoxのcacheは「<a href="about:cache-entry?client=HTTP&amp;sb=1&amp;key=/blog//assets/images/banner.gif" target="_blank" rel="noopener">about:cache-entry?client=HTTP&amp;sb=1&amp;key=/blog//assets/images/banner.gif</a>」というかたちでアクセスできる。この画面にはData sizeなどの情報が含まれていて、このあたりの情報から画像が期待通りの状態になっているのかを判断する。判断することができれば。</p>
+<p>では、どうするか。2つの方法にたどり着きました。一つはFirefoxのabout:cacheというページでlengthを比較するというもの。Firefoxのcacheは「<a href="about:cache-entry?client=HTTP&sb=1&key=/blog//assets/images/banner.gif">about:cache-entry?client=HTTP&amp;sb=1&amp;key=/blog//assets/images/banner.gif</a>」というかたちでアクセスできる。この画面にはData sizeなどの情報が含まれていて、このあたりの情報から画像が期待通りの状態になっているのかを判断する。判断することができれば。</p>
 <p>もう一つはHtmlUnitDriverを使用する方法。HtmlUnitDriverでは下記のような形で画像のデータにアクセスすることができます（いまのところ）。</p>
 <pre><code>require &#39;watir-webdriver&#39;
 require &#39;selenium/server&#39;

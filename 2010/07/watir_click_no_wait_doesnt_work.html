@@ -417,6 +417,7 @@
         </header>
         <div id="article-content" class="content "><p>普段watirで使用していないPCにwatir (version 1.6.5) をインストールして使用したところ、click_no_waitのメソッドがなぜか動作しない。clickとclick!のメソッドは問題なく動作しました。</p>
 <a id="more"></a>
+
 <p>うーん。</p>
 <p><a href="http://rubyforge.org/pipermail/wtr-development/2009-January/000400.html" target="_blank" rel="noopener">click_no_wait patch</a>のパッチをあてたら動作するようになりました。page_contaienrでのシステムの呼び出し方がよくない模様。</p>
 <p>click_no_waitが動かなかった環境はWindows XPの Service Pack 3のIE8という環境。Service Pack 2でIE6、watir 1.5.xの環境では正常に動作しているので、Service Packの違いかブラウザかwaitrのバージョンの違いに関連がありそうですが、詳しくは分かりませんでした。</p>

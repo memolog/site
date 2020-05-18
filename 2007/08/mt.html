@@ -422,6 +422,7 @@ The blog of H.Fujimoto：Movable Type 4のブロックタグ内で使える変�
 <li><a href="http://www.h-fj.com/blog/archives/2007/07/21-120042.php" target="_blank" rel="noopener">The blog of H.Fujimoto：Movable Type 4のブロックタグ内で使える変数</a></li>
 </ul>
 <a id="more"></a>
+
 <p>ブロックタグ内で使える変数を利用して、奇数行（odd）と偶数行（even）にわけてclassを指定することができます。偶数行と奇数行にわけて配色したいというときに非常に便利。これだけでデザインの幅がかなり広がる。右側の「最近のブログ記事」の一覧で実践してみました。作成したテンプレートは下記のようなかたち（不要な箇所は割愛しています）。</p>
 <pre><code>&lt;MTEntries lastn=&quot;10&quot;&gt;
 &lt;li class=&quot;widget-list-item &lt;MTIf name=&quot;__odd__&quot;&gt;odd&lt;/MTElse&gt;even&lt;/MTIf&gt;&quot;&gt;
@@ -437,7 +438,7 @@ The blog of H.Fujimoto：Movable Type 4のブロックタグ内で使える変�
 .widget-archives li.even a {background-color:#e6e6e6;}
 .widget-archives li.even a:hover {background-color:#FFA6E9;}
 .widget-archives li.odd a:hover {background-color:#FFBFEF;}
-</code></pre><p>これで完了。MTEntriesの他に、MTCommentsでも利用可能。コメントの場合で、たとえばエントリーの投稿者のコメントには特別のCSSを入れたいという場合には、<mtifcommenterisentryauthor>author</mtifcommenterisentryauthor> というような形で、authorというclassを追加すると良いかもしれない。</p>
+</code></pre><p>これで完了。MTEntriesの他に、MTCommentsでも利用可能。コメントの場合で、たとえばエントリーの投稿者のコメントには特別のCSSを入れたいという場合には、<MTIfCommenterIsEntryAuthor>author</MTIfCommenterIsEntryAuthor> というような形で、authorというclassを追加すると良いかもしれない。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">

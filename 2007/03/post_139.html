@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861004314/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener"><img src="http://ec2.images-amazon.com/images/P/4861004314.01._AA130_SCLZZZZZZZ_.jpg" alt=""></a> <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861004314/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">Ajaxライブラリリファレンス</a>を参考に「フォントのサイズを段階的に変更する」というJavascriptを実験してみました。右のサイドバー（トップページのみ）の右上にひっそりとある「+ | - | reset」というリンクをクリックすると、記事のフォントサイズが大きくなったり小さくなったりします。「reset」をクリックすると、元のサイズ（12px）に戻ります。機能的にはあまり役に立ちませんが、課題演習だと思っていただければ。。</p>
 <a id="more"></a>
+
 <p>スクリプトは、<a href="http://www.prototypejs.org/" target="_blank" rel="noopener">prototype.js</a>と<a href="http://moofx.mad4milk.net/" target="_blank" rel="noopener">moo.fx</a>をインクルードして、利用できる関数を利用するだけで完成。Javascriptはよくわからないのであまり効率的な書き方にはなっていないと思いますが、なんとなく動いているようです（IE未確認）。ライブラリすごい。</p>
 <p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861004314/ref=nosim/yutakayamaguc-22" target="_blank" rel="noopener">Ajaxライブラリリファレンス</a>（p183）では、fx.Text()という関数での利用例が記載されていたのですが、どうやらmoo.fx.jsが2.xにアップデートしたときに、関数の構成が変わったようです（おそらくより汎用的になった）。fx.Testの代わりに<code>divObj = new fx.Style(&quot;latest-posts&quot;,&quot;font-size&quot;,{duration:100});</code>というような感じで利用すると、うまく動作します。</p>
 <p>この関数では始めのサイズと終わりのサイズを指定することができるのですが、始めのサイズを固定値にすると連続的な動きにならないので、現在のサイズを取得してそれを参照するようにしてみました。現在のサイズを取得するのもprototype.jsのElement.getStyleを利用して取得しています。うーん、便利。</p>

@@ -421,8 +421,9 @@
           
         </header>
         <div id="article-content" class="content "><p>デザインを変更してみました。前回の変更は<a href="/blog//2010/12/redesign_2011/">こちら</a>。今回はコンテンツ部分はほとんど変えずに、ヘッダー/フッター周りとかを中心に。</p>
-<p>メインの変更としましては、今年流行の<a href="http://www.alistapart.com/articles/responsive-web-design/" target="_blank" rel="noopener">responsive web design</a>的な対応をしてみました。<a href="http://coliss.com/articles/build-websites/operation/javascript/jquery-plugin-breakpoints.html" target="_blank" rel="noopener">Breakpoints.js</a>というjqueryのpluginを使用すると、bodyに「breakpoint-1024」みたいなclassを表示サイズにあわせて追加してくれるので、そこでCSSを追加しただけというシンプルな方法で。あとviewpointの設定を<meta name="viewport" content="width=device-width">に変更しました。まあとりあえず動作するところまで作りたかったので、もろもろ随時改善はしていきたいなあと思っています（思っているだけ）。</p>
+<p>メインの変更としましては、今年流行の<a href="http://www.alistapart.com/articles/responsive-web-design/" target="_blank" rel="noopener">responsive web design</a>的な対応をしてみました。<a href="http://coliss.com/articles/build-websites/operation/javascript/jquery-plugin-breakpoints.html" target="_blank" rel="noopener">Breakpoints.js</a>というjqueryのpluginを使用すると、bodyに「breakpoint-1024」みたいなclassを表示サイズにあわせて追加してくれるので、そこでCSSを追加しただけというシンプルな方法で。あとviewpointの設定を<meta name="viewport" content="width=device-width" />に変更しました。まあとりあえず動作するところまで作りたかったので、もろもろ随時改善はしていきたいなあと思っています（思っているだけ）。</p>
 <a id="more"></a>
+
 <p>いまのところCSSで非表示にしているだけなので、コンテンツの出力はするし、画像も表示サイズにフィットするようにはしてみましたがファイルサイズは変わらないので、3Gで写真系のコンテンツを見ようとすると結構時間がかかってします。そのあたりも最適化できるのが理想ではあります。けど、まあ、簡単にできる方法がわからないので保留（簡単な方法あるのかな）。</p>
 <p>そして、今さらはまったこととしては、Retinaディスプレイの解像度。解像度が高いけど表示領域は320pxだから、小さな画像を表示しようとすると（解像度が足らずに）画像がぼやけた感じになる。そのぼやけた感じが、あまりにあんまりだったので、小さい画面用のバナー画像は一回作り直しました。320pxの幅のイメージを表示するのに、640pxの画像を作成してそれを50&#x25;で表示するって、、なんかあれですね、変な感じですね。</p>
 <p>こうやってあれこれやってみると、なんというか、WEBデザインって数年前に比べてやること増えましたよねえ。技術的にも複雑になっていて、ただHTMLを書けるだけでは、なんかもう不十分。新しいコンセプトもどんどこ出てくるし。simplebitsの人がA List Apartの記事に下記のようなことを書いていたのですが、すべての技術を掌握するのではなく、必要なタイミングで必要な技術をがばっとつかんでそれを積み上げていく、そんな仕事の仕方が求められるんだろうなあと思った次第です。pushからpullみたいな。</p>

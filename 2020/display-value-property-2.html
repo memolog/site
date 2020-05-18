@@ -454,14 +454,22 @@
 <p>list-itemのinner display typeは今のところflow/flow-rootに制限されているけど、将来的には融和されるかもしれない。</p>
 <h3 id="display-internal"><a href="#display-internal" class="headerlink" title="display-internal"></a>display-internal</h3><blockquote>
 <p>table-row-group | table-header-group | table-footer-group | table-row | table-cell | table-column-group | table-column | table-caption | ruby-base | ruby-text | ruby-base-container | ruby-text-container</p>
+</blockquote>
+<blockquote>
 <p>Some layout models, such as table and ruby, have a complex internal structure, with several different roles that their children and descendants can fill. This section defines those “layout-internal” display values, which only have meaning within that particular layout mode.</p>
+</blockquote>
+<blockquote>
 <p>Unless otherwise specified, both the inner display type and the outer display type of elements using these display values are set to the given keyword.</p>
 </blockquote>
 <p><code>table</code>や<code>ruby</code>などのlayoutでは、内部に（行とか列とか）子孫要素に異なる役割を渡すような複雑な構造を持つ。<code>layout-internal</code>は特定のlayout modeでしか意味を持たない内部で利用するdisplay valueなどを扱っている。</p>
 <p>特に指定がない場合、これらのdisplay valueを利用している要素のinner display typeとouter display typeには、所与のキーワードがセットされる。</p>
 <blockquote>
-<p>The <display-internal> keywords are defined as follows:</display-internal></p>
+<p>The <display-internal> keywords are defined as follows:</p>
+</blockquote>
+<blockquote>
 <p><strong>table-row-group, table-header-group, table-footer-group, table-row, table-cell, table-column-group, table-column</strong></p>
+</blockquote>
+<blockquote>
 <p>The element is an internal table element. It generates the appropriate internal table box which participates in a table formatting context. See CSS2§17.2 [CSS2].<br>table-cell boxes have a flow-root inner display type.</p>
 </blockquote>
 <p>table関連のキーワード。table-cell boxesは<code>flow-root</code>のinner display typeを持つ。</p>
@@ -478,8 +486,7 @@
 </blockquote>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span>table-cell</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>It will generate wrapper boxes around itself, producing a structure like:</p>
 </blockquote>
@@ -488,8 +495,7 @@
 └anonymous table box
  └anonymous table-row-group box
   └anonymous table-row box
-   └table-cell box
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   └table-cell box<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Even if the parent is another internal table element, if it’s not the correct one, wrapper boxes will be generated. For example, in the following markup:</p>
 </blockquote>
@@ -498,16 +504,14 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span>table-row</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span>table-cell</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Anonymous wrapper box generation will produce:</p>
 </blockquote>
 <pre class="line-numbers language-plain"><code class="language-plain">table box
 └anonymous table-row-group box
  └table-row box
-  └table-cell box
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+  └table-cell box<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>This “fix-up” ensures that table layout has a predictable structure to operate on.</p>
 </blockquote>

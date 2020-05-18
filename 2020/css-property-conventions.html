@@ -451,9 +451,9 @@
 <blockquote>
 <ol>
 <li>keyword values (e.g., auto, disc, etc.)</li>
-<li>basic data types, which appear between “&lt;” and “&gt;” (e.g., <length>, <percentage>, etc.). In the electronic version of the document, each instance of a basic data type links to its definition.</percentage></length></li>
+<li>basic data types, which appear between “&lt;” and “&gt;” (e.g., <length>, <percentage>, etc.). In the electronic version of the document, each instance of a basic data type links to its definition.</li>
 <li>types that have the same range of values as a property bearing the same name (e.g., &lt;’border-width’&gt; &lt;’background-attachment’&gt;, etc.). In this case, the type name is the property name (complete with quotes) between “&lt;” and “&gt;” (e.g., &lt;’border-width’&gt;). Such a type does not include the value ‘inherit’. In the electronic version of the document, each instance of this type of non-terminal links to the corresponding property definition.</li>
-<li>non-terminals that do not share the same name as a property. In this case, the non-terminal name appears between “&lt;” and “&gt;”, as in <border-width>. Notice the distinction between <border-width> and &lt;’border-width’&gt;; the latter is defined in terms of the former. The definition of a non-terminal is located near its first appearance in the specification. In the electronic version of the document, each instance of this type of value links to the corresponding value definition.</border-width></border-width></li>
+<li>non-terminals that do not share the same name as a property. In this case, the non-terminal name appears between “&lt;” and “&gt;”, as in <border-width>. Notice the distinction between <border-width> and &lt;’border-width’&gt;; the latter is defined in terms of the former. The definition of a non-terminal is located near its first appearance in the specification. In the electronic version of the document, each instance of this type of value links to the corresponding value definition.</li>
 </ol>
 </blockquote>
 <ol>
@@ -468,37 +468,44 @@
 <p>これらの定義に含まれる他の単語はキーワードであり、クオートなしで記述する。/や,もそのまま記述する。</p>
 <h3 id="Component-Value-Combinators"><a href="#Component-Value-Combinators" class="headerlink" title="Component Value Combinators"></a>Component Value Combinators</h3><blockquote>
 <p>Component values may be arranged into property values as follows:</p>
-<ul>
-<li>Several juxtaposed words mean that all of them must occur, in the given order.</li>
-<li>A bar (|) separates two or more alternatives: exactly one of them must occur.</li>
-<li>A double bar (||) separates two or more options: one or more of them must occur, in any order.</li>
-<li>A double ampersand (&amp;&amp;) separates two or more components, all of which must occur, in any order.</li>
-<li>Brackets ([ ]) are for grouping.</li>
-</ul>
 </blockquote>
 <ul>
-<li>並記されてる単語は、それらの全部が、順番通りに記述されないといけない。</li>
-<li><code>|</code>は二つ以上の値に分ける。どれか一つが記述されないといけない。</li>
-<li><code>||</code>は二つ以上のオプションに分ける。それらのうち一つ以上が記述されないといけない。順不同</li>
-<li><code>&amp;&amp;</code>は二つ以上のcomponentsを分ける。それらのすべてが記述されないといけない。順不同</li>
-<li><code>[]</code>はグループ化のため。<code>[]</code>の外側とは、内側の処理が解決した後に処理される。</li>
+<li><p>Several juxtaposed words mean that all of them must occur, in the given order.</p>
+</li>
+<li><p>A bar (|) separates two or more alternatives: exactly one of them must occur.</p>
+</li>
+<li><p>A double bar (||) separates two or more options: one or more of them must occur, in any order.</p>
+</li>
+<li><p>A double ampersand (&amp;&amp;) separates two or more components, all of which must occur, in any order.</p>
+</li>
+<li><p>Brackets ([ ]) are for grouping.</p>
+</li>
+<li><p>並記されてる単語は、それらの全部が、順番通りに記述されないといけない。</p>
+</li>
+<li><p><code>|</code>は二つ以上の値に分ける。どれか一つが記述されないといけない。</p>
+</li>
+<li><p><code>||</code>は二つ以上のオプションに分ける。それらのうち一つ以上が記述されないといけない。順不同</p>
+</li>
+<li><p><code>&amp;&amp;</code>は二つ以上のcomponentsを分ける。それらのすべてが記述されないといけない。順不同</p>
+</li>
+<li><p><code>[]</code>はグループ化のため。<code>[]</code>の外側とは、内側の処理が解決した後に処理される。</p>
+</li>
 </ul>
 <p>並記（juxtaposed）については特段説明がないけど、スペースで区切られている複数の単語は並記されてる単語と理解して問題なさそう。</p>
 <blockquote>
 <p>Juxtaposition is stronger than the double ampersand, the double ampersand is stronger than the double bar, and the double bar is stronger than the bar. Thus, the following lines are equivalent:</p>
+</blockquote>
 <pre><code>    a b   |   c ||   d &amp;&amp;   e f
-  [ a b ] | [ c || [ d &amp;&amp; [ e f ]]]
-</code></pre></blockquote>
-<p><code>並記（Juxtaposition） &gt; &amp;&amp; &gt; || &gt; |</code> となる。<code>[]</code>はグループ化なので、どの値が強く結合しているかを明確にしてくれる。並記部分は順番が決まっているけど、それ以外は順不同になる。</p>
+  [ a b ] | [ c || [ d &amp;&amp; [ e f ]]]</code></pre><p><code>並記（Juxtaposition） &gt; &amp;&amp; &gt; || &gt; |</code> となる。<code>[]</code>はグループ化なので、どの値が強く結合しているかを明確にしてくれる。並記部分は順番が決まっているけど、それ以外は順不同になる。</p>
 <h3 id="Component-Value-Multipliers"><a href="#Component-Value-Multipliers" class="headerlink" title="Component Value Multipliers"></a>Component Value Multipliers</h3><blockquote>
 <p>Every type, keyword, or bracketed group may be followed by one of the following modifiers:</p>
+</blockquote>
 <ul>
 <li>An asterisk (*) indicates that the preceding type, word, or group occurs zero or more times.</li>
 <li>A plus (+) indicates that the preceding type, word, or group occurs one or more times.</li>
 <li>A question mark (?) indicates that the preceding type, word, or group is optional.</li>
 <li>A pair of numbers in curly braces ({A,B}) indicates that the preceding type, word, or group occurs at least A and at most B times.</li>
 </ul>
-</blockquote>
 <p>モディファイア（意味を付け加えたりする）について。普通の正規表現と同じ。</p>
 <ul>
 <li><code>*</code> 直前のタイプ、単語、グループを0回以上記述する</li>

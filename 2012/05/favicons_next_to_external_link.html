@@ -418,6 +418,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="http://css-tricks.com/favicons-next-to-external-links/" target="_blank" rel="noopener">Favicons Next To External Links | CSS-Tricks</a>という、リンクの左側にリンク先のfaviconを表示するというテクニックが紹介されていて、試してみました。簡単にできて、見た目にも華やかになるので面白い（個人的に）。</p>
 <a id="more"></a>
+
 <p>リンク箇所がテキストのときだけ出力したかったので、firstChildのnodeTypeがテキストノードの場合のみ出力するようにしてみました（paddingも若干多めに）。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".entry-content a[href^='http']"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>firstChild<span class="token punctuation">.</span>nodeType <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -428,21 +429,18 @@
   <span class="token string">"padding-left"</span><span class="token punctuation">:</span><span class="token string">"24px"</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>残念ながらこのサイトのfaviconはGoogleのfaviconサービスでは取得できなかったので…、リンク先がmemolog.orgの場合は明示的にfaviconを指定。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">.</span>entry<span class="token operator">-</span>content <span class="token punctuation">[</span>href<span class="token operator">*</span><span class="token operator">=</span><span class="token string">'memolog.org'</span><span class="token punctuation">]</span><span class="token punctuation">{</span> 
   background<span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'http://memolog.org/images/favicon.ico'</span><span class="token punctuation">)</span> no<span class="token operator">-</span>repeat 4px center <span class="token operator">!</span>important<span class="token punctuation">;</span>
   padding<span class="token operator">-</span>left<span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a href="http://memolog.org">こんな感じになる</a></p>
 <p>いい感じ</p>
 <p>あと、faviconのURLをdata-faviconみたいな属性に追加して、その属性の値をCSSから参照してbackgroundの値として入れられないかなと（CSSはCSSファイルの中で指定したい）、下記のようなことを試してみたけど、そういうことはできない。みたい。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>data<span class="token operator">-</span>favicon<span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token punctuation">:</span>before<span class="token punctuation">{</span>
   content<span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>favicon<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>残念。URLをdata-属性に入れて、CSSでそれを参照する方法はないのかな。</p>
 </div>
         <footer class="profile">

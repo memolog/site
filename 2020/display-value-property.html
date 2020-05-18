@@ -445,7 +445,9 @@
 </blockquote>
 <p>なので、display-outsideには、blockかinline, run-inのキーワードが入る。</p>
 <blockquote>
-<p>The <display-outside> keywords specify the element’s outer display type, which is essentially its principal box’s role in flow layout. They are defined as follows:</display-outside></p>
+<p>The <display-outside> keywords specify the element’s outer display type, which is essentially its principal box’s role in flow layout. They are defined as follows:</p>
+</blockquote>
+<blockquote>
 <ul>
 <li><strong><em>block</em></strong><br>The element generates a box that is block-level when placed in flow layout. [CSS2]</li>
 <li><strong><em>inline</em></strong><br>The element generates a box that is inline-level when placed in flow layout. [CSS2]</li>
@@ -455,17 +457,23 @@
 <p><code>&lt;display-outsite&gt;</code>は<strong>outer display type</strong>を設定するためのキーワード。outer display typeは、principal box（要素ごとに生成されるbox）が<strong>flow layout</strong>上でどのように振舞うかを決める。flow layoutは左から右（書き文字によって方向は異なる）、上から下というコンテンツの流れに沿って配置すること。そのレイアウト。値は<code>block</code>、<code>inline</code>、<code>run-in</code>の3つ。<code>block</code>ならブロック要素のように配置され、<code>inline</code>ならインライン要素のように配置される。</p>
 <p><code>run-in</code>（追い込み）は後続のblock containerにインラインboxとして挿入されるという特殊な振る舞いをするらしいが、最新のブラウザではサポートしなくなっているので（<a href="https://caniuse.com/#feat=run-in" target="_blank" rel="noopener">Can I use display:run-in</a>）、とりたてて扱わない。</p>
 <blockquote>
-<p>If a <display-outside> value is specified but <display-inside> is omitted, the element’s inner display type defaults to flow.</display-inside></display-outside></p>
+<p>If a <display-outside> value is specified but <display-inside> is omitted, the element’s inner display type defaults to flow.</p>
 </blockquote>
 <p><code>&lt;display-outside&gt;</code>は指定されているが、<code>&lt;display-inside&gt;</code>は省略されている場合、その要素のinner display typeは<code>flow</code>として扱われる。</p>
 <h3 id="display-inside"><a href="#display-inside" class="headerlink" title="display-inside"></a>display-inside</h3><blockquote>
 <p>&lt;display-inside&gt;   = flow | flow-root | table | flex | grid |</p>
-<p>The <display-inside> keywords specify the element’s inner display type, which defines the type of formatting context that lays out its contents (assuming it is a non-replaced element). They are defined as follows:</display-inside></p>
+</blockquote>
+<blockquote>
+<p>The <display-inside> keywords specify the element’s inner display type, which defines the type of formatting context that lays out its contents (assuming it is a non-replaced element). They are defined as follows:</p>
 </blockquote>
 <p><code>&lt;display-inside&gt;</code>は<strong>inner display type</strong>を設定するためのキーワード。inner display typeは、formatting contextを定義し、子孫boxがどのように配置されるかを決める。</p>
 <blockquote>
 <p><strong>flow</strong><br>The element lays out its contents using flow layout (block-and-inline layout).<br>If its outer display type is inline or run-in, and it is participating in a block or inline formatting context, then it generates an inline box.</p>
+</blockquote>
+<blockquote>
 <p>Otherwise it generates a block container box.</p>
+</blockquote>
+<blockquote>
 <p>Depending on the value of other properties (such as position, float, or overflow) and whether it is itself participating in a block or inline formatting context, it either establishes a new block formatting context for its contents or integrates its contents into its parent formatting context. See CSS2.1 Chapter 9. [CSS2] A block container that establishes a new block formatting context is considered to have a used inner display type of flow-root.</p>
 </blockquote>
 <p><code>flow</code>では、flow layoutにしたがってコンテンツを配置する。もしouter display typeが<code>inline</code>か<code>run-in</code>で、blockかinline formatting contextに含まれているなら、inline boxを生成する。</p>
@@ -486,7 +494,7 @@
 </blockquote>
 <p><code>table</code>、<code>flex</code>、<code>grid</code>、<code>ruby</code>は、それぞれそれ用のformatting contextを生成する。詳細には今回は触れない。</p>
 <blockquote>
-<p>If a <display-inside> value is specified but <display-outside> is omitted, the element’s outer display type defaults to block—except for ruby, which defaults to inline.</display-outside></display-inside></p>
+<p>If a <display-inside> value is specified but <display-outside> is omitted, the element’s outer display type defaults to block—except for ruby, which defaults to inline.</p>
 </blockquote>
 <p><code>&lt;display-inside&gt;</code>が指定されていて、<code>&lt;display-outside&gt;</code>が省略されている場合、outer display typeは<code>block</code>になる。<code>ruby</code>の場合だけ<code>inline</code>となる。</p>
 <hr>

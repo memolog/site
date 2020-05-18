@@ -422,6 +422,7 @@
         </header>
         <div id="article-content" class="content "><p><a href="/blog//2015/08/encrypt-with-cryptswift-and-then-decrypt-it-with-nodejs/">CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化する</a>の記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。</p>
 <a id="more"></a>
+
 <h2 id="Node-jsで暗号化"><a href="#Node-jsで暗号化" class="headerlink" title="Node.jsで暗号化"></a>Node.jsで暗号化</h2><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> key <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token string">'12345678901234567890123456789012'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

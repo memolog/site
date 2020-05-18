@@ -419,6 +419,7 @@
         </header>
         <div id="article-content" class="content "><p>watirとwatir-webdriver違いは<a href="https://github.com/jarib/watir-webdriver/wiki/Comparison-with-Watir-1.X" target="_blank" rel="noopener">Comparison with watir 1.x - watir-webdriver - GitHub</a>にリストアップされていますが、ここにリストアップされていないもので大きな点というと、autoitを扱えなくなったという点があります。autoitはwindowsでのみ動作しない機能ですし、マルチプラットフォーム化しているwebdriverでは当たり前と言えば当たり前ですが。</p>
 <a id="more"></a>
+
 <p>ここで困るのはjavascriptのポップアップなどの処理です。watir 1.xにはWinClickerなどのツールもありましたが、watir-webdriverではそうしたOS依存の機能は現在のところありません（私は日本語のメニューの処理などがあったのでWinClickerを使用せずに、autoitで処理していました）。</p>
 <p>そこでwatir-webdriverでは<a href="http://watirmelon.com/2010/10/31/dismissing-pesky-javascript-dialogs-with-watir/" target="_blank" rel="noopener">execute_scriptのメソッドを使用して、javascriptを回避する方法</a>が紹介されています。execute_scriptは（詳しくは理解できていませんが）表示しているページで使用しているjavascriptを上書きして実行することができるメソッドです。</p>
 <p>そして<a href="http://www.itreallymatters.net/post/1482786902/testing-webpages-with-javascript-popups-correctly" target="_blank" rel="noopener">Testing webpages with JavaScript popups correctly</a>では、それを簡単に実行するためのメソッドを紹介しています。使い方はこんな感じ。</p>

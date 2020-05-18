@@ -417,7 +417,8 @@
         </header>
         <div id="article-content" class="content "><p>Date.parse(‘1999-07-07’)を実行すると、値は931305600000とUTCのタイムゾーンで解釈されるのに対して、Date.parse(‘1999/07/07’)を実行すると、値は931273200000とJSTのタイムゾーンで解釈される。あ、ローカルの時間がJSTの場合。現時点（Firefox 24、Chrome 31）</p>
 <a id="more"></a>
-<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/parse?redirectlocale=ja&amp;redirectslug=JavaScript&#x25;2FReference&#x25;2FGlobal_Objects&#x25;2FDate&#x25;2Fparse" target="_blank" rel="noopener">Date.parse</a>では引数に与えられた文字列をパースして、ミリ秒の値を値を返してくれます。タイムゾーンの指定がない場合はローカルのタイムゾーンとして解釈される。<a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" rel="noopener">ECMA-262</a>では、以下のように説明されています（太字は私がつけた）。</p>
+
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/parse?redirectlocale=ja&redirectslug=JavaScript&#x25;2FReference&#x25;2FGlobal_Objects&#x25;2FDate&#x25;2Fparse" target="_blank" rel="noopener">Date.parse</a>では引数に与えられた文字列をパースして、ミリ秒の値を値を返してくれます。タイムゾーンの指定がない場合はローカルのタイムゾーンとして解釈される。<a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank" rel="noopener">ECMA-262</a>では、以下のように説明されています（太字は私がつけた）。</p>
 <blockquote>
 <p>15.9.4.2 Date.parse (string)</p>
 <p>The parse function applies the ToString operator to its argument and interprets the resulting String as a date and time; it returns a Number, the UTC time value corresponding to the date and time. <strong>The String may be interpreted as a local time</strong>, a UTC time, or a time in some other time zone, depending on the contents of the String.</p>
