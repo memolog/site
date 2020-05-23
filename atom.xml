@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-05-20T15:02:03.885Z</updated>
+  <updated>2020-05-23T00:00:23.496Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex Line Wrapping: the flex-wrap property</title>
+    <link href="https://memolog.org/2020/flex-wrap-property.html"/>
+    <id>https://memolog.org/2020/flex-wrap-property.html</id>
+    <published>2020-05-23T00:00:00.000Z</published>
+    <updated>2020-05-23T00:00:23.496Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/flex-flow-direction.html&quot;&gt;Flex Flow Direction: the flex-direction property&lt;/a&gt;から引き続き。&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;5.2. Flex Line Wrapping: the flex-wrap property&lt;/a&gt;について
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Flex Flow Direction: the flex-direction property</title>
@@ -332,23 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/inner-and-outer-display-type.html&quot;&gt;Inner and outer display types&lt;/a&gt;に引き続き。&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#placement&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.1. Module interactions&lt;/a&gt;にCSS Display Moduleは、CSS2の定義を置き換えるまたは拡張するものであると書かれているので、一応CSS2.2の&lt;a href=&quot;https://www.w3.org/TR/CSS22/visuren.html#display-prop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;9.2.4 The ‘display’ property&lt;/a&gt;をざっと確認しようと思う。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Inner and outer display types</title>
-    <link href="https://memolog.org/2020/inner-and-outer-display-type.html"/>
-    <id>https://memolog.org/2020/inner-and-outer-display-type.html</id>
-    <published>2020-02-17T21:25:00.000Z</published>
-    <updated>2020-02-17T21:36:53.603Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/css-display-module-introduction.html&quot;&gt;CSS Display Module Introduction&lt;/a&gt;に引き続き、CSS Display Module Level 3の&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2. Box Layout Modes: the display property&lt;/a&gt;冒頭部分についてのメモ。内容を見直して、変だなと思うところは随時修正してる。
     
     </summary>
     
