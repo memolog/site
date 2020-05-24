@@ -357,61 +357,61 @@
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2013/04/grunt_getting_started.html"
+          "url": "https://memolog.org/2013/05/grunt_loadnpmtasks_with_matchdep.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2013/04/preparation_for_xxhdpi.html"
+          "url": "https://memolog.org/2013/04/grunt_getting_started.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2013/04/sublime_text_2_jshint.html"
+          "url": "https://memolog.org/2013/04/preparation_for_xxhdpi.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2013/02/webkit-overflow-scrolling-touch.html"
+          "url": "https://memolog.org/2013/04/sublime_text_2_jshint.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2013/02/node_not_found_with_jsLint.html"
+          "url": "https://memolog.org/2013/02/webkit-overflow-scrolling-touch.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2013/02/inspect_android_webview_with_weinre.html"
+          "url": "https://memolog.org/2013/02/node_not_found_with_jsLint.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2013/02/main_element_and_default_implicit_aria_semantics.html"
+          "url": "https://memolog.org/2013/02/inspect_android_webview_with_weinre.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2013/01/dom_processing_phase.html"
+          "url": "https://memolog.org/2013/02/main_element_and_default_implicit_aria_semantics.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2013/01/style_scoped.html"
+          "url": "https://memolog.org/2013/01/dom_processing_phase.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2013/01/a_style_sheet_that_is_blocking_scripts_and_dom_content_loaded.html"
+          "url": "https://memolog.org/2013/01/style_scoped.html"
         }
         
       ]
@@ -432,6 +432,19 @@
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2013-05-05T20:38:00.000Z"><span class="calendar-icon">📅</span><span>2013年5月6日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2013/05/grunt_loadnpmtasks_with_matchdep.html">matchdepを使ってgrunt.loadNpmTasksする</a></h2>
+            
+          </header>
+          
+            <div class="content"><p>matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install –save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsで<a href="http://gruntjs.com/api/grunt#grunt.loadnpmtasks" target="_blank" rel="noopener">grunt.loadNpmTasks</a>を使ってタスクのloadをする必要があります。</p></div>
+            <div><a href="/2013/05/grunt_loadnpmtasks_with_matchdep.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -547,19 +560,6 @@
           
             <div class="content"><p><a href="https://hacks.mozilla.org/2013/01/firefox-development-highlights-h-264-mp3-support-on-windows-scoped-stylesheets-more/" target="_blank" rel="noopener">Firefox Development Highlights - H.264 &amp; MP3 support on Windows, scoped stylesheets + more ✩Mozilla Hacks – the Web developer blog</a>（<a href="https://dev.mozilla.jp/2013/01/firefox-development-highlights-h-264-mp3-support-on-windows-scoped-stylesheets-more/" target="_blank" rel="noopener">日本語</a>）にて、<a href="http://nightly.mozilla.org/" target="_blank" rel="noopener">Firefoxのnightly</a>でstyle要素のscoped属性に対応したという話が出ていたので、試してみました。<a href="http://codepen.io/memolog/pen/uedGg" target="_blank" rel="noopener">style scoped動作確認用のcodepen</a>。</p></div>
             <div><a href="/2013/01/style_scoped.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2013-01-23T06:07:00.000Z"><span class="calendar-icon">📅</span><span>2013年1月23日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2013/01/a_style_sheet_that_is_blocking_scripts_and_dom_content_loaded.html">a style sheet that is blocking scripts と DOMContentLoaded</a></h2>
-            
-          </header>
-          
-            <div class="content"><p><a href="http://molily.de/weblog/domcontentloaded" target="_blank" rel="noopener">DOMContentLoaded and stylesheets · molily</a>（via <a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/DOMContentLoaded_&#x25;28event&#x25;29" target="_blank" rel="noopener">DOMContentLoaded - Mozilla event reference | MDN</a>）にて、head内のスタイルシートとJavascriptの配置の違いで、DOMContentLoadedイベントが発生するタイミングが変わるという内容が掲載されています。スタイルシートのあとにJavascriptが入っていると、DOMContentLoadedはスタイルシートをロードしたあとに発生して、スタイルシートのあとにJavascriptがないと、スタイルシートのロードを待たずにDOMContentLoadedが発生する。</p></div>
-            <div><a href="/2013/01/a_style_sheet_that_is_blocking_scripts_and_dom_content_loaded.html">📖 続きを読む</a></div>
           
         </article>
       

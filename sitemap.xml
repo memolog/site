@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://memolog.org/2020/flex-flow-shorthand.html</loc>
+    
+    <lastmod>2020-05-24T03:13:44.329Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://memolog.org/2020/flex-wrap-property.html</loc>
     
     <lastmod>2020-05-23T00:00:23.496Z</lastmod>
@@ -261,13 +268,6 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/pass-arguments-to-npm-run-script.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.877Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://memolog.org/2018/redirect-to-my-old-blog.html</loc>
     
     <lastmod>2019-01-04T02:09:12.877Z</lastmod>
@@ -289,7 +289,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/javascript-property-access-big-o.html</loc>
+    <loc>https://memolog.org/2018/pass-arguments-to-npm-run-script.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.877Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2018/import-from-old-blog.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
@@ -303,14 +310,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/insertion-sort-in-javascript.html</loc>
+    <loc>https://memolog.org/2018/image-manipulation-with-primitive.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/image-manipulation-with-primitive.html</loc>
+    <loc>https://memolog.org/2018/insertion-sort-in-javascript.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
@@ -324,28 +331,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/import-from-old-blog.html</loc>
+    <loc>https://memolog.org/2018/javascript-property-access-big-o.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/convert-multiple-primitive-images-at-once.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.875Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://memolog.org/2018/custom-domain-in-github-pages.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.875Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html</loc>
+    <loc>https://memolog.org/2018/create-a-new-icon.html</loc>
     
     <lastmod>2019-01-04T02:09:12.875Z</lastmod>
     
@@ -359,13 +352,6 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/create-hash-table-in-javascript.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.875Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://memolog.org/2018/complete-all-the-pwa-checklist.html</loc>
     
     <lastmod>2019-01-04T02:09:12.875Z</lastmod>
@@ -373,7 +359,28 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/create-a-new-icon.html</loc>
+    <loc>https://memolog.org/2018/custom-domain-in-github-pages.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2018/convert-multiple-primitive-images-at-once.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2018/create-hash-table-in-javascript.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html</loc>
     
     <lastmod>2019-01-04T02:09:12.875Z</lastmod>
     
@@ -387,7 +394,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/book-intro-blockchain.html</loc>
+    <loc>https://memolog.org/2018/about-array-prototype-sort.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
@@ -401,7 +408,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/about-array-prototype-sort.html</loc>
+    <loc>https://memolog.org/2018/bit-vector-in-javascript.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
@@ -415,13 +422,6 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/bit-vector-in-javascript.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.874Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://memolog.org/2018/about-typedarray-prototype-sort.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
@@ -429,9 +429,9 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/New-Year-Resolutions.html</loc>
+    <loc>https://memolog.org/2018/book-intro-blockchain.html</loc>
     
-    <lastmod>2019-01-04T02:09:12.873Z</lastmod>
+    <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
   </url>
   
@@ -451,6 +451,13 @@
   
   <url>
     <loc>https://memolog.org/2017/hello-gatsby.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2018/New-Year-Resolutions.html</loc>
     
     <lastmod>2019-01-04T02:09:12.873Z</lastmod>
     
@@ -1290,14 +1297,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2010/12/watir-webdriver-avoid-ssl-error.html</loc>
+    <loc>https://memolog.org/2010/12/watir-webdriver-alternative-attach-method.html</loc>
     
     <lastmod>2019-01-04T02:09:12.856Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://memolog.org/2010/12/my_lifestyle_2010.html</loc>
+    <loc>https://memolog.org/2010/12/watir-webdriver-avoid-ssl-error.html</loc>
     
     <lastmod>2019-01-04T02:09:12.856Z</lastmod>
     
@@ -1339,7 +1346,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2010/12/watir-webdriver-alternative-attach-method.html</loc>
+    <loc>https://memolog.org/2010/12/my_lifestyle_2010.html</loc>
     
     <lastmod>2019-01-04T02:09:12.856Z</lastmod>
     
@@ -1444,7 +1451,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2010/02/address_the_stale_post.html</loc>
+    <loc>https://memolog.org/2010/02/css3_column-count.html</loc>
     
     <lastmod>2019-01-04T02:09:12.853Z</lastmod>
     
@@ -1486,13 +1493,6 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2010/02/css3_column-count.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.853Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://memolog.org/2010/02/alcedo_atthis.html</loc>
     
     <lastmod>2019-01-04T02:09:12.853Z</lastmod>
@@ -1500,9 +1500,9 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2009/07/some_thoughts_on_jogging.html</loc>
+    <loc>https://memolog.org/2010/02/address_the_stale_post.html</loc>
     
-    <lastmod>2019-01-04T02:09:12.852Z</lastmod>
+    <lastmod>2019-01-04T02:09:12.853Z</lastmod>
     
   </url>
   
@@ -1536,6 +1536,13 @@
   
   <url>
     <loc>https://memolog.org/2009/12/free.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.852Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2009/07/some_thoughts_on_jogging.html</loc>
     
     <lastmod>2019-01-04T02:09:12.852Z</lastmod>
     
@@ -1647,13 +1654,6 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2008/06/text-align_justify.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.849Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://memolog.org/2009/03/flickr_to_html.html</loc>
     
     <lastmod>2019-01-04T02:09:12.849Z</lastmod>
@@ -1662,6 +1662,13 @@
   
   <url>
     <loc>https://memolog.org/2008/08/post_178.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.849Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2008/06/post_177.html</loc>
     
     <lastmod>2019-01-04T02:09:12.849Z</lastmod>
     
@@ -1682,7 +1689,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2008/06/post_177.html</loc>
+    <loc>https://memolog.org/2008/06/text-align_justify.html</loc>
     
     <lastmod>2019-01-04T02:09:12.849Z</lastmod>
     
@@ -1696,7 +1703,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2008/02/post_174.html</loc>
+    <loc>https://memolog.org/2008/05/post_176.html</loc>
     
     <lastmod>2019-01-04T02:09:12.848Z</lastmod>
     
@@ -1710,7 +1717,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2008/05/post_176.html</loc>
+    <loc>https://memolog.org/2008/02/post_174.html</loc>
     
     <lastmod>2019-01-04T02:09:12.848Z</lastmod>
     
@@ -1734,13 +1741,6 @@
     <loc>https://memolog.org/2008/02/post_173.html</loc>
     
     <lastmod>2019-01-04T02:09:12.848Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://memolog.org/2008/01/post_168.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.847Z</lastmod>
     
   </url>
   
@@ -1788,6 +1788,13 @@
   
   <url>
     <loc>https://memolog.org/2008/01/post_169.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.847Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2008/01/post_168.html</loc>
     
     <lastmod>2019-01-04T02:09:12.847Z</lastmod>
     
@@ -2599,7 +2606,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2004/11/post_4.html</loc>
+    <loc>https://memolog.org/2004/11/post_7.html</loc>
     
     <lastmod>2019-01-04T02:09:12.830Z</lastmod>
     
@@ -2607,6 +2614,13 @@
   
   <url>
     <loc>https://memolog.org/2004/12/11.html</loc>
+    
+    <lastmod>2019-01-04T02:09:12.830Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://memolog.org/2004/11/post_4.html</loc>
     
     <lastmod>2019-01-04T02:09:12.830Z</lastmod>
     
@@ -2627,21 +2641,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2004/11/post_7.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.830Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://memolog.org/2004/03/post.html</loc>
+    <loc>https://memolog.org/2004/11/2046.html</loc>
     
     <lastmod>2019-01-04T02:09:12.829Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://memolog.org/2004/11/2046.html</loc>
+    <loc>https://memolog.org/2004/03/post.html</loc>
     
     <lastmod>2019-01-04T02:09:12.829Z</lastmod>
     
