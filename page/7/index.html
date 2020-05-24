@@ -357,61 +357,61 @@
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2018/image-manipulation-with-primitive.html"
+          "url": "https://memolog.org/2018/inline-svg-as-an-image-placeholder.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2018/display-featured-image.html"
+          "url": "https://memolog.org/2018/image-manipulation-with-primitive.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2018/import-from-old-blog.html"
+          "url": "https://memolog.org/2018/display-featured-image.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2018/New-Year-Resolutions.html"
+          "url": "https://memolog.org/2018/import-from-old-blog.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2017/html-elements.html"
+          "url": "https://memolog.org/2018/New-Year-Resolutions.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2017/hello-hexo.html"
+          "url": "https://memolog.org/2017/html-elements.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2017/hello-gatsby.html"
+          "url": "https://memolog.org/2017/hello-hexo.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html"
+          "url": "https://memolog.org/2017/hello-gatsby.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2016/01/angular2_and_import_statement.html"
+          "url": "https://memolog.org/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2016/01/angular2_with_decorators.html"
+          "url": "https://memolog.org/2016/01/angular2_and_import_statement.html"
         }
         
       ]
@@ -432,6 +432,33 @@
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-01-15T16:39:56.000Z"><span class="calendar-icon">📅</span><span>2018年1月16日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/inline-svg-as-an-image-placeholder.html">画像のプレースホルダーとしてインラインSVGを使う</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjMyIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2MzIiIGZpbGw9IiNhMzk4ODkiIC8+PC9zdmc+" data-src="/assets/images/kelly-sikkema-511604/kelly-sikkema-511604.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/N3o-leQyFsI?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Kelly Sikkema</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>画像が読み込まれた後にレイアウトが動かないように、画像のプレースホルダーを入れた。最初はpng画像をインラインで挿入していたのだけど、svgの方が画像のサイズをみてその場その場で適切なものを作成しやすかったので、svgを使うようにしてみた。処理自体はNode.js（Hexoの処理の中）で行っている。現在のコンテンツの最大幅は750pxなので、それを基準に縦横比が合うようにheightを計算している。</div>
+            <div><a href="/2018/inline-svg-as-an-image-placeholder.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -630,19 +657,6 @@
           
             <div class="content"><p><a href="/blog//2016/01/angular2_with_decorators/">Angular2とDecorators - メモログ</a>に出した<a href="https://angular.io/docs/ts/latest/quickstart.html" target="_blank" rel="noopener">5 Min Quickstart</a>のサンプルを再掲すると、冒頭にimportのstatementがあります。</p></div>
             <div><a href="/2016/01/angular2_and_import_statement.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2016-01-13T07:15:00.000Z"><span class="calendar-icon">📅</span><span>2016年1月13日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2016/01/angular2_with_decorators.html">Angular2とDecorators</a></h2>
-            
-          </header>
-          
-            <div class="content"><p>Decorators は <a href="https://github.com/tc39/ecma262" target="_blank" rel="noopener">ECMAScript</a> で Propose となっている実装で、Angular 2 と TypeScript を使った実装ではよく出てくる。 <a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841" target="_blank" rel="noopener">Exploring ES2016 Decorators – Google Developers – Medium</a>を参考にすると、定義したfunction名の頭に「@」をつけて、使いたいclassやpropertyの前に記述するらしい。</p></div>
-            <div><a href="/2016/01/angular2_with_decorators.html">📖 続きを読む</a></div>
           
         </article>
       

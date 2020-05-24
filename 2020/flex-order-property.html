@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Display Order: the order property | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="今回は5.4. Display Order: the order propertyについて。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Display Order: the order property">
+<meta property="og:url" content="https://memolog.org/2020/flex-order-property.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="今回は5.4. Display Order: the order propertyについて。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/estudio-bloom-ezqnxsqUZ80-unsplash/estudio-bloom-ezqnxsqUZ80-unsplash.jpg">
+<meta property="article:published_time" content="2020-05-24T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-24T13:12:51.856Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/estudio-bloom-ezqnxsqUZ80-unsplash/estudio-bloom-ezqnxsqUZ80-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/flex-order-property.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/flex-order-property.html"
+      },
+      "headline": "Display Order: the order property",
+      
+        "image": [
+          "https://memolog.org/assets/images/estudio-bloom-ezqnxsqUZ80-unsplash/estudio-bloom-ezqnxsqUZ80-unsplash.jpg"
+        ],
+      
+      "datePublished": "1590332400000",
+      "dateModified": "1590325971856",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "今回は5.4. Display Order: the order propertyについて。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-05-24T15:00:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年5月25日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Display Order: the order property</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiNkZGExYWUiIC8+PC9zdmc+" data-src="/assets/images/estudio-bloom-ezqnxsqUZ80-unsplash/estudio-bloom-ezqnxsqUZ80-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@estudiobloom?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Estúdio Bloom</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>今回は<a href="https://www.w3.org/TR/css-flexbox-1/#order-property" target="_blank" rel="noopener">5.4. Display Order: the order property</a>について。<a id="more"></a></p>
+<blockquote>
+<p>Flex items are, by default, displayed and laid out in the same order as they appear in the source document. The order property can be used to change this ordering.</p>
+</blockquote>
+<p>Flex itemsはデフォルトでsource documentに出現するのと同じ順番で表示・配置される。<code>order</code>プロパティはこの並び順を変更するために使われる。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>order</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>&lt;integer&gt;</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex items</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified integer</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>by computed value type</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>The order property controls the order in which flex items appear within the flex container, by assigning them to ordinal groups. It takes a single <integer> value, which specifies which ordinal group the flex item belongs to.</p>
+</blockquote>
+<p><code>order</code>プロパティはflex itemsにordinal groupを割り当てることで、それらがflex container内で表示される順番を制御する。integer値を渡して、flex itemが所属するordinal groupを指定する。</p>
+<blockquote>
+<p>A flex container lays out its content in order-modified document order, starting from the lowest numbered ordinal group and going up. Items with the same ordinal group are laid out in the order they appear in the source document. This also affects the painting order [CSS21], exactly as if the flex items were reordered in the source document. Absolutely-positioned children of a flex container are treated as having order: 0 for the purpose of determining their painting order relative to flex items.</p>
+</blockquote>
+<p>flex containerは、order-modifiedされたdocumentの並び順に沿ってコンテンツをordinal groupの数値の小さい順に配置する。同じordinal groupのitemsは、source documentに出現する順番で配置される。これは、まるでflex itemsがsource documentで並び変えられたかのように正確に、描画の順番にも影響を与える。flex containerの絶対配置された子供たちは、flex itemsと相対的な描画順序を決定するために、<code>0</code>のorderを持っているとみなして扱われる。</p>
+<blockquote>
+<p><strong>EXAMPLE 6</strong><br>The following figure shows a simple tabbed interface, where the tab for the active pane is always first:</p>
+<img src="https://www.w3.org/TR/css-flexbox-1/images/flex-order-example.png" />
+
+<p>This could be implemented with the following CSS (showing only the relevant code):</p>
+</blockquote>
+<p>上記の図は、簡単なタブインターフェイスを表したもので、アクティブなタブは常に最初（一番左）に表示される。<br>これは下のようなCSS（関連する部分のみ）で実装される</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.tabs</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.tabs</span> > <span class="token class">.current</span> </span><span class="token punctuation">{</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* デフォルトの0より小さくする */</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>Unless otherwise specified by a future specification, this property has no effect on boxes that are not flex items.</p>
+</blockquote>
+<p>将来的な仕様で指定されない限りは、このプロパティはflex itemsではないboxesには何も効果を与えない。</p>
+<h3 id="5-4-1-Reordering-and-Accessibility"><a href="#5-4-1-Reordering-and-Accessibility" class="headerlink" title="5.4.1. Reordering and Accessibility"></a>5.4.1. Reordering and Accessibility</h3><blockquote>
+<p>The order property does not affect ordering in non-visual media (such as speech). Likewise, order does not affect the default traversal order of sequential navigation modes (such as cycling through links, see e.g. tabindex [HTML]).</p>
+</blockquote>
+<p>orderプロパティはnon-visual media（スピーチなど）の順番には影響を与えない。同様に、orderプロパティはsequential navigation mode（tabindexのようなリンクを巡回するようなもの）のデフォルトの走査順序にも影響を与えない。</p>
+<blockquote>
+<p><strong>Authors must use order only for visual, not logical, reordering of content. Style sheets that use order to perform logical reordering are non-conforming.</strong></p>
+</blockquote>
+<p>制作者はコンテンツの視覚的な（論理的なのではなく）並び替えに対してのみorderプロパティを使わなければならない。論理的なコンテンツの並び替えにorderプロパティを利用したスタイルシートは非準拠である。</p>
+<blockquote>
+<p><strong>Note:</strong> This is so that non-visual media and non-CSS UAs, which typically present content linearly, can rely on a logical source order, while order is used to tailor the visual order. (Since visual perception is two-dimensional and non-linear, the desired visual order is not always logical.)</p>
+</blockquote>
+<p><strong>注意</strong>：これは、一般的に現在のコンテンツを直線的に出力する、non-visual mediaとnon-CSS ユーザーエージェント（ブラウザなど）が、論理的なsource orderに依拠できるようにしつつ、一方でorderプロパティを利用することで視覚的な順番を調整できるようにするためである。（視覚による知覚は、二次元的であり直線的ではない。望ましい視覚的な順番は常に論理的なものであるとは限らないので。）</p>
+<blockquote>
+<p><strong>EXAMPLE 7</strong><br>Many web pages have a similar shape in the markup, with a header on top, a footer on bottom, and then a content area and one or two additional columns in the middle. Generally, it’s desirable that the content come first in the page’s source code, before the additional columns. However, this makes many common designs, such as simply having the additional columns on the left and the content area on the right, difficult to achieve. This has been addressed in many ways over the years, often going by the name “Holy Grail Layout” when there are two additional columns. order makes this trivial. For example, take the following sketch of a page’s code and desired layout:</p>
+</blockquote>
+<p>多くのウェブページがマークアップにおいて同じような形、上の方にヘッダーがあり、下側にフッターがあり、真ん中にコンテンツエリアと1つか2つの付帯的なカラムを持つ。一般的に、ページのsource code上では、付帯的なカラムの前に、コンテンツが最初に来るのが望ましい。しかしながら、この（ソースコードの並び順は）多くのよくあるデザインがするような、付帯的なカラムを左において、コンテンツエリアを右に置くようなシンプルなデザインを作るのが難しくなる。これは長年に渡って様々な方法で対処されてきた課題で、二つの付帯的なカラムを持つレイアウトはしばしば「Holy Grail Layout」という名前で呼ばれてきた。orderプロパティはこの課題を簡単なものにする。例えば、次のようなページコードと、望ましいレイアウトのスケッチがあるとする。</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://www.w3.org/TR/css-flexbox-1/images/flex-order-page.svg" />
+
+<blockquote>
+<p>This layout can be easily achieved with flex layout:</p>
+</blockquote>
+<p>このレイアウトはflexレイアウトで簡単に作ることができる。</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">main </span><span class="token punctuation">{</span> <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">main > article </span><span class="token punctuation">{</span> <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">12</span>em<span class="token punctuation">;</span> <span class="token property">flex</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">main > nav     </span><span class="token punctuation">{</span> <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">main > aside   </span><span class="token punctuation">{</span> <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span> <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>As an added bonus, the columns will all be equal-height by default, and the main content will be as wide as necessary to fill the screen. Additionally, this can then be combined with media queries to switch to an all-vertical layout on narrow screens:</p>
+</blockquote>
+<p>追加特典として、カラムはデフォルトで同じ高さになり、メインコンテンツは画面を埋めるのに必要なだけの幅になる。さらに、media queriesと組み合わせることで、狭い画面上においては縦一列（all-vertical）のレイアウトにスイッチすることができる。</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> all and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">/* 3カラムに対応するには狭すぎる */</span>
+  <span class="token selector">main </span><span class="token punctuation">{</span> <span class="token property">flex-flow</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">main > article, main > nav, main > aside </span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/* documentの並び順にする */</span>
+    <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>(Further use of multi-line flex containers to achieve even more intelligent wrapping left as an exercise for the reader.)</p>
+</blockquote>
+<p>（読者のための演習として、複数行のflex containerを使ってよりインテリジェントに囲う方法もあることを記しておく）</p>
+<hr>
+<blockquote>
+<p>In order to preserve the author’s intended ordering in all presentation modes, authoring tools—including WYSIWYG editors as well as Web-based authoring aids—must reorder the underlying document source and not use order to perform reordering unless the author has explicitly indicated that the underlying document order (which determines speech and navigation order) should be out-of-sync with the visual order.</p>
+</blockquote>
+<p>すべての表示モードにおいて制作者が意図した並び順を保持するためには、（WYSIWYGエディタやWebベースのオーサリング補助機能を含む）オーサリングツールは、制作者が基になるdocument order（スピーチやナビゲーションの順番を決定する）と視覚的な順序とを同期しないことを明示的に示していない限り基になるdocument sourceを並び替える必要があり、並び替えするためにorderプロパティを使用してはいけない。</p>
+<blockquote>
+<p><strong>EXPAMLE 8</strong><br>For example, a tool might offer both drag-and-drop reordering of flex items as well as handling of media queries for alternate layouts per screen size range.</p>
+</blockquote>
+<p>例えば、あるツールが、media queriesを使った画面サイズに応じたレイアウト処理と、ドラッグアンドドロップでのflex itemsの並び替えの機能を両方提供していたとする。</p>
+<blockquote>
+<p>Since most of the time, reordering should affect all screen ranges as well as navigation and speech order, the tool would perform drag-and-drop reordering at the DOM layer. In some cases, however, the author may want different visual orderings per screen size. The tool could offer this functionality by using order together with media queries, but also tie the smallest screen size’s ordering to the underlying DOM order (since this is most likely to be a logical linear presentation order) while using order to determine the visual presentation order in other size ranges.</p>
+</blockquote>
+<p>たいていの場合、並び替えはすべてのスクリーンサイズと共に、ナビゲーション、speech orderにも影響を与えるから、ツールはDOMレイヤーでのドラッグアンドドロップによる並び替えを実行するだろう。しかしながら、あるケースにおいては、制作者はスクリーンサイズごとに異なる視覚順にしたいかもしれない。ツールはmedia queriesとorderプロパティを一緒に使うことによってこの機能を提供することができる。しかし、それは同時に、最小サイズの画面の順番と基になるDOM order（たいていの場合、最小サイズが論理的で直線的な表示順になるだろうから）を結びつけつつ、他のサイズでは視覚的な表示順を決めるためにorderプロパティを使うことになる。</p>
+<blockquote>
+<p>This tool would be conformant, whereas a tool that only ever used order to handle drag-and-drop reordering (however convenient it might be to implement it that way) would be non-conformant.</p>
+</blockquote>
+<p>このツールは準拠しているが、一方でドラッグアンドロドップの並び替えを処理するのにorderプロパティ（実装するには便利だが）のみを利用しているツールは非準拠になる。</p>
+<blockquote>
+<p><strong>Note:</strong> User agents, including browsers, accessible technology, and extensions, may offer spatial navigation features. This section does not preclude respecting the order property when determining element ordering in such spatial navigation modes; indeed it would need to be considered for such a feature to work. But order is not the only (or even the primary) CSS property that would need to be considered for such a spatial navigation feature. A well-implemented spatial navigation feature would need to consider all the layout features of CSS that modify spatial relationships.</p>
+</blockquote>
+<p><strong>注意</strong>：ユーザーエージェント（ブラウザー、accessible technology、機能拡張などを含む）は空間的に広がりのあるナビゲーション機能を提供するかもしれない。このセクションは、そのような空間的に広がりのあるナビゲーションモードにおいて、要素の順序を決定するときに、orderプロパティが関連することを排除するものではない。実際に、そのような機能が機能するためには考慮される必要のあるものである。しかしorderプロパティは空間的に広がりのあるナビゲーション機能において考慮する必要がある唯一のCSSプロパティではない（主要なものでさえない）。よく実装された空間ナビゲーション機能は、空間との関係性を変更するCSSのレイアウト機能をすべて考慮する必要ある。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
