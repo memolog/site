@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-05-24T13:12:51.856Z</updated>
+  <updated>2020-05-30T14:45:07.703Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex Lines</title>
+    <link href="https://memolog.org/2020/flex-lines.html"/>
+    <id>https://memolog.org/2020/flex-lines.html</id>
+    <published>2020-05-30T14:45:00.000Z</published>
+    <updated>2020-05-30T14:45:07.703Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今回は&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1/#flex-lines&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;6. Flex Lines&lt;/a&gt;について。
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Display Order: the order property</title>
@@ -332,23 +349,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://memolog.org/2020/inner-and-outer-display-type.html&quot;&gt;Inner and outer display types&lt;/a&gt;にて、inner display type は&lt;strong&gt;formatting context&lt;/strong&gt;について定義し、子孫となるboxがどのように配置されるかを決める、と書いた。今回はformatting contextについて確認する。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Value Definition Syntax on CSS Value and Units Module</title>
-    <link href="https://memolog.org/2020/value-definition-syntax-on-css-value-and-units-module.html"/>
-    <id>https://memolog.org/2020/value-definition-syntax-on-css-value-and-units-module.html</id>
-    <published>2020-02-27T09:10:13.000Z</published>
-    <updated>2020-02-27T09:15:54.993Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前回の&lt;a href=&quot;https://memolog.org/2020/css-property-conventions.html&quot;&gt;CSS property conventions&lt;/a&gt;から引き続き。&lt;a href=&quot;https://www.w3.org/TR/css-values-3/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSS Value and Units Module&lt;/a&gt;がvalueについての定義を、拡張または置き換えるものとして用意されているので、CSS2との差分を確認する。
     
     </summary>
     
