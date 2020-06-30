@@ -1,4 +1,4 @@
-const CACHE_MAIN = 'main1593478514480';
+const CACHE_MAIN = 'main1593479333021';
 const precacheList = [
   
   '/',
