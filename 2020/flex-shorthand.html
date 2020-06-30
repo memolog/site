@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>The flex Shorthand | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="今回は7. Flexibilityについて。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The flex Shorthand">
+<meta property="og:url" content="https://memolog.org/2020/flex-shorthand.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="今回は7. Flexibilityについて。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/steve-douglas-80Pr_AfC71Y-unsplash/steve-douglas-80Pr_AfC71Y-unsplash.jpg">
+<meta property="article:published_time" content="2020-05-31T05:09:49.000Z">
+<meta property="article:modified_time" content="2020-06-30T00:55:14.480Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/steve-douglas-80Pr_AfC71Y-unsplash/steve-douglas-80Pr_AfC71Y-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/flex-shorthand.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/flex-shorthand.html"
+      },
+      "headline": "The flex Shorthand",
+      
+        "image": [
+          "https://memolog.org/assets/images/steve-douglas-80Pr_AfC71Y-unsplash/steve-douglas-80Pr_AfC71Y-unsplash.jpg"
+        ],
+      
+      "datePublished": "1590901789000",
+      "dateModified": "1593478514480",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "今回は7. Flexibilityについて。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-05-31T05:09:49.000Z">
+              <span class="calendar-icon">📅</span><span>2020年5月31日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>The flex Shorthand</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiMzZDVhNjYiIC8+PC9zdmc+" data-src="/assets/images/steve-douglas-80Pr_AfC71Y-unsplash/steve-douglas-80Pr_AfC71Y-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@sldoug?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Steve Douglas</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>今回は<a href="https://www.w3.org/TR/css-flexbox-1/#flexibility" target="_blank" rel="noopener">7. Flexibility</a>について。<a id="more"></a></p>
+<blockquote>
+<p>The defining aspect of flex layout is the ability to make the flex items “flex”, altering their width/height to fill the available space in the main dimension. This is done with the flex property. A flex container distributes free space to its items (proportional to their flex grow factor) to fill the container, or shrinks them (proportional to their flex shrink factor) to prevent overflow.</p>
+</blockquote>
+<blockquote>
+<p>A flex item is fully inflexible if both its flex-grow and flex-shrink values are zero, and flexible otherwise.</p>
+</blockquote>
+<p>flexレイアウトの特徴はflex itemsを「柔軟(flex)」にすることで、横幅・縦幅をmain dimensionの余白を埋めるように変更することである。これはflexプロパティによってなされる。flex containerはcontainerを満たすため余白部分をitemsに（flex grow factorに応じて）配分するか、オーバーフローしないように（flex shrink factorに応じて）itemsを収縮する。</p>
+<p>flex item は、もし<code>flex-grow</code>と<code>flex-shrink</code>が両方とも0である場合は完全に柔軟ではなくなる。それ以外の場合は柔軟になる。</p>
+<h3 id="7-1-The-flex-Shorthand"><a href="#7-1-The-flex-Shorthand" class="headerlink" title="7.1. The flex Shorthand"></a>7.1. The flex Shorthand</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>flex</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>none &#124; [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? &#124;&#124; &lt;‘flex-basis’&gt; ]</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>0 1 auto</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex items</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>see individual properties</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>see individual properties</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>by computed value type</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+</tbody></table>
+<p>Valueの<code>none | [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? || &lt;‘flex-basis’&gt; ]</code>の部分はつまり、<code>[ none ] | [ [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? ] || [ &lt;‘flex-basis’&gt; ] ]</code>と同じ内容になる。すなわち、<code>none</code>か、または、<code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code>の3つのうち一つが記述される必要がある。<code>flex-grow</code>と<code>flex-shrink</code>の記述順は固定で、<code>flex-shrink</code>を書く場合は必ず<code>flex-grow</code>が必要になる。一方、<code>flex-shrink</code>は省略可能。また、<code>flex-grow</code>と<code>flex-shrink</code>の二つと、<code>flex-basis</code>の記述は順不同で書ける。</p>
+<p>なので、以下の順番で書くことができる。</p>
+<ul>
+<li><code>flex-grow</code></li>
+<li><code>flex-grow flex-shrink</code></li>
+<li><code>flex-grow flex-shrink flex-basis</code></li>
+<li><code>flex-grow flex-basis</code></li>
+<li><code>flex-basis flex-grow flex-shrink</code></li>
+<li><code>flex-basis flex-grow</code></li>
+<li><code>flex-basis</code></li>
+</ul>
+<p>なお、<code>flex: 0</code> みたいに単位表記なしの0を使うと、flex-basisではなくflex-growの値として扱われる。値がflex-basisであることを明確にするためには、<code>flex: 0px</code>とか <code>flex: 1 1 0</code>みたいに記述する必要がある。</p>
+<blockquote>
+<p>The flex property specifies the components of a flexible length: the flex factors (grow and shrink) and the flex basis. When a box is a flex item, flex is consulted instead of the main size property to determine the main size of the box. If a box is not a flex item, flex has no effect.</p>
+</blockquote>
+<p>flexプロパティは<strong>flexible length</strong>つまり、<strong>flex factors</strong>（growとshrink）と、flax basisを指定する。boxがflex itemである場合、boxのmain sizeを決定するために、main sizeプロパティの代わりに flexプロパティを参照する。もしboxがflex itemではない場合、flexプロパティは効果を持たない。</p>
+<blockquote>
+<p><strong>&lt;‘flex-grow’&gt;</strong><br>This &lt;number&gt; component sets flex-grow longhand and specifies the flex grow factor, which determines how much the flex item will grow relative to the rest of the flex items in the flex container when positive free space is distributed. When omitted, it is set to 1.</p>
+</blockquote>
+<p><code>flex-grow</code>はflex-growロングハンドの値で<strong>flex grow factor</strong>を指定する。これは、正の余白スペースが配分された場合に、flex itemがflex containerの残りのitemsと比べて相対的にどのくらい成長するかを決定する。省略された場合は、<code>1</code>になる。</p>
+<blockquote>
+<p>Flex values between 0 and 1 have a somewhat special behavior: when the sum of the flex values on the line is less than 1, they will take up less than 100% of the free space.</p>
+</blockquote>
+<p>値が0から1の場合、特別な振る舞いをする。行のflex valuesの合計が1より小さい場合、それらは余白部分の100%よりも小さい領域を利用する。</p>
+<blockquote>
+<p>An item’s flex-grow value is effectively a request for some proportion of the free space, with 1 meaning “100% of the free space”; then if the items on the line are requesting more than 100% in total, the requests are rebalanced to keep the same ratio but use up exactly 100% of it. However, if the items request less than the full amount (such as three items that are each flex-grow: .25) then they’ll each get exactly what they request (25% of the free space to each, with the final 25% left unfilled). See <a href="https://www.w3.org/TR/css-flexbox-1/#resolve-flexible-lengths" target="_blank" rel="noopener">§9.7 Resolving Flexible Lengths</a> for the exact details of how free space is distributed.</p>
+</blockquote>
+<p>itemsの<code>flex-grow</code>の値は実質的に余白部分の割り当てに対するリクエストであり、1は「余白の100%」を意味する。もし行にあるitemsが合計100%より多くリクエストしている場合、リクエストは同じ比率をキープしながらバランスを取り直されるが、余白の100%を正確に使い切る。しかしながら、もしitemsが全体の量より小さくリクエストした場合（たとえば、3つのitemsがそれぞれ<code>flex-grow: .25</code>をとる場合）、それらはリクエストした分だけの余白を正確に受け取る（それぞれが25%の余白を受け取り、残りの25%はunfilledの状態で残る）。余白がどのように割り当てられるかについて詳細は<a href="https://www.w3.org/TR/css-flexbox-1/#resolve-flexible-lengths" target="_blank" rel="noopener">§9.7 Resolving Flexible Lengths</a>を参照。</p>
+<blockquote>
+<p>This pattern is required for continuous behavior as flex-grow approaches zero (which means the item wants none of the free space). Without this, a flex-grow: 1 item would take all of the free space; but so would a flex-grow: 0.1 item, and a flex-grow: 0.01 item, etc., until finally the value is small enough to underflow to zero and the item suddenly takes up none of the free space. With this behavior, the item instead gradually takes less of the free space as flex-grow shrinks below 1, smoothly transitioning to taking none of the free space at zero.</p>
+</blockquote>
+<p>このパターンはflex-growがゼロ（つまりitemsが余白のスペースを一切必要としない状態）に近づいていくときに連続した振る舞いをするために必要となる。このパターンがないと、<code>flex-grow: 1</code>のitemは余白のスペースの全てを使用し、<code>flex-grow: 0.1</code>の場合も同じように全て使用し、<code>flex-grow: 0.01</code>の場合も同様になり、最終的に値がゼロへアンダーフロー（下位桁あふれ）するまで同様になり、そしてitemは突然余白スペースを全く使用しなくなる。この振る舞いがあると、itemはflex-growが1未満に縮小するにつれ、余白スペースが徐々に利用されなくなり、値がゼロで余白スペースを一切使わない状態にスムーズに移行される。</p>
+<blockquote>
+<p>Unless this “partial fill” behavior is specifically what’s desired, authors should stick to values ≥ 1; for example, using 1 and 2 is usually better than using .33 and .67, as they’re more likely to behave as intended if items are added, removed, or line-wrapped.</p>
+</blockquote>
+<p>この「partial fill」という振る舞いが特に望んでいる振る舞いではない限り、制作者は1以上の値を固守すべきである。たとえば、値に1と2を使うことは、.33と.67を利用するより良い。なぜならitemsが追加・削除・行折り返しをした場合に、おそらくより意図した通りに振舞うと思われるからである。</p>
+<blockquote>
+<p><strong>&lt;‘flex-shrink’&gt;</strong><br>This &lt;number&gt; component sets flex-shrink longhand and specifies the flex shrink factor, which determines how much the flex item will shrink relative to the rest of the flex items in the flex container when negative free space is distributed. When omitted, it is set to 1.</p>
+</blockquote>
+<p><code>flex-shrink</code>はflex-shrinkロングハンドの値で<strong>flex shrink factor</strong>を指定する。これは、負の余白スペースが配分された場合に、flex itemがflex containerの他のitemsに対して相対的にどの程度縮小するかを決定する。省略された場合、<code>1</code>がセットされる。</p>
+<blockquote>
+<p><strong>Note:</strong> The flex shrink factor is multiplied by the flex base size when distributing negative space. This distributes negative space in proportion to how much the item is able to shrink, so that e.g. a small item won’t shrink to zero before a larger item has been noticeably reduced.</p>
+</blockquote>
+<p>負のスペースが配分されたとき、flex shrink factorはflex base size によって乗算される。これはitemがどのくらい縮小できるかに応じて負のスペースを配分することになるので、たとえば、大きなitemが著しく減少するまで、小さなitemがゼロに縮小されることはない。</p>
+<blockquote>
+<p><strong>&lt;‘flex-basis’&gt;</strong><br>This component sets the flex-basis longhand, which specifies the flex basis: the initial main size of the flex item, before free space is distributed according to the flex factors.</p>
+<p>&lt;‘flex-basis’&gt; accepts the same values as the width and height properties (except that auto is treated differently) plus the content keyword:</p>
+</blockquote>
+<p><code>flex-basis</code>はflex-basisロングハンドの値で<strong>flex basis</strong>を指定する。これはflex factorsにしたがって余白スペースが配分される前のflex itemのmain sizeの初期値である。</p>
+<p><code>flex-basis</code>はwidthやheightプロパティと同じ値を受け付ける（autoの扱い方は異なる）。さらに<code>content</code>キーワードが利用できる。</p>
+<blockquote>
+<p><strong>auto</strong><br>When specified on a flex item, the auto keyword retrieves the value of the main size property as the used flex-basis. If that value is itself auto, then the used value is content.</p>
+</blockquote>
+<p>flex itemで指定された場合、<code>auto</code>キーワードは使用flex-basisとしてmain sizeプロパティの値を使用する。もしその値もautoであった場合、使用する値は<code>content</code>になる</p>
+<blockquote>
+<p><strong>content</strong><br>Indicates an automatic size based on the flex item’s content. (It is typically equivalent to the max-content size, but with adjustments to handle aspect ratios, intrinsic sizing constraints, and orthogonal flows; see details in <a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">§9 Flex Layout Algorithm</a>.)</p>
+</blockquote>
+<p>flex itemのコンテンツを基に自動サイズを示す。（それはたいていmax-contentサイズと同じであるが、アスペクト比、intrinsic sizingの制約、直交するフローなどを処理するための調整がなされる。詳細は<a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">§9 Flex Layout Algorithm</a>を参照）</p>
+<blockquote>
+<p>Note: This value was not present in the initial release of Flexible Box Layout, and thus some older implementations will not support it. The equivalent effect can be achieved by using auto together with a main size (width or height) of auto.</p>
+</blockquote>
+<p>注意：この値はFlexible Box Layoutの最初のリリースでは存在しなかった。そのため、いくつかの古い実装ではサポートされていないだろう。autoキーワードと、autoのmain size（widthまたはheight）を一緒に使うことによって同等の効果を得ることができる。</p>
+<blockquote>
+<p><strong>&lt;‘width’&gt;</strong><br>For all other values, flex-basis is resolved the same way as for width and height.<br>When omitted from the flex shorthand, its specified value is 0.</p>
+</blockquote>
+<p>（auto, content以外の）他のすべての値に対して、flex-basisはwidthやheightと同じ方法で解決する。flexショートハンドから値が省略された場合、値は<code>0</code>が指定される。</p>
+<hr>
+<blockquote>
+<p><strong>none</strong><br>The keyword none expands to 0 0 auto.</p>
+</blockquote>
+<p>flexショートハンドに<code>none</code>が指定された場合、値は<code>0 0 auto</code>として展開される。</p>
+<p>つまり<code>none</code>の場合、flex itemの初期値はautoで決まり、余白スペースに対して縮小も伸長もしない。</p>
+<blockquote>
+<img src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg">
+
+<p><strong>Figure 7</strong> A diagram showing the difference between “absolute” flex (starting from a basis of zero) and “relative” flex (starting from a basis of the item’s content size). The three items have flex factors of 1, 1, and 2, respectively: notice that the item with a flex factor of 2 grows twice as fast as the others.</p>
+</blockquote>
+<p>上の図は「絶対」flex（flex-basisが0）と「相対」flex（flex-basisがauto（コンテンツを基にする））との違いを表している。3つのitemsはそれぞれ1, 1, 2というflex factorsを持っている。2のflex factorを持つitemが他と比べて2倍の速度で成長する。</p>
+<blockquote>
+<p>The initial values of the flex components are equivalent to flex: 0 1 auto.</p>
+<p><strong>Note:</strong> The initial values of flex-grow and flex-basis are different from their defaults when omitted in the flex shorthand. This is so that the flex shorthand can better accommodate the most common cases.</p>
+<p>A unitless zero that is not already preceded by two flex factors must be interpreted as a flex factor. To avoid misinterpretation or invalid declarations, authors must specify a zero &lt;‘flex-basis’&gt; component with a unit or precede it by two flex factors.</p>
+</blockquote>
+<p>flex componentsの初期値は <code>0 1 auto</code> になる。</p>
+<p>注意：flex-growとflex-basisの初期値は、flexショートハンドで省略された場合のデフォルト値と異なる。これはflexショートハンドが多くのよくあるケースにより良く対応できるようにするためである。</p>
+<p>2つのflex factors（glowとshrink）が前にない場合の単位表記なしの<code>0</code>はflex factorとして解釈されなければならない。解釈ミスや不正な言言になるのを避けるためには、制作者は<code>flex-basis</code>に単位表記（pxとか）を0につけるか、2つのflex factorsを前に指定しなければならない。</p>
+<h4 id="7-1-1-Basic-Values-of-flex"><a href="#7-1-1-Basic-Values-of-flex" class="headerlink" title="7.1.1. Basic Values of flex"></a>7.1.1. Basic Values of flex</h4><blockquote>
+<p>This section is informative.<br>The list below summarizes the effects of the four flex values that represent most commonly-desired effects:</p>
+</blockquote>
+<p>以下のリストは、よくある期待される効果を表す4つのflexの値の効果をまとめたものである。</p>
+<blockquote>
+<p><strong>flex: initial</strong><br>Equivalent to flex: 0 1 auto. (This is the initial value.) Sizes the item based on the width/height properties. (If the item’s main size property computes to auto, this will size the flex item based on its contents.) Makes the flex item inflexible when there is positive free space, but allows it to shrink to its minimum size when there is insufficient space. The alignment abilities or auto margins can be used to align flex items along the main axis.</p>
+</blockquote>
+<p><code>flex: 0 1 auto</code> と同じ（初期値）。width/heightを基にitemのサイズを変更する。（もしmain sizeプロパティがautoとなる場合、flex itemはコンテンツをベースに計算される。）flex itemは正の余白スペースがあれば柔軟性がなくなり、十分なスペースがない場合、itemの最小サイズまで縮小する。alignmentまたはauto marginsを使って、main axisに沿ってflex itemsを揃えることができる。</p>
+<blockquote>
+<p><strong>flex: auto</strong><br>Equivalent to flex: 1 1 auto. Sizes the item based on the width/height properties, but makes them fully flexible, so that they absorb any free space along the main axis. If all items are either flex: auto, flex: initial, or flex: none, any positive free space after the items have been sized will be distributed evenly to the items with flex: auto.</p>
+</blockquote>
+<p><code>flex: 1 1 auto</code>と同じ。width/heightを基にitemのサイズを変更するが、itemは完全に柔軟であり、main axisに沿って余白スペースを吸収する。もしすべてのitemsが<code>flex:auto</code>,<code>flex:initial</code>,<code>flex:none</code> のいずれかの場合、itemsのサイズ変更後のどの正の余白スペースも、<code>flex:auto</code>がついているitemsに均等に配分される。</p>
+<blockquote>
+<p><strong>flex: none</strong><br>Equivalent to flex: 0 0 auto. This value sizes the item according to the width/height properties, but makes the flex item fully inflexible. This is similar to initial, except that flex items are not allowed to shrink, even in overflow situations.</p>
+</blockquote>
+<p><code>flex: 0 0 auto</code>と同じ。この値では、width/heightにしたがってitemのサイズを変更するが、itemは柔軟性がない。<code>initlal</code>と似ているが、flex itemsがオーバーフローするような状況でも縮小するのを許可しない。</p>
+<blockquote>
+<p><strong>flex: &lt;positive-number&gt;</strong><br>Equivalent to flex: &lt;positive-number&gt; 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.</p>
+</blockquote>
+<p><code>flex: &lt;positive-number&gt; 1 0</code>と同じ。itemは柔軟になり、flex basisは0にセットされ、itemはflex containerの余白スペースの指定した割合を受け取る。もしflex container内の全てのitemsがこのパターンを使っている場合、それらのサイズは指定されたflex factorに比例する。</p>
+<blockquote>
+<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See <a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto" target="_blank" rel="noopener">§4.5 Automatic Minimum Size of Flex Items.</a>)</p>
+</blockquote>
+<p>デフォルトでは、flex itemsはminimum content size（一番長い単語の長さか、固定サイズの要素）よりも縮小しない。この動作を変更するには、min-widthかmin-heightを設定する。（ <a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto" target="_blank" rel="noopener">§4.5 Automatic Minimum Size of Flex Items.</a>参照）</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>

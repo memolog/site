@@ -347,15 +347,15 @@
   }
   </script>
 
-  <meta name="description" content="matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install –save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsでgrunt.loadNpmTasksを使ってタスクのloadをする必要があります。">
+  <meta name="description" content="matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install --save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsでgrunt.loadNpmTasksを使ってタスクのloadをする必要があります。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="matchdepを使ってgrunt.loadNpmTasksする">
 <meta property="og:url" content="https://memolog.org/2013/05/grunt_loadnpmtasks_with_matchdep.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install –save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsでgrunt.loadNpmTasksを使ってタスクのloadをする必要があります。">
+<meta property="og:description" content="matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install --save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsでgrunt.loadNpmTasksを使ってタスクのloadをする必要があります。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2013-05-05T20:38:00.000Z">
-<meta property="article:modified_time" content="2019-01-04T02:09:12.867Z">
+<meta property="article:modified_time" content="2020-06-18T02:13:03.707Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta property="article:tag" content="grunt">
 <meta name="twitter:card" content="summary">
@@ -374,7 +374,7 @@
       "headline": "matchdepを使ってgrunt.loadNpmTasksする",
       
       "datePublished": "1367786280000",
-      "dateModified": "1546567752867",
+      "dateModified": "1592446383707",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -387,7 +387,7 @@
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install –save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsでgrunt.loadNpmTasksを使ってタスクのloadをする必要があります。"
+      "description": "matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install --save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsでgrunt.loadNpmTasksを使ってタスクのloadをする必要があります。"
     }
   </script>
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
@@ -415,22 +415,22 @@
           <h2 class="header__title"><span>matchdepを使ってgrunt.loadNpmTasksする</span></h2>
           
         </header>
-        <div id="article-content" class="content "><p>matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。npm install –save-dev でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsで<a href="http://gruntjs.com/api/grunt#grunt.loadnpmtasks" target="_blank" rel="noopener">grunt.loadNpmTasks</a>を使ってタスクのloadをする必要があります。</p>
+        <div id="article-content" class="content "><p>matchdepを使用してgrunt.loadNpmTasksを毎回記述しないで済むようにするという話。<code>npm install --save-dev</code> でインストールしたgrunt pluginをGruntで使用する場合、Gruntfile.jsで<a href="http://gruntjs.com/api/grunt#grunt.loadnpmtasks" target="_blank" rel="noopener">grunt.loadNpmTasks</a>を使ってタスクのloadをする必要があります。</p>
 <a id="more"></a>
 
 <p>しかし、grunt pluginを追加するたびにgrunt.loadNpmTasksをGruntfileに追加するのはわずらわしいし、お試しで追加したpluginとか使わなくなったpluginを削除するときにloadNpmTasksをいちいち除かないといけないのもまた面倒くさい。</p>
 <p>ので、<a href="https://npmjs.org/package/matchdep" target="_blank" rel="noopener">matchdep</a>を使用する。matchdepについては<a href="http://nantokaworks.com/?p=955" target="_blank" rel="noopener">matchdepを使ってGrunt.jsのプラグインを自動ロードする | Re* Programming</a>で簡潔に解説されています。</p>
-<pre><code>require(&#39;matchdep&#39;).filterDev(&#39;grunt-*&#39;).forEach(grunt.loadNpmTasks);
-</code></pre><p>上記のように設定すると、package.jsonのdevDependenciesから、マッチングした対象の名前を返してくれます。そしてforEachでgrunt.loadNpmTasksに渡すと。devDependenciesにgrunt pluginを追加すれば、loadNpmTasksをGruntfileに記述しなくても、taskをloadしてくれるようになります。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'matchdep'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filterDev</span><span class="token punctuation">(</span><span class="token string">'grunt-*'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>grunt<span class="token punctuation">.</span>loadNpmTasks<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上記のように設定すると、package.jsonのdevDependenciesから、マッチングした対象の名前を返してくれます。そしてforEachでgrunt.loadNpmTasksに渡すと。devDependenciesにgrunt pluginを追加すれば、loadNpmTasksをGruntfileに記述しなくても、taskをloadしてくれるようになります。</p>
 <p>ただ、<a href="https://github.com/jsoverson/grunt-template-jasmine-requirejs" target="_blank" rel="noopener">grunt-template-jasmine-requirejs</a>のように、taskのないgrunt pluginをインストールしていると、</p>
-<pre><code>&gt;&gt; Local Npm module &quot;grunt-template-jasmine-requirejs&quot; not found. Is it installed?
-</code></pre><p>というwarningが発生するので、個人的には</p>
-<pre><code>require(&#39;matchdep&#39;).filterDev(&#39;grunt-*&#39;).forEach(function (name) {
-  if (!/template/.test(name)) {
-    grunt.loadNpmTasks(name);
-  }
-});
-</code></pre><p>という感じで、名前にtemplateがある場合は、taskはないだろうということにして、loadNpmTasksの対象から外すようにしています。もっと良い方法があるかもしれませんけど、今のところはこれで。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">>></span> Local Npm module <span class="token string">"grunt-template-jasmine-requirejs"</span> not found. Is it installed?<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>というwarningが発生するので、個人的には</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'matchdep'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filterDev</span><span class="token punctuation">(</span><span class="token string">'grunt-*'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token regex">/template/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    grunt<span class="token punctuation">.</span><span class="token function">loadNpmTasks</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>という感じで、名前にtemplateがある場合は、taskはないだろうということにして、loadNpmTasksの対象から外すようにしています。もっと良い方法があるかもしれませんけど、今のところはこれで。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">
