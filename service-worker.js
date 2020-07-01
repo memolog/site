@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1593479333021';
+const CACHE_MAIN = 'main1593565169133';
 const precacheList = [
   
   '/',
+  '/2020/components-of-flexibility.html',
   '/2020/flex-shorthand.html',
   '/2020/flex-lines.html',
   '/2020/flex-order-property.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/automatic-minimum-size-of-flex-items.html',
   '/2020/flex-collpased-items.html',
   '/2020/flex-item-margin-padding-and-z-ordering.html',
-  '/2020/absolutely-positioned-flex-children.html',
+  '/assets/images/700244ansdl/700244ansdl.svg',
   '/assets/images/steve-douglas-80Pr_AfC71Y-unsplash/steve-douglas-80Pr_AfC71Y-unsplash.svg',
   '/assets/images/alex-chernenko-To28QYvt5q4-unsplash/alex-chernenko-To28QYvt5q4-unsplash.svg',
   '/assets/images/estudio-bloom-ezqnxsqUZ80-unsplash/estudio-bloom-ezqnxsqUZ80-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/febiyan-z85gD0sTOQ0-unsplash/febiyan-z85gD0sTOQ0-unsplash.svg',
   '/assets/images/nong-vang-w5tI4WACAKo-unsplash/nong-vang-w5tI4WACAKo-unsplash.svg',
   '/assets/images/marc-klemm-rXDoLi1nqJo-unsplash/marc-klemm-rXDoLi1nqJo-unsplash.svg',
-  '/assets/images/patrick-schneider-8bPJ0vagphw-unsplash/patrick-schneider-8bPJ0vagphw-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
   '/js/lazysizes/lazysizes.min.js',

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <title>Flex Item Margin, Padding and Z-Ordering | メモログ</title>
+  <title>Components of Flexibility | メモログ</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
@@ -347,39 +347,39 @@
   }
   </script>
 
-  <meta name="description" content="今回は4.2. Flex Item Margins and Paddingsと4.3. Flex Item Z-Orderingについて">
+  <meta name="description" content="7.2. Components of Flexibilityについて。各ロングハンドの説明はflex ショートハンドの方に書かれていて、ここには載ってない。今回は読み飛ばして良い感じの内容になってる。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flex Item Margin, Padding and Z-Ordering">
-<meta property="og:url" content="https://memolog.org/2020/flex-item-margin-padding-and-z-ordering.html">
+<meta property="og:title" content="Components of Flexibility">
+<meta property="og:url" content="https://memolog.org/2020/components-of-flexibility.html">
 <meta property="og:site_name" content="メモログ">
-<meta property="og:description" content="今回は4.2. Flex Item Margins and Paddingsと4.3. Flex Item Z-Orderingについて">
+<meta property="og:description" content="7.2. Components of Flexibilityについて。各ロングハンドの説明はflex ショートハンドの方に書かれていて、ここには載ってない。今回は読み飛ばして良い感じの内容になってる。">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://memolog.org/assets/images/marc-klemm-rXDoLi1nqJo-unsplash/marc-klemm-rXDoLi1nqJo-unsplash.jpg">
-<meta property="article:published_time" content="2020-04-04T10:27:59.000Z">
-<meta property="article:modified_time" content="2020-04-05T09:14:23.535Z">
+<meta property="og:image" content="https://memolog.org/assets/images/700244ansdl/700244ansdl.jpg">
+<meta property="article:published_time" content="2020-06-30T23:53:54.000Z">
+<meta property="article:modified_time" content="2020-07-01T00:59:29.133Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://memolog.org/assets/images/marc-klemm-rXDoLi1nqJo-unsplash/marc-klemm-rXDoLi1nqJo-unsplash.jpg">
+<meta name="twitter:image" content="https://memolog.org/assets/images/700244ansdl/700244ansdl.jpg">
 <meta name="twitter:creator" content="@memolog">
 <meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
 <meta property="fb:app_id" content="168245123786587">
-  <link rel="canonical" href="https://memolog.org/2020/flex-item-margin-padding-and-z-ordering.html">
+  <link rel="canonical" href="https://memolog.org/2020/components-of-flexibility.html">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://memolog.org/2020/flex-item-margin-padding-and-z-ordering.html"
+        "@id": "https://memolog.org/2020/components-of-flexibility.html"
       },
-      "headline": "Flex Item Margin, Padding and Z-Ordering",
+      "headline": "Components of Flexibility",
       
         "image": [
-          "https://memolog.org/assets/images/marc-klemm-rXDoLi1nqJo-unsplash/marc-klemm-rXDoLi1nqJo-unsplash.jpg"
+          "https://memolog.org/assets/images/700244ansdl/700244ansdl.jpg"
         ],
       
-      "datePublished": "1585996079000",
-      "dateModified": "1586078063535",
+      "datePublished": "1593561234000",
+      "dateModified": "1593565169133",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -392,7 +392,7 @@
           "url": "https://memolog.org/assets/icons/icon-1024.png"
         }
       },
-      "description": "今回は4.2. Flex Item Margins and Paddingsと4.3. Flex Item Z-Orderingについて"
+      "description": "7.2. Components of Flexibilityについて。各ロングハンドの説明はflex ショートハンドの方に書かれていて、ここには載ってない。今回は読み飛ばして良い感じの内容になってる。"
     }
   </script>
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
@@ -413,47 +413,198 @@
       <article>
         <header class="header">
           <div>
-            <time datetime="2020-04-04T10:27:59.000Z">
-              <span class="calendar-icon">📅</span><span>2020年4月4日</span>
+            <time datetime="2020-06-30T23:53:54.000Z">
+              <span class="calendar-icon">📅</span><span>2020年7月1日</span>
             </time>
           </div>
-          <h2 class="header__title"><span>Flex Item Margin, Padding and Z-Ordering</span></h2>
+          <h2 class="header__title"><span>Components of Flexibility</span></h2>
           
             <div class="header__feature" aria-hidden="true">
   <div class="featured__image">
     
       
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM5ZDlmYTIiIC8+PC9zdmc+" data-src="/assets/images/marc-klemm-rXDoLi1nqJo-unsplash/marc-klemm-rXDoLi1nqJo-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjcyOCIgaGVpZ2h0PSIxMDI0Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNzI4IiBoZWlnaHQ9IjEwMjQiIGZpbGw9IiNhNGFmYTIiIC8+PC9zdmc+" data-src="/assets/images/700244ansdl/700244ansdl.svg" class="lazyload blur-up" alt="" role="presentation" />
       
     
   </div>
   
     
-      <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@marcklemm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Marc Klemm</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
     
+      <div class="featured__credit">Original Photo from <a href="https://artvee.com/dl/papillons-pl-13/" target="_blank" rel="noopener">Emile-Allain Séguy</a> on <a href="https://artvee.com" target="_blank" rel="noopener"></a>Artvee</a></div>
     
   
 </div>
 
           
         </header>
-        <div id="article-content" class="content "><p>今回は<a href="https://www.w3.org/TR/css-flexbox-1/#item-margins" target="_blank" rel="noopener">4.2. Flex Item Margins and Paddings</a>と<a href="https://www.w3.org/TR/css-flexbox-1/#painting" target="_blank" rel="noopener">4.3. Flex Item Z-Ordering</a>について<a id="more"></a></p>
+        <div id="article-content" class="content "><p><a href="https://www.w3.org/TR/css-flexbox-1/#flex-components" target="_blank" rel="noopener">7.2. Components of Flexibility</a>について。各ロングハンドの説明は<a href="https://memolog.org/2020/flex-shorthand.html">flex ショートハンド</a>の方に書かれていて、ここには載ってない。今回は読み飛ばして良い感じの内容になってる。</p>
+<a id="more"></a>
+
 <blockquote>
-<p><strong>4.2. Flex Item Margins and Paddings</strong></p>
-<p>The margins of adjacent flex items do not collapse.</p>
-<p>Percentage margins and paddings on flex items, like those on block boxes, are resolved against the inline size of their containing block, e.g. left/right/top/bottom percentages all resolve against their containing block’s width in horizontal writing modes.</p>
-<p>Auto margins expand to absorb extra space in the corresponding dimension. They can be used for alignment, or to push adjacent flex items apart. See <a href="https://www.w3.org/TR/css-flexbox-1/#auto-margins" target="_blank" rel="noopener">Aligning with auto margins</a>.</p>
+<p>Individual components of flexibility can be controlled by independent longhand properties.</p>
 </blockquote>
-<p>隣接するflex itemsのマージンは相殺されない。</p>
-<p>flex itemsのmarginとpaddingのパーセントは、ブロックのboxと同じように、containing blockのインラインのサイズに対して解決される。たとえば、left/right/top/bottomのパーセントはすべてhorizontal writing modeにおけるcontaining blockのwidthに対して解決される。</p>
-<p>auto marginsは、対応する次元の中で余分なスペースを吸収するように広がる。それらはalignmentのために利用されるか、隣接するflex itemsを話すために利用される。</p>
+<p>個々のflexibilityの組み合わせは、独立したロングハンドプロパティによって制御される。</p>
 <blockquote>
-<p><strong>4.3. Flex Item Z-Ordering</strong></p>
-<p>Flex items paint exactly the same as inline blocks [CSS21], except that order-modified document order is used in place of raw document order, and z-index values other than auto create a stacking context even if position is static (behaving exactly as if position were relative).</p>
-<p><strong>Note</strong>: Descendants that are positioned outside a flex item still participate in any stacking context established by the flex item.</p>
+<p><strong>Authors are encouraged to control flexibility using the flex shorthand rather than with its longhand properties directly, as the shorthand correctly resets any unspecified components to accommodate common uses.</strong></p>
 </blockquote>
-<p>Flex itemはインラインブロックと同じように描画されるが、orderが修正されているドキュメントの並び順は生のドキュメントの並び順の代わりに使われる。また、たとえ配置がstaticであっても、auto以外のz-indexの値は自動的にstacking contextを作成する（まるで配置がrelativeであるかのように振舞う）。</p>
-<p>flex itemの外側に配置された子孫は、そのflex itemによって構築されたすべてのstacking contextに参加する。</p>
+<p>ショートハンドは一般的な使用法に対応するために不特定のコンポーネントを正しくリセットするので、制作者はflexibilityを制御するのにロングハンドプロパティよりもショートハンドを利用することを推奨する。</p>
+<h3 id="7-2-1-The-flex-grow-property"><a href="#7-2-1-The-flex-grow-property" class="headerlink" title="7.2.1. The flex-grow property"></a>7.2.1. The flex-grow property</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>flex-grow</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>&lt;number&gt;</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex items</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified number</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>by computed value type</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Authors are encouraged to control flexibility using the flex shorthand rather than with flex-grow directly, as the shorthand correctly resets any unspecified components to accommodate common uses.</strong></p>
+</blockquote>
+<blockquote>
+<p>The flex-grow property sets the flex grow factor to the provided &lt;number&gt;. Negative numbers are invalid.</p>
+</blockquote>
+<p>flex-growプロパティは&lt;number&gt;を渡して、flex grow factorをセットする。負の数値はinvalidになる。</p>
+<h3 id="7-2-2-The-flex-shrink-property"><a href="#7-2-2-The-flex-shrink-property" class="headerlink" title="7.2.2. The flex-shrink property"></a>7.2.2. The flex-shrink property</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>flex-shrink</td>
+</tr>
+<tr>
+<td>Value</td>
+<td><number></td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex items</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified value</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>number</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Authors are encouraged to control flexibility using the flex shorthand rather than with flex-shrink directly, as the shorthand correctly resets any unspecified components to accommodate common uses.</strong></p>
+</blockquote>
+<blockquote>
+<p>The flex-shrink property sets the flex shrink factor to the provided &lt;number&gt;. Negative numbers are invalid.</p>
+</blockquote>
+<p>flex-shrinkプロパティは&lt;number&gt;を渡して、flex shrink factorをセットする。負の値はinvalidになる。</p>
+<h3 id="7-2-3-The-flex-basis-property"><a href="#7-2-3-The-flex-basis-property" class="headerlink" title="7.2.3. The flex-basis property"></a>7.2.3. The flex-basis property</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>flex-basis</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>content</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex items</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>relative to the flex container’s inner main size</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified keyword or a computed &lt;length-percentage&gt; value</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>by computed value type</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Authors are encouraged to control flexibility using the flex shorthand rather than with flex-basis directly, as the shorthand correctly resets any unspecified components to accommodate common uses.</strong></p>
+</blockquote>
+<blockquote>
+<p>The flex-basis property sets the flex basis. It accepts the same values as the width and height property, plus content.</p>
+</blockquote>
+<p>flex-basisプロパティはflex basisをセットする。widthとheightと同じ値、それとcontentキーワードを使うことができる。</p>
+<blockquote>
+<p>For all values other than auto and content (defined above), flex-basis is resolved the same way as width in horizontal writing modes [CSS21], except that if a value would resolve to auto for width, it instead resolves to content for flex-basis. For example, percentage values of flex-basis are resolved against the flex item’s containing block (i.e. its flex container); and if that containing block’s size is indefinite, the used value for flex-basis is content. As another corollary, flex-basis determines the size of the content box, unless otherwise specified such as by box-sizing [CSS3UI].</p>
+</blockquote>
+<p>autoとcontent以外の全ての値に対して、flex-basisはhorizontal writing modeにおけるwidthと同じ方法で解決する。例外として、もしwidthがautoの場合に、値を解決する場合、代わりにflex-basisのcontentで値を解決する。例えば、flex-basisをパーセンテージで指定している場合、flex itemの包含ブロック（例えばflex container）に対して解決される。そして、もし包含ブロックのサイズが不定の場合、そのflex-basisの使用値はcontentになる。別の結果として、flex-basisは、box-sizingなどによって他で指定されていない限り、content boxのサイズを決定する。</p>
 </div>
         <footer class="profile">
   <div class="profile-inner">
