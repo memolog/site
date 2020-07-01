@@ -6,7 +6,7 @@
     "version": "4.2.0"
   },
   "scripts": {
-    "pb": "primitive_bulk -i ~/Downloads/$DIRNAME.jpg -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg",
+    "pb": "primitive_bulk -i ~/Downloads/$DIRNAME.jpg -d ./source/assets/images/$DIRNAME --output $DIRNAME --format jpg,svg -m $MODE",
     "update-package": "./node_modules/.bin/npm-check-updates -u"
   },
   "dependencies": {
