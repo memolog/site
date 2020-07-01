@@ -4,7 +4,7 @@ featured:
   image: 700244ansdl
   author: Emile-Allain Séguy
   authorLink: https://artvee.com/dl/papillons-pl-13/
-date: 2020-07-01 08:53:54
+date: 2020-07-01 17:46:00
 ---
 [7.2. Components of Flexibility](https://www.w3.org/TR/css-flexbox-1/#flex-components)について。各ロングハンドの説明は[flex ショートハンド](https://memolog.org/2020/flex-shorthand.html)の方に書かれていて、ここには載ってない。今回は読み飛ばして良い感じの内容になってる。
 <!-- more -->
