@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Flex Alignment | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="今回は8. Alignmentについて。長いけど一気に。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex Alignment">
+<meta property="og:url" content="https://memolog.org/2020/flex-alignment.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="今回は8. Alignmentについて。長いけど一気に。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/600484slsdl/600484slsdl.jpg">
+<meta property="article:published_time" content="2020-07-18T02:52:00.000Z">
+<meta property="article:modified_time" content="2020-07-18T02:52:56.340Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/600484slsdl/600484slsdl.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/flex-alignment.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/flex-alignment.html"
+      },
+      "headline": "Flex Alignment",
+      
+        "image": [
+          "https://memolog.org/assets/images/600484slsdl/600484slsdl.jpg"
+        ],
+      
+      "datePublished": "1595040720000",
+      "dateModified": "1595040776340",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "今回は8. Alignmentについて。長いけど一気に。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-07-18T02:52:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年7月18日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Flex Alignment</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjgxNiIgaGVpZ2h0PSIxMDI0Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iODE2IiBoZWlnaHQ9IjEwMjQiIGZpbGw9IiM4YTYwM2IiIC8+PC9zdmc+" data-src="/assets/images/600484slsdl/600484slsdl.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    
+    
+      <div class="featured__credit">Original Photo from <a href="https://artvee.com/dl/red-basket-of-zinnias/" target="_blank" rel="noopener">William James Glackens</a> on <a href="https://artvee.com" target="_blank" rel="noopener"></a><a href="https://artvee.com/" target="_blank" rel="noopener">Artvee</a></div>
+    
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>今回は<a href="https://www.w3.org/TR/css-flexbox-1/#alignment" target="_blank" rel="noopener">8. Alignment</a>について。長いけど一気に。<a id="more"></a></p>
+<blockquote>
+<p>After a flex container’s contents have finished their flexing and the dimensions of all flex items are finalized, they can then be aligned within the flex container.</p>
+<p>The margin properties can be used to align items in a manner similar to, but more powerful than, what margins can do in block layout. Flex items also respect the alignment properties from CSS Box Alignment, which allow easy keyword-based alignment of items in both the main axis and cross axis. These properties make many common types of alignment trivial, including some things that were very difficult in CSS 2.1, like horizontal and vertical centering.</p>
+</blockquote>
+<p>flex containerのコンテンツがflexingを完了して、すべてのflex itemsの寸法が確定したら、flex containerの中で整列できるようになる。</p>
+<p>マージンを使うことで、マージンがブロックレイアウトでするのと同じような手法で、しかしよりパワフルにitemsを整列することができる。Flex itemsは、main axis内とcross axis内のitemsでキーワードベースの整列を簡単にできるようにするために、<a href="https://www.w3.org/TR/css3-align/" target="_blank" rel="noopener">CSS Box Alignment</a>からのalignmentプロパティにも配慮する。これらのプロパティにより多くのよくあるタイプのalignmentを簡単にできるようにする。これにはCSS 2.1 ではとても難しかった水平と垂直方向の真ん中揃えなどが含まれる。</p>
+<blockquote>
+<p><strong>Note:</strong> While the alignment properties are defined in <a href="https://www.w3.org/TR/css3-align/" target="_blank" rel="noopener">CSS Box Alignment</a> <a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-align-3" target="_blank" rel="noopener">[CSS-ALIGN-3]</a>, Flexible Box Layout reproduces the definitions of the relevant ones here so as to not create a normative dependency that may slow down advancement of the spec. These properties apply only to flex layout until CSS Box Alignment Level 3 is finished and defines their effect for other layout modes. Additionally, any new values defined in the Box Alignment module will apply to Flexible Box Layout; in otherwords, the Box Alignment module, once completed, will supercede the definitions here.</p>
+</blockquote>
+<p>alignmentのプロパティは<a href="https://www.w3.org/TR/css3-align/" target="_blank" rel="noopener">CSS Box Alignment</a>で定義されている一方、Flexible Box Layoutでは、仕様の進展が遅くなるかもしれない標準的な依存関係を作らないように、関連する定義をここに複製している。これらのプロパティはCSS Box Alignment Level 3が完成して、他のレイアウトモードに対する効果が定義されるまで、flexレイアウトにのみ適用される。さらに、Box Alignmentモジュールで定義されているどの新しい値についても、Flexible Box Layoutに適用されるだろう。一方、Box Alignmentモジュールは、ひとたび完了したら、ここでの定義よりも優先される。</p>
+<h3 id="8-1-Aligning-with-auto-margins"><a href="#8-1-Aligning-with-auto-margins" class="headerlink" title="8.1. Aligning with auto margins"></a>8.1. Aligning with auto margins</h3><blockquote>
+<p>This section is non-normative. The normative definition of how margins affect flex items is in the <a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">Flex Layout Algorithm</a> section.</p>
+</blockquote>
+<p>このセクションは非規範的である。マージンがflex itemsにどのように影響を与えるかについての規範的な定義は<a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">Flex Layout Algorithm</a>のセクションの中にある。</p>
+<blockquote>
+<p>Auto margins on flex items have an effect very similar to auto margins in block flow:</p>
+</blockquote>
+<p>flex itemsにおけautoマージンは、ブロックフローにおけるautoマージンととても似ている。</p>
+<blockquote>
+<ul>
+<li>During calculations of flex bases and flexible lengths, auto margins are treated as 0.</li>
+<li>Prior to alignment via justify-content and align-self, any positive free space is distributed to auto margins in that dimension.</li>
+<li>Overflowing boxes ignore their auto margins and overflow in the end direction.</li>
+</ul>
+</blockquote>
+<ul>
+<li>flex basisとflexible lengthの計算中は、autoマージンは0として扱われる</li>
+<li><code>justify-content</code>と<code>align-self</code>経由でのalignmentが優先され、いずれの正の余白スペースもその次元の中のautoマージンに配分される。</li>
+<li>boxesのオーバーフローの処理はautoマージンを無視して、end方向に対してオーバーフローする。</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> If free space is distributed to auto margins, the alignment properties will have no effect in that dimension because the margins will have stolen all the free space left over after flexing.</p>
+</blockquote>
+<p>もし余白スペースがautoマージンに配分された場合、マージンはflexingした後に残っている余白スペースをすべて奪ってしまうから、その次元におけるalignmentプロパティは効果を持たなくなる。</p>
+<blockquote>
+<p><strong>EXAMPLE 11</strong><br>One use of auto margins in the main axis is to separate flex items into distinct “groups”. The following example shows how to use this to reproduce a common UI pattern - a single bar of actions with some aligned on the left and others aligned on the right.<br><img src="/assets/images/screen_flex_alignment_example_11.png" /></p>
+</blockquote>
+<p>main axisにおけるautoマージンの一つの使い方は、flex itemsを個別の「グループ」に分離することである。次の例はこのことを一般的なUIパターン（いくつかのアクションを左側に配置して、残りをを右側に配置するバー）を再現するのにどのように利用するかを示したものである。</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">nav > ul </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">nav > ul > <span class="token id">#login</span> </span><span class="token punctuation">{</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>/about</span><span class="token punctuation">></span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>/projects</span><span class="token punctuation">></span></span>Projects<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>/interact</span><span class="token punctuation">></span></span>Interact<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>login<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>/login</span><span class="token punctuation">></span></span>Login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>EXAMPLE 12</strong><br>The figure below illustrates the difference in cross-axis alignment in overflow situations between using auto margins and using the <a href="https://www.w3.org/TR/css-flexbox-1/#propdef-align-items" target="_blank" rel="noopener">alignment properties</a>.</p>
+</blockquote>
+<p>下の図はオーバーフローを起こしてる状況でのcross-axisのalignmentについて、autoマージンを利用することと<a href="https://www.w3.org/TR/css-flexbox-1/#propdef-align-items" target="_blank" rel="noopener">alignmentプロパティ</a>を利用することの違いを示したものである。</p>
+<blockquote>
+<img src="/assets/images/screen_flex_alignment_example_12.png" width="400" />
+
+<p><strong>Figure 9</strong><br>The items in the figure on the left are centered with margins, while those in the figure on the right are centered with <code>align-self</code>. If this column flex container was placed against the left edge of the page, the margin behavior would be more desirable, as the long item would be fully readable. In other circumstances, the true centering behavior might be better.</p>
+</blockquote>
+<p>左側の図のitemsはマージンによって中央揃えとなっている。右側の図のitemsは<code>align-self</code>によって中央揃えとなっている。もしこの列のflex containerがページの左端に対して配置されていた場合、長いitemが完全に読める状態になり、マージンの振る舞いはもっと期待通りになる。他の状況では、中央揃えの振る舞いはより良いかもしれない。</p>
+<h3 id="8-2-Axis-Alignment-the-justify-content-property"><a href="#8-2-Axis-Alignment-the-justify-content-property" class="headerlink" title="8.2. Axis Alignment: the justify-content property"></a>8.2. Axis Alignment: the justify-content property</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>justify-content</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>flex-start &#124; flex-end &#124; center &#124; space-between &#124; space-around</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>flex-start</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex containers</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified keyword</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>discrete</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>The justify-content property aligns flex items along the main axis of the current line of the flex container. This is done after any flexible lengths and any auto margins have been resolved. Typically it helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.</p>
+</blockquote>
+<p><code>justify-content</code>プロパティはflex itemsをflex containerの現在の行のmain axisに沿って整列させる。これはflexible lengthとautoマージンがすべて解決した後に行われる。たいていの場合それは、行にあるすべてのflex itemsがinflexible、またはflexibleだがそれの最大サイズに達しているような場合に、残った余白スペースを配分するのに役に立つ。また、それはitemsが行をオーバーフローする場合に、itemsの整列に対してある程度の制御を働かせる。</p>
+<p><strong>flex-start</strong></p>
+<blockquote>
+<p>Flex items are packed toward the start of the line. The main-start margin edge of the first flex item on the line is placed flush with the main-start edge of the line, and each subsequent flex item is placed flush with the preceding item.</p>
+</blockquote>
+<p>flex itemsは行の先頭に向かって詰められる。行上の最初のflex itemのmain-startのマージンの端は、行のmain-startの端と同じところから配置され、後続のflex itemはその前のitemと同じように配置される。</p>
+<p><strong>flex-end</strong></p>
+<blockquote>
+<p>Flex items are packed toward the end of the line. The main-end margin edge of the last flex item is placed flush with the main-end edge of the line, and each preceding flex item is placed flush with the subsequent item.</p>
+</blockquote>
+<p>flex itemsは行の最後に向かって積められる。最後のflex itemのmain-endマージンの端は、行のmain-endの端と同じところから配置され、一つ前のflex itemは後続のitemと同じように配置される。</p>
+<p><strong>center</strong></p>
+<blockquote>
+<p>Flex items are packed toward the center of the line. The flex items on the line are placed flush with each other and aligned in the center of the line, with equal amounts of space between the main-start edge of the line and the first item on the line and between the main-end edge of the line and the last item on the line. (If the leftover free-space is negative, the flex items will overflow equally in both directions.)</p>
+</blockquote>
+<p>flex itemsは行の中央に向かって詰められる。行上のflex itemsは、それぞれが同一平面上に配置され、行のmain-startの端と行の最初のitemとの間と、行のmain-edgeの端と行の最後のitemとの間に、同じ量のスペースを持ちつつ、行の中央に沿って整列する。（もし残りの余白が負の場合、flex itemsは両方の方向に対して同じ量だけオバーフローする）</p>
+<p><strong>space-between</strong></p>
+<blockquote>
+<p>Flex items are evenly distributed in the line. If the leftover free-space is negative or there is only a single flex item on the line, this value is identical to flex-start. Otherwise, the main-start margin edge of the first flex item on the line is placed flush with the main-start edge of the line, the main-end margin edge of the last flex item on the line is placed flush with the main-end edge of the line, and the remaining flex items on the line are distributed so that the spacing between any two adjacent items is the same.</p>
+</blockquote>
+<p>flex itemsは行内に等間隔で配置される。残りの余白スペースが負であるか、行上に一つのflex itemしかない場合、この値はflex-startと同じになる。それ以外では、行上の最初のflex itemのmain-startマージンの端は、行のmain-startの端から配置され、行上の最後のflex itemのmain-edgeマージンの端が行のmain-endの端の方から配置され、行上の残りのflex itemsは、隣り合うitemのスペースが同じになるように配分される。</p>
+<p><strong>space-around</strong></p>
+<blockquote>
+<p>Flex items are evenly distributed in the line, with half-size spaces on either end. If the leftover free-space is negative or there is only a single flex item on the line, this value is identical to center. Otherwise, the flex items on the line are distributed such that the spacing between any two adjacent flex items on the line is the same, and the spacing between the first/last flex items and the flex container edges is half the size of the spacing between flex items.</p>
+</blockquote>
+<p>flex itemsは行内に等間隔で配分され、両橋に半分のサイズのスペースが設けられる。残りの余白スペースが負であるか、行上に一つのflex itemしかない場合は、この値はcenterと同じになる。それ以外では、行上のflex itemsは、隣り合うflex itemsの間のスペースが同じで、かつ最初と最後のflex itemsとflex containerの端の間がflex itemsの間のスペースのサイズの半分になるように配分される。</p>
+<img src="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg" />
+
+<p>上の図は<code>justify-content</code>の5つのキーワードについて、flex container上の効果を3つの色付きitemを使って図示したもの。</p>
+<h3 id="8-3-Cross-axis-Alignment-the-align-items-and-align-self-properties"><a href="#8-3-Cross-axis-Alignment-the-align-items-and-align-self-properties" class="headerlink" title="8.3. Cross-axis Alignment: the align-items and align-self properties"></a>8.3. Cross-axis Alignment: the align-items and align-self properties</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>align-items</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>flex-start &#124; flex-end &#124; center &#124; baseline &#124; stretch</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>stretch</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex containers</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified keyword</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>discrete</td>
+</tr>
+</tbody></table>
+<br>
+
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>align-self</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>auto &#124; flex-start &#124; flex-end &#124; center &#124; baseline &#124; stretch</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>flex items</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified keyword</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>discrete</td>
+</tr>
+<tr>
+<td>Flex item</td>
+<td>discrete</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content but in the perpendicular direction. align-items sets the default alignment for all of the flex container’s items, including anonymous flex items. align-self allows this default alignment to be overridden for individual flex items. (For anonymous flex items, align-self always matches the value of align-items on their associated flex container.)</p>
+<p>If either of the flex item’s cross-axis margins are auto, align-self has no effect.</p>
+</blockquote>
+<p>flex itemsはflex containerの現在の行のcross axis方向に対して整列することができる。<code>justify-content</code>と同様であるが、直交方向に対して適用される。<code>align-items</code>はflex containerの匿名itemを含めたすべてのitemsに対して、デフォルトのalignmentを設定する。<code>align-self</code>は個々のflex itemsについてデフォルトのalignmentを上書きすることができる。（匿名のflex itemsに対しては、align-selfは常に関連するflex container上のalign-itemsの値と一致する）</p>
+<p>もしflex itemのcross-axisのマージンのいずれかがautoである場合、align-selfは効果を持たない。</p>
+<blockquote>
+<p>Values have the following meanings:</p>
+</blockquote>
+<p><strong>auto</strong></p>
+<blockquote>
+<p>Defers cross-axis alignment control to the value of align-items on the parent box. (This is the initial value of align-self.)</p>
+</blockquote>
+<p>cross-axis alignmentの制御を親のbox上のalign-itemsの値に委ねる。（これはalign-selfの初期値）</p>
+<p><strong>flex-start</strong></p>
+<blockquote>
+<p>The cross-start margin edge of the flex item is placed flush with the cross-start edge of the line.</p>
+</blockquote>
+<p>flex itemのcross-startマージンの端は、行のcross-startの端と同じところから配置される。</p>
+<p><strong>flex-end</strong></p>
+<blockquote>
+<p>The cross-end margin edge of the flex item is placed flush with the cross-end edge of the line.</p>
+</blockquote>
+<p>flex itemのcross-endマージンの端は、行のcross-endの端と同じところから配置される。</p>
+<p><strong>center</strong></p>
+<blockquote>
+<p>The flex item’s margin box is centered in the cross axis within the line. (If the cross size of the flex line is less than that of the flex item, it will overflow equally in both directions.)</p>
+</blockquote>
+<p>flex itemのマージンboxは、行内のcross axisに対して中央揃えとなる。（もしflex行のcross sizeがflex itemのそれより小さい場合、両方の方向に対して均等にオーバーフローする）</p>
+<p><strong>baseline</strong></p>
+<blockquote>
+<p>The flex item participates in baseline alignment: all participating flex items on the line are aligned such that their baselines align, and the item with the largest distance between its baseline and its cross-start margin edge is placed flush against the cross-start edge of the line. If the item does not have a baseline in the necessary axis, then one is <a href="https://www.w3.org/TR/css3-align/#synthesize-baseline" target="_blank" rel="noopener">synthesized</a> from the flex item’s border box.</p>
+</blockquote>
+<p>flex itemはbaseline alignmentに参加する。行上のすべての参加flex itemsはそれらのbaselineが揃うように整列し、baselineとcross-startマージンの端との間の距離が一番大きなitemは、行のcross-startの端と同じところから配置される。もしitemが必要なaxisに対してbaselineを持っていない場合、baselineはflex itemのborder boxから<a href="https://www.w3.org/TR/css3-align/#synthesize-baseline" target="_blank" rel="noopener">合成</a>される。</p>
+<p><strong>stretch</strong></p>
+<blockquote>
+<p>If the cross size property of the flex item computes to auto, and neither of the cross-axis margins are auto, the flex item is stretched. Its used value is the length necessary to make the cross size of the item’s margin box as close to the same size as the line as possible, while still respecting the constraints imposed by min-height/min-width/max-height/max-width.</p>
+<p><strong>Note:</strong> If the flex container’s height is constrained this value may cause the contents of the flex item to overflow the item.</p>
+<p>The cross-start margin edge of the flex item is placed flush with the cross-start edge of the line.</p>
+</blockquote>
+<p>もしflex itemのcross sizeプロパティがautoとなり、cross-axisの両方のマージンがどちらもautoではない場合、flex itemは伸長する。その使用値は、<br>min-height/min-width/max-height/max-widthによって課される制約を守りつつ、itemのマージンboxのcross sizeが、行と可能な限り同じサイズに近づくのに必要な長さになる。</p>
+<p>もしflex containerの高さが制限されている場合、この値によってflex itemのコンテンツがオバーフローするかもしれない。</p>
+<p>flex itemのcross-startマージンの端は、行のcross-startの端と同じところに配置される。</p>
+<img src="https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg" />
+
+<h3 id="8-4-Packing-Flex-Lines-the-align-content-property"><a href="#8-4-Packing-Flex-Lines-the-align-content-property" class="headerlink" title="8.4. Packing Flex Lines: the align-content property"></a>8.4. Packing Flex Lines: the align-content property</h3><table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>align-content</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>flex-start &#124; flex-end &#124; center &#124; space-between &#124; space-around &#124; stretch</td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>stretch</td>
+</tr>
+<tr>
+<td>Applies to</td>
+<td>multi-line flex containers</td>
+</tr>
+<tr>
+<td>Inherited</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Percentages</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Computed value</td>
+<td>specified keyword</td>
+</tr>
+<tr>
+<td>Canonical order</td>
+<td>per grammar</td>
+</tr>
+<tr>
+<td>Animation type</td>
+<td>discrete</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>The align-content property aligns a flex container’s lines within the flex container when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis. Note, this property has no effect on a <a href="https://www.w3.org/TR/css-flexbox-1/#single-line-flex-container" target="_blank" rel="noopener">single-line</a> flex container. Values have the following meanings:</p>
+</blockquote>
+<p><code>align-content</code>プロパティは、<code>justify-content</code>がmain-axis内で個々のitemsを整列するのと同じように、cross-axisに対して余分なスペースがある場合にflex container内でflex containerの行を整列する。このプロパティは<a href="https://www.w3.org/TR/css-flexbox-1/#single-line-flex-container" target="_blank" rel="noopener">1行だけのflex container</a>においては効果を持たない。</p>
+<p><strong>flex-start</strong></p>
+<blockquote>
+<p>Lines are packed toward the start of the flex container. The cross-start edge of the first line in the flex container is placed flush with the cross-start edge of the flex container, and each subsequent line is placed flush with the preceding line.</p>
+</blockquote>
+<p>行はflex containerのstart方向に詰められる。flex container内の最初の行のcross-startの端は、flex containerのcross-startの端と同じところに配置され、後続の行はその前の行に続いて配置される。</p>
+<p><strong>flex-end</strong></p>
+<blockquote>
+<p>Lines are packed toward the end of the flex container. The cross-end edge of the last line is placed flush with the cross-end edge of the flex container, and each preceding line is placed flush with the subsequent line.</p>
+</blockquote>
+<p>行はflex containerのend方向から詰められる。最後の行のcross-endの端はflex containerのcross-endの端と同じところに配置され、前の行は、後続の行に続いて配置される。</p>
+<p><strong>center</strong></p>
+<blockquote>
+<p>Lines are packed toward the center of the flex container. The lines in the flex container are placed flush with each other and aligned in the center of the flex container, with equal amounts of space between the cross-start content edge of the flex container and the first line in the flex container, and between the cross-end content edge of the flex container and the last line in the flex container. (If the leftover free-space is negative, the lines will overflow equally in both directions.)</p>
+</blockquote>
+<p>行はflex containerの中央から詰められる。flex containerの行は、それぞれ同一平面上に配置され、flex containerの真ん中で整列する。flex containerのcross-start contentの端とflex container内の最初の行との間と、flex containerのcross-end contentの端とflex container内の最後の行との間のスペースは同じになる。（もし残りの余白スペースが負の場合、行は両方の方向に対して均等にオーバーフローする）</p>
+<p><strong>space-between</strong></p>
+<blockquote>
+<p>Lines are evenly distributed in the flex container. If the leftover free-space is negative or there is only a single flex line in the flex container, this value is identical to flex-start. Otherwise, the cross-start edge of the first line in the flex container is placed flush with the cross-start content edge of the flex container, the cross-end edge of the last line in the flex container is placed flush with the cross-end content edge of the flex container, and the remaining lines in the flex container are distributed so that the spacing between any two adjacent lines is the same.</p>
+</blockquote>
+<p>行はflex container内で均等に配分さえる。もし残りの余白スペースが負であるか、flex container内にflex行が一つだけの場合、この値はflex-startと同じになる。それ以外の場合、flex container内の最初の行のcross-startの端はflex containerのcross-start contentの端と同じところになり、flex container内の最後の行のcross-endの端はflex containerのcross-end contentの端と同じところになる。そしてflex container内の残りの行は隣り合う行の間隔が同じになるように配分される。</p>
+<p><strong>space-around</strong></p>
+<blockquote>
+<p>Lines are evenly distributed in the flex container, with half-size spaces on either end. If the leftover free-space is negative this value is identical to center. Otherwise, the lines in the flex container are distributed such that the spacing between any two adjacent lines is the same, and the spacing between the first/last lines and the flex container edges is half the size of the spacing between flex lines.</p>
+</blockquote>
+<p>行はそれぞれの終端に半分のサイズのスペースを持ちつつ、flex container内で均等に配分される。もし残りの余白スペースが負である場合、この値はcenterと同じになる。それ以外の場合では、flex container内の行は隣り合う行の間隔が同じになるように配分され、最初と最後の行とflex containerの端の間がflexの行間の半分のサイズになるようにスペースが持たれる。</p>
+<p><strong>stretch</strong></p>
+<blockquote>
+<p>Lines stretch to take up the remaining space. If the leftover free-space is negative, this value is identical to flex-start. Otherwise, the free-space is split equally between all of the lines, increasing their cross size.</p>
+</blockquote>
+<p>行は余白のスペースに応じて伸長する。もし残りの余白スペースが負の場合、この値はflex-startと同じになる。それ以外の場合では、余白スペースはすべての行に対して均等に分割される、行のcross sizeが増加する。</p>
+<blockquote>
+<p><strong>Note:</strong> Only multi-line flex containers ever have free space in the cross-axis for lines to be aligned in, because in a single-line flex container the sole line automatically stretches to fill the space.</p>
+</blockquote>
+<p>単一行のflex container内の単一行はスペースを満たすように自動的に伸長するので、複数行のflex containersだけが、整列する行に対してcross-axis内に余白スペースを持つ。</p>
+<img src="https://www.w3.org/TR/css-flexbox-1/images/align-content-example.svg" width="500" />
+
+<h3 id="8-5-Flex-Container-Baselines"><a href="#8-5-Flex-Container-Baselines" class="headerlink" title="8.5. Flex Container Baselines"></a>8.5. Flex Container Baselines</h3><blockquote>
+<p>In order for a flex container to itself <a href="https://www.w3.org/TR/css-flexbox-1/#baseline-participation" target="_blank" rel="noopener">participate in baseline alignment</a> (e.g. when the flex container is itself a flex item in an outer flex container), it needs to submit the position of the baselines that will best represent its contents. To this end, the baselines of a flex container are determined as follows (after reordering with order, and taking flex-direction into account):</p>
+</blockquote>
+<p>flex containerが自身を<a href="https://www.w3.org/TR/css-flexbox-1/#baseline-participation" target="_blank" rel="noopener">baseline alignmentに参加する</a>ためには（例えばflex container自身が、外側のflex containerのflex itemである場合）、コンテンツを表示するのにベストなbaselineの位置を提案する必要がある。このため、flex containerのbaselineは次のように決定される（orderによって並び替えとflex-directionが考慮された後）</p>
+<blockquote>
+<p><strong>first/last main-axis baseline set</strong></p>
+<ol>
+<li>When the inline axis of the flex container matches its main axis, its baselines are determined as follows:<br>If any of the flex items on the flex container’s startmost/endmost flex line participate in baseline alignment, the flex container’s first/last main-axis baseline set is <a href="https://www.w3.org/TR/css-align-3/#generate-baselines" target="_blank" rel="noopener">generated</a> from the shared alignment baseline of those flex items.</li>
+</ol>
+</blockquote>
+<p>flex containerのinline axisがmain axisと一致する場合、baselineは次のように決定される。もしflex containerの最初と最後のflex line上にあるいずれかのflex itemsがbaseline alignmentに参加している場合、flex containerの最初と最後のmain-axisのbaseline setはflex itemsのshared alignment baselineから<a href="https://www.w3.org/TR/css-align-3/#generate-baselines" target="_blank" rel="noopener">生成</a>される。</p>
+<blockquote>
+<ol start="2">
+<li>Otherwise, if the flex container has at least one flex item, the flex container’s first/last main-axis baseline set is generated from the alignment baseline of the startmost/endmost flex item. (If that item has no alignment baseline parallel to the flex container’s main axis, then one is first synthesized from its border edges.)</li>
+</ol>
+</blockquote>
+<p>それ以外の場合、もしflex containerが少なくとも一つのflex itemを持っている場合、flex containerの最初と最後ののmain-axis baseline setは最初と最後のflex itemのalignment baselineから生成される。（itemがflex containerのmain axisに対して平行なalignment baselineを持っていない場合、それはborderの両端から最初に合成されたものになる。</p>
+<blockquote>
+<ol start="3">
+<li>Otherwise, the flex container has no first/last main-axis baseline set, and one is synthesized if needed according to the rules of its alignment context.</li>
+</ol>
+</blockquote>
+<p>それ以外の場合、flex containerは最初と最後のmain-axis baseline setを持たず、必要な場合はalignment contextのルールにしたがって合成される。</p>
+<blockquote>
+<p><strong>first/last cross-axis baseline set</strong><br>When the inline axis of the flex container matches its cross axis, its baselines are determined as follows:</p>
+</blockquote>
+<p>flex containerのinline axisがcross axisと一致する場合、baselineは次のように決定される。</p>
+<blockquote>
+<ol>
+<li>If the flex container has at least one flex item, the flex container’s first/last cross-axis baseline set is generated from the alignment baseline of the startmost/endmost flex item. (If that item has no alignment baseline parallel to the flex container’s cross axis, then one is first synthesized from its border edges.)</li>
+</ol>
+</blockquote>
+<p>もしflex containerが少なくとも一つのflex itemを持つ場合、flex containerの最初と最後のcross-axis baseline setは最初と最後のflex itemのalignment baselineから生成される。（もしitemがflex containerのcross axisと平行するalignment baselineを持たない場合、borderの両端から最初に合成されたものになる。）</p>
+<blockquote>
+<ol start="2">
+<li>Otherwise, the flex container has no first/last cross-axis baseline set, and one is synthesized if needed according to the rules of its <a href="https://www.w3.org/TR/css3-align/#shared-alignment-context" target="_blank" rel="noopener">alignment context</a>.</li>
+</ol>
+</blockquote>
+<p>それ以外の場合、flex containerは最初と最後のcross-axis baseline setを持たない。必要になった場合はalignment contextのルールに沿って合成される。</p>
+<blockquote>
+<p>When calculating the baseline according to the above rules, if the box contributing a baseline has an overflow value that allows scrolling, the box must be treated as being in its initial scroll position for the purpose of determining its baseline.</p>
+</blockquote>
+<p>上記のルールにしたがってbaselineが計算された場合で、もしbaselineを提供されたboxがスクロールが許可されるoverflow値の持っていた場合、baselineを決定するために、boxが初期のスクロール位置にいるかのように扱われなければならない。</p>
+<blockquote>
+<p>When <a href="https://www.w3.org/TR/CSS2/tables.html#height-layout" target="_blank" rel="noopener">determining the baseline of a table cell</a>, a flex container provides a baseline just as a line box or table-row does. [CSS21]</p>
+<p>See CSS Writing Modes 3 §4.1 Introduction to Baselines and CSS Box Alignment 3 §9 Baseline Alignment Details for more information on baselines.</p>
+</blockquote>
+<p><a href="https://www.w3.org/TR/CSS2/tables.html#height-layout" target="_blank" rel="noopener">table cell の baselineを決定する</a>場合は、flex containerはline boxやtable-rowと同じようにbaselineを提供する。</p>
+<p>baselineについてのより詳細な情報については、<a href="https://www.w3.org/TR/css-writing-modes-3/#intro-baselines" target="_blank" rel="noopener">CSS Writing Modes 3 §4.1 Introduction to Baselines</a>と<a href="https://www.w3.org/TR/css3-align/#baseline-rules" target="_blank" rel="noopener">CSS Box Alignment 3 §9 Baseline Alignment Details</a>を参照。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
