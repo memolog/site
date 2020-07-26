@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Flex Layout Algorithm | メモログ</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/assets/icons/icon-32.ico">
+  <style>body {
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic Pro',  YuGothic, 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  font-family: Garamond, 'Times New Roman', serif; }
+
+.header_component_global {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 700px;
+}
+
+.header__title {
+  margin: .2em 0 .2em;
+  font-size: 1.8em;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.header__title a,
+.header__title > span {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f2f0;
+  padding: 5px;
+}
+
+.header_component_global .header__title {
+  font-size: 1.2em;
+}
+
+.header_component_global .header__title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main .header .header__title {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  opacity: .8;
+  margin-bottom: 0;
+}
+
+.header__description {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.header_component_global .header__description {
+  color: #666;
+  margin: 0 auto;
+  padding: 0 5px; }
+
+.header__epigraph {
+  font-style: italic;
+  color: #666;
+  margin: 0 auto;
+  padding: 5px; }
+
+.container {
+  max-width: 700px;
+  margin: 0 auto 4em;
+  padding: 0 15px;
+  border-radius: 3px;
+}
+
+.content {
+  font-size: 1.125em;
+  line-height: 2em;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content h2,
+.content h3 {
+  font-size: 1.4em;
+  margin: 2em 0 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-summary {
+  margin-bottom: 3.5em;
+}
+
+.header time {
+  display: inline-block;
+  font-size: .9125em;
+  color: #666;
+}
+
+.calendar-icon, .author-icon {
+  margin-right: .5em;
+}
+
+.content blockquote {
+  border: 5px solid #ddd;
+  background: #f9f9f9;
+  margin: 1.5em 0;
+  padding: 0 1em;
+}
+
+.content p > code,
+.content li > code {
+  background-color: #f5f2f0;
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: .3em;
+  color:#444;
+}
+
+.content table {
+  background: #e0e0e0;
+}
+
+.content th {
+  background: #f0f0f0;
+}
+
+.content tr {
+  background: #fff;
+}
+
+.content tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
+.content td {
+  padding: 5px 1em;
+  text-align: center;
+}
+
+.content code[class*="language-"] {
+  color: #444;
+}
+
+.header__feature {
+  margin: .5em 0 -.5em;
+  position: relative;
+}
+
+.header__feature img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured__image {
+  background: white;
+  line-height: 0;
+  max-height: 335px;
+  overflow: hidden;
+}
+
+.featured__credit {
+  color: #666;
+  font-size: .825em;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  background: #f0f0f0;
+  opacity: .8;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0.5;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 2s .3s cubic-bezier(.3,.18,.15,1);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.youtube-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .header__epigraph {
+    display: none;
+  }
+
+  .header__title {
+    font-size: 1.2em;
+  }
+
+  .content h2 {
+    font-size: 1.2em;
+  }
+
+  .main .header .header__title {
+    margin-bottom: 30px;
+  }
+
+  .header__feature {
+    margin-top: -23px;
+  }
+
+  .featured__credit {
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"],
+  .youtube-wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .featured__image,
+  .content__image,
+  .content pre[class*="language-"] {
+    margin: 0 -15px;
+  }
+}
+
+.link-icon {
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+
+.post .writing-vertical {
+  writing-mode: vertical-rl;
+  font-family: serif;
+  font-size: 1em;
+  margin: 1.5em 0;
+  column-count: 2;
+  max-width: 700px;
+  width: 102%;
+  overflow: auto;
+  height: 800px;
+}
+
+.post .writing-vertical p {
+  margin: 0;
+}
+
+.post .writing-vertical p a {
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.post .writing-vertical p:first-letter {
+  margin-top: 1em;
+}
+
+.post .writing-vertical .link-icon {
+  background-position-x: center;
+  background-position-y: 5px;
+}
+
+.post .writing-vertical blockquote {
+  border: none;
+  margin: 0 .5em;
+  padding: 1em .5em;
+  background: #f0f0f0;
+}
+
+@media screen and (max-width: 730px) {
+  .post .writing-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+</style>
+  <script>window.lazyLoadOptions = {};</script>
+  <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="manifest" href="/manifest.json" >
+  <meta name="theme-color" content="white">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-955153-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-955153-2');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@graph":
+    [
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://memolog.org",
+        "logo": "https://memolog.org/assets/icons/icon-1024.png"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi",
+        "url": "http://memolog.org",
+        "sameAs": [
+          "https://www.facebook.com/yutaka.yamaguchi",
+          "https://www.linkedin.com/in/yutakayamaguchi/",
+          "https://twitter.com/memolog"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <meta name="description" content="今回は9. Flex Layout Algorithmについて。この章は見なくて良いんじゃないかと思いつつ、写経のような感じでやっていこうと思う。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex Layout Algorithm">
+<meta property="og:url" content="https://memolog.org/2020/flex-layout-algorithm.html">
+<meta property="og:site_name" content="メモログ">
+<meta property="og:description" content="今回は9. Flex Layout Algorithmについて。この章は見なくて良いんじゃないかと思いつつ、写経のような感じでやっていこうと思う。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://memolog.org/assets/images/sarah-madaio-fpZHGVBzlYk-unsplash/sarah-madaio-fpZHGVBzlYk-unsplash.jpg">
+<meta property="article:published_time" content="2020-07-26T02:56:00.000Z">
+<meta property="article:modified_time" content="2020-07-26T02:56:22.348Z">
+<meta property="article:author" content="Yutaka Yamaguchi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://memolog.org/assets/images/sarah-madaio-fpZHGVBzlYk-unsplash/sarah-madaio-fpZHGVBzlYk-unsplash.jpg">
+<meta name="twitter:creator" content="@memolog">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;memolog">
+<meta property="fb:app_id" content="168245123786587">
+  <link rel="canonical" href="https://memolog.org/2020/flex-layout-algorithm.html">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://memolog.org/2020/flex-layout-algorithm.html"
+      },
+      "headline": "Flex Layout Algorithm",
+      
+        "image": [
+          "https://memolog.org/assets/images/sarah-madaio-fpZHGVBzlYk-unsplash/sarah-madaio-fpZHGVBzlYk-unsplash.jpg"
+        ],
+      
+      "datePublished": "1595732160000",
+      "dateModified": "1595732182348",
+      "author": {
+        "@type": "Person",
+        "name": "Yutaka Yamaguchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "メモログ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://memolog.org/assets/icons/icon-1024.png"
+        }
+      },
+      "description": "今回は9. Flex Layout Algorithmについて。この章は見なくて良いんじゃないかと思いつつ、写経のような感じでやっていこうと思う。"
+    }
+  </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+</head>
+<body class="post">
+    <header class="header header_component_global">
+    <div class="header__icon" aria-hidden="true"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h1 class="header__title header__title"><a href="/">メモログ</a></h1>
+    <p class="header__description">💡 Personal notes about anything I&#39;m interested in</p>
+    <aside aria-hidden="true"><blockquote class="header__epigraph">Well, he fuffed, and he puffed, and he huffed and he puffed, and he puffed and huffed; but he could not get the house down.</blockquote></aside>
+    <nav class="navigation navigation-global">
+      <a href="/" class="navigation__link">📘 Latest Articles</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <article>
+        <header class="header">
+          <div>
+            <time datetime="2020-07-26T02:56:00.000Z">
+              <span class="calendar-icon">📅</span><span>2020年7月26日</span>
+            </time>
+          </div>
+          <h2 class="header__title"><span>Flex Layout Algorithm</span></h2>
+          
+            <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM0MDc5N2QiIC8+PC9zdmc+" data-src="/assets/images/sarah-madaio-fpZHGVBzlYk-unsplash/sarah-madaio-fpZHGVBzlYk-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    
+      <div class="featured__credit">Original Photo by <a href="https://unsplash.com/@smadaio?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Sarah Madaio</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+    
+    
+  
+</div>
+
+          
+        </header>
+        <div id="article-content" class="content "><p>今回は<a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">9. Flex Layout Algorithm</a>について。この章は見なくて良いんじゃないかと思いつつ、写経のような感じでやっていこうと思う。<a id="more"></a></p>
+<blockquote>
+<p>This section contains normative algorithms detailing the exact layout behavior of a flex container and its contents. The algorithms here are written to optimize readability and theoretical simplicity, and may not necessarily be the most efficient. Implementations may use whatever actual algorithms they wish, but must produce the same results as the algorithms described here.</p>
+<p><strong>Note:</strong> This section is mainly intended for implementors. Authors writing web pages should generally be served well by the individual property descriptions, and do not need to read this section unless they have a deep-seated urge to understand arcane details of CSS layout.</p>
+<p>The following sections define the algorithm for laying out a flex container and its contents.</p>
+<p><strong>Note:</strong> Flex layout works with the flex items in order-modified document order, not their original document order.</p>
+</blockquote>
+<p>このセクションはflex containerおよびそのコンテンツの正確なレイアウトの振る舞いについての規範的なアルゴリズムの詳細を含んでいる。ここにあるアルゴリズムは可読性や理論的な簡易さを適切にするために書かれており、最も効率的であるとは限らない。実装にはそれらが望ましいと思う実際のアルゴリズムを何でも利用することができるが、ここに示されているアルゴリズムと同じ結果を出力しなければならない。</p>
+<p>このセクションは主に実装者に対して書かれている。WEBページの制作者には個々のプロパティの記述によって適切に情報提供されているので、<br>CSSレイアウトの難解な詳細を深く理解したいということがなければ、このセクションを読む必要はない。</p>
+<p>次のセクションはflex containerとそのコンテンツをレイアウトするためのアルゴリズムを定義する。</p>
+<p>flex layoutはオリジナルのドキュメント順ではなく、order-modifiedされたドキュメント順でflex itemsを操作する。</p>
+<h3 id="9-1-Initial-Setup"><a href="#9-1-Initial-Setup" class="headerlink" title="9.1. Initial Setup"></a>9.1. Initial Setup</h3><blockquote>
+<p><strong>1. Generate anonymous flex items</strong> as described in <a href="https://www.w3.org/TR/css-flexbox-1/#flex-items" target="_blank" rel="noopener">§4 Flex Items</a>.</p>
+</blockquote>
+<p><a href="https://www.w3.org/TR/css-flexbox-1/#flex-items" target="_blank" rel="noopener">§4 Flex Items</a>で記述したように、<strong>匿名のflex itemsを生成する</strong></p>
+<h3 id="9-2-Line-Length-Determination"><a href="#9-2-Line-Length-Determination" class="headerlink" title="9.2. Line Length Determination"></a>9.2. Line Length Determination</h3><blockquote>
+<p><strong>2. Determine the available main and cross space for the flex items.</strong> For each dimension, if that dimension of the flex container’s content box is a definite size, use that; if that dimension of the flex container is being sized under a min or max-content constraint, the available space in that dimension is that constraint; otherwise, subtract the flex container’s margin, border, and padding from the space available to the flex container in that dimension and use that value.</p>
+<p>This might result in an infinite value.</p>
+</blockquote>
+<p><strong>2. flex itemsに対して利用可能なmain/crossのスペースを決定する。</strong>それぞれの次元に対して、もしflex containerのコンテンツboxの次元が、明確なサイズであるなら、それを利用する。もしflex containerの次元がmin/max-contentの制約下でサイズを指定するなら、その次元における利用可能なスペースはその制約になる。それ以外の場合は、この次元におけるflex containerに対して利用可能なスペースから、flex containerのマージン、ボーダー、パディングなどを差し引いたものになる。</p>
+<p>結果として値が無限になる場合がある。</p>
+<blockquote>
+<p><strong>EXAMPLE 13</strong><br>For example, the available space to a flex item in a floated auto-sized flex container is:</p>
+<ul>
+<li>the width of the flex container’s containing block minus the flex container’s margin, border, and padding in the horizontal dimension</li>
+<li>infinite in the vertical dimension</li>
+</ul>
+</blockquote>
+<p>たとえば、フロートしたauto-sized flex containerにおけるflex itemの利用可能なスペースは次のようになる。</p>
+<ul>
+<li>flex containerの包含ブロックの幅から水平方向の次元のflex containerのマージン・ボーダー・パディングをマイナスする</li>
+<li>縦方向については、無限になる</li>
+</ul>
+<blockquote>
+<p><strong>3. Determine the flex base size and hypothetical main size of each item:</strong></p>
+</blockquote>
+<p><strong>3. それぞれのitemのflex base sizeと仮想main sizeを決定する</strong></p>
+<blockquote>
+<p>A. If the item has a definite used flex basis, that’s the flex base size.<br>B. If the flex item has …</p>
+<ul>
+<li>an intrinsic aspect ratio,</li>
+<li>a used flex basis of content, and</li>
+<li>a definite cross size,<br>then the flex base size is calculated from its inner cross size and the flex item’s intrinsic aspect ratio.</li>
+</ul>
+<p>C. If the used flex basis is content or depends on its available space, and the flex container is being sized under a min-content or max-content constraint (e.g. when performing automatic table layout [CSS21]), size the item under that constraint. The flex base size is the item’s resulting main size.<br>D. Otherwise, if the used flex basis is content or depends on its available space, the available main size is infinite, and the flex item’s inline axis is parallel to the main axis, lay the item out using the rules for a box in an orthogonal flow [CSS3-WRITING-MODES]. The flex base size is the item’s max-content main size.<br><strong>Note:</strong> This case occurs, for example, in an English document (horizontal writing mode) containing a column flex container containing a vertical Japanese (vertical writing mode) flex item.<br>E. Otherwise, size the item into the available space using its used flex basis in place of its main size, treating a value of content as max-content. If a cross size is needed to determine the main size (e.g. when the flex item’s main size is in its block axis) and the flex item’s cross size is auto and not definite, in this calculation use fit-content as the flex item’s cross size. The flex base size is the item’s resulting main size.</p>
+<p>When determining the flex base size, the item’s min and max main sizes are ignored (no clamping occurs). Furthermore, the sizing calculations that floor the content box size at zero when applying box-sizing are also ignored. (For example, an item with a specified size of zero, positive padding, and box-sizing: border-box will have an outer flex base size of zero—and hence a negative inner flex base size.)</p>
+<p>The hypothetical main size is the item’s flex base size clamped according to its used min and max main sizes (and flooring the content box size at zero).</p>
+<p>Determine the main size of the flex container using the rules of the formatting context in which it participates. For this computation, auto margins on flex items are treated as 0.</p>
+</blockquote>
+<p>A. もしitemが明確なflex basisの値があるなら、それがflex base sizeになる。</p>
+<p>B. もしflex itemが以下の値を持っていたら…</p>
+<ul>
+<li>intrinsicなアスペクト比</li>
+<li>flex basisの使用値がcontent</li>
+<li>cross sizeの明確な値</li>
+</ul>
+<p>flex base sizeはitemの内部cross sizeとintrinsicなアスペクト比から計算される</p>
+<p>C. flex basisの使用値がcontentであるか利用可能なスペースに依存する場合で、flex containerがmin/max-contentの制約下でサイズを決定する（例えば自動tableレイアウトを実行する）場合、その制約下でサイズを決定する。そのflex base sizeはitemの最終的なmain sizeになる。</p>
+<p>D. それ以外の場合で、もしflex basisの使用値がcontentかである利用可能なスペースに依存する場合で、利用可能なmain sizeが無限でflex itemのinline axisがmain axisと平行である場合、直交するフロー内のboxに対するルールを使ってitemをレイアウトする。flex base sizeはitemのmax-content main sizeになる。</p>
+<p>E. それ以外の場合、contentの値をmax-contentの値として扱い、main sizeの代わりにflex basisを使って利用可能なスペースでitemのサイズを決定する。もしcross sizeがmain sizeを決定するのに必要とされる場合（たとえば、flex itemのmain sizeがblock axis内にある場合）で、flex itemのcross sizeがautoで明確ではない場合、flex itemのcross sizeとして<code>fit-content</code>を使って計算する。flex base sizeはitemの最終的なmain sizeになる。</p>
+<p>flex base sizeが決定したら、itemのmin/maxサイズは無視される（clamping（値の制限）が発生しなくなる）。さらに、box-sizingを適用する場合、content boxのサイズをゼロに切り捨てるサイズの計算も無視される（たとえば、ゼロが指定されているitemで、正のパディングがあり、かつ<code>box-sizing: border-box</code>である場合、outer flex base sizeがゼロになり、したがって負のinner flex base sizeになる）。</p>
+<p>仮想のmain sizeは、min/max main sizeの使用値にしたがって制限された、itemのflex base sizeになる（そしてcontent boxのサイズはゼロに切り捨てられる）。</p>
+<p>flex containerのmain sizeは、参加しているformatting contextのルールを使って決定する。この計算において、flex itemsのautoマージンは0として扱われる。</p>
+<h3 id="9-3-Main-Size-Determination"><a href="#9-3-Main-Size-Determination" class="headerlink" title="9.3. Main Size Determination"></a>9.3. Main Size Determination</h3><blockquote>
+<p><strong>5. Collect flex items into flex lines:</strong></p>
+<ul>
+<li>If the flex container is single-line, collect all the flex items into a single flex line.</li>
+<li>Otherwise, starting from the first uncollected item, collect consecutive items one by one until the first time that the next collected item would not fit into the flex container’s inner main size (or until a forced break is encountered, see <a href="https://www.w3.org/TR/css-flexbox-1/#pagination" target="_blank" rel="noopener">§10 Fragmenting Flex Layout</a>). If the very first uncollected item wouldn’t fit, collect just it into the line.<br>For this step, the size of a flex item is its outer hypothetical main size. (Note: This can be negative.)<br>Repeat until all flex items have been collected into flex lines.<br>Note that the “collect as many” line will collect zero-sized flex items onto the end of the previous line even if the last non-zero item exactly “filled up” the line.</li>
+</ul>
+</blockquote>
+<p><strong>5. flex itemsをflex行に集める</strong></p>
+<ul>
+<li>もしflex containerが1行の場合、すべてのflex itemsを一つのflex行に集める</li>
+<li>それ以外の場合、最初の未収集のitemから始めて、次に収集するitemがflex containerのinner main sizeにフィットしなくなるまで（または強制的なbreakが発生するまで。<a href="https://www.w3.org/TR/css-flexbox-1/#pagination" target="_blank" rel="noopener">§10 Fragmenting Flex Layout</a>を参照）、連続するitemsを一つずつ集めていく。もし最初の未収集のitemがフィットしない場合、それだけを行に集める。<br>このステップに対して、flex itemのサイズはその仮想のouter main size になる（これは負の値になる可能性がある）<br>そしてすべてのflex itemがflex行に集められるまで繰り返す。<br>この行に「集める」作業は、たとえ最後のゼロではないitemが正確に行に「満たされた」場合でも、ゼロサイズのflex itemsを前の行の最後に集める。</li>
+</ul>
+<blockquote>
+<p><strong>6. Resolve the flexible lengths</strong> of all the flex items to find their used main size. See <a href="https://www.w3.org/TR/css-flexbox-1/#resolve-flexible-lengths" target="_blank" rel="noopener">§9.7 Resolving Flexible Lengths</a>.</p>
+</blockquote>
+<p><strong>6.</strong>main sizeの使用値を見つけるためにすべてのflex itemsについて<strong>flexible lengthを解決する</strong>。<a href="https://www.w3.org/TR/css-flexbox-1/#resolve-flexible-lengths" target="_blank" rel="noopener">§9.7 Resolving Flexible Lengths</a>を参照。</p>
+<h3 id="9-4-Cross-Size-Determination"><a href="#9-4-Cross-Size-Determination" class="headerlink" title="9.4. Cross Size Determination"></a>9.4. Cross Size Determination</h3><p><strong>7.Determine the hypothetical cross size of each item</strong> by performing layout with the used main size and the available space, treating auto as fit-content.</p>
+<p><strong>7.</strong>main sizeの使用値と利用可能スペースを使ってレイアウトを実行して、autoを<code>fit-content</code>として扱い、<strong>各itemの仮想のcross sizeを決定する</strong></p>
+<p><strong>8.Calculate the cross size of each flex line.</strong></p>
+<blockquote>
+<p>If the flex container is single-line and has a definite cross size, the cross size of the flex line is the flex container’s inner cross size.</p>
+<p>Otherwise, for each flex line:</p>
+<ol>
+<li>Collect all the flex items whose inline-axis is parallel to the main-axis, whose align-self is baseline, and whose cross-axis margins are both non-auto. Find the largest of the distances between each item’s baseline and its hypothetical outer cross-start edge, and the largest of the distances between each item’s baseline and its hypothetical outer cross-end edge, and sum these two values.</li>
+<li>Among all the items not collected by the previous step, find the largest outer hypothetical cross size.</li>
+<li>The used cross-size of the flex line is the largest of the numbers found in the previous two steps and zero.<br>If the flex container is single-line, then clamp the line’s cross-size to be within the container’s computed min and max cross sizes. Note that if CSS 2.1’s definition of min/max-width/height applied more generally, this behavior would fall out automatically.</li>
+</ol>
+</blockquote>
+<p>もしflex containerが単一行で、cross sizeが明確な値である場合、flex行のcross sizeはflex containerのinner cross sizeになる。</p>
+<p>それ以外の場合、各flex行について以下のようになる。</p>
+<ol>
+<li>inline-axisがmain-axisに対して平行で、align-selfがbaselineで、cross-axisマージンが両方ともautoではないすべてのflex itemsを集める。各itemのbaselineと仮想outer cross-startの端との間の距離が一番大きい箇所と、各itemのbaselineと仮想outer cross-endの端との間の距離が一番大きい箇所を見つけて、それらの値を合計する。</li>
+<li>先のステップで収集しなかったすべてのitemsの中で、outerの仮想cross sizeが一番大きいものを見つける</li>
+<li>flex行のcross-sizeの使用値は、先のステップで見つけた値とゼロの中で一番大きい値になる。<br>もしflex containerが単一行の場合、行のcross-sizeはcontainerのmin/max cross sizeの使用値の範囲内に収める。もしmin/max-width/heightのCSS 2.1の定義がより広く適用される場合、この振る舞いは自動的に失われることに注意。</li>
+</ol>
+<blockquote>
+<p><strong>9. Handle ‘align-content: stretch’</strong>. If the flex container has a definite cross size, align-content is stretch, and the sum of the flex lines’ cross sizes is less than the flex container’s inner cross size, increase the cross size of each flex line by equal amounts such that the sum of their cross sizes exactly equals the flex container’s inner cross size.</p>
+</blockquote>
+<p><strong>9. <code>align-contnet: strech</code>を対処する</strong>。もしflex containerがcross sizeの明確な値を持っている場合、align-contentはstretchとなり、flex行のcross sizeの合計はflex containerのinner cross sizeよりも小さくなり、cross sizeの合計が正確にflex containerのinner cross sizeと同じになるように、同じ量だけ各flex lineのcross sizeを増やす。</p>
+<blockquote>
+<p><strong>10. Collapse visibility:collapse items</strong>. If any flex items have visibility: collapse, note the cross size of the line they’re in as the item’s strut size, and restart layout from the beginning.</p>
+<p>In this second layout round, when collecting items into lines, treat the collapsed items as having zero main size. For the rest of the algorithm following that step, ignore the collapsed items entirely (as if they were display:none) except that after calculating the cross size of the lines, if any line’s cross size is less than the largest strut size among all the collapsed items in the line, set its cross size to that strut size.</p>
+<p>Skip this step in the second layout round.</p>
+</blockquote>
+<p><strong>10. <code>visibility:collapse</code>のitemsを折りたたむ</strong>。もしいずれかのflex itemsが<code>visibility: collapse</code>を持っている場合、そのitemの支柱サイズとして、その行のcross sizeをメモしておき、最初からレイアウトを再開する。</p>
+<p>この2回目のレイアウトの回で、itemsを行に集めた時に、折り畳まれたitemsをゼロのmain sizeを持っているものとして扱う。このステップの後に続く残りのアルゴリズムについて、折り畳まれたitemsは完全に無視されれ（<code>display:none</code>が設定されているかのようになる）。ただし、もし行のcross sizeが、行内の折り畳まれたitemの中で最も大きい支柱サイズよりも小さい場合、そのcross sizeは支柱サイズになる。</p>
+<p>2回目のレイアウトの回ではこのステップをスキップする。</p>
+<blockquote>
+<p><strong>11. Determine the used cross size of each flex item.</strong> If a flex item has align-self: stretch, its computed cross size property is auto, and neither of its cross-axis margins are auto, the used outer cross size is the used cross size of its flex line, clamped according to the item’s used min and max cross sizes. Otherwise, the used cross size is the item’s hypothetical cross size.</p>
+<p>If the flex item has align-self: stretch, redo layout for its contents, treating this used size as its definite cross size so that percentage-sized children can be resolved.</p>
+<p>Note that this step does not affect the main size of the flex item, even if it has an intrinsic aspect ratio.</p>
+</blockquote>
+<p>もしflex itemが<code>align-self: stretch</code>を持っている場合、そのcross sizeの計算値はautoにあり、cross-axisのマージンはいずれもautoにはならず、outer cross sizeの使用値はflex行のcross sizeの使用値になり、itemのmin/max cross sizeの使用値に従って値を固定する。それ以外の場合、cross sizeの使用値はitemの仮想cross sizeになる。</p>
+<p>もしflex itemが<code>align-self: stretch</code>を持っている場合、そのコンテンツに対してレイアウトをやり直し、パーセンテージサイズの子供を解決するために、この使用サイズをcross sizeの固定値として扱う。</p>
+<p>このステップはitemがintrinsicなアスペクト比を持っている場合でも、flex itemのmain sizeには影響を与えないことに注意。</p>
+<h3 id="9-5-Main-Axis-Alignment"><a href="#9-5-Main-Axis-Alignment" class="headerlink" title="9.5. Main-Axis Alignment"></a>9.5. Main-Axis Alignment</h3><blockquote>
+<p><strong>12. Distribute any remaining free space.</strong> For each flex line:</p>
+<ol>
+<li>If the remaining free space is positive and at least one main-axis margin on this line is auto, distribute the free space equally among these margins. Otherwise, set all auto margins to zero.</li>
+<li>Align the items along the main-axis per justify-content.</li>
+</ol>
+</blockquote>
+<p><strong>12. 残りの余白スペースを配分する</strong> 各flex行について以下のようにする。</p>
+<ol>
+<li>もし残りの余白スペースが正で、この行上の少なくとも一つのmain-axisがautoである場合、余白スペースはこれらのマージンに均等に配分される。それ以外の場合、すべてのautoマージンはゼロにセットされる。</li>
+<li>justify-contentに従って、main-axisに沿ってitemを整列する。</li>
+</ol>
+<h3 id="9-6-Cross-Axis-Alignment"><a href="#9-6-Cross-Axis-Alignment" class="headerlink" title="9.6. Cross-Axis Alignment"></a>9.6. Cross-Axis Alignment</h3><blockquote>
+<p><strong>13. Resolve cross-axis auto margins.</strong> If a flex item has auto cross-axis margins:</p>
+<ul>
+<li>If its outer cross size (treating those auto margins as zero) is less than the cross size of its flex line, distribute the difference in those sizes equally to the auto margins.</li>
+<li>Otherwise, if the block-start or inline-start margin (whichever is in the cross axis) is auto, set it to zero. Set the opposite margin so that the outer cross size of the item equals the cross size of its flex line.</li>
+</ul>
+</blockquote>
+<p><strong>13. cross-size auto マージンを解決する</strong> もしflex itemがauto cross-axisマージンを持っている場合、以下のようになる。</p>
+<ul>
+<li>もしouter cross size（それらのautoマージンはゼロとして扱われる）が、flex行のcross sizeより小さい場合、それらのサイズの差をautoマージンに均等に配分する</li>
+<li>それ以外の場合、もしblock-startもしくはinline-startのマージン（cross axis内のどちらでも）がautoである場合、ゼロにセットされる。itemのouter cross sizeがflex行のcross sizeと同じになるように反対のマージンがセットされる。</li>
+</ul>
+<blockquote>
+<p><strong>14. Align all flex items along the cross-axis</strong> per align-self, if neither of the item’s cross-axis margins are auto.</p>
+</blockquote>
+<p><strong>14.</strong> もしitemのcross-axisマージンがいずれもautoではない場合、align-selfに従って、<strong>すべてのflex itemsをcross-axisに沿って整列する。</strong></p>
+<blockquote>
+<p><strong>15. Determine the flex container’s used cross size:</strong></p>
+<ul>
+<li>If the cross size property is a definite size, use that, clamped by the used min and max cross sizes of the flex container.</li>
+<li>Otherwise, use the sum of the flex lines’ cross sizes, clamped by the used min and max cross sizes of the flex container.</li>
+</ul>
+</blockquote>
+<p><strong>15. flex containerのcross sizeの使用値を決定する</strong></p>
+<ul>
+<li>もしcross sizeが固定値である場合、それを使用する。flex containerのmin/max cross sizeの使用値によって収められる。</li>
+<li>それ以外の場合、flex行のcross sizeの合計を利用する。flex containerのmin/max cross sizeの使用値によって収められる。</li>
+</ul>
+<blockquote>
+<p><strong>16. Align all flex lines</strong> per align-content.</p>
+</blockquote>
+<p><strong>16.</strong> align-contentに従って<strong>すべてのflex行を整列する</strong></p>
+<h3 id="9-7-Resolving-Flexible-Lengths"><a href="#9-7-Resolving-Flexible-Lengths" class="headerlink" title="9.7. Resolving Flexible Lengths"></a>9.7. Resolving Flexible Lengths</h3><blockquote>
+<p>To resolve the flexible lengths of the items within a flex line:</p>
+</blockquote>
+<p>flex行内でitemのflexible lengthを解決するために、以下のことを行う。</p>
+<blockquote>
+<p><strong>1. Determine the used flex factor</strong>. Sum the outer hypothetical main sizes of all items on the line. If the sum is less than the flex container’s inner main size, use the flex grow factor for the rest of this algorithm; otherwise, use the flex shrink factor.</p>
+</blockquote>
+<p><strong>1. flex factorの使用値を決定する。</strong> 行上のすべてのitemsのouter 仮想main sizeを合計する。もし合計がflex containerのinner main sizeよりも小さい場合、このアルゴリズムの残りの部分についてflex grow factorを使用する。それ以外の場合、flex shrink factorを使用する。</p>
+<blockquote>
+<p><strong>2. Size inflexible items</strong>. Freeze, setting its target main size to its hypothetical main size…</p>
+<ul>
+<li>any item that has a flex factor of zero</li>
+<li>if using the flex grow factor: any item that has a flex base size greater than its hypothetical main size</li>
+<li>if using the flex shrink factor: any item that has a flex base size smaller than its hypothetical main size</li>
+</ul>
+</blockquote>
+<p><strong>2. inflexible itemsのサイズを決める。</strong> ターゲットのmain sizeを仮想main sizeに設定して固定する</p>
+<ul>
+<li>flex factorがゼロであるitem</li>
+<li>もしflex grow factorを使用してる場合、flex base sizeが仮想main sizeより大きいitem</li>
+<li>もしflex shrink factorを使用してる場合、flex base sizeが仮想main sizeより小さいitem</li>
+</ul>
+<blockquote>
+<p><strong>3. Calculate initial free space</strong>. Sum the outer sizes of all items on the line, and subtract this from the flex container’s inner main size. For frozen items, use their outer target main size; for other items, use their outer flex base size.</p>
+</blockquote>
+<p><strong>3. 余白スペースの初期値を計算する。</strong> 行上のすべてのitemsのouter sizesを合計して、これをflex containerのinner main sizeから引く。固定したitemsについては、それらのouter target main sizeを使用する。それ以外のitemsには、それらのouter flex base sizeを使用する。</p>
+<blockquote>
+<p><strong>4.</strong> Loop:<br>a. Check for flexible items. If all the flex items on the line are frozen, free space has been distributed; exit this loop.<br>b. Calculate the remaining free space as for initial free space, above. If the sum of the unfrozen flex items’ flex factors is less than one, multiply the initial free space by this sum. If the magnitude of this value is less than the magnitude of the remaining free space, use this as the remaining free space.<br>c. Distribute free space proportional to the flex factors.<br><strong>If the remaining free space is zero</strong><br>Do nothing.<br><strong>If using the flex grow factor</strong><br>Find the ratio of the item’s flex grow factor to the sum of the flex grow factors of all unfrozen items on the line. Set the item’s target main size to its flex base size plus a fraction of the remaining free space proportional to the ratio.<br><strong>If using the flex shrink factor</strong><br>For every unfrozen item on the line, multiply its flex shrink factor by its inner flex base size, and note this as its scaled flex shrink factor. Find the ratio of the item’s scaled flex shrink factor to the sum of the scaled flex shrink factors of all unfrozen items on the line. Set the item’s target main size to its flex base size minus a fraction of the absolute value of the remaining free space proportional to the ratio. Note this may result in a negative inner main size; it will be corrected in the next step.<br><strong>Otherwise</strong><br>Do nothing.<br>d. <strong>Fix min/max violations</strong>. Clamp each non-frozen item’s target main size by its used min and max main sizes and floor its content-box size at zero. If the item’s target main size was made smaller by this, it’s a max violation. If the item’s target main size was made larger by this, it’s a min violation.<br>e. <strong>Freeze over-flexed items.</strong> The total violation is the sum of the adjustments from the previous step ∑(clamped size - unclamped size). If the total violation is:<br><strong>Zero</strong><br>Freeze all items.<br><strong>Positive</strong><br>Freeze all the items with min violations.<br><strong>Negative</strong><br>Freeze all the items with max violations.<br>f. Return to the start of this loop.</p>
+</blockquote>
+<p><strong>4.</strong> Loop:</p>
+<p>a. <strong>flexible itemsを確認する</strong>。もし行上のすべてのflex itemsが固定であるなら、余白スペースは配分されている。ループを終了する。<br>b. 上述の余白スペースの初期処理と同じように<strong>残りの余白スペースを計算する</strong>。もし固定化されていないflex itemsのflex factorsの合計が1よりも低い場合、この合計値で初期の余白スペースを乗算する。もしこの値の大きさが残りの余白スペースの大きさよりも小さい場合、この値を残り余白スペースとして使用する。<br>c. <strong>flex factorsに応じて余白スペースの配分する。</strong></p>
+<ul>
+<li>残りの余白スペースがゼロだったら<br>何もしない</li>
+<li>flex grow factorを使用している場合<br>行上のすべての固定化されていないitemsのflex grow factorsの合計に対する、そのitemのflex grow factorの割合を調べる。itemのtarget main sizeをflex base sizeに、その割合に比例した残り余白スペースの割合をプラスした値に設定する。</li>
+<li>flex shrink factorを使用している場合<br>行上のすべての固定化されていないitemに対して、itemのflex shrink factorにそのinner flex base sizeを乗算して、この値をscaled flex shrink factorとしてメモする。行上のすべての固定化されていないitemのflex shrink factorの合計に対する、itemのscaled flex shrink factorの割合を調べる。itemのtarget main sizeに、flex base size にその割合に比例した残り余白スペースの絶対値の割合をマイナスした値を設定する。これは次のステップで修正される。</li>
+<li>その他の場合<br>何もしない<br>d. <strong>min/max違反を修正する。</strong>各固定されていないitemのtarget main sizeをmin/max main sizeの使用値内に収め、content-boxのサイズを0に切り捨てる。もしitemのtarget main sizeがこれによって小さくなる場合は、max違反となる。もしitemのtarget main sizeがこれより大きくなる場合は、それはmin違反となる。<br>e. <strong>over-flexed itemを固定する</strong>違反の総計は、先のステップからの調整値の合計（∑(clamped size - unclamped size)）になる。もし違反の総計が</li>
+<li>ゼロの場合、すべて固定にする</li>
+<li>正の場合、min違反にて、すべてのitemを固定する</li>
+<li>負の場合、max違反にて、すべてのitemを固定する<br>f. このループの最初に戻る</li>
+</ul>
+<blockquote>
+<p><strong>5.</strong> Set each item’s used main size to its target main size.</p>
+</blockquote>
+<p>各itemのmain sizeの使用値を、itemのtarget main sizeに設定する</p>
+<h3 id="9-8-Definite-and-Indefinite-Sizes"><a href="#9-8-Definite-and-Indefinite-Sizes" class="headerlink" title="9.8. Definite and Indefinite Sizes"></a>9.8. Definite and Indefinite Sizes</h3><blockquote>
+<p>Although CSS Sizing [<a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-sizing-3" target="_blank" rel="noopener">CSS-SIZING-3</a>] defines definite and indefinite lengths, Flexbox has several additional cases where a length can be considered definite:</p>
+<ol>
+<li>If a single-line flex container has a definite cross size, the outer cross size of any stretched flex items is the flex container’s inner cross size (clamped to the flex item’s min and max cross size) and is considered definite.</li>
+<li>If the flex container has a definite main size, a flex item’s post-flexing main size is treated as definite, even though it can rely on the indefinite sizes of any flex items in the same line.</li>
+<li>Once the cross size of a flex line has been determined, items in auto-sized flex containers are also considered definite for the purpose of layout; see <a href="https://www.w3.org/TR/css-flexbox-1/#algo-stretch" target="_blank" rel="noopener">step 11</a>.</li>
+</ol>
+<p><strong>Note:</strong> The main size of a fully inflexible item with a definite flex basis is, by definition, definite.</p>
+</blockquote>
+<p>CSS Sizing [<a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-sizing-3" target="_blank" rel="noopener">CSS-SIZING-3</a>] が<a href="https://www.w3.org/TR/css-sizing-3/#definite" target="_blank" rel="noopener">明確</a>・<a href="https://www.w3.org/TR/css-sizing-3/#indefinite" target="_blank" rel="noopener">不明確</a>な長さについて定義しているが、flexboxでも長さが明確であると見なされる追加のケースがある。</p>
+<ol>
+<li>もし単一行のflex containerが明確なcross sizeを持っている場合、伸長したflex itemsのouter cross sizeはflex containerのinner cross size（flex itemのmin/max cross sizeに収まる）となり、明確であると見なされる。</li>
+<li>もしflex containerが明確なmain sizeを持っている場合、たとえそれが同じ行にあるflex itemの不明確なサイズに依存していても、flex itemのpost-flexing main sizeは明確なサイズとして扱われる。</li>
+<li>ひとたびflex lineのcross sizeが決定されたら、auto-sized flex containers内のitemsはレイアウト目的で明確なサイズと見なされる。<a href="https://www.w3.org/TR/css-flexbox-1/#algo-stretch" target="_blank" rel="noopener">step 11</a>参照。</li>
+</ol>
+<p><strong>注</strong> 不明確なflex basisを持つ完全にinflexibleなitemのmain sizeは、定義により、明確なサイズとなる。</p>
+<h3 id="9-9-Intrinsic-Sizes"><a href="#9-9-Intrinsic-Sizes" class="headerlink" title="9.9. Intrinsic Sizes"></a>9.9. Intrinsic Sizes</h3><blockquote>
+<p>The <a href="https://www.w3.org/TR/css-sizing-3/#intrinsic-sizing" target="_blank" rel="noopener">intrinsic sizing</a> of a flex container is used to produce various types of content-based automatic sizing, such as shrink-to-fit logical widths (which use the fit-content formula) and content-based logical heights (which use the max-content size).</p>
+<p>See <a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-sizing-3" target="_blank" rel="noopener">[CSS-SIZING-3]</a> for a definition of the terms in this section.</p>
+</blockquote>
+<p>flex cotainerの<a href="https://www.w3.org/TR/css-sizing-3/#intrinsic-sizing" target="_blank" rel="noopener">intrinsic sizing</a>は、shrink-to-fit logical width （これはfit-contentの式で使う）やcontent-based logical height（max-contentサイズで使う）などのように、様々なタイプのcontent-based自動サイズを生成するために使われる。</p>
+<p>このセクションの用語の定義については<a href="https://www.w3.org/TR/css-flexbox-1/#biblio-css-sizing-3" target="_blank" rel="noopener">[CSS-SIZING-3]</a>を参照。</p>
+<h4 id="9-9-1-Flex-Container-Intrinsic-Main-Sizes"><a href="#9-9-1-Flex-Container-Intrinsic-Main-Sizes" class="headerlink" title="9.9.1. Flex Container Intrinsic Main Sizes"></a>9.9.1. Flex Container Intrinsic Main Sizes</h4><blockquote>
+<p>The max-content main size of a flex container is the smallest size the flex container can take while maintaining the max-content contributions of its flex items, insofar as allowed by the items’ own flexibility:</p>
+</blockquote>
+<p>flex containerのmax-contentのmain sizeは、flex itemsのmax-contentの配分を維持しながら、flex containerが取りうる最小サイズになる。</p>
+<blockquote>
+<ol>
+<li>For each flex item, subtract its outer flex base size from its max-content contribution size. If that result is positive, divide by its flex grow factor floored at 1; if negative, divide by its scaled flex shrink factor having floored the flex shrink factor at 1. This is the item’s max-content flex fraction.</li>
+<li>Place all flex items into lines of infinite length.</li>
+<li>Within each line, find the largest max-content flex fraction among all the flex items. Add each item’s flex base size to the product of its flex grow factor (or scaled flex shrink factor, if the chosen max-content flex fraction was negative) and the chosen max-content flex fraction, then clamp that result by the max main size floored by the min main size.</li>
+<li>The flex container’s max-content size is the largest sum of the afore-calculated sizes of all items within a single line.</li>
+</ol>
+</blockquote>
+<ol>
+<li>各flex itemについて、そのmax-content配分サイズから、outer flex base sizeを引く。もし結果が正であれば、flex grow factorを1で切り捨てた値で除算する。もし結果が負であれば、flex shrink factorを1で切り捨てた、スケールされたflex shrink factorで除算する。これはitemのmax-content flex fractionになる。</li>
+<li>すべてのflex itemsを不定の長さの行に配置する。</li>
+<li>各行の中で、flex itemsの中で一番大きいmax-content flex fractionを探す。各itemのflex base sizeにflex grow factor（もしくはもし選択したmax-content flex fractionが負の場合、スケールされたflex factor）と選択したmax-content flex fractionとの積を追加して、min main sizeで切り捨てられたmax main sizeによって結果を制限する。</li>
+<li>flex containerのmax-content sizeは、単一行内のすべてのitemsの先に計算したサイズの合計の一番大きな値になる。</li>
+</ol>
+<blockquote>
+<p>The min-content main size of a single-line flex container is calculated identically to the max-content main size, except that the flex item’s min-content contribution is used instead of its max-content contribution. However, for a multi-line container, it is simply the largest min-content contribution of all the flex items in the flex container.</p>
+</blockquote>
+<p>単一行のflex containerのmin-content sizeは、flex itemのmin-contentの配分が、そのmax-contentの配分の代わりにつかわれている場合は除いて、max-content main sizeと同じように計算される。しかしながら、複数行のcontainerに対しては、単にflex container内のすべてのflex itemsのmin-contentの配分のうち、一番大きな値になる。</p>
+<blockquote>
+<p><strong>Implications of this algorithm when the sum of flex is less than 1</strong><br>The above algorithm is designed to give the correct behavior for two cases in particular, and make the flex container’s size continuous as you transition between the two:</p>
+<ol>
+<li><p>If all items are inflexible, the flex container is sized to the sum of their flex base size. (An inflexible flex base size basically substitutes for a width/height, which, when specified, is what a max-content contribution is based on in Block Layout.)</p>
+</li>
+<li><p>When all items are flexible with flex factors ≥ 1, the flex container is sized to the sum of the max-content contributions of its items (or perhaps a slightly larger size, so that every flex item is at least the size of its max-content contribution, but also has the correct ratio of its size to the size of the other items, as determined by its flexibility).</p>
+</li>
+</ol>
+<p>For example, if a flex container has a single flex item with flex-basis: 100px; but a max-content size of 200px, then when the item is flex-grow: 0, the flex container (and flex item) is 100px wide, but when the item is flex-grow: 1 or higher, the flex container (and flex item) is 200px wide.</p>
+<p>There are several possible ways to make the overall behavior continuous between these two cases, particularly when the sum of flexibilities on a line is between 0 and 1, but all of them have drawbacks. We chose one we feel has the least bad implications; unfortunately, it “double-applies” the flexibility when the sum of the flexibilities is less than 1. In the above example, if the item has flex-grow: .5, then the flex container ends up 150px wide, but the item then sizes normally into that available space, ending up 125px wide.</p>
+</blockquote>
+<p><strong>flexの合計が1未満の場合のアルゴリズムの実装</strong><br>上述のアルゴリズムは特に2つのケースに対して正しい振る舞いを与えるために設計されており、flex containerのサイズを2つのケース間で連続的な移行を可能にする。</p>
+<ol>
+<li>すべてのitemsが柔軟ではない場合、flex containerはflex base sizeの合計値になる。（inflexibleなflex base sizeは基本的にwidth/height、つまり指定されるとmax-contentの配分がブロックレイアウトにおいて基本になるもの、の代わりに使用される。）</li>
+<li>すべてのitemsが柔軟であり、flex factorsが1以上の場合、flex containerはそのitemsのmax-contentの配分の合計になる（もしくはどのflex itemも少なくともmax-contentの配分のサイズになるだけはなく、その柔軟性によって決定されるように、itemのサイズと他のitemのサイズの比率が正しくあるためにおそらく少しだけ大きなサイズになる）。</li>
+</ol>
+<p>たどえば、もしflex containerが<code>flex-basis: 100px</code>を持ち、200pxのmax-contentサイズを持つ単一のflex itemを持つ場合、itemが<code>flex-grow: 0</code>なら、flex container（とflex item）は100pxの幅になる。しかしitemが<code>flex-grow: 1</code>もしくはそれ以上の場合、flex container（とflex item）は200pxの幅になる。</p>
+<p>これらの二つのケースの間の全体の振る舞いを継続的にするためにはいくつかの方法があり、特に行上のflexibilitiesの合計が0から1の間の場合あるが、それらの全てについて欠点がある。私たちはそのうち一番悪くない実装であると感じるものを選んだ。残念ながら、、それはflexibilitiesの合計が1より小さい場合、flexibilitiesを「重複適用」する。上記の例では、もしitemが<code>flex-grow: .5</code>の場合、flex containerは150pxの幅になるが、itemは通常利用可能なスペースに収まるので、itemの幅は125pxになる。</p>
+<h3 id="9-9-2-Flex-Container-Intrinsic-Cross-Sizes"><a href="#9-9-2-Flex-Container-Intrinsic-Cross-Sizes" class="headerlink" title="9.9.2. Flex Container Intrinsic Cross Sizes"></a>9.9.2. Flex Container Intrinsic Cross Sizes</h3><blockquote>
+<p>The min-content/max-content cross size of a single-line flex container is the largest min-content contribution/max-content contribution (respectively) of its flex items.</p>
+</blockquote>
+<p>単一行flex containerのmin-content/max-contentのcross sizeは、flex itemsの（それぞれの）min-contentの配分/max-contentの配分になる。</p>
+<blockquote>
+<p>For a multi-line flex container, the min-content/max-content cross size is the sum of the flex line cross sizes resulting from sizing the flex container under a cross-axis min-content constraint/max-content constraint (respectively). However, if the flex container is flex-flow: column wrap;, then it’s sized by first finding the largest min-content/max-content cross-size contribution among the flex items (respectively), then using that size as the available space in the cross axis for each of the flex items during layout.</p>
+</blockquote>
+<p>複数行のflex containerでは、min-content/max-content cross sizeは（それぞれの）cross-axis min-content制約/max-content制約の下、flex containerをサイズ設定することによって得られるflex行のcross sizeの合計になる。しかしながら、もしflex containerが<code>flex-flow: column wrap;</code> である場合、最初に（それぞれの）flex itemsの中のmin-content/max-contentのcross-sizeの配分の大きい値を見つけてサイズを設定し、そのサイズをレイアウト中にそれぞれのflex itemsに対してcross sizeの余白スペースとして利用する。</p>
+<blockquote>
+<p><strong>Note:</strong> This heuristic for column wrap flex containers gives a reasonable approximation of the size that the flex container should be, with each flex item ending up as min(item’s own max-content, maximum min-content among all items), and each flex line no larger than its largest flex item. It’s not a perfect fit in some cases, but doing it completely correct is insanely expensive, and this works reasonably well.</p>
+</blockquote>
+<p><code>column wrap</code>のflex containerについてのヒューリスティックは、各flex itemが最小（item自身のmax-content, 全itemの中の最大min-content）であり、各flex行が最も大きいflex itemよりも大きくないようなflex containerになるようにサイズの妥当な概算を提供する。それはいくつかのケースでは完全には適合しないかもしれないが、完全に正しく行うことは非常に高コストであり、この方法が良い感じに機能する。</p>
+<h3 id="9-9-3-Flex-Item-Intrinsic-Size-Contributions"><a href="#9-9-3-Flex-Item-Intrinsic-Size-Contributions" class="headerlink" title="9.9.3. Flex Item Intrinsic Size Contributions"></a>9.9.3. Flex Item Intrinsic Size Contributions</h3><blockquote>
+<p>The main-size min-content contribution of a flex item is the larger of its outer min-content size and outer <a href="https://www.w3.org/TR/css-sizing-3/#preferred-size-properties" target="_blank" rel="noopener">preferred size</a> (its width/height as appropriate) if that is not auto, clamped by its flex base size as a maximum (if it is not growable) and/or as a minimum (if it is not shrinkable), and then further clamped by its min/max main size.</p>
+</blockquote>
+<p>flex itemのmain-size min-contentの配分は、autoでない場合、outer min-content sizeとouter <a href="https://www.w3.org/TR/css-sizing-3/#preferred-size-properties" target="_blank" rel="noopener">preferred size</a>（必要に応じてwidthやheight）の大きい方になり、flex base sizeを最大値（growableの場合）and/or最小値（shrinkableの場合）として制限し、それからmin/max main sizeによってさらに制限される。</p>
+<blockquote>
+<p>The main-size max-content contribution of a flex item is the larger of its outer max-content size and outer preferred size (its width/height as appropriate) clamped by its flex base size as a maximum (if it is not growable) and/or as a minimum (if it is not shrinkable), and then further clamped by its min/max main size.</p>
+</blockquote>
+<p>flex itemのmain-size max-contentの配分は、outer max-content sizeとouter preferred size（必要に応じてwidthやheight）の大きい方になり、flex base sizeを最大値（growableの場合）and/or最小値（shrinkableの場合）として制限し、それからmin/max main sizeによってさらに制限される。</p>
+</div>
+        <footer class="profile">
+  <div class="profile-inner">
+    <div class="profile__image"><img src="/assets/icons/icon.svg" role="presentation" width="48" height="48" alt="icon"></div>
+    <h2 class="profile__heading">About the Author</h2>
+    <div class="profile__content">
+      <div>Yutaka Yamaguchi</div>
+      <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
+      <ul class="profile__social-list">
+        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
+        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+      </article>
+    </main>
+  </div>
+  <script src="/js/lazysizes/lazysizes.min.js" async></script>
+<script>
+  // http://css-tricks.com/favicons-next-to-external-links/
+  (function (){
+    'use strict';
+    if (/googlebot/i.test(navigator.userAgent)) {
+      return;
+    }
+    const links = document.querySelectorAll('.content p a');
+    const linkLength = links && links.length || 0;
+    for (var i=0; i<linkLength; i++){
+      const link = links[i];
+      const hostname = link.hostname;
+      if (hostname) {
+        const children = link.children || [];
+        const firstChild = children && children[0];
+        if (firstChild && firstChild.tagName === 'IMG') {
+          // For old amazon image link
+          if (link.hostname === 'www.amazon.co.jp') {
+            link.style.float = 'left';
+            link.style.marginRight = '1em';
+            link.style.paddingLeft = '0';
+          }
+          continue;
+        }
+
+        link.classList.add('link-icon');
+        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+      }
+    }
+  })();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
+
+</body>
+</html>
