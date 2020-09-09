@@ -13,7 +13,7 @@
       <div class="featured__credit"><% if (!featured.original) { %>Original <% } %>Photo by <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
     <% } %>
     <% if (featured.authorLink.match(/artvee/)) { %>
-      <div class="featured__credit"><% if (!featured.original) { %>Original <% } %>Photo from <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://artvee.com" target="_blank" rel="noopener"></a><a href="https://artvee.com/" target="_blank" rel="noopener"></a>Artvee</a></div>
+      <div class="featured__credit"><% if (!featured.original) { %>Original <% } %>Photo from <a href="<%= featured.authorLink %>" target="_blank" rel="noopener"><%= featured.author %></a> on <a href="https://artvee.com" target="_blank" rel="noopener"></a><a href="https://artvee.com/" target="_blank" rel="noopener">Artvee</a></div>
     <% } %>
   <% } %>
 </div>
