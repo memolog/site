@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-09-09T01:07:47.279Z</updated>
+  <updated>2020-09-09T04:02:54.517Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Logical AND/OR/Nullish assignment operators</title>
+    <link href="https://memolog.org/2020/logical-assignment-operators.html"/>
+    <id>https://memolog.org/2020/logical-assignment-operators.html</id>
+    <published>2020-09-09T02:58:29.000Z</published>
+    <updated>2020-09-09T04:02:54.517Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://esnextnews.com/&quot;&gt;ES.next News&lt;/a&gt;の9/1の回のメールにあった&lt;a href=&quot;https://dev.to/hemanth/logical-assignment-operators-in-javascript-inh&quot;&gt;Logical assignment operators in JavaScript&lt;/a&gt;について。&lt;a href=&quot;https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/#short-circuiting-assignment-operators&quot;&gt;TypeScript 4.0 から利用可能&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Fragmenting Flex Layout</title>
@@ -333,23 +350,6 @@
     <summary type="html">
     
       &lt;p&gt;今回はDisplay Moduleの&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#glossary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Appendix A: Glossary&lt;/a&gt;のところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Automatic Box Type Transformations</title>
-    <link href="https://memolog.org/2020/automatic-box-type-transformations.html"/>
-    <id>https://memolog.org/2020/automatic-box-type-transformations.html</id>
-    <published>2020-03-10T13:12:24.000Z</published>
-    <updated>2020-03-10T13:12:15.232Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#the-display-properties&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Box Layout Modes: the display property&lt;/a&gt;の最後の節として&lt;br&gt;&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#transformations&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;2.7. Automatic Box Type Transformations&lt;/a&gt;について書かれているので、簡単に確認する。何らかのレイアウト効果の影響でboxのタイプが自動的に変わる場合があるという話。
     
     </summary>
     

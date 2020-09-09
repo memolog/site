@@ -309,7 +309,7 @@
 </style>
   <script>window.lazyLoadOptions = {};</script>
   <link rel="preload" as="style" href="/css/global_async.css" onload="this.rel='stylesheet'">
-  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles">
+  <link rel="alternate" href="http://feeds.feedburner.com/jp/memolog" title="Latest Articles" >
   <link rel="manifest" href="/manifest.json" >
   <meta name="theme-color" content="white">
 
@@ -357,67 +357,67 @@
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2018/about-array-prototype-sort.html"
+          "url": "https://memolog.org/2018/about-typedarray-prototype-sort.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2018/bit-vector-in-javascript.html"
+          "url": "https://memolog.org/2018/about-array-prototype-sort.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2018/pass-arguments-to-npm-run-script.html"
+          "url": "https://memolog.org/2018/bit-vector-in-javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2018/create-hash-table-in-javascript.html"
+          "url": "https://memolog.org/2018/pass-arguments-to-npm-run-script.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2018/javascript-property-access-big-o.html"
+          "url": "https://memolog.org/2018/create-hash-table-in-javascript.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2018/complete-all-the-pwa-checklist.html"
+          "url": "https://memolog.org/2018/javascript-property-access-big-o.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html"
+          "url": "https://memolog.org/2018/complete-all-the-pwa-checklist.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2018/custom-domain-in-github-pages.html"
+          "url": "https://memolog.org/2018/dynamic-import-and-code-splitting-with-webpack-and-typescript.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2018/book-mind-control.html"
+          "url": "https://memolog.org/2018/custom-domain-in-github-pages.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2018/retrieve-json-from-require-method.html"
+          "url": "https://memolog.org/2018/book-mind-control.html"
         }
         
       ]
     }
   </script>
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="メモログ" type="application/atom+xml">
 </head>
 <body>
     <header class="header header_component_global">
@@ -432,6 +432,36 @@
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-07-31T20:23:27.000Z"><span class="calendar-icon">📅</span><span>2018年8月1日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/about-typedarray-prototype-sort.html">TypedArray.prototype.sort について</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNjgwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiM4MjZjNGUiIC8+PC9zdmc+" data-src="/assets/images/marcus-depaula-43304-unsplash/marcus-depaula-43304-unsplash.svg" class="lazyload blur-up" alt="" role="presentation" />
+      
+    
+  </div>
+  
+    
+      <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/tk7OAxsXNL0?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Marcus dePaula</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
+    
+    
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>前回の「<a href="https://memolog.org/2018/about-array-prototype-sort.html">Array.prototype.sort について</a>」に引き続き、今度は<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray" target="_blank" rel="noopener">TypedArray</a>の<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort" target="_blank" rel="noopener">sort</a>について。実装は別だけど対応は基本的に同じなので簡単に。</div>
+            <div><a href="/2018/about-typedarray-prototype-sort.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -703,37 +733,6 @@
           
         </article>
       
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2018-02-04T07:35:42.000Z"><span class="calendar-icon">📅</span><span>2018年2月4日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2018/retrieve-json-from-require-method.html">JSONデータを読み込んで差し替える</a></h2>
-            
-              <div class="header__feature" aria-hidden="true">
-  <div class="featured__image">
-    
-      
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMjQiIGhlaWdodD0iNzY4Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIGZpbGw9IiM0Nzk1YWIiIC8+PC9zdmc+" data-src="/assets/images/aaron-burden-286686/aaron-burden-286686.svg" class="lazyload blur-up" alt="" role="presentation" />
-      
-    
-  </div>
-  
-    
-      <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/h7wpIMY3O3E?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Aaron Burden</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></div>
-    
-    
-  
-</div>
-
-            
-          </header>
-          
-            <div class="content"><p>Node.jsの中であれば単に<code>const config = require(&#39;config.json&#39;)</code>すれば良いのだけれど、フロントエンド側のJavaScriptではそうはいかない。XMLHttpRequestとか<a href="https://developer.mozilla.org/ja/docs/Web/API/Fetch_API" target="_blank" rel="noopener">Fetch API</a>を使うか、requireで書いたものをwebpackでbundleするとかしないといけない。他にもいろいろ方法はあると思うけど、まあとにかく一手間が必要。</p>
-<p>その読み出すJSONデータを環境ごとに変更したい場合はなおさら面倒で、Node.jsであればprocess.env.NODE_ENVなんかを使えばいいけど、フロントエンド側ではwebpackでバンドルするときの設定を変更するとか、uglifyで<code>DEBUG</code>みたいなglobal変数を入れておいて書き出すとかしつつ、異なるJSONデータをfetchするように実装しないといけない。いろいろ方法はあるから難しい問題ではないけど、面倒ではある。</div>
-            <div><a href="/2018/retrieve-json-from-require-method.html">📖 続きを読む</a></div>
-          
-        </article>
-      
       <footer><a class="extend prev" rel="prev" href="/page/5/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/7/">Next</a></footer>
     </main>
     <footer class="profile">
@@ -744,9 +743,9 @@
       <div>Yutaka Yamaguchi</div>
       <div>a (front-end) engineer living in Tokyo, using TypeScript, Node.js, JavaScript, swift and perl for work, interested in WASM and Rust, studying English.</div>
       <ul class="profile__social-list">
-        <li class="profile__social-list-item"><a href="https://twitter.com/memolog" target="_blank" rel="noopener">Twitter</a></li>
-        <li class="profile__social-list-item"><a href="https://www.linkedin.com/in/yutakayamaguchi/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li class="profile__social-list-item"><a href="https://www.facebook.com/yutaka.yamaguchi" target="_blank" rel="noopener">Facebook</a></li>
+        <li class="profile__social-list-item"><a target="_blank" rel="noopener" href="https://twitter.com/memolog">Twitter</a></li>
+        <li class="profile__social-list-item"><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/yutakayamaguchi/">LinkedIn</a></li>
+        <li class="profile__social-list-item"><a target="_blank" rel="noopener" href="https://www.facebook.com/yutaka.yamaguchi">Facebook</a></li>
       </ul>
     </div>
   </div>
