@@ -472,28 +472,30 @@ It’s important that the signal represents a choice made by the person behind t
     if (/googlebot/i.test(navigator.userAgent)) {
       return;
     }
-    const links = document.querySelectorAll('.content p a');
-    const linkLength = links && links.length || 0;
-    for (var i=0; i<linkLength; i++){
-      const link = links[i];
-      const hostname = link.hostname;
-      if (hostname) {
-        const children = link.children || [];
-        const firstChild = children && children[0];
-        if (firstChild && firstChild.tagName === 'IMG') {
-          // For old amazon image link
-          if (link.hostname === 'www.amazon.co.jp') {
-            link.style.float = 'left';
-            link.style.marginRight = '1em';
-            link.style.paddingLeft = '0';
+    window.addEventListener("load", () => {
+      const links = document.querySelectorAll('.content p a');
+      const linkLength = links && links.length || 0;
+      for (var i=0; i<linkLength; i++){
+        const link = links[i];
+        const hostname = link.hostname;
+        if (hostname) {
+          const children = link.children || [];
+          const firstChild = children && children[0];
+          if (firstChild && firstChild.tagName === 'IMG') {
+            // For old amazon image link
+            if (link.hostname === 'www.amazon.co.jp') {
+              link.style.float = 'left';
+              link.style.marginRight = '1em';
+              link.style.paddingLeft = '0';
+            }
+            continue;
           }
-          continue;
-        }
 
-        link.classList.add('link-icon');
-        link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+          link.classList.add('link-icon');
+          link.style.backgroundImage = `url(https://www.google.com/s2/favicons?domain=${hostname})`;
+        }
       }
-    }
+    });
   })();
 </script>
 <script>
