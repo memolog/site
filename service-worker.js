@@ -24,7 +24,6 @@ const precacheList = [
   '/assets/images/jerry-wang-xiie4XeSzTU-unsplash/jerry-wang-xiie4XeSzTU-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
-  '/js/lazysizes/lazysizes.min.js',
 ];
 
 self.addEventListener('install', event => {
