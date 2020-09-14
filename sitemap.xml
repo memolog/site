@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://memolog.org/2018/image-manipulation-with-primitive.html</loc>
+    
+    <lastmod>2020-09-14T01:21:29.025Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://memolog.org/2020/logical-assignment-operators.html</loc>
     
     <lastmod>2020-09-09T04:03:49.607Z</lastmod>
@@ -366,14 +373,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/import-from-old-blog.html</loc>
-    
-    <lastmod>2019-01-04T02:09:12.876Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://memolog.org/2018/how-to-learn.html</loc>
+    <loc>https://memolog.org/2018/javascript-property-access-big-o.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
@@ -387,14 +387,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/javascript-property-access-big-o.html</loc>
+    <loc>https://memolog.org/2018/how-to-learn.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/image-manipulation-with-primitive.html</loc>
+    <loc>https://memolog.org/2018/import-from-old-blog.html</loc>
     
     <lastmod>2019-01-04T02:09:12.876Z</lastmod>
     
@@ -450,14 +450,14 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/bit-vector-in-javascript.html</loc>
+    <loc>https://memolog.org/2018/bubble-sort-in-javascript.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/bubble-sort-in-javascript.html</loc>
+    <loc>https://memolog.org/2018/book-mind-control.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
@@ -471,7 +471,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/book-intro-blockchain.html</loc>
+    <loc>https://memolog.org/2018/bit-vector-in-javascript.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
@@ -492,7 +492,7 @@
   </url>
   
   <url>
-    <loc>https://memolog.org/2018/book-mind-control.html</loc>
+    <loc>https://memolog.org/2018/book-intro-blockchain.html</loc>
     
     <lastmod>2019-01-04T02:09:12.874Z</lastmod>
     
