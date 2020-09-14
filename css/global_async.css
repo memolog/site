@@ -84,10 +84,31 @@
   margin-top: 4em;
 }
 
-.page-number {
-  padding: 0 2px;
+.pagination {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -5px;
 }
 
+.page-number, .extend.next, .extend.prev, .pagination .space {
+  min-width: 59px;
+  min-height: 59px;
+  text-align: center;
+  line-height: 59px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pagination .space {
+  border-color: transparent;
+}
+
+.page-number.current {
+  font-weight: bold;
+}
 
 /* PrismJS 1.9.0
 http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+ruby+diff+json+perl+python+jsx+scss+swift+typescript&plugins=line-numbers */
