@@ -261,11 +261,21 @@
   }
 }
 
-.link-icon {
+.content p a::before {
+  content: '🌐';
+  width: 24px;
+  display: inline-block;
+}
+
+.content p a.link-icon::before {
+  content: '';
+}
+
+.content p a.link-icon {
   background-position-x: 4px;
   background-position-y: center;
   background-repeat: no-repeat;
-  padding-left: 24px;
+  /* padding-left: 24px; */
 }
 
 .post .writing-vertical {
