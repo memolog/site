@@ -384,7 +384,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://memolog.org/assets/images/ben-koorengevel-tpIWpoW3_Wc-unsplash/ben-koorengevel-tpIWpoW3_Wc-unsplash.jpg">
 <meta property="article:published_time" content="2020-09-16T03:45:52.000Z">
-<meta property="article:modified_time" content="2020-09-16T04:04:20.238Z">
+<meta property="article:modified_time" content="2020-09-16T04:15:17.238Z">
 <meta property="article:author" content="Yutaka Yamaguchi">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://memolog.org/assets/images/ben-koorengevel-tpIWpoW3_Wc-unsplash/ben-koorengevel-tpIWpoW3_Wc-unsplash.jpg">
@@ -407,7 +407,7 @@
         ],
       
       "datePublished": "1600227952000",
-      "dateModified": "1600229060238",
+      "dateModified": "1600229717238",
       "author": {
         "@type": "Person",
         "name": "Yutaka Yamaguchi"
@@ -471,11 +471,10 @@
   <iframe width="560" height="315" src="https://www.youtube.com/embed/tFSOmRADKvk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Got 100 score in all categories on mobile"></iframe>
   </div>
 
-<p>でもまあそれでもけっこう微妙に100点いかない。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md#devtools-lighthouse-panel-throttling">lighthouseのランタイムの設定</a>を「Simulated throttling」を有効にしていると、Slow 4G (Fast 3G)くらいの速度で検証される。この状態だとHTMLを取得するだけで1秒とか2秒とかかかるみたいなので、<a target="_blank" rel="noopener" href="https://web.dev/lighthouse-largest-contentful-paint/">Largest Contentful Paint</a>を満点取るのが厳しい。だいたい92〜98点とかの間になる。</p>
-<p>Simulated throttlingをオフにしても<a target="_blank" rel="noopener" href="https://web.dev/uses-long-cache-ttl/">cache policy</a>とか、<a target="_blank" rel="noopener" href="https://web.dev/remove-unused-code/">Remove unused code</a>にGoogle Analyticsがあがってきたりとか、その辺が原因なのか、少し減点されて100点いかなかったりする。</p>
-<p>確認していたときは数回に一回くらい100点いくかなあという感じだったけど、今試してみたら何度やっても100点にならない（スクリーンキャプチャ残しておいて良かった）。</p>
-<p>このほぼほぼ何もないサイトでこんな感じなので、performanceについては、100点目指すのはたぶん無理で、80点近傍なら合格と見なす方が良いのかなと思う。<a target="_blank" rel="noopener" href="https://dev.to/">dev.to</a>とかすごい頑張ってると思うけど、Lighthouseのperformanceのスコアは84点だった。</p>
+<p>でもまあそれでもけっこう微妙に100点いかない。数回に1回、100点になるかならないかといった感じ。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md#devtools-lighthouse-panel-throttling">lighthouseのランタイムの設定</a>を「Simulated throttling」を有効にしていると、Slow 4G (Fast 3G)くらいの速度で検証される。この状態だとHTMLを取得するだけで1秒とか2秒とかかかるみたいなので、<a target="_blank" rel="noopener" href="https://web.dev/lighthouse-largest-contentful-paint/">Largest Contentful Paint</a>を満点取るのがまあ厳しい。だいたい92〜98点とかの間になる。</p>
+<p>Simulated throttlingをオフにすると、Largest Contentful Paintとか全部緑にはなるんだけど、<a target="_blank" rel="noopener" href="https://googlechrome.github.io/lighthouse/scorecalc/#first-contentful-paint=747.876&speed-index=1392&largest-contentful-paint=1760.448&interactive=2524.839&total-blocking-time=1.4339999999997417&cumulative-layout-shift=0&first-cpu-idle=2524.839&first-meaningful-paint=747.876&device=mobile&version=6.0.0">Lighthouse Scoring Calculatorの結果</a>のように、100点には微妙に足りない場合がある。</p>
+<p>このほぼほぼ何もないサイトでこんな感じなので、performanceについては、100点目指すのはかなり無理で、80点近傍なら合格と見なす方が良いのかなと思う。<a target="_blank" rel="noopener" href="https://dev.to/">dev.to</a>とかすごい頑張ってると思うけど、Lighthouseのperformanceのスコアは84点だった。</p>
 <p>あと<a target="_blank" rel="noopener" href="https://web.dev/content-visibility/">content-visibility</a>を試しに<code>.article-summary</code>（記事のブロック）に以下のような感じで入れてみたのだけど、</p>
 <pre class="line-numbers language-css"><code class="language-css">  <span class="token property">content-visibility</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
   <span class="token property">contain-intrinsic-size</span><span class="token punctuation">:</span> <span class="token number">700</span>px <span class="token number">577</span>px<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
