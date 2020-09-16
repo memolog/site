@@ -261,13 +261,13 @@
   }
 }
 
-.content p a::before {
+.content p a[href]::before {
   content: '🌐';
   width: 24px;
   display: inline-block;
 }
 
-.content p a.link-icon::before {
+.content p a[href].link-icon::before {
   content: '';
 }
 
