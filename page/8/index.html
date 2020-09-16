@@ -385,61 +385,61 @@
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2018/import-from-old-blog.html"
+          "url": "https://memolog.org/2018/display-featured-image.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2018/New-Year-Resolutions.html"
+          "url": "https://memolog.org/2018/import-from-old-blog.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2017/html-elements.html"
+          "url": "https://memolog.org/2018/New-Year-Resolutions.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2017/hello-hexo.html"
+          "url": "https://memolog.org/2017/html-elements.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2017/hello-gatsby.html"
+          "url": "https://memolog.org/2017/hello-hexo.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html"
+          "url": "https://memolog.org/2017/hello-gatsby.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2016/01/angular2_and_import_statement.html"
+          "url": "https://memolog.org/2016/02/crashlytics_missing_dsyms_issue_around_bitcode.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2016/01/angular2_with_decorators.html"
+          "url": "https://memolog.org/2016/01/angular2_and_import_statement.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2016/01/view_controller_lifecycle.html"
+          "url": "https://memolog.org/2016/01/angular2_with_decorators.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html"
+          "url": "https://memolog.org/2016/01/view_controller_lifecycle.html"
         }
         
       ]
@@ -460,6 +460,37 @@
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2018-01-08T02:07:38.000Z"><span class="calendar-icon">📅</span><span>2018年1月8日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2018/display-featured-image.html">Featured Image を設置する</a></h2>
+            
+              <div class="header__feature" aria-hidden="true">
+  <div class="featured__image">
+    
+      
+        <div style="background-color: #85c3fc"><img src="/assets/images/igor-ovsyannykov-258206/igor-ovsyannykov-258206.svg" alt="" role="presentation" loading="lazy" width="700" height="464" /></div>
+      
+    
+  </div>
+  
+    
+      <div class="featured__credit">Original Photo by <a href="https://unsplash.com/photos/7oTkp6P8PhM?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener" tabindex="-1">Igor Ovsyannykov</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener" tabindex="-1">Unsplash</a></div>
+    
+    
+  
+</div>
+
+            
+          </header>
+          
+            <div class="content"><p>記事のタイトル下によくあるFeatured Imageを設置してみようと思い立って、<a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>から良い感じの画像をダウンロードして入れてみた。ちょっと大きい気もするけどまあ良いか。ページサイズ的には特に内容と関係ない画像を入れることのメリットはないけど、、しばらくはそのまま使ってみようと思う。</p>
+<p>でも大きな画像をそのまま使うのはファイルサイズ的に大きすぎるので、リサイズしたい。できれば各端末に適したサイズにしておきたい… と、なんかいろいろ思ってしまい、最終的にUnsplashのサイトからダウンロードしたデータを個人的に使いたい大きさにリサイズするサービスを用意してみた。<a href="https://github.com/memolog/convert-a-image-to-responsive-images" target="_blank" rel="noopener">convert-a-image-to-responsive-images</a>に公開している（ES2015をターゲットにしているので、IE11では動かない）。ただの思いつきに思ったより時間をかけてしまった。最初はAWS Lambdaで画像をリサイズするつもりだったが、リサイズに使っている<a href="https://github.com/lovell/sharp" target="_blank" rel="noopener">Sharp</a>の扱いが少し難しく、メモリ容量のところでエラーになってしまった（これを解決する方法はありそうなのだが、やってる時間がなくなったので、しばし保留）。いずれにせよ最終的にはWEBサービスとして公開したいなと思っている。週末に時間があれば。</div>
+            <div><a href="/2018/display-featured-image.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -639,19 +670,6 @@
             <div class="content"><p>viewDidLoadとviewDidAppearの使い方についてのメモ（ほぼ公式ドキュメントのコピペ）。引用中の太字装飾は私。</p>
 <p><a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson4.html" target="_blank" rel="noopener">Work with View Controllers</a>にある「Understand the View Controller Lifecycle」に書いてある説明は以下のような感じ。</p></div>
             <div><a href="/2016/01/view_controller_lifecycle.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2015-08-27T05:15:00.000Z"><span class="calendar-icon">📅</span><span>2015年8月27日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html">Node.js で AES-256-CBC で暗号化したデータを CryptoSwift で復号化する</a></h2>
-            
-          </header>
-          
-            <div class="content"><p><a href="/blog//2015/08/encrypt-with-cryptswift-and-then-decrypt-it-with-nodejs/">CryptoSwiftを使ってAES-256-CBCで暗号化してNodeで復号化する</a>の記事で、CryptoSwift (iOS) で暗号化したデータをサーバー側（Node.js）で復号化する話をしましたが、今回はその逆向きで、Node.jsでABS-256-CBCで暗号化したデータをCryptoSwiftで復号化するという話。</p></div>
-            <div><a href="/2015/08/encrypt-with-nodejs-and-then-decrypt-it-with-cryptoswift.html">📖 続きを読む</a></div>
           
         </article>
       

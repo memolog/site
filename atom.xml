@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://memolog.org/"/>
-  <updated>2020-09-16T00:32:27.020Z</updated>
+  <updated>2020-09-16T03:43:31.344Z</updated>
   <id>https://memolog.org/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Got 100 lighthouse score in all categories on mobile</title>
+    <link href="https://memolog.org/2020/got-100-lighthouse-score-in-all-categories-on-mobile.html"/>
+    <id>https://memolog.org/2020/got-100-lighthouse-score-in-all-categories-on-mobile.html</id>
+    <published>2020-09-16T02:20:52.000Z</published>
+    <updated>2020-09-16T03:43:31.344Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ふとLighthouseを走らせみたら、微妙に100点いかなかったので、微調整して100点を目指してみた。
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Logical AND/OR/Nullish assignment operators</title>
@@ -333,23 +350,6 @@
     <summary type="html">
     
       &lt;p&gt;前回CSS Display Moduleについて一通り確認したので、今回からは&lt;a href=&quot;https://www.w3.org/TR/css-flexbox-1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSS Flexible Box Layout Module&lt;/a&gt;を確認しようかなと思っている。flex boxは&lt;a href=&quot;https://caniuse.com/#feat=flexbox&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Can I use flexbox&lt;/a&gt;によると、IE11以外では問題なく利用できる。IE11についてはいろいろ問題があるそうでPartial Supportという扱いになっている。&lt;a href=&quot;https://github.com/philipwalton/flexbugs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Flexbugs&lt;/a&gt;にいろいろ問題やそれに対する回避策などが書いてある。
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Display module glossary</title>
-    <link href="https://memolog.org/2020/display-module-glossary.html"/>
-    <id>https://memolog.org/2020/display-module-glossary.html</id>
-    <published>2020-03-14T10:02:28.000Z</published>
-    <updated>2020-03-14T11:59:15.758Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今回はDisplay Moduleの&lt;a href=&quot;https://www.w3.org/TR/css-display-3/#glossary&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Appendix A: Glossary&lt;/a&gt;のところで、今までちゃんと確認しなかったもので、気になるところを簡単に確認しようかなと思う。そのうち見直すかも。
     
     </summary>
     

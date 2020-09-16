@@ -385,61 +385,61 @@
         {
           "@type":"ListItem",
           "position":1,
-          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
+          "url": "https://memolog.org/2007/08/yslow_9_reduce_dns_lookups.html"
         },
         
         {
           "@type":"ListItem",
           "position":2,
-          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
+          "url": "https://memolog.org/2007/08/yslow_8_make_javascript_and_cs.html"
         },
         
         {
           "@type":"ListItem",
           "position":3,
-          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
+          "url": "https://memolog.org/2007/08/yslow_7_avoid_css_expressions.html"
         },
         
         {
           "@type":"ListItem",
           "position":4,
-          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
+          "url": "https://memolog.org/2007/08/yslow_6_move_scripts_to_the_bo.html"
         },
         
         {
           "@type":"ListItem",
           "position":5,
-          "url": "https://memolog.org/2007/08/post_141.html"
+          "url": "https://memolog.org/2007/08/yslow_5_put_css_at_the_top.html"
         },
         
         {
           "@type":"ListItem",
           "position":6,
-          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
+          "url": "https://memolog.org/2007/08/post_141.html"
         },
         
         {
           "@type":"ListItem",
           "position":7,
-          "url": "https://memolog.org/2007/08/yslow_3_add_an_expires_header.html"
+          "url": "https://memolog.org/2007/08/yslow_4_gzip_components.html"
         },
         
         {
           "@type":"ListItem",
           "position":8,
-          "url": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
+          "url": "https://memolog.org/2007/08/yslow_3_add_an_expires_header.html"
         },
         
         {
           "@type":"ListItem",
           "position":9,
-          "url": "https://memolog.org/2007/08/yslow_2_use_a_content_delivery.html"
+          "url": "https://memolog.org/2007/08/wysiwyg_iedomobjectembed.html"
         },
         
         {
           "@type":"ListItem",
           "position":10,
-          "url": "https://memolog.org/2007/08/yslow_1_minimize_http_requests.html"
+          "url": "https://memolog.org/2007/08/yslow_2_use_a_content_delivery.html"
         }
         
       ]
@@ -460,6 +460,22 @@
 
   <div class="container">
     <main class="main">
+      
+        <article class="article-summary">
+          <header class="header">
+            <div><time datetime="2007-08-12T06:24:00.000Z"><span class="calendar-icon">📅</span><span>2007年8月12日</span></time>
+            </div>
+            <h2 class="header__title article__title"><a href="/2007/08/yslow_9_reduce_dns_lookups.html">YSLOW 勉強 &#x3a; 9&#x3a; Reduce DNS Lookups</a></h2>
+            
+          </header>
+          
+            <div class="content"><ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html#dns_lookups" target="_blank" rel="noopener">9: Reduce DNS Lookups</a></li>
+</ul>
+<p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の九つ目。DNS lookups を減らそう。あるhost名とIPアドレスを関連づけるためにDNS（Domain Name System）lookupを行うけれど、これには20〜120ミリ秒の時間がかかる。lookupが完了するまではそのhostからダウンロードすることはできない。</p></div>
+            <div><a href="/2007/08/yslow_9_reduce_dns_lookups.html">📖 続きを読む</a></div>
+          
+        </article>
       
         <article class="article-summary">
           <header class="header">
@@ -596,22 +612,6 @@
 </ul>
 <p><a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>の二つ目。 ユーザーの待ち時間の大半は画像やCSSなどの構成要素をダウンロードするのに費やされているという視点から、待ち時間を減らす為にCDN（Content Delivery Network ）を利用しようという話。Content Delivery Network (CDN) とは、ユーザーに効率的にコンテンツを配信するために分散化させたネットワークのことをさします（<a href="http://e-words.jp/w/CDN.html" target="_blank" rel="noopener">e-word</a>もあわせてごらんください）。</p></div>
             <div><a href="/2007/08/yslow_2_use_a_content_delivery.html">📖 続きを読む</a></div>
-          
-        </article>
-      
-        <article class="article-summary">
-          <header class="header">
-            <div><time datetime="2007-08-04T06:46:10.000Z"><span class="calendar-icon">📅</span><span>2007年8月4日</span></time>
-            </div>
-            <h2 class="header__title article__title"><a href="/2007/08/yslow_1_minimize_http_requests.html">YSLOW 勉強 &#x3a; 1&#x3a; Minimize HTTP Requests</a></h2>
-            
-          </header>
-          
-            <div class="content"><ul>
-<li><a href="http://developer.yahoo.com/yslow/" target="_blank" rel="noopener">YSlow for Firebug</a></li>
-</ul>
-<p>内向きに話題になっていたYSLOWをインストールして試してみるという話。YSLOWは<a href="http://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">rules for high performance web sites</a>（ウェブサイトを高速にするルール）に記載されている法則に則って、ウェブページの表示を遅くしている原因が何かを教えてくれるFirebugzの拡張プラグインです。</p></div>
-            <div><a href="/2007/08/yslow_1_minimize_http_requests.html">📖 続きを読む</a></div>
           
         </article>
       

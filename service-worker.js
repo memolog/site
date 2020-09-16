@@ -1,7 +1,8 @@
-const CACHE_MAIN = 'main1600216347020';
+const CACHE_MAIN = 'main1600227811344';
 const precacheList = [
   
   '/',
+  '/2020/got-100-lighthouse-score-in-all-categories-on-mobile.html',
   '/2020/logical-assignment-operators.html',
   '/2020/fragmenting-flex-layout.html',
   '/2020/flex-layout-algorithm.html',
@@ -11,7 +12,7 @@ const precacheList = [
   '/2020/flex-lines.html',
   '/2020/flex-order-property.html',
   '/2020/flex-flow-shorthand.html',
-  '/2020/flex-wrap-property.html',
+  '/assets/images/ben-koorengevel-tpIWpoW3_Wc-unsplash/ben-koorengevel-tpIWpoW3_Wc-unsplash.svg',
   '/assets/images/cath-smith-PF5_cqOQFT4-unsplash/cath-smith-PF5_cqOQFT4-unsplash.svg',
   '/assets/images/tomas-malik-zlSzh2FP7LY-unsplash/tomas-malik-zlSzh2FP7LY-unsplash.svg',
   '/assets/images/sarah-madaio-fpZHGVBzlYk-unsplash/sarah-madaio-fpZHGVBzlYk-unsplash.svg',
@@ -21,7 +22,6 @@ const precacheList = [
   '/assets/images/alex-chernenko-To28QYvt5q4-unsplash/alex-chernenko-To28QYvt5q4-unsplash.svg',
   '/assets/images/estudio-bloom-ezqnxsqUZ80-unsplash/estudio-bloom-ezqnxsqUZ80-unsplash.svg',
   '/assets/images/ben-mcleod-2UfVYE2S7B4-unsplash/ben-mcleod-2UfVYE2S7B4-unsplash.svg',
-  '/assets/images/jerry-wang-xiie4XeSzTU-unsplash/jerry-wang-xiie4XeSzTU-unsplash.svg',
   '/css/prism.css',
   '/css/global_async.css',
 ];
